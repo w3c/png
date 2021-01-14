@@ -1,0 +1,268 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg width="700" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style type="text/css">
+<![CDATA[
+rect {stroke:black;fill:white;}
+text {font-family:Verdana, sans-serif;font-size:14;text-anchor:start}
+line {stroke:black;stroke-width:1}
+polyline {stroke:black;stroke-width:1;fill:none}
+]]>
+</style>
+<defs>
+
+<symbol id="filter1" >		
+<rect width="8" height="8" style="fill:#EECCAA" />
+</symbol>
+
+
+<symbol id="comp" >		
+<rect width="8" height="8" style="fill:#FF9955" />
+</symbol>
+
+
+
+<symbol id="pixelfr" >		
+<rect width="8" height="8" style="fill:#EEAAAA" />
+</symbol>
+
+<symbol id="pixelfg" >		
+<rect width="8" height="8" style="fill:#AAEEAA" />
+</symbol>
+
+<symbol id="pixelfb" >		
+<rect width="8" height="8" style="fill:#AAAAEE" />
+</symbol>
+
+<symbol id="pixelfa" >		
+<rect width="8" height="8" style="fill:#DDDDDD" />
+</symbol>
+
+
+
+<symbol id="pixelr" >		
+<rect width="8" height="8" style="fill:red" />
+</symbol>
+
+<symbol id="pixelg" >		
+<rect width="8" height="8" style="fill:green" />
+</symbol>
+
+<symbol id="pixelb" >		
+<rect width="8" height="8" style="fill:blue" />
+</symbol>
+
+<symbol id="pixela" >		
+<rect width="8" height="8" style="fill:grey" />
+</symbol>
+
+<!-- <symbol id="varrow" >
+<line x1="0" y1="0" x2="-10" y2="-10" />
+<line x1="0" y1="0" x2="10" y2="-10" />
+<line x1="0" y1="0" x2="0" y2="-80" />
+</symbol>
+
+<symbol id="harrow" >
+<line x1="0" y1="0" x2="3" y2="3" />
+<line x1="0" y1="0" x2="3" y2="-3" />
+<line x1="0" y1="0" x2="10" y2="0" />
+<line x1="10" y1="0" x2="10" y2="6" />
+</symbol>
+
+<symbol id="ivarrow" >
+<line x1="0" y1="0" x2="5" y2="5" />
+<line x1="0" y1="0" x2="-5" y2="5" />
+<line x1="0" y1="0" x2="0" y2="40" />
+</symbol>
+
+<symbol id="harrow2" >
+<line x1="0" y1="0" x2="5" y2="5" />
+<line x1="0" y1="0" x2="5" y2="-5" />
+<line x1="0" y1="0" x2="120" y2="0" />
+</symbol>
+-->
+
+</defs>
+
+<!-- solid arrow heads right and left -->
+<marker id="arrend" refX="8" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+  <path d="M 1 4 L 1 1 8 4 1 7z"/>
+</marker>
+
+<marker id="larrend" refX="0" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+  <path d="M 8 4 L 8 1 0 4 8 7z"/>
+</marker>
+
+<text x="130" y="50">First Pass</text>
+
+
+<g transform="translate(200,0)">
+<g transform="scale(2)">
+<use transform="translate(2,10)" xlink:href="#filter1" />
+<use transform="translate(15,10)" xlink:href="#pixelfr" />
+<use transform="translate(25,10)" xlink:href="#pixelfg" />
+<use transform="translate(35,10)" xlink:href="#pixelfb" />
+<use transform="translate(45,10)" xlink:href="#pixelfa" />
+<use transform="translate(55,10)" xlink:href="#pixelfr" />
+<use transform="translate(65,10)" xlink:href="#pixelfg" />
+<use transform="translate(75,10)" xlink:href="#pixelfb" />
+<use transform="translate(85,10)" xlink:href="#pixelfa" />
+<g transform="translate(95,14)">
+<polyline marker-end="url(#arrend)" points="-80,11 -80,6 10,6 10,0 0,0" />
+</g>
+</g>
+</g>
+
+<g transform="translate(220,30)">
+<g transform="scale(2)">
+<use transform="translate(2,10)" xlink:href="#filter1" />
+<use transform="translate(15,10)" xlink:href="#pixelfr" />
+<use transform="translate(25,10)" xlink:href="#pixelfg" />
+<use transform="translate(35,10)" xlink:href="#pixelfb" />
+<use transform="translate(45,10)" xlink:href="#pixelfa" />
+<use transform="translate(55,10)" xlink:href="#pixelfr" />
+<use transform="translate(65,10)" xlink:href="#pixelfg" />
+<use transform="translate(75,10)" xlink:href="#pixelfb" />
+<use transform="translate(85,10)" xlink:href="#pixelfa" />
+<g transform="translate(95,14)">
+<polyline marker-end="url(#arrend)" points="-80,16 -80,6 10,6 10,0 0,0" />
+</g>
+</g>
+</g>
+
+
+<text x="170" y="120">Second Pass</text>
+<g transform="translate(240,70)">
+<g transform="scale(2)">
+<use transform="translate(2,10)" xlink:href="#filter1" />
+<use transform="translate(15,10)" xlink:href="#pixelfr" />
+<use transform="translate(25,10)" xlink:href="#pixelfg" />
+<use transform="translate(35,10)" xlink:href="#pixelfb" />
+<use transform="translate(45,10)" xlink:href="#pixelfa" />
+<use transform="translate(55,10)" xlink:href="#pixelfr" />
+<use transform="translate(65,10)" xlink:href="#pixelfg" />
+<use transform="translate(75,10)" xlink:href="#pixelfb" />
+<use transform="translate(85,10)" xlink:href="#pixelfa" />
+<g transform="translate(95,14)">
+<polyline marker-end="url(#arrend)" points="-80,11 -80,6 10,6 10,0 0,0" />
+</g>
+</g>
+</g>
+
+<g transform="translate(260,100)">
+<g transform="scale(2)">
+<use transform="translate(2,10)" xlink:href="#filter1" />
+<use transform="translate(15,10)" xlink:href="#pixelfr" />
+<use transform="translate(25,10)" xlink:href="#pixelfg" />
+<use transform="translate(35,10)" xlink:href="#pixelfb" />
+<use transform="translate(45,10)" xlink:href="#pixelfa" />
+<use transform="translate(55,10)" xlink:href="#pixelfr" />
+<use transform="translate(65,10)" xlink:href="#pixelfg" />
+<use transform="translate(75,10)" xlink:href="#pixelfb" />
+<use transform="translate(85,10)" xlink:href="#pixelfa" />
+<g transform="translate(95,14)">
+<polyline marker-end="url(#arrend)" points="-80,16 -80,6 10,6 10,0 0,0" />
+</g>
+</g>
+</g>
+
+
+<text x="210" y="190">Third Pass</text>
+<g transform="translate(280,140)">
+<g transform="scale(2)">
+<use transform="translate(2,10)" xlink:href="#filter1" />
+<use transform="translate(15,10)" xlink:href="#pixelfr" />
+<use transform="translate(25,10)" xlink:href="#pixelfg" />
+<use transform="translate(35,10)" xlink:href="#pixelfb" />
+<use transform="translate(45,10)" xlink:href="#pixelfa" />
+<use transform="translate(55,10)" xlink:href="#pixelfr" />
+<use transform="translate(65,10)" xlink:href="#pixelfg" />
+<use transform="translate(75,10)" xlink:href="#pixelfb" />
+<use transform="translate(85,10)" xlink:href="#pixelfa" />
+<use transform="translate(95,10)" xlink:href="#pixelfr" />
+<use transform="translate(105,10)" xlink:href="#pixelfg" />
+<use transform="translate(115,10)" xlink:href="#pixelfb" />
+<use transform="translate(125,10)" xlink:href="#pixelfa" />
+<use transform="translate(135,10)" xlink:href="#pixelfr" />
+<use transform="translate(145,10)" xlink:href="#pixelfg" />
+<use transform="translate(155,10)" xlink:href="#pixelfb" />
+<use transform="translate(165,10)" xlink:href="#pixelfa" />
+<g transform="translate(175,14)">
+<polyline marker-end="url(#arrend)" points="-160,11 -160,6 10,6 10,0 0,0" />
+</g>
+</g>
+</g>
+
+<g transform="translate(300,170)">
+<g transform="scale(2)">
+<use transform="translate(2,10)" xlink:href="#filter1" />
+<use transform="translate(15,10)" xlink:href="#pixelfr" />
+<use transform="translate(25,10)" xlink:href="#pixelfg" />
+<use transform="translate(35,10)" xlink:href="#pixelfb" />
+<use transform="translate(45,10)" xlink:href="#pixelfa" />
+<use transform="translate(55,10)" xlink:href="#pixelfr" />
+<use transform="translate(65,10)" xlink:href="#pixelfg" />
+<use transform="translate(75,10)" xlink:href="#pixelfb" />
+<use transform="translate(85,10)" xlink:href="#pixelfa" />
+<use transform="translate(95,10)" xlink:href="#pixelfr" />
+<use transform="translate(105,10)" xlink:href="#pixelfg" />
+<use transform="translate(115,10)" xlink:href="#pixelfb" />
+<use transform="translate(125,10)" xlink:href="#pixelfa" />
+<use transform="translate(135,10)" xlink:href="#pixelfr" />
+<use transform="translate(145,10)" xlink:href="#pixelfg" />
+<use transform="translate(155,10)" xlink:href="#pixelfb" />
+<use transform="translate(165,10)" xlink:href="#pixelfa" />
+<g transform="translate(175,14)">
+<polyline marker-end="url(#arrend)" points="-160,16 -160,6 10,6 10,0 0,0" />
+</g>
+</g>
+</g>
+
+
+<polyline marker-end="url(#arrend)" points="202,26 50,26 50,106" />
+
+<g transform="translate(40,106)">
+<g transform="scale(2)">
+<g transform="translate(0,0)">
+<use transform="translate(1,0)" xlink:href="#comp" />
+<use transform="translate(1,10)" xlink:href="#comp" />
+<use transform="translate(1,20)" xlink:href="#comp" />
+<use transform="translate(1,30)" xlink:href="#comp" />
+<use transform="translate(1,40)" xlink:href="#comp" />
+</g>
+
+<g transform="translate(0,60)">
+<use transform="translate(1,0)" xlink:href="#comp" />
+<use transform="translate(1,10)" xlink:href="#comp" />
+<use transform="translate(1,20)" xlink:href="#comp" />
+<use transform="translate(1,30)" xlink:href="#comp" />
+<use transform="translate(1,40)" xlink:href="#comp" />
+</g>
+
+
+<g transform="translate(0,120)">
+<use transform="translate(1,0)" xlink:href="#comp" />
+<use transform="translate(1,10)" xlink:href="#comp" />
+<use transform="translate(1,20)" xlink:href="#comp" />
+<use transform="translate(1,30)" xlink:href="#comp" />
+<use transform="translate(1,40)" xlink:href="#comp" />
+</g>
+
+</g>
+</g>
+
+
+<g transform="translate(40,106)">
+<text x="24" y="60">Chunk</text>
+<text x="24" y="180">Chunk</text>
+<text x="24" y="300">Chunk</text>
+</g>
+
+<line marker-end="url(#arrend)" x1="150" y1="220" x2="150" y2="300" />
+<text x="155" y="250">Compressed</text>
+<text x="155" y="265">datastream</text>
+
+</svg>
+

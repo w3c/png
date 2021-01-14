@@ -1,0 +1,297 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg width="810" height="310" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<style type="text/css">
+<![CDATA[
+rect {stroke:black;stroke-width:1;fill:none;}
+text {font-family:Verdana, sans-serif;font-size:14;text-anchor:start}
+line {stroke:black;stroke-width:2}
+]]>
+</style>
+
+
+
+<symbol id="bit" >		
+<rect width="23" height="23" style="fill:#EEAAAA" />
+</symbol>
+
+<!-- <rect x="5" y="5" width="800" height="300" style="fill:none" /> -->
+
+<g transform="translate(0,10)">
+
+<g transform="translate(20,50)">
+<g transform="translate(0,0)">
+<use xlink:href="#bit" />
+<text x="4" y="40">15</text>
+</g>
+
+<g transform="translate(30,0)">
+<use xlink:href="#bit" />
+<text x="4" y="40">14</text>
+</g>
+
+<g transform="translate(60,0)">
+<use xlink:href="#bit" />
+<text x="4" y="40">13</text>
+</g>
+
+<g transform="translate(90,0)">
+<use xlink:href="#bit" />
+<text x="4" y="40">12</text>
+</g>
+
+<g transform="translate(120,0)">
+<use xlink:href="#bit" />
+<text x="4" y="40">11</text>
+</g>
+
+<g transform="translate(150,0)">
+<use xlink:href="#bit" />
+<text x="4" y="40">10</text>
+</g>
+
+<g transform="translate(180,0)">
+<use xlink:href="#bit" />
+<text x="7" y="40">9</text>
+</g>
+
+<g transform="translate(210,0)">
+<use xlink:href="#bit" />
+<text x="7" y="40">8</text>
+</g>
+<g transform="translate(250,0)">
+<use xlink:href="#bit" />
+<text x="7" y="40">7</text>
+</g>
+
+<g transform="translate(280,0)">
+<use xlink:href="#bit" />
+<text x="7" y="40">6</text>
+</g>
+
+<g transform="translate(310,0)">
+<use xlink:href="#bit" />
+<text x="7" y="40">5</text>
+</g>
+
+<g transform="translate(340,0)">
+<use xlink:href="#bit" />
+<text x="7" y="40">4</text>
+</g>
+
+<g transform="translate(370,0)">
+<use xlink:href="#bit" />
+<text x="7" y="40">3</text>
+</g>
+
+<g transform="translate(400,0)">
+<use xlink:href="#bit" />
+<text x="7" y="40">2</text>
+</g>
+
+<g transform="translate(430,0)">
+<use xlink:href="#bit" />
+<text x="7" y="40">1</text>
+</g>
+
+<g transform="translate(460,0)">
+<use xlink:href="#bit" />
+<text x="7" y="40">0</text>
+</g>
+
+
+
+<text x="0" y="-20">MSB: Most Significant Byte</text>
+<text x="250" y="-20">LSB: Least Significant Byte</text>
+
+<text x="0" y="60">MSB: First Byte Transmitted</text>
+<text x="250" y="60">LSB: Second Byte Transmitted</text>
+<text x="190" y="80">16-bit integer</text>
+
+</g>
+
+
+
+<g transform="translate(20,200)">
+
+<g transform="scale(0.75)">
+
+
+<g transform="translate(0,0)">
+<use xlink:href="#bit" />
+<text x="4" y="40">31</text>
+</g>
+
+<g transform="translate(30,0)">
+<use xlink:href="#bit" />
+<text x="4" y="40">30</text>
+</g>
+
+<g transform="translate(60,0)">
+<use xlink:href="#bit" />
+<text x="4" y="40">29</text>
+</g>
+
+<g transform="translate(90,0)">
+<use xlink:href="#bit" />
+<text x="4" y="40">28</text>
+</g>
+
+<g transform="translate(120,0)">
+<use xlink:href="#bit" />
+<text x="4" y="40">27</text>
+</g>
+
+<g transform="translate(150,0)">
+<use xlink:href="#bit" />
+<text x="4" y="40">26</text>
+</g>
+
+<g transform="translate(180,0)">
+<use xlink:href="#bit" />
+<text x="4" y="40">25</text>
+</g>
+
+<g transform="translate(210,0)">
+<use xlink:href="#bit" />
+<text x="4" y="40">24</text>
+</g>
+<g transform="translate(250,0)">
+<use xlink:href="#bit" />
+<text x="4" y="40">23</text>
+</g>
+
+<g transform="translate(280,0)">
+<use xlink:href="#bit" />
+<text x="4" y="40">22</text>
+</g>
+
+<g transform="translate(310,0)">
+<use xlink:href="#bit" />
+<text x="4" y="40">21</text>
+</g>
+
+<g transform="translate(340,0)">
+<use xlink:href="#bit" />
+<text x="4" y="40">20</text>
+</g>
+
+<g transform="translate(370,0)">
+<use xlink:href="#bit" />
+<text x="4" y="40">19</text>
+</g>
+
+<g transform="translate(400,0)">
+<use xlink:href="#bit" />
+<text x="4" y="40">18</text>
+</g>
+
+<g transform="translate(430,0)">
+<use xlink:href="#bit" />
+<text x="4" y="40">17</text>
+</g>
+
+<g transform="translate(460,0)">
+<use xlink:href="#bit" />
+<text x="4" y="40">16</text>
+</g>
+
+<g transform="translate(500,0)">
+
+<g transform="translate(0,0)">
+<use xlink:href="#bit" />
+<text x="4" y="40">15</text>
+</g>
+
+<g transform="translate(30,0)">
+<use xlink:href="#bit" />
+<text x="4" y="40">14</text>
+</g>
+
+<g transform="translate(60,0)">
+<use xlink:href="#bit" />
+<text x="4" y="40">13</text>
+</g>
+
+<g transform="translate(90,0)">
+<use xlink:href="#bit" />
+<text x="4" y="40">12</text>
+</g>
+
+<g transform="translate(120,0)">
+<use xlink:href="#bit" />
+<text x="4" y="40">11</text>
+</g>
+
+<g transform="translate(150,0)">
+<use xlink:href="#bit" />
+<text x="4" y="40">10</text>
+</g>
+
+<g transform="translate(180,0)">
+<use xlink:href="#bit" />
+<text x="7" y="40">9</text>
+</g>
+
+<g transform="translate(210,0)">
+<use xlink:href="#bit" />
+<text x="7" y="40">8</text>
+</g>
+<g transform="translate(250,0)">
+<use xlink:href="#bit" />
+<text x="7" y="40">7</text>
+</g>
+
+<g transform="translate(280,0)">
+<use xlink:href="#bit" />
+<text x="7" y="40">6</text>
+</g>
+
+<g transform="translate(310,0)">
+<use xlink:href="#bit" />
+<text x="7" y="40">5</text>
+</g>
+
+<g transform="translate(340,0)">
+<use xlink:href="#bit" />
+<text x="7" y="40">4</text>
+</g>
+
+<g transform="translate(370,0)">
+<use xlink:href="#bit" />
+<text x="7" y="40">3</text>
+</g>
+
+<g transform="translate(400,0)">
+<use xlink:href="#bit" />
+<text x="7" y="40">2</text>
+</g>
+
+<g transform="translate(430,0)">
+<use xlink:href="#bit" />
+<text x="7" y="40">1</text>
+</g>
+
+<g transform="translate(460,0)">
+<use xlink:href="#bit" />
+<text x="7" y="40">0</text>
+</g>
+
+</g>
+
+</g>
+
+
+<text x="60" y="60">MSB</text>
+<text x="250" y="60">B2</text>
+<text x="440" y="60">B1</text>
+<text x="630" y="60">LSB</text>
+<text x="190" y="90">32-bit integer</text>
+
+</g>
+
+</g>
+
+</svg>

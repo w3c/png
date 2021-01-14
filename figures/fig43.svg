@@ -1,0 +1,67 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg width="640" height="525" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- solid arrow heads right and left -->
+<marker id="arrend" refX="8" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+  <path d="M 1 4 L 1 1 8 4 1 7z"/>
+</marker>
+
+<marker id="larrend" refX="0" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+  <path d="M 8 4 L 8 1 0 4 8 7z"/>
+</marker>
+
+<g transform="translate(10,10)">
+
+<g style="fill:aqua; stroke:black; stroke-width:1">
+<!-- <rect x="0" y="0" width="640" height="505" style="fill:none"/> -->
+
+	<rect x="100" y="0" width="150" height="50" style="fill:aqua"/>
+
+	<rect x="200" y="80" width="150" height="50" style="fill:aqua"/>
+	<rect x="200" y="190" width="150" height="50" style="fill:aqua"/>
+	<rect x="200" y="295" width="150" height="50" style="fill:aqua"/>
+
+	<rect x="100" y="380" width="150" height="50" style="fill:aqua"/>
+
+	<rect x="100" y="455" width="150" height="50" style="fill:aqua"/>
+
+	<rect x="0" y="185" width="150" height="165" style="fill:aqua"/>
+	
+</g>
+
+<g style="fill:none; stroke:black; stroke-width:1">
+	<line marker-end="url(#arrend)" x1="175" y1="50" x2="175" y2="380"/>
+
+	<line marker-end="url(#arrend)" x1="175" y1="55" x2="275" y2="80"/>
+	<line marker-end="url(#arrend)" x1="275" y1="130" x2="175" y2="155"/>
+
+	<line marker-end="url(#arrend)" x1="175" y1="165" x2="275" y2="190"/>
+	<line marker-end="url(#arrend)" x1="275" y1="240" x2="175" y2="265"/>
+
+	<line marker-end="url(#arrend)" x1="175" y1="270" x2="275" y2="295"/>
+	<line marker-end="url(#arrend)" x1="275" y1="345" x2="175" y2="370"/>
+
+	<line marker-end="url(#arrend)" x1="175" y1="160" x2="75" y2="185"/>
+	<line marker-end="url(#arrend)" x1="75" y1="350" x2="175" y2="372"/>
+
+	<line marker-end="url(#arrend)" x1="175" y1="430" x2="175" y2="455"/>
+
+</g>
+
+<g style="font-family:Verdana, sans-serif; stroke:none; font-size:14; fill:black; text-anchor:middle">
+	<text x="175" y="25">reference image</text>
+	<text x="275" y="105">alpha separation</text>
+	<text x="275" y="215">RGB merging</text>
+	<text x="275" y="320">alpha compaction</text>
+
+	<text x="75" y="267.5">indexing</text>
+
+	<text x="175" y="405">sample depth scaling</text>
+
+	<text x="175" y="480">PNG image</text>
+</g>
+
+</g>
+</svg>
+

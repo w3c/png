@@ -1,0 +1,99 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg width="640" height="360" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style type="text/css">
+<![CDATA[
+  rect {stroke:black;fill:white;}
+  text {font-family:Verdana, sans-serif;font-size:14;text-anchor:middle}
+  text.ljust {font-family:Verdana, sans-serif;font-size:14;text-anchor:start}
+  text.rjust {font-family:Verdana, sans-serif;font-size:14;text-anchor:end}
+  line {stroke:black;stroke-width:1}
+  polyline {stroke:black;stroke-width:1;fill:none}
+  path {stroke:black;stroke-width:1;fill:white;}
+]]>
+</style>
+
+<!-- solid arrow head -->
+<marker id="arrend" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+  <path style="fill:black" d="M 1 4 L 1 1 7 4 1 7z"/>
+</marker>
+
+<g transform="translate(10,10)">
+
+<g>
+  <rect width="200" height="100"/>
+  <text x="100" y="20">p=a+b-c</text>
+  <text x="100" y="40">pa=abs(p-a)</text>
+  <text x="100" y="60">pb=abs(p-b)</text>
+  <text x="100" y="80">pc=abs(p-c)</text>
+
+</g>
+
+<g transform="translate(320,45)">
+  <path d="M 100 0 L 200 40  L 100 80 L 0 40 L 100 0 z"/>
+  <text x="100" y="45">pa&lt;=pb AND pa&lt;=pc</text>
+	<g transform="translate(0,40)">
+    <line marker-end="url(#arrend)" x1="0" y1="0" x2="-40" y2="0"/>
+   
+    <text class="rjust" x="-45" y="5">Pr=a</text>
+    <text x="-20" y="-5">Yes</text>
+  </g>
+</g>
+
+<g transform="translate(320,165)">
+  <path d="M 100 0 L 200 40  L 100 80 L 0 40 L 100 0 z"/>
+  <text x="100" y="45">pb&lt;=pc</text>
+	<g transform="translate(0,40)">
+    <line marker-end="url(#arrend)"  x1="0" y1="0" x2="-40" y2="0"/>
+    <text class="rjust" x="-45" y="5">Pr=b</text>
+    <text x="-20" y="-5">Yes</text>
+  </g>
+</g>
+
+<g>
+  <line marker-end="url(#arrend)"  x1="420" y1="245" x2="420" y2="295"/>
+  <text class="ljust" x="425" y="270">No</text>
+</g>
+
+
+<text x="420" y="305">Pr=c</text>
+
+<g>
+  <polyline marker-end="url(#arrend)" points="200,10 420,10 420,45"/>
+
+</g>
+
+
+
+
+<g>
+  <line marker-end="url(#arrend)"  x1="420" y1="125" x2="420" y2="165"/>
+  <text class="ljust" x="425" y="150">No</text>
+</g>
+
+
+
+
+<g transform="translate(500,260)">
+  <g>
+    <rect width="20" height="20"/>
+    <text x="10" y="15">c</text>
+  </g>
+  <g transform="translate(25,0)">
+    <rect width="20" height="20"/>
+    <text x="10" y="15">b</text>
+  </g>
+  <g transform="translate(0,25)">
+    <rect width="20" height="20"/>
+    <text x="10" y="15">a</text>
+  </g>
+  <g transform="translate(25,25)">
+    <rect width="20" height="20"/>
+    <text x="10" y="15">x</text>
+  </g>
+  <text x="22.5" y="-5">Bytes</text>
+</g>
+</g>
+
+</svg>

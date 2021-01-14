@@ -1,0 +1,139 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg width="640" height="290" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- solid arrow head -->
+<marker id="arrend" refX="8" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+  <path d="M 1 4 L 1 1 8 4 1 7z"/>
+</marker>
+
+<marker id="larrend" refX="0" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+  <path d="M 8 4 L 8 1 0 4 8 7z"/>
+</marker>
+
+<g transform="translate(10,10)">
+
+<g style="fill:aqua; stroke:black; stroke-width:1">
+<!-- <rect x="0" y="0" width="640" height="270" style="fill:none"/> -->
+	<rect x="150" y="0" width="300" height="120" style="fill:white"/>
+	<rect x="100" y="50" width="300" height="120" style="fill:#8888CC"/>
+	<rect x="50" y="100" width="300" height="120" style="fill:#66DD66"/>
+	<rect x="0" y="150" width="300" height="120" style="fill:#DD6666"/>
+	
+</g>
+<g style="font-family:Verdana, sans-serif; font-size:14; fill:black; text-anchor:start">
+	<text x="5" y="165">red channel</text>
+	<text x="55" y="115">green channel</text>
+	<text x="105" y="65">blue channel</text>
+	<text x="155" y="15">alpha channel</text>
+</g>
+
+
+<g style="font-family:Verdana, sans-serif; font-size:14; fill:black; text-anchor:end">
+	<text x="295" y="165">red sample</text>
+
+	<text x="200" y="200">sample depth</text>
+
+	<text x="345" y="115">green sample</text>
+	<text x="395" y="65">blue sample</text>
+	<text x="445" y="15">alpha sample</text>
+</g>
+
+<!--  <g style="font-family:Courier; font-size:14; fill:black; text-anchor:end">
+	<text x="280" y="180">[1000]</text>
+	<text x="330" y="131">[01011]</text>
+	<text x="380" y="80">[0110]</text>
+	<text x="430" y="30">[1000]</text>
+</g>
+-->
+<!-- red sample value -->
+<!-- text offset 7 in x, -5 in y in box -->
+<rect x="205" y="170" width="15" height="15" style="stroke:black; fill:white"/>
+<rect x="225" y="170" width="15" height="15" style="stroke:black; fill:white"/>
+<rect x="245" y="170" width="15" height="15" style="stroke:black; fill:white"/>
+<rect x="265" y="170" width="15" height="15" style="stroke:black; fill:white"/>
+<g style="font-family:Courier; font-size:14; fill:black; text-anchor:middle">
+   <text x="212" y="180">1</text>
+   <text x="232" y="180">0</text>
+   <text x="252" y="180">0</text>
+   <text x="272" y="180">0</text>
+</g>
+
+<!-- green sample value -->
+<g transform="translate(50, -50)">
+    <g style="stroke:black; fill:white">
+      <rect x="185" y="170" width="15" height="15" />
+      <rect x="205" y="170" width="15" height="15" />
+      <rect x="225" y="170" width="15" height="15" />
+      <rect x="245" y="170" width="15" height="15" />
+      <rect x="265" y="170" width="15" height="15" />
+    </g>
+    <g style="font-family:Courier; font-size:14; fill:black; text-anchor:middle">
+      <text x="192" y="180">1</text>
+      <text x="212" y="180">1</text>
+      <text x="232" y="180">0</text>
+      <text x="252" y="180">1</text>
+      <text x="272" y="180">1</text>
+    </g>
+</g>
+
+<!-- blue sample value -->
+<g transform="translate(100, -100)">
+    <g style="stroke:black; fill:white">
+      <rect x="205" y="170" width="15" height="15" />
+      <rect x="225" y="170" width="15" height="15" />
+      <rect x="245" y="170" width="15" height="15" />
+      <rect x="265" y="170" width="15" height="15" />
+    </g>
+    <g style="font-family:Courier; font-size:14; fill:black; text-anchor:middle">
+      <text x="212" y="180">0</text>
+      <text x="232" y="180">0</text>
+      <text x="252" y="180">1</text>
+      <text x="272" y="180">0</text>
+    </g>
+</g>
+
+<!-- alpha sample value -->
+<g transform="translate(150, -150)">
+    <g style="stroke:black; fill:white">
+      <rect x="205" y="170" width="15" height="15" />
+      <rect x="225" y="170" width="15" height="15" />
+      <rect x="245" y="170" width="15" height="15" />
+      <rect x="265" y="170" width="15" height="15" />
+    </g>
+    <g style="font-family:Courier; font-size:14; fill:black; text-anchor:middle">
+      <text x="212" y="180">1</text>
+      <text x="232" y="180">0</text>
+      <text x="252" y="180">0</text>
+      <text x="272" y="180">0</text>
+    </g>
+</g>
+
+
+
+<g style="fill:none; stroke:black; stroke-width:1">
+	<line marker-start="url(#larrend)" marker-end="url(#arrend)" x1="205" y1="195" x2="280" y2="195"/>
+</g>
+
+
+
+<g style="fill:none; stroke:black; stroke-width:1; stroke-dasharray:5 2">
+	<line marker-end="url(#arrend)" x2="285" y2="175" x1="460" y1="175"/>
+	<line marker-end="url(#arrend)"  x2="335" y2="125" x1="510" y1="125"/>
+	<line marker-end="url(#arrend)"  x2="385" y2="75" x1="560" y1="75"/>
+	<line marker-end="url(#arrend)"  x2="435" y2="25" x1="610" y1="25"/>
+</g>
+
+<g style="fill:none; stroke:black; stroke-width:1; stroke-dasharray:5 2">
+	<line x1="460" y1="175" x2="610" y2="25"/>
+</g>
+
+
+<g style="font-family:Verdana, sans-serif; font-size:14; fill:black; text-anchor:start">
+	<text x="550" y="100">pixel</text>
+</g>
+
+</g>
+</svg>
+

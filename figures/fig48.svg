@@ -1,0 +1,657 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg width="645" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style type="text/css">
+<![CDATA[
+rect {stroke:black;fill:white;}
+text {font-family:Verdana, sans-serif;font-size:14;text-anchor:start}
+line {stroke:black;stroke-width:1}
+]]>
+</style>
+<defs>
+
+<symbol id="filter1" >		
+<rect width="8" height="8" style="fill:#EECCAA" />
+</symbol>
+
+<symbol id="filter2" >		
+<rect width="8" height="8" style="fill:#AABBEE" />
+</symbol>
+<symbol id="filter3" >		
+<rect width="8" height="8" style="fill:#BBEEAA" />
+</symbol>
+
+<symbol id="pixel" >		
+<rect width="8" height="8" style="fill:white" />
+</symbol>
+
+<symbol id="pixel1" >		
+<rect width="8" height="8" style="fill:#AAAACC" />
+</symbol>
+
+<symbol id="pixel2" >		
+<rect width="8" height="8" style="fill:red" />
+</symbol>
+
+<symbol id="pixel3" >		
+<rect width="8" height="8" style="fill:green" />
+</symbol>
+
+<symbol id="pixel4" >		
+<rect width="8" height="8" style="fill:blue" />
+</symbol>
+
+<symbol id="pixel5" >		
+<rect width="8" height="8" style="fill:#EECCAA" />
+</symbol>
+
+<symbol id="pixel6" >		
+<rect width="8" height="8" style="fill:#CC8888" />
+</symbol>
+
+<symbol id="pixel7" >		
+<rect width="8" height="8" style="fill:yellow" />
+</symbol>
+
+<symbol id="varrow" >
+<line x1="0" y1="0" x2="-5" y2="-5" />
+<line x1="0" y1="0" x2="5" y2="-5" />
+<line x1="0" y1="0" x2="0" y2="-40" />
+</symbol>
+
+<symbol id="ivarrow" >
+<line x1="0" y1="0" x2="5" y2="5" />
+<line x1="0" y1="0" x2="-5" y2="5" />
+<line x1="0" y1="0" x2="0" y2="40" />
+</symbol>
+
+</defs>
+
+
+
+<g style="fill:none; stroke:black; stroke-width:1" transform="translate(15,10)">
+
+
+<g transform="scale(1.5)">
+<use transform="translate(0,0)" xlink:href="#pixel1" />
+<use transform="translate(10,0)" xlink:href="#pixel6" />
+<use transform="translate(20,0)" xlink:href="#pixel4" />
+<use transform="translate(30,0)" xlink:href="#pixel6" />
+<use transform="translate(40,0)" xlink:href="#pixel2" />
+<use transform="translate(50,0)" xlink:href="#pixel6" />
+<use transform="translate(60,0)" xlink:href="#pixel4" />
+<use transform="translate(70,0)" xlink:href="#pixel6" />
+<use transform="translate(80,0)" xlink:href="#pixel1" />
+<use transform="translate(90,0)" xlink:href="#pixel6" />
+<use transform="translate(100,0)" xlink:href="#pixel4" />
+<use transform="translate(110,0)" xlink:href="#pixel6" />
+<use transform="translate(120,0)" xlink:href="#pixel2" />
+<use transform="translate(130,0)" xlink:href="#pixel6" />
+<use transform="translate(140,0)" xlink:href="#pixel4" />
+<use transform="translate(150,0)" xlink:href="#pixel6" />
+
+<use transform="translate(0,10)" xlink:href="#pixel7" />
+<use transform="translate(10,10)" xlink:href="#pixel7" />
+<use transform="translate(20,10)" xlink:href="#pixel7" />
+<use transform="translate(30,10)" xlink:href="#pixel7" />
+<use transform="translate(40,10)" xlink:href="#pixel7" />
+<use transform="translate(50,10)" xlink:href="#pixel7" />
+<use transform="translate(60,10)" xlink:href="#pixel7" />
+<use transform="translate(70,10)" xlink:href="#pixel7" />
+<use transform="translate(80,10)" xlink:href="#pixel7" />
+<use transform="translate(90,10)" xlink:href="#pixel7" />
+<use transform="translate(100,10)" xlink:href="#pixel7" />
+<use transform="translate(110,10)" xlink:href="#pixel7" />
+<use transform="translate(120,10)" xlink:href="#pixel7" />
+<use transform="translate(130,10)" xlink:href="#pixel7" />
+<use transform="translate(140,10)" xlink:href="#pixel7" />
+<use transform="translate(150,10)" xlink:href="#pixel7" />
+
+<use transform="translate(0,20)" xlink:href="#pixel5" />
+<use transform="translate(10,20)" xlink:href="#pixel6" />
+<use transform="translate(20,20)" xlink:href="#pixel5" />
+<use transform="translate(30,20)" xlink:href="#pixel6" />
+<use transform="translate(40,20)" xlink:href="#pixel5" />
+<use transform="translate(50,20)" xlink:href="#pixel6" />
+<use transform="translate(60,20)" xlink:href="#pixel5" />
+<use transform="translate(70,20)" xlink:href="#pixel6" />
+<use transform="translate(80,20)" xlink:href="#pixel5" />
+<use transform="translate(90,20)" xlink:href="#pixel6" />
+<use transform="translate(100,20)" xlink:href="#pixel5" />
+<use transform="translate(110,20)" xlink:href="#pixel6" />
+<use transform="translate(120,20)" xlink:href="#pixel5" />
+<use transform="translate(130,20)" xlink:href="#pixel6" />
+<use transform="translate(140,20)" xlink:href="#pixel5" />
+<use transform="translate(150,20)" xlink:href="#pixel6" />
+
+<use transform="translate(0,30)" xlink:href="#pixel7" />
+<use transform="translate(10,30)" xlink:href="#pixel7" />
+<use transform="translate(20,30)" xlink:href="#pixel7" />
+<use transform="translate(30,30)" xlink:href="#pixel7" />
+<use transform="translate(40,30)" xlink:href="#pixel7" />
+<use transform="translate(50,30)" xlink:href="#pixel7" />
+<use transform="translate(60,30)" xlink:href="#pixel7" />
+<use transform="translate(70,30)" xlink:href="#pixel7" />
+<use transform="translate(80,30)" xlink:href="#pixel7" />
+<use transform="translate(90,30)" xlink:href="#pixel7" />
+<use transform="translate(100,30)" xlink:href="#pixel7" />
+<use transform="translate(110,30)" xlink:href="#pixel7" />
+<use transform="translate(120,30)" xlink:href="#pixel7" />
+<use transform="translate(130,30)" xlink:href="#pixel7" />
+<use transform="translate(140,30)" xlink:href="#pixel7" />
+<use transform="translate(150,30)" xlink:href="#pixel7" />
+
+<use transform="translate(0,40)" xlink:href="#pixel3" />
+<use transform="translate(10,40)" xlink:href="#pixel6" />
+<use transform="translate(20,40)" xlink:href="#pixel4" />
+<use transform="translate(30,40)" xlink:href="#pixel6" />
+<use transform="translate(40,40)" xlink:href="#pixel3" />
+<use transform="translate(50,40)" xlink:href="#pixel6" />
+<use transform="translate(60,40)" xlink:href="#pixel4" />
+<use transform="translate(70,40)" xlink:href="#pixel6" />
+<use transform="translate(80,40)" xlink:href="#pixel3" />
+<use transform="translate(90,40)" xlink:href="#pixel6" />
+<use transform="translate(100,40)" xlink:href="#pixel4" />
+<use transform="translate(110,40)" xlink:href="#pixel6" />
+<use transform="translate(120,40)" xlink:href="#pixel3" />
+<use transform="translate(130,40)" xlink:href="#pixel6" />
+<use transform="translate(140,40)" xlink:href="#pixel4" />
+<use transform="translate(150,40)" xlink:href="#pixel6" />
+
+<use transform="translate(0,50)" xlink:href="#pixel7" />
+<use transform="translate(10,50)" xlink:href="#pixel7" />
+<use transform="translate(20,50)" xlink:href="#pixel7" />
+<use transform="translate(30,50)" xlink:href="#pixel7" />
+<use transform="translate(40,50)" xlink:href="#pixel7" />
+<use transform="translate(50,50)" xlink:href="#pixel7" />
+<use transform="translate(60,50)" xlink:href="#pixel7" />
+<use transform="translate(70,50)" xlink:href="#pixel7" />
+<use transform="translate(80,50)" xlink:href="#pixel7" />
+<use transform="translate(90,50)" xlink:href="#pixel7" />
+<use transform="translate(100,50)" xlink:href="#pixel7" />
+<use transform="translate(110,50)" xlink:href="#pixel7" />
+<use transform="translate(120,50)" xlink:href="#pixel7" />
+<use transform="translate(130,50)" xlink:href="#pixel7" />
+<use transform="translate(140,50)" xlink:href="#pixel7" />
+<use transform="translate(150,50)" xlink:href="#pixel7" />
+
+<use transform="translate(0,60)" xlink:href="#pixel5" />
+<use transform="translate(10,60)" xlink:href="#pixel6" />
+<use transform="translate(20,60)" xlink:href="#pixel5" />
+<use transform="translate(30,60)" xlink:href="#pixel6" />
+<use transform="translate(40,60)" xlink:href="#pixel5" />
+<use transform="translate(50,60)" xlink:href="#pixel6" />
+<use transform="translate(60,60)" xlink:href="#pixel5" />
+<use transform="translate(70,60)" xlink:href="#pixel6" />
+<use transform="translate(80,60)" xlink:href="#pixel5" />
+<use transform="translate(90,60)" xlink:href="#pixel6" />
+<use transform="translate(100,60)" xlink:href="#pixel5" />
+<use transform="translate(110,60)" xlink:href="#pixel6" />
+<use transform="translate(120,60)" xlink:href="#pixel5" />
+<use transform="translate(130,60)" xlink:href="#pixel6" />
+<use transform="translate(140,60)" xlink:href="#pixel5" />
+<use transform="translate(150,60)" xlink:href="#pixel6" />
+
+<use transform="translate(0,70)" xlink:href="#pixel7" />
+<use transform="translate(10,70)" xlink:href="#pixel7" />
+<use transform="translate(20,70)" xlink:href="#pixel7" />
+<use transform="translate(30,70)" xlink:href="#pixel7" />
+<use transform="translate(40,70)" xlink:href="#pixel7" />
+<use transform="translate(50,70)" xlink:href="#pixel7" />
+<use transform="translate(60,70)" xlink:href="#pixel7" />
+<use transform="translate(70,70)" xlink:href="#pixel7" />
+<use transform="translate(80,70)" xlink:href="#pixel7" />
+<use transform="translate(90,70)" xlink:href="#pixel7" />
+<use transform="translate(100,70)" xlink:href="#pixel7" />
+<use transform="translate(110,70)" xlink:href="#pixel7" />
+<use transform="translate(120,70)" xlink:href="#pixel7" />
+<use transform="translate(130,70)" xlink:href="#pixel7" />
+<use transform="translate(140,70)" xlink:href="#pixel7" />
+<use transform="translate(150,70)" xlink:href="#pixel7" />
+
+<use transform="translate(0,80)" xlink:href="#pixel1" />
+<use transform="translate(10,80)" xlink:href="#pixel6" />
+<use transform="translate(20,80)" xlink:href="#pixel4" />
+<use transform="translate(30,80)" xlink:href="#pixel6" />
+<use transform="translate(40,80)" xlink:href="#pixel2" />
+<use transform="translate(50,80)" xlink:href="#pixel6" />
+<use transform="translate(60,80)" xlink:href="#pixel4" />
+<use transform="translate(70,80)" xlink:href="#pixel6" />
+<use transform="translate(80,80)" xlink:href="#pixel1" />
+<use transform="translate(90,80)" xlink:href="#pixel6" />
+<use transform="translate(100,80)" xlink:href="#pixel4" />
+<use transform="translate(110,80)" xlink:href="#pixel6" />
+<use transform="translate(120,80)" xlink:href="#pixel2" />
+<use transform="translate(130,80)" xlink:href="#pixel6" />
+<use transform="translate(140,80)" xlink:href="#pixel4" />
+<use transform="translate(150,80)" xlink:href="#pixel6" />
+
+<use transform="translate(0,90)" xlink:href="#pixel7" />
+<use transform="translate(10,90)" xlink:href="#pixel7" />
+<use transform="translate(20,90)" xlink:href="#pixel7" />
+<use transform="translate(30,90)" xlink:href="#pixel7" />
+<use transform="translate(40,90)" xlink:href="#pixel7" />
+<use transform="translate(50,90)" xlink:href="#pixel7" />
+<use transform="translate(60,90)" xlink:href="#pixel7" />
+<use transform="translate(70,90)" xlink:href="#pixel7" />
+<use transform="translate(80,90)" xlink:href="#pixel7" />
+<use transform="translate(90,90)" xlink:href="#pixel7" />
+<use transform="translate(100,90)" xlink:href="#pixel7" />
+<use transform="translate(110,90)" xlink:href="#pixel7" />
+<use transform="translate(120,90)" xlink:href="#pixel7" />
+<use transform="translate(130,90)" xlink:href="#pixel7" />
+<use transform="translate(140,90)" xlink:href="#pixel7" />
+<use transform="translate(150,90)" xlink:href="#pixel7" />
+
+<use transform="translate(0,100)" xlink:href="#pixel5" />
+<use transform="translate(10,100)" xlink:href="#pixel6" />
+<use transform="translate(20,100)" xlink:href="#pixel5" />
+<use transform="translate(30,100)" xlink:href="#pixel6" />
+<use transform="translate(40,100)" xlink:href="#pixel5" />
+<use transform="translate(50,100)" xlink:href="#pixel6" />
+<use transform="translate(60,100)" xlink:href="#pixel5" />
+<use transform="translate(70,100)" xlink:href="#pixel6" />
+<use transform="translate(80,100)" xlink:href="#pixel5" />
+<use transform="translate(90,100)" xlink:href="#pixel6" />
+<use transform="translate(100,100)" xlink:href="#pixel5" />
+<use transform="translate(110,100)" xlink:href="#pixel6" />
+<use transform="translate(120,100)" xlink:href="#pixel5" />
+<use transform="translate(130,100)" xlink:href="#pixel6" />
+<use transform="translate(140,100)" xlink:href="#pixel5" />
+<use transform="translate(150,100)" xlink:href="#pixel6" />
+
+<use transform="translate(0,110)" xlink:href="#pixel7" />
+<use transform="translate(10,110)" xlink:href="#pixel7" />
+<use transform="translate(20,110)" xlink:href="#pixel7" />
+<use transform="translate(30,110)" xlink:href="#pixel7" />
+<use transform="translate(40,110)" xlink:href="#pixel7" />
+<use transform="translate(50,110)" xlink:href="#pixel7" />
+<use transform="translate(60,110)" xlink:href="#pixel7" />
+<use transform="translate(70,110)" xlink:href="#pixel7" />
+<use transform="translate(80,110)" xlink:href="#pixel7" />
+<use transform="translate(90,110)" xlink:href="#pixel7" />
+<use transform="translate(100,110)" xlink:href="#pixel7" />
+<use transform="translate(110,110)" xlink:href="#pixel7" />
+<use transform="translate(120,110)" xlink:href="#pixel7" />
+<use transform="translate(130,110)" xlink:href="#pixel7" />
+<use transform="translate(140,110)" xlink:href="#pixel7" />
+<use transform="translate(150,110)" xlink:href="#pixel7" />
+
+<use transform="translate(0,120)" xlink:href="#pixel3" />
+<use transform="translate(10,120)" xlink:href="#pixel6" />
+<use transform="translate(20,120)" xlink:href="#pixel4" />
+<use transform="translate(30,120)" xlink:href="#pixel6" />
+<use transform="translate(40,120)" xlink:href="#pixel3" />
+<use transform="translate(50,120)" xlink:href="#pixel6" />
+<use transform="translate(60,120)" xlink:href="#pixel4" />
+<use transform="translate(70,120)" xlink:href="#pixel6" />
+<use transform="translate(80,120)" xlink:href="#pixel3" />
+<use transform="translate(90,120)" xlink:href="#pixel6" />
+<use transform="translate(100,120)" xlink:href="#pixel4" />
+<use transform="translate(110,120)" xlink:href="#pixel6" />
+<use transform="translate(120,120)" xlink:href="#pixel3" />
+<use transform="translate(130,120)" xlink:href="#pixel6" />
+<use transform="translate(140,120)" xlink:href="#pixel4" />
+<use transform="translate(150,120)" xlink:href="#pixel6" />
+
+<use transform="translate(0,130)" xlink:href="#pixel7" />
+<use transform="translate(10,130)" xlink:href="#pixel7" />
+<use transform="translate(20,130)" xlink:href="#pixel7" />
+<use transform="translate(30,130)" xlink:href="#pixel7" />
+<use transform="translate(40,130)" xlink:href="#pixel7" />
+<use transform="translate(50,130)" xlink:href="#pixel7" />
+<use transform="translate(60,130)" xlink:href="#pixel7" />
+<use transform="translate(70,130)" xlink:href="#pixel7" />
+<use transform="translate(80,130)" xlink:href="#pixel7" />
+<use transform="translate(90,130)" xlink:href="#pixel7" />
+<use transform="translate(100,130)" xlink:href="#pixel7" />
+<use transform="translate(110,130)" xlink:href="#pixel7" />
+<use transform="translate(120,130)" xlink:href="#pixel7" />
+<use transform="translate(130,130)" xlink:href="#pixel7" />
+<use transform="translate(140,130)" xlink:href="#pixel7" />
+<use transform="translate(150,130)" xlink:href="#pixel7" />
+
+<use transform="translate(0,140)" xlink:href="#pixel5" />
+<use transform="translate(10,140)" xlink:href="#pixel6" />
+<use transform="translate(20,140)" xlink:href="#pixel5" />
+<use transform="translate(30,140)" xlink:href="#pixel6" />
+<use transform="translate(40,140)" xlink:href="#pixel5" />
+<use transform="translate(50,140)" xlink:href="#pixel6" />
+<use transform="translate(60,140)" xlink:href="#pixel5" />
+<use transform="translate(70,140)" xlink:href="#pixel6" />
+<use transform="translate(80,140)" xlink:href="#pixel5" />
+<use transform="translate(90,140)" xlink:href="#pixel6" />
+<use transform="translate(100,140)" xlink:href="#pixel5" />
+<use transform="translate(110,140)" xlink:href="#pixel6" />
+<use transform="translate(120,140)" xlink:href="#pixel5" />
+<use transform="translate(130,140)" xlink:href="#pixel6" />
+<use transform="translate(140,140)" xlink:href="#pixel5" />
+<use transform="translate(150,140)" xlink:href="#pixel6" />
+
+<use transform="translate(0,150)" xlink:href="#pixel7" />
+<use transform="translate(10,150)" xlink:href="#pixel7" />
+<use transform="translate(20,150)" xlink:href="#pixel7" />
+<use transform="translate(30,150)" xlink:href="#pixel7" />
+<use transform="translate(40,150)" xlink:href="#pixel7" />
+<use transform="translate(50,150)" xlink:href="#pixel7" />
+<use transform="translate(60,150)" xlink:href="#pixel7" />
+<use transform="translate(70,150)" xlink:href="#pixel7" />
+<use transform="translate(80,150)" xlink:href="#pixel7" />
+<use transform="translate(90,150)" xlink:href="#pixel7" />
+<use transform="translate(100,150)" xlink:href="#pixel7" />
+<use transform="translate(110,150)" xlink:href="#pixel7" />
+<use transform="translate(120,150)" xlink:href="#pixel7" />
+<use transform="translate(130,150)" xlink:href="#pixel7" />
+<use transform="translate(140,150)" xlink:href="#pixel7" />
+<use transform="translate(150,150)" xlink:href="#pixel7" />
+</g>
+</g>
+
+
+
+
+
+
+<g transform="translate(0,260)">
+<text x="1" y="20">First reduced image</text>
+<g transform="translate(40,30)">
+<use transform="translate(0,0)" xlink:href="#pixel1" />
+<use transform="translate(10,0)" xlink:href="#pixel1" />
+<use transform="translate(0,10)" xlink:href="#pixel1" />
+<use transform="translate(10,10)" xlink:href="#pixel1" />
+</g>
+</g>
+
+<g transform="translate(0,320)">
+<text x="1" y="20">Second reduced image</text>
+<g transform="translate(40,30)">
+<use transform="translate(0,0)" xlink:href="#pixel2" />
+<use transform="translate(0,10)" xlink:href="#pixel2" />
+<use transform="translate(10,0)" xlink:href="#pixel2" />
+<use transform="translate(10,10)" xlink:href="#pixel2" />
+</g>
+</g>
+
+<g transform="translate(0,380)">
+<text x="1" y="20">Third reduced image</text>
+<g transform="translate(40,30)">
+<use transform="translate(0,0)" xlink:href="#pixel3" />
+<use transform="translate(10,0)" xlink:href="#pixel3" />
+<use transform="translate(20,0)" xlink:href="#pixel3" />
+<use transform="translate(30,0)" xlink:href="#pixel3" />
+<use transform="translate(0,10)" xlink:href="#pixel3" />
+<use transform="translate(10,10)" xlink:href="#pixel3" />
+<use transform="translate(20,10)" xlink:href="#pixel3" />
+<use transform="translate(30,10)" xlink:href="#pixel3" />
+</g>
+</g>
+
+<g transform="translate(300,20)">
+<text x="1" y="20">Fourth reduced image</text>
+<g transform="translate(170,0)">
+<use transform="translate(0,0)" xlink:href="#pixel4" />
+<use transform="translate(10,0)" xlink:href="#pixel4" />
+<use transform="translate(20,0)" xlink:href="#pixel4" />
+<use transform="translate(30,0)" xlink:href="#pixel4" />
+<use transform="translate(0,10)" xlink:href="#pixel4" />
+<use transform="translate(10,10)" xlink:href="#pixel4" />
+<use transform="translate(20,10)" xlink:href="#pixel4" />
+<use transform="translate(30,10)" xlink:href="#pixel4" />
+<use transform="translate(0,20)" xlink:href="#pixel4" />
+<use transform="translate(10,20)" xlink:href="#pixel4" />
+<use transform="translate(20,20)" xlink:href="#pixel4" />
+<use transform="translate(30,20)" xlink:href="#pixel4" />
+<use transform="translate(0,30)" xlink:href="#pixel4" />
+<use transform="translate(10,30)" xlink:href="#pixel4" />
+<use transform="translate(20,30)" xlink:href="#pixel4" />
+<use transform="translate(30,30)" xlink:href="#pixel4" />
+</g>
+</g>
+
+<g transform="translate(300,80)">
+<text x="1" y="20">Fifth reduced image</text>
+<g transform="translate(170,0)">
+<use transform="translate(0,0)" xlink:href="#pixel5" />
+<use transform="translate(10,0)" xlink:href="#pixel5" />
+<use transform="translate(20,0)" xlink:href="#pixel5" />
+<use transform="translate(30,0)" xlink:href="#pixel5" />
+<use transform="translate(40,0)" xlink:href="#pixel5" />
+<use transform="translate(50,0)" xlink:href="#pixel5" />
+<use transform="translate(60,0)" xlink:href="#pixel5" />
+<use transform="translate(70,0)" xlink:href="#pixel5" />
+<use transform="translate(0,10)" xlink:href="#pixel5" />
+<use transform="translate(10,10)" xlink:href="#pixel5" />
+<use transform="translate(20,10)" xlink:href="#pixel5" />
+<use transform="translate(30,10)" xlink:href="#pixel5" />
+<use transform="translate(40,10)" xlink:href="#pixel5" />
+<use transform="translate(50,10)" xlink:href="#pixel5" />
+<use transform="translate(60,10)" xlink:href="#pixel5" />
+<use transform="translate(70,10)" xlink:href="#pixel5" />
+<use transform="translate(0,20)" xlink:href="#pixel5" />
+<use transform="translate(10,20)" xlink:href="#pixel5" />
+<use transform="translate(20,20)" xlink:href="#pixel5" />
+<use transform="translate(30,20)" xlink:href="#pixel5" />
+<use transform="translate(40,20)" xlink:href="#pixel5" />
+<use transform="translate(50,20)" xlink:href="#pixel5" />
+<use transform="translate(60,20)" xlink:href="#pixel5" />
+<use transform="translate(70,20)" xlink:href="#pixel5" />
+<use transform="translate(0,30)" xlink:href="#pixel5" />
+<use transform="translate(10,30)" xlink:href="#pixel5" />
+<use transform="translate(20,30)" xlink:href="#pixel5" />
+<use transform="translate(30,30)" xlink:href="#pixel5" />
+<use transform="translate(40,30)" xlink:href="#pixel5" />
+<use transform="translate(50,30)" xlink:href="#pixel5" />
+<use transform="translate(60,30)" xlink:href="#pixel5" />
+<use transform="translate(70,30)" xlink:href="#pixel5" />
+</g>
+</g>
+
+<g transform="translate(300,160)">
+<text x="1" y="20">Sixth reduced image</text>
+<g transform="translate(170,0)">
+<use transform="translate(0,0)" xlink:href="#pixel6" />
+<use transform="translate(10,0)" xlink:href="#pixel6" />
+<use transform="translate(20,0)" xlink:href="#pixel6" />
+<use transform="translate(30,0)" xlink:href="#pixel6" />
+<use transform="translate(40,0)" xlink:href="#pixel6" />
+<use transform="translate(50,0)" xlink:href="#pixel6" />
+<use transform="translate(60,0)" xlink:href="#pixel6" />
+<use transform="translate(70,0)" xlink:href="#pixel6" />
+<use transform="translate(0,10)" xlink:href="#pixel6" />
+<use transform="translate(10,10)" xlink:href="#pixel6" />
+<use transform="translate(20,10)" xlink:href="#pixel6" />
+<use transform="translate(30,10)" xlink:href="#pixel6" />
+<use transform="translate(40,10)" xlink:href="#pixel6" />
+<use transform="translate(50,10)" xlink:href="#pixel6" />
+<use transform="translate(60,10)" xlink:href="#pixel6" />
+<use transform="translate(70,10)" xlink:href="#pixel6" />
+<use transform="translate(0,20)" xlink:href="#pixel6" />
+<use transform="translate(10,20)" xlink:href="#pixel6" />
+<use transform="translate(20,20)" xlink:href="#pixel6" />
+<use transform="translate(30,20)" xlink:href="#pixel6" />
+<use transform="translate(40,20)" xlink:href="#pixel6" />
+<use transform="translate(50,20)" xlink:href="#pixel6" />
+<use transform="translate(60,20)" xlink:href="#pixel6" />
+<use transform="translate(70,20)" xlink:href="#pixel6" />
+<use transform="translate(0,30)" xlink:href="#pixel6" />
+<use transform="translate(10,30)" xlink:href="#pixel6" />
+<use transform="translate(20,30)" xlink:href="#pixel6" />
+<use transform="translate(30,30)" xlink:href="#pixel6" />
+<use transform="translate(40,30)" xlink:href="#pixel6" />
+<use transform="translate(50,30)" xlink:href="#pixel6" />
+<use transform="translate(60,30)" xlink:href="#pixel6" />
+<use transform="translate(70,30)" xlink:href="#pixel6" />
+<use transform="translate(0,40)" xlink:href="#pixel6" />
+<use transform="translate(10,40)" xlink:href="#pixel6" />
+<use transform="translate(20,40)" xlink:href="#pixel6" />
+<use transform="translate(30,40)" xlink:href="#pixel6" />
+<use transform="translate(40,40)" xlink:href="#pixel6" />
+<use transform="translate(50,40)" xlink:href="#pixel6" />
+<use transform="translate(60,40)" xlink:href="#pixel6" />
+<use transform="translate(70,40)" xlink:href="#pixel6" />
+<use transform="translate(0,50)" xlink:href="#pixel6" />
+<use transform="translate(10,50)" xlink:href="#pixel6" />
+<use transform="translate(20,50)" xlink:href="#pixel6" />
+<use transform="translate(30,50)" xlink:href="#pixel6" />
+<use transform="translate(40,50)" xlink:href="#pixel6" />
+<use transform="translate(50,50)" xlink:href="#pixel6" />
+<use transform="translate(60,50)" xlink:href="#pixel6" />
+<use transform="translate(70,50)" xlink:href="#pixel6" />
+<use transform="translate(0,60)" xlink:href="#pixel6" />
+<use transform="translate(10,60)" xlink:href="#pixel6" />
+<use transform="translate(20,60)" xlink:href="#pixel6" />
+<use transform="translate(30,60)" xlink:href="#pixel6" />
+<use transform="translate(40,60)" xlink:href="#pixel6" />
+<use transform="translate(50,60)" xlink:href="#pixel6" />
+<use transform="translate(60,60)" xlink:href="#pixel6" />
+<use transform="translate(70,60)" xlink:href="#pixel6" />
+<use transform="translate(0,70)" xlink:href="#pixel6" />
+<use transform="translate(10,70)" xlink:href="#pixel6" />
+<use transform="translate(20,70)" xlink:href="#pixel6" />
+<use transform="translate(30,70)" xlink:href="#pixel6" />
+<use transform="translate(40,70)" xlink:href="#pixel6" />
+<use transform="translate(50,70)" xlink:href="#pixel6" />
+<use transform="translate(60,70)" xlink:href="#pixel6" />
+<use transform="translate(70,70)" xlink:href="#pixel6" />
+</g>
+</g>
+
+<g transform="translate(300,260)">
+<text x="1" y="20">Seventh reduced image</text>
+<g transform="translate(170,0)">
+<use transform="translate(0,0)" xlink:href="#pixel7" />
+<use transform="translate(10,0)" xlink:href="#pixel7" />
+<use transform="translate(20,0)" xlink:href="#pixel7" />
+<use transform="translate(30,0)" xlink:href="#pixel7" />
+<use transform="translate(40,0)" xlink:href="#pixel7" />
+<use transform="translate(50,0)" xlink:href="#pixel7" />
+<use transform="translate(60,0)" xlink:href="#pixel7" />
+<use transform="translate(70,0)" xlink:href="#pixel7" />
+<use transform="translate(80,0)" xlink:href="#pixel7" />
+<use transform="translate(90,0)" xlink:href="#pixel7" />
+<use transform="translate(100,0)" xlink:href="#pixel7" />
+<use transform="translate(110,0)" xlink:href="#pixel7" />
+<use transform="translate(120,0)" xlink:href="#pixel7" />
+<use transform="translate(130,0)" xlink:href="#pixel7" />
+<use transform="translate(140,0)" xlink:href="#pixel7" />
+<use transform="translate(150,0)" xlink:href="#pixel7" />
+
+<use transform="translate(0,10)" xlink:href="#pixel7" />
+<use transform="translate(10,10)" xlink:href="#pixel7" />
+<use transform="translate(20,10)" xlink:href="#pixel7" />
+<use transform="translate(30,10)" xlink:href="#pixel7" />
+<use transform="translate(40,10)" xlink:href="#pixel7" />
+<use transform="translate(50,10)" xlink:href="#pixel7" />
+<use transform="translate(60,10)" xlink:href="#pixel7" />
+<use transform="translate(70,10)" xlink:href="#pixel7" />
+<use transform="translate(80,10)" xlink:href="#pixel7" />
+<use transform="translate(90,10)" xlink:href="#pixel7" />
+<use transform="translate(100,10)" xlink:href="#pixel7" />
+<use transform="translate(110,10)" xlink:href="#pixel7" />
+<use transform="translate(120,10)" xlink:href="#pixel7" />
+<use transform="translate(130,10)" xlink:href="#pixel7" />
+<use transform="translate(140,10)" xlink:href="#pixel7" />
+<use transform="translate(150,10)" xlink:href="#pixel7" />
+<use transform="translate(0,20)" xlink:href="#pixel7" />
+<use transform="translate(10,20)" xlink:href="#pixel7" />
+<use transform="translate(20,20)" xlink:href="#pixel7" />
+<use transform="translate(30,20)" xlink:href="#pixel7" />
+<use transform="translate(40,20)" xlink:href="#pixel7" />
+<use transform="translate(50,20)" xlink:href="#pixel7" />
+<use transform="translate(60,20)" xlink:href="#pixel7" />
+<use transform="translate(70,20)" xlink:href="#pixel7" />
+<use transform="translate(80,20)" xlink:href="#pixel7" />
+<use transform="translate(90,20)" xlink:href="#pixel7" />
+<use transform="translate(100,20)" xlink:href="#pixel7" />
+<use transform="translate(110,20)" xlink:href="#pixel7" />
+<use transform="translate(120,20)" xlink:href="#pixel7" />
+<use transform="translate(130,20)" xlink:href="#pixel7" />
+<use transform="translate(140,20)" xlink:href="#pixel7" />
+<use transform="translate(150,20)" xlink:href="#pixel7" />
+<use transform="translate(0,30)" xlink:href="#pixel7" />
+<use transform="translate(10,30)" xlink:href="#pixel7" />
+<use transform="translate(20,30)" xlink:href="#pixel7" />
+<use transform="translate(30,30)" xlink:href="#pixel7" />
+<use transform="translate(40,30)" xlink:href="#pixel7" />
+<use transform="translate(50,30)" xlink:href="#pixel7" />
+<use transform="translate(60,30)" xlink:href="#pixel7" />
+<use transform="translate(70,30)" xlink:href="#pixel7" />
+<use transform="translate(80,30)" xlink:href="#pixel7" />
+<use transform="translate(90,30)" xlink:href="#pixel7" />
+<use transform="translate(100,30)" xlink:href="#pixel7" />
+<use transform="translate(110,30)" xlink:href="#pixel7" />
+<use transform="translate(120,30)" xlink:href="#pixel7" />
+<use transform="translate(130,30)" xlink:href="#pixel7" />
+<use transform="translate(140,30)" xlink:href="#pixel7" />
+<use transform="translate(150,30)" xlink:href="#pixel7" />
+<use transform="translate(0,40)" xlink:href="#pixel7" />
+<use transform="translate(10,40)" xlink:href="#pixel7" />
+<use transform="translate(20,40)" xlink:href="#pixel7" />
+<use transform="translate(30,40)" xlink:href="#pixel7" />
+<use transform="translate(40,40)" xlink:href="#pixel7" />
+<use transform="translate(50,40)" xlink:href="#pixel7" />
+<use transform="translate(60,40)" xlink:href="#pixel7" />
+<use transform="translate(70,40)" xlink:href="#pixel7" />
+<use transform="translate(80,40)" xlink:href="#pixel7" />
+<use transform="translate(90,40)" xlink:href="#pixel7" />
+<use transform="translate(100,40)" xlink:href="#pixel7" />
+<use transform="translate(110,40)" xlink:href="#pixel7" />
+<use transform="translate(120,40)" xlink:href="#pixel7" />
+<use transform="translate(130,40)" xlink:href="#pixel7" />
+<use transform="translate(140,40)" xlink:href="#pixel7" />
+<use transform="translate(150,40)" xlink:href="#pixel7" />
+<use transform="translate(0,50)" xlink:href="#pixel7" />
+<use transform="translate(10,50)" xlink:href="#pixel7" />
+<use transform="translate(20,50)" xlink:href="#pixel7" />
+<use transform="translate(30,50)" xlink:href="#pixel7" />
+<use transform="translate(40,50)" xlink:href="#pixel7" />
+<use transform="translate(50,50)" xlink:href="#pixel7" />
+<use transform="translate(60,50)" xlink:href="#pixel7" />
+<use transform="translate(70,50)" xlink:href="#pixel7" />
+<use transform="translate(80,50)" xlink:href="#pixel7" />
+<use transform="translate(90,50)" xlink:href="#pixel7" />
+<use transform="translate(100,50)" xlink:href="#pixel7" />
+<use transform="translate(110,50)" xlink:href="#pixel7" />
+<use transform="translate(120,50)" xlink:href="#pixel7" />
+<use transform="translate(130,50)" xlink:href="#pixel7" />
+<use transform="translate(140,50)" xlink:href="#pixel7" />
+<use transform="translate(150,50)" xlink:href="#pixel7" />
+<use transform="translate(0,60)" xlink:href="#pixel7" />
+<use transform="translate(10,60)" xlink:href="#pixel7" />
+<use transform="translate(20,60)" xlink:href="#pixel7" />
+<use transform="translate(30,60)" xlink:href="#pixel7" />
+<use transform="translate(40,60)" xlink:href="#pixel7" />
+<use transform="translate(50,60)" xlink:href="#pixel7" />
+<use transform="translate(60,60)" xlink:href="#pixel7" />
+<use transform="translate(70,60)" xlink:href="#pixel7" />
+<use transform="translate(80,60)" xlink:href="#pixel7" />
+<use transform="translate(90,60)" xlink:href="#pixel7" />
+<use transform="translate(100,60)" xlink:href="#pixel7" />
+<use transform="translate(110,60)" xlink:href="#pixel7" />
+<use transform="translate(120,60)" xlink:href="#pixel7" />
+<use transform="translate(130,60)" xlink:href="#pixel7" />
+<use transform="translate(140,60)" xlink:href="#pixel7" />
+<use transform="translate(150,60)" xlink:href="#pixel7" />
+<use transform="translate(0,70)" xlink:href="#pixel7" />
+<use transform="translate(10,70)" xlink:href="#pixel7" />
+<use transform="translate(20,70)" xlink:href="#pixel7" />
+<use transform="translate(30,70)" xlink:href="#pixel7" />
+<use transform="translate(40,70)" xlink:href="#pixel7" />
+<use transform="translate(50,70)" xlink:href="#pixel7" />
+<use transform="translate(60,70)" xlink:href="#pixel7" />
+<use transform="translate(70,70)" xlink:href="#pixel7" />
+<use transform="translate(80,70)" xlink:href="#pixel7" />
+<use transform="translate(90,70)" xlink:href="#pixel7" />
+<use transform="translate(100,70)" xlink:href="#pixel7" />
+<use transform="translate(110,70)" xlink:href="#pixel7" />
+<use transform="translate(120,70)" xlink:href="#pixel7" />
+<use transform="translate(130,70)" xlink:href="#pixel7" />
+<use transform="translate(140,70)" xlink:href="#pixel7" />
+<use transform="translate(150,70)" xlink:href="#pixel7" />
+</g>
+</g>
+
+</svg>
+

@@ -1,0 +1,348 @@
+body 
+    {
+    background-color: white;
+		font-size:10pt;
+    font-family:Arial, sans-serif;
+    color:black;
+		font-weight:normal;
+    }
+
+.Href
+    {
+    font-size:10pt;
+    font-family:Arial, sans-serif;
+    color:green;
+    text-decoration:underline;
+    font-weight:normal;
+    }
+p
+    {
+    text-align:justify;
+    font-size:10pt;
+    font-family:Arial, sans-serif;
+    color:black;
+    }
+
+dl
+    {
+    text-align:justify;
+    font-size:10pt;
+    font-family:Arial, sans-serif;
+    color:black;
+    font-weight:normal
+    }
+		
+dt
+    {
+    text-align:justify;
+    font-size:10pt;
+    font-family:Arial, sans-serif;
+    color:green;
+    font-weight:bold
+    }
+
+dt.NormRef
+    {
+    text-align:justify;
+    font-size:10pt;
+    font-family:Arial, sans-serif;
+    color:red;
+    font-weight:bold
+    }
+dd
+    {
+    text-align:justify;
+    font-size:10pt;
+    font-family:Arial, sans-serif;
+		font-weight:normal;
+    color:black;
+    margin-left:12pt;
+    }
+p.Annex
+    {
+    text-align:center;
+    font-size:10pt;
+    font-family:Arial, sans-serif;
+    color:black;
+    }
+p.Parameters
+    {
+    text-align:justify;
+    font-size:10pt;
+    font-family:Arial, sans-serif;
+    color:green;
+    }
+p.Parameterlist
+    {
+    text-align:justify;
+    font-size:10pt;
+    font-family:Arial, sans-serif;
+    color:black;
+    margin-left:10pt;
+    }
+p.Description
+    {
+    text-align:justify;
+    font-size:10pt;
+    font-family:Arial, sans-serif;
+    color:green;
+    }
+p.Descriptionpara
+    {
+    text-align:justify;
+    font-size:10pt;
+    font-family:Arial, sans-serif;
+    color:black;
+    }
+p.NormRefDef
+  {
+	  text-align:justify;
+    font-size:10pt;
+    font-family:Arial, sans-serif;
+		font-weight:normal;
+    color:black;
+    }
+p.References
+    {
+    text-align:justify;
+    font-size:10pt;
+    font-family:Arial, sans-serif;
+    color:green;
+    }
+p.Referencelist
+    {
+    text-align:justify;
+    font-size:10pt;
+    font-family:Arial, sans-serif;
+    color:black;
+    margin-left:10pt;
+    }
+
+p.Reference
+    {
+    text-align:justify;
+    font-size:10pt;
+    font-family:Arial, sans-serif;
+    font-style:italic;
+    color:black;
+    }
+p.CoverRight
+    {
+    text-align:right;
+    font-size:12pt;
+    font-family:Arial, sans-serif;
+    color:black;
+    font-weight:bold;}
+p.CoverLeft
+    {
+    text-align:left;
+    font-size:10pt;
+    font-family:Arial, sans-serif;
+    color:black;
+    font-weight:bold;}
+p.CoverTitle
+    {
+    text-align:left;
+    font-size:14pt;
+    font-family:Arial, sans-serif;
+    color:black;
+    font-weight:bold;}
+
+ul
+    {
+    text-align:justify;
+    font-size:10pt;
+    font-family:Arial, sans-serif;
+    color:black;
+    }
+		
+ol
+    {
+    text-align:justify;
+    font-size:10pt;
+    font-family:Arial, sans-serif;
+    color:black;
+		list-style-type: lower-alpha;
+		}
+		
+li.Contents
+    {
+    text-align:left;
+    font-size:10pt;
+    font-family:Arial, sans-serif;
+    color:black;
+    font-weight:bold;}
+li
+    {
+    text-align:justify;
+    font-size:10pt;
+    font-family:Arial, sans-serif;
+    color:black;
+    }
+
+div.pagethrow
+    {
+    page-break-before: always;
+    }
+h1
+    {
+    text-align:justify;
+    font-size:14pt;
+    font-family:Arial, sans-serif;
+    color:blue;
+    font-weight:bold;
+    }
+h1.Annex
+    {
+    text-align:center;
+    font-size:14pt;
+    font-family:Arial, sans-serif;
+    color:black;
+    font-weight:bold;
+    }
+h2
+    {
+    text-align:justify;
+    font-size:12pt;
+    font-family:Arial, sans-serif;
+    color:red;
+    font-weight:bold;
+    }
+h3
+    {
+    text-align:justify;
+    font-size:10pt;
+    font-family:Arial, sans-serif;
+    color:black;
+    font-weight:bold;
+    }
+h4
+    {
+    text-align:justify;
+    font-size:10pt;
+    font-family:Arial, sans-serif;
+    color:black;
+    font-weight:bold;
+    }
+h5
+    {
+    text-align:justify;
+    font-size:10pt;
+    font-family:Arial, sans-serif;
+    color:black;
+    font-weight:normal;
+    }
+
+p.Figuretitle
+    {
+    text-align:center;
+    line-height:11pt;
+    font-size:10pt;
+    font-family:Arial, sans-serif;
+    color:black;
+    font-weight:bold;}
+
+p.Equationtitle
+    {
+    text-align:center;
+    line-height:11pt;
+    font-size:10pt;
+    font-family:Arial, sans-serif;
+    color:black;
+    font-weight:bold;}
+
+p.Equationcentre
+    {
+    text-align:center;
+    line-height:11pt;
+    font-size:10pt;
+    font-family:Arial, sans-serif;
+    color:black;}
+
+p.Tabletitle
+    {
+    text-align:center;
+    font-size:10pt;
+    font-family:Arial, sans-serif;
+    color:red;
+    font-weight:bold;}
+
+p.Note
+    {
+    text-align:justify;
+    font-size:8pt;
+    font-family:Arial, sans-serif;
+    color:maroon;}
+
+span.chunk
+    {
+    font-size:10pt;
+    font-family:Courier;
+    color:purple;
+    font-weight:bold;
+    }
+
+span.Definition
+	{
+	color:green;
+	font-style:italic;}
+span.xref
+	{
+	color:blue;}
+span.NormRef
+	{
+	color:red;}
+span.bibref
+	{
+	color:green;}
+
+table.Regular
+    {
+    font-size:10pt;
+    font-family:Arial, sans-serif;
+    color:black;
+    
+    margin-top:4pt;
+    border-collapse:collapse;
+    border: 1px solid black;}
+table.ISTitle
+    {
+    font-size:14pt;
+    font-family:Arial, sans-serif;
+    color:black;
+    font-weight:bold;}
+
+td.ISTitle
+    {
+    font-size:10pt;
+    font-family:Arial, sans-serif;
+    color:black;
+    }
+
+td.Regular
+    {
+    font-size:10pt;
+    font-family:Arial, sans-serif;
+    color:black;
+    
+    border: 1px solid black;
+    padding: 2pt;
+    vertical-align:top;
+    }
+
+th
+    {
+    font-size:10pt;
+    font-family:Arial, sans-serif;
+    color:green;
+    
+    border: 1px solid black;
+    padding: 2pt;
+    vertical-align:top;
+    }
+
+pre
+    {
+		font-size:10pt;
+		color:black;
+		}

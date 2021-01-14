@@ -1,10 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <title>Portable Network Graphics (PNG) Specification (Second Edition)</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="./isostyle.css" type="text/css" />
     <style type="text/css">
     /* remove annoying green color from definition terms */
@@ -42,7 +40,7 @@
       packages: <a href="REC-SVG11-20030114.zip">zip archive of
       HTML</a> (without external dependencies) and <a
       href="REC-SVG11-20030114.pdf">PDF</a>.</p-->
-  
+
       <p>See also the <a href="http://www.w3.org/Consortium/Translation/">translations</a> of this document.</p>
 
 <p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright"> Copyright</a> &#xa9; 2003 <a href="http://www.w3.org/"><acronym title="World Wide Web Consortium">W3C</acronym></a><sup>&#xae;</sup> (<a href="http://www.lcs.mit.edu/"><acronym title="Massachusetts Institute of Technology">MIT</acronym></a>, <a href="http://www.ercim.org/"><acronym title="European Research Consortium for Informatics and Mathematics">ERCIM</acronym></a>, <a href="http://www.keio.ac.jp/">Keio</a>), All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a>, <a href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a> and <a href="http://www.w3.org/Consortium/Legal/copyright-software">software licensing</a> rules apply.</p>
@@ -56,8 +54,8 @@
  <p>This specification defines an Internet Media Type image/png.</p>
 
     <h2 id="status">Status of this document</h2>
-<p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current W3C publications and the latest revision of this technical report can be found in the <a href="http://www.w3.org/TR/">W3C technical reports index</a> at http://www.w3.org/TR/.</em></p> 
-    
+<p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current W3C publications and the latest revision of this technical report can be found in the <a href="http://www.w3.org/TR/">W3C technical reports index</a> at http://www.w3.org/TR/.</em></p>
+
     <p>This document is the 14 October 2003 W3C
     Recommendation of the PNG specification, second edition. It is also International Standard, ISO/IEC 15948:2003. The two documents have exactly identical content except for cover page and boilerplate differences as appropriate to the two organisations.</p>
 
@@ -67,7 +65,7 @@
 
 <p>The PNG specification enjoys a good level of <a href="http://www.libpng.org/pub/png/pngstatus.html">implementation</a>  with good interoperability. At the time of this publication more than 180 <a href="http://www.libpng.org/pub/png/pngapvw.html">image viewers</a> could display PNG images and over 100 <a href="http://www.libpng.org/pub/png/pngaped.html">image editors</a> could read and write valid PNG files. Full support of PNG is  required  for conforming <a href="/Graphics/SVG">SVG</a> viewers; at the time of publication all eighteen <a href="/Graphics/SVG/SVG-Implementations.htm8#viewer">SVG viewers</a> had PNG support. HTML has no required image formats, but over 60 <a href="http://www.libpng.org/pub/png/pngapbr.html">HTML browsers</a> had at least basic support of PNG images.</p>
 
-    <p>Public comments on this W3C Recommendation are welcome. 
+    <p>Public comments on this W3C Recommendation are welcome.
     Please send them to the <a href="http://lists.w3.org/Archives/Public/png-group">archived</a> list <a href="mailto:png-group@w3.org">png-group@w3.org</a> .</p>
 
     <p>The latest information regarding <a rel="disclosure"
@@ -76,19 +74,19 @@
     Web. As of this publication, the PNG Group are not
     aware of any royalty-bearing patents they believe to be
     essential to PNG.</p>
-    
+
     <p>This document has been produced by ISO/IEC JTC1 SC24 and the PNG Group as part of the <a
     href="http://www.w3.org/Graphics/Activity">Graphics
     Activity</a> within the <a href="http://www.w3.org/Interaction/">W3C
     Interaction Domain</a>. </p>
-    
+
     <!-- removed p>A list of current W3C Recommendations and
     other technical documents can be found at <a
 	href="http://www.w3.org/TR/">http://www.w3.org/TR/</a>.
-	W3C  publications may be updated, replaced, or obsoleted by other 
+	W3C  publications may be updated, replaced, or obsoleted by other
   documents at any time.
     </p-->
-    
+
     <div><p><strong>Note:</strong> To provide the highest quality images, this specification uses SVG diagrams with a PNG fallback using the HTML object element. SVG-enabled browsers will see the SVG figures with selectable text, other browsers will display the raster PNG version.</p>
 <p>W3C is aware that there is a <a href="http://bugzilla.mozilla.org/show_bug.cgi?id=133567">known incompatibility</a> between the unsupported beta of Adobe SVG plugin for Linux and Mozilla versions greater than 0.9.9 due to changes in the plug-in API, causing a browser crash. Therefore, a normative <a href="./index-noobject.html">PNG-only alternative version</a> is available that does not use an object element. The two versions are otherwise identical.</p></div>
 
@@ -110,7 +108,7 @@ Scope</a></li>
 Normative references</a></li>
 
 <li class='Contents'><a class='Href' href='#3Defsandabbrevs'>3
-Terms, definitions, and abbreviated terms</a> 
+Terms, definitions, and abbreviated terms</a>
 
 <ul>
 <li class='Contents'><a class='Href' href='#3Definitions'>3.1
@@ -122,7 +120,7 @@ Abbreviated terms</a></li>
 </li>
 
 <li class='Contents'><a class='Href' href='#4Concepts'>4
-Concepts</a> 
+Concepts</a>
 
 <ul>
 <li class='Contents'><a class='Href' href=
@@ -133,7 +131,7 @@ Concepts</a>
 
 <li class='Contents'><a class='Href' href=
 '#4Concepts.PNGImageTransformation'>4.3 Reference image to PNG
-image transformation</a> 
+image transformation</a>
 
 <ul>
 <li class='Contents'><a class='Href' href=
@@ -160,7 +158,7 @@ image transformation</a>
 '#4Concepts.PNGImage'>4.4 PNG image</a></li>
 
 <li class='Contents'><a class='Href' href=
-'#4Concepts.Encoding'>4.5 Encoding the PNG image</a> 
+'#4Concepts.Encoding'>4.5 Encoding the PNG image</a>
 
 <ul>
 <li class='Contents'><a class='Href' href=
@@ -188,7 +186,7 @@ serialization</a></li>
 '#4Concepts.AncillInfo'>4.6 Additional information</a></li>
 
 <li class='Contents'><a class='Href' href='#4Concepts.Format'>4.7
-PNG datastream</a> 
+PNG datastream</a>
 
 <ul>
 <li class='Contents'><a class='Href' href=
@@ -208,7 +206,7 @@ Error handling</a></li>
 </li>
 
 <li class='Contents'><a class='Href' href='#5DataRep'>5
-Datastream structure</a> 
+Datastream structure</a>
 
 <ul>
 <li class='Contents'><a class='Href' href='#5Introduction'>5.1
@@ -233,7 +231,7 @@ Chunk ordering</a></li>
 </li>
 
 <li class='Contents'><a class='Href' href='#6Transformation'>6
-Reference image to PNG image transformation</a> 
+Reference image to PNG image transformation</a>
 
 <ul>
 <li class='Contents'><a class='Href' href='#6Colour-values'>6.1
@@ -245,7 +243,7 @@ Colour types and values</a></li>
 </li>
 
 <li class='Contents'><a class='Href' href='#7Transformation'>7
-Encoding the PNG image as a PNG datastream</a> 
+Encoding the PNG image as a PNG datastream</a>
 
 <ul>
 <li class='Contents'><a class='Href' href=
@@ -260,7 +258,7 @@ Filtering</a></li>
 </li>
 
 <li class='Contents'><a class='Href' href='#8Interlace'>8
-Interlacing and pass extraction</a> 
+Interlacing and pass extraction</a>
 
 <ul>
 <li class='Contents'><a class='Href' href='#8InterlaceIntro'>8.1
@@ -272,7 +270,7 @@ Introduction</a></li>
 </li>
 
 <li class='Contents'><a class='Href' href='#9Filters'>9
-Filtering</a> 
+Filtering</a>
 
 <ul>
 <li class='Contents'><a class='Href' href='#9FtIntro'>9.1 Filter
@@ -290,7 +288,7 @@ Filter types for filter method 0</a></li>
 </li>
 
 <li class='Contents'><a class='Href' href='#10Compression'>10
-Compression</a> 
+Compression</a>
 
 <ul>
 <li class='Contents'><a class='Href' href=
@@ -306,14 +304,14 @@ scanlines</a></li>
 </li>
 
 <li class='Contents'><a class='Href' href='#11Chunks'>11 Chunk
-specifications</a> 
+specifications</a>
 
 <ul>
 <li class='Contents'><a class='Href' href='#11Introduction'>11.1
 Introduction</a></li>
 
 <li class='Contents'><a class='Href' href=
-'#11Critical-chunks'>11.2 Critical chunks</a> 
+'#11Critical-chunks'>11.2 Critical chunks</a>
 
 <ul>
 <li class='Contents'><a class='Href' href='#11CcGen'>11.2.1
@@ -334,14 +332,14 @@ class='chunk'>IEND</span> Image trailer</a></li>
 </li>
 
 <li class='Contents'><a class='Href' href=
-'#11Ancillary-chunks'>11.3 Ancillary chunks</a> 
+'#11Ancillary-chunks'>11.3 Ancillary chunks</a>
 
 <ul>
 <li class='Contents'><a class='Href' href='#11AcGen'>11.3.1
 General</a></li>
 
 <li class='Contents'><a class='Href' href='#11transinfo'>11.3.2
-Transparency information</a> 
+Transparency information</a>
 
 <ul>
 <li class='Contents'><a class='Href' href='#11tRNS'>11.3.2.1
@@ -350,7 +348,7 @@ Transparency information</a>
 </li>
 
 <li class='Contents'><a class='Href' href=
-'#11addnlcolinfo'>11.3.3 Colour space information</a> 
+'#11addnlcolinfo'>11.3.3 Colour space information</a>
 
 <ul>
 <li class='Contents'><a class='Href' href='#11cHRM'>11.3.3.1
@@ -373,7 +371,7 @@ space</a></li>
 </li>
 
 <li class='Contents'><a class='Href' href='#11textinfo'>11.3.4
-Textual information</a> 
+Textual information</a>
 
 <ul>
 <li class='Contents'><a class='Href' href='#11textIntro'>11.3.4.1
@@ -395,7 +393,7 @@ data</a></li>
 </li>
 
 <li class='Contents'><a class='Href' href='#11addnlsiinfo'>11.3.5
-Miscellaneous information</a> 
+Miscellaneous information</a>
 
 <ul>
 <li class='Contents'><a class='Href' href='#11bKGD'>11.3.5.1
@@ -414,7 +412,7 @@ dimensions</a></li>
 </li>
 
 <li class='Contents'><a class='Href' href=
-'#11timestampinfo'>11.3.6 Time stamp information</a> 
+'#11timestampinfo'>11.3.6 Time stamp information</a>
 
 <ul>
 <li class='Contents'><a class='Href' href='#11tIME'>11.3.6.1
@@ -429,7 +427,7 @@ time</a></li>
 </li>
 
 <li class='Contents'><a class='Href' href='#12Encoders'>12 PNG
-Encoders</a> 
+Encoders</a>
 
 <ul>
 <li class='Contents'><a class='Href' href='#12Introduction'>12.1
@@ -464,7 +462,7 @@ Compression</a></li>
 '#12Text-chunk-processing'>12.10 Text chunk processing</a></li>
 
 <li class='Contents'><a class='Href' href=
-'#12Chunk-processing'>12.11 Chunking</a> 
+'#12Chunk-processing'>12.11 Chunking</a>
 
 <ul>
 <li class='Contents'><a class='Href' href=
@@ -482,7 +480,7 @@ Ancillary chunks</a></li>
 </li>
 
 <li class='Contents'><a class='Href' href='#13Decoders'>13 PNG
-decoders and viewers</a> 
+decoders and viewers</a>
 
 <ul>
 <li class='Contents'><a class='Href' href='#13Introduction'>13.1
@@ -545,7 +543,7 @@ Histogram and suggested palette usage</a></li>
 </li>
 
 <li class='Contents'><a class='Href' href='#14EditorsExt'>14
-Editors and extensions</a> 
+Editors and extensions</a>
 
 <ul>
 <li class='Contents'><a class='Href' href=
@@ -555,7 +553,7 @@ Editors and extensions</a>
 Behaviour of PNG editors</a></li>
 
 <li class='Contents'><a class='Href' href=
-'#14Ordering-of-chunks'>14.3 Ordering of chunks</a> 
+'#14Ordering-of-chunks'>14.3 Ordering of chunks</a>
 
 <ul>
 <li class='Contents'><a class='Href' href=
@@ -571,11 +569,11 @@ chunks</a></li>
 </li>
 
 <li class='Contents'><a class='Href' href='#15Conformance'>15
-Conformance</a> 
+Conformance</a>
 
 <ul>
 <li class='Contents'><a class='Href' href='#15ConfIntro'>15.1
-Introduction</a> 
+Introduction</a>
 
 <ul>
 <li class='Contents'><a class='Href' href=
@@ -587,7 +585,7 @@ Scope</a></li>
 </li>
 
 <li class='Contents'><a class='Href' href=
-'#15ConformanceConf'>15.2 Conformance conditions</a> 
+'#15ConformanceConf'>15.2 Conformance conditions</a>
 
 <ul>
 <li class='Contents'><a class='Href' href=
@@ -610,7 +608,7 @@ decoders</a></li>
 </li>
 
 <li class='Contents'><a class='Href' href='#A-Conventions'>Annex
-A File conventions and Internet media type</a> 
+A File conventions and Internet media type</a>
 
 <ul>
 <li class='Contents'><a class='Href' href=
@@ -635,7 +633,7 @@ types</a></li>
 D Sample Cyclic Redundancy Code implementation</a></li>
 
 <li class='Contents'><a class='Href' href='#E-Resources'>Annex E
-Online resources</a> 
+Online resources</a>
 
 <ul>
 <li class='Contents'><a class='Href' href=
@@ -660,7 +658,7 @@ mail</a></li>
 </li>
 
 <li class='Contents'><a class='Href' href='#F-Relationship'>Annex
-F Relationship to W3C PNG</a> 
+F Relationship to W3C PNG</a>
 
 <ul>
 <li class='Contents'><a class='Href' href='#F-Editor10'>Editor
@@ -680,7 +678,7 @@ F Relationship to W3C PNG</a>
 
 <li class='Contents'><a class='Href' href='#F-ChangeList'>List of
 changes between W3C Recommendation PNG Specification Version 1.0
-and this International Standard</a> 
+and this International Standard</a>
 
 <ul>
 <li class='Contents'><a class='Href' href=
@@ -813,7 +811,7 @@ control (HDLC) procedures &mdash; Frame structure</i>.</p>
 8859-1:1998</a>, <i>Information technology &mdash; 8-bit
 single-byte coded graphic character sets &mdash; Part 1: Latin
 alphabet No. 1</i>.<br class="xhtml" />
- For convenience, here is a non-normative  <a href="iso_8859-1.txt">sample text file</a> 
+ For convenience, here is a non-normative  <a href="iso_8859-1.txt">sample text file</a>
  describing the codes and associated character names.</p>
 
 <p class="NormRefDef"><a name="2-ISO-9899">ISO/IEC
@@ -943,7 +941,7 @@ same number of entries as the <a href="#3palette"><span class=
 information. A <a href="#3PNGdecoder"><span class=
 "Definition">PNG decoder</span></a>, without processing an
 ancillary chunk, can still produce a meaningful image, though not
-necessarily the best possible image. 
+necessarily the best possible image.
 <!-- agreed: don't need to define a bit -->
 </dd>
 
@@ -998,7 +996,7 @@ except for the brightness information.</dd>
 "Definition">PNG datastream</span></a>. Each chunk has a chunk
 type. Most chunks also include data. The format and meaning of
 the data within the chunk are determined by the chunk type.
-Each chunk is either a 
+Each chunk is either a
 <a href="#3criticalChunk"><span class=
 "Definition">critical chunk</span></a> or an <a href=
 "#3ancillaryChunk"><span class=
@@ -2153,7 +2151,7 @@ beginning with an <a href="#11IHDR"><span class=
 <h2><a name="5Chunk-layout">5.3 Chunk layout</a></h2>
 
 <p>Each chunk consists of three or four fields (see figure 5.1).
-The meaning of the fields is described in 
+The meaning of the fields is described in
 <a href="#table51"><span class="tabref">Table 5.1</span></a>.
 The chunk data field may be empty.</p>
 
@@ -2767,7 +2765,7 @@ with the value -2<sup>31</sup>.</p>
 
 <p>
 <object height="310" width="810" data="figures/fig71.svg" type="image/svg+xml">
-  <img height="310" width="810" src="png-figures/fig71.png" alt="Figure 7.1: Integer representation in PNG" /> 
+  <img height="310" width="810" src="png-figures/fig71.png" alt="Figure 7.1: Integer representation in PNG" />
 </object>
 </p>
 
@@ -3562,7 +3560,7 @@ Transparency</a></h4>
 alpha values that are associated with palette entries (for
 indexed-colour images) or a single transparent colour (for
 greyscale and truecolour images). The <span class=
-"chunk">tRNS</span> chunk contains: 
+"chunk">tRNS</span> chunk contains:
 <!-- ************Page Break******************* -->
 </p>
 
@@ -4742,7 +4740,7 @@ and blue values, but this is not required. Similarly, <span
 class="chunk">sPLT</span> entries can have non-opaque alpha
 values even when the PNG image does not use transparency.</p>
 
-<p>Each frequency value is proportional to the fraction of 
+<p>Each frequency value is proportional to the fraction of
 the pixels in the image for which that palette entry
 is the closest match in RGBA space, before the image has been composited against any
 background. The exact scale factor is chosen by the PNG encoder;
@@ -5399,7 +5397,7 @@ resulting palette for use with their intended background colour
 Histogram and suggested palette usage</span></a>).
 </p>
 
-<p>For providing suggested palettes, 
+<p>For providing suggested palettes,
 the <a href="#11sPLT"><span class="chunk">sPLT</span></a>
 chunk is more flexible than the <a href="#11PLTE"><span class=
 "chunk">PLTE</span></a> chunk in
@@ -5520,10 +5518,10 @@ support for international text, represented using the UTF-8
 encoding of UCS. Encoders should discourage the creation of
 single lines of text longer than 79 characters, in order to
 facilitate easy reading. It is recommended that text items less
-than 1024 bytes in size should be output using uncompressed 
+than 1024 bytes in size should be output using uncompressed
 text chunks. It is
 recommended that the basic title and author keywords be output
-using uncompressed text chunks. 
+using uncompressed text chunks.
 Placing large text chunks after the
 image data (after the <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a> chunks) can speed up image display in
@@ -6084,7 +6082,7 @@ int block_width[7]   = { 8, 4, 4, 2, 2, 1, 1 };
 
 int pass;
 long row, col;
-   
+
 pass = 0;
 while (pass &lt; 7)
 {
@@ -6519,7 +6517,7 @@ reference in the comments below.</p>
    07  int ialpha;
    08  float alpha, compalpha;
    09  float gamfg, linfg, gambg, linbg, comppix, gcvideo;
-   
+
        /* Get max sample values in data and frame buffer */
    10  fg_maxsample = (1 &lt;&lt; fg_sample_depth) - 1;
    11  bg_maxsample = (1 &lt;&lt; bg_sample_depth) - 1;
@@ -6534,7 +6532,7 @@ reference in the comments below.</p>
         * with lookup tables.
         */
    13  ialpha = foreground[3];
-   
+
    14  if (ialpha == 0) {
            /*
             * Foreground image is transparent here.
@@ -6562,7 +6560,7 @@ reference in the comments below.</p>
             */
    25      alpha = (float) ialpha / fg_maxsample;
    26      compalpha = 1.0 - alpha;
-   
+
    27      for (i = 0; i &lt; 3; i++) {
                /*
                 * Convert foreground and background to floating
@@ -6577,7 +6575,7 @@ reference in the comments below.</p>
 <!-- ************Page Break******************* -->
 <pre>
    31          linbg = pow(gambg, 1.0 / bg_gamma);
-               /* 
+               /*
                 * Composite.
                 */
    32          comppix = linfg * alpha + linbg * compalpha;
@@ -6596,7 +6594,7 @@ reference in the comments below.</p>
 <!-- <ol start="1"> --><ol>
 <li>If output is to another PNG datastream instead of a frame
 buffer, lines 21, 22, 33, and 34 should be changed along the
-following lines 
+following lines
 
 <pre>
    /*
@@ -6633,7 +6631,7 @@ one are treated as special cases as recommended here.</li>
 longer available, only processed frame buffer pixels left by
 display of the background image, then lines 30 and 31 need to
 extract intensity from the frame buffer pixel values using code
-such as 
+such as
 
 <pre>
    /*
@@ -7025,7 +7023,7 @@ content (see 5.2: <a href="#5PNG-file-signature"><span class=
 "xref">PNG file signature</span></a>).</li>
 
 <li>With respect to the chunk types defined in this International
-Standard: 
+Standard:
 
 <ul>
 <li>the PNG datastream contains as its first chunk, an <a href=
@@ -7041,7 +7039,7 @@ following the PNG signature;</li>
 class="chunk">IEND</span></a> chunk.</li>
 
 <li>All chunks contained therein match the specification of the
-corresponding chunk types of this International Standard. 
+corresponding chunk types of this International Standard.
 The PNG datastream shall obey the relationships among chunk types
 defined in this International Standard.</li>
 
@@ -7456,16 +7454,16 @@ Suffix <tt>L</tt> indicates a long value (at least 32 bits).</td>
 <pre>
    /* Table of CRCs of all 8-bit messages. */
    unsigned long crc_table[256];
-   
+
    /* Flag: has the table been computed? Initially false. */
    int crc_table_computed = 0;
-   
+
    /* Make the table for a fast CRC. */
    void make_crc_table(void)
    {
      unsigned long c;
      int n, k;
-   
+
      for (n = 0; n &lt; 256; n++) {
        c = (unsigned long) n;
        for (k = 0; k &lt; 8; k++) {
@@ -7478,7 +7476,7 @@ Suffix <tt>L</tt> indicates a long value (at least 32 bits).</td>
      }
      crc_table_computed = 1;
    }
-  
+
 </pre>
 
 <!-- ************Page Break******************* -->
@@ -7488,13 +7486,13 @@ Suffix <tt>L</tt> indicates a long value (at least 32 bits).</td>
       should be initialized to all 1's, and the transmitted value
       is the 1's complement of the final running CRC (see the
       crc() routine below). */
-   
+
    unsigned long update_crc(unsigned long crc, unsigned char *buf,
                             int len)
    {
      unsigned long c = crc;
      int n;
-   
+
      if (!crc_table_computed)
        make_crc_table();
      for (n = 0; n &lt; len; n++) {
@@ -7502,7 +7500,7 @@ Suffix <tt>L</tt> indicates a long value (at least 32 bits).</td>
      }
      return c;
    }
-   
+
    /* Return the CRC of the bytes buf[0..len-1]. */
    unsigned long crc(unsigned char *buf, int len)
    {
@@ -7565,7 +7563,7 @@ accessed from the PNG web site.</p>
 <h2><a name="E-Email">Electronic mail</a></h2>
 
 <p>Queries concerning PNG developments may be addressed to <a href=
-"mailto:png-group@w3.org"><tt>png-group@w3.org</tt></a>. 
+"mailto:png-group@w3.org"><tt>png-group@w3.org</tt></a>.
 <!-- ************Page Break******************* -->
 </p>
 
@@ -7869,7 +7867,7 @@ and from<br class="xhtml" />
 <dt><a name="G-PNG-1.1">[PNG-1.1]</a></dt>
 
 <dd>PNG Development Group, "PNG (Portable Network Graphics)
-Specification, Version 1.1", 1999. Available 
+Specification, Version 1.1", 1999. Available
 from<br class="xhtml" />
  <a href=
 "http://www.libpng.org/pub/png/spec/1.1/"><code>http://www.libpng.org/pub/png/spec/1.1/</code></a></dd>

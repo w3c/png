@@ -8,42 +8,41 @@
     /* remove annoying green color from definition terms */
     dt {color: black}
     </style>
-    <link rel="stylesheet" type="text/css" media="screen"
-    href="http://www.w3.org/StyleSheets/TR/W3C-REC" />
+      <link href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED" rel="stylesheet" type="text/css">
   </head>
   <body>
     <div class="head">
       <p><a href="http://www.w3.org/"><img height="48" width="72"
       alt="W3C" src="http://www.w3.org/Icons/w3c_home" /></a></p>
-      <h1 id="pagetitle">Portable Network Graphics (PNG) Specification (Second Edition)</h1>
-      <h1>Information technology — Computer graphics and image processing — Portable Network Graphics (PNG): Functional specification. ISO/IEC 15948:2003 (E)</h1>
+      <h1 id="pagetitle">Portable Network Graphics (PNG) Specification (Third Edition)</h1>
+      <!-- <h1>Information technology — Computer graphics and image processing — Portable Network Graphics (PNG): Functional specification. ISO/IEC 15948:2003 (E)</h1> -->
       <!--h2 id="pagesubtitle">W3C Recommendation 1 October 1996, revised 14 October 2003</h2-->
-      <h2 id="pagesubtitle">W3C Recommendation 10 November 2003</h2>
+      <h2 id="pagesubtitle">Editors Draft, 19 Jan 2021</h2>
       <dl>
         <dt>This version:</dt>
         <dd><a
-        href="http://www.w3.org/TR/2003/REC-PNG-20031110">http://www.w3.org/TR/2003/REC-PNG-20031110</a></dd>
+        href="https://w3c.github.io/PNG-spec/">https://w3c.github.io/PNG-spec/</a></dd>
         <dt>Latest version:</dt>
         <dd><a
         href="http://www.w3.org/TR/PNG">http://www.w3.org/TR/PNG</a></dd>
         <dt>Previous version:</dt>
         <dd><a
-        href="http://www.w3.org/TR/2003/PR-PNG-20030520">http://www.w3.org/TR/2003/PR-PNG-20030520</a></dd>
+          href="http://www.w3.org/TR/2003/REC-PNG-20031110">http://www.w3.org/TR/2003/REC-PNG-20031110</a></dd>
         <dt>Editor:</dt>
-        <dd>David Duce, Oxford Brookes University (Second Edition)</dd>
+        <dd>Chris Lilley, W3C (Third Edition)</dd>
         <dt>Authors:</dt>
         <dd>See <a href="#F-Relationship">author list</a></dd>
       </dl>
-      <p>Please refer to the <a href="http://www.w3.org/2003/11/REC-PNG-20031110-errata"><strong>errata</strong></a> for this document, which may include some normative corrections.</p>
+      <!-- <p>Please refer to the <a href="http://www.w3.org/2003/11/REC-PNG-20031110-errata"><strong>errata</strong></a> for this document, which may include some normative corrections.</p> -->
 
       <!--p>This document is also available in these non-normative
       packages: <a href="REC-SVG11-20030114.zip">zip archive of
       HTML</a> (without external dependencies) and <a
       href="REC-SVG11-20030114.pdf">PDF</a>.</p-->
+<!--
+      <p>See also the <a href="http://www.w3.org/Consortium/Translation/">translations</a> of this document.</p> -->
 
-      <p>See also the <a href="http://www.w3.org/Consortium/Translation/">translations</a> of this document.</p>
-
-<p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright"> Copyright</a> &#xa9; 2003 <a href="http://www.w3.org/"><acronym title="World Wide Web Consortium">W3C</acronym></a><sup>&#xae;</sup> (<a href="http://www.lcs.mit.edu/"><acronym title="Massachusetts Institute of Technology">MIT</acronym></a>, <a href="http://www.ercim.org/"><acronym title="European Research Consortium for Informatics and Mathematics">ERCIM</acronym></a>, <a href="http://www.keio.ac.jp/">Keio</a>), All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a>, <a href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a> and <a href="http://www.w3.org/Consortium/Legal/copyright-software">software licensing</a> rules apply.</p>
+      <p class="copyright" data-fill-with="copyright"><a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2021 <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>, <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>, <a href="https://ev.buaa.edu.cn/">Beihang</a>). W3C <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document" rel="license">permissive document license</a> rules apply. </p>
     </div>
     <hr title="Separator from Header" />
 
@@ -56,13 +55,13 @@
     <h2 id="status">Status of this document</h2>
 <p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current W3C publications and the latest revision of this technical report can be found in the <a href="http://www.w3.org/TR/">W3C technical reports index</a> at http://www.w3.org/TR/.</em></p>
 
-    <p>This document is the 14 October 2003 W3C
-    Recommendation of the PNG specification, second edition. It is also International Standard, ISO/IEC 15948:2003. The two documents have exactly identical content except for cover page and boilerplate differences as appropriate to the two organisations.</p>
+    <p>This document is an Editors Draft.
+      It is derived from the the 14 October 2003 W3C
+    Recommendation of the PNG specification, second edition,
+  by the application of known errata.</p>
 
-<p>This International Standard is strongly based on the W3C Recommendation 'PNG Specification Version 1.0' which was reviewed by W3C members, approved as a W3C Recommendation and published in October 1996. This second edition incorporates all known errata and clarifications. </p>
 
-<p>A complete review of the document has been done by ISO/IEC/JTC 1/SC 24 in collaboration with W3C and the PNG development group (the original authors of the PNG 1.0 Recommendation) in order to transform that Recommendation into an ISO/IEC international standard. A major design goal during this review was to avoid changes that will invalidate existing files, editors, or viewers that conform to W3C Recommendation PNG Specification Version 1.0.</p>
-
+<!-- update this para -->-->
 <p>The PNG specification enjoys a good level of <a href="http://www.libpng.org/pub/png/pngstatus.html">implementation</a>  with good interoperability. At the time of this publication more than 180 <a href="http://www.libpng.org/pub/png/pngapvw.html">image viewers</a> could display PNG images and over 100 <a href="http://www.libpng.org/pub/png/pngaped.html">image editors</a> could read and write valid PNG files. Full support of PNG is  required  for conforming <a href="/Graphics/SVG">SVG</a> viewers; at the time of publication all eighteen <a href="/Graphics/SVG/SVG-Implementations.htm8#viewer">SVG viewers</a> had PNG support. HTML has no required image formats, but over 60 <a href="http://www.libpng.org/pub/png/pngapbr.html">HTML browsers</a> had at least basic support of PNG images.</p>
 
     <p>Public comments on this W3C Recommendation are welcome.
@@ -75,10 +74,10 @@
     aware of any royalty-bearing patents they believe to be
     essential to PNG.</p>
 
-    <p>This document has been produced by ISO/IEC JTC1 SC24 and the PNG Group as part of the <a
+    <!-- <p>This document has been produced by ISO/IEC JTC1 SC24 and the PNG Group as part of the <a
     href="http://www.w3.org/Graphics/Activity">Graphics
     Activity</a> within the <a href="http://www.w3.org/Interaction/">W3C
-    Interaction Domain</a>. </p>
+    Interaction Domain</a>. </p> -->
 
     <!-- removed p>A list of current W3C Recommendations and
     other technical documents can be found at <a
@@ -87,15 +86,12 @@
   documents at any time.
     </p-->
 
-    <div><p><strong>Note:</strong> To provide the highest quality images, this specification uses SVG diagrams with a PNG fallback using the HTML object element. SVG-enabled browsers will see the SVG figures with selectable text, other browsers will display the raster PNG version.</p>
-<p>W3C is aware that there is a <a href="http://bugzilla.mozilla.org/show_bug.cgi?id=133567">known incompatibility</a> between the unsupported beta of Adobe SVG plugin for Linux and Mozilla versions greater than 0.9.9 due to changes in the plug-in API, causing a browser crash. Therefore, a normative <a href="./index-noobject.html">PNG-only alternative version</a> is available that does not use an object element. The two versions are otherwise identical.</p></div>
-
-    <h3 id="AvailableLanguages">Available languages</h3>
+    <!-- <h3 id="AvailableLanguages">Available languages</h3>
     <p>The English version of this specification is the only
     normative version. However, for translations in other languages
     see <a
     href="http://www.w3.org/Consortium/Translation/">
-    http://www.w3.org/Consortium/Translation/</a>.</p>
+    http://www.w3.org/Consortium/Translation/</a>.</p> -->
 
     <div class="toc">
       <h2><a id="minitoc" name="minitoc">Table of Contents</a></h2>

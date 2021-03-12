@@ -5,5 +5,6 @@ which is jointly published by W3C as a W3C Recommendation,
 and by ISO as an International Standard ISO/IEC 15948:2003 (E)
 with identical contents.
 
-This repository will be used to fold in [errata](https://www.w3.org/2003/11/REC-PNG-20031110-errata),
+This repository is being used to fold in [errata](https://www.w3.org/2003/11/REC-PNG-20031110-errata)
+into an [Editors Draft](https://w3c.github.io/PNG-spec/),
 and also for discussion and update of any technical changes or additions.

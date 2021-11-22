@@ -6316,11 +6316,18 @@ precomputed table of logarithms. Example code appears in <a href=
 <p>When the incoming image has unknown gamma (<a href=
 "#11gAMA"><span class="chunk">gAMA</span></a>, <a href=
 "#11sRGB"><span class="chunk">sRGB</span></a>, and <a href=
-"#11iCCP"><span class="chunk">iCCP</span></a> all absent), choose
+"#11iCCP"><span class="chunk">iCCP</span></a> all absent),
+standalone image viewers should
+choose
 a likely default gamma value, but allow the user to select a new
 one if the result proves too dark or too light. The default gamma
 may depend on other knowledge about the image, for example
-whether it came from the Internet or from the local system.</p>
+whether it came from the Internet or from the local system.
+For consistency, viewers for document formats such as HTML,
+or vector graphics such as SVG, should treat embedded or
+linked PNG images with unknown gamma in the same way
+that they treat other untagged images.
+</p>
 
 <p>In practice, it is often difficult to determine what value of
 display exponent should be used. In systems with no built-in

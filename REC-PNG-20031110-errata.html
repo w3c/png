@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Errata in PNG Recommendation, Second Edition</title>
+        <style type="text/css">
+        .changed {background: yellow; padding: 2px}
+        div.old, div.new {background: #DDF; padding: 4px; border: thin solid #AAF}
+        </style>
+        <link rel="stylesheet" type="text/css" href="http://www.w3.org/StyleSheets/TR/base" />
+        </head>
+<body>
+<div class="head">
+<a href="http://www.w3.org/">
+<img src= "http://www.w3.org/Icons/w3c_home" alt="W3C" height="48" width= "72" />
+</a>
+<!-- ############################################################# -->
+<h1>PNG Recommendation, Second Edition Errata</h1>
+<dl>
+<dt>This version:</dt>
+<dd>
+<a href="http://www.w3.org/2003/10/REC-PNG-20031110-errata">
+http://www.w3.org/2003/10/REC-PNG-20031110-errata</a>
+</dd>
+<dt>Last modified:</dt>
+<dd>$Date: 2021/01/19 14:15:37 $</dd>
+</dl>
+<dl>
+<dt>This document records known errors in the document:</dt>
+<dd>
+<a href="http://www.w3.org/TR/2003/REC-PNG-20031110/index.html">
+http://www.w3.org/TR/2003/REC-PNG-20031110/</a>
+</dd>
+<dt>The latest version of the PNG specification is at:</dt>
+<dd>
+<a href="http://www.w3.org/TR/PNG/">http://www.w3.org/TR/PNG</a>
+</dd>
+</dl>
+<!-- ############################################################# -->
+<hr />
+</div>
+<p>Public comments on this W3C Recommendation are welcome.
+    Please send them to the <a href="http://lists.w3.org/Archives/Public/png-group">archived</a> list <a href="mailto:png-group@w3.org">png-group@w3.org</a> .</p>
+<hr />
+<div class="erratum" id="err-tRNS-Type-2">
+<h2>Typographic error in description of tRNS</h2>
+<dl>
+<dt>Category:</dt>
+<dd><a href="https://www.w3.org/2020/Process-20200915/#correction-classes">
+2. Corrections that do not affect conformance</a></dd>
+<dt>Date:</dt>
+<dd>2009 Jun 25</dd>
+<dt>Reported by:</dt>
+<dd><a href="http://lists.w3.org/Archives/Public/www-archive/2009Jun/0137.html">Glenn Randers-Pehrson</a></dd>
+<dt>Status:</dt>
+<dd>Proposed</dd>
+</dl>
+<h3>Description</h3>
+<p>For the tRNS chunk, Colour type 2, a typographical error was introduced
+in the second edition of PNG:
+the blue and green channels were switched. The  <a href="http://www.w3.org/TR/REC-png-961001#C.tRNS">first edition of PNG had the
+correct order, Red, Green, Blue</a>. This is the same order as is used throughout
+the specification, and implementations have silently corrected
+for the obvious error.</p>
+<h3>Change</h3>
+<p>In section <a href="http://www.w3.org/TR/PNG/#11tRNS">11.3.2.1 tRNS Transparency</a> change:</p>
+<div class="old">
+<!-- ************Page Break******************* -->
+<table class="Regular" summary="This table defines the tRNS chunk">
+<tbody><tr>
+<th colspan="2">Colour type 0</th>
+</tr>
+<tr>
+<td class="Regular">Grey sample value</td>
+<td class="Regular">2 bytes</td>
+</tr>
+<tr>
+<th colspan="2">Colour type 2</th>
+</tr>
+<tr>
+<td class="Regular">Red sample value</td>
+<td class="Regular">2 bytes</td>
+</tr>
+<tr>
+<td class="Regular">Blue sample value</td>
+<td class="Regular">2 bytes</td>
+</tr>
+<tr>
+<td class="Regular">Green sample value</td>
+<td class="Regular">2 bytes</td>
+</tr>
+<tr>
+<th colspan="2">Colour type 3</th>
+</tr>
+<tr>
+<td class="Regular">Alpha for palette index 0</td>
+<td class="Regular">1 byte</td>
+</tr>
+<tr>
+<td class="Regular">Alpha for palette index 1</td>
+<td class="Regular">1 byte</td>
+</tr>
+<tr>
+<td class="Regular">...etc...</td>
+<td class="Regular">1 byte</td>
+</tr>
+</tbody></table>
+</div>
+<p>to:</p>
+<div class="new">
+<!-- ************Page Break******************* -->
+<table class="Regular" summary="This table defines the tRNS chunk">
+<tbody><tr>
+<th colspan="2">Colour type 0</th>
+</tr>
+<tr>
+<td class="Regular">Grey sample value</td>
+<td class="Regular">2 bytes</td>
+</tr>
+<tr>
+<th colspan="2">Colour type 2</th>
+</tr>
+<tr>
+<td class="Regular">Red sample value</td>
+<td class="Regular">2 bytes</td>
+</tr>
+<tr class="changed">
+<td class="Regular">Green sample value</td>
+<td class="Regular">2 bytes</td>
+</tr>
+<tr class="changed">
+<td class="Regular">Blue sample value</td>
+<td class="Regular">2 bytes</td>
+</tr>
+<tr>
+<th colspan="2">Colour type 3</th>
+</tr>
+<tr>
+<td class="Regular">Alpha for palette index 0</td>
+<td class="Regular">1 byte</td>
+</tr>
+<tr>
+<td class="Regular">Alpha for palette index 1</td>
+<td class="Regular">1 byte</td>
+</tr>
+<tr>
+<td class="Regular">...etc...</td>
+<td class="Regular">1 byte</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+
+<!--  ##############################################################  -->
+
+
+<div class="erratum" id="err-bitdepth">
+    <h2>Bit depth of colors</h2>
+    <dl>
+        <dt>Category:</dt>
+        <dd><a href="https://www.w3.org/2020/Process-20200915/#correction-classes">
+        2. Corrections that do not affect conformance</a></dd>
+        <dt>Date:</dt>
+        <dd>2003 Jun 03</dd>
+        <dt>Reported by:</dt>
+        <dd><a href="https://lists.w3.org/Archives/Public/png-group/2003Jun/0001.html">Susan Foord</a></dd>
+        <dt>Status:</dt>
+        <dd>Proposed</dd>
+    </dl>
+    <h3>Description</h3>
+    <p>
+        The phrase "pixel size" is ambiguous as it could refer to
+        the geometric extent of a pixel; in fact the number of bits is meant.
+    </p>
+    <h3>Change</h3>
+    <p>As <a href="https://lists.w3.org/Archives/Public/png-group/2003Jun/0004.html">agreed</a> and <a href="https://lists.w3.org/Archives/Public/png-group/2003Jun/0006.html">further clarified</a> , in <a href="https://www.w3.org/TR/2003/REC-PNG-20031110/#4Concepts.PNGImage">Clause 4.4, PNG Image</a>, change the text in []: </p>
+    <div class="old">
+        <pre>   c. Truecolor: ... The alpha channel may be represented by
+            a single [pixel] value.  Matching pixels ...
+         d. Greyscale: ... The alpha channel may be represented by
+            a single [pixel value as in] the previous case. ...
+
+         ... size of each sample, not the total [pixel size].</pre>
+    </div>
+    <p>to</p>
+    <div class="new">
+        <pre>c. Truecolor: ... The alpha channel may be represented by
+            a single <span class="changed">RGB pixel</span> value.  Matching pixels ...
+         d. Greyscale: ... The alpha channel may be represented by
+            a single <span class="changed">greyscale pixel value, similar to the</span> previous case. ...
+
+         ... size of each sample, not the total <span class="changed">number of bits per pixel</span>.</pre>
+    </div>
+    </div>
+
+<!--  ##############################################################  -->
+
+<div class="erratum" id="err-embedded-untagged">
+    <h2>Untagged images embedded in document or vector formats</h2>
+    <dl>
+        <dt>Category:</dt>
+        <dd><a href="https://www.w3.org/2020/Process-20200915/#correction-classes">
+        3. Corrections that do not add new features</a></dd>
+        <dt>Date:</dt>
+        <dd>2021-01-19</dd>
+        <dt>Reported by:</dt>
+        <dd><a href="https://github.com/w3c/PNG-spec/issues/3">Henri Sivonen</a></dd>
+        <dt>Status:</dt>
+        <dd>Draft</dd>
+    </dl>
+    <h3>Description</h3>
+    <p>
+    </p>
+    <h3>Change</h3>
+    <p> in <a href="https://www.w3.org/TR/2003/REC-PNG-20031110/#13Decoder-gamma-handling">13.13 Decoder gamma handling</a>, change the text: </p>
+    <div class="old">
+        <p>
+            When the incoming image has unknown gamma (gAMA, sRGB, and iCCP all absent), choose a likely default gamma value, but allow the user to select a new one if the result proves too dark or too light. The default gamma may depend on other knowledge about the image, for example whether it came from the Internet or from the local system.</p>
+    </div>
+    <p>to</p>
+    <div class="new">
+        <p>
+            When the incoming image has unknown gamma (gAMA, sRGB, and iCCP all absent), <span class="changed">standalone image viewers should</span> choose a likely default gamma value, but allow the user to select a new one if the result proves too dark or too light. The default gamma may depend on other knowledge about the image, for example whether it came from the Internet or from the local system.
+            <span class="changed">For consistency, viewers for
+            document formats such as HTML, or vector graphics such as SVG, should treat
+            embedded or linked PNG images with unknown gamma
+            in the same way that they treat other untagged images.</span>
+        </p>
+    </div>
+</div>
+
+</div>
+<hr />
+<!--
+<div class="erratum" id="err-">
+    <h2></h2>
+    <dl>
+        <dt>Category:</dt>
+        <dd><a href="https://www.w3.org/2020/Process-20200915/#correction-classes">
+        2. Corrections that do not affect conformance</a></dd>
+        <dt>Date:</dt>
+        <dd></dd>
+        <dt>Reported by:</dt>
+        <dd><a href=""></a></dd>
+        <dt>Status:</dt>
+        <dd>Proposed</dd>
+    </dl>
+    <h3>Description</h3>
+    <p>
+    </p>
+    <h3>Change</h3>
+    <p> in <a href=""></a>, change the text in []: </p>
+    <div class="old">
+
+    </div>
+    <p>to</p>
+    <div class="new">
+
+    </div>
+</div>
+-->
+<address><a href="mailto:chris@w3.org">Chris Lilley</a></address>
+</body>
+</html>

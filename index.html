@@ -609,14 +609,9 @@ A File conventions and Internet media type</a>
 
 <ul>
 <li class='Contents'><a class='Href' href=
-'#A-File-name-extension'>A.1 File name extension</a></li>
+'#image-png-registration'>A.1 image/png</li>
 
-<li class='Contents'><a class='Href' href='#A-Media-type'>A.2
-Internet media type</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#A-Macintosh-file-layout'>A.3 Macintosh file layout</a></li>
-</ul>
+<!-- A.2 apng will go after this -->
 </li>
 
 <li class='Contents'><a class='Href' href=
@@ -7191,48 +7186,133 @@ losslessly represents the same reference image.</li>
 <!-- ************Page Break******************* -->
 <h1 class="Annex"><a name="A-Conventions">Annex A</a></h1>
 
-<p class="Annex">(informative)</p>
+<h1 id="IANA-registrations">Internet Media Types</h1>
 
-<h1 id="filemedia" class="Annex">File conventions and Internet media type</h1>
+<h2 id="image-png-registration">image/png</h2>
 
-<h2><a name="A-File-name-extension">A.1 File name
-extension</a></h2>
+<p>This updates the existing
+  <span class="tt">image/png</span> Internet Media type, under the
+  <span class="tt">image</span> top level type.
+  This appendix is in conformance with
+    <a href="https://www.rfc-editor.org/info/bcp13">BCP 13</a> and
+    <a href="https://www.w3.org/2020/01/registering-mediatypes.html">W3CRegMedia</a>.
+  </p>
 
-<p>On systems where file names customarily include an extension
-signifying file type, the extension "<tt>.png</tt>" is
-recommended for PNG files. Lower case "<tt>.png</tt>" is
-preferred if file names are case-sensitive.</p>
+  <dl>
+    <dt>Media type name:</dt>
+    <dd>image</dd>
 
-<h2><a name="A-Media-type">A.2 Internet media type</a></h2>
+    <dt>Media subtype name:</dt>
+    <dd>png</dd>
 
-<p>The Internet Media type "<tt>image/png</tt>" is the Internet
-Media Type for PNG <a href="#2-RFC-2045"><span class=
-"NormRef">[RFC-2045]</span></a>, <a href="#2-RFC-2048"><span
-class="NormRef">[RFC-2048]</span></a>. It is recommended that
-implementations also recognize the media type
-"<tt>image/x-png</tt>".</p>
+    <dt>Required parameters:</dt>
+    <dd>None</dd>
 
-<h2><a name="A-Macintosh-file-layout">A.3 Macintosh file
-layout</a></h2>
+    <dt>Optional parameters:</dt>
+    <dd>None</dd>
 
-<p>In the Apple Computer Inc. Macintosh system, the following
-conventions are recommended.</p>
+    <dt>Encoding considerations:</dt>
+    <dd>binary</dd>
 
-<ol>
-<li>The four-byte file type code for PNG files is
-"<tt>PNGf</tt>". (This code has been registered with Apple
-Computer Inc. for PNG files.) The creator code will vary
-depending on the creating application.</li>
+    <dt>Security considerations:</dt>
+    <dd>
+      <p>A PNG document is composed of a collection of explicitly typed "chunks".
+        For each of the chunk types defined in the PNG specification (except
+        for "gIFx"), the only effect associated with those chunks is to cause
+        an image to be rendered on the recipient's display or printer.</p>
+      <p>The gIFx chunk type is used to encapsulate Application Extension
+        data, and some use of that data might present security risks, though
+        no risks are known.  Likewise, the security risks associated with
+        future chunk types cannot be evaluated, particularly unregistered
+        chunks.  However, it is the intention of the PNG group to disallow
+        chunks containing "executable" data to become registered chunks.</p>
+      <p>The text chunks, tEXt and zTXt, contain data that can be displayed in
+        the form of comments, etc.  Some operating systems or terminals might
+        allow the display of textual data with embedded control characters to
+        perform operations such as re-mapping of keys, creation of files, etc.
+        For this reason, the specification recommends that the text chunks be
+        filtered for control characters before direct display.</p>
+      <p>The PNG format is specifically designed to facilitate early detection
+        of file transmission errors, and makes use of cyclical redundancy
+        checks to ensure the integrity of the data contained in its chunks.</p>
+    </dd>
 
-<li>The contents of the data fork is a PNG file exactly as
-described in this International Standard.</li>
+    <dt>Interoperability considerations:</dt>
+    <dd>Network byte order used throughout.</dd>
 
-<li>The contents of the resource fork are unspecified. It may be
-empty or may contain application-dependent resources.</li>
+    <dt>Published specification:</dt>
+    <dd><a href="https://www.w3.org/TR/PNG/
+      ">Portable Network Graphics (PNG) Specification</a>,
+      <a href="https://www.w3.org/TR/PNG/
+      ">https://www.w3.org/TR/PNG/</a>
+    </dd>
 
-<li>When transferring a Macintosh PNG file to a non-Macintosh
-system, only the data fork should be transferred.</li>
-</ol>
+    <dt>Applications which use this media:</dt>
+    <dd>PNG is widely implemented in all Web browsers, image viewers, and image creation tools
+    </dd>
+
+    <dt>Fragment identifier considerations:
+    </dt>
+    <dd>N/A</dd>
+
+    <dt>Restrictions on usage:
+    </dt>
+    <dd>N/A</dd>
+
+    <dt>Provisional registration? (standards tree only):</dt>
+    <dd><a href="https://www.iana.org/assignments/media-types/image/png
+      ">https://www.iana.org/assignments/media-types/image/png
+    </a></dd>
+
+    <dt>Additional information:
+    </dt>
+    <dd>
+      <dl>
+        <dt>Deprecated alias names for this type:</dt>
+        <dd>N/A</dd>
+        <dt>Magic number(s):</dt>
+        <dd>89 50 4E 47 0D 0A 1A 0A</dd>
+        <dt>File extension(s):</dt>
+        <dd>.png</dd>
+        <dt>Macintosh file type code:</dt>
+        <dd>PNGf</dd>
+        <dt>Object Identifiers:</dt>
+        <dd>N/A</dd>
+      </dl>
+    </dd>
+
+    <dt>General Comments:</dt>
+    <dd>
+      <p>This registration updates the earlier one
+        <a href="https://www.iana.org/assignments/media-types/image/png">https://www.iana.org/assignments/media-types/image/png</a></p>
+      <ol>
+        <li>The old one points to an expired Internet Draft. This updated registration points to a W3C Recommendation.</li>
+        <li>The old contact person is sadly deceased. The new contact email is a publicly archived W3C mailing list for the PNG Working Group. However if the name of an individual is needed, please use Chris Lilley chris@w3.org</li>
+        <li>Change controller is W3C</li>
+      </ol>
+    </dd>
+
+    <dt>Person to contact for further information:</dt>
+    <dd>
+      <dl>
+        <dt>Name:</dt>
+        <dd>PNG Working Group</dd>
+        <dt>Email:</dt>
+        <dd><a href="mailto:public-png@w3.org">public-png@w3.org</a></dd>
+      </dl>
+    </dd>
+
+    <dt>Intended usage:</dt>
+    <dd>Common</dd>
+
+    <dt>Author/Change controller:</dt>
+    <dd>W3C</dd>
+
+  </dl>
+
+
+
+
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->

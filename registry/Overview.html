@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>Register of PNG Public Chunks and Keywords, Version 1.6.0</title>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+<style>
+   .reqopt {
+      text-align: center;
+   }
+   .chunktable {
+      width: 100%;
+   }
+</style>
+<link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2021/W3C-DRY"/>
+<link rel="canonical" href="@@URL@@">
+</head>
+
+<body>
+<div class="head">
+   <a href="https://www.w3.org/"><img height="48" width="72" alt="W3C" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C"/></a>
+   <h1>Register of public PNG chunks and keywords, Version 1.6.0</h1>
+   <p id="w3c-state">W3C Draft Registry 26 Nov 2021</p>
+
+   <dl>
+      <dt>This version</dt>
+      <dd><a href="https://www.w3.org/TR/2021/DRY-png-registry-20211126/">https://www.w3.org/TR/2021/DRY-png-registry-20211126/</a></dd>
+      <dt>Latest version</dt>
+      <dd><a href="https://www.w3.org/TR/png-registry">https://www.w3.org/TR/png-registry</a></dd>
+      <dt>History</dt>
+      <dd><a href="https://www.w3.org/standards/history/png-registry/">https://www.w3.org/standards/history/png-registry/</a></dd>
+      <dt>Editor</dt>
+      <dd class="editor p-author h-card vcard" data-editor-id="1438"><a class="p-name fn u-url url" href="http://svgees.us">Chris Lilley</a> (<span class="p-org org">W3C</span>)
+      <dt>Previous Editor</dt>
+      <dd class="editor p-author h-card vcard">Glenn Randers-Pehrson</dd>
+      <dt>Feedback</dt>
+      <dd><a href="https://github.com/w3c/PNG-spec">https://github.com/w3c/PNG-spec</a></dd>
+   </dl>
+
+   <p class="copyright"><a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2021 <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>, <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>, <a href="https://ev.buaa.edu.cn/">Beihang</a>). W3C <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a href="https://www.w3.org/Consortium/Legal/copyright-software">permissive document license</a> rules apply.</p>
+
+   <hr class="required for pubrules" />
+</div>
+
+   <h2 id="status">Status of this Document</h2>
+
+   <p><em>This section describes the status of this document at the time of its publication. A list of current W3C publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/">W3C technical reports index</a> at https://www.w3.org/TR/.</em></p>
+
+   <p  data-deliverer="133210">This document was published by the PNG Working Group
+      as a Draft Registry using the
+      <a href="https://www.w3.org/2021/Process-20211102/#recs-and-notes">Registry track</a>.</p>
+
+   <p>This document registers the union of standard PNG chunks and extended PNG chunks.
+      Previous versions of this registry were published outside of W3C.</p>
+
+   <p>Publication as a Draft Registry does not imply endorsement by W3C and its Members</p>
+   <p>This is a draft document and may be updated, replaced or obsoleted by other documents at any time. It is inappropriate to cite this document as other than work in progress.</p>
+
+   <p>The <a href="https://www.w3.org/Consortium/Patent-Policy-20170801/">1 August 2017 W3C Patent Policy</a> does not carry any licensing requirements or commitments on this document.</p>
+
+   <p>This document is governed by the <a id="w3c_process_revision" href="https://www.w3.org/2021/Process-20211102/">2 November 2021 W3C Process Document</a>. </p>
+
+   <h2 id="abstract">Abstract</h2>
+
+<p>This document is the register of public chunks and keywords in the Portable
+Network Graphics (PNG) specification, version 1.2
+<code>[<a href="#PNG-1.2">PNG-1.2</a>]</code>,
+and in
+Portable Network Graphics (PNG) Specification (Second Edition)
+<code>[<a href="#PNG-ISO">PNG-ISO</a>]</code>,
+plus any additional
+registered "public" PNG chunks and keywords,
+with their date of registration and location of their specifications.
+
+</p><p>Some chunks listed here are expected to be less widely supported
+than those defined in the basic specification.  However, application
+authors are encouraged to use these chunk types whenever
+appropriate for their applications.
+
+</p><p>Additional chunk types and keywords may be proposed for inclusion in
+these lists by raising an issue on the PNG Working Group
+<a href="https://github.com/w3c/PNG-spec">GitHub repository</a>.
+
+
+<nav data-fill-with="table-of-contents" id="toc">
+   <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
+   <ol class="toc" role="directory">
+      <li><a href="#PublicChunks"><span class="secno">1</span> Register of Public PNG Chunks</a>
+         <ol class="toc">
+            <li><a href="critical"><span class="secno">1.1</span> Critical chunks</a></li>
+            <li><a href="ancillary"><span class="secno">1.2</span> Ancillary chunks</a></li>
+         </ol>
+      <li><a href="#Keywords"><span class="secno">2</span> Register of Public Text Chunk Keywords</a></li>
+      <li><a href="#History"><span class="secno">3</span> Appendix: Revision History</a></li>
+      <li><a href="#References"><span class="secno">4</span> References</a></li>
+      <li><a href="#Credits"><span class="secno">5</span> Credits</a></li>
+   </ol>
+</nav>
+
+<h2><a id="PublicChunks">1. Register of Public PNG Chunks</a></h2>
+
+<p>These tables lists the registered public PNG chunks.
+
+<h3 id="critical">1.1 Critical chunks</h3>
+
+   <table class="chunktable" id="critchunktable">
+   <tr><th>Chunk&nbsp; &nbsp; <br>type</th><th>Chunk <br>description&nbsp; &nbsp; </th><th>Date <br>registered&nbsp; &nbsp;</th><th>Formal specification <br>of chunk type</th></tr>
+   <tr class="required"><td>IDAT</td><td>Image data</td><td>7 Mar 1995</td><td><a href="#PNG-1.2">PNG 1.2</a></td> </tr>
+   <tr class="required"><td>IEND</td><td>Image trailer</td><td>7 Mar 1995</td><td><a href="#PNG-1.2">PNG 1.2</a></td></tr>
+   <tr class="required"><td>IHDR</td><td>Image header</td><td>7 Mar 1995</td><td><a href="#PNG-1.2">PNG 1.2</a></td></tr>
+   <tr class="required"><td>PLTE</td><td>Palette</td><td>7 Mar 1995</td><td><a href="#PNG-1.2">PNG 1.2</a></td></tr>
+   </table>
+
+
+   <h3 id="ancillary">1.2 Ancillary chunks</h3>
+
+   <table class="chunktable" id="ancchunktable">
+      <tr><th>Chunk&nbsp; &nbsp; <br>type</th><th>Chunk <br>description&nbsp; &nbsp; </th><th>Date <br>registered&nbsp; &nbsp;</th><th>Formal specification <br>of chunk type</th></tr>
+   <tr class="std"><td>bKGD</td><td>Background colour</td><td>7 Mar 1995</td><td><a href="#PNG-1.2">PNG 1.2</a></td></tr>
+   <tr class="std"><td>cHRM</td><td>Primary chromaticities and white point</td><td>7 Mar 1995</td><td><a href="#PNG-1.2">PNG 1.2</a></td></tr>
+   <tr class="ext"><td>dSIG</td><td>Digital signature</td><td>1 May 2008</td><td><a href="#PNGEXT-1.4.0">PNGEXT 1.4.0</a></td> </tr>
+   <tr class="std"><td>eXIf</td><td>Exchangeable Image File (Exif) Profile</td><td>13 Jul 2017</td><td><a href="#PNGEXT-1.5.0">PNGEXT 1.5.0</a></td></tr>
+   <tr class="ext"><td>fRAc</td><td>Fractal image parameters</td><td>7 Mar 1995</td><td><a href="#PNGEXT-1.2.0">PNGEXT 1.2.0</a></td> </tr>
+   <tr class="std"><td>gAMA</td><td>Image gamma</td><td>7 Mar 1995</td><td><a href="#PNG-1.2">PNG 1.2</a></td> </tr>
+   <tr class="ext"><td>gIFg</td><td>GIF Graphic Control Extension</td><td>7 Mar 1995</td><td><a href="#PNGEXT-1.2.0">PNGEXT 1.2.0</a></td></tr></tr>
+   <tr class="ext"><td>gIFt</td><td>GIF Plain Text Extension</td><td>7 Mar 1995</td><td><a href="#PNGEXT-1.2.0">PNGEXT 1.2.0</a></td></tr></tr>
+   <tr class="ext"><td>gIFx</td><td>GIF Application Extension</td><td>7 Mar 1995</td><td><a href="#PNGEXT-1.2.0">PNGEXT 1.2.0</a></td></tr></tr>
+   <tr class="std"><td>hIST</td><td>Image histogram</td><td>7 Mar 1995</td><td><a href="#PNG-1.2">PNG 1.2</a></td></tr>
+   <tr class="std"><td>iCCP</td><td>Embedded ICC profile</td><td>17 Aug 1998</td><td><a href="#PNG-1.2">PNG 1.2</a></td></tr>
+   <tr class="std"><td>iTXt</td><td>International textual data</td><td>7 Mar 1995</td><td><a href="#PNG-1.2">PNG 1.2</a></td></tr>
+   <tr class="ext"><td>oFFs</td><td>Image offset</td><td>7 Mar 1995</td><td><a href="#PNGEXT-1.2.0">PNGEXT 1.2.0</a></tr>
+   <tr class="ext"><td>pCAL</td><td>Calibration of pixel values</td><td>28 Jan 1997</td><td><a href="#PNGEXT-1.2.0">PNGEXT 1.2.0</a></tr>
+   <tr class="std"><td>pHYs</td><td>Physical pixel dimensions</td><td>7 Mar 1995</td><td><a href="#PNG-1.2">PNG 1.2</a></td></tr>
+   <tr class="std"><td>sBIT</td><td>Significant bits</td><td>7 Mar 1995</td><td><a href="#PNG-1.2">PNG 1.2</a></td></tr>
+   <tr class="ext"><td>sCAL</td><td>Physical scale of image subject</td><td>7 Mar 1995</td><td><a href="#PNGEXT-1.2.0">PNGEXT 1.2.0</a></tr>
+   <tr class="std"><td>sPLT</td><td>Suggested palette</td><td>9 Dec 1996</td><td><a href="#PNG-1.2">PNG 1.2</a></td></tr>
+   <tr class="std"><td>sRGB</td><td>Standard RGB colour space</td><td>6 Nov 1996</td><td><a href="#PNG-1.2">PNG 1.2</a></td></tr>
+   <tr class="ext"><td>sTER</td><td>Indicator of Stereo Image</td><td>15 Apr 2006</td><td><a href="#PNGEXT-1.3.0">PNGEXT 1.3.0</a></td></tr>
+   <tr class="std"><td>tEXt</td><td>Textual data</td><td>7 Mar 1995</td><td><a href="#PNG-1.2">PNG 1.2</a></td></tr>
+   <tr><td>tIME</td><td>Image last-modification time</td><td>7 Mar 1995</td><td><a href="#PNG-1.2">PNG 1.2</a></td></tr>
+   <tr class="std"><td>tRNS</td><td>Transparency</td><td>7 Mar 1995</td><td><a href="#PNG-1.2">PNG 1.2</a></td></tr>
+   <tr class="std"><td>zTXt</td><td>Compressed textual data</td><td>7 Mar 1995</td><td><a href="#PNG-1.2">PNG 1.2</a></td></tr>
+</table>
+
+<dl>
+   <dt>Notes</dt>
+   <dd><ol>
+      <li>The eXIf chunk was initially registered as an extension
+         <!-- then moved to the standard document on $date -->.
+            </li>
+      <li>The fRAc chunk was registered, but never formally specified.</li>
+      <li>The gIFt chunk was formally deprecated on 23 Oct 1998.</li>
+   </ol></dd>
+</dl>
+
+<h2 id="Keywords"><a>2. Register of Public Text Chunk Keywords</a></h2>
+
+<p>This table lists the keywords that have been registered for use in
+PNG textual chunks.
+</p>
+
+<table class="keywordtable" id="keywordtable">
+   <tr><th>Keyword</th><th>Description&nbsp; &nbsp; </th><th>Date <br>registered&nbsp; &nbsp;</th><th>Formal specification <br>of keyword</th></tr>
+
+   <tr><td>Title</td><td>Short (one line) title or caption for image</td><td>7 Mar 1995</td><td><a href="#PNG-1.2">PNG 1.2</a></td></tr>
+   <tr><td>Author</td><td>Name of image's creator</td><td>7 Mar 1995</td><td><a href="#PNG-1.2">PNG 1.2</a></td></tr>
+   <tr><td>Description</td><td>Description of image (possibly long)</td><td>7 Mar 1995</td><td><a href="#PNG-1.2">PNG 1.2</a></td></tr>
+   <tr><td>Collection</td><td>Name of a collection to which the image belongs. An image may belong to one or more collections, each named by a separate text chunk.</td><td>24 Jul 04</td><td>png-list archives</td></tr>
+   <tr><td>Copyright</td><td>Copyright notice</td><td>7 Mar 1995</td><td><a href="#PNG-1.2">PNG 1.2</a></td></tr>
+   <tr><td>Creation Time</td><td>Time of original image creation</td><td>7 Mar 1995</td><td><a href="#PNG-1.2">PNG 1.2</a></td></tr>
+   <tr><td>Software</td><td>Software used to create the image</td><td>7 Mar 1995</td><td><a href="#PNG-1.2">PNG 1.2</a></td></tr>
+   <tr><td>Disclaimer</td><td>Legal disclaimer</td><td>7 Mar 1995</td><td><a href="#PNG-1.2">PNG 1.2</a></td></tr>
+   <tr><td>Warning</td><td>Warning of nature of content</td><td>7 Mar 1995</td><td><a href="#PNG-1.2">PNG 1.2</a></td></tr>
+   <tr><td>Source</td><td>Device used to create the image</td><td>7 Mar 1995</td><td><a href="#PNG-1.2">PNG 1.2</a></td></tr>
+   <tr><td>Comment</td><td>Miscellaneous comment</td><td>7 Mar 1995</td><td><a href="#PNG-1.2">PNG 1.2</a></td></tr>
+</table>
+
+
+<p>All <strong>registered</strong> textual keywords in <code>iTXt</code> and
+all other chunk types are limited to the ASCII
+characters A-Z, a-z, 0-9, space,
+and the following 20 symbols:
+</p><pre>   ! " % &amp; ' ( ) * + , - . / : ; &lt; = &gt; ? _
+</pre>
+<p>but not the remaining 12 symbols:
+</p><pre>   # $ @ [ \ ] ^ ` { | } ~
+</pre>
+<p>This restricted set is the ISO-646 "invariant" character set
+<code>[<a href="#ISO-646">ISO-646</a>]</code>.
+These characters have the same numeric codes in all ISO character sets,
+including all national variants of ASCII.
+
+</p><h2 id="History"><a>3. Appendix: Revision History</a></h2>
+
+<ul>
+<li>
+   26 November 2021 (version 1.6.0):
+   <ul>
+      <li>Added missing tIME chunk</li>
+      <li>Added chunk descriptions</li>
+      <li>Added keyword descriptions</li>
+      <li>Reformatted as W3C Draft Registry</li>
+   </ul>
+</li>
+
+<li>15 July 2017 (version 1.5.0):
+<ul>
+<li>Added eXIf chunk.
+</li><li>Replaced ftp://www.simplesystems.org/pub/png/documents/ URL
+with http://libpng.download/documents/
+</li></ul>
+
+<p>
+
+</p></li><li>12 June 2017 (version 1.4.9): Changed "name=text" to "id=text"
+in order to pass W3C validation. Added a Table of Contents.
+
+<p>
+
+</p></li><li>18 Sept 2013 (version 1.4.8): Fixed bad link.
+<p>
+
+</p></li><li>3 Aug 2008 (version 1.4.5): Added "Collection" keyword.
+<p>
+
+</p></li><li>1 May 2008 (version 1.4.0): Added <code>dSIG</code> chunk.
+<p>
+
+</p></li><li>30 August 2006 (version 1.3.0): Added <code>sTER</code> chunk.
+Updated some URLs.
+<p>
+
+</p></li><li>21 November 2000 (version 1.2.0): First public release, derived from
+the PNG Specification [PNG-1.2] and the PNG Extensions document [PNGEXT-1.2.0].
+<p>
+
+</p></li></ul>
+
+<h2 id="References"><a>4. References</a></h2>
+
+<dl>
+
+<dt><strong>[<a id="I-8859-1">ISO/IEC-8859-1</a>]</strong>
+
+</dt><dd>International Organization for Standardization and International
+Electrotechnical Commission, "Information Technology--8-bit
+Single-Byte Coded Graphic Character Sets--Part 1: Latin Alphabet
+No. 1", IS 8859-1, 1998.<br>
+Also see sample files at<br>
+<code><a href="ftp://ftp.simplesystems.org/pub/png/documents/">ftp://ftp.simplesystems.org/pub/png/documents/iso_8859-1.*</a></code>
+
+<p>
+
+</p></dd><dt><strong>[<a id="ISO-646">ISO-646</a>]</strong>
+
+</dt><dd>International Organization for Standardization and International
+Electrotechnical Commission, "Information Technology--ISO
+7-bit Coded Character Set for Information Exchange", 1991.<br>
+
+<p>
+
+</p></dd><dt><strong>[<a id="PNG-1.2">PNG-1.2</a>]</strong>
+
+</dt><dd>Randers-Pehrson, G., et. al., "PNG (Portable Network Graphics
+Format) Version 1.2", which is available at<br>
+<code><a href="http://libpng.download/documents/">
+http://libpng.download/documents/</a></code>.
+
+<p>
+
+</p></dd><dt><strong>[<a id="PNG-ISO">PNG-ISO</a>]</strong>
+
+</dt><dd>"Portable Network Graphics (PNG) Specification (Second Edition),"
+10 November 2003, also released as "International Standard 15948:2003
+-- Portable Network Graphics (PNG): Functional specification", available
+at <code><a href="http://png-mng.sourceforge.net/pub/png/spec/iso/">
+http://png-mng.sourceforge.net/pub/png/spec/iso/</a></code>
+
+<p>
+
+</p></dd><dt><strong>[<a id="PNGEXT-1.2.0">PNGEXT-1.2.0</a>]</strong>
+
+</dt><dd>Randers-Pehrson, G., et. al., "Extensions to the PNG
+(Portable Network Graphics
+Format) Version 1.2.0", which is available at<br>
+<code><a href="http://libpng.download/documents/history/">
+http://libpng.download/documents/history/</a></code>.
+
+<p>
+
+</p></dd><dt><strong>[<a id="PNGEXT-1.3.0">PNGEXT-1.3.0</a>]</strong>
+</dt><dd>Randers-Pehrson, G., et. al., "Extensions to the PNG
+(Portable Network Graphics
+Format) Version 1.3.0", which is available at<br>
+<code><a href="http://libpng.download/documents/history/">
+http://libpng.download/documents/history/</a></code>.
+
+<p>
+
+</p></dd><dt><strong>[<a id="PNGEXT-1.4.0">PNGEXT-1.4.0</a>]</strong>
+</dt><dd>Randers-Pehrson, G., et. al., "Extensions to the PNG
+(Portable Network Graphics
+Format) Version 1.4.0", which is available at<br>
+<code><a href="http://libpng.download/documents/history/">
+http://libpng.download/documents/history/</a></code>.
+
+<p>
+
+</p></dd><dt><strong>[<a id="PNGEXT-1.5.0">PNGEXT-1.5.0</a>]</strong>
+</dt><dd>Randers-Pehrson, G., et. al., "Extensions to the PNG
+(Portable Network Graphics
+Format) Version 1.5.0", which is available at<br>
+<code><a href="http://libpng.download/documents/">
+http://libpng.download/documents/</a></code>.
+
+<p>
+
+</p></dd></dl>
+
+
+</body></html>

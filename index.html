@@ -889,6 +889,20 @@ Coding-independent code points for video signal type identification (7/2021)<br 
  <code><a href=
 "https://www.itu.int/rec/T-REC-H.273/en">https://www.itu.int/rec/T-REC-H.273/en</a></code></p>
 
+<p class="NormRefDef"><a name="2-ITU-R-BT.2100">ITU-R BT.2100</a>,
+SERIES H: AUDIOVISUAL AND MULTIMEDIA SYSTEMS
+Infrastructure of audiovisual services – Coding of moving video
+Coding-independent code points for video signal type identification (7/2021)<br class="xhtml" />
+ <code><a href=
+"https://www.itu.int/rec/R-REC-BT.2100">https://www.itu.int/rec/R-REC-BT.2100/en</a></code></p>
+
+<p class="NormRefDef"><a name="2-ITU-R-BT.709">ITU-R BT.709</a>,
+SERIES H: AUDIOVISUAL AND MULTIMEDIA SYSTEMS
+Infrastructure of audiovisual services – Coding of moving video
+Coding-independent code points for video signal type identification (7/2021)<br class="xhtml" />
+ <code><a href=
+"https://www.itu.int/rec/R-REC-BT.709">https://www.itu.int/rec/R-REC-BT.709</a></code></p>
+
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
@@ -4139,36 +4153,54 @@ values given above as if they had appeared in <a href=
 <a href="#11iCCP"><span class="chunk">iCCP</span></a> chunks do
 not both appear in a PNG datastream.</p>
 
+
+
 <h4><a name="11cICP">11.3.3.6 <span class="chunk">cICP</span>
 Coding-independent code points for video signal type identification</a></h4>
 
-<p>The xxxx-byte chunk type field contains the decimal values</p>
+<p>Coding-Independent Code Points are defined in 
+<a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a> and are typically
+embedded in video content and streams to define an explicit video rendering. The most 
+common renderings for video imagery are defined in 
+<a href="#2-ITU-R-BT.709"><span class="NormRef">[ITU-R BT.709]</span></a> 
+and <a href="#2-ITU-R-BT.2100"><span class="NormRef">[ITU-R BT.2100]</span></a></p>
 
-<pre>
-xxx xxx xxx xxx
-</pre>
+<p>The seven-byte chunk type field in cICP contains three decimal values corresponding to 
+the colour primaries, transfer function and video signal range for the source imagery. By 
+default, the matrix coefficients value should will always be 0 / "Identity" since PNG is 
+explicitly RGB and does not support YCbCr or ICtCp currently</p>
 
-<p>If the <span class="chunk">cICP</span> chunk is present, the
-image samples have a specifically defined color space, transfer function, matrix coeficients
-and signal range and should be displayed using the specified
-rendering intent defined in ITU Recommendation
-<a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a><a
-</p>
-
-<p>The <span class="chunk">cICP</span> chunk contains:</p>
+<p>The cICP chunk contains:</p>
 
 <table class="Regular" summary=
 "This table defines the cICP chunk">
 <tr>
-<td class="Regular">Rendering intent</td>
+<td class="Regular">Colour Primaries</td>
+<td class="Regular">2 bytes</td>
+</tr>
+
+<tr>
+<td class="Regular">Transfer Function</td>
+<td class="Regular">2 bytes</td>
+</tr>
+
+<tr>
+<td class="Regular">Full Range Flag</td>
 <td class="Regular">1 byte</td>
 </tr>
+
 </table>
 
-<p>The following values are defined for rendering intent:</p>
+<p>If the <span class="chunk">cICP</span> chunk is present, the
+image samples have a specifically defined color space, transfer function, and signal 
+range that should be displayed using the specified rendering intent defined in 
+<a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a>
+</p>
+
 
 <table class="Regular" summary=
-"This table defines the values of rendering intent in the cICP chunk">
+"This table defines the values in the cICP chunk that allow for an accurate rendering 
+of source content with a video rendering intent">
 <tr>
 <td class="Regular">0</td>
 <td class="Regular">Colour Primaries</td>
@@ -4185,51 +4217,34 @@ transfer characteristic function of the source picture as defined in
 </tr>
 
 <tr>
-<td class="Regular">2</td>
-<td class="Regular">Matrix Coefficients</td>
-<td class="Regular">Establishes the matrix coefficients for conversion from other 
-colour representations to RGB as defined in 
-<a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a><a</td>. 
-Currently PNG is "RGB ONLY" so matrix coefficients are irrelevant and default to an 
-"Identity" value of "0". Identifying the matrix coefficient value is retained for possible 
-future use with colour representations like YCbCr, ICtCp or others.
-</tr>
-
-<tr>
 <td class="Regular">3</td>
 <td class="Regular">Full Range Flag</td>
 <td class="Regular">Specifies the scaling and offset values defined in 
-<a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a><a</td> that are 
-applied in association with the matrix coefficients. Currently, PNG is "RGB ONLY" and 
-defaults to full range scaling, therefore a value of "1" for the "FullRangeFlag" is the
+<a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a><a</td>. 
+Currently, PNG is "RGB ONLY" and therefore a value of "1" for the "FullRangeFlag" is the 
 default. There are some use-cases where the preservation of levels above or below nominal 
-signal level (0 or 100%) are preserved and defined as "narrow range" which is typically 
-used in video imagery. 
+signal level (0 or 100%) should be preserved and therefore the signal range should be 
+defined as "narrow range" which is typically used in video imagery. For "narrow range"
+the Full-Range Flag would be set to "0". 
 </td>
 </tr>
 </table>
 
+<p>The cICP chunk should come before IDAT chunk.</p>
 
-<p>When the <span class="chunk">sRGB</span> chunk is present, it
-is recommended that decoders that recognize it and are capable of
-colour management <a href="#G-ICC"><span class=
-"bibref">[ICC]</span></a> ignore the <a href="#11gAMA"><span
-class="chunk">gAMA</span></a> and <a href="#11cHRM"><span class=
-"chunk">cHRM</span></a> chunks and use the <span class=
-"chunk">sRGB</span> chunk instead. Decoders that recognize the
-<span class="chunk">sRGB</span> chunk but are not capable of
-colour management <a href="#G-ICC"><span class=
-"bibref">[ICC]</span></a> are recommended to ignore the <a href=
-"#11gAMA"><span class="chunk">gAMA</span></a> and <a href=
-"#11cHRM"><span class="chunk">cHRM</span></a> chunks, and use the
-values given above as if they had appeared in <a href=
-"#11gAMA"><span class="chunk">gAMA</span></a> and <a href=
-"#11cHRM"><span class="chunk">cHRM</span></a> chunks.</p>
-
+<p>When the cICP chunk is present, PNG decoders that recognize it shall ignore the 
+following chunks:</p>
+<p>- iCCP</p>
+<p>- gAMA </p>
+<p>- cHRM </p>
+<p>- sRGB </p>
 
 
 <table class="Regular" summary=
-"This table provides an example of the COLPRIMS, TRANSFC, VIDFRNG values for cICP">
+"The table below provides an example of the COLPRIMS, TRANSFC, VIDFRNG values for cICP">
+
+<p>Below is an example for the use of the cICP:</p>
+
 <tr>
 <th colspan="2"><a href="#11COLPRIMS"><span class=
 "chunk">COLPRIMS</span></a> </th>
@@ -4261,6 +4276,38 @@ values given above as if they had appeared in <a href=
 </tr>
 
 </table>
+
+
+<p>Here is an example of source content that uses the BT.2100 color primaries,
+with the PQ transfer function and Full-Range signal scaling</p> 
+
+<pre>
+9 16 1
+</pre>
+
+<p>Here is an example of source content that uses the BT.2100 color primaries,
+with the HLG transfer function and Full-Range signal scaling</p> 
+
+<pre>
+9 18 1
+</pre>
+
+<p>Here is an example of source content that uses the BT.2100 color primaries,
+with the HLG transfer function and Full-Range signal scaling</p> 
+
+<pre>
+1 1 1
+</pre>
+
+
+<p>When the <span class="chunk">cICP</span> chunk is used, a
+decoder should be capable of producing the proper rendering intent as described in 
+<a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a><a</td> and
+it's associated recommendations.</p>
+
+
+<p>It is recommended that the <span class="chunk">cICP</span> chunk does not appear in a 
+PNG datastream.</p>
 
 
 <h3><a name="11textinfo">11.3.4 Textual information</a></h3>

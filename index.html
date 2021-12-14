@@ -4169,7 +4169,8 @@ and <a href="#2-ITU-R-BT.2100"><span class="NormRef">[ITU-R BT.2100]</span></a><
 <p>The seven-byte chunk type field in cICP contains three decimal values corresponding to 
 the colour primaries, transfer function and video signal range for the source imagery. By 
 default, the matrix coefficients are not defined in the cICP chunk since PNG is 
-explicitly RGB. Decoders should substitute a value of 0 ("Identity") for the source</p>
+explicitly RGB, therefore decoders should always assuma a matrix coefficient value of 0 
+("Identity") from the source</p>
 
 <p>The cICP chunk contains:</p>
 

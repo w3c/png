@@ -785,6 +785,19 @@ The <span class="chunk">pCAL</span> chunk contains:
     An image may belong to one or more collections,
     each named by a separate text chunk.
 
+<h3 id="K.XMP">
+    XML:com.adobe.xmp
+</h3>
+
+    Extensible Metadata Platform (XMP) information,
+    formatted as required by the XMP specification [[XMP]].
+    The use of <span class="chunk">iTXt</span>,
+    with Compression Flag set to 0,
+    and both Language Tag and
+    Translated Keyword set to the null string,
+    are recommended
+    for XMP compliance.
+
 <h3 id="K.Syntax">
     Keyword Syntax
 </h3>
@@ -1072,9 +1085,10 @@ What are <code>x0</code> and <code>x1</code> for?
 </h2>
 
 <ul>
-    <li>13 Dec 2021 (version 1.6.0)</li>
+    <li>16 Dec 2021 (version 1.6.0)</li>
 
     <ul>
+        <li>Added XML:com.adobe.xmp keyword for use with XMP</li>
         <li>Moved <span class="chunk">eXIF</span> to main PNG document</li>
         <li>Converted source document to Bikeshed</li>
     </ul>

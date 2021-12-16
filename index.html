@@ -4200,11 +4200,18 @@ Coding-independent code points for video signal type identification</a></h4>
   <a href="#2-ITU-R-BT.709"><span class="NormRef">[ITU-R BT.709]</span></a>
   and <a href="#2-ITU-R-BT.2100"><span class="NormRef">[ITU-R BT.2100]</span></a></p>
 
-  <p>The seven-byte chunk type field in cICP contains three decimal values corresponding to
-  the colour primaries, transfer function and video signal range for the source imagery. By
-  default, the matrix coefficients are not defined in the cICP chunk since PNG is
-  explicitly RGB, therefore decoders should always assuma a matrix coefficient value of 0
-  ("Identity") from the source</p>
+  <p>The cICP chunk contains three decimal values corresponding to
+  the colour primaries, transfer function and video signal range for the source imagery. </p>
+
+  <p>Note that Coding-Independent Code Points
+    <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a>
+    also define a fourth field, matrix coefficients,
+    which are used to describe
+    conversion of YCbCr or ICtCp image samples to an RGB color space.
+    However PNG image samples are explicitly RGB,
+    so the matrix coefficients are not defined in the cICP chunk.
+    Decoders should always assume a matrix coefficient value of 0
+    ("Identity") from the source.</p>
 
 
 <table class="Regular" summary=

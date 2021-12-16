@@ -785,9 +785,9 @@ The <span class="chunk">pCAL</span> chunk contains:
     An image may belong to one or more collections,
     each named by a separate text chunk.
 
-<h3 id="K.XMP">
+<h4 id="K.XMP">
     XML:com.adobe.xmp
-</h3>
+</h4>
 
     Extensible Metadata Platform (XMP) information,
     formatted as required by the XMP specification [[XMP]].

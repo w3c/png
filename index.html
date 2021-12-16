@@ -4246,14 +4246,16 @@ the Full-Range Flag would be set to "0".
 </tr>
 </table>
 
-<p>The cICP chunk should come before IDAT chunk.</p>
+<p>The cICP chunk should come before the IDAT chunk.</p>
 
 <p>When the cICP chunk is present, PNG decoders that recognize it shall ignore the
 following chunks:</p>
-<p>- iCCP</p>
-<p>- gAMA </p>
-<p>- cHRM </p>
-<p>- sRGB </p>
+<ul>
+  <li>iCCP</li>
+  <li>gAMA </li>
+  <li>cHRM </li>
+  <li>sRGB </li>
+</ul>
 
 
 <table class="Regular" summary=

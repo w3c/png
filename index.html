@@ -4209,13 +4209,13 @@ Coding-independent code points for video signal type identification</a></h4>
   <p>The cICP chunk contains four decimal values corresponding to
   the colour primaries, transfer function, matrix coefficients and video signal range flag for the source imagery. </p>
 
-  <p>Note that in Coding-Independent Code Points
-    <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a>, the 
+  <p>Note: In Coding-Independent Code Points <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a>, the 
     third video coding point defines matrix coefficients which are used to describe
-    conversion from other color representations to RGB. PNG image samples explicitly RGB,
-    so the matrix coefficients default to a value of 0 which is defined as "RGB Identity".
-    Decoders should always assume a matrix coefficient value of 0 until the PNG specification 
-    allows other color representations that require conversion to RGB.</p>
+    conversion from other color representations to RGB. PNG image samples are explicitly RGB,
+    so the matrix coefficients must default to a value of 0 which is labeled in 
+    <a href="#2-ITU-R-BT.709"><span class="NormRef">[ITU-R BT.709]</span></a> as "RGB Identity".
+    Decoders must always assume a matrix coefficient value of 0 until the PNG specification 
+    allows color representations other than RGB.</p>
 
 
 <table class="Regular" summary=

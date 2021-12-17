@@ -4186,6 +4186,12 @@ explicitly RGB, therefore decoders should always assuma a matrix coefficient val
 </tr>
 
 <tr>
+<td class="Regular">Matrix Coefficients</td>
+<td class="Regular">2 bytes</td>
+</tr>
+
+
+<tr>
 <td class="Regular">Full Range Flag</td>
 <td class="Regular">1 byte</td>
 </tr>
@@ -4266,9 +4272,20 @@ following chunks:</p>
 <td class="Regular">16</td>
 </tr>
 
+
 <tr>
 <th colspan="2"><a href="#11VIDFRNG"><span class=
 "chunk">TRANSFC</span></a> </th>
+</tr>
+
+<tr>
+<td class="Regular">MATCOEFFS</td>
+<td class="Regular">1</td>
+</tr>
+
+<tr>
+<th colspan="2"><a href="#11MATCOEFFS"><span class=
+"chunk">MATCOEFFS</span></a> </th>
 </tr>
 
 <tr>
@@ -4280,24 +4297,24 @@ following chunks:</p>
 
 
 <p>Here is an example of source content that uses the BT.2100 color primaries,
-with the PQ transfer function and Full-Range signal scaling</p> 
+with the PQ transfer function, RGB Identity and Full-Range signal scaling</p> 
 
 <pre>
-9 16 1
+9 16 1 1
 </pre>
 
 <p>Here is an example of source content that uses the BT.2100 color primaries,
-with the HLG transfer function and Full-Range signal scaling</p> 
+with the HLG transfer function, RGB Identity and Full-Range signal scaling</p> 
 
 <pre>
-9 18 1
+9 18 1 1
 </pre>
 
 <p>Here is an example of source content that uses the BT.2100 color primaries,
-with the HLG transfer function and Full-Range signal scaling</p> 
+with the HLG transfer function, RGB Identity and Full-Range signal scaling</p> 
 
 <pre>
-1 1 1
+1 1 1 1
 </pre>
 
 

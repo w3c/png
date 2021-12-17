@@ -4245,8 +4245,10 @@ transfer characteristic function of the source picture as defined in
 signals from the green, blue and red as defined in 
 <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a><a</td>. 
 Currently, PNG is "RGB ONLY" and therefore a value of "1" is the default and indicates 
-"RGB Identity" for the "MATCOEFFS" chunk. We are preserving the full CICP specification 
-for future use-cases that may use other color representations also used in video imagery.
+"RGB Identity" for the "MATCOEFFS" chunk. Even though Matrix Coefficients aren't needed 
+for RGB sources, we are preserving the full CICP specification for future use-cases where 
+other color representations, that are typical in video imagery might be used 
+(i.e.- YCbCr, ICtCp).
 </td>
 </tr>
 
@@ -4255,11 +4257,12 @@ for future use-cases that may use other color representations also used in video
 <td class="Regular">Full Range Flag</td>
 <td class="Regular">Specifies the scaling and offset values defined in
 <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a><a</td>.
-Currently, PNG is "RGB ONLY" and therefore a value of "1" for the "FullRangeFlag" is the
-default. There are some use-cases where levels above or below nominal
-signal level (0 or 100%) should be preserved, and therefore the signal range should be
-defined as "narrow range" which is typically used in video imagery. For "narrow range"
-the Full-Range Flag would be set to "0".
+Currently, PNG is "RGB ONLY" and therefore a value of "1" is the default to indicate the 
+the use of full-range signal scaling. There are some use-cases where levels above or below nominal
+signal level (0 or 100%) should be preserved, and therefore the signal range would be
+defined as "narrow range" which is typically used in YCbCr video imagery. For "narrow range"
+the Full-Range Flag would be set to "0". In the future, if PNG is updated to include YCbCr 
+color representations, narrow-range signal scaling would be the default choice.
 </td>
 </tr>
 </table>

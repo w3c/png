@@ -4225,6 +4225,18 @@ transfer characteristic function of the source picture as defined in
 
 <tr>
 <td class="Regular">3</td>
+<td class="Regular">Matrix Coefficients</td>
+<td class="Regular">Describes the matrix coefficients used in deriving luma and chroma 
+signals from the green, blue and red as defined in 
+<a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a><a</td>. 
+Currently, PNG is "RGB ONLY" and therefore a value of "1" is the default and indicates 
+"RGB Identity" for the "MATCOEFFS" chunk. We are preserving the full CICP specification 
+for future use-cases that may use other color representations also used in video imagery.
+</td>
+</tr>
+
+<tr>
+<td class="Regular">3</td>
 <td class="Regular">Full Range Flag</td>
 <td class="Regular">Specifies the scaling and offset values defined in 
 <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a><a</td>. 
@@ -4248,7 +4260,8 @@ following chunks:</p>
 
 
 <table class="Regular" summary=
-"The table below provides an example of the COLPRIMS, TRANSFC, VIDFRNG values for cICP">
+"The table below provides an example of the COLPRIMS, TRANSFC, MATCOEFFS, VIDFRNG 
+values for cICP">
 
 <p>Below is an example for the use of the cICP:</p>
 
@@ -4272,10 +4285,9 @@ following chunks:</p>
 <td class="Regular">16</td>
 </tr>
 
-
 <tr>
-<th colspan="2"><a href="#11VIDFRNG"><span class=
-"chunk">TRANSFC</span></a> </th>
+<th colspan="2"><a href="#11MATCOEFFS"><span class=
+"chunk">MATCOEFFS</span></a> </th>
 </tr>
 
 <tr>
@@ -4284,8 +4296,8 @@ following chunks:</p>
 </tr>
 
 <tr>
-<th colspan="2"><a href="#11MATCOEFFS"><span class=
-"chunk">MATCOEFFS</span></a> </th>
+<th colspan="2"><a href="#11VIDFRNG"><span class=
+"chunk">TRANSFC</span></a> </th>
 </tr>
 
 <tr>

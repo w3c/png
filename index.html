@@ -17,7 +17,7 @@
       <h1 id="pagetitle">Portable Network Graphics (PNG) Specification (Third Edition)</h1>
       <!-- <h1>Information technology — Computer graphics and image processing — Portable Network Graphics (PNG): Functional specification. ISO/IEC 15948:2003 (E)</h1> -->
       <!--h2 id="pagesubtitle">W3C Recommendation 1 October 1996, revised 14 October 2003</h2-->
-      <h2 id="pagesubtitle">Editors Draft, 19 Jan 2021</h2>
+      <h2 id="pagesubtitle">Editors Draft, 18 Dec 2021</h2>
       <dl>
         <dt>This version:</dt>
         <dd><a
@@ -55,10 +55,13 @@
     <h2 id="status">Status of this document</h2>
 <p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current W3C publications and the latest revision of this technical report can be found in the <a href="http://www.w3.org/TR/">W3C technical reports index</a> at http://www.w3.org/TR/.</em></p>
 
-    <p>This document is an Editors Draft.
-      It is derived from the the 14 October 2003 W3C
-    Recommendation of the PNG specification, second edition,
-  by the application of known errata.</p>
+<p>
+  This document is an Editors Draft.
+  It is derived from the the 14 October 2003 W3C
+  Recommendation of the PNG specification, second edition,
+  by the application of known errata
+  and the addition of new features.
+</p>
 
 <!--
 needs update, comment out for now
@@ -66,14 +69,13 @@ needs update, comment out for now
 <p>The PNG specification enjoys a good level of <a href="http://www.libpng.org/pub/png/pngstatus.html">implementation</a>  with good interoperability. At the time of this publication more than 180 <a href="http://www.libpng.org/pub/png/pngapvw.html">image viewers</a> could display PNG images and over 100 <a href="http://www.libpng.org/pub/png/pngaped.html">image editors</a> could read and write valid PNG files. Full support of PNG is  required  for conforming <a href="/Graphics/SVG">SVG</a> viewers; at the time of publication all eighteen <a href="/Graphics/SVG/SVG-Implementations.htm8#viewer">SVG viewers</a> had PNG support. HTML has no required image formats, but over 60 <a href="http://www.libpng.org/pub/png/pngapbr.html">HTML browsers</a> had at least basic support of PNG images.</p> -->
 
     <p>Public comments on this W3C Recommendation are welcome.
-    Please send them to the <a href="http://lists.w3.org/Archives/Public/png-group">archived</a> list <a href="mailto:png-group@w3.org">png-group@w3.org</a>.</p>
+    Please send them to the <a href="http://lists.w3.org/Archives/Public/public-png">archived</a> list <a href="mailto:public-png@w3.org">public-png@w3.org</a>
+    or <a href="https://github.com/w3c/PNG-spec/issues">raise an issue on GitHub</a> <em>(preferred)</em>.</p>
 
     <p>The latest information regarding <a rel="disclosure"
-    href="http://www.w3.org/Graphics/PNG/Disclosures">patent
+    href="https://www.w3.org/groups/wg/png/ipr">patent
     disclosures</a> related to this document is available on the
-    Web. As of this publication, the PNG Group are not
-    aware of any royalty-bearing patents they believe to be
-    essential to PNG.</p>
+    Web.</p>
 
     <!-- <p>This document has been produced by ISO/IEC JTC1 SC24 and the PNG Group as part of the <a
     href="http://www.w3.org/Graphics/Activity">Graphics
@@ -2101,28 +2103,11 @@ handling</span></a>.</p>
 <h2><a name="4Concepts.Registration">4.9 Extension and
 registration</a></h2>
 
-<p>For some facilities in PNG, there are a number of alternatives
-defined, and this International Standard allows other
-alternatives to be defined by registration. According to the
-rules for the designation and operation of registration
-authorities in the ISO/IEC Directives, the ISO and IEC Councils
-have designated the following as the registration authority:</p>
-
-<address>The World-Wide Web Consortium Host at ERCIM</address>
-
-<address>The Registration Authority for PNG</address>
-
-<address>INRIA- Sophia Antipolis</address>
-
-<address>BP 93</address>
-
-<address>06902 Sophia Antipolis Cedex</address>
-
-<address>FRANCE</address>
-
-<address>Email:png-group@w3.org</address>
-
-<p>To ensure timely processing the Registration Authority should be contacted by email.</p>
+<p>
+  For some facilities in PNG, there are a number of alternatives
+  defined, and this International Standard allows other
+  alternatives to be defined by registration.
+</p>
 
 <p>The following entities may be registered:</p>
 
@@ -2147,8 +2132,12 @@ standardization:</p>
 <li>compression method.</li>
 </ol>
 
-<!-- ************Page Break******************* -->
-<!-- ************Page Break******************* -->
+<p>
+  Registration requests should be made by
+  <a href="https://github.com/w3c/PNG-spec/issues">raising an issue on GitHub</a>.
+</p>
+
+
 <h1><a name="5DataRep">5 Datastream structure</a></h1>
 
 <h2><a name="5Introduction">5.1 Introduction</a></h2>
@@ -4240,11 +4229,13 @@ transfer characteristic function of the source picture as defined in
 <tr>
 <td class="Regular">2</td>
 <td class="Regular">Matrix Coefficients</td>
+
 <td class="Regular">Describes the matrix coefficients used in deriving luma and chroma 
 signals from the green, blue and red as defined in 
 <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a><a</td>. 
 As noted earlier, since PNG is explicitly RGB, this value must always be set to "0" which is labeled as "RGB Identity" in 
 <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a>.
+
 </td>
 </tr>
 
@@ -4280,7 +4271,7 @@ following chunks:</p>
 
 
 <table class="Regular" summary=
-"The table below provides an example of the COLPRIMS, TRANSFC, MATCOEFFS, VIDFRNG 
+"The table below provides an example of the COLPRIMS, TRANSFC, MATCOEFFS, VIDFRNG
 values for cICP">
 
 <p>Below is an example for the use of the cICP:</p>
@@ -4326,6 +4317,7 @@ values for cICP">
 </tr>
 
 </table>
+
 
 
 <p>Here is an example of source content that uses the BT.2100 colour primaries,
@@ -7882,14 +7874,6 @@ and are described in detail in <i>PNG: The Definitive Guide</i>
 <a href="#G-ROELOFS">[ROELOFS]</a>. Test images can also be
 accessed from the PNG web site.</p>
 
-<h2><a name="E-Email">Electronic mail</a></h2>
-
-<p>Queries concerning PNG developments may be addressed to <a href=
-"mailto:png-group@w3.org"><tt>png-group@w3.org</tt></a>.
-<!-- ************Page Break******************* -->
-</p>
-
-<!-- ************Page Break******************* -->
 <h1 class="Annex"><a name="F-Relationship">Annex F</a></h1>
 
 <p class="Annex">(informative)</p>

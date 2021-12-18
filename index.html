@@ -4162,11 +4162,12 @@ Coding-independent code points for video signal type identification</a></h4>
 <p>The four-byte chunk type field contains the decimal values</p>
 
 <pre>
+  <!--- What are these numbers??? -->
 99 73 67 80
 </pre>
 
 <p>If the <span class="chunk">cICP</span> chunk is present, the
-  image samples have a specifically defined color space, transfer function, and signal
+  image samples have a specifically defined colour space, transfer function, and signal
   range that should be displayed using the specified rendering intent defined in
   <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a>
 </p>
@@ -4213,9 +4214,9 @@ Coding-independent code points for video signal type identification</a></h4>
     third video coding point defines matrix coefficients which are used to describe
     conversions from other colour representations to RGB. PNG image samples are explicitly RGB,
     so the matrix coefficients value must be set to "0" which is labeled in 
-    <a href="#2-ITU-R-BT.709"><span class="NormRef">[ITU-R BT.709]</span></a> as "RGB Identity".
-    Decoders will always assume a matrix coefficient value of 0 but this value will remain in PNG as per 
-    <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a> for forward compatibility.</p>
+    <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a> as "RGB Identity".
+    With PNG, decoders will always assume a matrix coefficient value of "0" but this value will remain in PNG 
+    for forward compatibility.</p>
 
 
 <table class="Regular" summary=
@@ -4257,8 +4258,8 @@ the use of full-range signal scaling. There are some use-cases where levels abov
 signal level (0 or 100%) should be preserved, and therefore the signal range would be
 defined as "narrow range" which is typically used in YC<sub>B</sub>C<sub>R</sub> video imagery. For "narrow range"
 the Full-Range Flag would be set to "0". In the future, if PNG is updated to include the YC<sub>B</sub>C<sub>R</sub> 
-colour representation, narrow-range signal scaling would be the default choice so the Full-Range flag would be set 
-to "0".  In the future if PNG is updated to include IC<sub>T</sub>C<sub>P</sub> the full-range flag would be set to a 
+colour representation, narrow-range signal scaling would be the default, therefore the Full-Range flag would be set 
+to a value of "0".  In the future, if PNG is updated to include IC<sub>T</sub>C<sub>P</sub> the full-range flag would be set to a 
 a value of "1" since it uses the PQ transfer function and therefore doesn't benefit from the existence of sub-blacks 
 or super-whites.
 </td>
@@ -4311,7 +4312,7 @@ values for cICP">
 
 <tr>
 <td class="Regular">MATCOEFFS</td>
-<td class="Regular">1</td>
+<td class="Regular">0</td>
 </tr>
 
 <tr>
@@ -4331,21 +4332,21 @@ values for cICP">
 with the PQ transfer function, Matrix Coefficients (using RGB Identity)and Full-Range signal scaling</p> 
 
 <pre>
-9 16 1 1
+9 16 0 1
 </pre>
 
 <p>Here is an example of source content that uses the BT.2100 colour primaries,
 with the HLG transfer function, Matrix Coefficients (using RGB Identity)and Full-Range signal scaling</p> 
 
 <pre>
-9 18 1 1
+9 18 0 1
 </pre>
 
 <p>Here is an example of source content that uses BT.709 colour primaries,
 with the BT.709 transfer function, Matrix Coefficients (using RGB Identity)and Full-Range signal scaling</p>
 
 <pre>
-1 1 1 1
+1 1 0 1
 </pre>
 
 

@@ -4151,11 +4151,12 @@ Coding-independent code points for video signal type identification</a></h4>
 <p>The four-byte chunk type field contains the decimal values</p>
 
 <pre>
+  <!--- What are these numbers??? -->
 99 73 67 80
 </pre>
 
 <p>If the <span class="chunk">cICP</span> chunk is present, the
-  image samples have a specifically defined color space, transfer function, and signal
+  image samples have a specifically defined colour space, transfer function, and signal
   range that should be displayed using the specified rendering intent defined in
   <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a>
 </p>
@@ -4195,18 +4196,16 @@ Coding-independent code points for video signal type identification</a></h4>
   <a href="#2-ITU-R-BT.709"><span class="NormRef">[ITU-R BT.709]</span></a>
   and <a href="#2-ITU-R-BT.2100"><span class="NormRef">[ITU-R BT.2100]</span></a></p>
 
-  <p>The cICP chunk contains three decimal values corresponding to
-  the colour primaries, transfer function and video signal range for the source imagery. </p>
+  <p>The cICP chunk contains four decimal values corresponding to
+  the colour primaries, transfer function, matrix coefficients and video signal range flag for the source imagery. </p>
 
-  <p>Note that Coding-Independent Code Points
-    <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a>
-    also define a fourth field, matrix coefficients,
-    which are used to describe
-    conversion of YCbCr or ICtCp image samples to an RGB color space.
-    However PNG image samples are explicitly RGB,
-    so the matrix coefficients are not defined in the cICP chunk.
-    Decoders should always assume a matrix coefficient value of 0
-    ("Identity") from the source.</p>
+  <p>Note: In Coding-Independent Code Points <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a>, the 
+    third video coding point defines matrix coefficients which are used to describe
+    conversions from other colour representations to RGB. PNG image samples are explicitly RGB,
+    so the matrix coefficients value must be set to "0" which is labeled in 
+    <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a> as "RGB Identity".
+    With PNG, decoders will always assume a matrix coefficient value of "0" but this value will remain in PNG 
+    for forward compatibility.</p>
 
 
 <table class="Regular" summary=
@@ -4215,7 +4214,7 @@ of source content with a video rendering intent">
 <tr>
 <td class="Regular">0</td>
 <td class="Regular">Colour Primaries</td>
-<td class="Regular">Identifies the color primaries of the source picture as defined in
+<td class="Regular">Identifies the colour primaries of the source picture as defined in
 <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a><a</td>
 </tr>
 
@@ -4228,32 +4227,38 @@ transfer characteristic function of the source picture as defined in
 </tr>
 
 <tr>
-<td class="Regular">3</td>
+<td class="Regular">2</td>
 <td class="Regular">Matrix Coefficients</td>
-<td class="Regular">Describes the matrix coefficients used in deriving luma and chroma
-signals from the green, blue and red as defined in
-<a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a><a</td>.
-Currently, PNG is "RGB ONLY" and therefore a value of "1" is the default and indicates
-"RGB Identity" for the "MATCOEFFS" chunk. We are preserving the full CICP specification
-for future use-cases that may use other color representations also used in video imagery.
+
+<td class="Regular">Describes the matrix coefficients used in deriving luma and chroma 
+signals from the green, blue and red as defined in 
+<a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a><a</td>. 
+As noted earlier, since PNG is explicitly RGB, this value must always be set to "0" which is labeled as "RGB Identity" in 
+<a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a>.
+
 </td>
 </tr>
 
 <tr>
 <td class="Regular">3</td>
 <td class="Regular">Full Range Flag</td>
-<td class="Regular">Specifies the scaling and offset values defined in
+<td class="Regular">Specifies Full-Range scaling when this value is "1" as defined in
 <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a><a</td>.
-Currently, PNG is "RGB ONLY" and therefore a value of "1" for the "FullRangeFlag" is the
-default. There are some use-cases where levels above or below nominal
-signal level (0 or 100%) should be preserved, and therefore the signal range should be
-defined as "narrow range" which is typically used in video imagery. For "narrow range"
-the Full-Range Flag would be set to "0".
+Currently, PNG is "RGB ONLY" and therefore a value of "1" is the default to indicate the 
+the use of full-range signal scaling. There are some use-cases where levels above or below nominal
+signal level (0 or 100%) should be preserved, and therefore the signal range would be
+defined as "narrow range" which is typically used in YC<sub>B</sub>C<sub>R</sub> video imagery. For "narrow range"
+the Full-Range Flag would be set to "0". In the future, if PNG is updated to include the YC<sub>B</sub>C<sub>R</sub> 
+colour representation, narrow-range signal scaling would be the default, therefore the Full-Range flag would be set 
+to a value of "0".  In the future, if PNG is updated to include IC<sub>T</sub>C<sub>P</sub> the full-range flag would be set to a 
+a value of "1" since it uses the PQ transfer function and therefore doesn't benefit from the existence of sub-blacks 
+or super-whites.
 </td>
 </tr>
-</table>
 
-<p>The cICP chunk should come before the IDAT chunk.</p>
+
+</table>
+<p>The cICP chunk must come before the IDAT chunk.</p>
 
 <p>When the cICP chunk is present, PNG decoders that recognize it shall ignore the
 following chunks:</p>
@@ -4298,7 +4303,7 @@ values for cICP">
 
 <tr>
 <td class="Regular">MATCOEFFS</td>
-<td class="Regular">1</td>
+<td class="Regular">0</td>
 </tr>
 
 <tr>
@@ -4314,25 +4319,26 @@ values for cICP">
 </table>
 
 
-<p>Here is an example of source content that uses the BT.2100 color primaries,
-with the PQ transfer function, Matrix Coefficients (using RGB Identity)and Full-Range signal scaling</p>
+
+<p>Here is an example of source content that uses the BT.2100 colour primaries,
+with the PQ transfer function, Matrix Coefficients (using RGB Identity)and Full-Range signal scaling</p> 
 
 <pre>
-9 16 1 1
+9 16 0 1
 </pre>
 
-<p>Here is an example of source content that uses the BT.2100 color primaries,
-with the HLG transfer function, Matrix Coefficients (using RGB Identity)and Full-Range signal scaling</p>
+<p>Here is an example of source content that uses the BT.2100 colour primaries,
+with the HLG transfer function, Matrix Coefficients (using RGB Identity)and Full-Range signal scaling</p> 
 
 <pre>
-9 18 1 1
+9 18 0 1
 </pre>
 
-<p>Here is an example of source content that uses BT.709 color primaries,
+<p>Here is an example of source content that uses BT.709 colour primaries,
 with the BT.709 transfer function, Matrix Coefficients (using RGB Identity)and Full-Range signal scaling</p>
 
 <pre>
-1 1 1 1
+1 1 0 1
 </pre>
 
 
@@ -4340,10 +4346,6 @@ with the BT.709 transfer function, Matrix Coefficients (using RGB Identity)and F
 decoder should be capable of producing the proper rendering intent as described in
 <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a><a</td> and
 it's associated recommendations.</p>
-
-
-<p>It is recommended that the <span class="chunk">cICP</span> chunk does not appear in a
-PNG datastream.</p>
 
 
 <h3><a name="11textinfo">11.3.4 Textual information</a></h3>

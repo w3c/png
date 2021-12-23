@@ -888,21 +888,21 @@ Alvestrand, H., "Tags for the Identification of Languages", RFC
 <p class="NormRefDef"><a name="2-ITU-T-H.273">ITU-T H.273</a>,
 SERIES H: AUDIOVISUAL AND MULTIMEDIA SYSTEMS
 Infrastructure of audiovisual services – Coding of moving video
-Coding-independent code points for video signal type identification (7/2021)<br class="xhtml" />
+Coding-independent code points for video signal type identification<br class="xhtml" />
  <code><a href=
-"https://www.itu.int/rec/T-REC-H.273/en">https://www.itu.int/rec/T-REC-H.273/en</a></code></p>
+"https://www.itu.int/rec/T-REC-H.273">https://www.itu.int/rec/T-REC-H.273</a></code></p>
 
 <p class="NormRefDef"><a name="2-ITU-R-BT.2100">ITU-R BT.2100</a>,
 SERIES H: AUDIOVISUAL AND MULTIMEDIA SYSTEMS
 Infrastructure of audiovisual services – Coding of moving video
-Coding-independent code points for video signal type identification (7/2021)<br class="xhtml" />
+Coding-independent code points for video signal type identification<br class="xhtml" />
  <code><a href=
-"https://www.itu.int/rec/R-REC-BT.2100">https://www.itu.int/rec/R-REC-BT.2100/en</a></code></p>
+"https://www.itu.int/rec/R-REC-BT.2100">https://www.itu.int/rec/R-REC-BT.2100</a></code></p>
 
 <p class="NormRefDef"><a name="2-ITU-R-BT.709">ITU-R BT.709</a>,
 SERIES H: AUDIOVISUAL AND MULTIMEDIA SYSTEMS
 Infrastructure of audiovisual services – Coding of moving video
-Coding-independent code points for video signal type identification (7/2021)<br class="xhtml" />
+Coding-independent code points for video signal type identification<br class="xhtml" />
  <code><a href=
 "https://www.itu.int/rec/R-REC-BT.709">https://www.itu.int/rec/R-REC-BT.709</a></code></p>
 
@@ -4190,22 +4190,24 @@ Coding-independent code points for video signal type identification</a></h4>
 
 
 <p>Coding-Independent Code Points are defined in
-  <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a> and are typically
-  embedded in video content and streams to define an explicit video rendering. The most
-  common renderings for video imagery are defined in
+  <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a> and 
+  are typically embedded in video content and streams to define an explicit 
+  video rendering. The most common renderings for video imagery are defined in
   <a href="#2-ITU-R-BT.709"><span class="NormRef">[ITU-R BT.709]</span></a>
   and <a href="#2-ITU-R-BT.2100"><span class="NormRef">[ITU-R BT.2100]</span></a></p>
 
   <p>The cICP chunk contains four decimal values corresponding to
-  the colour primaries, transfer function, matrix coefficients and video signal range flag for the source imagery. </p>
+  the colour primaries, transfer function, matrix coefficients and video signal 
+  range flag for the source imagery. </p>
 
-  <p>Note: In Coding-Independent Code Points <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a>, the 
+  <p>Note: In Coding-Independent Code Points 
+    <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a>, the 
     third video coding point defines matrix coefficients which are used to describe
-    conversions from other colour representations to RGB. PNG image samples are explicitly RGB,
-    so the matrix coefficients value must be set to "0" which is labeled in 
-    <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a> as "RGB Identity".
-    With PNG, decoders will always assume a matrix coefficient value of "0" but this value will remain in PNG 
-    for forward compatibility.</p>
+    conversions from other colour representations to RGB. PNG image samples are 
+    explicitly RGB, so the matrix coefficients value must be set to "0" which is 
+    labeled in <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a> 
+    as "RGB Identity". With PNG, decoders will always assume a matrix coefficient 
+    value of "0" but this value will remain in PNG for forward compatibility.</p>
 
 
 <table class="Regular" summary=
@@ -4214,15 +4216,16 @@ of source content with a video rendering intent">
 <tr>
 <td class="Regular">0</td>
 <td class="Regular">Colour Primaries</td>
-<td class="Regular">Identifies the colour primaries of the source picture as defined in
-<a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a><a</td>
+<td class="Regular">Identifies the colour primaries of the source picture as 
+  defined in <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a><a</td>
 </tr>
 
 <tr>
 <td class="Regular">1</td>
 <td class="Regular">Transfer Characteristics</td>
-<td class="Regular">Identifies the reference opto-electronic
-transfer characteristic function of the source picture as defined in
+<td class="Regular">Identifies the reference opto-electronic transfer 
+characteristic function or inverse reference electro-optical transfer 
+characteristic function as defined in 
 <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a><a</td>
 </tr>
 
@@ -4230,10 +4233,11 @@ transfer characteristic function of the source picture as defined in
 <td class="Regular">2</td>
 <td class="Regular">Matrix Coefficients</td>
 
-<td class="Regular">Describes the matrix coefficients used in deriving luma and chroma 
-signals from the green, blue and red as defined in 
+<td class="Regular">Identifies the matrix coefficients used in deriving luma and 
+chroma signals from the green, blue and red as defined in 
 <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a><a</td>. 
-As noted earlier, since PNG is explicitly RGB, this value must always be set to "0" which is labeled as "RGB Identity" in 
+As noted earlier, since PNG is explicitly RGB, this value must always be set to 
+"0" which is labeled as "RGB Identity" in 
 <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a>.
 
 </td>
@@ -4242,17 +4246,19 @@ As noted earlier, since PNG is explicitly RGB, this value must always be set to 
 <tr>
 <td class="Regular">3</td>
 <td class="Regular">Full Range Flag</td>
-<td class="Regular">Specifies Full-Range scaling when this value is "1" as defined in
+<td class="Regular">Identifies a Full-Range scaling when this value is "1" as defined in
 <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a><a</td>.
-Currently, PNG is "RGB ONLY" and therefore a value of "1" is the default to indicate the 
-the use of full-range signal scaling. There are some use-cases where levels above or below nominal
-signal level (0 or 100%) should be preserved, and therefore the signal range would be
-defined as "narrow range" which is typically used in YC<sub>B</sub>C<sub>R</sub> video imagery. For "narrow range"
-the Full-Range Flag would be set to "0". In the future, if PNG is updated to include the YC<sub>B</sub>C<sub>R</sub> 
-colour representation, narrow-range signal scaling would be the default, therefore the Full-Range flag would be set 
-to a value of "0".  In the future, if PNG is updated to include IC<sub>T</sub>C<sub>P</sub> the full-range flag would be set to a 
-a value of "1" since it uses the PQ transfer function and therefore doesn't benefit from the existence of sub-blacks 
-or super-whites.
+Currently, PNG is "RGB ONLY" and typically lossless and therefore a value of "1" 
+is the default to indicate the the use of full-range signal scaling. There are 
+some use-cases where levels below or above nominal signal level (0 or 100%) 
+should be preserved, and therefore the signal range would be defined as "narrow 
+range" which is typically used in YC<sub>B</sub>C<sub>R</sub> video imagery. For 
+"narrow range" the Full-Range Flag would be set to "0". In the future, if PNG is 
+updated to include the YC<sub>B</sub>C<sub>R</sub> colour representation, 
+narrow-range signal scaling would be the default.  In the future, if PNG is 
+updated to include IC<sub>T</sub>C<sub>P</sub> the full-range flag would be set 
+to a value of "1" since it uses the PQ transfer function and therefore doesn't 
+benefit from the existence of sub-blacks or super-whites.
 </td>
 </tr>
 
@@ -4260,8 +4266,8 @@ or super-whites.
 </table>
 <p>The cICP chunk must come before the IDAT chunk.</p>
 
-<p>When the cICP chunk is present, PNG decoders that recognize it shall ignore the
-following chunks:</p>
+<p>When the cICP chunk is present, PNG decoders that recognize it shall ignore 
+the following chunks:</p>
 <ul>
   <li>iCCP</li>
   <li>gAMA </li>

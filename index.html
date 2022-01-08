@@ -94,7 +94,7 @@ with these exceptions:
 
 **************************************************************************  -->
 
-<h1><a name="Introduction">Introduction</a></h1>
+<h2><a name="Introduction">Introduction</a></h2>
 
 <p></p>
 
@@ -150,7 +150,7 @@ that are not freely available.</li>
 
 
 <section>
-<h1>Scope</h1>
+<h2>Scope</h2>
 
 <p>This International Standard specifies a datastream and an
 associated file format, Portable Network Graphics (PNG,
@@ -171,7 +171,7 @@ main design goal.</p>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
-<h1>Normative references</h1>
+<h2>Normative references</h2>
 
 <p>The following normative documents contain provisions which,
 through reference in this text, constitute provisions of this
@@ -302,8 +302,8 @@ Coding-independent code points for video signal type identification<br class="xh
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
-<h1>Terms, definitions, and
-abbreviated terms</h1>
+<h2>Terms, definitions, and
+abbreviated terms</h2>
 
 <section>
 <h2>Definitions</h2>
@@ -551,7 +551,7 @@ compression</a></dt>
 <dd>method of data compression that permits reconstruction of the
 original data exactly, bit-for-bit.</dd>
 
-<dt><a name="3lossyCompression">3.1.27 lossy compression</a></dt>
+<dt><a name="lossy-compression">3.1.27 lossy compression</a></dt>
 
 <dd>method of data compression that permits reconstruction of the
 original data approximately, rather than exactly.</dd>
@@ -852,7 +852,7 @@ class="Definition">byte</span></a> value.</dd>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
-<h1>Concepts</h1>
+<h2>Concepts</h2>
 
 <section>
 <h2>Images</h2>
@@ -1037,8 +1037,8 @@ image transformation</p>
 </section>
 
 <section>
-<h3>Alpha
-separation</h3>
+<h2>Alpha
+separation</h2>
 
 <p>If all alpha samples in a reference image have the maximum
 value, then the alpha channel may be omitted, resulting in an
@@ -1046,7 +1046,7 @@ equivalent image that can be encoded more compactly.</p>
 </section>
 
 <section>
-<h3><a name="indexing">Indexing</a></h3>
+<h2><a name="indexing">Indexing</a></h2>
 
 <p>If the number of distinct pixel values is 256 or less, and the
 RGB sample depths are not greater than 8, and the alpha channel
@@ -1083,7 +1083,7 @@ shortened form that does not include these entries.</p>
 </section>
 
 <section>
-<h3>RGB merging</h3>
+<h2>RGB merging</h2>
 
 <p>If the red, green, and blue channels have the same sample
 depth, and for each pixel the values of the red, green, and blue
@@ -1092,8 +1092,8 @@ single greyscale channel.</p>
 </section>
 
 <section>
-<h3>Alpha
-compaction</h3>
+<h2>Alpha
+compaction</h2>
 
 <p>For non-indexed images, if there exists an RGB (or greyscale)
 value such that all pixels with that value are fully transparent
@@ -1243,8 +1243,8 @@ datastream.</li>
 </section>
 
 <section>
-<h3>Pass
-extraction</h3>
+<h2>Pass
+extraction</h2>
 
 <p>Pass extraction (see <a href="#figure48"><span class=
 "figref">figure 4.8</span></a>) splits a PNG image into a
@@ -1285,15 +1285,15 @@ image</p>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
-<h3>Scanline
-serialization</h3>
+<h2>Scanline
+serialization</h2>
 
 <p>Each row of pixels, called a scanline, is represented as a
 sequence of bytes.</p>
 </section>
 
 <section>
-<h3>Filtering</h3>
+<h2>Filtering</h2>
 
 <p>PNG standardizes one filter method and several filter types
 that may be used to prepare image data for compression. It
@@ -1319,7 +1319,7 @@ filtering a scanline</p>
 </section>
 
 <section>
-<h3>Compression</h3>
+<h2>Compression</h2>
 
 <p>The sequence of filtered scanlines in the pass or passes of
 the PNG image is compressed (see <a href="#figure410"><span
@@ -1331,7 +1331,7 @@ stage is a single compressed datastream. See clause&#160;10: <a href=
 </section>
 
 <section>
-<h3>Chunking</h3>
+<h2>Chunking</h2>
 
 <p>Chunking provides a convenient breakdown of the compressed
 datastream into manageable chunks (see <span
@@ -1444,7 +1444,7 @@ image.</td>
 <h2>PNG datastream</h2>
 
 <section>
-<h3>Chunks</h3>
+<h2>Chunks</h2>
 
 <p>The PNG datastream consists of a PNG signature (see 5.2: <a
 href="#png-signature"><span class="xref">PNG
@@ -1455,7 +1455,7 @@ specifies its function.</p>
 </section>
 
 <section>
-<h3>Chunk types</h3>
+<h2>Chunk types</h2>
 
 <p>There are 18 chunk types defined in this International
 Standard. Chunk types are four-byte sequences chosen so that they
@@ -1577,7 +1577,7 @@ standardization:</p>
 </section>
 
 <section>
-<h1>Datastream structure</h1>
+<h2>Datastream structure</h2>
 
 <section class="introductory">
 <p>This clause defines the PNG signature and the basic properties
@@ -2079,8 +2079,8 @@ class="chunk">PLTE</span></a> in datastream</p>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
-<h1>Reference image to PNG image
-transformation</h1>
+<h2>Reference image to PNG image
+transformation</h2>
 
 <section>
 <h2>Colour types and values</h2>
@@ -2218,8 +2218,8 @@ processing</span></a>.</p>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
-<h1>Encoding the PNG image as a PNG
-datastream</h1>
+<h2>Encoding the PNG image as a PNG
+datastream</h2>
 
 <section>
 <h2>Integers and byte
@@ -2313,8 +2313,8 @@ employ is left to the encoder.</p>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
-<h1>Interlacing and pass
-extraction</h1>
+<h2>Interlacing and pass
+extraction</h2>
 
 <section class="introductory">
 <p>Pass extraction (see <a href="#figure48"><span class=
@@ -2390,7 +2390,7 @@ empty.</p>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
-<h1>Filtering</h1>
+<h2>Filtering</h2>
 
 <section>
 <h2>Filter methods and filter
@@ -2621,7 +2621,7 @@ encoder and decoder.</p>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
-<h1>Compression</h1>
+<h2>Compression</h2>
 
 <section>
 <h2>Compression method 0</h2>
@@ -2753,7 +2753,7 @@ an independent zlib datastream (see 10.1: <a href=
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
-<h1>Chunk specifications</h1>
+<h2>Chunk specifications</h2>
 
 <section class="introductory">
 <p>The PNG datastream consists of a PNG signature (see 5.2: <a
@@ -2793,8 +2793,8 @@ datastream.</p>
 </section>
 
 <section>
-<h3><span class="chunk">IHDR</span> Image
-header</h3>
+<h2><span class="chunk">IHDR</span> Image
+header</h2>
 
 <p>The four-byte chunk type field contains the decimal values</p>
 
@@ -2939,8 +2939,8 @@ details.</p>
 </section>
 
 <section>
-<h3><span class="chunk">PLTE</span>
-Palette</h3>
+<h2><span class="chunk">PLTE</span>
+Palette</h2>
 
 <p>The four-byte chunk type field contains the decimal values</p>
 
@@ -3012,8 +3012,8 @@ by the image, nor that they all be different.</p>
 </section>
 
 <section>
-<h3><span class="chunk">IDAT</span> Image
-data</h3>
+<h2><span class="chunk">IDAT</span> Image
+data</h2>
 
 <p>The four-byte chunk type field contains the decimal values</p>
 
@@ -3036,8 +3036,8 @@ the contents of the data fields of all the <span class=
 </section>
 
 <section>
-<h3><span class="chunk">IEND</span> Image
-trailer</h3>
+<h2><span class="chunk">IEND</span> Image
+trailer</h2>
 
 <p>The four-byte chunk type field contains the decimal values</p>
 
@@ -3064,12 +3064,12 @@ assumption that the decoder is not ignoring the chunk.</p>
 </section>
 
 <section>
-<h3>Transparency
-information</h3>
+<h2>Transparency
+information</h2>
 
 <section>
-<h4><span class="chunk">tRNS</span>
-Transparency</h4>
+<h2><span class="chunk">tRNS</span>
+Transparency</h2>
 
 <p>The four-byte chunk type field contains the decimal values</p>
 
@@ -3177,12 +3177,12 @@ been tested for transparency.</p>
 </section>
 
 <section>
-<h3>Colour space
-information</h3>
+<h2>Colour space
+information</h2>
 
 <section>
-<h4><span class="chunk">cHRM</span>
-Primary chromaticities and white point</h4>
+<h2><span class="chunk">cHRM</span>
+Primary chromaticities and white point</h2>
 
 <p>The four decimal values below correspond to the four-byte cHRM chunk type field:</p>
 
@@ -3263,8 +3263,8 @@ when present and recognized, overrides the <span class=
 </section>
 
 <section>
-<h4><span class="chunk">gAMA</span>
-Image gamma</h4>
+<h2><span class="chunk">gAMA</span>
+Image gamma</h2>
 
 <p>The four decimal values below correspond to the four-byte gAMA chunk type field:</p>
 
@@ -3319,8 +3319,8 @@ when present and recognized, overrides the <span class=
 </section>
 
 <section>
-<h4><span class="chunk">iCCP</span>
-Embedded ICC profile</h4>
+<h2><span class="chunk">iCCP</span>
+Embedded ICC profile</h2>
 
 <p>The four decimal values below correspond to the four-byte iCCP chunk type field:</p>
 
@@ -3401,8 +3401,8 @@ whether specified explicitly with an <span class=
 </section>
 
 <section>
-<h4><span class="chunk">sBIT</span>
-Significant bits</h4>
+<h2><span class="chunk">sBIT</span>
+Significant bits</h2>
 
 
 <p>The four decimal values below correspond to the four-byte sBIT chunk type field:</p>
@@ -3509,8 +3509,8 @@ sample bits of all channels are to be treated as significant.</p>
 </section>
 
 <section>
-<h4><a name="srgb-standard-colour-space"><span class="chunk">sRGB</span>
-Standard RGB colour space</a></h4>
+<h2><a name="srgb-standard-colour-space"><span class="chunk">sRGB</span>
+Standard RGB colour space</a></h2>
 
 <p>The four decimal values below correspond to the four-byte sRGB chunk type field:</p>
 
@@ -3659,8 +3659,8 @@ not both appear in a PNG datastream.</p>
 </section>
 
 <section>
-<h4><span class="chunk">cICP</span>
-Coding-independent code points for video signal type identification</h4>
+<h2><span class="chunk">cICP</span>
+Coding-independent code points for video signal type identification</h2>
 
 <p>The four decimal values below correspond to the four-byte cICP chunk type field:</p>
 
@@ -3869,7 +3869,7 @@ it's associated recommendations.</p>
 </section>
 
 <section>
-<h3>Textual information</h3>
+<h2>Textual information</h2>
 
 <section class="introductory">
 <p>PNG provides the <a href="#text-textual-data"><span class=
@@ -3883,8 +3883,8 @@ more than one with the same keyword is permitted.</p>
 </section>
 
 <section>
-<h4>Keywords and text
-strings</h4>
+<h2>Keywords and text
+strings</h2>
 
 <p>The following keywords are predefined and should be used where
 appropriate.</p>
@@ -3988,8 +3988,8 @@ chunk.</p>
 </section>
 
 <section>
-<h4><a name="text-textual-data"><span class="chunk">tEXt</span>
-Textual data</a></h4>
+<h2><a name="text-textual-data"><span class="chunk">tEXt</span>
+Textual data</a></h2>
 
 <p>The four-byte chunk type field contains the decimal values</p>
 
@@ -4045,8 +4045,8 @@ Text containing characters outside the repertoire of ISO/IEC
 </section>
 
 <section>
-<h4><span class="chunk">zTXt</span>
-Compressed textual data</h4>
+<h2><span class="chunk">zTXt</span>
+Compressed textual data</h2>
 
 <p>The four-byte chunk type field contains the decimal values</p>
 
@@ -4105,8 +4105,8 @@ in an equivalent <a href="#text-textual-data"><span class=
 </section>
 
 <section>
-<h4><span class="chunk">iTXt</span>
-International textual data</h4>
+<h2><span class="chunk">iTXt</span>
+International textual data</h2>
 
 <p>The four-byte chunk type field contains the decimal values</p>
 
@@ -4215,12 +4215,12 @@ display the translated keyword in addition.</p>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
-<h3>Miscellaneous
-information</h3>
+<h2>Miscellaneous
+information</h2>
 
 <section>
-<h4><span class="chunk">bKGD</span>
-Background colour</h4>
+<h2><span class="chunk">bKGD</span>
+Background colour</h2>
 
 <p>The four-byte chunk type field contains the decimal values</p>
 
@@ -4290,8 +4290,8 @@ least significant bits are used and the others are 0.</p>
 </section>
 
 <section>
-<h4><span class="chunk">hIST</span>
-Image histogram</h4>
+<h2><span class="chunk">hIST</span>
+Image histogram</h2>
 
 <p>The four-byte chunk type field contains the decimal values</p>
 
@@ -4341,8 +4341,8 @@ normally appear, because any entry might be used.</p>
 </section>
 
 <section>
-<h4><span class="chunk">pHYs</span>
-Physical pixel dimensions</h4>
+<h2><span class="chunk">pHYs</span>
+Physical pixel dimensions</h2>
 
 <p>The four-byte chunk type field contains the decimal values</p>
 
@@ -4397,8 +4397,8 @@ pixel is unspecified.</p>
 </section>
 
 <section>
-<h4><span class="chunk">sPLT</span>
-Suggested palette</h4>
+<h2><span class="chunk">sPLT</span>
+Suggested palette</h2>
 
 <p>The four-byte chunk type field contains the decimal values</p>
 
@@ -4523,12 +4523,12 @@ but each shall have a different palette name.</p>
 </section>
 
 <section>
-<h3>Time stamp
-information</h3>
+<h2>Time stamp
+information</h2>
 
 <section>
-<h4><span class="chunk">tIME</span>
-Image last-modification time</h4>
+<h2><span class="chunk">tIME</span>
+Image last-modification time</h2>
 
 <p>The four-byte chunk type field contains the decimal values</p>
 
@@ -4587,7 +4587,7 @@ the image data are changed.</p>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
-<h1>PNG Encoders</h1>
+<h2>PNG Encoders</h2>
 
 <section class="introductory">
 <p>This clause gives requirements and recommendations for encoder
@@ -5326,8 +5326,8 @@ title, appear before the <a href="#idat-image-data"><span class=
 <h2>Chunking</h2>
 
 <section>
-<h3>Use of private
-chunks</h3>
+<h2>Use of private
+chunks</h2>
 
 <p>
 Chunk types are classified as public or private depending on bit 5
@@ -5384,8 +5384,8 @@ keywords without registering them first.</p>
 </section>
 
 <section>
-<h3>Private
-type and method codes</h3>
+<h2>Private
+type and method codes</h2>
 
 <p>This specification defines the meaning of only some of the
 possible values of some fields. For example, only compression
@@ -5403,7 +5403,7 @@ available software or datastreams.</p>
 </section>
 
 <section>
-<h3>Ancillary chunks</h3>
+<h2>Ancillary chunks</h2>
 
 <p>All ancillary chunks are optional, encoders need not write
 them. However, encoders are encouraged to write the standard
@@ -5415,7 +5415,7 @@ ancillary chunks when the information is available.</p>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
-<h1>PNG decoders and viewers</h1>
+<h2>PNG decoders and viewers</h2>
 
 <section class="introductory">
 <p>This clause gives some requirements and recommendations for PNG
@@ -6618,7 +6618,7 @@ used.</p>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
-<h1>Editors and extensions</h1>
+<h2>Editors and extensions</h2>
 
 <section>
 <h2>Additional chunk
@@ -6770,8 +6770,8 @@ time.</p>
 chunks</h2>
 
 <section>
-<h3>Ordering of
-critical chunks</h3>
+<h2>Ordering of
+critical chunks</h2>
 
 <p>Critical chunks may have arbitrary ordering requirements,
 because PNG editors are required to terminate if they encounter
@@ -6783,8 +6783,8 @@ any critical chunk type that it can generate.</p>
 </section>
 
 <section>
-<h3>Ordering of
-ancillary chunks</h3>
+<h2>Ordering of
+ancillary chunks</h2>
 
 <p>The strictest ordering rules for an ancillary chunk type
 are:</p>
@@ -6829,7 +6829,7 @@ to assume that the chunk will remain somewhere between <a href=
 <h2>Introduction</h2>
 
 <section>
-<h3>Objectives</h3>
+<h2>Objectives</h2>
 
 <p>This clause addresses conformance of PNG datastreams, PNG
 encoders, PNG decoders, and PNG editors.</p>
@@ -6852,7 +6852,7 @@ and editors;</li>
 </section>
 
 <section>
-<h3>Scope</h3>
+<h2>Scope</h2>
 
 <p>Conformance is defined for PNG datastreams and for PNG
 encoders, decoders, and editors.</p>
@@ -6872,8 +6872,8 @@ interchange of PNG datastreams.</p>
 <h2>Conformance conditions</h2>
 
 <section>
-<h3>Conformance of PNG
-datastreams</h3>
+<h2>Conformance of PNG
+datastreams</h2>
 <p>A PNG datastream conforms to this International Standard if
 the following conditions are met.</p>
 <ol>
@@ -6923,8 +6923,8 @@ International Standard.</li>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
-<h3>Conformance of PNG
-encoders</h3>
+<h2>Conformance of PNG
+encoders</h2>
 
 <p>A PNG encoder conforms to this International Standard if it
 satisfies the following conditions.</p>
@@ -6946,8 +6946,8 @@ fields.</li>
 </section>
 
 <section>
-<h3>Conformance of PNG
-decoders</h3>
+<h2>Conformance of PNG
+decoders</h2>
 
 <p>A PNG decoder conforms to this International Standard if it
 satisfies the following conditions.</p>
@@ -7012,8 +7012,8 @@ ordering rules.</li>
 </section>
 
 <section>
-<h3>Conformance of PNG
-editors</h3>
+<h2>Conformance of PNG
+editors</h2>
 
 <p>A PNG editor conforms to this International Standard if it satisfies the following conditions.</p>
 
@@ -7228,7 +7228,7 @@ relationships.</li>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section class="appendix informative">
-<h1 class="Annex">Gamma and chromaticity</h1>
+<h2 class="Annex">Gamma and chromaticity</h2>
 
 <p>Gamma is a numerical parameter used to describe approximations
 to certain non-linear transfer functions encountered in image
@@ -7337,8 +7337,8 @@ href="#HALL"><span class="bibref">[HALL]</span></a>, <a href=
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section class="appendix informative">
-<h1 class="Annex">Sample Cyclic Redundancy Code
-implementation</h1>
+<h2 class="Annex">Sample Cyclic Redundancy Code
+implementation</h2>
 
 <p>The following sample code represents a practical
 implementation of the CRC (Cyclic Redundancy Check) employed in
@@ -7454,7 +7454,7 @@ Suffix <tt>L</tt> indicates a long value (at least 32 bits).</td>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section class="appendix informative">
-<h1 class="Annex">Online resources</h1>
+<h2 class="Annex">Online resources</h2>
 
 <section class="introductory">
 <p>This annex gives the locations of some Internet resources for
@@ -7510,7 +7510,7 @@ accessed from the PNG web site.</p>
 </section>
 
 <section class="appendix informative">
-<h1 class="Annex">Relationship to W3C PNG</h1>
+<h2 class="Annex">Relationship to W3C PNG</h2>
 
 <p>This International Standard is strongly based on W3C
 Recommendation PNG Specification Version 1.0 <a href=
@@ -7645,7 +7645,7 @@ class="email">willem @ schaik.com</span></li>
 Recommendation PNG Specification Version 1.0 and this
 International Standard</h2>
 
-<h3>Editorial changes</h3>
+<h2>Editorial changes</h2>
 
 <p>The document has been reformatted according to the
 requirements of ISO.</p>
@@ -7657,7 +7657,7 @@ requirements of ISO.</p>
 has been defined in a conformance clause.</li>
 </ol>
 
-<h3>Technical changes</h3>
+<h2>Technical changes</h2>
 
 <!-- <ol start="1"> --><ol>
 <li>New chunk types introduced in PNG version 1.1 and 1.2 have
@@ -7701,7 +7701,7 @@ clarified.</li>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section class="appendix">
-<h1 class="Annex">Bibliography</h1>
+<h2 class="Annex">Bibliography</h2>
 
 <dl>
 <dt><a name="COLOUR-FAQ">[COLOUR-FAQ]</a></dt>

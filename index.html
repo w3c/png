@@ -9,691 +9,80 @@
     dt {color: black}
     </style>
       <link href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED" rel="stylesheet" type="text/css">
+    <script src="http://dev.w3.org/2009/dap/ReSpec.js/js/respec.js" class="remove"></script>
+    <script class="remove">
+      var respecConfig = {
+          specStatus: "ED",
+	  shortName: "PNG",
+	  subtitle: "Information technology — Computer graphics and image processing — Portable Network Graphics (PNG): Functional specification. ISO/IEC 15948:2003 (E)",
+	  copyrightStart: "1996",
+	  previousPublishDate: "2003-11-10",
+	  previousMaturity: "REC",
+	  edDraftURI: "https://github.com/w3c/PNG-spec",
+	  extraCSS: ["http://dev.w3.org/2009/dap/ReSpec.js/css/respec.css"],
+	  editors: [
+	      { name: "Chris Blume", url: "https://www.programmax.net", w3cid: 127631 },
+	      { name: "Pierre-Anthony Lemieux", company: "Sandflow Consulting LLC", companyURL: "https://www.sandflow.com" },
+	      { name: "Chris Lilley", url: "https://svgees.us", company: "W3C", companyURL: "https://www.w3.org" },
+	      { name: "Leonard Rosenthol", company: "Adobe Inc.", companyURL: "https://www.adobe.com" },
+	      { name: "Chris Seeger", company: "Comcast Corporation", companyURL: "https://www.comcast.com" }
+	  ],
+	  formerEditors: [
+	      { name: "Thomas Boutell" },
+	      { name: "Adam M. Costello" },
+	      { name: "David Duce" },
+	      { name: "Tom Lane" },
+	      { name: "Glenn Randers-Pehrson" },
+	      { name: "Oxford Brookes University (Second Edition)" }
+	  ],
+	  authors: [
+	      { name: "Mark Adler", url: "http://www.alumni.caltech.edu/~madler/" },
+	      { name: "Thomas Boutell", url: "http://www.boutell.com/boutell/" },
+	      { name: "John Bowler" },
+	      { name: "Christian Brunschen", url: "http://www.df.lth.se/~cb/" },
+	      { name: "Adam M. Costello", url: "http://www.nicemice.net/amc/" },
+	      { name: "Lee Daniel Crocker", url: "http://www.piclab.com/" },
+	      { name: "Andreas Dilger", url: "http://www-mddsp.enel.ucalgary.ca/People/adilger/" },
+	      { name: "Oliver Fromme", url: "http://www.fromme.com/" },
+	      { name: "Jean-loup Gailly", url: "http://www.teaser.fr/~jlgailly/" },
+	      { name: "Chris Herborth" },
+	      { name: "Alex Jakulin" },
+	      { name: "Neal Kettler" },
+	      { name: "Tom Lane" },
+	      { name: "Alexander Lehmann" },
+	      { name: "Chris Lilley", url: "https://svgees.us", company: "W3C", companyURL: "https://www.w3.org" },
+	      { name: "Dave Martindale" },
+	      { name: "Owen Mortensen" },
+	      { name: "Keith S. Pickens" },
+	      { name: "Robert P. Poole", url: "http://www.users.qwest.net/~lionlad/" },
+	      { name: "Glenn Randers-Pehrson" },
+	      { name: "Greg Roelofs", url: "http://pobox.com/~newt/" },
+	      { name: "Willem van Schaik", url: "http://www.schaik.com/" },
+	      { name: "Guy Schalnat" },
+	      { name: "Paul Schmidt" },
+	      { name: "Michael Stokes" },
+	      { name: "Tim Wegner" },
+	      { name: "Jeremy Wohl" }
+	  ],
+	  wg: "Portable Network Graphics (PNG) Working Group",
+	  wgURI: "https://www.w3.org/groups/wg/png",
+	  wgPublicList: "public-png",
+	  wgPatentURI: "",
+      };
+    </script>
   </head>
   <body>
-    <div class="head">
-      <p><a href="http://www.w3.org/"><img height="48" width="72"
-      alt="W3C" src="http://www.w3.org/Icons/w3c_home" /></a></p>
-      <h1 id="pagetitle">Portable Network Graphics (PNG) Specification (Third Edition)</h1>
-      <!-- <h1>Information technology — Computer graphics and image processing — Portable Network Graphics (PNG): Functional specification. ISO/IEC 15948:2003 (E)</h1> -->
-      <!--h2 id="pagesubtitle">W3C Recommendation 1 October 1996, revised 14 October 2003</h2-->
-      <h2 id="pagesubtitle">Editors Draft, 18 Dec 2021</h2>
-      <dl>
-        <dt>This version:</dt>
-        <dd><a
-        href="https://w3c.github.io/PNG-spec/">https://w3c.github.io/PNG-spec/</a></dd>
-        <dt>Latest version:</dt>
-        <dd><a
-        href="https://www.w3.org/TR/PNG">https://www.w3.org/TR/PNG</a></dd>
-        <dt>Previous version:</dt>
-        <dd><a
-          href="https://www.w3.org/TR/2003/REC-PNG-20031110">https://www.w3.org/TR/2003/REC-PNG-20031110</a></dd>
-        <dt>Editor:</dt>
-        <dd>Chris Lilley, W3C (Third Edition)</dd>
-        <dt>Authors:</dt>
-        <dd>See <a href="#F-Relationship">author list</a></dd>
-      </dl>
-      <!-- <p>Please refer to the <a href="http://www.w3.org/2003/11/REC-PNG-20031110-errata"><strong>errata</strong></a> for this document, which may include some normative corrections.</p> -->
-
-      <!--p>This document is also available in these non-normative
-      packages: <a href="REC-SVG11-20030114.zip">zip archive of
-      HTML</a> (without external dependencies) and <a
-      href="REC-SVG11-20030114.pdf">PDF</a>.</p-->
-<!--
-      <p>See also the <a href="http://www.w3.org/Consortium/Translation/">translations</a> of this document.</p> -->
-
-      <p class="copyright" data-fill-with="copyright"><a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2021 <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>, <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>, <a href="https://ev.buaa.edu.cn/">Beihang</a>). W3C <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document" rel="license">permissive document license</a> rules apply. </p>
-    </div>
-    <hr title="Separator from Header" />
-
-    <h2 id="specabstract"><a id="abstract" name="abstract">Abstract</a></h2>
-    <p>This document describes PNG (Portable Network Graphics), an extensible file format for the lossless, portable, well-compressed storage of raster images. PNG provides a patent-free replacement for GIF and can also replace many common uses of TIFF. Indexed-color, greyscale, and truecolor images are supported, plus an optional alpha channel. Sample depths range from 1 to 16 bits.</p>
- <p>PNG is designed to work well in online viewing applications, such as the World Wide Web, so it is fully streamable with a progressive display option. PNG is robust, providing both full file integrity checking and simple detection of common transmission errors. Also, PNG can store gamma and chromaticity data for improved color matching on heterogeneous platforms.</p>
-
- <p>This specification defines an Internet Media Type image/png.</p>
-
-    <h2 id="status">Status of this document</h2>
-<p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current W3C publications and the latest revision of this technical report can be found in the <a href="http://www.w3.org/TR/">W3C technical reports index</a> at http://www.w3.org/TR/.</em></p>
-
-<p>
-  This document is an Editors Draft.
-  It is derived from the the 14 October 2003 W3C
-  Recommendation of the PNG specification, second edition,
-  by the application of known errata
-  and the addition of new features.
-</p>
+    <section id="abstract">
+      <p>This document describes PNG (Portable Network Graphics), an extensible file format for the lossless, portable, well-compressed storage of raster images. PNG provides a patent-free replacement for GIF and can also replace many common uses of TIFF. Indexed-color, greyscale, and truecolor images are supported, plus an optional alpha channel. Sample depths range from 1 to 16 bits.</p>
+      <p>PNG is designed to work well in online viewing applications, such as the World Wide Web, so it is fully streamable with a progressive display option. PNG is robust, providing both full file integrity checking and simple detection of common transmission errors. Also, PNG can store gamma and chromaticity data for improved color matching on heterogeneous platforms.</p>
+      <p>This specification defines an Internet Media Type image/png.</p>
 
 <!--
 needs update, comment out for now
 
 <p>The PNG specification enjoys a good level of <a href="http://www.libpng.org/pub/png/pngstatus.html">implementation</a>  with good interoperability. At the time of this publication more than 180 <a href="http://www.libpng.org/pub/png/pngapvw.html">image viewers</a> could display PNG images and over 100 <a href="http://www.libpng.org/pub/png/pngaped.html">image editors</a> could read and write valid PNG files. Full support of PNG is  required  for conforming <a href="/Graphics/SVG">SVG</a> viewers; at the time of publication all eighteen <a href="/Graphics/SVG/SVG-Implementations.htm8#viewer">SVG viewers</a> had PNG support. HTML has no required image formats, but over 60 <a href="http://www.libpng.org/pub/png/pngapbr.html">HTML browsers</a> had at least basic support of PNG images.</p> -->
-
-    <p>Public comments on this W3C Recommendation are welcome.
-    Please send them to the <a href="http://lists.w3.org/Archives/Public/public-png">archived</a> list <a href="mailto:public-png@w3.org">public-png@w3.org</a>
-    or <a href="https://github.com/w3c/PNG-spec/issues">raise an issue on GitHub</a> <em>(preferred)</em>.</p>
-
-    <p>The latest information regarding <a rel="disclosure"
-    href="https://www.w3.org/groups/wg/png/ipr">patent
-    disclosures</a> related to this document is available on the
-    Web.</p>
-
-    <!-- <p>This document has been produced by ISO/IEC JTC1 SC24 and the PNG Group as part of the <a
-    href="http://www.w3.org/Graphics/Activity">Graphics
-    Activity</a> within the <a href="http://www.w3.org/Interaction/">W3C
-    Interaction Domain</a>. </p> -->
-
-  <p>A list of current W3C Recommendations and
-    other technical documents can be found at <a
-	href="https://www.w3.org/TR/">https://www.w3.org/TR/</a>.
-	W3C  publications may be updated, replaced, or obsoleted by other
-  documents at any time.
-    </p>
-
-    <!-- <h3 id="AvailableLanguages">Available languages</h3>
-    <p>The English version of this specification is the only
-    normative version. However, for translations in other languages
-    see <a
-    href="http://www.w3.org/Consortium/Translation/">
-    http://www.w3.org/Consortium/Translation/</a>.</p> -->
-
-    <div class="toc">
-      <h2><a id="minitoc" name="minitoc">Table of Contents</a></h2>
-      <ul class="toc">
-        <!--li class="tocline1"-->
-<li class='Contents'><a class='Href' href='#1Scope'>1
-Scope</a></li>
-
-<li class='Contents'><a class='Href' href='#2NormRefs'>2
-Normative references</a></li>
-
-<li class='Contents'><a class='Href' href='#3Defsandabbrevs'>3
-Terms, definitions, and abbreviated terms</a>
-
-<ul>
-<li class='Contents'><a class='Href' href='#3Definitions'>3.1
-Definitions</a></li>
-
-<li class='Contents'><a class='Href' href='#3Abbreviations'>3.2
-Abbreviated terms</a></li>
-</ul>
-</li>
-
-<li class='Contents'><a class='Href' href='#4Concepts'>4
-Concepts</a>
-
-<ul>
-<li class='Contents'><a class='Href' href=
-'#4Concepts.Sourceimage'>4.1 Images</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#4Concepts.ColourSpaces'>4.2 Colour spaces</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#4Concepts.PNGImageTransformation'>4.3 Reference image to PNG
-image transformation</a>
-
-<ul>
-<li class='Contents'><a class='Href' href=
-'#4Concepts.Introduction'>4.3.1 Introduction</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#4Concepts.Implied-alpha'>4.3.2 Alpha separation</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#4Concepts.Indexing'>4.3.3 Indexing</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#4Concepts.RGBMerging'>4.3.4 RGB merging</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#4Concepts.Alpha-indexing'>4.3.5 Alpha compaction</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#4Concepts.Scaling'>4.3.6 Sample depth scaling</a></li>
-</ul>
-</li>
-
-<li class='Contents'><a class='Href' href=
-'#4Concepts.PNGImage'>4.4 PNG image</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#4Concepts.Encoding'>4.5 Encoding the PNG image</a>
-
-<ul>
-<li class='Contents'><a class='Href' href=
-'#4Concepts.EncodingIntro'>4.5.1 Introduction</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#4Concepts.EncodingPassAbs'>4.5.2 Pass extraction</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#4Concepts.EncodingScanlineAbs'>4.5.3 Scanline
-serialization</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#4Concepts.EncodingFiltering'>4.5.4 Filtering</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#4Concepts.EncodingCompression'>4.5.5 Compression</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#4Concepts.EncodingChunking'>4.5.6 Chunking</a></li>
-</ul>
-</li>
-
-<li class='Contents'><a class='Href' href=
-'#4Concepts.AncillInfo'>4.6 Additional information</a></li>
-
-<li class='Contents'><a class='Href' href='#4Concepts.Format'>4.7
-PNG datastream</a>
-
-<ul>
-<li class='Contents'><a class='Href' href=
-'#4Concepts.FormatChunks'>4.7.1 Chunks</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#4Concepts.FormatTypes'>4.7.2 Chunk types</a></li>
-</ul>
-</li>
-
-<li class='Contents'><a class='Href' href='#4Concepts.Errors'>4.8
-Error handling</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#4Concepts.Registration'>4.9 Extension and registration</a></li>
-</ul>
-</li>
-
-<li class='Contents'><a class='Href' href='#5DataRep'>5
-Datastream structure</a>
-
-<ul>
-<li class='Contents'><a class='Href' href='#5Introduction'>5.1
-Introduction</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#5PNG-file-signature'>5.2 PNG signature</a></li>
-
-<li class='Contents'><a class='Href' href='#5Chunk-layout'>5.3
-Chunk layout</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#5Chunk-naming-conventions'>5.4 Chunk naming
-conventions</a></li>
-
-<li class='Contents'><a class='Href' href='#5CRC-algorithm'>5.5
-Cyclic Redundancy Code algorithm</a></li>
-
-<li class='Contents'><a class='Href' href='#5ChunkOrdering'>5.6
-Chunk ordering</a></li>
-</ul>
-</li>
-
-<li class='Contents'><a class='Href' href='#6Transformation'>6
-Reference image to PNG image transformation</a>
-
-<ul>
-<li class='Contents'><a class='Href' href='#6Colour-values'>6.1
-Colour types and values</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#6AlphaRepresentation'>6.2 Alpha representation</a></li>
-</ul>
-</li>
-
-<li class='Contents'><a class='Href' href='#7Transformation'>7
-Encoding the PNG image as a PNG datastream</a>
-
-<ul>
-<li class='Contents'><a class='Href' href=
-'#7Integers-and-byte-order'>7.1 Integers and byte order</a></li>
-
-<li class='Contents'><a class='Href' href='#7Scanline'>7.2
-Scanlines</a></li>
-
-<li class='Contents'><a class='Href' href='#7Filtering'>7.3
-Filtering</a></li>
-</ul>
-</li>
-
-<li class='Contents'><a class='Href' href='#8Interlace'>8
-Interlacing and pass extraction</a>
-
-<ul>
-<li class='Contents'><a class='Href' href='#8InterlaceIntro'>8.1
-Introduction</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#8InterlaceMethods'>8.2 Interlace methods</a></li>
-</ul>
-</li>
-
-<li class='Contents'><a class='Href' href='#9Filters'>9
-Filtering</a>
-
-<ul>
-<li class='Contents'><a class='Href' href='#9FtIntro'>9.1 Filter
-methods and filter types</a></li>
-
-<li class='Contents'><a class='Href' href='#9Filter-types'>9.2
-Filter types for filter method 0</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#9Filter-type-3-Average'>9.3 Filter type 3: Average</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#9Filter-type-4-Paeth'>9.4 Filter type 4: Paeth</a></li>
-</ul>
-</li>
-
-<li class='Contents'><a class='Href' href='#10Compression'>10
-Compression</a>
-
-<ul>
-<li class='Contents'><a class='Href' href=
-'#10CompressionCM0'>10.1 Compression method 0</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#10CompressionFSL'>10.2 Compression of the sequence of filtered
-scanlines</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#10CompressionOtherUses'>10.3 Other uses of compression</a></li>
-</ul>
-</li>
-
-<li class='Contents'><a class='Href' href='#11Chunks'>11 Chunk
-specifications</a>
-
-<ul>
-<li class='Contents'><a class='Href' href='#11Introduction'>11.1
-Introduction</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#11Critical-chunks'>11.2 Critical chunks</a>
-
-<ul>
-<li class='Contents'><a class='Href' href='#11CcGen'>11.2.1
-General</a></li>
-
-<li class='Contents'><a class='Href' href='#11IHDR'>11.2.2 <span
-class='chunk'>IHDR</span> Image header</a></li>
-
-<li class='Contents'><a class='Href' href='#11PLTE'>11.2.3 <span
-class='chunk'>PLTE</span> Palette</a></li>
-
-<li class='Contents'><a class='Href' href='#11IDAT'>11.2.4 <span
-class='chunk'>IDAT</span> Image data</a></li>
-
-<li class='Contents'><a class='Href' href='#11IEND'>11.2.5 <span
-class='chunk'>IEND</span> Image trailer</a></li>
-</ul>
-</li>
-
-<li class='Contents'><a class='Href' href=
-'#11Ancillary-chunks'>11.3 Ancillary chunks</a>
-
-<ul>
-<li class='Contents'><a class='Href' href='#11AcGen'>11.3.1
-General</a></li>
-
-<li class='Contents'><a class='Href' href='#11transinfo'>11.3.2
-Transparency information</a>
-
-<ul>
-<li class='Contents'><a class='Href' href='#11tRNS'>11.3.2.1
-<span class='chunk'>tRNS</span> Transparency</a></li>
-</ul>
-</li>
-
-<li class='Contents'><a class='Href' href=
-'#11addnlcolinfo'>11.3.3 Colour space information</a>
-
-<ul>
-<li class='Contents'><a class='Href' href='#11cHRM'>11.3.3.1
-<span class='chunk'>cHRM</span> Primary chromaticities and white
-point</a></li>
-
-<li class='Contents'><a class='Href' href='#11gAMA'>11.3.3.2
-<span class='chunk'>gAMA</span> Image gamma</a></li>
-
-<li class='Contents'><a class='Href' href='#11iCCP'>11.3.3.3
-<span class='chunk'>iCCP</span> Embedded ICC profile</a></li>
-
-<li class='Contents'><a class='Href' href='#11sBIT'>11.3.3.4
-<span class='chunk'>sBIT</span> Significant bits</a></li>
-
-<li class='Contents'><a class='Href' href='#11sRGB'>11.3.3.5
-<span class='chunk'>sRGB</span> Standard RGB colour
-space</a></li>
-
-<li class='Contents'><a class='Href' href='#11cICP'>11.3.3.6
-<span class='chunk'>cICP</span> Coding-independent code points for video signal type identification</a></li>
-
-</ul>
-</li>
-
-<li class='Contents'><a class='Href' href='#11textinfo'>11.3.4
-Textual information</a>
-
-<ul>
-<li class='Contents'><a class='Href' href='#11textIntro'>11.3.4.1
-Introduction</a></li>
-
-<li class='Contents'><a class='Href' href='#11keywords'>11.3.4.2
-Keywords and text strings</a></li>
-
-<li class='Contents'><a class='Href' href='#11tEXt'>11.3.4.3
-<span class='chunk'>tEXt</span> Textual data</a></li>
-
-<li class='Contents'><a class='Href' href='#11zTXt'>11.3.4.4
-<span class='chunk'>zTXt</span> Compressed textual data</a></li>
-
-<li class='Contents'><a class='Href' href='#11iTXt'>11.3.4.5
-<span class='chunk'>iTXt</span> International textual
-data</a></li>
-</ul>
-</li>
-
-<li class='Contents'><a class='Href' href='#11addnlsiinfo'>11.3.5
-Miscellaneous information</a>
-
-<ul>
-<li class='Contents'><a class='Href' href='#11bKGD'>11.3.5.1
-<span class='chunk'>bKGD</span> Background colour</a></li>
-
-<li class='Contents'><a class='Href' href='#11hIST'>11.3.5.2
-<span class='chunk'>hIST</span> Image histogram</a></li>
-
-<li class='Contents'><a class='Href' href='#11pHYs'>11.3.5.3
-<span class='chunk'>pHYs</span> Physical pixel
-dimensions</a></li>
-
-<li class='Contents'><a class='Href' href='#11sPLT'>11.3.5.4
-<span class='chunk'>sPLT</span> Suggested palette</a></li>
-</ul>
-</li>
-
-<li class='Contents'><a class='Href' href=
-'#11timestampinfo'>11.3.6 Time stamp information</a>
-
-<ul>
-<li class='Contents'><a class='Href' href='#11tIME'>11.3.6.1
-<span class='chunk'>tIME</span> Image last-modification
-time</a></li>
-
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-
-<li class='Contents'><a class='Href' href='#12Encoders'>12 PNG
-Encoders</a>
-
-<ul>
-<li class='Contents'><a class='Href' href='#12Introduction'>12.1
-Introduction</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#12Encoder-gamma-handling'>12.2 Encoder gamma handling</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#12Encoder-colour-handling'>12.3 Encoder colour
-handling</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#12Alpha-channel-creation'>12.4 Alpha channel creation</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#12Sample-depth-scaling'>12.5 Sample depth scaling</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#12Suggested-palettes'>12.6 Suggested palettes</a></li>
-
-<li class='Contents'><a class='Href' href='#12Interlacing'>12.7
-Interlacing</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#12Filter-selection'>12.8 Filter selection</a></li>
-
-<li class='Contents'><a class='Href' href='#12Compression'>12.9
-Compression</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#12Text-chunk-processing'>12.10 Text chunk processing</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#12Chunk-processing'>12.11 Chunking</a>
-
-<ul>
-<li class='Contents'><a class='Href' href=
-'#12Use-of-private-chunks'>12.11.1 Use of private chunks</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#12Private-type-and-method-codes'>12.11.2 Private type and
-method codes</a></li>
-
-<li class='Contents'><a class='Href' href='#12Ancillary'>12.11.3
-Ancillary chunks</a></li>
-</ul>
-</li>
-</ul>
-</li>
-
-<li class='Contents'><a class='Href' href='#13Decoders'>13 PNG
-decoders and viewers</a>
-
-<ul>
-<li class='Contents'><a class='Href' href='#13Introduction'>13.1
-Introduction</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#13Decoders.Errors'>13.2 Error handling</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#13Error-checking'>13.3 Error checking</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#13Security-considerations'>13.4 Security
-considerations</a></li>
-
-<li class='Contents'><a class='Href' href='#13Chunking'>13.5
-Chunking</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#13Pixel-dimensions'>13.6 Pixel dimensions</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#13Text-chunk-processing'>13.7 Text chunk processing</a></li>
-
-<li class='Contents'><a class='Href' href='#13Decompression'>13.8
-Decompression</a></li>
-
-<li class='Contents'><a class='Href' href='#13Filtering'>13.9
-Filtering</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#13Progressive-display'>13.10 Interlacing and progressive
-display</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#13Truecolour-image-handling'>13.11 Truecolour image
-handling</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#13Sample-depth-rescaling'>13.12 Sample depth rescaling</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#13Decoder-gamma-handling'>13.13 Decoder gamma handling</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#13Decoder-colour-handling'>13.14 Decoder colour
-handling</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#13Background-colour'>13.15 Background colour</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#13Alpha-channel-processing'>13.16 Alpha channel
-processing</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#13Histogram-and-suggested-palette-usage'>13.17
-Histogram and suggested palette usage</a></li>
-</ul>
-</li>
-
-<li class='Contents'><a class='Href' href='#14EditorsExt'>14
-Editors and extensions</a>
-
-<ul>
-<li class='Contents'><a class='Href' href=
-'#14Additional-chunk-types'>14.1 Additional chunk types</a></li>
-
-<li class='Contents'><a class='Href' href='#14Ordering'>14.2
-Behaviour of PNG editors</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#14Ordering-of-chunks'>14.3 Ordering of chunks</a>
-
-<ul>
-<li class='Contents'><a class='Href' href=
-'#14Ordering-of-critical-chunks'>14.3.1 Ordering of critical
-chunks</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#14Ordering-of-ancillary-chunks'>14.3.2 Ordering of ancillary
-chunks</a></li>
-</ul>
-</li>
-</ul>
-</li>
-
-<li class='Contents'><a class='Href' href='#15Conformance'>15
-Conformance</a>
-
-<ul>
-<li class='Contents'><a class='Href' href='#15ConfIntro'>15.1
-Introduction</a>
-
-<ul>
-<li class='Contents'><a class='Href' href=
-'#15ConfObjectives'>15.1.1 Objectives</a></li>
-
-<li class='Contents'><a class='Href' href='#15ConfScope'>15.1.2
-Scope</a></li>
-</ul>
-</li>
-
-<li class='Contents'><a class='Href' href=
-'#15ConformanceConf'>15.2 Conformance conditions</a>
-
-<ul>
-<li class='Contents'><a class='Href' href=
-'#15FileConformance'>15.2.1 Conformance of PNG
-datastreams</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#15ConformanceEncoder'>15.2.2 Conformance of PNG
-encoders</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#15ConformanceDecoder'>15.2.3 Conformance of PNG
-decoders</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#15ConformanceEditor'>15.2.4 Conformance of PNG editors</a></li>
-</ul>
-</li>
-</ul>
-</li>
-
-<li class='Contents'><a class='Href' href='#A-Conventions'>Annex
-A File conventions and Internet media type</a>
-
-<ul>
-<li class='Contents'><a class='Href' href=
-'#image-png-registration'>A.1 image/png</a></li>
-
-<!-- A.2 apng will go after this -->
-</ul>
-</li>
-
-<li class='Contents'><a class='Href' href=
-'#B-NewChunksAppendix'>Annex B Guidelines for new chunk
-types</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#C-GammaAppendix'>Annex C Gamma and chromaticity</a></li>
-
-<li class='Contents'><a class='Href' href='#D-CRCAppendix'>Annex
-D Sample Cyclic Redundancy Code implementation</a></li>
-
-<li class='Contents'><a class='Href' href='#E-Resources'>Annex E
-Online resources</a>
-
-<ul>
-<li class='Contents'><a class='Href' href=
-'#E-Intro'>Introduction</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#E-Archive-sites'>Archive sites</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#E-icc-profile-specs'>ICC profile specifications</a></li>
-
-<li class='Contents'><a class='Href' href='#E-PNG-home-page'>PNG
-web site</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#E-Sample-implementation'>Sample implementation and test
-images</a></li>
-
-<li class='Contents'><a class='Href' href='#E-Email'>Electronic
-mail</a></li>
-</ul>
-</li>
-
-<li class='Contents'><a class='Href' href='#F-Relationship'>Annex
-F Relationship to W3C PNG</a>
-
-<ul>
-<li class='Contents'><a class='Href' href='#F-Editor10'>Editor
-(Version 1.0)</a></li>
-
-<li class='Contents'><a class='Href' href='#F-Editor12'>Editor
-(Versions 1.1 and 1.2)</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#F-ContribEditor10'>Contributing Editor (Version 1.0)</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#F-ContribEditor12'>Contributing Editor (Versions 1.1 and 1.2)</a></li>
-
-<li class='Contents'><a class='Href' href='#F-Authors'>Authors
-(Versions 1.0, 1.1, and 1.2 combined)</a></li>
-
-<li class='Contents'><a class='Href' href='#F-ChangeList'>List of
-changes between W3C Recommendation PNG Specification Version 1.0
-and this International Standard</a>
-
-<ul>
-<li class='Contents'><a class='Href' href=
-'#F-EditorialChanges'>Editorial changes</a></li>
-
-<li class='Contents'><a class='Href' href=
-'#F-TechnicalChanges'>Technical changes</a></li>
-</ul>
-</li>
-</ul>
-</li>
-
-<li class='Contents'><a class='Href' href=
-'#G-References'>Bibliography</a></li>
-</ul>
-</div>
+    </section>
+    <section id="sotd"></section>
 
 <!-- *********************************************************************
 
@@ -760,7 +149,8 @@ that are not freely available.</li>
 </ol>
 
 
-<h1><a name="1Scope">1 Scope</a></h1>
+<section>
+<h1><a name="1Scope">Scope</a></h1>
 
 <p>This International Standard specifies a datastream and an
 associated file format, Portable Network Graphics (PNG,
@@ -776,10 +166,12 @@ for accurate colour matching on heterogenous platforms. This
 Standard defines the Internet Media type "image/png". The
 datastream and associated file format have value outside of the
 main design goal.</p>
+</section>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<h1><a name="2NormRefs">2 Normative references</a></h1>
+<section>
+<h1><a name="2NormRefs">Normative references</a></h1>
 
 <p>The following normative documents contain provisions which,
 through reference in this text, constitute provisions of this
@@ -905,14 +297,16 @@ Infrastructure of audiovisual services – Coding of moving video
 Coding-independent code points for video signal type identification<br class="xhtml" />
  <code><a href=
 "https://www.itu.int/rec/R-REC-BT.709">https://www.itu.int/rec/R-REC-BT.709</a></code></p>
-
+</section>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<h1><a name="3Defsandabbrevs">3 Terms, definitions, and
+<section>
+<h1><a name="3Defsandabbrevs">Terms, definitions, and
 abbreviated terms</a></h1>
 
-<h2><a name="3Definitions">3.1 Definitions</a></h2>
+<section>
+<h2><a name="3Definitions">Definitions</a></h2>
 
 <p>For the purposes of this International Standard the following
 definitions apply.</p>
@@ -1406,10 +800,12 @@ of a library containing a sample implementation of this method.
 The format is defined in <a href="#2-RFC-1950"><span class=
 "NormRef">[RFC-1950]</span></a>.</dd>
 </dl>
+</section>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<h2><a name="3Abbreviations">3.2 Abbreviated terms</a></h2>
+<section>
+<h2><a name="3Abbreviations">Abbreviated terms</a></h2>
 
 <dl>
 <dt><a name="3CRC">3.2.1 CRC</a></dt>
@@ -1451,12 +847,16 @@ variable.</dd>
 <dd>Most Significant Byte of a multi-<a href="#3byte"><span
 class="Definition">byte</span></a> value.</dd>
 </dl>
+</section>
+</section>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<h1><a name="4Concepts">4 Concepts</a></h1>
+<section>
+<h1><a name="4Concepts">Concepts</a></h2>
 
-<h2><a name="4Concepts.Sourceimage">4.1 Images</a></h2>
+<section>
+<h2><a name="4Concepts.Sourceimage">Images</a></h2>
 
 <p>This International Standard specifies the PNG datastream, and
 places some requirements on PNG encoders, which generate PNG
@@ -1555,8 +955,10 @@ sample, sample depth, pixel, and channel" />
 
 <p class="Figuretitle">Figure 4.2 &mdash; Relationships between
 sample, sample depth, pixel, and channel</p>
+</section>
 
-<h2><a name="4Concepts.ColourSpaces">4.2 Colour spaces</a></h2>
+<section>
+<h2><a name="4Concepts.ColourSpaces">Colour spaces</a></h2>
 
 <p>The RGB colour space in which colour samples are situated may
 be specified in one of three ways:</p>
@@ -1592,12 +994,13 @@ saw.</p>
 <p>Gamma correction is not applied to the alpha channel, if
 present. Alpha samples always represent a linear fraction of full
 opacity.</p>
+</section>
 
-<h2><a name="4Concepts.PNGImageTransformation">4.3 Reference
+<section>
+<h2><a name="4Concepts.PNGImageTransformation">Reference
 image to PNG image transformation</a></h2>
 
-<h3><a name="4Concepts.Introduction">4.3.1 Introduction</a></h3>
-
+<section class="introductory">
 <p>A number of transformations are applied to the reference image
 to create the PNG image to be encoded (see <a href=
 "#figure43"><span class="figref">figure 4.3</span></a>). The
@@ -1632,15 +1035,19 @@ image transformation" />
 
 <p class="Figuretitle">Figure 4.3 &mdash; Reference image to PNG
 image transformation</p>
+</section>
 
-<h3><a name="4Concepts.Implied-alpha">4.3.2 Alpha
+<section>
+<h3><a name="4Concepts.Implied-alpha">Alpha
 separation</a></h3>
 
 <p>If all alpha samples in a reference image have the maximum
 value, then the alpha channel may be omitted, resulting in an
 equivalent image that can be encoded more compactly.</p>
+</section>
 
-<h3><a name="4Concepts.Indexing">4.3.3 Indexing</a></h3>
+<section>
+<h3><a name="4Concepts.Indexing">Indexing</a></h3>
 
 <p>If the number of distinct pixel values is 256 or less, and the
 RGB sample depths are not greater than 8, and the alpha channel
@@ -1674,15 +1081,19 @@ colours.</p>
 so that the table entries with the maximum alpha value are
 grouped at the end. In this case the table can be encoded in a
 shortened form that does not include these entries.</p>
+</section>
 
-<h3><a name="4Concepts.RGBMerging">4.3.4 RGB merging</a></h3>
+<section>
+<h3><a name="4Concepts.RGBMerging">RGB merging</a></h3>
 
 <p>If the red, green, and blue channels have the same sample
 depth, and for each pixel the values of the red, green, and blue
 samples are equal, then these three channels may be merged into a
 single greyscale channel.</p>
+</section>
 
-<h3><a name="4Concepts.Alpha-indexing">4.3.5 Alpha
+<section>
+<h3><a name="4Concepts.Alpha-indexing">Alpha
 compaction</a></h3>
 
 <p>For non-indexed images, if there exists an RGB (or greyscale)
@@ -1690,8 +1101,10 @@ value such that all pixels with that value are fully transparent
 while all other pixels are fully opaque, then the alpha channel
 can be represented more compactly by merely identifying the RGB
 (or greyscale) value that is transparent.</p>
+</section>
 
-<h3><a name="4Concepts.Scaling">4.3.6 Sample depth
+<section>
+<h3><a name="4Concepts.Scaling">Sample depth
 scaling</a></h3>
 
 <p>In the PNG image, not all sample depths are supported (see
@@ -1737,10 +1150,13 @@ pixel types" />
 
 <p class="Figuretitle">Figure 4.6 &mdash; Possible PNG image
 pixel types</p>
+</section>
+</section>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<h2><a name="4Concepts.PNGImage">4.4 PNG image</a></h2>
+<section>
+<h2><a name="4Concepts.PNGImage">PNG image</a></h2>
 
 <p>The transformation of the reference image results in one of
 five types of PNG image (see <a href="#figure46"><span class=
@@ -1789,12 +1205,13 @@ type.</p>
 
 <li>Indexed-colour: palette index.</li>
 </ol>
+</section>
 
-<h2><a name="4Concepts.Encoding">4.5 Encoding the PNG
+<section>
+<h2><a name="4Concepts.Encoding">Encoding the PNG
 image</a></h2>
 
-<h3><a name="4Concepts.EncodingIntro">4.5.1 Introduction</a></h3>
-
+<section class="introductory">
 <p>A conceptual model of the process of encoding a PNG image is
 given in <a href="#figure47"><span class="figref">figure
 4.7</span></a>. The steps refer to the operations on the array of
@@ -1824,8 +1241,10 @@ chunk.</li>
 <li>Datastream construction: the chunks are inserted into the
 datastream.</li>
 </ol>
+</section>
 
-<h3><a name="4Concepts.EncodingPassAbs">4.5.2 Pass
+<section>
+<h3><a name="4Concepts.EncodingPassAbs">Pass
 extraction</a></h3>
 
 <p>Pass extraction (see <a href="#figure48"><span class=
@@ -1862,17 +1281,20 @@ image</p>
 </a></p>
 
 <p class="Figuretitle">Figure 4.8 &mdash; Pass extraction</p>
+</section>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<h3><a name="4Concepts.EncodingScanlineAbs">4.5.3 Scanline
-serialization</a></h3>
+<section>
+<h3><a name="4Concepts.EncodingScanlineAbs">Scanline
+serialization</a></h2>
 
 <p>Each row of pixels, called a scanline, is represented as a
 sequence of bytes.</p>
+</section>
 
-<h3><a name="4Concepts.EncodingFiltering">4.5.4
-Filtering</a></h3>
+<section>
+<h3><a name="4Concepts.EncodingFiltering">Filtering</a></h3>
 
 <p>PNG standardizes one filter method and several filter types
 that may be used to prepare image data for compression. It
@@ -1895,9 +1317,10 @@ filtering a scanline" />
 
 <p class="Figuretitle">Figure 4.9 &mdash; Serializing and
 filtering a scanline</p>
+</section>
 
-<h3><a name="4Concepts.EncodingCompression">4.5.5
-Compression</a></h3>
+<section>
+<h3><a name="4Concepts.EncodingCompression">Compression</a></h3>
 
 <p>The sequence of filtered scanlines in the pass or passes of
 the PNG image is compressed (see <a href="#figure410"><span
@@ -1906,8 +1329,10 @@ compression methods. The concatenated filtered scanlines form the
 input to the compression stage. The output from the compression
 stage is a single compressed datastream. See clause&#160;10: <a href=
 "#10Compression"><span class="xref">Compression</span></a>.</p>
+</section>
 
-<h3><a name="4Concepts.EncodingChunking">4.5.6 Chunking</a></h3>
+<section>
+<h3><a name="4Concepts.EncodingChunking">Chunking</a></h3>
 
 <p>Chunking provides a convenient breakdown of the compressed
 datastream into manageable chunks (see <span
@@ -1922,8 +1347,11 @@ redundancy check. See clause&#160;11: <a href="#11Chunks"><span class=
  <img height="450" width="700" src="png-figures/fig410.png" alt="Figure 4.10: Compression" />
 </object></a></p>
 <p class="Figuretitle">Figure 4.10 &mdash; Compression</p>
+</section>
+</section>
 
-<h2><a name="4Concepts.AncillInfo">4.6 Additional
+<section>
+<h2><a name="4Concepts.AncillInfo">Additional
 information</a></h2>
 
 <p>Ancillary information may be associated with an image.
@@ -2009,12 +1437,15 @@ reconstructed when the alpha channel is not retained in the PNG
 image.</td>
 </tr>
 </table>
+</section>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<h2><a name="4Concepts.Format">4.7 PNG datastream</a></h2>
+<section>
+<h2><a name="4Concepts.Format">PNG datastream</a></h2>
 
-<h3><a name="4Concepts.FormatChunks">4.7.1 Chunks</a></h3>
+<section>
+<h3><a name="4Concepts.FormatChunks">Chunks</a></h3>
 
 <p>The PNG datastream consists of a PNG signature (see 5.2: <a
 href="#5PNG-file-signature"><span class="xref">PNG
@@ -2022,8 +1453,10 @@ signature</span></a>) followed by a sequence of chunks (see
 clause&#160;11: <a href="#11Chunks"><span class="xref">Chunk
 specifications</span></a>). Each chunk has a chunk type which
 specifies its function.</p>
+</section>
 
-<h3><a name="4Concepts.FormatTypes">4.7.2 Chunk types</a></h3>
+<section>
+<h3><a name="4Concepts.FormatTypes">Chunk types</a></h3>
 
 <p>There are 18 chunk types defined in this International
 Standard. Chunk types are four-byte sequences chosen so that they
@@ -2079,8 +1512,11 @@ which encoders may generate and decoders may interpret.</p>
 "chunk">tIME</span></a> (see 11.3.6: <a class='Href' href=
 '#11timestampinfo'>Time stamp information</a>).</li>
 </ol>
+</section>
+</section>
 
-<h2><a name="4Concepts.Errors">4.8 Error handling</a></h2>
+<section>
+<h2><a name="4Concepts.Errors">Error handling</a></h2>
 
 <p>Errors in a PNG datastream fall into two general classes:</p>
 
@@ -2099,8 +1535,10 @@ recover from errors whenever possible, and fail gracefully
 otherwise. The error handling philosophy is described in detail
 in 13.2: <a href="#13Decoders.Errors"><span class="xref">Error
 handling</span></a>.</p>
+</section>
 
-<h2><a name="4Concepts.Registration">4.9 Extension and
+<section>
+<h2><a name="4Concepts.Registration">Extension and
 registration</a></h2>
 
 <p>
@@ -2136,18 +1574,21 @@ standardization:</p>
   Registration requests should be made by
   <a href="https://github.com/w3c/PNG-spec/issues">raising an issue on GitHub</a>.
 </p>
+</section>
+</section>
 
+<section>
+<h1><a name="5DataRep">Datastream structure</a></h1>
 
-<h1><a name="5DataRep">5 Datastream structure</a></h1>
-
-<h2><a name="5Introduction">5.1 Introduction</a></h2>
-
+<section class="introductory">
 <p>This clause defines the PNG signature and the basic properties
 of chunks. Individual chunk types are discussed in clause&#160;11: <a
 href="#11Chunks"><span class="xref">Chunk
 specifications</span></a>.</p>
+</section>
 
-<h2><a name="5PNG-file-signature">5.2 PNG signature</a></h2>
+<section>
+<h2><a name="5PNG-file-signature">PNG signature</a></h2>
 
 <p>The first eight bytes of a PNG datastream always contain the
 following (decimal) values:</p>
@@ -2167,8 +1608,10 @@ contains a single PNG image, consisting of a series of chunks
 beginning with an <a href="#11IHDR"><span class=
 "chunk">IHDR</span></a> chunk and ending with an <a href=
 "#11IEND"><span class="chunk">IEND</span></a> chunk.</p>
+</section>
 
-<h2><a name="5Chunk-layout">5.3 Chunk layout</a></h2>
+<section>
+<h2><a name="5Chunk-layout">Chunk layout</a></h2>
 
 <p>Each chunk consists of three or four fields (see figure 5.1).
 The meaning of the fields is described in
@@ -2234,10 +1677,12 @@ Redundancy Code algorithm</span></a>.</td>
 <p>The chunk data length may be any number of bytes up to the
 maximum; therefore, implementors cannot assume that chunks are
 aligned on any boundaries larger than bytes.</p>
+</section>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<h2><a name="5Chunk-naming-conventions">5.4 Chunk naming
+<section>
+<h2><a name="5Chunk-naming-conventions">Chunk naming
 conventions</a></h2>
 
 <p>Chunk types are chosen to be meaningful names when the bytes
@@ -2358,8 +1803,10 @@ editors</span></a>.</td>
 
 <p>Therefore, this name represents an ancillary, public,
 safe-to-copy chunk.</p>
+</section>
 
-<h2><a name="5CRC-algorithm">5.5 Cyclic Redundancy Code
+<section>
+<h2><a name="5CRC-algorithm">Cyclic Redundancy Code
 algorithm</a></h2>
 
 <p>CRC fields are calculated using standardized CRC methods with
@@ -2387,8 +1834,10 @@ coefficient of the <tt>x<sup>31</sup></tt> term.</p>
 table to accelerate the computation. See Annex D: <a href=
 "#D-CRCAppendix"><span class="xref">Sample Cyclic Redundancy Code
 implementation</span></a>.</p>
+</section>
 
-<h2><a name="5ChunkOrdering">5.6 Chunk ordering</a></h2>
+<section>
+<h2><a name="5ChunkOrdering">Chunk ordering</a></h2>
 
 <p>The constraints on the positioning of the individual chunks
 are listed in <a href="#table53"><span class="tabref">Table
@@ -2625,13 +2074,17 @@ type="image/svg+xml">
 <p class="Figuretitle"><a name="figure53">Figure 5.3 &mdash;</a>
 Lattice diagram: PNG images without <a href="#11PLTE"><span
 class="chunk">PLTE</span></a> in datastream</p>
+</section>
+</section>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<h1><a name="6Transformation">6 Reference image to PNG image
+<section>
+<h1><a name="6Transformation">Reference image to PNG image
 transformation</a></h1>
 
-<h2><a name="6Colour-values">6.1 Colour types and values</a></h2>
+<section>
+<h2><a name="6Colour-values">Colour types and values</a></h2>
 
 <p>As explained in 4.4: <a href="#4Concepts.PNGImage"><span
 class="xref">PNG image</span></a> there are five types of PNG
@@ -2706,8 +2159,10 @@ spaces</span></a>, 13.13: <a href=
 "#13Decoder-gamma-handling"><span class="xref">Decoder gamma
 handling</span></a> and Annex C: <a href="#C-GammaAppendix"><span
 class="xref">Gamma and chromaticity</span></a>.</p>
+</section>
 
-<h2><a name="6AlphaRepresentation">6.2 Alpha
+<section>
+<h2><a name="6AlphaRepresentation">Alpha
 representation</a></h2>
 
 <p>In a PNG datastream transparency may be represented in one of
@@ -2757,13 +2212,18 @@ change its transparency.) See 12.4: <a href=
 creation</span></a> and 13.16: <a href=
 "#13Alpha-channel-processing"><span class="xref">Alpha channel
 processing</span></a>.</p>
+</section>
+</section>
+
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<h1><a name="7Transformation">7 Encoding the PNG image as a PNG
+<section>
+<h1><a name="7Transformation">Encoding the PNG image as a PNG
 datastream</a></h1>
 
-<h2><a name="7Integers-and-byte-order">7.1 Integers and byte
+<section>
+<h2><a name="7Integers-and-byte-order">Integers and byte
 order</a></h2>
 
 <p>All integers that require more than one byte shall be in
@@ -2821,10 +2281,12 @@ values with a bit depth of 16. Such sample values are in network
 byte order (MSB first, LSB second). PNG permits multi-sample
 pixels only with 8 and 16-bit samples, so multiple samples of a
 single pixel are never packed into one byte.</p>
+</section>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<h2><a name="7Filtering">7.3 Filtering</a></h2>
+<section>
+<h2><a name="7Filtering">Filtering</a></h2>
 
 <p>PNG allows the scanline data to be <strong>filtered</strong> before it
 is compressed. Filtering can improve the compressibility of the
@@ -2844,14 +2306,16 @@ employ is left to the encoder.</p>
 
 <p>See clause&#160;9: <a href="#9Filters"><span class=
 "xref">Filtering</span></a>.</p>
+</section>
+</section>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<h1><a name="8Interlace">8 Interlacing and pass
+<section>
+<h1><a name="8Interlace">Interlacing and pass
 extraction</a></h1>
 
-<h2><a name="8InterlaceIntro">8.1 Introduction</a></h2>
-
+<section class="introductory">
 <p>Pass extraction (see <a href="#figure48"><span class=
 "figref">figure 4.8</span></a>) splits a PNG image into a
 sequence of reduced images (the interlaced PNG image) where the
@@ -2862,13 +2326,15 @@ the decoder and allows images to "fade in" when they are being
 displayed on-the-fly. On average, interlacing slightly expands
 the datastream size, but it can give the user a meaningful
 display much more rapidly.</p>
+</section>
 
-<h2><a name="8InterlaceMethods">8.2 Interlace methods</a></h2>
+<section>
+<h2>Interlace methods</h2>
 
 <p>Two interlace methods are defined in this International
 Standard, methods 0 and 1. Other values of interlace method are
 reserved for future standardization (see 4.9: <a href=
-"#4Concepts.Registration"><span class="xref">Extension and
+"#extension-and-registration"><span class="xref">Extension and
 registration</span></a>).</p>
 
 <p>With interlace method 0, the null method, pixels are extracted
@@ -2917,12 +2383,16 @@ class="xref">Scanlines</span></a>.</p>
 <p class="Note">NOTE If the reference image contains fewer than
 five columns or fewer than five rows, some passes will be
 empty.</p>
+</section>
+</section>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<h1><a name="9Filters">9 Filtering</a></h1>
+<section>
+<h1><a name="9Filters">Filtering</a></h1>
 
-<h2><a name="9FtIntro">9.1 Filter methods and filter
+<section>
+<h2><a name="9FtIntro">Filter methods and filter
 types</a></h2>
 
 <p>Filtering transforms the PNG image with the goal of
@@ -2950,8 +2420,10 @@ Filter type bytes are associated only with non-empty scanlines.
 No filter type bytes are present in an empty pass. See 13.8: <a
 href="#13Progressive-display"><span class="xref">Interlacing and
 progressive display</span></a>.</p>
+</section>
 
-<h2><a name="9Filter-types">9.2 Filter types for filter method
+<section>
+<h2><a name="9Filter-types">Filter types for filter method
 0</a></h2>
 
 <p>Filters are applied to <strong>bytes</strong>, not to pixels,
@@ -3079,8 +2551,10 @@ to the left of the pixel above.</p>
 inputs and outputs fit into bytes. Filters are applied to each
 byte regardless of bit depth. The sequence of <tt>Filt</tt>
 values is transmitted as the filtered scanline.</p>
+</section>
 
-<h2><a name="9Filter-type-3-Average">9.3 Filter type 3:
+<section>
+<h2><a name="9Filter-type-3-Average">Filter type 3:
 Average</a></h2>
 
 <p>The sum <tt>Orig(a) + Orig(b)</tt> shall be performed without
@@ -3088,8 +2562,10 @@ overflow (using at least nine-bit arithmetic). <tt>floor()</tt>
 indicates that the result of the division is rounded to the next
 lower integer if fractional; in other words, it is an integer
 division or right shift operation.</p>
+</section>
 
-<h2><a name="9Filter-type-4-Paeth">9.4 Filter type 4:
+<section>
+<h2><a name="9Filter-type-4-Paeth">Filter type 4:
 Paeth</a></h2>
 
 <p>The Paeth filter function computes a simple linear function of
@@ -3138,12 +2614,16 @@ or diagonal) the gradient of the image is smallest.</p>
 
 <p>Exactly the same PaethPredictor function is used by both
 encoder and decoder.</p>
+</section>
+</section>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<h1><a name="10Compression">10 Compression</a></h1>
+<section>
+<h1><a name="10Compression">Compression</a></h2>
 
-<h2><a name="10CompressionCM0">10.1 Compression method 0</a></h2>
+<section>
+<h2><a name="10CompressionCM0">Compression method 0</a></h2>
 
 <p>Only PNG compression method 0 is defined by this International
 Standard. Other values of compression method are reserved for
@@ -3220,8 +2700,10 @@ zlib check value is useful mainly as a cross-check that the
 deflate and inflate algorithms are implemented correctly.
 Verifying the individual PNG chunk CRCs provides confidence that
 the PNG datastream has been transmitted undamaged.</p>
+</section>
 
-<h2><a name="10CompressionFSL">10.2 Compression of the sequence
+<section>
+<h2><a name="10CompressionFSL">Compression of the sequence
 of filtered scanlines</a></h2>
 
 <p>The sequence of filtered scanlines is compressed and the
@@ -3248,10 +2730,12 @@ deflate block boundaries or <a href="#11IDAT"><span class=
 PNG image is represented by a single zlib datastream that is
 stored in a number of <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a> chunks.</p>
+</section>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<h2><a name="10CompressionOtherUses">10.3 Other uses of
+<section>
+<h2><a name="10CompressionOtherUses">Other uses of
 compression</a></h2>
 
 <p>PNG also uses compression method 0 in <a href="#11iTXt"><span
@@ -3262,13 +2746,15 @@ datastreams are not split across chunks; each such chunk contains
 an independent zlib datastream (see 10.1: <a href=
 "#10CompressionCM0"><span class="xref">Compression method
 0</span></a>).</p>
+</section>
+</section>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<h1><a name="11Chunks">11 Chunk specifications</a></h1>
+<section>
+<h1><a name="11Chunks">Chunk specifications</a></h2>
 
-<h2><a name="11Introduction">11.1 Introduction</a></h2>
-
+<section class="introductory">
 <p>The PNG datastream consists of a PNG signature (see 5.2: <a
 href="#5PNG-file-signature"><span class="xref">PNG
 signature</span></a>) followed by a sequence of chunks. Each
@@ -3282,10 +2768,10 @@ may appear. For details specific to encoders see 12.11: <a href=
 For details specific to decoders see 13.5: <a href=
 "#13Chunking"><span class="xref">Chunking</span></a>.</p>
 
-<h2><a name="11Critical-chunks">11.2 Critical chunks</a></h2>
+<section>
+<h2><a name="11Critical-chunks">Critical chunks</a></h2>
 
-<h3><a name="11CcGen">11.2.1 General</a></h3>
-
+<section class="introductory">
 <p>Critical chunks are those chunks that are absolutely required
 in order to successfully decode a PNG image from a PNG
 datastream. Extension chunks may be defined as critical chunks
@@ -3302,8 +2788,10 @@ chunk. Only one <a href="#11IHDR"><span class=
 "chunk">IHDR</span></a> chunk and one <a href="#11IEND"><span
 class="chunk">IEND</span></a> chunk are allowed in a PNG
 datastream.</p>
+</section>
 
-<h3><a name="11IHDR">11.2.2 <span class="chunk">IHDR</span> Image
+<section>
+<h3><a name="11IHDR"><span class="chunk">IHDR</span> Image
 header</a></h3>
 
 <p>The four-byte chunk type field contains the decimal values</p>
@@ -3446,8 +2934,10 @@ this International Standard: 0 (no interlace) or 1 (Adam7
 interlace). See clause&#160;8: <a href="#8Interlace"><span class=
 "xref">Interlacing and pass extraction</span></a> for
 details.</p>
+</section>
 
-<h3><a name="11PLTE">11.2.3 <span class="chunk">PLTE</span>
+<section>
+<h3><a name="11PLTE"><span class="chunk">PLTE</span>
 Palette</a></h3>
 
 <p>The four-byte chunk type field contains the decimal values</p>
@@ -3517,8 +3007,10 @@ quantization of a 16-bit truecolour image.</p>
 
 <p>There is no requirement that the palette entries all be used
 by the image, nor that they all be different.</p>
+</section>
 
-<h3><a name="11IDAT">11.2.4 <span class="chunk">IDAT</span> Image
+<section>
+<h3><a name="11IDAT"><span class="chunk">IDAT</span> Image
 data</a></h3>
 
 <p>The four-byte chunk type field contains the decimal values</p>
@@ -3539,8 +3031,10 @@ if so, they shall appear consecutively with no other intervening
 chunks. The compressed datastream is then the concatenation of
 the contents of the data fields of all the <span class=
 "chunk">IDAT</span> chunks.</p>
+</section>
 
-<h3><a name="11IEND">11.2.5 <span class="chunk">IEND</span> Image
+<section>
+<h3><a name="11IEND"><span class="chunk">IEND</span> Image
 trailer</a></h3>
 
 <p>The four-byte chunk type field contains the decimal values</p>
@@ -3551,11 +3045,13 @@ trailer</a></h3>
 
 <p>The <span class="chunk">IEND</span> chunk marks the end of the
 PNG datastream. The chunk's data field is empty.</p>
+</section>
+</section>
 
-<h2><a name="11Ancillary-chunks">11.3 Ancillary chunks</a></h2>
+<section>
+<h2><a name="11Ancillary-chunks"><a name="ancillary-chunks">Ancillary chunks</a></h2>
 
-<h3><a name="11AcGen">11.3.1 General</a></h3>
-
+<section class="introductory">
 <p>The ancillary chunks defined in this International Standard
 are listed in the order in 4.7.2: <a href=
 "#4Concepts.FormatTypes"><span class="xref">Chunk
@@ -3563,11 +3059,14 @@ types</span></a>. This is not the order in which they appear in a
 PNG datastream. Ancillary chunks may be ignored by a decoder. For
 each ancillary chunk, the actions described are under the
 assumption that the decoder is not ignoring the chunk.</p>
+</section>
 
-<h3><a name="11transinfo">11.3.2 Transparency
+<section>
+<h3><a name="11transinfo">Transparency
 information</a></h3>
 
-<h4><a name="11tRNS">11.3.2.1 <span class="chunk">tRNS</span>
+<section>
+<h4><a name="11tRNS"><span class="chunk">tRNS</span>
 Transparency</a></h4>
 
 <p>The four-byte chunk type field contains the decimal values</p>
@@ -3672,11 +3171,15 @@ only pixels matching the entire 16-bit values in <span class=
 "chunk">tRNS</span> chunks are transparent. Decoders have to
 postpone any sample depth rescaling until after the pixels have
 been tested for transparency.</p>
+</section>
+</section>
 
-<h3><a name="11addnlcolinfo">11.3.3 Colour space
+<section>
+<h3><a name="11addnlcolinfo">Colour space
 information</a></h3>
 
-<h4><a name="11cHRM">11.3.3.1 <span class="chunk">cHRM</span>
+<section>
+<h4><a name="11cHRM"><span class="chunk">cHRM</span>
 Primary chromaticities and white point</a></h4>
 
 <p>The four decimal values below correspond to the four-byte cHRM chunk type field:</p>
@@ -3755,8 +3258,10 @@ images.</p>
 or <a href="#11iCCP"><span class="chunk">iCCP</span></a> chunk,
 when present and recognized, overrides the <span class=
 "chunk">cHRM</span> chunk.</p>
+</section>
 
-<h4><a name="11gAMA">11.3.3.2 <span class="chunk">gAMA</span>
+<section>
+<h4><a name="11gAMA"><span class="chunk">gAMA</span>
 Image gamma</a></h4>
 
 <p>The four decimal values below correspond to the four-byte gAMA chunk type field:</p>
@@ -3809,8 +3314,10 @@ handling</span></a> for more information.</p>
 or <a href="#11iCCP"><span class="chunk">iCCP</span></a> chunk,
 when present and recognized, overrides the <span class=
 "chunk">gAMA</span> chunk.</p>
+</section>
 
-<h4><a name="11iCCP">11.3.3.3 <span class="chunk">iCCP</span>
+<section>
+<h4><a name="11iCCP"><span class="chunk">iCCP</span>
 Embedded ICC profile</a></h4>
 
 <p>The four decimal values below correspond to the four-byte iCCP chunk type field:</p>
@@ -3889,8 +3396,10 @@ present.</p>
 whether specified explicitly with an <span class=
 "chunk">iCCP</span> chunk or implicitly with an <a href=
 "#11sRGB"><span class="chunk">sRGB</span></a> chunk.</p>
+</section>
 
-<h4><a name="11sBIT">11.3.3.4 <span class="chunk">sBIT</span>
+<section>
+<h4><a name="11sBIT"><span class="chunk">sBIT</span>
 Significant bits</a></h4>
 
 
@@ -3995,8 +3504,10 @@ for the alpha channel that is implied by a
 the alpha channel are to be treated as significant. If the <span
 class="chunk">sBIT</span> chunk is not present, then all of the
 sample bits of all channels are to be treated as significant.</p>
+</section>
 
-<h4><a name="11sRGB">11.3.3.5 <span class="chunk">sRGB</span>
+<section>
+<h4><a name="11sRGB"><span class="chunk">sRGB</span>
 Standard RGB colour space</a></h4>
 
 <p>The four decimal values below correspond to the four-byte sRGB chunk type field:</p>
@@ -4143,10 +3654,10 @@ values given above as if they had appeared in <a href=
 <p>It is recommended that the <span class="chunk">sRGB</span> and
 <a href="#11iCCP"><span class="chunk">iCCP</span></a> chunks do
 not both appear in a PNG datastream.</p>
+</section>
 
-
-
-<h4><a name="11cICP">11.3.3.6 <span class="chunk">cICP</span>
+<section>
+<h4><a name="11cICP"><span class="chunk">cICP</span>
 Coding-independent code points for video signal type identification</a></h4>
 
 <p>The four decimal values below correspond to the four-byte cICP chunk type field:</p>
@@ -4352,12 +3863,13 @@ with the BT.709 transfer function, Matrix Coefficients (using RGB Identity)and F
 decoder should be capable of producing the proper rendering intent as described in
 <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a><a</td> and
 it's associated recommendations.</p>
+</section>
+</section>
 
+<section>
 
 <h3><a name="11textinfo">11.3.4 Textual information</a></h3>
-
-<h4><a name="11textIntro">11.3.4.1 Introduction</a></h4>
-
+<section class="introductory">
 <p>PNG provides the <a href="#11tEXt"><span class=
 "chunk">tEXt</span></a>, <a href="#11iTXt"><span class=
 "chunk">iTXt</span></a>, and <a href="#11zTXt"><span class=
@@ -4366,8 +3878,10 @@ associated with the image, such as an image description or
 copyright notice. Keywords are used to indicate what each text
 string represents. Any number of such text chunks may appear, and
 more than one with the same keyword is permitted.</p>
+</section>
 
-<h4><a name="11keywords">11.3.4.2 Keywords and text
+<section>
+<h4><a name="11keywords">Keywords and text
 strings</a></h4>
 
 <p>The following keywords are predefined and should be used where
@@ -4469,8 +3983,10 @@ UCS <a href="#2-ISO-10646-1"><span class="NormRef">[ISO/IEC
 10646-1]</span></a>. There is an option to compress text strings
 in the <a href="#11iTXt"><span class="chunk">iTXt</span></a>
 chunk.</p>
+</section>
 
-<h4><a name="11tEXt">11.3.4.3 <span class="chunk">tEXt</span>
+<section>
+<h4><a name="11tEXt"><span class="chunk">tEXt</span>
 Textual data</a></h4>
 
 <p>The four-byte chunk type field contains the decimal values</p>
@@ -4524,8 +4040,10 @@ character have no defined meaning in <span class="chunk">tEXt</span> chunks.
 Text containing characters outside the repertoire of ISO/IEC
 8859-1 should be encoded using the <a href="#11iTXt"><span class=
 "chunk">iTXt</span></a> chunk.</p>
+</section>
 
-<h4><a name="11zTXt">11.3.4.4 <span class="chunk">zTXt</span>
+<section>
+<h4><a name="11zTXt"><span class="chunk">zTXt</span>
 Compressed textual data</a></h4>
 
 <p>The four-byte chunk type field contains the decimal values</p>
@@ -4582,8 +4100,10 @@ compression</span></a>). Decompression of this datastream yields
 Latin-1 text that is identical to the text that would be stored
 in an equivalent <a href="#11tEXt"><span class=
 "chunk">tEXt</span></a> chunk.</p>
+</section>
 
-<h4><a name="11iTXt">11.3.4.5 <span class="chunk">iTXt</span>
+<section>
+<h4><a name="11iTXt"><span class="chunk">iTXt</span>
 International textual data</a></h4>
 
 <p>The four-byte chunk type field contains the decimal values</p>
@@ -4687,13 +4207,17 @@ often necessary).</p>
 translation of the keyword into the language indicated by the
 language tag, and applications displaying the keyword should
 display the translated keyword in addition.</p>
+</section>
+</section>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<h3><a name="11addnlsiinfo">11.3.5 Miscellaneous
+<section>
+<h3><a name="11addnlsiinfo">Miscellaneous
 information</a></h3>
 
-<h4><a name="11bKGD">11.3.5.1 <span class="chunk">bKGD</span>
+<section>
+<h4><a name="11bKGD"><span class="chunk">bKGD</span>
 Background colour</a></h4>
 
 <p>The four-byte chunk type field contains the decimal values</p>
@@ -4761,8 +4285,10 @@ samples in the range 0 to (2<sup>bitdepth</sup>)-1. In each case,
 for consistency, two bytes per sample are used regardless of the
 image bit depth. If the image bit depth is less than 16, the
 least significant bits are used and the others are 0.</p>
+</section>
 
-<h4><a name="11hIST">11.3.5.2 <span class="chunk">hIST</span>
+<section>
+<h4><a name="11hIST"><span class="chunk">hIST</span>
 Image histogram</a></h4>
 
 <p>The four-byte chunk type field contains the decimal values</p>
@@ -4810,8 +4336,10 @@ of a truecolour image, the histogram is necessarily approximate,
 since a decoder may map pixels to palette entries differently
 than the encoder did. In this situation, zero entries should not
 normally appear, because any entry might be used.</p>
+</section>
 
-<h4><a name="11pHYs">11.3.5.3 <span class="chunk">pHYs</span>
+<section>
+<h4><a name="11pHYs"><span class="chunk">pHYs</span>
 Physical pixel dimensions</a></h4>
 
 <p>The four-byte chunk type field contains the decimal values</p>
@@ -4864,8 +4392,10 @@ actual size of the pixels remains unspecified.</p>
 <p>If the <span class="chunk">pHYs</span> chunk is not present,
 pixels are assumed to be square, and the physical size of each
 pixel is unspecified.</p>
+</section>
 
-<h4><a name="11sPLT">11.3.5.4 <span class="chunk">sPLT</span>
+<section>
+<h4><a name="11sPLT"><span class="chunk">sPLT</span>
 Suggested palette</a></h4>
 
 <p>The four-byte chunk type field contains the decimal values</p>
@@ -4987,11 +4517,15 @@ frequencies with which the colours appear in the PNG image.</p>
 
 <p>Multiple <span class="chunk">sPLT</span> chunks are permitted,
 but each shall have a different palette name.</p>
+</section>
+</section>
 
-<h3><a name="11timestampinfo">11.3.6 Time stamp
+<section>
+<h3><a name="11timestampinfo">Time stamp
 information</a></h3>
 
-<h4><a name="11tIME">11.3.6.1 <span class="chunk">tIME</span>
+<section>
+<h4><a name="11tIME"><span class="chunk">tIME</span>
 Image last-modification time</a></h4>
 
 <p>The four-byte chunk type field contains the decimal values</p>
@@ -5043,20 +4577,26 @@ time.</p>
 <p>The <span class="chunk">tIME</span> chunk is intended for use
 as an automatically-applied time stamp that is updated whenever
 the image data are changed.</p>
+</section>
+</section>
+</section>
+</section>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<h1><a name="12Encoders">12 PNG Encoders</a></h1>
+<section>
+<h1><a name="12Encoders">PNG Encoders</a></h2>
 
-<h2><a name="12Introduction">12.1 Introduction</a></h2>
-
+<section class="introductory">
 <p>This clause gives requirements and recommendations for encoder
 behaviour. A PNG encoder shall produce a PNG datastream from a
 PNG image that conforms to the format specified in the preceding
 clauses. Best results will usually be achieved by following the
 additional recommendations given here.</p>
+</section>
 
-<h2><a name="12Encoder-gamma-handling">12.2 Encoder gamma
+<section>
+<h2><a name="12Encoder-gamma-handling">Encoder gamma
 handling</a></h2>
 
 <p>See Annex C: <a href="#C-GammaAppendix"><span class=
@@ -5248,8 +4788,10 @@ represented linearly.</p>
 
 <p>See also 13.13: <a href="#13Decoder-gamma-handling"><span
 class="xref">Decoder gamma handling</span></a>.</p>
+</section>
 
-<h2><a name="12Encoder-colour-handling">12.3 Encoder colour
+<section>
+<h2><a name="12Encoder-colour-handling">Encoder colour
 handling</a></h2>
 
 <p>See Annex C: <a href="#C-GammaAppendix"><span class=
@@ -5421,8 +4963,10 @@ conversion when the image is finally displayed.</p>
 
 <p>See also 13.14: <a href="#13Decoder-colour-handling"><span
 class="xref">Decoder colour handling</span></a>.</p>
+</section>
 
-<h2><a name="12Alpha-channel-creation">12.4 Alpha channel
+<section>
+<h2><a name="12Alpha-channel-creation">Alpha channel
 creation</a></h2>
 
 <p>The alpha channel can be regarded either as a mask that
@@ -5462,10 +5006,12 @@ valid premultiplied data, the sample values never exceed their
 corresponding alpha values, so the result of the division should
 always be in the range 0 to 1. If the alpha value is zero, output
 black (zeroes).</p>
+</section>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<h2><a name="12Sample-depth-scaling">12.5 Sample depth
+<section>
+<h2><a name="12Sample-depth-scaling">Sample depth
 scaling</a></h2>
 
 <p>When encoding input samples that have a sample depth that
@@ -5556,10 +5102,12 @@ recommended that an <a href="#11sBIT"><span class=
 since <a href="#11sBIT"><span class="chunk">sBIT</span></a>
 suggests that the original data range was exactly
 0..2<sup>S</sup>-1.</p>
+</section>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<h2><a name="12Suggested-palettes">12.6 Suggested
+<section>
+<h2><a name="12Suggested-palettes">Suggested
 palettes</a></h2>
 
 <p>Suggested palettes may appear as <a href="#11sPLT"><span
@@ -5672,18 +5220,22 @@ palette represented by <a href="#11PLTE"><span class=
 "chunk">hIST</span></a> chunks as well, for compatibility with
 decoders that do not recognize the <a href="#11sPLT"><span class=
 "chunk">sPLT</span></a> chunk.</p>
+</section>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<h2><a name="12Interlacing">12.7 Interlacing</a></h2>
+<section>
+<h2><a name="12Interlacing">Interlacing</a></h2>
 
 <p>This International Standard defines two interlace methods,
 one of which is no interlacing. Interlacing provides a convenient
 basis from which decoders can progressively display an image, as
 described in 13.8: <a href="#13Progressive-display"><span class=
 "xref">Interlacing and progressive display</span></a>.</p>
+</section>
 
-<h2><a name="12Filter-selection">12.8 Filter selection</a></h2>
+<section>
+<h2><a name="12Filter-selection">Filter selection</a></h2>
 
 <p>For images of colour type 3 (indexed-colour), filter type 0
 (None) is usually the most effective. Colour images with 256 or
@@ -5714,8 +5266,10 @@ gained with PNG.</p>
 <p>Filtering according to these recommendations is effective in
 conjunction with either of the two interlace methods defined in
 this International Standard.</p>
+</section>
 
-<h2><a name="12Compression">12.9 Compression</a></h2>
+<section>
+<h2><a name="12Compression">Compression</a></h2>
 
 <p>The encoder may divide the compressed datastream into <a href=
 "#11IDAT"><span class="chunk">IDAT</span></a> chunks however it
@@ -5728,8 +5282,10 @@ chunk contains only one data byte is valid, though remarkably
 wasteful of space. (Zero-length <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a> chunks are also valid, though even more
 wasteful.)</p>
+</section>
 
-<h2><a name="12Text-chunk-processing">12.10 Text chunk
+<section>
+<h2><a name="12Text-chunk-processing">Text chunk
 processing</a></h2>
 
 <p>A nonempty keyword shall be provided for each text chunk. The
@@ -5760,12 +5316,15 @@ some situations, as the decoder will decode the image data first.
 It is recommended that small text chunks, such as the image
 title, appear before the <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a> chunks.</p>
+</section>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<h2><a name="12Chunk-processing">12.11 Chunking</a></h2>
+<section>
+<h2><a name="12Chunk-processing">Chunking</a></h2>
 
-<h3><a name="12Use-of-private-chunks">12.11.1 Use of private
+<section>
+<h3><a name="12Use-of-private-chunks">Use of private
 chunks</a></h3>
 
 <p>
@@ -5820,8 +5379,10 @@ be registered with the Registration Authority (see 4.9: <a href=
 "#4Concepts.Registration"><span class="xref">Extension and
 registration</span></a>). However, it is permissible to use
 keywords without registering them first.</p>
+</section>
 
-<h3><a name="12Private-type-and-method-codes">12.11.2 Private
+<section>
+<h3><a name="12Private-type-and-method-codes">Private
 type and method codes</a></h3>
 
 <p>This specification defines the meaning of only some of the
@@ -5837,19 +5398,24 @@ private type codes may render a datastream unreadable by standard
 decoders. Such codes are strongly discouraged except for
 experimental purposes, and should not appear in publicly
 available software or datastreams.</p>
+</section>
 
-<h3><a name="12Ancillary">12.11.3 Ancillary chunks</a></h3>
+<section>
+<h3><a name="12Ancillary">Ancillary chunks</a></h3>
 
 <p>All ancillary chunks are optional, encoders need not write
 them. However, encoders are encouraged to write the standard
 ancillary chunks when the information is available.</p>
+</section>
+</section>
+</section>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<h1><a name="13Decoders">13 PNG decoders and viewers</a></h1>
+<section>
+<h1><a name="13Decoders">PNG decoders and viewers</a></h1>
 
-<h2><a name="13Introduction">13.1 Introduction</a></h2>
-
+<section class="introductory">
 <p>This clause gives some requirements and recommendations for PNG
 decoder behaviour and viewer behaviour. A viewer presents the
 decoded PNG image to the user. Since viewer and decoder behaviour
@@ -5868,8 +5434,10 @@ International Standard.</p>
 <p>All ancillary chunks are optional; decoders may ignore them.
 However, decoders are encouraged to interpret these chunks when
 appropriate and feasible.</p>
+</section>
 
-<h2><a name="13Decoders.Errors">13.2 Error handling</a></h2>
+<section>
+<h2><a name="13Decoders.Errors">Error handling</a></h2>
 
 <p>Errors in a PNG datastream will fall into two general classes,
 transmission errors and syntax errors (see <a href=
@@ -6016,8 +5584,10 @@ checking</span></a>).</p>
 "chunk">iCCP</span></a>) could lead to buffer overruns.
 Implementors of deflate decompressors should guard against this
 possibility.</p>
+</section>
 
-<h2><a name="13Error-checking">13.3 Error checking</a></h2>
+<section>
+<h2><a name="13Error-checking">Error checking</a></h2>
 
 <p>The PNG error handling philosophy is described in 13.2: <a
 href="#13Decoders.Errors"><span class="xref">Error
@@ -6065,8 +5635,10 @@ variants. Decoders shall check this byte and report an error if
 it holds an unrecognized code. See clause&#160;10: <a href=
 "#10Compression"><span class="xref">Compression</span></a> for
 details.</p>
+</section>
 
-<h2><a name="13Security-considerations">13.4 Security
+<section>
+<h2><a name="13Security-considerations">Security
 considerations</a></h2>
 
 <p>A PNG datastream is composed of a collection of explicitly
@@ -6120,8 +5692,10 @@ checking</span></a>.</p>
 because chunks can be extremely large, up to 2<sup>31</sup>-1
 bytes long. But properly written decoders will handle large
 chunks without difficulty.</p>
+</section>
 
-<h2><a name="13Chunking">13.5 Chunking</a></h2>
+<section>
+<h2><a name="13Chunking">Chunking</a></h2>
 
 <p>Decoders shall recognize chunk types by a simple four-byte
 literal comparison; it is incorrect to perform case conversion on
@@ -6137,8 +5711,10 @@ to 1, however, as some future version of the PNG specification
 could define a meaning for this bit. It is sufficient to treat a
 chunk with this bit set in the same way as any other unknown
 chunk type.)</p>
+</section>
 
-<h2><a name="13Pixel-dimensions">13.6 Pixel dimensions</a></h2>
+<section>
+<h2><a name="13Pixel-dimensions">Pixel dimensions</a></h2>
 
 <p>Non-square pixels can be represented (see 11.3.5.3: <a href=
 "#11pHYs"><span class="xref"><span class="chunk">pHYs</span>
@@ -6187,8 +5763,10 @@ and vertically. For example, a viewer might want to shrink an
 image that is too large to fit on the display, or to expand
 images sent to a high-resolution printer so that they appear the
 same size as they did on the display.</p>
+</section>
 
-<h2><a name="13Text-chunk-processing">13.7 Text chunk
+<section>
+<h2><a name="13Text-chunk-processing">Text chunk
 processing</a></h2>
 
 <p>If practical, PNG decoders should have a way to display to the
@@ -6238,8 +5816,10 @@ such characters literally.</p>
 contain any number of printing characters between newline
 characters, even though it is recommended that encoders avoid
 creating lines in excess of 79 characters.</p>
+</section>
 
-<h2><a name="13Decompression">13.8 Decompression</a></h2>
+<section>
+<h2><a name="13Decompression">Decompression</a></h2>
 
 <p>The compression technique used in this International Standard
 does not require the entire compressed datastream to be available
@@ -6262,8 +5842,10 @@ chunks; a decoder that assumes any more than this is incorrect.
 Some encoder implementations may emit datastreams in which some
 of these structures are indeed related, but decoders cannot rely
 on this.</p>
+</section>
 
-<h2><a name="13Filtering">13.9 Filtering</a></h2>
+<section>
+<h2><a name="13Filtering">Filtering</a></h2>
 
 <p>To reverse the effect of a filter, the decoder may need
 to use the decoded values of the prior pixel on the same line,
@@ -6274,8 +5856,10 @@ stored by the decoder at all times. Even though some filter types
 do not refer to the prior scanline, the decoder will always need
 to store each scanline as it is decoded, since the next scanline
 might use a filter type that refers to it.</p>
+</section>
 
-<h2><a name="13Progressive-display">13.10 Interlacing and
+<section>
+<h2><a name="13Progressive-display">Interlacing and
 progressive display</a></h2>
 
 <p>Decoders are required to be able to read interlaced images. If
@@ -6353,8 +5937,10 @@ background-image pixels that may be needed later, if the pixels
 eventually received for those positions turn out to be wholly or
 partially transparent. This is a problem only if the background
 image is not stored anywhere offscreen.</p>
+</section>
 
-<h2><a name="13Truecolour-image-handling">13.11 Truecolour image
+<section>
+<h2><a name="13Truecolour-image-handling">Truecolour image
 handling</a></h2>
 
 <p>To achieve PNG's goal of universal interchangeability,
@@ -6389,8 +5975,10 @@ individual pixels to palette entries with adequate speed.</p>
 The PNG sample implementation, libpng (<a href=
 "http://www.libpng.org/pub/png/libpng.html"><code>http://www.libpng.org/pub/png/libpng.html</code></a>),
 includes code for the purpose.</p>
+</section>
 
-<h2><a name="13Sample-depth-rescaling">13.12 Sample depth
+<section>
+<h2><a name="13Sample-depth-rescaling">Sample depth
 rescaling</a></h2>
 
 <p>Decoders may wish to scale PNG data to a lesser sample depth
@@ -6451,8 +6039,10 @@ href="#11sBIT"><span class="chunk">sBIT</span></a>.</p>
 pixels, the comparison shall be done exactly. Therefore,
 transparent pixel detection shall be done before reducing sample
 precision.</p>
+</section>
 
-<h2><a name="13Decoder-gamma-handling">13.13 Decoder gamma
+<section>
+<h2><a name="13Decoder-gamma-handling">Decoder gamma
 handling</a></h2>
 
 <p>See Annex C: <a href="#C-GammaAppendix"><span class=
@@ -6587,8 +6177,10 @@ of voltage input are available, the third and fourth lines of the
 computation above can be replaced by a lookup in these
 measurements, to find the actual frame buffer value that most
 nearly gives the desired brightness.</p>
+</section>
 
-<h2><a name="13Decoder-colour-handling">13.14 Decoder colour
+<section>
+<h2><a name="13Decoder-colour-handling">Decoder colour
 handling</a></h2>
 
 <p>See Annex C: <a href="#C-GammaAppendix"><span class=
@@ -6663,8 +6255,10 @@ href="#G-ITU-R-BT709"><span class=
 "bibref">[ITU-R-BT709]</span></a>. The original NTSC primaries
 should <strong>not</strong> be used unless the PNG image really
 was colour-balanced for such a monitor.</p>
+</section>
 
-<h2><a name="13Background-colour">13.15 Background
+<section>
+<h2><a name="13Background-colour">Background
 colour</a></h2>
 
 <p>The background colour given by the <a href="#11bKGD"><span
@@ -6705,8 +6299,10 @@ class="chunk">bKGD</span></a> and <a href="#11tRNS"><span class=
 then a decoder that does not implement transparency processing
 will give the intended display, at least when no
 partially-transparent pixels are present.</p>
+</section>
 
-<h2><a name="13Alpha-channel-processing">13.16 Alpha channel
+<section>
+<h2><a name="13Alpha-channel-processing">Alpha channel
 processing</a></h2>
 
 <p>The alpha channel can be used to composite a foreground image
@@ -6931,8 +6527,10 @@ nothing. Dithering full alpha to binary alpha is very much like
 dithering greyscale to black-and-white, except that all fully
 transparent and fully opaque pixels should be left unchanged by
 the dither.</p>
+</section>
 
-<h2><a name="13Histogram-and-suggested-palette-usage">13.17
+<section>
+<h2><a name="13Histogram-and-suggested-palette-usage">
 Histogram and suggested palette usage</a></h2>
 
 <p>For viewers running on indexed-colour hardware attempting to
@@ -7013,12 +6611,16 @@ used.</p>
 
 <p>See also 12.6: <a href="#12Suggested-palettes"><span class=
 "xref">Suggested palettes</span></a>.</p>
+</section>
+</section>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<h1><a name="14EditorsExt">14 Editors and extensions</a></h1>
+<section>
+<h1><a name="14EditorsExt">Editors and extensions</a></h1>
 
-<h2><a name="14Additional-chunk-types">14.1 Additional chunk
+<section>
+<h2><a name="14Additional-chunk-types">Additional chunk
 types</a></h2>
 
 <p>The provisions of this International Standard may be extended
@@ -7052,8 +6654,10 @@ Registration Authority that it be straightforward when a new
 chunk of potentially wide application is needed. The creation of
 new critical chunk types is discouraged unless absolutely
 necessary.</p>
+</section>
 
-<h2><a name="14Ordering">14.2 Behaviour of PNG editors</a></h2>
+<section>
+<h2><a name="14Ordering">Behaviour of PNG editors</a></h2>
 
 <p>A "PNG editor" is defined as a program that reads a PNG
 datastream, makes modifications, and writes a new PNG datastream
@@ -7158,11 +6762,14 @@ class="chunk">tEXt</span></a>, <a href="#11zTXt"><span class=
 "chunk">zTXt</span></a>, and <a href="#11iTXt"><span class=
 "chunk">iTXt</span></a> chunks may be used for a user-supplied
 time.</p>
+</section>
 
-<h2><a name="14Ordering-of-chunks">14.3 Ordering of
+<section>
+<h2><a name="14Ordering-of-chunks">Ordering of
 chunks</a></h2>
 
-<h3><a name="14Ordering-of-critical-chunks">14.3.1 Ordering of
+<section>
+<h3><a name="14Ordering-of-critical-chunks">Ordering of
 critical chunks</a></h3>
 
 <p>Critical chunks may have arbitrary ordering requirements,
@@ -7172,8 +6779,10 @@ class="chunk">IHDR</span></a> has the specific ordering rule that
 it shall always appear first. A PNG editor, or indeed any
 PNG-writing program, shall know and follow the ordering rules for
 any critical chunk type that it can generate.</p>
+</section>
 
-<h3><a name="14Ordering-of-ancillary-chunks">14.3.2 Ordering of
+<section>
+<h3><a name="14Ordering-of-ancillary-chunks">Ordering of
 ancillary chunks</a></h3>
 
 <p>The strictest ordering rules for an ancillary chunk type
@@ -7207,14 +6816,19 @@ have inserted some other ancillary chunk after it. But it is safe
 to assume that the chunk will remain somewhere between <a href=
 "#11IDAT"><span class="chunk">IDAT</span></a> and <a href=
 "#11IEND"><span class="chunk">IEND</span></a>.</p>
+</section>
+</section>
+</section>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<h1><a name="15Conformance">15 Conformance</a></h1>
+<section id="conformance">
 
-<h2><a name="15ConfIntro">15.1 Introduction</a></h2>
+<section>
+<h2><a name="15ConfIntro">Introduction</a></h2>
 
-<h3><a name="15ConfObjectives">15.1.1 Objectives</a></h3>
+<section>
+<h3><a name="15ConfObjectives">Objectives</a></h3>
 
 <p>This clause addresses conformance of PNG datastreams, PNG
 encoders, PNG decoders, and PNG editors.</p>
@@ -7234,8 +6848,10 @@ and editors;</li>
 
 <li>to facilitate automated test generation.</li>
 </ol>
+</section>
 
-<h3><a name="15ConfScope">15.1.2 Scope</a></h3>
+<section>
+<h3><a name="15ConfScope">Scope</a></h3>
 
 <p>Conformance is defined for PNG datastreams and for PNG
 encoders, decoders, and editors.</p>
@@ -7248,10 +6864,14 @@ requirements of the encoder, decoder, or editor.</p>
 
 <p>The scope of this clause is limited to rules for the open
 interchange of PNG datastreams.</p>
+</section>
+</section>
 
-<h2><a name="15ConformanceConf">15.2 Conformance conditions</a></h2>
+<section>
+<h2><a name="15ConformanceConf">Conformance conditions</a></h2>
 
-<h3><a name="15FileConformance">15.2.1 Conformance of PNG
+<section>
+<h3><a name="15FileConformance">Conformance of PNG
 datastreams</a></h3>
 <p>A PNG datastream conforms to this International Standard if
 the following conditions are met.</p>
@@ -7297,10 +6917,12 @@ this International Standard.</li>
 <li>The PNG datastream is encoded according to the rules of this
 International Standard.</li>
 </ol>
+</section>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<h3><a name="15ConformanceEncoder">15.2.2 Conformance of PNG
+<section>
+<h3><a name="15ConformanceEncoder">Conformance of PNG
 encoders</a></h3>
 
 <p>A PNG encoder conforms to this International Standard if it
@@ -7320,8 +6942,10 @@ match the original data.</li>
 or private definitions of values for any of the method or type
 fields.</li>
 </ol>
+</section>
 
-<h3><a name="15ConformanceDecoder">15.2.3 Conformance of PNG
+<section>
+<h3><a name="15ConformanceDecoder">Conformance of PNG
 decoders</a></h3>
 
 <p>A PNG decoder conforms to this International Standard if it
@@ -7384,8 +7008,10 @@ some number of <a href="#11IDAT"><span class=
 ancillary chunk other than those that are specified by the chunk
 ordering rules.</li>
 </ol>
+</section>
 
-<h3><a name="15ConformanceEditor">15.2.4 Conformance of PNG
+<section>
+<h3><a name="15ConformanceEditor">Conformance of PNG
 editors</a></h3>
 
 <p>A PNG editor conforms to this International Standard if it satisfies the following conditions.</p>
@@ -7414,14 +7040,16 @@ colour type or rearranging the palette in an indexed-colour
 datastream are permitted provided that the new datastream
 losslessly represents the same reference image.</li>
 </ol>
+</section>
+</section>
+</section>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<h1 class="Annex"><a name="A-Conventions">Annex A</a></h1>
+<section class="appendix">
+<h2>Internet Media Types</h2>
 
-<h1 id="IANA-registrations">Internet Media Types</h1>
-
-<h2 id="image-png-registration">image/png</h2>
+<h2>image/png</h2>
 
 <p>This updates the existing
   <span class="tt">image/png</span> Internet Media type, under the
@@ -7539,18 +7167,15 @@ losslessly represents the same reference image.</li>
     <dd>W3C</dd>
 
   </dl>
-
+</section>
 
 
 
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<h1 class="Annex"><a name="B-NewChunksAppendix">Annex B</a></h1>
-
-<p class="Annex">(informative)</p>
-
-<h1 id="newchunks" class="Annex">Guidelines for new chunk types</h1>
+<section class="appendix informative">
+<h2 class="Annex">Guidelines for new chunk types</h2>
 
 <p>This International Standard allows extension through the
 addition of new chunk types and new interlace, filter, and
@@ -7597,14 +7222,12 @@ relationships.</li>
 
 <li>Avoid defining private critical chunks.</li>
 </ol>
+</section>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<h1 class="Annex"><a name="C-GammaAppendix">Annex C</a></h1>
-
-<p class="Annex">(informative)</p>
-
-<h1 id="gammachromaticity" class="Annex">Gamma and chromaticity</h1>
+<section class="appendix informative">
+<h1 class="Annex">Gamma and chromaticity</h1>
 
 <p>Gamma is a numerical parameter used to describe approximations
 to certain non-linear transfer functions encountered in image
@@ -7711,11 +7334,8 @@ href="#G-HALL"><span class="bibref">[HALL]</span></a>, <a href=
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<h1 class="Annex"><a name="D-CRCAppendix">Annex D</a></h1>
-
-<p class="Annex">(informative)</p>
-
-<h1 id="samplecrc" class="Annex">Sample Cyclic Redundancy Code
+<section class="appendix informative">
+<h1 class="Annex">Sample Cyclic Redundancy Code
 implementation</h1>
 
 <p>The following sample code represents a practical
@@ -7827,34 +7447,37 @@ Suffix <tt>L</tt> indicates a long value (at least 32 bits).</td>
      return update_crc(0xffffffffL, buf, len) ^ 0xffffffffL;
    }
 </pre>
+</section>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<h1 class="Annex"><a name="E-Resources">Annex E</a></h1>
+<section class="appendix informative">
+<h1 class="Annex">Online resources</h1>
 
-<p class="Annex">(informative)</p>
-
-<h1 id="onlineresources" class="Annex">Online resources</h1>
-
-<h2><a name="E-Intro">Introduction</a></h2>
-
+<section class="introductory">
 <p>This annex gives the locations of some Internet resources for
 PNG software developers. By the nature of the Internet, the list
 is incomplete and subject to change.</p>
+</section>
 
-<h2><a name="E-Archive-sites">Archive sites</a></h2>
+<section>
+<h2>Archive sites</h2>
 
 <p>This International Standard can be found at
 <a href="http://www.w3.org/TR/2003/REC-PNG-20031110/index.html"
 ><code>http://www.w3.org/TR/2003/REC-PNG-20031110/index.html</code></a>.</p>
+</section>
 
-<h2><a name="E-icc-profile-specs">ICC profile
-specifications</a></h2>
+<section>
+<h2>ICC profile
+specifications</h2>
 
 <p>ICC profile specifications are available at: <a href=
 "http://www.color.org/"><code>http://www.color.org/</code></a></p>
+</section>
 
-<h2><a name="E-PNG-home-page">PNG web site</a></h2>
+<section>
+<h2>PNG web site</h2>
 
 <p>There is a World Wide Web site for PNG at <a href=
 "http://www.libpng.org/pub/png/"><code>http://www.libpng.org/pub/png/</code></a>.
@@ -7866,9 +7489,11 @@ inflate, and an optimized implementation of the CRC algorithm are
 available from the zlib web site,
 <a href=
 "http://www.zlib.org/"><code>http://www.zlib.org/</code></a>.</p>
+</section>
 
-<h2><a name="E-Sample-implementation">Sample implementation and
-test images</a></h2>
+<section>
+<h2>Sample implementation and
+test images</h2>
 
 <p>A sample implementation in portable C, <strong>libpng</strong>, is
 available at <a href=
@@ -7879,12 +7504,11 @@ Sample viewer and encoder applications of libpng are available at
 and are described in detail in <i>PNG: The Definitive Guide</i>
 <a href="#G-ROELOFS">[ROELOFS]</a>. Test images can also be
 accessed from the PNG web site.</p>
+</section>
+</section>
 
-<h1 class="Annex"><a name="F-Relationship">Annex F</a></h1>
-
-<p class="Annex">(informative)</p>
-
-<h1 id="relationshiptofirstedition" class="Annex">Relationship to W3C PNG</h1>
+<section class="appendix informative">
+<h1 class="Annex">Relationship to W3C PNG</h1>
 
 <p>This International Standard is strongly based on W3C
 Recommendation PNG Specification Version 1.0 <a href=
@@ -8071,9 +7695,11 @@ interoperability.</li>
 "#11sBIT"><span class="chunk">sBIT</span></a> chunk has been
 clarified.</li>
 </ol>
+</section>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
+<section class="appendix">
 <h1 class="Annex"><a name="G-References">Bibliography</a></h1>
 
 <dl>
@@ -8245,5 +7871,7 @@ inflate, and an optimized implementation of the CRC algorithm are
 available from the zlib web site,
 <a href=
 "http://www.zlib.org/"><code>http://www.zlib.org/</code></a>.</p>
+</section>
+
 <script type="application/javascript" src="https://www.w3.org/scripts/TR/fixup.js"></script></body>
 </html>

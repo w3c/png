@@ -926,34 +926,29 @@ as it can achieve.</li>
 </ol>
 
 <p>The relationships between the four kinds of image are
-illustrated in <a href="#figure41"><span class="figref">figure
-4.1</span></a>.</p>
+illustrated in <a href="#image-relationship"></a>.</p>
 
-<p><a name="figure41">
-<object data="figures/fig41.svg" type="image/svg+xml" width="640" height="290">
-   <img height="280" width="640" src="png-figures/fig41.png" alt="Figure 4.1: Relationships between
+<figure id="image-relationship"><a name="figure41"></a>
+<object data="figures/image-relationship.svg" type="image/svg+xml" width="640" height="290">
+   <img height="280" width="640" src="png-figures/image-relationship.png" alt="Relationships between
 source, reference, PNG, and display images" />
 </object>
-</a></p>
-
-<p class="Figuretitle">Figure 4.1 &mdash; Relationships between
-source, reference, PNG, and display images</p>
+<figcaption>Relationships between source, reference, PNG, and display images</figcaption>
+</figure>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <p>The relationships between samples, channels, pixels, and
-sample depth are illustrated in <a href="#figure42"><span class=
-"figref">figure 4.2</span></a>.</p>
+sample depth are illustrated in <a href="#sample-pixel-channel-relationship"></a>.</p>
 
-<p><a name="figure42">
-<object data="figures/fig42.svg" type="image/svg+xml" width="640" height="290">
-  <img height="290" width="640" src="png-figures/fig42.png" alt="Figure 4.2: Relationships between
+<figure id="sample-pixel-channel-relationship"><a name="figure42"></a>
+<object data="figures/sample-pixel-channel-relationship.svg" type="image/svg+xml" width="640" height="290">
+  <img height="290" width="640" src="png-figures/sample-pixel-channel-relationship.png" alt="Relationships between
 sample, sample depth, pixel, and channel" />
 </object>
-</a></p>
+<figcaption>Relationships between sample, sample depth, pixel, and channel</figcaption>
+</figure>
 
-<p class="Figuretitle">Figure 4.2 &mdash; Relationships between
-sample, sample depth, pixel, and channel</p>
 </section>
 
 <section>
@@ -1002,7 +997,7 @@ image to PNG image transformation</h2>
 <section class="introductory">
 <p>A number of transformations are applied to the reference image
 to create the PNG image to be encoded (see <a href=
-"#figure43"><span class="figref">figure 4.3</span></a>). The
+"#reference-to-png-transformation"></a>). The
 transformations are applied in the following sequence, where
 square brackets mean the transformation is optional:</p>
 
@@ -1025,15 +1020,14 @@ alter the alpha sample depth.</p>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<p><a name="figure43">
-<object data="figures/fig43.svg" type="image/svg+xml" height="525" width="640">
-<img height="525" width="640" src="png-figures/fig43.png" alt="Figure 4.3: Reference image to PNG
+<figure id="reference-to-png-transformation"><a name="figure43"></a>
+<object data="figures/reference-to-png-transformation.svg" type="image/svg+xml" height="525" width="640">
+<img height="525" width="640" src="png-figures/reference-to-png-transformation.png" alt="Reference image to PNG
 image transformation" />
 </object>
-</a></p>
+<figcaption>Reference image to PNG image transformation</figcaption>
+</figure>
 
-<p class="Figuretitle">Figure 4.3 &mdash; Reference image to PNG
-image transformation</p>
 </section>
 
 <section>
@@ -1061,15 +1055,14 @@ samples.</p>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<p><a name="figure44">
-<object height="450" width="660" data="figures/fig44.svg" type="image/svg+xml">
-  <img height="450" width="660" src="png-figures/fig44.png" alt="Figure 4.4: Indexed-colour
+<figure id="indexed-colour-image"><a name="figure44"></a>
+<object height="450" width="660" data="figures/indexed-colour-image.svg" type="image/svg+xml">
+  <img height="450" width="660" src="png-figures/indexed-colour-image.png" alt="Indexed-colour
 image" />
 </object>
-</a></p>
+<figcaption>Indexed-colour image</figcaption>
+</figure>
 
-<p class="Figuretitle">Figure 4.4 &mdash; Indexed-colour
-image</p>
 
 <p>A suggested palette or palettes may be constructed even when
 the PNG image is not indexed-colour in order to assist viewers
@@ -1113,21 +1106,18 @@ sample depth. All channels of the PNG image use the smallest
 allowable sample depth that is not less than any sample depth in
 the reference image, and the possible sample values in the
 reference image are linearly mapped into the next allowable range
-for the PNG image. <a href="#figure45"><span class=
-"figref">Figure 4.5</span></a> shows how samples of depth 3 might
+for the PNG image. <a href="#scaling-sample-values"></a> shows how samples of depth 3 might
 be mapped into samples of depth 4.</p>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<p><a name="figure45">
-<object height="320" width="640" data="figures/fig45.svg" type="image/svg+xml">
-  <img height="320" width="640" src="png-figures/fig45.png" alt="Figure 4.5: Scaling sample
+<figure id="scaling-sample-values"><a name="figure45"></a>
+<object height="320" width="640" data="figures/scaling-sample-values.svg" type="image/svg+xml">
+  <img height="320" width="640" src="png-figures/scaling-sample-values.png" alt="Scaling sample
 values" />
 </object>
-</a></p>
-
-<p class="Figuretitle">Figure 4.5 &mdash; Scaling sample
-values</p>
+<figcaption class="Figuretitle">Scaling sample values</figcaption>
+</figure>
 
 <p>Allowing only a few sample depths reduces the number of cases
 that decoders have to cope with. Sample depth scaling is
@@ -1140,15 +1130,13 @@ scaling</span></a> and 13.12: <a href=
 "#sample-depth-rescaling"><span class="xref">Sample depth
 rescaling</span></a>.</p>
 
-<p><a name="figure46">
-<object height="450" width="660" data="figures/fig46.svg" type="image/svg+xml">
-  <img  height="450" width="660" src= "png-figures/fig46.png" alt="Figure 4.6: Possible PNG image
+<figure id="possible-pixel-types"><a name="figure46"></a>
+<object height="450" width="660" data="figures/possible-pixel-types.svg" type="image/svg+xml">
+  <img  height="450" width="660" src= "png-figures/possible-pixel-types.png" alt="Possible PNG image
 pixel types" />
 </object>
-</a></p>
-
-<p class="Figuretitle">Figure 4.6 &mdash; Possible PNG image
-pixel types</p>
+<figcaption>Possible PNG image pixel types</figcaption>
+</figure>
 </section>
 </section>
 
@@ -1158,8 +1146,7 @@ pixel types</p>
 <h2>PNG image</h2>
 
 <p>The transformation of the reference image results in one of
-five types of PNG image (see <a href="#figure46"><span class=
-"figref">figure 4.6</span></a>) :</p>
+five types of PNG image (see <a href="#possible-pixel-types"></a>) :</p>
 
 <!-- <ol start="1"> --><ol>
 <li>Truecolour with alpha: each pixel consists of four samples:
@@ -1246,8 +1233,7 @@ datastream.</li>
 <h2>Pass
 extraction</h2>
 
-<p>Pass extraction (see <a href="#figure48"><span class=
-"figref">figure 4.8</span></a>) splits a PNG image into a
+<p>Pass extraction (see <a href="#pass-extraction"></a>) splits a PNG image into a
 sequence of reduced images where the first image defines a coarse
 view and subsequent images enhance this coarse view until the
 last image completes the PNG image. The set of reduced images is
@@ -1257,29 +1243,26 @@ null method; pixels are stored sequentially from left to right
 and scanlines from top to bottom. The second method makes
 multiple scans over the image to produce a sequence of seven
 reduced images. The seven passes for a sample image are
-illustrated in <a href="#figure48"><span class="figref">figure
-4.8</span></a>. See clause&#160;8: <a href="#interlacing-and-pass-extraction"><span class=
+illustrated in <a href="#pass-extraction"></a>. See clause&#160;8: <a href="#interlacing-and-pass-extraction"><span class=
 "xref">Interlacing and pass extraction</span></a>.</p>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<p><a name="figure47">
-<object height="575" width="645" data="figures/fig47.svg" type="image/svg+xml">
-	<img height="575" width="645" src="png-figures/fig47.png" alt="Figure 4.7: Encoding the PNG
+<figure id="encoding-png-image"><a name="figure47"></a>
+<object height="575" width="645" data="figures/encoding-png-image.svg" type="image/svg+xml">
+	<img height="575" width="645" src="png-figures/encoding-png-image.png" alt="Encoding the PNG
 image" />
 </object>
-</a></p>
+<figcaption>Encoding the PNG image</figcaption>
+</figure>
 
-<p class="Figuretitle">Figure 4.7 &mdash; Encoding the PNG
-image</p>
 
-<p><a name="figure48">
-<object height="450" width="645" data="figures/fig48.svg" type="image/svg+xml">
-	<img height="450" width="645" src="png-figures/fig48.png" alt="Figure 4.8: Pass extraction" />
+<figure id="pass-extraction"><a name="figure48"></a>
+<object height="450" width="645" data="figures/pass-extraction.svg" type="image/svg+xml">
+	<img height="450" width="645" src="png-figures/pass-extraction.png" alt="Pass extraction" />
 </object>
-</a></p>
-
-<p class="Figuretitle">Figure 4.8 &mdash; Pass extraction</p>
+<figcaption>Pass extraction</figcaption>
+</figure>
 </section>
 
 <!-- ************Page Break******************* -->
@@ -1299,7 +1282,7 @@ sequence of bytes.</p>
 that may be used to prepare image data for compression. It
 transforms the byte sequence in a scanline to an equal length
 sequence of bytes preceded by a filter type byte (see <a href=
-"#figure49"><span class="figref">figure 4.9</span></a> for an
+"#serializing-and-filtering-scanline"></a> for an
 example). The filter type byte defines
 the specific filtering to be applied to a specific
 scanline. The encoder shall use only a single filter method for
@@ -1307,23 +1290,20 @@ an interlaced PNG image, but may use different filter types for
 each scanline in a reduced image. See clause&#160;9: <a href=
 "#filtering-2"><span class="xref">Filtering</span></a>.</p>
 
-<p><a name="figure49">
-<object height="340" width="710" data="figures/fig49.svg" type="image/svg+xml">
-  <img height="340" width="710" src="png-figures/fig49.png" alt="Figure 4.9: Serializing and
+<figure id="figure49"><a name="figure49"></a>
+<object height="340" width="710" data="figures/serializing-and-filtering-scanline.svg" type="image/svg+xml">
+  <img height="340" width="710" src="png-figures/serializing-and-filtering-scanline.png" alt="Serializing and
 filtering a scanline" />
 </object>
-</a></p>
-
-<p class="Figuretitle">Figure 4.9 &mdash; Serializing and
-filtering a scanline</p>
+<figcaption>Serializing and filtering a scanline</figcaption>
+</figure>
 </section>
 
 <section>
 <h2>Compression</h2>
 
 <p>The sequence of filtered scanlines in the pass or passes of
-the PNG image is compressed (see <a href="#figure410"><span
-class="figref">figure 4.10</span></a>) by one of the defined
+the PNG image is compressed (see <a href="#compression"></a>) by one of the defined
 compression methods. The concatenated filtered scanlines form the
 input to the compression stage. The output from the compression
 stage is a single compressed datastream. See clause&#160;10: <a href=
@@ -1334,18 +1314,18 @@ stage is a single compressed datastream. See clause&#160;10: <a href=
 <h2>Chunking</h2>
 
 <p>Chunking provides a convenient breakdown of the compressed
-datastream into manageable chunks (see <span
-class="figref"><a href="#figure410">figure 4.10</a></span>). Each chunk has its own
+datastream into manageable chunks (see <a href="#compression"></a>). Each chunk has its own
 redundancy check. See clause&#160;11: <a href="#chunk-specifications"><span class=
 "xref">Chunk specifications</span></a>.</p>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<p><a name="figure410">
-<object height="450" width="700" data="figures/fig410.svg" type="image/svg+xml">
- <img height="450" width="700" src="png-figures/fig410.png" alt="Figure 4.10: Compression" />
-</object></a></p>
-<p class="Figuretitle">Figure 4.10 &mdash; Compression</p>
+<figure id="compression"><a name="figure410"></a>
+<object height="450" width="700" data="figures/compression.svg" type="image/svg+xml">
+ <img height="450" width="700" src="png-figures/compression.png" alt="Compression" />
+</object>
+<figcaption>Compression</figcaption>
+</figure>
 </section>
 </section>
 
@@ -1617,13 +1597,13 @@ The meaning of the fields is described in
 <a href="#table51"><span class="tabref">Table 5.1</span></a>.
 The chunk data field may be empty.</p>
 
-<p><a name="figure411">
-<object height="160" width="480" data="figures/fig51.svg" type="image/svg+xml">
- <img height="160" width="480" src="png-figures/fig51.png" alt="Figure 5.1: Chunk parts" />
+<figure id="chunk-parts"><a name="figure411"></a>
+<object height="160" width="480" data="figures/chunk-parts.svg" type="image/svg+xml">
+ <img height="160" width="480" src="png-figures/chunk-parts.png" alt="Chunk parts" />
 </object>
-</a></p>
+<figcaption>Chunk parts</figcaption>
+</figure>
 
-<p class="Figuretitle">Figure 5.1 &mdash; Chunk parts</p>
 
 <table class="Regular" summary=
 "This table defines the chunk fields">
@@ -1841,8 +1821,8 @@ implementation</span></a>.</p>
 <p>The constraints on the positioning of the individual chunks
 are listed in <a href="#table53"><span class="tabref">Table
 5.3</span></a> and illustrated diagrammatically in <a href=
-"#figure52"><span class="figref">figure 5.2</span></a> and <a
-href="#figure53"><span class="figref">figure 5.3</span></a>.
+"#lattice-diagram-with-plte"></a> and <a
+href="#lattice-diagram-without-plte"></a>.
 These lattice diagrams represent the constraints on positioning
 imposed by this International Standard. The lines in the diagrams
 define partial ordering relationships. Chunks higher up shall
@@ -2053,26 +2033,24 @@ symbols used in lattice diagrams</b></a></caption>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<p>
-<object height="540" width="800" data="figures/fig52.svg" type="image/svg+xml">
- <img height="540" width="800" src="png-figures/fig52.png" alt="Figure 5.2: Lattice diagram: PNG images with PLTE in datastream" />
+<figure id="lattice-diagram-with-plte"><a name="figure52"></a>
+<object height="540" width="800" data="figures/lattice-diagram-with-plte.svg" type="image/svg+xml">
+ <img height="540" width="800" src="png-figures/lattice-diagram-with-plte.png" alt="Lattice diagram: PNG images with PLTE in datastream" />
 </object>
-</p>
+<figcaption>Lattice diagram: PNG images with <a href="#plte-palette"><span class=
+"chunk">PLTE</span></a> in datastream</figcaption>
+</figure>
 
-<p class="Figuretitle"><a name="figure52">Figure 5.2 &mdash;</a>
-Lattice diagram: PNG images with <a href="#plte-palette"><span class=
-"chunk">PLTE</span></a> in datastream</p>
 
-<p>
-<object height="540" width="900" data="figures/fig53.svg"
+<figure id="lattice-diagram-without-plte"><a name="figure53"></a>
+<object height="540" width="900" data="figures/lattice-diagram-without-plte.svg"
 type="image/svg+xml">
- <img height="540" width="900" src="png-figures/fig53.png" alt="Figure 5.3: Lattice diagram: PNG images without PLTE in datastream" />
+ <img height="540" width="900" src="png-figures/lattice-diagram-without-plte.png" alt="Lattice diagram: PNG images without PLTE in datastream" />
 </object>
-</p>
+<figcaption>Lattice diagram: PNG images without <a href="#plte-palette"><span
+class="chunk">PLTE</span></a> in datastream</figcaption>
+</figure>
 
-<p class="Figuretitle"><a name="figure53">Figure 5.3 &mdash;</a>
-Lattice diagram: PNG images without <a href="#plte-palette"><span
-class="chunk">PLTE</span></a> in datastream</p>
 </section>
 </section>
 
@@ -2226,8 +2204,8 @@ datastream</h2>
 order</h2>
 
 <p>All integers that require more than one byte shall be in
-network byte order (as illustrated in <a href="#figure71"><span
-class="figref">figure 7.1</span></a>): the most significant byte
+network byte order (as illustrated in <a href="#integer-representation-in-png"></a>
+): the most significant byte
 comes first, then the less significant bytes in descending order
 of significance (MSB LSB for two-byte integers, MSB B2 B1 LSB for
 four-byte integers). The highest bit (value 128) of a byte is
@@ -2242,14 +2220,13 @@ integers are limited to the range -(2<sup>31</sup>-1) to
 2<sup>31</sup>-1 to accommodate languages that have difficulty
 with the value -2<sup>31</sup>.</p>
 
-<p>
-<object height="310" width="810" data="figures/fig71.svg" type="image/svg+xml">
-  <img height="310" width="810" src="png-figures/fig71.png" alt="Figure 7.1: Integer representation in PNG" />
+<figure id="integer-representation-in-png"><a name="figure71"></a>
+<object height="310" width="810" data="figures/integer-representation-in-png.svg" type="image/svg+xml">
+  <img height="310" width="810" src="png-figures/integer-representation-in-png.png" alt="Integer representation in PNG" />
 </object>
-</p>
+<figcaption>Integer representation in PNG</figcaption>
+</figure>
 
-<p class="Figuretitle"><a name="figure71">Figure 7.1</a> &mdash;
-Integer representation in PNG</p>
 </section>
 
 <section>
@@ -2461,8 +2438,7 @@ generate the new byte value:</p>
 </tr>
 </table>
 
-<p><a href="#9-figure91"><span class="figref">Figure
-9.1</span></a> shows the relative positions of the bytes <tt>x</tt>,
+<p><a href="#paethpredictor-function"></a> shows the relative positions of the bytes <tt>x</tt>,
 <tt>a</tt>, <tt>b</tt>,
 and <tt>c</tt>.</p>
 
@@ -2579,7 +2555,7 @@ is an adaptation of the technique due to Alan W. Paeth <a href=
 <p>The PaethPredictor function is defined in the code below. The
 logic of the function and the locations of the bytes <tt>a</tt>,
 <tt>b</tt>, <tt>c</tt>, and <tt>x</tt> are shown in <a href=
-"#9-figure91"><span class="figref">figure 9.1</span></a>.
+"#paethpredictor-function"></a>.
 <tt>Pr</tt> is the predictor for byte <tt>x</tt>.</p>
 
 <pre>
@@ -2595,15 +2571,14 @@ logic of the function and the locations of the bytes <tt>a</tt>,
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<p><a name="9-figure91">
-<object height="360" width="640" data="figures/fig91.svg" type="image/svg+xml">
-  <img height="360" width="640" src="png-figures/fig91.png" alt="Figure 9.1: The PaethPredictor
+<figure id="paethpredictor-function"><a name="9-figure91"></a>
+<object height="360" width="640" data="figures/paethpredictor-function.svg" type="image/svg+xml">
+  <img height="360" width="640" src="png-figures/paethpredictor-function.png" alt="The PaethPredictor
 function" />
 </object>
-</a></p>
+<figcaption><b>The PaethPredictor function</figcaption>
+</figure>
 
-<p class="Figuretitle"><b>Figure 9.1: The PaethPredictor
-function</b></p>
 
 <p>The calculations within the PaethPredictor function shall be
 performed exactly, without overflow.</p>

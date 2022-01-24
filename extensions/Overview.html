@@ -8,7 +8,7 @@
   <link href="https://www.w3.org/2008/site/images/favicon.ico" rel="icon">
   <meta content="Bikeshed version cace53f8c, updated Tue Dec 7 12:12:54 2021 -0800" name="generator">
   <link href="https://w3.org/TR/Overview.html" rel="canonical">
-  <meta content="d876926039267c7f4ad42ce48f76c6ef6a1a8805" name="document-revision">
+  <meta content="40221e68805e0532d92480c64c5e235d1d4334bb" name="document-revision">
 <style>
     span.chunk {
         font-family: Courier, monospace;
@@ -242,13 +242,13 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72"> </a> </p>
    <h1 class="p-name no-ref" id="title">Extensions to the PNG Third Edition Specification, Version 1.6.0</h1>
-   <p id="w3c-state"><a href="https://www.w3.org/standards/types#DNOTE">W3C Group Draft Note</a>, <time class="dt-updated" datetime="2021-12-16">16 December 2021</time></p>
+   <p id="w3c-state"><a href="https://www.w3.org/standards/types#DNOTE">W3C Group Draft Note</a>, <time class="dt-updated" datetime="2022-01-24">24 January 2022</time></p>
    <details open>
     <summary>More details about this document</summary>
     <div data-fill-with="spec-metadata">
      <dl>
       <dt>This version:
-      <dd><a class="u-url" href="https://www.w3.org/TR/2021/DNOTE-pngext-20211216/">https://www.w3.org/TR/2021/DNOTE-pngext-20211216/</a>
+      <dd><a class="u-url" href="https://www.w3.org/TR/2022/DNOTE-pngext-20220124/">https://www.w3.org/TR/2022/DNOTE-pngext-20220124/</a>
       <dt>Latest published version:
       <dd><a href="https://w3.org/TR/Overview.html">https://w3.org/TR/Overview.html</a>
       <dt>Editor's Draft:
@@ -265,7 +265,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     </div>
    </details>
    <div data-fill-with="warning"></div>
-   <p class="copyright" data-fill-with="copyright"><a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2021 <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>, <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>, <a href="https://ev.buaa.edu.cn/">Beihang</a>). W3C <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document" rel="license">permissive document license</a> rules apply. </p>
+   <p class="copyright" data-fill-with="copyright"><a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2022 <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>, <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>, <a href="https://ev.buaa.edu.cn/">Beihang</a>). W3C <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document" rel="license">permissive document license</a> rules apply. </p>
    <hr title="Separator for header">
   </div>
   <div class="p-summary" data-fill-with="abstract">
@@ -274,24 +274,8 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="sotd"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
-    <p> <em>This section describes the status of this document at the time of its publication.
-     Other documents may supersede this document.
-     A list of current W3C publications and the latest revision of this technical report
-      can be found in the <a href="https://www.w3.org/TR/">W3C technical reports index</a> at https://www.w3.org/TR/. </em> </p>
-      <p data-deliverer="32061">
-
-         The
-         <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent
-           Policy</a>
-         does not carry any licensing requirements or commitments on this
-         document.
-   </p>
-
-    <p> Feedback and comments on this specification are welcome. Please <a href="https://github.com/w3c/PNG-spec/issues/">file an issue</a> in this document’s <a href="https://github.com/w3c/PNG-spec/">GitHub repository</a>. </p>
-
-    <p> This document is governed by the <a href="https://www.w3.org/2020/Process-20200915/" id="w3c_process_revision">15 September 2020 W3C Process
-     Document</a>. </p>
-   </div>
+   <p></p>
+  </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
    <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
@@ -327,7 +311,6 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
        <a href="#K.Keywords"><span class="secno">6.1</span> <span class="content"> Additional Registered Keywords </span></a>
        <ol class="toc">
         <li><a href="#K.Collection"><span class="secno">6.1.1</span> <span class="content"> Collection </span></a>
-        <li><a href="#K.XMP"><span class="secno">6.1.2</span> <span class="content"> XML:com.adobe.xmp </span></a>
        </ol>
       <li><a href="#K.Syntax"><span class="secno">6.2</span> <span class="content"> Keyword Syntax </span></a>
      </ol>
@@ -568,38 +551,38 @@ if the encoder wants the decoder to modify the sample values for display purpose
    <table>
     <tbody>
      <tr>
-      <th>Calibration name:
-      <td>1-79 bytes (character string)
+      <th>Calibration name: 
+      <td>1-79 bytes (character string) 
      <tr>
-      <th>Null separator:
-      <td>1 byte
+      <th>Null separator: 
+      <td>1 byte 
      <tr>
-      <th>Original zero (x0):
-      <td>4 bytes (signed integer)
+      <th>Original zero (x0): 
+      <td>4 bytes (signed integer) 
      <tr>
-      <th>Original max  (x1):
-      <td>4 bytes (signed integer)
+      <th>Original max  (x1): 
+      <td>4 bytes (signed integer) 
      <tr>
-      <th>Equation type:
-      <td>1 byte
+      <th>Equation type: 
+      <td>1 byte 
      <tr>
-      <th>Number of parameters:
-      <td>1 byte
+      <th>Number of parameters: 
+      <td>1 byte 
      <tr>
-      <th>Unit name:
-      <td>0 or more bytes (character string)
+      <th>Unit name: 
+      <td>0 or more bytes (character string) 
      <tr>
-      <th>Null separator:
-      <td>1 byte
+      <th>Null separator: 
+      <td>1 byte 
      <tr>
-      <th>Parameter 0 (p0):
-      <td>1 or more bytes (<a href="#DR.Floating-point-values">ASCII floating-point</a>)
+      <th>Parameter 0 (p0): 
+      <td>1 or more bytes (<a href="#DR.Floating-point-values">ASCII floating-point</a>) 
      <tr>
-      <th>Null separator:
-      <td>1 byte
+      <th>Null separator: 
+      <td>1 byte 
      <tr>
-      <th>Parameter 1 (p1):
-      <td>1 or more bytes (<a href="#DR.Floating-point-values">ASCII floating-point</a>)
+      <th>Parameter 1 (p1): 
+      <td>1 or more bytes (<a href="#DR.Floating-point-values">ASCII floating-point</a>) 
      <tr>
       <td colspan="2">...etc...
    </table>
@@ -748,7 +731,7 @@ the equation type, parameters, and unit name.</p>
       <th>Equation type 1
       <th>Equation type 2
      <tr>
-      <td>x0 = 0
+      <td>x0 = 0 
       <td>x0 = 0
      <tr>
       <td>x1 = max
@@ -775,7 +758,7 @@ the equation type, parameters, and unit name.</p>
     <a class="self-link" href="#example-e3c29ac5"></a> For example,
         floating-point data ranging from
         -10<sup>31</sup> to 10<sup>31</sup> (the usual range of 32-bit floating-point numbers)
-        can be represented with:
+        can be represented with: 
 <pre>Equation type 3
 x0 = 0
 x1 = 65535
@@ -791,7 +774,7 @@ p3 = 32767.0
    <div class="note" role="note">
      Note: those floating-point parameters
         could be stored in the chunk more compactly
-        as follows:
+        as follows: 
 <pre>p0 = 0
 p1 = 1e-30
 p2 = 280
@@ -1050,15 +1033,6 @@ p3 = 32767
     to which the image belongs.
     An image may belong to one or more collections,
     each named by a separate text chunk.</p>
-   <h4 class="heading settled" data-level="6.1.2" id="K.XMP"><span class="secno">6.1.2. </span><span class="content"> XML:com.adobe.xmp </span><a class="self-link" href="#K.XMP"></a></h4>
-   <p>Extensible Metadata Platform (XMP) information,
-    formatted as required by the XMP specification <a data-link-type="biblio" href="#biblio-xmp">[XMP]</a>.
-    The use of <span class="chunk">iTXt</span>,
-    with Compression Flag set to 0,
-    and both Language Tag and
-    Translated Keyword set to the null string,
-    are recommended
-    for XMP compliance.</p>
    <h3 class="heading settled" data-level="6.2" id="K.Syntax"><span class="secno">6.2. </span><span class="content"> Keyword Syntax </span><a class="self-link" href="#K.Syntax"></a></h3>
    <p>All registered textual keywords
     in text chunks
@@ -1941,59 +1915,58 @@ Therefore, transparency information can be lost.</p>
     would be difficult.</p>
    <h2 class="heading settled" data-level="11" id="History"><span class="secno">11. </span><span class="content"> Appendix: Revision History </span><a class="self-link" href="#History"></a></h2>
    <ul>
-    <li>16 Dec 2021 (version 1.6.0)
+    <li>24 Jan Dec 2022 (version 1.6.0)
     <ul>
-     <li>Added XML:com.adobe.xmp keyword for use with XMP
      <li>Moved <span class="chunk">eXIF</span> to main PNG document
      <li>Converted source document to Bikeshed
     </ul>
     <li>
-     15 July 2017 (version 1.5.0)
+     15 July 2017 (version 1.5.0) 
      <ul>
-      <li> Added the <code>eXIf</code> chunk
+      <li> Added the <code>eXIf</code> chunk 
       <li> Replaced ftp://www.simplesystems.org/pub/png/documents/ URL
-    with http://libpng.download/documents/
+    with http://libpng.download/documents/ 
      </ul>
     <li>
-     12 June 2017 (version 1.4.1):
+     12 June 2017 (version 1.4.1): 
      <ul>
-      <li>Changed "name=" markup to "id=" in order to pass w3c validation
-      <li>Removed incorrect nroff-style page numbers from Table of Contents
-      <li>Added internal links in the Table of Contents
-      <li>Added reference to RFC-2119 for interpretation of "should", etc.
-      <li>Removed trailing blanks
-      <li>Added "Collection" keyword which was approved in 2004.
-      <li>Added Cosmin Truta (who suggested the Collection keyword) to Credits
+      <li>Changed "name=" markup to "id=" in order to pass w3c validation 
+      <li>Removed incorrect nroff-style page numbers from Table of Contents 
+      <li>Added internal links in the Table of Contents 
+      <li>Added reference to RFC-2119 for interpretation of "should", etc. 
+      <li>Removed trailing blanks 
+      <li>Added "Collection" keyword which was approved in 2004. 
+      <li>Added Cosmin Truta (who suggested the Collection keyword) to Credits 
      </ul>
     <li>
-     1 May 2008 (version 1.4.0):
+     1 May 2008 (version 1.4.0): 
      <ul>
-      <li>Added the <code>dSIG</code> chunk.
+      <li>Added the <code>dSIG</code> chunk. 
      </ul>
     <li>
-     31 August 2006 (version 1.3.0):
+     31 August 2006 (version 1.3.0): 
      <ul>
-      <li>Added the <code>sTER</code> chunk.
+      <li>Added the <code>sTER</code> chunk. 
      </ul>
     <li>
-     14 July 1999 (version 1.2.0):
+     14 July 1999 (version 1.2.0): 
      <ul>
-      <li>Deleted the <code>iTXt</code> chunk, which has been moved to the core spec.
+      <li>Deleted the <code>iTXt</code> chunk, which has been moved to the core spec. 
      </ul>
     <li>
-     9 February 1999 (version 1.1.1):
+     9 February 1999 (version 1.1.1): 
      <ul>
-      <li>Added the <code>iTXt</code> chunk
-      <li>Limited the character set for future registered keywords
+      <li>Added the <code>iTXt</code> chunk 
+      <li>Limited the character set for future registered keywords 
      </ul>
     <li>
-     30 December 1998 (version 1.1.0):
+     30 December 1998 (version 1.1.0): 
      <ul>
-      <li>Added <code>pCAL</code> chunk and related sample code
-      <li>Deprecated the <code>gIFT</code> chunk
-      <li>Added sample gamma-correction code that uses integer arithmetic
+      <li>Added <code>pCAL</code> chunk and related sample code 
+      <li>Deprecated the <code>gIFT</code> chunk 
+      <li>Added sample gamma-correction code that uses integer arithmetic 
      </ul>
-    <li>11 March 1996 (version 0.96): First public release
+    <li>11 March 1996 (version 0.96): First public release 
    </ul>
    <h2 class="heading settled" data-level="12" id="Credits"><span class="secno">12. </span><span class="content"> Credits </span><a class="self-link" href="#Credits"></a></h2>
    <h3 class="heading settled" data-level="12.1" id="Credits.editors"><span class="secno">12.1. </span><span class="content"> Editors </span><a class="self-link" href="#Credits.editors"></a></h3>
@@ -2012,16 +1985,16 @@ Therefore, transparency information can be lost.</p>
    <p></p>
    <ul>
     <li>Adeluc, <a href="http://www.adeluc.com">www.adeluc.com</a>,
-    png @ adeluc.com
-    <li>Brendan Bolles
-    <li>Todd French, <code>tfrench @ sandia.gov</code>
-    <li>Phil Harvey
-    <li>Nancy M. Randers-Pehrson
-    <li>Alaric B. Snell, <code>alaric @ alaric-snell.com</code>
-    <li>Michael Stokes
-    <li>Jason Summers
-    <li>Cosmin Truta, <code>cosmin @ cs.toronto.edu</code>
-    <li>Pavel Zlatovratskii
+    png @ adeluc.com 
+    <li>Brendan Bolles 
+    <li>Todd French, <code>tfrench @ sandia.gov</code> 
+    <li>Phil Harvey 
+    <li>Nancy M. Randers-Pehrson 
+    <li>Alaric B. Snell, <code>alaric @ alaric-snell.com</code> 
+    <li>Michael Stokes 
+    <li>Jason Summers 
+    <li>Cosmin Truta, <code>cosmin @ cs.toronto.edu</code> 
+    <li>Pavel Zlatovratskii 
    </ul>
    <h3 class="heading settled" data-level="12.3" id="Credits.marks"><span class="secno">12.3. </span><span class="content"> Trademarks </span><a class="self-link" href="#Credits.marks"></a></h3>
    <p>GIF is a service mark of CompuServe Incorporated.
@@ -2045,7 +2018,7 @@ Therefore, transparency information can be lost.</p>
     with <code>class="example"</code>,
     like this: </p>
    <div class="example" id="w3c-example">
-    <a class="self-link" href="#w3c-example"></a>
+    <a class="self-link" href="#w3c-example"></a> 
     <p>This is an example of an informative example. </p>
    </div>
    <p>Informative notes begin with the word “Note”
@@ -2085,6 +2058,4 @@ Therefore, transparency information can be lost.</p>
    <dd>Martin Boßlet, Thomas Kopp. <a href="http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.sample.html"><cite>PNG Digital Signatures: Commented Example</cite></a>. 18 May 2008. URL: <a href="http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.sample.html">http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.sample.html</a>
    <dt id="biblio-gif">[GIF]
    <dd><a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt"><cite>Graphics Interchange Format</cite></a>. 31 July 1990. URL: <a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt">https://www.w3.org/Graphics/GIF/spec-gif89a.txt</a>
-   <dt id="biblio-xmp">[XMP]
-   <dd>Adobe Systems Incorporated. <a href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=57421"><cite>Extensible metadata platform (XMP) specification -- Part 1</cite></a>. 15 February 2012. URL: <a href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=57421">http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=57421</a>
   </dl>

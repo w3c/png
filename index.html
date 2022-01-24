@@ -148,6 +148,8 @@ that are not freely available.</li>
 
 
 <section>
+<!-- Maintain a fragment named "1Scope" to preserve incoming links to it -->
+<a name="1Scope"></a>
 <h2>Scope</h2>
 
 <p>This International Standard specifies a datastream and an
@@ -169,6 +171,8 @@ main design goal.</p>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
+<!-- Maintain a fragment named "2NormRefs" to preserve incoming links to it -->
+<a name="2NormRefs"></a>
 <h2>Normative references</h2>
 
 <p>The following normative documents contain provisions which,
@@ -300,16 +304,22 @@ Coding-independent code points for video signal type identification<br class="xh
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
+<!-- Maintain a fragment named "3Defsandabbrevs" to preserve incoming links to it -->
+<a name="3Defsandabbrevs"></a>
 <h2>Terms, definitions, and
 abbreviated terms</h2>
 
 <section>
+<!-- Maintain a fragment named "3Definitions" to preserve incoming links to it -->
+<a name="3Definitions"></a>
 <h2>Definitions</h2>
 
 <p>For the purposes of this International Standard the following
 definitions apply.</p>
 
 <dl>
+<!-- Maintain a fragment named "3alpha" to preserve incoming links to it -->
+<a name="3alpha"></a>
 <dt><a name="alpha">3.1.1 alpha</a></dt>
 
 <dd>a value representing a <a href="#pixel"><span class=
@@ -318,6 +328,8 @@ opaque a pixel, the more it hides the background against which
 the image is presented. Zero alpha represents a completely
 transparent pixel, maximum alpha represents a completely opaque
 pixel.</dd>
+<!-- Maintain a fragment named "3alphaCompaction" to preserve incoming links to it -->
+<a name="3alphaCompaction"></a>
 <dt><a name="alpha-compaction">3.1.2 alpha compaction</a></dt>
 
 <dd>an implicit representation of transparent <a href=
@@ -329,7 +341,10 @@ transparent and all other pixels are fully opaque, the <a href=
 "#channel"><span class="Definition">channel</span></a> may be
 represented implicitly.</dd>
 
-<dt><a name="alpha-separation">3.1.3 alpha separation</a></dt>
+<dt>
+<!-- Maintain a fragment named "3alphaSeparation" to preserve incoming links to it -->
+<a name="3alphaSeparation"></a>
+<a name="alpha-separation">3.1.3 alpha separation</a></dt>
 
 <dd>separating an <a href="#alpha"><span class=
 "Definition">alpha</span></a> <a href="#channel"><span class=
@@ -339,7 +354,10 @@ opaque; all alpha values are the maximum value.
 The fact that all pixels are fully opaque is represented implicitly.
 </dd>
 
-<dt><a name="alpha-table">3.1.4 alpha table</a></dt>
+<dt>
+<!-- Maintain a fragment named "3alphaTable" to preserve incoming links to it -->
+<a name="3alphaTable"></a>
+<a name="alpha-table">3.1.4 alpha table</a></dt>
 
 <dd>indexed table of <a href="#alpha"><span class=
 "Definition">alpha</span></a> <a href="#sample"><span class=
@@ -351,7 +369,10 @@ sample values of the <a href="#3referenceImage"><span class=
 same number of entries as the <a href="#palette"><span class=
 "Definition">palette</span></a>.</dd>
 
-<dt><a name="ancillary-chunk">3.1.5 ancillary chunk</a></dt>
+<dt>
+<!-- Maintain a fragment named "3ancillaryChunk" to preserve incoming links to it -->
+<a name="3ancillaryChunk"></a>
+<a name="ancillary-chunk">3.1.5 ancillary chunk</a></dt>
 
 <dd>class of <a href="#chunk"><span class=
 "Definition">chunk</span></a> that provides additional
@@ -362,7 +383,10 @@ necessarily the best possible image.
 <!-- agreed: don't need to define a bit -->
 </dd>
 
-<dt><a name="bit-depth">3.1.6 bit depth</a></dt>
+<dt>
+<!-- Maintain a fragment named "3bitDepth" to preserve incoming links to it -->
+<a name="3bitDepth"></a>
+<a name="bit-depth">3.1.6 bit depth</a></dt>
 
 <dd>for <a href="#indexed-colour"><span class=
 "Definition">indexed-colour</span></a> images, the number of bits
@@ -374,13 +398,19 @@ that appears in the <a href="#ihdr-image-header"><span class=
 "chunk">IHDR</span></a> <a href="#chunk"><span class=
 "Definition">chunk</span></a>.</dd>
 
-<dt><a name="byte">3.1.7 byte</a></dt>
+<dt>
+<!-- Maintain a fragment named "3byte" to preserve incoming links to it -->
+<a name="3byte"></a>
+<a name="byte">3.1.7 byte</a></dt>
 
 <dd>8 bits; also called an octet. The highest bit (value 128) of
 a byte is numbered bit 7; the lowest bit (value 1) is numbered
 bit 0.</dd>
 
-<dt><a name="byte-order">3.1.8 byte order</a></dt>
+<dt>
+<!-- Maintain a fragment named "3byteOrder" to preserve incoming links to it -->
+<a name="3byteOrder"></a>
+<a name="byte-order">3.1.8 byte order</a></dt>
 
 <dd>ordering of <a href="#byte"><span class=
 "Definition">bytes</span></a> for multi-byte data values within a
@@ -390,7 +420,10 @@ datastream</span></a>. PNG uses <a href=
 "#network-byte-order"><span class="Definition">network byte
 order</span></a>.</dd>
 
-<dt><a name="channel">3.1.9 channel</a></dt>
+<dt>
+<!-- Maintain a fragment named "3channel" to preserve incoming links to it -->
+<a name="3channel"></a>
+<a name="channel">3.1.9 channel</a></dt>
 
 <dd>array of all per-<a href="#pixel"><span class=
 "Definition">pixel</span></a> information of a particular kind
@@ -402,12 +435,18 @@ class="Definition">alpha</span></a>. For example the alpha
 channel is the array of alpha values within a reference
 image.</dd>
 
-<dt><a name="chromaticity">3.1.10 chromaticity (CIE)</a></dt>
+<dt>
+<!-- Maintain a fragment named "3chromaticity" to preserve incoming links to it -->
+<a name="3chromaticity"></a>
+<a name="chromaticity">3.1.10 chromaticity (CIE)</a></dt>
 
 <dd>pair of values <i>x,y</i> that precisely specify a colour,
 except for the brightness information.</dd>
 
-<dt><a name="chunk">3.1.11 chunk</a></dt>
+<dt>
+<!-- Maintain a fragment named "3chunk" to preserve incoming links to it -->
+<a name="3chunk"></a>
+<a name="chunk">3.1.11 chunk</a></dt>
 
 <dd>section of a <a href="#PNG-datastream"><span class=
 "Definition">PNG datastream</span></a>. Each chunk has a chunk
@@ -420,7 +459,10 @@ Each chunk is either a
 "Definition">ancillary chunk</span></a>.
 </dd>
 
-<dt><a name="colour-type">3.1.12 colour type</a></dt>
+<dt>
+<!-- Maintain a fragment named "3colourType" to preserve incoming links to it -->
+<a name="3colourType"></a>
+<a name="colour-type">3.1.12 colour type</a></dt>
 
 <dd>value denoting how colour and <a href="#alpha"><span class=
 "Definition">alpha</span></a> are specified in the <a href=
@@ -431,7 +473,10 @@ Colour types are sums of the following values: 1 (<a href=
 "Definition">truecolour</span></a> used), 4 (alpha used). The
 permitted values of colour type are 0, 2, 3, 4, and 6.</dd>
 
-<dt><a name="composite">3.1.13 composite (verb)</a></dt>
+<dt>
+<!-- Maintain a fragment named "3composite" to preserve incoming links to it -->
+<a name="3composite"></a>
+<a name="composite">3.1.13 composite (verb)</a></dt>
 
 <dd>to form an image by merging a foreground image and a
 background image, using transparency information to determine
@@ -439,7 +484,10 @@ where and to what extent the background should be visible. The
 foreground image is said to be "composited against" the
 background.</dd>
 
-<dt><a name="critical-chunk">3.1.14 critical chunk</a></dt>
+<dt>
+<!-- Maintain a fragment named "3criticalChunk" to preserve incoming links to it -->
+<a name="3criticalChunk"></a>
+<a name="critical-chunk">3.1.14 critical chunk</a></dt>
 
 <dd><a href="#chunk"><span class="Definition">chunk</span></a>
 that <!--must be understood and processed by the decoder-->
@@ -447,7 +495,10 @@ that <!--must be understood and processed by the decoder-->
 produce a meaningful image from a <a href="#PNG-datastream"><span
 class="Definition">PNG datastream</span></a>.</dd>
 
-<dt><a name="datastream">3.1.15 datastream</a></dt>
+<dt>
+<!-- Maintain a fragment named "3datastream" to preserve incoming links to it -->
+<a name="3datastream"></a>
+<a name="datastream">3.1.15 datastream</a></dt>
 
 <dd>sequence of <a href="#byte"><span class=
 "Definition">bytes</span></a>. This term is used rather than
@@ -456,7 +507,10 @@ a file. It is also used to emphasize that the sequence of bytes
 might be generated and consumed "on the fly", never appearing in
 a stored file at all.</dd>
 
-<dt><a name="deflate">3.1.16 deflate</a></dt>
+<dt>
+<!-- Maintain a fragment named "3deflate" to preserve incoming links to it -->
+<a name="3deflate"></a>
+<a name="deflate">3.1.16 deflate</a></dt>
 
 <dd>name of a particular compression algorithm. This algorithm is
 used, in compression mode 0, in conforming <a href=
@@ -470,26 +524,38 @@ class="NormRef">[RFC-1951]</span></a>.</dd>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 
-<dt><a name="delivered-image">3.1.17 delivered image</a></dt>
+<dt>
+<!-- Maintain a fragment named "3deliveredImage" to preserve incoming links to it -->
+<a name="3deliveredImage"></a>
+<a name="delivered-image">3.1.17 delivered image</a></dt>
 
 <dd>image constructed from a decoded <a href=
 "#PNG-datastream"><span class="Definition">PNG
 datastream</span></a>.</dd>
 
-<dt><a name="filter">3.1.18 filter</a></dt>
+<dt>
+<!-- Maintain a fragment named "3filter" to preserve incoming links to it -->
+<a name="3filter"></a>
+<a name="filter">3.1.18 filter</a></dt>
 
 <dd>transformation applied to an array of <a href=
 "#scanline"><span class="Definition">scanlines</span></a> with
 the aim of improving their compressibility. PNG uses only
 lossless (reversible) filter algorithms.</dd>
 
-<dt><a name="frame-buffer">3.1.19 frame buffer</a></dt>
+<dt>
+<!-- Maintain a fragment named "3frameBuffer" to preserve incoming links to it -->
+<a name="3frameBuffer"></a>
+<a name="frame-buffer">3.1.19 frame buffer</a></dt>
 
 <dd>the final digital storage area for the image shown by most
 types of computer display. Software causes an image to appear on
 screen by loading the image into the frame buffer.</dd>
 
-<dt><a name="gamma">3.1.20 gamma</a></dt>
+<dt>
+<!-- Maintain a fragment named "3gamma" to preserve incoming links to it -->
+<a name="3gamma"></a>
+<a name="gamma">3.1.20 gamma</a></dt>
 
 <dd>exponent that describes approximations to certain non-linear
 transfer functions encountered in image capture and reproduction.
@@ -503,7 +569,10 @@ where both <tt>display_output</tt> and <tt>image_sample</tt>
 are scaled to the range 0 to 1.
 </dd>
 
-<dt><a name="greyscale">3.1.21 greyscale</a></dt>
+<dt>
+<!-- Maintain a fragment named "3greyscale" to preserve incoming links to it -->
+<a name="3greyscale"></a>
+<a name="greyscale">3.1.21 greyscale</a></dt>
 
 <dd>image representation in which each <a href="#pixel"><span
 class="Definition">pixel</span></a> is defined by a single <a
@@ -514,12 +583,18 @@ scale from black to white), and optionally an <a href=
 "#alpha"><span class="Definition">alpha</span></a> sample (in
 which case it is called greyscale with alpha).</dd>
 
-<dt><a name="image-data">3.1.22 image data</a></dt>
+<dt>
+<!-- Maintain a fragment named "3imageData" to preserve incoming links to it -->
+<a name="3imageData"></a>
+<a name="image-data">3.1.22 image data</a></dt>
 
 <dd>1-dimensional array of <a href="#scanline"><span class=
 "Definition">scanlines</span></a> within an image.</dd>
 
-<dt><a name="indexed-colour">3.1.23 indexed-colour</a></dt>
+<dt>
+<!-- Maintain a fragment named "3imageColour" to preserve incoming links to it -->
+<a name="3imageColour"></a>
+<a name="indexed-colour">3.1.23 indexed-colour</a></dt>
 
 <dd>image representation in which each <a href="#pixel"><span
 class="Definition">pixel</span></a> of the original image is
@@ -527,14 +602,20 @@ represented by a single index into a <a href="#palette"><span
 class="Definition">palette</span></a>. The selected palette entry
 defines the actual colour of the pixel.</dd>
 
-<dt><a name="indexing">3.1.24 indexing</a></dt>
+<dt>
+<!-- Maintain a fragment named "3indexing" to preserve incoming links to it -->
+<a name="3indexing"></a>
+<a name="indexing">3.1.24 indexing</a></dt>
 
 <dd>representing an image by a <a href="#palette"><span class=
 "Definition">palette</span></a>, an <a href="#alpha-table"><span
 class="Definition">alpha table</span></a>, and an array of
 indices pointing to entries in the palette and alpha table.</dd>
 
-<dt><a name="interlaced-PNG-image">3.1.25 interlaced PNG
+<dt>
+<!-- Maintain a fragment named "3interlacedPNGimage" to preserve incoming links to it -->
+<a name="3interlacedPNGimage"></a>
+<a name="interlaced-PNG-image">3.1.25 interlaced PNG
 image</a></dt>
 
 <dd>sequence of <a href="#reduced-image"><span class=
@@ -543,18 +624,27 @@ href="#PNG-image"><span class="Definition">PNG image</span></a>
 by <a href="#pass-extraction"><span class="Definition">pass
 extraction</span></a>.</dd>
 
-<dt><a name="lossless-compression">3.1.26 lossless
+<dt>
+<!-- Maintain a fragment named "3losslessCompression" to preserve incoming links to it -->
+<a name="3losslessCompression"></a>
+<a name="lossless-compression">3.1.26 lossless
 compression</a></dt>
 
 <dd>method of data compression that permits reconstruction of the
 original data exactly, bit-for-bit.</dd>
 
-<dt><a name="lossy-compression">3.1.27 lossy compression</a></dt>
+<dt>
+<!-- Maintain a fragment named "3lossyCompression" to preserve incoming links to it -->
+<a name="3lossyCompression"></a>
+<a name="lossy-compression">3.1.27 lossy compression</a></dt>
 
 <dd>method of data compression that permits reconstruction of the
 original data approximately, rather than exactly.</dd>
 
-<dt><a name="luminance">3.1.28 luminance</a></dt>
+<dt>
+<!-- Maintain a fragment named "3luminance" to preserve incoming links to it -->
+<a name="3luminance"></a>
+<a name="luminance">3.1.28 luminance</a></dt>
 
 <dd>formal definition of luminance is in <a href=
 "#2-CIE-15.2"><span class="NormRef">[CIE-15.2]</span></a>.
@@ -564,13 +654,19 @@ level, of a colour. Luminance and <a href="#chromaticity"><span
 class="Definition">chromaticity</span></a> together fully define
 a perceived colour.</dd>
 
-<dt><a name="LZ77">3.1.29 LZ77</a></dt>
+<dt>
+<!-- Maintain a fragment named "3LZ77" to preserve incoming links to it -->
+<a name="3LZ77"></a>
+<a name="LZ77">3.1.29 LZ77</a></dt>
 
 <dd>data compression algorithm described by Ziv and Lempel in
 their 1977 paper <a href="#ZL"><span class=
 "bibref">[ZL]</span></a>.</dd>
 
-<dt><a name="network-byte-order">3.1.30 network byte
+<dt>
+<!-- Maintain a fragment named "3networkByteOrder" to preserve incoming links to it -->
+<a name="3networkByteOrder"></a>
+<a name="network-byte-order">3.1.30 network byte
 order</a></dt>
 
 <dd><a href="#byte-order"><span class="Definition">byte
@@ -583,7 +679,10 @@ significance (<a href="#MSB"><span class=
 "#LSB"><span class="Definition">LSB</span></a> for four-byte
 integers).</dd>
 
-<dt><a name="palette">3.1.31 palette</a></dt>
+<dt>
+<!-- Maintain a fragment named "3palette" to preserve incoming links to it -->
+<a name="3palette"></a>
+<a name="palette">3.1.31 palette</a></dt>
 
 <dd>indexed table of three 8-bit <a href="#sample"><span class=
 "Definition">sample</span></a> values, red, green, and blue,
@@ -599,7 +698,10 @@ entries via the <a href="#alpha-table"><span class=
 "Definition">alpha table</span></a> and may be used to
 reconstruct the alpha sample values of the reference image.</dd>
 
-<dt><a name="pass-extraction">3.1.32 pass extraction</a></dt>
+<dt>
+<!-- Maintain a fragment named "3passExtraction" to preserve incoming links to it -->
+<a name="3passExtraction"></a>
+<a name="pass-extraction">3.1.32 pass extraction</a></dt>
 
 <dd>organizing a <a href="#PNG-image"><span class=
 "Definition">PNG image</span></a> as a sequence of <a href=
@@ -607,7 +709,10 @@ reconstruct the alpha sample values of the reference image.</dd>
 images</span></a> to change the order of transmission and enable
 progressive display.</dd>
 
-<dt><a name="pixel">3.1.33 pixel</a></dt>
+<dt>
+<!-- Maintain a fragment named "3pixel" to preserve incoming links to it -->
+<a name="3pixel"></a>
+<a name="pixel">3.1.33 pixel</a></dt>
 
 <dd>information stored for a single grid point in an image. A
 pixel consists of (or points to) a sequence of <a href="#sample"><span class=
@@ -619,7 +724,10 @@ complete image is a rectangular array of pixels.</dd>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 
-<dt><a name="PNG-datastream">3.1.34 PNG datastream</a></dt>
+<dt>
+<!-- Maintain a fragment named "3PNGdatastream" to preserve incoming links to it -->
+<a name="3PNGdatastream"></a>
+<a name="PNG-datastream">3.1.34 PNG datastream</a></dt>
 
 <dd>result of encoding a <a href="#PNG-image"><span class=
 "Definition">PNG image</span></a>. A PNG <a href=
@@ -629,7 +737,10 @@ consists of a <a href="#PNG-signature"><span class=
 <a href="#chunk"><span class=
 "Definition">chunks</span></a>.</dd>
 
-<dt><a name="PNG-decoder">3.1.35 PNG decoder</a></dt>
+<dt>
+<!-- Maintain a fragment named "3PNGdecoder" to preserve incoming links to it -->
+<a name="3PNGdecoder"></a>
+<a name="PNG-decoder">3.1.35 PNG decoder</a></dt>
 
 <dd>process or device which reconstructs the <a href=
 "#3referenceImage"><span class="Definition">reference
@@ -637,7 +748,10 @@ image</span></a> from a <a href="#PNG-datastream"><span class=
 "Definition">PNG datastream</span></a> and generates a
 corresponding delivered image.</dd>
 
-<dt><a name="PNG-editor">3.1.36 PNG editor</a></dt>
+<dt>
+<!-- Maintain a fragment named "3PNGeditor" to preserve incoming links to it -->
+<a name="3PNGeditor"></a>
+<a name="PNG-editor">3.1.36 PNG editor</a></dt>
 
 <dd>process or device which creates a modification of an existing
 <a href="#PNG-datastream"><span class="Definition">PNG
@@ -646,7 +760,10 @@ information wherever possible, and obeying the <a href=
 "#chunk"><span class="Definition">chunk</span></a> ordering
 rules, even for unknown chunk types.</dd>
 
-<dt><a name="PNG-encoder">3.1.37 PNG encoder</a></dt>
+<dt>
+<!-- Maintain a fragment named "3PNGencoder" to preserve incoming links to it -->
+<a name="3PNGencoder"></a>
+<a name="PNG-encoder">3.1.37 PNG encoder</a></dt>
 
 <dd>process or device which constructs a <a href=
 "#3referenceImage"><span class="Definition">reference
@@ -655,12 +772,18 @@ image</span></a> from a <a href="#source-image"><span class=
 "#PNG-datastream"><span class="Definition">PNG
 datastream</span></a> representing the reference image.</dd>
 
-<dt><a name="PNG-file">3.1.38 PNG file</a></dt>
+<dt>
+<!-- Maintain a fragment named "3PNGfile" to preserve incoming links to it -->
+<a name="3PNGfile"></a>
+<a name="PNG-file">3.1.38 PNG file</a></dt>
 
 <dd><a href="#PNG-datastream"><span class="Definition">PNG
 datastream</span></a> stored as a file.</dd>
 
-<dt><a name="PNG-four-byte-signed-integer">3.1.39 PNG four-byte
+<dt>
+<!-- Maintain a fragment named "3PNGfourByteSignedInteger" to preserve incoming links to it -->
+<a name="3PNGfourByteSignedInteger"></a>
+<a name="PNG-four-byte-signed-integer">3.1.39 PNG four-byte
 signed integer</a></dt>
 
 <dd>a four-byte signed integer limited to the range
@@ -668,7 +791,10 @@ signed integer</a></dt>
 imposed in order to accommodate languages that have difficulty
 with the value -2<sup>31</sup>.</dd>
 
-<dt><a name="PNG-four-byte-unsigned-integer">3.1.40 PNG four-byte
+<dt>
+<!-- Maintain a fragment named "3PNGfourByteUnSignedInteger" to preserve incoming links to it -->
+<a name="3PNGfourByteUnSignedInteger"></a>
+<a name="PNG-four-byte-unsigned-integer">3.1.40 PNG four-byte
 unsigned integer</a></dt>
 
 <dd>a four-byte unsigned integer limited to the range 0 to
@@ -676,7 +802,10 @@ unsigned integer</a></dt>
 accommodate languages that have difficulty with unsigned
 four-byte values.</dd>
 
-<dt><a name="PNG-image">3.1.41 PNG image</a></dt>
+<dt>
+<!-- Maintain a fragment named "3PNGimage" to preserve incoming links to it -->
+<a name="3PNGimage"></a>
+<a name="PNG-image">3.1.41 PNG image</a></dt>
 
 <dd>result of transformations applied by a <a href=
 "#PNG-encoder"><span class="Definition">PNG encoder</span></a> to
@@ -686,7 +815,10 @@ image</span></a>, in preparation for encoding as a <a href=
 datastream</span></a>, and the result of decoding a PNG
 datastream.</dd>
 
-<dt><a name="PNG-signature">3.1.42 PNG signature</a></dt>
+<dt>
+<!-- Maintain a fragment named "3PNGsignature" to preserve incoming links to it -->
+<a name="3PNGsignature"></a>
+<a name="PNG-signature">3.1.42 PNG signature</a></dt>
 
 <dd>sequence of <a href="#byte"><span class=
 "Definition">bytes</span></a> appearing at the start of every <a
@@ -696,7 +828,10 @@ other types of <a href="#datastream"><span class=
 "Definition">datastream</span></a> and allows early detection of
 some transmission errors.</dd>
 
-<dt><a name="reduced-image">3.1.43 reduced image</a></dt>
+<dt>
+<!-- Maintain a fragment named "3reducedImage" to preserve incoming links to it -->
+<a name="3reducedImage"></a>
+<a name="reduced-image">3.1.43 reduced image</a></dt>
 
 <dd>pass of the <a href="#interlaced-PNG-image"><span class=
 "Definition">interlaced PNG image</span></a> extracted from the
@@ -704,7 +839,10 @@ some transmission errors.</dd>
 image</span></a> by <a href="#pass-extraction"><span class=
 "Definition">pass extraction</span></a>.</dd>
 
-<dt><a name="3referenceImage">3.1.44 reference image</a></dt>
+<dt>
+<!-- Maintain a fragment named "3referenceImage" to preserve incoming links to it -->
+<a name="3referenceImage"></a>
+<a name="reference-image">3.1.44 reference image</a></dt>
 
 <dd>rectangular array of rectangular <a href="#pixel"><span
 class="Definition">pixels</span></a>, each having the same number
@@ -721,7 +859,10 @@ depth</span></a> in the range 1 to 16. All samples in the same
 channel have the same sample depth. Different channels may have
 different sample depths.</dd>
 
-<dt><a name="RGB-merging">3.1.45 RGB merging</a></dt>
+<dt>
+<!-- Maintain a fragment named "3RGBmerging" to preserve incoming links to it -->
+<a name="3RGBmerging"></a>
+<a name="RGB-merging">3.1.45 RGB merging</a></dt>
 
 <dd>converting an image in which the red, green, and blue <a
 href="#sample"><span class="Definition">samples</span></a> for
@@ -732,13 +873,19 @@ single <a href="#greyscale"><span class=
 "Definition">greyscale</span></a> <a href="#channel"><span
 class="Definition">channel</span></a>.</dd>
 
-<dt><a name="sample">3.1.46 sample</a></dt>
+<dt>
+<!-- Maintain a fragment named "3sample" to preserve incoming links to it -->
+<a name="3sample"></a>
+<a name="sample">3.1.46 sample</a></dt>
 
 <dd>intersection of a <a href="#channel"><span class=
 "Definition">channel</span></a> and a <a href="#pixel"><span
 class="Definition">pixel</span></a> in an image.</dd>
 
-<dt><a name="sample-depth">3.1.47 sample depth</a></dt>
+<dt>
+<!-- Maintain a fragment named "3sampleDepth" to preserve incoming links to it -->
+<a name="3sampleDepth"></a>
+<a name="sample-depth">3.1.47 sample depth</a></dt>
 
 <dd>number of bits used to represent a <a href="#sample"><span
 class="Definition">sample</span></a> value. In an <a href=
@@ -751,7 +898,10 @@ always 8 by definition of the palette. In other types of PNG
 image it is the same as the <a href="#bit-depth"><span class=
 "Definition">bit depth</span></a>.</dd>
 
-<dt><a name="sample-depth-scaling">3.1.48 sample depth
+<dt>
+<!-- Maintain a fragment named "3sampleDepthScaling" to preserve incoming links to it -->
+<a name="3sampleDepthScaling"></a>
+<a name="sample-depth-scaling">3.1.48 sample depth
 scaling</a></dt>
 
 <dd>mapping of a range of <a href="#sample"><span class=
@@ -760,19 +910,28 @@ href="#sample-depth"><span class="Definition">sample
 depth</span></a> allowed in a <a href="#PNG-image"><span class=
 "Definition">PNG image</span></a>.</dd>
 
-<dt><a name="scanline">3.1.49 scanline</a></dt>
+<dt>
+<!-- Maintain a fragment named "3scanline" to preserve incoming links to it -->
+<a name="3scanline"></a>
+<a name="scanline">3.1.49 scanline</a></dt>
 
 <dd>row of <a href="#pixel"><span class=
 "Definition">pixels</span></a> within an image or <a href=
 "#interlaced-PNG-image"><span class="Definition">interlaced PNG
 image</span></a>.</dd>
 
-<dt><a name="source-image">3.1.50 source image</a></dt>
+<dt>
+<!-- Maintain a fragment named "3sourceImage" to preserve incoming links to it -->
+<a name="3sourceImage"></a>
+<a name="source-image">3.1.50 source image</a></dt>
 
 <dd>image which is presented to a <a href="#PNG-encoder"><span
 class="Definition">PNG encoder</span></a>.</dd>
 
-<dt><a name="truecolour">3.1.51 truecolour</a></dt>
+<dt>
+<!-- Maintain a fragment named "3truecolour" to preserve incoming links to it -->
+<a name="3truecolour"></a>
+<a name="truecolour">3.1.51 truecolour</a></dt>
 
 <dd>image representation in which each <a href="#pixel"><span
 class="Definition">pixel</span></a> is defined by <a href=
@@ -782,13 +941,19 @@ representing red, green, and blue intensities and optionally an
 sample (in which case it is referred to as truecolour with
 alpha).</dd>
 
-<dt><a name="white-point">3.1.52 white point</a></dt>
+<dt>
+<!-- Maintain a fragment named "3whitePoint" to preserve incoming links to it -->
+<a name="3whitePoint"></a>
+<a name="white-point">3.1.52 white point</a></dt>
 
 <dd><a href="#chromaticity"><span class=
 "Definition">chromaticity</span></a> of a computer display's
 nominal white value.</dd>
 
-<dt><a name="zlib">3.1.53 zlib</a></dt>
+<dt>
+<!-- Maintain a fragment named "3zlib" to preserve incoming links to it -->
+<a name="3zlib"></a>
+<a name="zlib">3.1.53 zlib</a></dt>
 
 <dd>particular format for data that have been compressed using <a
 href="#deflate"><span class=
@@ -802,10 +967,15 @@ The format is defined in <a href="#2-RFC-1950"><span class=
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
+<!-- Maintain a fragment named "3Abbreviations" to preserve incoming links to it -->
+<a name="3Abbreviations"></a>
 <h2><a name="abbreviated-terms">Abbreviated terms</a></h2>
 
 <dl>
-<dt><a name="CRC">3.2.1 CRC</a></dt>
+<dt>
+<!-- Maintain a fragment named "3CRC" to preserve incoming links to it -->
+<a name="3CRC"></a>
+<a name="CRC">3.2.1 CRC</a></dt>
 
 <dd>Cyclic Redundancy Code. A CRC is a type of check value
 designed to detect most transmission errors. A decoder calculates
@@ -815,17 +985,26 @@ A mismatch
 indicates that the data or the CRC were corrupted in
 transit.</dd>
 
-<dt><a name="CRT">3.2.2 CRT</a></dt>
+<dt>
+<!-- Maintain a fragment named "3CRT" to preserve incoming links to it -->
+<a name="3CRT"></a>
+<a name="CRT">3.2.2 CRT</a></dt>
 
 <dd>Cathode Ray Tube: a common type of computer display
 hardware.</dd>
 
-<dt><a name="LSB">3.2.2 LSB</a></dt>
+<dt>
+<!-- Maintain a fragment named "3LSB" to preserve incoming links to it -->
+<a name="3LSB"></a>
+<a name="LSB">3.2.2 LSB</a></dt>
 
 <dd>Least Significant Byte of a multi-<a href="#byte"><span
 class="Definition">byte</span></a> value.</dd>
 
-<dt><a name="LUT">3.2.3 LUT</a></dt>
+<dt>
+<!-- Maintain a fragment named "3LUT" to preserve incoming links to it -->
+<a name="3LUT"></a>
+<a name="LUT">3.2.3 LUT</a></dt>
 
 <dd>Look Up Table. In <a href="#frame-buffer"><span class=
 "Definition">frame buffer</span></a> hardware, a LUT can be used
@@ -839,7 +1018,10 @@ In software, a LUT can often be used as a fast way of
 implementing any mathematical function of a single integer
 variable.</dd>
 
-<dt><a name="MSB">3.2.4 MSB</a></dt>
+<dt>
+<!-- Maintain a fragment named "3MSB" to preserve incoming links to it -->
+<a name="3MSB"></a>
+<a name="MSB">3.2.4 MSB</a></dt>
 
 <dd>Most Significant Byte of a multi-<a href="#byte"><span
 class="Definition">byte</span></a> value.</dd>
@@ -850,9 +1032,13 @@ class="Definition">byte</span></a> value.</dd>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
+<!-- Maintain a fragment named "4Concepts" to preserve incoming links to it -->
+<a name="4Concepts"></a>
 <h2>Concepts</h2>
 
 <section>
+<!-- Maintain a fragment named "4Concepts.Sourceimage" to preserve incoming links to it -->
+<a name="4Concepts.Sourceimage"></a>
 <h2>Images</h2>
 
 <p>This International Standard specifies the PNG datastream, and
@@ -926,7 +1112,9 @@ as it can achieve.</li>
 <p>The relationships between the four kinds of image are
 illustrated in <a href="#image-relationship"></a>.</p>
 
-<figure id="image-relationship"><a name="figure41"></a>
+<figure id="image-relationship">
+<!-- Maintain a fragment named "figure41" to preserve incoming links to it -->
+<a name="figure41"></a>
 <object data="figures/image-relationship.svg" type="image/svg+xml" width="640" height="290">
    <img height="280" width="640" src="png-figures/image-relationship.png" alt="Relationships between
 source, reference, PNG, and display images" />
@@ -939,7 +1127,9 @@ source, reference, PNG, and display images" />
 <p>The relationships between samples, channels, pixels, and
 sample depth are illustrated in <a href="#sample-pixel-channel-relationship"></a>.</p>
 
-<figure id="sample-pixel-channel-relationship"><a name="figure42"></a>
+<figure id="sample-pixel-channel-relationship">
+<!-- Maintain a fragment named "figure42" to preserve incoming links to it -->
+<a name="figure42"></a>
 <object data="figures/sample-pixel-channel-relationship.svg" type="image/svg+xml" width="640" height="290">
   <img height="290" width="640" src="png-figures/sample-pixel-channel-relationship.png" alt="Relationships between
 sample, sample depth, pixel, and channel" />
@@ -950,6 +1140,8 @@ sample, sample depth, pixel, and channel" />
 </section>
 
 <section>
+<!-- Maintain a fragment named "4Concepts.ColourSpaces" to preserve incoming links to it -->
+<a name="4Concepts.ColourSpaces"></a>
 <h2>Colour spaces</h2>
 
 <p>The RGB colour space in which colour samples are situated may
@@ -989,10 +1181,14 @@ opacity.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "4Concepts.PNGImageTransformation" to preserve incoming links to it -->
+<a name="4Concepts.PNGImageTransformation"></a>
 <h2>Reference
 image to PNG image transformation</h2>
 
 <section class="introductory">
+<!-- Maintain a fragment named "4Concepts.Introduction" to preserve incoming links to it -->
+<a name="4Concepts.Introduction"></a>
 <p>A number of transformations are applied to the reference image
 to create the PNG image to be encoded (see <a href=
 "#reference-to-png-transformation"></a>). The
@@ -1018,7 +1214,9 @@ alter the alpha sample depth.</p>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<figure id="reference-to-png-transformation"><a name="figure43"></a>
+<figure id="reference-to-png-transformation">
+<!-- Maintain a fragment named "figure43" to preserve incoming links to it -->
+<a name="figure43"></a>
 <object data="figures/reference-to-png-transformation.svg" type="image/svg+xml" height="525" width="640">
 <img height="525" width="640" src="png-figures/reference-to-png-transformation.png" alt="Reference image to PNG
 image transformation" />
@@ -1029,6 +1227,8 @@ image transformation" />
 </section>
 
 <section>
+<!-- Maintain a fragment named "4Concepts.Implied-alpha" to preserve incoming links to it -->
+<a name="4Concepts.Implied-alpha"></a>
 <h2>Alpha
 separation</h2>
 
@@ -1038,6 +1238,8 @@ equivalent image that can be encoded more compactly.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "4Concepts.Indexing" to preserve incoming links to it -->
+<a name="4Concepts.Indexing"></a>
 <h2><a name="indexing">Indexing</a></h2>
 
 <p>If the number of distinct pixel values is 256 or less, and the
@@ -1053,7 +1255,9 @@ samples.</p>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<figure id="indexed-colour-image"><a name="figure44"></a>
+<figure id="indexed-colour-image">
+<!-- Maintain a fragment named "figure44" to preserve incoming links to it -->
+<a name="figure44"></a>
 <object height="450" width="660" data="figures/indexed-colour-image.svg" type="image/svg+xml">
   <img height="450" width="660" src="png-figures/indexed-colour-image.png" alt="Indexed-colour
 image" />
@@ -1074,6 +1278,8 @@ shortened form that does not include these entries.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "4Concepts.RGBMerging" to preserve incoming links to it -->
+<a name="4Concepts.RGBMerging"></a>
 <h2>RGB merging</h2>
 
 <p>If the red, green, and blue channels have the same sample
@@ -1083,6 +1289,8 @@ single greyscale channel.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "4Concepts.Alpha-indexing" to preserve incoming links to it -->
+<a name="4Concepts.Alpha-indexing"></a>
 <h2>Alpha
 compaction</h2>
 
@@ -1094,6 +1302,8 @@ can be represented more compactly by merely identifying the RGB
 </section>
 
 <section>
+<!-- Maintain a fragment named "4Concepts.Scaling" to preserve incoming links to it -->
+<a name="4Concepts.Scaling"></a>
 <h2>Sample depth
 scaling</h2>
 
@@ -1109,7 +1319,9 @@ be mapped into samples of depth 4.</p>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<figure id="scaling-sample-values"><a name="figure45"></a>
+<figure id="scaling-sample-values">
+<!-- Maintain a fragment named "figure45" to preserve incoming links to it -->
+<a name="figure45"></a>
 <object height="320" width="640" data="figures/scaling-sample-values.svg" type="image/svg+xml">
   <img height="320" width="640" src="png-figures/scaling-sample-values.png" alt="Scaling sample
 values" />
@@ -1128,7 +1340,9 @@ scaling</span></a> and 13.12: <a href=
 "#sample-depth-rescaling"><span class="xref">Sample depth
 rescaling</span></a>.</p>
 
-<figure id="possible-pixel-types"><a name="figure46"></a>
+<figure id="possible-pixel-types">
+<!-- Maintain a fragment named "figure46" to preserve incoming links to it -->
+<a name="figure46"></a>
 <object height="450" width="660" data="figures/possible-pixel-types.svg" type="image/svg+xml">
   <img  height="450" width="660" src= "png-figures/possible-pixel-types.png" alt="Possible PNG image
 pixel types" />
@@ -1141,6 +1355,8 @@ pixel types" />
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
+<!-- Maintain a fragment named "4Concepts.PNGImage" to preserve incoming links to it -->
+<a name="4Concepts.PNGImage"></a>
 <h2>PNG image</h2>
 
 <p>The transformation of the reference image results in one of
@@ -1192,13 +1408,17 @@ type.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "4Concepts.Encoding" to preserve incoming links to it -->
+<a name="4Concepts.Encoding"></a>
 <h2>Encoding the PNG
 image</h2>
 
 <section class="introductory">
+<!-- Maintain a fragment named "4Concepts.EncodingIntro" to preserve incoming links to it -->
+<a name="4Concepts.EncodingIntro"></a>
 <p>A conceptual model of the process of encoding a PNG image is
-given in <a href="#figure47"><span class="figref">figure
-4.7</span></a>. The steps refer to the operations on the array of
+given in <a href="#encoding-png-image"><span class="figref"></a>.
+The steps refer to the operations on the array of
 pixels or indices in the PNG image. The palette and alpha table
 are not encoded in this way.</p>
 
@@ -1228,6 +1448,8 @@ datastream.</li>
 </section>
 
 <section>
+<!-- Maintain a fragment named "4Concepts.EncodingPassAbs" to preserve incoming links to it -->
+<a name="4Concepts.EncodingPassAbs"></a>
 <h2>Pass
 extraction</h2>
 
@@ -1246,7 +1468,9 @@ illustrated in <a href="#pass-extraction"></a>. See clause&#160;8: <a href="#int
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<figure id="encoding-png-image"><a name="figure47"></a>
+<figure id="encoding-png-image">
+<!-- Maintain a fragment named "figure47" to preserve incoming links to it -->
+<a name="figure47"></a>
 <object height="575" width="645" data="figures/encoding-png-image.svg" type="image/svg+xml">
 	<img height="575" width="645" src="png-figures/encoding-png-image.png" alt="Encoding the PNG
 image" />
@@ -1255,7 +1479,9 @@ image" />
 </figure>
 
 
-<figure id="pass-extraction"><a name="figure48"></a>
+<figure id="pass-extraction">
+<!-- Maintain a fragment named "figure48" to preserve incoming links to it -->
+<a name="figure48"></a>
 <object height="450" width="645" data="figures/pass-extraction.svg" type="image/svg+xml">
 	<img height="450" width="645" src="png-figures/pass-extraction.png" alt="Pass extraction" />
 </object>
@@ -1266,6 +1492,8 @@ image" />
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
+<!-- Maintain a fragment named "4Concepts.EncodingScanlineAbs" to preserve incoming links to it -->
+<a name="4Concepts.EncodingScanlineAbs"></a>
 <h2>Scanline
 serialization</h2>
 
@@ -1274,6 +1502,8 @@ sequence of bytes.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "4Concepts.EncodingFiltering" to preserve incoming links to it -->
+<a name="4Concepts.EncodingFiltering"></a>
 <h2>Filtering</h2>
 
 <p>PNG standardizes one filter method and several filter types
@@ -1288,7 +1518,9 @@ an interlaced PNG image, but may use different filter types for
 each scanline in a reduced image. See clause&#160;9: <a href=
 "#filtering-2"><span class="xref">Filtering</span></a>.</p>
 
-<figure id="figure49"><a name="figure49"></a>
+<figure id="serializing-and-filtering-scanline">
+<!-- Maintain a fragment named "figure49" to preserve incoming links to it -->
+<a name="figure49"></a>
 <object height="340" width="710" data="figures/serializing-and-filtering-scanline.svg" type="image/svg+xml">
   <img height="340" width="710" src="png-figures/serializing-and-filtering-scanline.png" alt="Serializing and
 filtering a scanline" />
@@ -1298,6 +1530,8 @@ filtering a scanline" />
 </section>
 
 <section>
+<!-- Maintain a fragment named "4Concepts.EncodingCompression" to preserve incoming links to it -->
+<a name="4Concepts.EncodingCompression"></a>
 <h2>Compression</h2>
 
 <p>The sequence of filtered scanlines in the pass or passes of
@@ -1309,6 +1543,8 @@ stage is a single compressed datastream. See clause&#160;10: <a href=
 </section>
 
 <section>
+<!-- Maintain a fragment named "4Concepts.EncodingChunking" to preserve incoming links to it -->
+<a name="4Concepts.EncodingChunking"></a>
 <h2>Chunking</h2>
 
 <p>Chunking provides a convenient breakdown of the compressed
@@ -1318,7 +1554,9 @@ redundancy check. See clause&#160;11: <a href="#chunk-specifications"><span clas
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<figure id="compression"><a name="figure410"></a>
+<figure id="compression">
+<!-- Maintain a fragment named "figure410" to preserve incoming links to it -->
+<a name="figure410"></a>
 <object height="450" width="700" data="figures/compression.svg" type="image/svg+xml">
  <img height="450" width="700" src="png-figures/compression.png" alt="Compression" />
 </object>
@@ -1328,6 +1566,8 @@ redundancy check. See clause&#160;11: <a href="#chunk-specifications"><span clas
 </section>
 
 <section>
+<!-- Maintain a fragment named "4Concepts.AncillInfo" to preserve incoming links to it -->
+<a name="4Concepts.AncillInfo"></a>
 <h2>Additional
 information</h2>
 
@@ -1419,9 +1659,13 @@ image.</td>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
+<!-- Maintain a fragment named "4Concepts.Format" to preserve incoming links to it -->
+<a name="4Concepts.Format"></a>
 <h2>PNG datastream</h2>
 
 <section>
+<!-- Maintain a fragment named "4Concepts.FormatChunks" to preserve incoming links to it -->
+<a name="4Concepts.FormatChunks"></a>
 <h2>Chunks</h2>
 
 <p>The PNG datastream consists of a PNG signature (see 5.2: <a
@@ -1433,6 +1677,8 @@ specifies its function.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "4Concepts.FormatTypes" to preserve incoming links to it -->
+<a name="4Concepts.FormatTypes"></a>
 <h2>Chunk types</h2>
 
 <p>There are 18 chunk types defined in this International
@@ -1493,6 +1739,8 @@ which encoders may generate and decoders may interpret.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "4Concepts.Errors" to preserve incoming links to it -->
+<a name="4Concepts.Errors"></a>
 <h2>Error handling</h2>
 
 <p>Errors in a PNG datastream fall into two general classes:</p>
@@ -1515,6 +1763,8 @@ handling</span></a>.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "4Concepts.Registration" to preserve incoming links to it -->
+<a name="4Concepts.Registration"></a>
 <h2>Extension and
 registration</h2>
 
@@ -1555,9 +1805,13 @@ standardization:</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "5DataRep" to preserve incoming links to it -->
+<a name="5DataRep"></a>
 <h2>Datastream structure</h2>
 
 <section class="introductory">
+<!-- Maintain a fragment named "5Introduction" to preserve incoming links to it -->
+<a name="5Introduction"></a>
 <p>This clause defines the PNG signature and the basic properties
 of chunks. Individual chunk types are discussed in clause&#160;11: <a
 href="#chunk-specifications"><span class="xref">Chunk
@@ -1565,6 +1819,8 @@ specifications</span></a>.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "5PNG-file-signature" to preserve incoming links to it -->
+<a name="5PNG-file-signature"></a>
 <h2>PNG signature</h2>
 
 <p>The first eight bytes of a PNG datastream always contain the
@@ -1588,6 +1844,8 @@ beginning with an <a href="#ihdr-image-header"><span class=
 </section>
 
 <section>
+<!-- Maintain a fragment named "5Chunk-layout" to preserve incoming links to it -->
+<a name="5Chunk-layout"></a>
 <h2>Chunk layout</h2>
 
 <p>Each chunk consists of three or four fields (see figure 5.1).
@@ -1595,7 +1853,9 @@ The meaning of the fields is described in
 <a href="#table51"><span class="tabref">Table 5.1</span></a>.
 The chunk data field may be empty.</p>
 
-<figure id="chunk-parts"><a name="figure411"></a>
+<figure id="chunk-parts">
+<!-- Maintain a fragment named "figure411" to preserve incoming links to it -->
+<a name="figure411"></a>
 <object height="160" width="480" data="figures/chunk-parts.svg" type="image/svg+xml">
  <img height="160" width="480" src="png-figures/chunk-parts.png" alt="Chunk parts" />
 </object>
@@ -1659,6 +1919,8 @@ aligned on any boundaries larger than bytes.</p>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
+<!-- Maintain a fragment named "5Chunk-naming-conventions" to preserve incoming links to it -->
+<a name="5Chunk-naming-conventions"></a>
 <h2>Chunk naming
 conventions</h2>
 
@@ -1783,6 +2045,8 @@ safe-to-copy chunk.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "5CRC-algorithm" to preserve incoming links to it -->
+<a name="5CRC-algorithm"></a>
 <h2>Cyclic Redundancy Code
 algorithm</h2>
 
@@ -1814,6 +2078,8 @@ implementation</span></a>.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment 5ChunkOrderingg" to preserve incoming links to it -->
+<a name="5ChunkOrdering"></a>
 <h2>Chunk ordering</h2>
 
 <p>The constraints on the positioning of the individual chunks
@@ -2031,7 +2297,9 @@ symbols used in lattice diagrams</b></a></caption>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<figure id="lattice-diagram-with-plte"><a name="figure52"></a>
+<figure id="lattice-diagram-with-plte">
+<!-- Maintain a fragment named "figure52" to preserve incoming links to it -->
+<a name="figure52"></a>
 <object height="540" width="800" data="figures/lattice-diagram-with-plte.svg" type="image/svg+xml">
  <img height="540" width="800" src="png-figures/lattice-diagram-with-plte.png" alt="Lattice diagram: PNG images with PLTE in datastream" />
 </object>
@@ -2040,7 +2308,9 @@ symbols used in lattice diagrams</b></a></caption>
 </figure>
 
 
-<figure id="lattice-diagram-without-plte"><a name="figure53"></a>
+<figure id="lattice-diagram-without-plte">
+<!-- Maintain a fragment named "figure53" to preserve incoming links to it -->
+<a name="figure53"></a>
 <object height="540" width="900" data="figures/lattice-diagram-without-plte.svg"
 type="image/svg+xml">
  <img height="540" width="900" src="png-figures/lattice-diagram-without-plte.png" alt="Lattice diagram: PNG images without PLTE in datastream" />
@@ -2055,10 +2325,14 @@ class="chunk">PLTE</span></a> in datastream</figcaption>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
+<!-- Maintain a fragment named "6Transformation" to preserve incoming links to it -->
+<a name="6Transformation"></a>
 <h2>Reference image to PNG image
 transformation</h2>
 
 <section>
+<!-- Maintain a fragment named "6Colour-values" to preserve incoming links to it -->
+<a name="6Colour-values"></a>
 <h2>Colour types and values</h2>
 
 <p>As explained in 4.4: <a href="#png-image"><span
@@ -2137,6 +2411,8 @@ class="xref">Gamma and chromaticity</span></a>.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "6AlphaRepresentation" to preserve incoming links to it -->
+<a name="6AlphaRepresentation"></a>
 <h2>Alpha
 representation</h2>
 
@@ -2194,10 +2470,14 @@ processing</span></a>.</p>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
+<!-- Maintain a fragment named "7Transformation" to preserve incoming links to it -->
+<a name="7Transformation"></a>
 <h2>Encoding the PNG image as a PNG
 datastream</h2>
 
 <section>
+<!-- Maintain a fragment named "7Integers-and-byte-order" to preserve incoming links to it -->
+<a name="7Integers-and-byte-order"></a>
 <h2>Integers and byte
 order</h2>
 
@@ -2218,7 +2498,9 @@ integers are limited to the range -(2<sup>31</sup>-1) to
 2<sup>31</sup>-1 to accommodate languages that have difficulty
 with the value -2<sup>31</sup>.</p>
 
-<figure id="integer-representation-in-png"><a name="figure71"></a>
+<figure id="integer-representation-in-png">
+<!-- Maintain a fragment named "figure71" to preserve incoming links to it -->
+<a name="figure71"></a>
 <object height="310" width="810" data="figures/integer-representation-in-png.svg" type="image/svg+xml">
   <img height="310" width="810" src="png-figures/integer-representation-in-png.png" alt="Integer representation in PNG" />
 </object>
@@ -2228,6 +2510,8 @@ with the value -2<sup>31</sup>.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "7Scanline" to preserve incoming links to it -->
+<a name="7Scanline"></a>
 <h2>Scanlines</h2>
 
 <p>A PNG image (or pass, see clause&#160;8: <a href=
@@ -2262,6 +2546,8 @@ single pixel are never packed into one byte.</p>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
+<!-- Maintain a fragment named "7Filtering" to preserve incoming links to it -->
+<a name="7Filtering"></a>
 <h2>Filtering</h2>
 
 <p>PNG allows the scanline data to be <strong>filtered</strong> before it
@@ -2288,10 +2574,14 @@ employ is left to the encoder.</p>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
+<!-- Maintain a fragment named "8Interlace" to preserve incoming links to it -->
+<a name="8Interlace"></a>
 <h2>Interlacing and pass
 extraction</h2>
 
 <section class="introductory">
+<!-- Maintain a fragment named "8InterlaceIntro" to preserve incoming links to it -->
+<a name="8InterlaceIntro"></a>
 <p>Pass extraction (see <a href="#figure48"><span class=
 "figref">figure 4.8</span></a>) splits a PNG image into a
 sequence of reduced images (the interlaced PNG image) where the
@@ -2305,6 +2595,8 @@ display much more rapidly.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "8InterlaceMethods" to preserve incoming links to it -->
+<a name="8InterlaceMethods"></a>
 <h2>Interlace methods</h2>
 
 <p>Two interlace methods are defined in this International
@@ -2365,9 +2657,13 @@ empty.</p>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
+<!-- Maintain a fragment named "9Filters" to preserve incoming links to it -->
+<a name="9Filters"></a>
 <h2>Filtering</h2>
 
 <section>
+<!-- Maintain a fragment named "9FtIntro" to preserve incoming links to it -->
+<a name="9FtIntro"></a>
 <h2>Filter methods and filter
 types</h2>
 
@@ -2399,6 +2695,8 @@ progressive display</span></a>.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "9Filter-types" to preserve incoming links to it -->
+<a name="9Filter-types"></a>
 <h2>Filter types for filter method
 0</h2>
 
@@ -2529,6 +2827,8 @@ values is transmitted as the filtered scanline.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "9Filter-type-3-Average" to preserve incoming links to it -->
+<a name="9Filter-type-3-Average"></a>
 <h2>Filter type 3:
 Average</h2>
 
@@ -2540,6 +2840,8 @@ division or right shift operation.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "9Filter-type-4-Paeth" to preserve incoming links to it -->
+<a name="9Filter-type-4-Paeth"></a>
 <h2>Filter type 4:
 Paeth</h2>
 
@@ -2569,7 +2871,9 @@ logic of the function and the locations of the bytes <tt>a</tt>,
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<figure id="paethpredictor-function"><a name="9-figure91"></a>
+<figure id="paethpredictor-function">
+<!-- Maintain a fragment named "9-figure91" to preserve incoming links to it -->
+<a name="9-figure91"></a>
 <object height="360" width="640" data="figures/paethpredictor-function.svg" type="image/svg+xml">
   <img height="360" width="640" src="png-figures/paethpredictor-function.png" alt="The PaethPredictor
 function" />
@@ -2594,9 +2898,13 @@ encoder and decoder.</p>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
+<!-- Maintain a fragment named "10Compression" to preserve incoming links to it -->
+<a name="10Compression"></a>
 <h2>Compression</h2>
 
 <section>
+<!-- Maintain a fragment named "10CompressionCM0" to preserve incoming links to it -->
+<a name="10CompressionCM0"></a>
 <h2>Compression method 0</h2>
 
 <p>Only PNG compression method 0 is defined by this International
@@ -2677,6 +2985,8 @@ the PNG datastream has been transmitted undamaged.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "10CompressionFSL" to preserve incoming links to it -->
+<a name="10CompressionFSL"></a>
 <h2>Compression of the sequence
 of filtered scanlines</h2>
 
@@ -2709,6 +3019,8 @@ stored in a number of <a href="#idat-image-data"><span class=
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
+<!-- Maintain a fragment named "9Filters" to preserve incoming links to it -->
+<a name="10CompressionOtherUses"></a>
 <h2>Other uses of
 compression</h2>
 
@@ -2726,9 +3038,13 @@ an independent zlib datastream (see 10.1: <a href=
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
+<!-- Maintain a fragment named "11Chunks" to preserve incoming links to it -->
+<a name="11Chunks"></a>
 <h2>Chunk specifications</h2>
 
 <section class="introductory">
+<!-- Maintain a fragment named "11Introduction" to preserve incoming links to it -->
+<a name="11Introduction"></a>
 <p>The PNG datastream consists of a PNG signature (see 5.2: <a
 href="#png-signature"><span class="xref">PNG
 signature</span></a>) followed by a sequence of chunks. Each
@@ -2744,9 +3060,13 @@ For details specific to decoders see 13.5: <a href=
 </section>
 
 <section>
+<!-- Maintain a fragment named "11Critical-chunks" to preserve incoming links to it -->
+<a name="11Critical-chunks"></a>
 <h2>Critical chunks</h2>
 
 <section class="introductory">
+<!-- Maintain a fragment named "11CcGen" to preserve incoming links to it -->
+<a name="11CcGen"></a>
 <p>Critical chunks are those chunks that are absolutely required
 in order to successfully decode a PNG image from a PNG
 datastream. Extension chunks may be defined as critical chunks
@@ -2766,6 +3086,8 @@ datastream.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "11IHDR" to preserve incoming links to it -->
+<a name="11IHDR"></a>
 <h2><span class="chunk">IHDR</span> Image
 header</h2>
 
@@ -2912,6 +3234,8 @@ details.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "11PLTE" to preserve incoming links to it -->
+<a name="11PLTE"></a>
 <h2><span class="chunk">PLTE</span>
 Palette</h2>
 
@@ -2985,6 +3309,8 @@ by the image, nor that they all be different.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "11IDAT" to preserve incoming links to it -->
+<a name="11IDAT"></a>
 <h2><span class="chunk">IDAT</span> Image
 data</h2>
 
@@ -3009,6 +3335,8 @@ the contents of the data fields of all the <span class=
 </section>
 
 <section>
+<!-- Maintain a fragment named "11IEND" to preserve incoming links to it -->
+<a name="11IEND"></a>
 <h2><span class="chunk">IEND</span> Image
 trailer</h2>
 
@@ -3024,9 +3352,13 @@ PNG datastream. The chunk's data field is empty.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "11Ancillary-chunks" to preserve incoming links to it -->
+<a name="11Ancillary-chunks"></a>
 <h2><a name="ancillary-chunks">Ancillary chunks</a></h2>
 
 <section class="introductory">
+<!-- Maintain a fragment named "11AcGen" to preserve incoming links to it -->
+<a name="11AcGen"></a>
 <p>The ancillary chunks defined in this International Standard
 are listed in the order in 4.7.2: <a href=
 "#chunk-types"><span class="xref">Chunk
@@ -3037,10 +3369,14 @@ assumption that the decoder is not ignoring the chunk.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "11transinfo" to preserve incoming links to it -->
+<a name="11transinfo"></a>
 <h2>Transparency
 information</h2>
 
 <section>
+<!-- Maintain a fragment named "11tRNS" to preserve incoming links to it -->
+<a name="11tRNS"></a>
 <h2><span class="chunk">tRNS</span>
 Transparency</h2>
 
@@ -3150,10 +3486,14 @@ been tested for transparency.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "11addnlcolinfo" to preserve incoming links to it -->
+<a name="11addnlcolinfo"></a>
 <h2>Colour space
 information</h2>
 
 <section>
+<!-- Maintain a fragment named "11cHRM" to preserve incoming links to it -->
+<a name="11cHRM"></a>
 <h2><span class="chunk">cHRM</span>
 Primary chromaticities and white point</h2>
 
@@ -3236,6 +3576,8 @@ when present and recognized, overrides the <span class=
 </section>
 
 <section>
+<!-- Maintain a fragment named "11gAMA" to preserve incoming links to it -->
+<a name="11gAMA"></a>
 <h2><span class="chunk">gAMA</span>
 Image gamma</h2>
 
@@ -3292,6 +3634,8 @@ when present and recognized, overrides the <span class=
 </section>
 
 <section>
+<!-- Maintain a fragment named "11iCCP" to preserve incoming links to it -->
+<a name="11iCCP"></a>
 <h2><span class="chunk">iCCP</span>
 Embedded ICC profile</h2>
 
@@ -3374,6 +3718,8 @@ whether specified explicitly with an <span class=
 </section>
 
 <section>
+<!-- Maintain a fragment named "11sBIT" to preserve incoming links to it -->
+<a name="11sBIT"></a>
 <h2><span class="chunk">sBIT</span>
 Significant bits</h2>
 
@@ -3482,6 +3828,8 @@ sample bits of all channels are to be treated as significant.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "11sRGB" to preserve incoming links to it -->
+<a name="11sRGB"></a>
 <h2><a name="srgb-standard-colour-space"><span class="chunk">sRGB</span>
 Standard RGB colour space</a></h2>
 
@@ -3632,6 +3980,8 @@ not both appear in a PNG datastream.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "11cICP" to preserve incoming links to it -->
+<a name="11cICP"></a>
 <h2><span class="chunk">cICP</span>
 Coding-independent code points for video signal type identification</h2>
 
@@ -3842,9 +4192,13 @@ it's associated recommendations.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "11textinfo" to preserve incoming links to it -->
+<a name="11textinfo"></a>
 <h2>Textual information</h2>
 
 <section class="introductory">
+<!-- Maintain a fragment named "11textIntro" to preserve incoming links to it -->
+<a name="11textIntro"></a>
 <p>PNG provides the <a href="#text-textual-data"><span class=
 "chunk">tEXt</span></a>, <a href="#itxt-international-textual-data"><span class=
 "chunk">iTXt</span></a>, and <a href="#ztxt-compressed-textual-data"><span class=
@@ -3856,6 +4210,8 @@ more than one with the same keyword is permitted.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "11keywords" to preserve incoming links to it -->
+<a name="11keywords"></a>
 <h2>Keywords and text
 strings</h2>
 
@@ -3961,6 +4317,8 @@ chunk.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "11tEXt" to preserve incoming links to it -->
+<a name="11tEXt"></a>
 <h2><a name="text-textual-data"><span class="chunk">tEXt</span>
 Textual data</a></h2>
 
@@ -4018,6 +4376,8 @@ Text containing characters outside the repertoire of ISO/IEC
 </section>
 
 <section>
+<!-- Maintain a fragment named "11zTXt" to preserve incoming links to it -->
+<a name="11zTXt"></a>
 <h2><span class="chunk">zTXt</span>
 Compressed textual data</h2>
 
@@ -4078,6 +4438,8 @@ in an equivalent <a href="#text-textual-data"><span class=
 </section>
 
 <section>
+<!-- Maintain a fragment named "11iTXt" to preserve incoming links to it -->
+<a name="11iTXt"></a>
 <h2><span class="chunk">iTXt</span>
 International textual data</h2>
 
@@ -4188,10 +4550,14 @@ display the translated keyword in addition.</p>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
+<!-- Maintain a fragment named "11addnlsiinfo" to preserve incoming links to it -->
+<a name="11addnlsiinfo"></a>
 <h2>Miscellaneous
 information</h2>
 
 <section>
+<!-- Maintain a fragment named "11bKGD" to preserve incoming links to it -->
+<a name="11bKGD"></a>
 <h2><span class="chunk">bKGD</span>
 Background colour</h2>
 
@@ -4263,6 +4629,8 @@ least significant bits are used and the others are 0.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "11hIST" to preserve incoming links to it -->
+<a name="11hIST"></a>
 <h2><span class="chunk">hIST</span>
 Image histogram</h2>
 
@@ -4314,6 +4682,8 @@ normally appear, because any entry might be used.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "11pHYs" to preserve incoming links to it -->
+<a name="11pHYs"></a>
 <h2><span class="chunk">pHYs</span>
 Physical pixel dimensions</h2>
 
@@ -4370,6 +4740,8 @@ pixel is unspecified.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "11sPLT" to preserve incoming links to it -->
+<a name="11sPLT"></a>
 <h2><span class="chunk">sPLT</span>
 Suggested palette</h2>
 
@@ -4496,10 +4868,14 @@ but each shall have a different palette name.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "11timestampinfo" to preserve incoming links to it -->
+<a name="11timestampinfo"></a>
 <h2>Time stamp
 information</h2>
 
 <section>
+<!-- Maintain a fragment named "11tIME" to preserve incoming links to it -->
+<a name="11tIME"></a>
 <h2><span class="chunk">tIME</span>
 Image last-modification time</h2>
 
@@ -4560,9 +4936,13 @@ the image data are changed.</p>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
+<!-- Maintain a fragment named "12Encoders" to preserve incoming links to it -->
+<a name="12Encoders"></a>
 <h2>PNG Encoders</h2>
 
 <section class="introductory">
+<!-- Maintain a fragment named "12Introduction" to preserve incoming links to it -->
+<a name="12Introduction"></a>
 <p>This clause gives requirements and recommendations for encoder
 behaviour. A PNG encoder shall produce a PNG datastream from a
 PNG image that conforms to the format specified in the preceding
@@ -4571,6 +4951,8 @@ additional recommendations given here.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "12Encoder-gamma-handling" to preserve incoming links to it -->
+<a name="12Encoder-gamma-handling"></a>
 <h2>Encoder gamma
 handling</h2>
 
@@ -4766,6 +5148,8 @@ class="xref">Decoder gamma handling</span></a>.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "12Encoder-colour-handling" to preserve incoming links to it -->
+<a name="12Encoder-colour-handling"></a>
 <h2>Encoder colour
 handling</h2>
 
@@ -4941,6 +5325,8 @@ class="xref">Decoder colour handling</span></a>.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "12Alpha-channel-creation" to preserve incoming links to it -->
+<a name="12Alpha-channel-creation"></a>
 <h2>Alpha channel
 creation</h2>
 
@@ -4986,6 +5372,8 @@ black (zeroes).</p>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
+<!-- Maintain a fragment named "12Sample-depth-scaling" to preserve incoming links to it -->
+<a name="12Sample-depth-scaling"></a>
 <h2>Sample depth
 scaling</h2>
 
@@ -5082,6 +5470,8 @@ suggests that the original data range was exactly
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
+<!-- Maintain a fragment named "12Suggested-palettes" to preserve incoming links to it -->
+<a name="12Suggested-palettes"></a>
 <h2>Suggested
 palettes</h2>
 
@@ -5200,6 +5590,8 @@ decoders that do not recognize the <a href="#splt-suggested-palette"><span class
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
+<!-- Maintain a fragment named "12Interlacing" to preserve incoming links to it -->
+<a name="12Interlacing"></a>
 <h2>Interlacing</h2>
 
 <p>This International Standard defines two interlace methods,
@@ -5210,6 +5602,8 @@ described in 13.8: <a href="#interlacing-and-progressive-display"><span class=
 </section>
 
 <section>
+<!-- Maintain a fragment named "12Filter-selection" to preserve incoming links to it -->
+<a name="12Filter-selection"></a>
 <h2>Filter selection</h2>
 
 <p>For images of colour type 3 (indexed-colour), filter type 0
@@ -5244,6 +5638,8 @@ this International Standard.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "12Compression" to preserve incoming links to it -->
+<a name="12Compression"></a>
 <h2>Compression</h2>
 
 <p>The encoder may divide the compressed datastream into <a href=
@@ -5260,6 +5656,8 @@ wasteful.)</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "12Text-chunk-processing" to preserve incoming links to it -->
+<a name="12Text-chunk-processing"></a>
 <h2>Text chunk
 processing</h2>
 
@@ -5296,9 +5694,13 @@ title, appear before the <a href="#idat-image-data"><span class=
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
+<!-- Maintain a fragment named "12Chunk-processing" to preserve incoming links to it -->
+<a name="12Chunk-processing"></a>
 <h2>Chunking</h2>
 
 <section>
+<!-- Maintain a fragment named "12Use-of-private-chunks" to preserve incoming links to it -->
+<a name="12Use-of-private-chunks"></a>
 <h2>Use of private
 chunks</h2>
 
@@ -5357,6 +5759,8 @@ keywords without registering them first.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "12Private-type-and-method-codes" to preserve incoming links to it -->
+<a name="12Private-type-and-method-codes"></a>
 <h2>Private
 type and method codes</h2>
 
@@ -5376,6 +5780,8 @@ available software or datastreams.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "12Ancillary" to preserve incoming links to it -->
+<a name="12Ancillary"></a>
 <h2>Ancillary chunks</h2>
 
 <p>All ancillary chunks are optional, encoders need not write
@@ -5388,9 +5794,13 @@ ancillary chunks when the information is available.</p>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
+<!-- Maintain a fragment named "13Decoders" to preserve incoming links to it -->
+<a name="13Decoders"></a>
 <h2>PNG decoders and viewers</h2>
 
 <section class="introductory">
+<!-- Maintain a fragment named "13Introduction" to preserve incoming links to it -->
+<a name="13Introduction"></a>
 <p>This clause gives some requirements and recommendations for PNG
 decoder behaviour and viewer behaviour. A viewer presents the
 decoded PNG image to the user. Since viewer and decoder behaviour
@@ -5412,8 +5822,10 @@ appropriate and feasible.</p>
 </section>
 
 <section>
-<h2>Error handling</h2>
 
+<h2>Error handling</h2>
+<!-- Maintain a fragment named "13Decoders.Errors" to preserve incoming links to it -->
+<a name="13Decoders.Errors"></a>
 <p>Errors in a PNG datastream will fall into two general classes,
 transmission errors and syntax errors (see <a href=
 "#error-handling"><span class="xref">4.8 Error
@@ -5562,6 +5974,8 @@ possibility.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "13Error-checking" to preserve incoming links to it -->
+<a name="13Error-checking"></a>
 <h2>Error checking</h2>
 
 <p>The PNG error handling philosophy is described in 13.2: <a
@@ -5613,6 +6027,8 @@ details.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "13Security-considerations" to preserve incoming links to it -->
+<a name="13Security-considerations"></a>
 <h2>Security
 considerations</h2>
 
@@ -5670,6 +6086,8 @@ chunks without difficulty.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "13Chunking" to preserve incoming links to it -->
+<a name="13Chunking"></a>
 <h2>Chunking</h2>
 
 <p>Decoders shall recognize chunk types by a simple four-byte
@@ -5689,6 +6107,8 @@ chunk type.)</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "13Pixel-dimensions" to preserve incoming links to it -->
+<a name="13Pixel-dimensions"></a>
 <h2>Pixel dimensions</h2>
 
 <p>Non-square pixels can be represented (see 11.3.5.3: <a href=
@@ -5741,6 +6161,8 @@ same size as they did on the display.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "13Text-chunk-processing" to preserve incoming links to it -->
+<a name="13Text-chunk-processing"></a>
 <h2>Text chunk
 processing</h2>
 
@@ -5794,6 +6216,8 @@ creating lines in excess of 79 characters.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "13Decompression" to preserve incoming links to it -->
+<a name="13Decompression"></a>
 <h2>Decompression</h2>
 
 <p>The compression technique used in this International Standard
@@ -5820,6 +6244,8 @@ on this.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "13Filtering" to preserve incoming links to it -->
+<a name="13Filtering"></a>
 <h2>Filtering</h2>
 
 <p>To reverse the effect of a filter, the decoder may need
@@ -5834,6 +6260,8 @@ might use a filter type that refers to it.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "13Progressive-display" to preserve incoming links to it -->
+<a name="13Progressive-display"></a>
 <h2>Interlacing and
 progressive display</h2>
 
@@ -5915,6 +6343,8 @@ image is not stored anywhere offscreen.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "13Truecolour-image-handling" to preserve incoming links to it -->
+<a name="13Truecolour-image-handling"></a>
 <h2>Truecolour image
 handling</h2>
 
@@ -5953,6 +6383,8 @@ includes code for the purpose.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "13Sample-depth-rescaling" to preserve incoming links to it -->
+<a name="13Sample-depth-rescaling"></a>
 <h2>Sample depth
 rescaling</h2>
 
@@ -6017,6 +6449,8 @@ precision.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "13Decoder-gamma-handling" to preserve incoming links to it -->
+<a name="13Decoder-gamma-handling"></a>
 <h2>Decoder gamma
 handling</h2>
 
@@ -6155,6 +6589,8 @@ nearly gives the desired brightness.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "13Decoder-colour-handling" to preserve incoming links to it -->
+<a name="13Decoder-colour-handling"></a>
 <h2>Decoder colour
 handling</h2>
 
@@ -6233,6 +6669,8 @@ was colour-balanced for such a monitor.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "13Background-colour" to preserve incoming links to it -->
+<a name="13Background-colour"></a>
 <h2>Background
 colour</h2>
 
@@ -6277,6 +6715,8 @@ partially-transparent pixels are present.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "13Alpha-channel-processing" to preserve incoming links to it -->
+<a name="13Alpha-channel-processing"></a>
 <h2>Alpha channel
 processing</h2>
 
@@ -6505,6 +6945,8 @@ the dither.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "13Histogram-and-suggested-palette-usage" to preserve incoming links to it -->
+<a name="13Histogram-and-suggested-palette-usage"></a>
 <h2>Histogram and suggested palette usage</h2>
 
 <p>For viewers running on indexed-colour hardware attempting to
@@ -6591,9 +7033,13 @@ used.</p>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
+<!-- Maintain a fragment named "14EditorsExt" to preserve incoming links to it -->
+<a name="14EditorsExt"></a>
 <h2>Editors and extensions</h2>
 
 <section>
+<!-- Maintain a fragment named "14Additional-chunk-types" to preserve incoming links to it -->
+<a name="14Additional-chunk-types"></a>
 <h2>Additional chunk
 types</h2>
 
@@ -6631,6 +7077,8 @@ necessary.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "14Ordering" to preserve incoming links to it -->
+<a name="14Ordering"></a>
 <h2>Behaviour of PNG editors</h2>
 
 <p>A "PNG editor" is defined as a program that reads a PNG
@@ -6739,10 +7187,14 @@ time.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "14Ordering-of-chunks" to preserve incoming links to it -->
+<a name="14Ordering-of-chunks"></a>
 <h2>Ordering of
 chunks</h2>
 
 <section>
+<!-- Maintain a fragment named "14Ordering-of-critical-chunks" to preserve incoming links to it -->
+<a name="14Ordering-of-critical-chunks"></a>
 <h2>Ordering of
 critical chunks</h2>
 
@@ -6756,6 +7208,8 @@ any critical chunk type that it can generate.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "14Ordering-of-ancillary-chunks" to preserve incoming links to it -->
+<a name="14Ordering-of-ancillary-chunks"></a>
 <h2>Ordering of
 ancillary chunks</h2>
 
@@ -6797,11 +7251,17 @@ to assume that the chunk will remain somewhere between <a href=
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section id="conformance">
+<!-- Maintain a fragment named "15Conformance" to preserve incoming links to it -->
+<a name="15Conformance"></a>
 
 <section>
+<!-- Maintain a fragment named "15ConfIntro" to preserve incoming links to it -->
+<a name="15ConfIntro"></a>
 <h2>Introduction</h2>
 
 <section>
+<!-- Maintain a fragment named "15ConfObjectives" to preserve incoming links to it -->
+<a name="15ConfObjectives"></a>
 <h2>Objectives</h2>
 
 <p>This clause addresses conformance of PNG datastreams, PNG
@@ -6825,6 +7285,8 @@ and editors;</li>
 </section>
 
 <section>
+<!-- Maintain a fragment named "15ConfScope" to preserve incoming links to it -->
+<a name="15ConfScope"></a>
 <h2>Scope</h2>
 
 <p>Conformance is defined for PNG datastreams and for PNG
@@ -6842,9 +7304,13 @@ interchange of PNG datastreams.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "15ConformanceConf" to preserve incoming links to it -->
+<a name="15ConformanceConf"></a>
 <h2>Conformance conditions</h2>
 
 <section>
+<!-- Maintain a fragment named "15FileConformance" to preserve incoming links to it -->
+<a name="15FileConformance"></a>
 <h2>Conformance of PNG
 datastreams</h2>
 <p>A PNG datastream conforms to this International Standard if
@@ -6896,6 +7362,8 @@ International Standard.</li>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section>
+<!-- Maintain a fragment named "15ConformanceEncoder" to preserve incoming links to it -->
+<a name="15ConformanceEncoder"></a>
 <h2>Conformance of PNG
 encoders</h2>
 
@@ -6919,6 +7387,8 @@ fields.</li>
 </section>
 
 <section>
+<!-- Maintain a fragment named "15ConformanceDecoder" to preserve incoming links to it -->
+<a name="15ConformanceDecoder"></a>
 <h2>Conformance of PNG
 decoders</h2>
 
@@ -6985,6 +7455,8 @@ ordering rules.</li>
 </section>
 
 <section>
+<!-- Maintain a fragment named "15ConformanceEditor" to preserve incoming links to it -->
+<a name="15ConformanceEditor"></a>
 <h2>Conformance of PNG
 editors</h2>
 
@@ -7021,8 +7493,15 @@ losslessly represents the same reference image.</li>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section class="appendix">
+<!-- Maintain a fragment named "A-Conventions" to preserve incoming links to it -->
+<a name="A-Conventions"></a>
+
+<!-- Maintain a fragment named "IANA-registrations" to preserve incoming links to it -->
+<a name="IANA-registrations"></a>
 <h2>Internet Media Types</h2>
 
+<!-- Maintain a fragment named "image-png-registration" to preserve incoming links to it -->
+<a name="image-png-registration"></a>
 <h2>image/png</h2>
 
 <p>This updates the existing
@@ -7149,7 +7628,11 @@ losslessly represents the same reference image.</li>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section class="appendix informative">
+<!-- Maintain a fragment named "B-NewChunksAppendix" to preserve incoming links to it -->
+<a name="B-NewChunksAppendix"></a>
 <h2 class="Annex">Guidelines for new chunk types</h2>
+<!-- Maintain a fragment named "newchunks" to preserve incoming links to it -->
+<a name="newchunks"></a>
 
 <p>This International Standard allows extension through the
 addition of new chunk types and new interlace, filter, and
@@ -7201,7 +7684,11 @@ relationships.</li>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section class="appendix informative">
+<!-- Maintain a fragment named "C-GammaAppendix" to preserve incoming links to it -->
+<a name="C-GammaAppendix"></a>
 <h2 class="Annex">Gamma and chromaticity</h2>
+<!-- Maintain a fragment named "gammachromaticity" to preserve incoming links to it -->
+<a name="gammachromaticity"></a>
 
 <p>Gamma is a numerical parameter used to describe approximations
 to certain non-linear transfer functions encountered in image
@@ -7310,8 +7797,12 @@ href="#HALL"><span class="bibref">[HALL]</span></a>, <a href=
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section class="appendix informative">
+<!-- Maintain a fragment named "D-CRCAppendix" to preserve incoming links to it -->
+<a name="D-CRCAppendix"></a>
 <h2 class="Annex">Sample Cyclic Redundancy Code
 implementation</h2>
+<!-- Maintain a fragment named "samplecrc" to preserve incoming links to it -->
+<a name="samplecrc"></a>
 
 <p>The following sample code represents a practical
 implementation of the CRC (Cyclic Redundancy Check) employed in
@@ -7427,15 +7918,23 @@ Suffix <tt>L</tt> indicates a long value (at least 32 bits).</td>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section class="appendix informative">
+<!-- Maintain a fragment named "E-Resources" to preserve incoming links to it -->
+<a name="E-Resources"></a>
 <h2 class="Annex">Online resources</h2>
+<!-- Maintain a fragment named "onlineresources" to preserve incoming links to it -->
+<a name="onlineresources"></a>
 
 <section class="introductory">
+<!-- Maintain a fragment named "E-Intro" to preserve incoming links to it -->
+<a name="E-Intro"></a>
 <p>This annex gives the locations of some Internet resources for
 PNG software developers. By the nature of the Internet, the list
 is incomplete and subject to change.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "E-Archive-sites" to preserve incoming links to it -->
+<a name="E-Archive-sites"></a>
 <h2>Archive sites</h2>
 
 <p>This International Standard can be found at
@@ -7444,6 +7943,8 @@ is incomplete and subject to change.</p>
 </section>
 
 <section>
+<!-- Maintain a fragment named "E-icc-profile-specs" to preserve incoming links to it -->
+<a name="E-icc-profile-specs"></a>
 <h2>ICC profile
 specifications</h2>
 
@@ -7452,6 +7953,8 @@ specifications</h2>
 </section>
 
 <section>
+<!-- Maintain a fragment named "E-PNG-home-page" to preserve incoming links to it -->
+<a name="E-PNG-home-page"></a>
 <h2>PNG web site</h2>
 
 <p>There is a World Wide Web site for PNG at <a href=
@@ -7467,6 +7970,8 @@ available from the zlib web site,
 </section>
 
 <section>
+<!-- Maintain a fragment named "E-Sample-implementation" to preserve incoming links to it -->
+<a name="E-Sample-implementation"></a>
 <h2>Sample implementation and
 test images</h2>
 
@@ -7483,7 +7988,11 @@ accessed from the PNG web site.</p>
 </section>
 
 <section class="appendix informative">
+<!-- Maintain a fragment named "F-Relationship" to preserve incoming links to it -->
+<a name="F-Relationship"></a>
 <h2 class="Annex">Relationship to W3C PNG</h2>
+<!-- Maintain a fragment named "relationshiptofirstedition" to preserve incoming links to it -->
+<a name="relationshiptofirstedition"></a>
 
 <p>This International Standard is strongly based on W3C
 Recommendation PNG Specification Version 1.0 <a href=
@@ -7503,25 +8012,38 @@ W3C Recommendation PNG Specification Version 1.0.</p>
 
 <p>The W3C PNG Recommendation was developed with major
 contribution from the following people.</p>
-<h2>Editor (Version 1.0)</h2>
+<h2>
+<!-- Maintain a fragment named "F-Editor10" to preserve incoming links to it -->
+<a name="F-Editor10"></a>Editor (Version 1.0)</h2>
 
 <p>Thomas Boutell, <span class="email">boutell @ boutell.com</span></p>
 
-<h2>Editor (Versions 1.1 and 1.2)</h2>
+<h2>
+<!-- Maintain a fragment named "F-Editor12" to preserve incoming links to it -->
+<a name="F-Editor12"></a>Editor (Versions 1.1 and 1.2)</h2>
 
 <p>Glenn Randers-Pehrson, <span class="email">randeg @ alum.rpi.edu</span></p>
 
-<h2>Contributing Editor (Version
+<h2>
+<!-- Maintain a fragment named "F-ContribEditor10" to preserve incoming links to it -->
+<a name="F-ContribEditor10"></a>
+Contributing Editor (Version
 1.0)</h2>
 
 <p>Tom Lane, <span class="email">tgl @ sss.pgh.pa.us</span></p>
 
-<h2>Contributing Editor (Versions 1.1
+<h2>
+<!-- Maintain a fragment named "F-ContribEditor12" to preserve incoming links to it -->
+<a name="F-ContribEditor12"></a>
+Contributing Editor (Versions 1.1
 and 1.2)</h2>
 
 <p>Adam M. Costello, <span class="email">png-spec.amc @ nicemice.net</span></p>
 
-<h2>Authors (Versions 1.0, 1.1, and 1.2
+<h2>
+<!-- Maintain a fragment named "F-Authors" to preserve incoming links to it -->
+<a name="F-Authors"></a>
+Authors (Versions 1.0, 1.1, and 1.2
 combined)</h2>
 
 <p><strong>Authors' names are presented in alphabetical
@@ -7614,11 +8136,17 @@ class="email">willem @ schaik.com</span></li>
 "email">jeremyw @ evantide.com</span></li>
 </ul>
 
-<h2>List of changes between W3C
+<h2>
+<!-- Maintain a fragment named "F-ChangeList" to preserve incoming links to it -->
+<a name="F-ChangeList"></a>
+List of changes between W3C
 Recommendation PNG Specification Version 1.0 and this
 International Standard</h2>
 
-<h2>Editorial changes</h2>
+<h2>
+<!-- Maintain a fragment named "F-EditorialChanges" to preserve incoming links to it -->
+<a name="F-EditorialChanges"></a>
+Editorial changes</h2>
 
 <p>The document has been reformatted according to the
 requirements of ISO.</p>
@@ -7630,7 +8158,10 @@ requirements of ISO.</p>
 has been defined in a conformance clause.</li>
 </ol>
 
-<h2>Technical changes</h2>
+<h2>
+<!-- Maintain a fragment named "F-TechnicalChanges" to preserve incoming links to it -->
+<a name="F-TechnicalChanges"></a>
+Technical changes</h2>
 
 <!-- <ol start="1"> --><ol>
 <li>New chunk types introduced in PNG version 1.1 and 1.2 have
@@ -7674,74 +8205,110 @@ clarified.</li>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <section class="appendix">
-<h2 class="Annex">Bibliography</h2>
+<h2 class="Annex">
+<!-- Maintain a fragment named "G-References" to preserve incoming links to it -->
+<a name="G-References"></a>
+Bibliography</h2>
 
 <dl>
-<dt><a name="COLOUR-FAQ">[COLOUR-FAQ]</a></dt>
+<dt>
+<!-- Maintain a fragment named "G-COLOUR-FAQ" to preserve incoming links to it -->
+<a name="G-COLOUR-FAQ"></a>
+<a name="COLOUR-FAQ">[COLOUR-FAQ]</a></dt>
 
 <dd>Poynton, C., "Colour FAQ".<br class="xhtml" />
  <a href=
 "http://www.poynton.com/ColorFAQ.html">
 <code>http://www.poynton.com/ColorFAQ.html</code></a></dd>
 
-<dt><a name="COLOUR-TUTORIAL">[COLOUR-TUTORIAL]</a></dt>
+<dt>
+<!-- Maintain a fragment named "G-COLOUR-TUTORIAL" to preserve incoming links to it -->
+<a name="G-COLOUR-TUTORIAL"></a>
+<a name="COLOUR-TUTORIAL">[COLOUR-TUTORIAL]</a></dt>
 
 <dd>PNG Group, "Colour tutorial".<br class="xhtml" />
  <a href=
 "http://www.libpng.org/pub/png/spec/1.2/PNG-ColorAppendix.html"><code>
 http://www.libpng.org/pub/png/spec/1.2/PNG-ColorAppendix.html</code></a></dd>
 
-<dt><a name="GAMMA-TUTORIAL">[GAMMA-TUTORIAL]</a></dt>
+<dt>
+<!-- Maintain a fragment named "G-GAMMA-TUTORIAL" to preserve incoming links to it -->
+<a name="G-GAMMA-TUTORIAL"></a>
+<a name="GAMMA-TUTORIAL">[GAMMA-TUTORIAL]</a></dt>
 
 <dd>PNG Group, "Gamma tutorial".<br class="xhtml" />
  <a href=
 "http://www.libpng.org/pub/png/spec/1.2/PNG-GammaAppendix.html"><code>
 http://www.libpng.org/pub/png/spec/1.2/PNG-GammaAppendix.html</code></a></dd>
 
-<dt><a name="GAMMA-FAQ">[GAMMA-FAQ]</a></dt>
+<dt>
+<!-- Maintain a fragment named "G-GAMMA-FAQ" to preserve incoming links to it -->
+<a name="G-GAMMA-FAQ"></a>
+<a name="GAMMA-FAQ">[GAMMA-FAQ]</a></dt>
 
 <dd>Poynton, C., "Gamma FAQ".<br class="xhtml" />
  <a href=
 "http://www.poynton.com/Poynton-color.html">
 <code>http://www.poynton.com/Poynton-color.html</code></a></dd>
 
-<dt><a name="HALL">[HALL]</a></dt>
+<dt>
+<!-- Maintain a fragment named "G-HALL" to preserve incoming links to it -->
+<a name="G-HALL"></a>
+<a name="HALL">[HALL]</a></dt>
 
 <dd>Hall, Roy, <i>Illumination and Color in Computer Generated
 Imagery</i>. Springer-Verlag, New York, 1989. ISBN
 0-387-96774-5.</dd>
 
-<dt><a name="ICC">[ICC]</a></dt>
+<dt>
+<!-- Maintain a fragment named "G-ICC" to preserve incoming links to it -->
+<a name="G-ICC"></a>
+<a name="ICC">[ICC]</a></dt>
 
 <dd>The International Color Consortium.<br class="xhtml" />
  <a href=
 "http://www.color.org/"><code>http://www.color.org/</code></a></dd>
 
-<dt><a name="ISO-3664">[ISO-3664]</a></dt>
+<dt>
+<!-- Maintain a fragment named "G-ISO-3664" to preserve incoming links to it -->
+<a name="G-ISO-3664"></a>
+<a name="ISO-3664">[ISO-3664]</a></dt>
 
 <dd>ISO 3664:2000, <i>Viewing conditions &mdash; Graphic
 technology and photography</i>.</dd>
 
-<dt><a name="ITU-R-BT709">[ITU-R-BT709]</a></dt>
+<dt>
+<!-- Maintain a fragment named "G-ITU-R-BT709" to preserve incoming links to it -->
+<a name="G-ITU-R-BT709"></a>
+<a name="ITU-R-BT709">[ITU-R-BT709]</a></dt>
 
 <dd>International Telecommunications Union, <i>Basic Parameter
 Values for the HDTV Standard for the Studio and for International
 Programme Exchange</i>, ITU-R Recommendation BT.709 (formerly CCIR
 Rec. 709), 1990.</dd>
 
-<dt><a name="ITU-T-V42">[ITU-T-V42]</a></dt>
+<dt>
+<!-- Maintain a fragment named "G-ITU-T-V42" to preserve incoming links to it -->
+<a name="G-ITU-T-V42"></a>
+<a name="ITU-T-V42">[ITU-T-V42]</a></dt>
 
 <dd>International Telecommunications Union, <i>Error-correcting
 Procedures for DCEs Using Asynchronous-to-Synchronous
 Conversion</i>, ITU-T Recommendation V.42, 1994, Rev. 1.</dd>
 
-<dt><a name="KASSON">[KASSON]</a></dt>
+<dt>
+<!-- Maintain a fragment named "G-KASSON" to preserve incoming links to it -->
+<a name="G-KASSON"></a>
+<a name="KASSON">[KASSON]</a></dt>
 
 <dd>Kasson, J., and W. Plouffe, "An Analysis of Selected Computer
 Interchange Color Spaces", <i>ACM Transactions on Graphics</i>,
 vol. 11, no. 4 , pp. 373-405, 1992.</dd>
 
-<dt><a name="LILLEY">[LILLEY]</a></dt>
+<dt>
+<!-- Maintain a fragment named "G-LILLEY" to preserve incoming links to it -->
+<a name="G-LILLEY"></a>
+<a name="LILLEY">[LILLEY]</a></dt>
 
 <dd>Lilley, C., F. Lin, W.T. Hewitt, and T.L.J. Howard, <i>Colour
 in Computer Graphics</i>. CVCP, Sheffield, 1993. ISBN
@@ -7751,7 +8318,10 @@ in Computer Graphics</i>. CVCP, Sheffield, 1993. ISBN
 "http://www.man.ac.uk/MVC/training/gravigs/colour/"><code>http://www.man.ac.uk/MVC/training/gravigs/colour/</code></a>
 --></dd>
 
-<dt><a name="ROELOFS">[ROELOFS]</a></dt>
+<dt>
+<!-- Maintain a fragment named "G-ROELOFS" to preserve incoming links to it -->
+<a name="G-ROELOFS"></a>
+<a name="ROELOFS">[ROELOFS]</a></dt>
 
 <dd>Roelofs, G., <i>PNG: The Definitive Guide</i>, O'Reilly &amp;
 Associates Inc, Sebastopol, CA, 1999. ISBN 1-56592-542-4.
@@ -7759,13 +8329,19 @@ See also <a href="http://www.libpng.org/pub/png/pngbook.html">
 <code>http://www.libpng.org/pub/png/pngbook.html</code>
 </a></dd>
 
-<dt><a name="PAETH">[PAETH]</a></dt>
+<dt>
+<!-- Maintain a fragment named "G-PAETH" to preserve incoming links to it -->
+<a name="G-PAETH"></a>
+<a name="PAETH">[PAETH]</a></dt>
 
 <dd>Paeth, A.W., "Image File Compression Made Easy", in
 <i>Graphics Gems II</i>, James Arvo, editor. Academic Press, San
 Diego, 1991. ISBN 0-12-064480-0.</dd>
 
-<dt><a name="PNG-1.0">[PNG-1.0]</a></dt>
+<dt>
+<!-- Maintain a fragment named "G-PNG-1.0" to preserve incoming links to it -->
+<a name="G-PNG-1.0"></a>
+<a name="PNG-1.0">[PNG-1.0]</a></dt>
 
 <dd>W3C Recommendation, "PNG (Portable Network Graphics)
 Specification, Version 1.0", 1996. Available in several formats
@@ -7776,7 +8352,10 @@ and from<br class="xhtml" />
  <a href=
 "http://www.libpng.org/pub/png/spec/1.0/"><code>http://www.libpng.org/pub/png/spec/1.0/</code></a></dd>
 
-<dt><a name="PNG-1.1">[PNG-1.1]</a></dt>
+<dt>
+<!-- Maintain a fragment named "G-PNG-1.1" to preserve incoming links to it -->
+<a name="G-PNG-1.1"></a>
+<a name="PNG-1.1">[PNG-1.1]</a></dt>
 
 <dd>PNG Development Group, "PNG (Portable Network Graphics)
 Specification, Version 1.1", 1999. Available
@@ -7784,56 +8363,83 @@ from<br class="xhtml" />
  <a href=
 "http://www.libpng.org/pub/png/spec/1.1/"><code>http://www.libpng.org/pub/png/spec/1.1/</code></a></dd>
 
-<dt><a name="PNG-1.2">[PNG-1.2]</a></dt>
+<dt>
+<!-- Maintain a fragment named "G-PNG-1.2" to preserve incoming links to it -->
+<a name="G-PNG-1.2"></a>
+<a name="PNG-1.2">[PNG-1.2]</a></dt>
 
 <dd>PNG Development Group, "PNG (Portable Network Graphics)
 Specification, Version 1.2", 1999. Available from<br class="xhtml" />
  <a href=
 "http://www.libpng.org/pub/png/spec/1.2/"><code>http://www.libpng.org/pub/png/spec/1.2/</code></a></dd>
 
-<dt><a name="PNG-EXTENSIONS">[PNG-EXTENSIONS]</a></dt>
+<dt>
+<!-- Maintain a fragment named "G-PNG-EXTENSIONS" to preserve incoming links to it -->
+<a name="G-PNG-EXTENSIONS"></a>
+<a name="PNG-EXTENSIONS">[PNG-EXTENSIONS]</a></dt>
 
 <dd>PNG Working Group, "Register of PNG Public Chunks and Keywords".
 Available  from:<br class="xhtml" />
 <a href=
 "https://w3c.github.io/PNG-spec/extensions/Overview.html"><code>https://w3c.github.io/PNG-spec/extensions/Overview.html</code></a></dd>
 
-<dt><a name="POSTSCRIPT">[POSTSCRIPT]</a></dt>
+<dt>
+<!-- Maintain a fragment named "G-POSTSCRIPT" to preserve incoming links to it -->
+<a name="G-POSTSCRIPT"></a>
+<a name="POSTSCRIPT">[POSTSCRIPT]</a></dt>
 
 <dd>Adobe Systems Incorporated, <i>PostScript Language Reference
 Manual</i>, 2nd edition. Addison-Wesley, Reading, 1990. ISBN
 0-201-18127-4.</dd>
 
-<dt><a name="POYNTON">[POYNTON]</a></dt>
+<dt>
+<!-- Maintain a fragment named "G-POYNTON" to preserve incoming links to it -->
+<a name="G-POYNTON"></a>
+<a name="POYNTON">[POYNTON]</a></dt>
 
 <dd>Poynton, Charles A., <i>A Technical Introduction to Digital
 Video</i>. John Wiley and Sons, Inc., New York, 1996. ISBN
 0-471-12253-X.</dd>
 
-<dt><a name="SMPTE-170M">[SMPTE-170M]</a></dt>
+<dt>
+<!-- Maintain a fragment named "G-SMPTE-170M" to preserve incoming links to it -->
+<a name="G-SMPTE-170M"></a>
+<a name="SMPTE-170M">[SMPTE-170M]</a></dt>
 
 <dd>Society of Motion Picture and Television Engineers,
 <i>Television &mdash; Composite Analog Video Signal &mdash; NTSC
 for Studio Applications</i>, SMPTE-170M, 1994.</dd>
 
-<dt><a name="STONE">[STONE]</a></dt>
+<dt>
+<!-- Maintain a fragment named "G-STONE" to preserve incoming links to it -->
+<a name="G-STONE"></a>
+<a name="STONE">[STONE]</a></dt>
 
 <dd>Stone, M.C., W.B. Cowan, and J.C. Beatty, "Color gamut
 mapping and the printing of digital images", <i>ACM Transactions on
 Graphics</i>, vol. 7, no. 3, pp. 249-292, 1988.</dd>
 
-<dt><a name="TIFF-6.0">[TIFF-6.0]</a></dt>
+<dt>
+<!-- Maintain a fragment named "G-TIFF-6.0" to preserve incoming links to it -->
+<a name="G-TIFF-6.0"></a>
+<a name="TIFF-6.0">[TIFF-6.0]</a></dt>
 
 <dd>TIFF<sup>TM</sup> Revision 6.0, Aldus Corporation, June
 1992.</dd>
 
-<dt><a name="TRAVIS">[TRAVIS]</a></dt>
+<dt>
+<!-- Maintain a fragment named "G-TRAVIS" to preserve incoming links to it -->
+<a name="G-TRAVIS"></a>
+<a name="TRAVIS">[TRAVIS]</a></dt>
 
 <dd>Travis, David, <i>Effective Color Displays &mdash; Theory and
 Practice</i>. Academic Press, London, 1991. ISBN
 0-12-697690-2.</dd>
 
-<dt><a name="ZL">[ZL]</a></dt>
+<dt>
+<!-- Maintain a fragment named "G-ZL" to preserve incoming links to it -->
+<a name="G-ZL"></a>
+<a name="ZL">[ZL]</a></dt>
 
 <dd>J. Ziv and A. Lempel, "A Universal Algorithm for Sequential
 Data Compression", <i>IEEE Transactions on Information

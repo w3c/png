@@ -57,6 +57,7 @@ Introduction
     <span class="chunk">sTER</span>, and
     <span class="chunk">fRAc</span> chunks,
     plus the deprecated <span class="chunk">gIFt</span> chunk.
+
     Additional chunk types may be proposed
     for inclusion in this list
     by contacting the PNG specification maintainers at
@@ -64,6 +65,8 @@ Introduction
     or by raising an issue on their
     <a href="https://github.com/w3c/PNG-spec/issues/">GitHub repository</a>
     (preferred).
+    Attention is drawn to the
+    <a href="https://www.w3.org/TR/PNG/#B-NewChunksAppendix">Guidelines for new chunk types</a>.
 
     Chunks described here
     are expected to be less widely supported

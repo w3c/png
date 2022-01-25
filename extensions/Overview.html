@@ -8,7 +8,7 @@
   <link href="https://www.w3.org/2008/site/images/favicon.ico" rel="icon">
   <meta content="Bikeshed version cace53f8c, updated Tue Dec 7 12:12:54 2021 -0800" name="generator">
   <link href="https://w3.org/TR/Overview.html" rel="canonical">
-  <meta content="35cb9b02b476c5c1db89e3069bad80b97f842e79" name="document-revision">
+
 <style>
     span.chunk {
         font-family: Courier, monospace;
@@ -311,7 +311,6 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
        <a href="#K.Keywords"><span class="secno">6.1</span> <span class="content"> Additional Registered Keywords </span></a>
        <ol class="toc">
         <li><a href="#K.Collection"><span class="secno">6.1.1</span> <span class="content"> Collection </span></a>
-        <li><a href="#K.XMP"><span class="secno">6.1.2</span> <span class="content"> XML:com.adobe.xmp </span></a>
        </ol>
       <li><a href="#K.Syntax"><span class="secno">6.2</span> <span class="content"> Keyword Syntax </span></a>
      </ol>
@@ -1035,15 +1034,6 @@ p3 = 32767
     to which the image belongs.
     An image may belong to one or more collections,
     each named by a separate text chunk.</p>
-   <h4 class="heading settled" data-level="6.1.2" id="K.XMP"><span class="secno">6.1.2. </span><span class="content"> XML:com.adobe.xmp </span><a class="self-link" href="#K.XMP"></a></h4>
-   <p>Extensible Metadata Platform (XMP) information,
-    formatted as required by the XMP specification <a data-link-type="biblio" href="#biblio-xmp">[XMP]</a>.
-    The use of <span class="chunk">iTXt</span>,
-    with Compression Flag set to 0,
-    and both Language Tag and
-    Translated Keyword set to the null string,
-    are recommended
-    for XMP compliance.</p>
    <h3 class="heading settled" data-level="6.2" id="K.Syntax"><span class="secno">6.2. </span><span class="content"> Keyword Syntax </span><a class="self-link" href="#K.Syntax"></a></h3>
    <p>All registered textual keywords
     in text chunks
@@ -1926,9 +1916,8 @@ Therefore, transparency information can be lost.</p>
     would be difficult.</p>
    <h2 class="heading settled" data-level="11" id="History"><span class="secno">11. </span><span class="content"> Appendix: Revision History </span><a class="self-link" href="#History"></a></h2>
    <ul>
-    <li>16 Dec 2021 (version 1.6.0)
+    <li>24 Jan Dec 2022 (version 1.6.0)
     <ul>
-     <li>Added XML:com.adobe.xmp keyword for use with XMP
      <li>Moved <span class="chunk">eXIF</span> to main PNG document
      <li>Converted source document to Bikeshed
     </ul>
@@ -2070,6 +2059,4 @@ Therefore, transparency information can be lost.</p>
    <dd>Martin Boßlet, Thomas Kopp. <a href="http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.sample.html"><cite>PNG Digital Signatures: Commented Example</cite></a>. 18 May 2008. URL: <a href="http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.sample.html">http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.sample.html</a>
    <dt id="biblio-gif">[GIF]
    <dd><a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt"><cite>Graphics Interchange Format</cite></a>. 31 July 1990. URL: <a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt">https://www.w3.org/Graphics/GIF/spec-gif89a.txt</a>
-   <dt id="biblio-xmp">[XMP]
-   <dd>Adobe Systems Incorporated. <a href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=57421"><cite>Extensible metadata platform (XMP) specification -- Part 1</cite></a>. 15 February 2012. URL: <a href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=57421">http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=57421</a>
   </dl>

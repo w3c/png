@@ -232,6 +232,12 @@ space &mdash; sRGB,</i> available at <code><a href=
 "Colorimetry, Second Edition". CIE Publication 15.2-1986. ISBN
 3-900-734-00-3.</p>
 
+<p class="NormRefDef" id="2-CIPA-DC-008">CIPA DC-008-2016,
+  Exchangeable image file format for digital still cameras: Exif Version 2.31,
+  <a href="http://www.cipa.jp/std/documents/e/DC-008-Translation-2016-E.pdf">http://www.cipa.jp/std/documents/e/DC-008-Translation-2016-E.pdf</a>
+
+</p>
+
 <!-- Maintain a fragment named "2-ICC-1" to preserve incoming links to it -->
 <p class="NormRefDef" id="2-ICC-1">ICC-1, International
 Color Consortium, "Specification ICC.1:2010-12 (Profile version 4.3.0.0)
@@ -1615,7 +1621,7 @@ specifies its function.</p>
 <section id="4Concepts.FormatTypes">
 <h2>Chunk types</h2>
 
-<p>There are 18 chunk types defined in this International
+<p>There are 19 chunk types defined in this International
 Standard. Chunk types are four-byte sequences chosen so that they
 correspond to readable labels when interpreted in the ISO 646.IRV:1991
 character set. The first four are termed critical chunks, which
@@ -1662,7 +1668,9 @@ which encoders may generate and decoders may interpret.</p>
 "chunk">bKGD</span></a>, <a href="#hist-image-histogram"><span class=
 "chunk">hIST</span></a>, <a href="#phys-physical-pixel-dimensions"><span class=
 "chunk">pHYs</span></a>, <a href="#splt-suggested-palette"><span class=
-"chunk">sPLT</span></a> (see 11.3.5: <a class='Href' href=
+"chunk">sPLT</span></a>, <a href="#exif"><span class=
+"chunk">eXIf</span></a>
+(see 11.3.5: <a class='Href' href=
 '#miscellaneous-information'>Miscellaneous information</a>).</li>
 
 <li>Time information: <a href="#time-image-last-modification-time"><span class=
@@ -4753,6 +4761,94 @@ frequencies with which the colours appear in the PNG image.</p>
 <p>Multiple <span class="chunk">sPLT</span> chunks are permitted,
 but each shall have a different palette name.</p>
 </section>
+
+  <!-- Maintain a fragment named "11eXIf" to preserve incoming links to it -->
+<section id="11eXIf">
+  <h2><span class="chunk">eXIf</span>
+    Exchangeable Image File (Exif) Profile</h2>
+
+  <p>The four-byte chunk type field contains the decimal values</p>
+
+  <pre>
+  101 88 73 102
+  </pre>
+
+  <p>The data segment of the <span class="chunk">eXIf</span> chunk
+    contains an Exif profile in the format specified in
+    "4.7.2 Interoperability Structure of APP1 in Compressed Data"
+    of [[CIPA DC-008-2016]]
+    except that the JPEG APP1 marker, length, and the "Exif ID code"
+    described in 4.7.2(C), i.e., "Exif", NULL, and padding byte,
+    are not included.</p>
+
+  <p>The <span class="chunk">eXIf</span> chunk
+    may appear anywhere between the <span class="chunk">IHDR</span>
+    and <span class="chunk">IEND<span class="chunk"> chunks
+    except between <span class="chunk">IDAT</span> chunks.
+    The <span class="chunk">eXIf</ chunk size is constrained
+    only by the maximum of 2<sup>31</sup>-1 bytes
+    imposed by the PNG specification.
+    Only one <span class="chunk">eXIf</span> chunk is allowed in a PNG datastream.</p>
+
+  <p>The <span class="chunk">eXIf</span> chunk contains
+    metadata concerning the original image data.
+    If the image has been edited subsequent to creation of the Exif profile,
+    this data might no longer apply to the PNG image data.
+    It is recommended that unless a decoder has independent knowledge
+    of the validity of the Exif data,
+    the data should be considered to be of historical value only.
+    It is beyond the scope of this specification
+    to resolve potential conflicts
+    between data in the eXIf chunk and in other PNG chunks. </p>
+
+    <section>
+      <h3><span class="chunk">eXIf</span> General Recommendations</h3>
+
+      <p>While the PNG specification allows the chunk size
+        to be as large as 2<sup>31</sup>-1 bytes,
+        application authors should be aware that,
+        if the Exif profile is going to be written to a JPEG [[JPEG]] datastream,
+        the total length of the <span class="chunk">eXIf</span> chunk data
+        may need to be adjusted to not exceed 2<sup>16</sup>-9 bytes,
+        so it can fit into a JPEG APP1 marker (Exif) segment. </p>
+    </section>
+
+    <section>
+      <h3><span class="chunk">eXIf</span> Recommendations for Decoders</h3>
+
+      <p>The first two bytes of data are either "II" for little-endian (Intel) or "MM" for big-endian (Motorola) byte order. Decoders should check the first four bytes to ensure that they have the following decimal values: </p>
+
+      <pre>73 73 42 0 (ASCII "II", 16-bit little-endian integer 42)</pre>
+
+      <p>or</p>
+
+      <pre>77 77 0 42 (ASCII "MM", 16-bit big-endian integer 42)</pre>
+
+      <p>All other values are reserved for possible future definition. </p>
+    </section>
+
+    <section>
+      <h3><span class="chunk">eXIf</span> Recommendations for Encoders</h3>
+
+      <p>Image editing applications should consider
+        Paragraph E.3 of the Exif Specification [[CIPA DC-008-2016]],
+        which discusses requirements for updating Exif data
+        when the image is changed.
+        Encoders should follow those requirements,
+        but decoders should not assume that it has been accomplished. </p>
+
+      <p>While encoders may choose to update them,
+        there is no expectation that any thumbnails present
+        in the Exif profile have (or have not) been updated
+        if the main image was changed.
+      </p>
+
+    </section>
+
+
+</section>
+
+
 </section>
 
 <!-- Maintain a fragment named "11timestampinfo" to preserve incoming links to it -->

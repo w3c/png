@@ -66,6 +66,14 @@
 	  wgURI: "https://www.w3.org/groups/wg/png",
 	  wgPublicList: "public-png",
 	  wgPatentURI: "https://www.w3.org/groups/wg/png/ipr",
+    localBiblio: {
+    "CIPA DC-008": {
+      title: "Exchangeable image file format for digital still cameras: Exif Version 2.32",
+      href: "https://www.cipa.jp/std/documents/download_e.html?DC-008-Translation-2019-E",
+      date: "2019-05-17",
+      publisher: "CIPA",
+    },
+  },
       };
     </script>
   </head>
@@ -232,11 +240,6 @@ space &mdash; sRGB,</i> available at <code><a href=
 "Colorimetry, Second Edition". CIE Publication 15.2-1986. ISBN
 3-900-734-00-3.</p>
 
-<p class="NormRefDef" id="2-CIPA-DC-008">CIPA DC-008-2016,
-  Exchangeable image file format for digital still cameras: Exif Version 2.31,
-  <a href="http://www.cipa.jp/std/documents/e/DC-008-Translation-2016-E.pdf">http://www.cipa.jp/std/documents/e/DC-008-Translation-2016-E.pdf</a>
-
-</p>
 
 <!-- Maintain a fragment named "2-ICC-1" to preserve incoming links to it -->
 <p class="NormRefDef" id="2-ICC-1">ICC-1, International
@@ -4762,8 +4765,8 @@ frequencies with which the colours appear in the PNG image.</p>
 but each shall have a different palette name.</p>
 </section>
 
-  <!-- Maintain a fragment named "11eXIf" to preserve incoming links to it -->
-<section id="11eXIf">
+  <!-- Maintain a fragment named "eXIf" to preserve incoming links to it -->
+<section id="eXIf">
   <h2><span class="chunk">eXIf</span>
     Exchangeable Image File (Exif) Profile</h2>
 
@@ -4776,7 +4779,7 @@ but each shall have a different palette name.</p>
   <p>The data segment of the <span class="chunk">eXIf</span> chunk
     contains an Exif profile in the format specified in
     "4.7.2 Interoperability Structure of APP1 in Compressed Data"
-    of [[CIPA DC-008-2016]]
+    of [[CIPA DC-008]]
     except that the JPEG APP1 marker, length, and the "Exif ID code"
     described in 4.7.2(C), i.e., "Exif", NULL, and padding byte,
     are not included.</p>
@@ -4831,7 +4834,7 @@ but each shall have a different palette name.</p>
       <h3><span class="chunk">eXIf</span> Recommendations for Encoders</h3>
 
       <p>Image editing applications should consider
-        Paragraph E.3 of the Exif Specification [[CIPA DC-008-2016]],
+        Paragraph E.3 of the Exif Specification [[CIPA DC-008]],
         which discusses requirements for updating Exif data
         when the image is changed.
         Encoders should follow those requirements,

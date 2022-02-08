@@ -67,15 +67,84 @@
 	  wgPublicList: "public-png",
 	  wgPatentURI: "https://www.w3.org/groups/wg/png/ipr",
     localBiblio: {
-    "CIPA DC-008": {
-      title: "Exchangeable image file format for digital still cameras: Exif Version 2.32",
-      href: "https://www.cipa.jp/std/documents/download_e.html?DC-008-Translation-2019-E",
-      date: "2019-05-17",
-      publisher: "CIPA",
+      "CIPA DC-008": {
+        title: "Exchangeable image file format for digital still cameras: Exif Version 2.32",
+        href: "https://www.cipa.jp/std/documents/download_e.html?DC-008-Translation-2019-E",
+        date: "2019-05-17",
+        publisher: "Camera & Imaging Products Association",
+      },
+      "ICC-2": {
+        title: "Specification ICC.2:2019 (Profile version 5.0.0 - iccMAX)",
+        date: "2019",
+        href: "https://www.color.org/specification/ICC.2-2019.pdf",
+        publisher: "International Color Consortium"
+      },
+      "ISO 3309": {
+        title: "ISO/IEC 3309:1993, Information Technology — Telecommunications and information exchange between systems — High-level data link control (HDLC) procedures — Frame structure.",
+        date: "1993",
+        publisher: "ISO"
+      },
+      "ISO 8859-1": {
+        title: "ISO/IEC 8859-1:1998, Information technology — 8-bit single-byte coded graphic character sets — Part 1: Latin alphabet No. 1.",
+        date: "1998"
+      },
+      "ISO 15076-1": {
+        title: "ISO 15076-1:2010 Image technology colour management — Architecture, profile format and data structure — Part 1: Based on ICC.1:2010",
+        href: "https://www.iso.org/standard/54754.html",
+        date: "2010-12",
+        publisher: "ISO"
+      },
+      "ISO 20677-1": {
+        title: "ISO 20677:2019 Image technology colour management — Extensions to architecture, profile format and data structure",
+        href: "https://www.iso.org/standard/68806.html",
+        date: "2019-02",
+        publisher: "ISO"
+      },
+      "ITU-R BT.709": {
+        title: "ITU-R BT.709, SERIES H: AUDIOVISUAL AND MULTIMEDIA SYSTEMS Infrastructure of audiovisual services – Coding of moving video Coding-independent code points for video signal type identification",
+        publisher: "ITU",
+        href: "https://www.itu.int/rec/R-REC-BT.709"
+      },
+      "ITU-R BT.2100": {
+        title: "ITU-R BT.2100, SERIES H: AUDIOVISUAL AND MULTIMEDIA SYSTEMS Infrastructure of audiovisual services – Coding of moving video Coding-independent code points for video signal type identification",
+        publisher: "ITU",
+        href: "https://www.itu.int/rec/R-REC-BT.2100"
+      },
+      "ITU-T H.273": {
+        title: "ITU-T H.273, SERIES H: AUDIOVISUAL AND MULTIMEDIA SYSTEMS Infrastructure of audiovisual services – Coding of moving video Coding-independent code points for video signal type identification",
+        publisher: "ITU",
+        href: "https://www.itu.int/rec/T-REC-H.273"
+      },
+      "ITU-T V.42": {
+        title: "ITU Recommendation V.42 : Error-correcting procedures for DCEs using asynchronous-to-synchronous conversion",
+        href: "https://www.itu.int/rec/T-REC-V.42-200203-I/en",
+        date: "2002-03-29",
+        publisher: "ITU"
+      },
+      "Paeth": {
+        author: "Paeth, A.W",
+        title: "Image File Compression Made Easy, in Graphics Gems II, pp. 93-100",
+        publisher: "Academic Press",
+        date: "1991",
+        isbn: "0-12-064481-9",
+        href: "https://www.sciencedirect.com/science/article/pii/B9780080507545500293"
+      },
+      "PNG-EXTENSIONS": {
+        title: "Extensions to the PNG Third Edition Specification, Version 1.6.0",
+        publisher: "W3C",
+        date: "2021",
+        href: "https://w3c.github.io/PNG-spec/extensions/Overview.html"
+      },
+      "Ziv-Lempel": {
+        authors: ["J. Ziv", "A. Lempel"],
+        title: "A Universal Algorithm for Sequential Data Compression, IEEE Transactions on Information Theory, vol. IT-23, no. 3, pp. 337 - 343",
+        date: "1977-05",
+        publisher: "IEEE",
+        href: "https://ieeexplore.ieee.org/document/1055714",
+      }
     },
-  },
-      };
-    </script>
+  };
+  </script>
   </head>
   <body>
     <section id="abstract">
@@ -525,8 +594,7 @@ used, in compression mode 0, in conforming <a href=
 "#PNG-datastream"><span class="Definition">PNG
 datastreams</span></a>. Deflate is a member of the <a href=
 "#3LZ77"><span class="Definition">LZ77</span></a> family of
-compression methods. It is defined in <a href="#2-RFC-1951"><span
-class="NormRef">[RFC-1951]</span></a>.</dd>
+compression methods. It is defined in [[rfc1951]].</dd>
 
 
 <!-- ************Page Break******************* -->
@@ -642,8 +710,7 @@ original data approximately, rather than exactly.</dd>
 <dfn id="3luminance">
 <dt>luminance</dt></dfn>
 
-<dd>formal definition of luminance is in <a href=
-"#2-CIE-15.2"><span class="NormRef">[CIE-15.2]</span></a>.
+<dd>formal definition of luminance is in [[COLORIMETRY]].
 Informally it is the perceived brightness, or <a href=
 "#3greyscale"><span class="Definition">greyscale</span></a>
 level, of a colour. Luminance and <a href="#3chromaticity"><span
@@ -655,8 +722,7 @@ a perceived colour.</dd>
 <dt>LZ77</dt></dfn>
 
 <dd>data compression algorithm described by Ziv and Lempel in
-their 1977 paper <a href="#ZL"><span class=
-"bibref">[ZL]</span></a>.</dd>
+their 1977 paper [[Ziv-Lempel]].</dd>
 
 <!-- Maintain a fragment named "3networkByteOrder" to preserve incoming links to it -->
 <dfn id="3networkByteOrder">
@@ -930,8 +996,7 @@ nominal white value.</dd>
 href="#3deflate"><span class=
 "Definition">deflate</span></a>-style compression. Also the name
 of a library containing a sample implementation of this method.
-The format is defined in <a href="#2-RFC-1950"><span class=
-"NormRef">[RFC-1950]</span></a>.</dd>
+The format is defined in [[rfc1950]].</dd>
 </dl>
 </section>
 
@@ -1988,10 +2053,9 @@ safe-to-copy chunk.</p>
 algorithm</h2>
 
 <p>CRC fields are calculated using standardized CRC methods with
-pre and post conditioning, as defined by ISO 3309 <a href=
-"#2-ISO-3309"><span class="NormRef">[ISO-3309]</span></a> and
-ITU-T V.42 <a href="#ITU-T-V42"><span class=
-"bibref">[ITU-T-V42]</span></a>. The CRC polynomial employed
+pre and post conditioning, as defined by [[ISO 3309]]
+and [[ITU-T V.42]].
+The CRC polynomial employed
 is</p>
 
 <p>x<sup>32</sup> + x<sup>26</sup> + x<sup>23</sup> +
@@ -2770,8 +2834,8 @@ Paeth</h2>
 the three neighbouring pixels (left, above, upper left), then
 chooses as predictor the neighbouring pixel closest to the
 computed value. The algorithm used in this International Standard
-is an adaptation of the technique due to Alan W. Paeth <a href=
-"#PAETH"><span class="bibref">[PAETH]</span></a>.</p>
+is an adaptation of the technique due to Alan W. Paeth
+[[Paeth]].</p>
 
 <p>The PaethPredictor function is defined in the code below. The
 logic of the function and the locations of the bytes <tt>a</tt>,
@@ -2834,8 +2898,8 @@ registration</span></a>). PNG compression method 0 is
 deflate/inflate compression with a sliding window
 (which is an upper bound on the distances appearing in the
 deflate stream) of at most
-32768 bytes. Deflate compression is an LZ77 derivative <a href=
-"#ZL"><span class="bibref">[ZL]</span></a>.</p>
+32768 bytes. Deflate compression is an LZ77 derivative
+[[Ziv-Lempel]].</p>
 
 <p>Deflate-compressed datastreams within PNG are stored in the
 "zlib" format, which has the structure:</p>
@@ -2864,8 +2928,7 @@ deflate stream) of at most
 </table>
 
 <p>Further details on this format are given in the zlib
-specification <a href="#2-RFC-1950"><span class=
-"NormRef">[RFC-1950]</span></a>.</p>
+specification [[rfc1950]].</p>
 
 <p>For PNG compression method 0, the zlib compression
 method/flags code shall specify method code 8 (deflate
@@ -2890,8 +2953,7 @@ LZ77-compressed data encoded with custom Huffman codes. A marker
 bit in the final block identifies it as the last block, allowing
 the decoder to recognize the end of the compressed datastream.
 Further details on the compression algorithm and the encoding are
-given in the deflate specification <a href="#2-RFC-1951"><span
-class="NormRef">[RFC-1951]</span></a>.</p>
+given in the deflate specification [[rfc1951]].</p>
 
 <p>The check value stored at the end of the zlib datastream is
 calculated on the uncompressed data represented by the
@@ -3498,9 +3560,7 @@ output intensity. Gamma is defined in <a href=
 insufficient. It is also necessary to specify the viewing
 conditions under which the output is desired. For <span class=
 "chunk">gAMA</span> these are the reference viewing conditions of
-the sRGB specification <a href="#2-IEC-61966-2-1"><span class=
-"NormRef">[IEC 61966-2-1]</span></a>, which are based on ISO 3664
-<a href="#ISO-3664"><span class="bibref">[ISO-3664]</span></a>.
+the sRGB specification [[SRGB]].
 Adjustment for different viewing conditions is normally handled
 by a Colour Management System. If the adjustment is not
 performed, the error is usually small. Applications desiring high
@@ -3587,8 +3647,8 @@ profile.</p>
 <p>If the <span class="chunk">iCCP</span> chunk is present, the
 image samples conform to the colour space represented by the
 embedded ICC profile as defined by the International Color
-Consortium <a href="#ICC"><span class=
-"bibref">[ICC]</span></a>. The colour space of the ICC profile
+Consortium [[ICC]][[ISO 15076-1]] or [[ICC-2]][[ISO 20677-1]].
+The colour space of the ICC profile
 shall be an RGB colour space for colour images (PNG colour types
 2, 3, and 6), or a greyscale colour space for greyscale images
 (PNG colour types 0 and 4). A PNG encoder that writes the <span
@@ -3599,13 +3659,12 @@ approximate the ICC profile, to provide compatibility with
 applications that do not use the <span class="chunk">iCCP</span>
 chunk. When the <span class="chunk">iCCP</span> chunk is present,
 PNG decoders that recognize it and are capable of colour
-management <a href="#ICC"><span class="bibref">[ICC]</span></a>
+management
 shall ignore the <a href="#gama-image-gamma"><span class=
 "chunk">gAMA</span></a> and <a href="#chrm-primary-chromaticities-and-white-point"><span class=
 "chunk">cHRM</span></a> chunks and use the <span class=
 "chunk">iCCP</span> chunk instead and interpret it according to
-<a href="#2-ICC-1"><span class="NormRef">[ICC-1]</span></a> and
-<a href="#2-ICC-1A"><span class="NormRef">[ICC-1A]</span></a>.
+[[ICC]] or [[ICC-2]].
 PNG decoders that are used in an environment that is incapable of
 full-fledged colour management should use the <a href=
 "#gama-image-gamma"><span class="chunk">gAMA</span></a> and <a href=
@@ -3739,12 +3798,10 @@ Standard RGB colour space</a></h2>
 </pre>
 
 <p>If the <span class="chunk">sRGB</span> chunk is present, the
-image samples conform to the sRGB colour space <a href=
-"#2-IEC-61966-2-1"><span class="NormRef">[IEC
-61966-2-1]</span></a> and should be displayed using the specified
-rendering intent defined by the International Color Consortium <a
-href="#2-ICC-1"><span class="NormRef">[ICC-1]</span></a> and <a
-href="#2-ICC-1A"><span class="NormRef">[ICC-1A]</span></a>.</p>
+image samples conform to the sRGB colour space [[SRGB]]
+and should be displayed using the specified
+rendering intent defined by the International Color Consortium
+[[ICC]] or [[ICC-2]].</p>
 
 <p>The <span class="chunk">sRGB</span> chunk contains:</p>
 
@@ -3859,14 +3916,14 @@ the following values shall be used.</p>
 
 <p>When the <span class="chunk">sRGB</span> chunk is present, it
 is recommended that decoders that recognize it and are capable of
-colour management <a href="#ICC"><span class=
-"bibref">[ICC]</span></a> ignore the <a href="#gama-image-gamma"><span
+colour management
+ignore the <a href="#gama-image-gamma"><span
 class="chunk">gAMA</span></a> and <a href="#chrm-primary-chromaticities-and-white-point"><span class=
 "chunk">cHRM</span></a> chunks and use the <span class=
 "chunk">sRGB</span> chunk instead. Decoders that recognize the
 <span class="chunk">sRGB</span> chunk but are not capable of
-colour management <a href="#ICC"><span class=
-"bibref">[ICC]</span></a> are recommended to ignore the <a href=
+colour management
+are recommended to ignore the <a href=
 "#gama-image-gamma"><span class="chunk">gAMA</span></a> and <a href=
 "#chrm-primary-chromaticities-and-white-point"><span class="chunk">cHRM</span></a> chunks, and use the
 values given above as if they had appeared in <a href=
@@ -3892,7 +3949,7 @@ Coding-independent code points for video signal type identification</h2>
 <p>If the <span class="chunk">cICP</span> chunk is present, the
   image samples have a specifically defined colour space, transfer function, and signal
   range that should be displayed using the specified rendering intent defined in
-  <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a>
+  [[ITU-T H.273]].
 </p>
 
 <p>The cICP chunk contains:</p>
@@ -3923,23 +3980,22 @@ Coding-independent code points for video signal type identification</h2>
 </table>
 
 
-<p>Coding-Independent Code Points are defined in
-  <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a> and
+<p>Coding-Independent Code Points are defined in [[ITU-T H.273]] and
   are typically embedded in video content and streams to define an explicit
   video rendering. The most common renderings for video imagery are defined in
-  <a href="#2-ITU-R-BT.709"><span class="NormRef">[ITU-R BT.709]</span></a>
-  and <a href="#2-ITU-R-BT.2100"><span class="NormRef">[ITU-R BT.2100]</span></a></p>
+  [[ITU-R BT.709]] and
+  and [[ITU-R BT.2100]].</p>
 
   <p>The cICP chunk contains four decimal values corresponding to
   the colour primaries, transfer function, matrix coefficients and video signal
   range flag for the source imagery. </p>
 
   <p>Note: In Coding-Independent Code Points
-    <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a>, the
+    [[ITU-T H.273]], the
     third video coding point defines matrix coefficients which are used to describe
     conversions from other colour representations to RGB. PNG image samples are
     explicitly RGB, so the matrix coefficients value must be set to "0" which is
-    labeled in <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a>
+    labeled in [[ITU-T H.273]]
     as "RGB Identity". With PNG, decoders will always assume a matrix coefficient
     value of "0" but this value will remain in PNG for forward compatibility.</p>
 
@@ -3951,7 +4007,7 @@ of source content with a video rendering intent">
 <td class="Regular">0</td>
 <td class="Regular">Colour Primaries</td>
 <td class="Regular">Identifies the colour primaries of the source picture as
-  defined in <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a><a</td>
+  defined in [[ITU-T H.273]]</td>
 </tr>
 
 <tr>
@@ -3959,8 +4015,7 @@ of source content with a video rendering intent">
 <td class="Regular">Transfer Characteristics</td>
 <td class="Regular">Identifies the reference opto-electronic transfer
 characteristic function or inverse reference electro-optical transfer
-characteristic function as defined in
-<a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a><a</td>
+characteristic function as defined in [[ITU-T H.273]]</td>
 </tr>
 
 <tr>
@@ -3968,11 +4023,9 @@ characteristic function as defined in
 <td class="Regular">Matrix Coefficients</td>
 
 <td class="Regular">Identifies the matrix coefficients used in deriving luma and
-chroma signals from the green, blue and red as defined in
-<a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a><a</td>.
+chroma signals from the green, blue and red as defined in [[ITU-T H.273]]</td>.
 As noted earlier, since PNG is explicitly RGB, this value must always be set to
-"0" which is labeled as "RGB Identity" in
-<a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a>.
+"0" which is labeled as "RGB Identity" in [[ITU-T H.273]].
 
 </td>
 </tr>
@@ -3981,7 +4034,7 @@ As noted earlier, since PNG is explicitly RGB, this value must always be set to
 <td class="Regular">3</td>
 <td class="Regular">Full Range Flag</td>
 <td class="Regular">Identifies a Full-Range scaling when this value is "1" as defined in
-<a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a><a</td>.
+  [[ITU-T H.273]].</td>
 Currently, PNG is "RGB ONLY" and typically lossless and therefore a value of "1"
 is the default to indicate the the use of full-range signal scaling. There are
 some use-cases where levels below or above nominal signal level (0 or 100%)
@@ -4084,7 +4137,7 @@ with the BT.709 transfer function, Matrix Coefficients (using RGB Identity)and F
 
 <p>When the <span class="chunk">cICP</span> chunk is used, a
 decoder should be capable of producing the proper rendering intent as described in
-<a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a><a</td> and
+[[ITU-T H.273]] and
 it's associated recommendations.</p>
 </section>
 </section>
@@ -4187,8 +4240,7 @@ should be reasonably self-explanatory, in order to minimize the
 chance that the same keyword is used for incompatible purposes by
 different people.)</p>
 
-<p>Keywords shall contain only printable Latin-1 <a href=
-"#2-ISO-8859-1"><span class="NormRef">[ISO-8859-1]</span></a>
+<p>Keywords shall contain only printable Latin-1 [[ISO 8859-1]]
 characters and spaces; that is, only character codes 32-126 and
 161-255 decimal are allowed. To reduce the chances for human
 misreading of a keyword, leading spaces, trailing spaces,
@@ -4203,9 +4255,7 @@ case-sensitive. Keywords are restricted to 1 to 79 bytes in
 length.</p>
 
 <p>For the Creation Time keyword, the date format defined in
-section&#160;5.2.14 of RFC 1123 is suggested, but not required <a
-href="#2-RFC-1123"><span class=
-"NormRef">[RFC-1123]</span></a>.</p>
+section&#160;5.2.14 of RFC 1123 is suggested, but not required [[rfc1123]].</p>
 
 <p>In the <a href="#text-textual-data"><span class="chunk">tEXt</span></a>
 and <a href="#ztxt-compressed-textual-data"><span class="chunk">zTXt</span></a> chunks,
@@ -4216,9 +4266,8 @@ compressed into zlib datastreams using deflate compression (see
 10.3: <a href='#other-uses-of-compression'><span class="xref">Other
 uses of compression</span></a>). The <a href="#itxt-international-textual-data"><span
 class="chunk">iTXt</span></a> chunk can be used to convey
-characters outside the Latin-1 set. It uses the UTF-8 encoding of
-UCS <a href="#2-ISO-10646-1"><span class="NormRef">[ISO/IEC
-10646-1]</span></a>. There is an option to compress text strings
+characters outside the Latin-1 set. It uses the UTF-8 encoding [[rfc3629]].
+There is an option to compress text strings
 in the <a href="#itxt-international-textual-data"><span class="chunk">iTXt</span></a>
 chunk.</p>
 </section>
@@ -4269,9 +4318,8 @@ the text string as described in 11.3.4.2: <a href=
 "#keywords-and-text-strings"><span class="xref">Keywords and text
 strings</span></a>.</p>
 
-<p>Text is interpreted according to the Latin-1 character set <a
-href="#2-ISO-8859-1"><span class=
-"NormRef">[ISO-8859-1]</span></a>. The text string may contain
+<p>Text is interpreted according to the Latin-1 character set [[ISO 8859-1]].
+The text string may contain
 any Latin-1 character. Newlines in the text string should be
 represented by a single linefeed character (decimal 10).
 Characters other than those defined in Latin-1 plus the linefeed
@@ -4417,21 +4465,17 @@ compression</span></a>). For uncompressed text, encoders shall
 set the compression method to 0, and decoders shall ignore
 it.</p>
 
-<p>The language tag defined in <a href="#2-RFC-3066"><span class=
-"NormRef">[RFC-3066]</span></a>
+<p>The language tag defined in [[rfc3066]]
 indicates the human language used by the translated keyword and
 the text. Unlike the keyword, the language tag is
-case-insensitive. It is an ISO 646.IRV:1991 <a href="#2-ISO-646"><span
-class="NormRef">[ISO 646]</span></a> string consisting of
+case-insensitive. It is an ISO 646.IRV:1991 [[ISO 646]] string consisting of
 hyphen-separated words of 1-8 alphanumeric characters each (for example cn,
 en-uk, no-bok, x-klingon, x-KlInGoN). If the first word is two or three
-letters long, it is an ISO language code <a href=
-"#2-ISO-639"><span class="NormRef">[ISO-639]</span></a>. If the
+letters long, it is an ISO language code [[ISO 639]]. If the
 language tag is empty, the language is unspecified.</p>
 
-<p>The translated keyword and text both use the UTF-8 encoding of
-UCS <a href="#2-ISO-10646-1"><span class="NormRef">[ISO/IEC
-10646-1]</span></a>, and neither shall contain a zero byte (null
+<p>The translated keyword and text both use the UTF-8 encoding [[rfc3629]],
+and neither shall contain a zero byte (null
 character). The text, unlike other textual data in this chunk, is
 not null-terminated; its length is derived from the chunk
 length.</p>
@@ -4942,14 +4986,11 @@ handling</h2>
 "xref">Gamma and chromaticity</span></a> for a brief introduction
 to gamma issues.</p>
 
-<p>PNG encoders capable of full colour management <a href=
-"#ICC"><span class="bibref">[ICC]</span></a> will perform more
+<p>PNG encoders capable of full colour management will perform more
 sophisticated calculations than those described here and may
 choose to use the <a href="#iccp-embedded-icc-profile"><span class=
 "chunk">iCCP</span></a> chunk. If it is known that the image
-samples conform to the sRGB specification <a href=
-"#2-IEC-61966-2-1"><span class="NormRef">[IEC
-61966-2-1]</span></a>, encoders are strongly encouraged to write
+samples conform to the sRGB specification [[SRGB]], encoders are strongly encouraged to write
 the <a href="#srgb-standard-colour-space"><span class="chunk">sRGB</span></a> chunk
 without performing additional gamma handling. In both cases it is
 recommended that an appropriate <a href="#gama-image-gamma"><span class=
@@ -5138,14 +5179,11 @@ handling</h2>
 "xref">Gamma and chromaticity</span></a> for references to colour
 issues.</p>
 
-<p>PNG encoders capable of full colour management <a href=
-"#ICC"><span class="bibref">[ICC]</span></a> will perform more
+<p>PNG encoders capable of full colour management will perform more
 sophisticated calculations than those described here and may
 choose to use the <a href="#iccp-embedded-icc-profile"><span class=
 "chunk">iCCP</span></a> chunk. If it is known that the image
-samples conform to the sRGB specification <a href=
-"#2-IEC-61966-2-1"><span class="NormRef">[IEC
-61966-2-1]</span></a>, PNG encoders are strongly encouraged to
+samples conform to the sRGB specification [[SRGB]], PNG encoders are strongly encouraged to
 use the <a href="#srgb-standard-colour-space"><span class="chunk">sRGB</span></a>
 chunk.</p>
 
@@ -5162,11 +5200,8 @@ class="chunk">gAMA</span></a> chunk is missing.</p>
 
 <p>There are a number of recommendations and standards for
 primaries and white points, some of which are linked to
-particular technologies, for example the CCIR 709 standard <a
-href="#ITU-R-BT709"><span class=
-"bibref">[ITU-R-BT709]</span></a> and the SMPTE-C standard <a
-href="#SMPTE-170M"><span class=
-"bibref">[SMPTE-170M]</span></a>.</p>
+particular technologies, for example the CCIR 709 standard [[ITU-R BT.709]]
+and the SMPTE-C standard [[SMPTE 170M]].</p>
 
 <p>There are three cases that need to be considered:</p>
 
@@ -5212,15 +5247,13 @@ should be used to construct a <a href="#chrm-primary-chromaticities-and-white-po
 
 <p>A few image formats store calibration information, which can
 be used to fill in the <a href="#chrm-primary-chromaticities-and-white-point"><span class=
-"chunk">cHRM</span></a> chunk. For example, TIFF 6.0 files <a
-href="#TIFF-6.0"><span class="bibref">[TIFF-6.0]</span></a> can
+"chunk">cHRM</span></a> chunk. For example, TIFF 6.0 files [[?TIFF 6.0]] can
 optionally store calibration information, which if present should
 be used to construct the <a href="#chrm-primary-chromaticities-and-white-point"><span class=
 "chunk">cHRM</span></a> chunk.</p>
 
 <p>Video created with recent video equipment probably uses the
-CCIR 709 primaries and D65 white point <a href=
-"#ITU-R-BT709"><span class="bibref">[ITU-R-BT709]</span></a>,
+CCIR 709 primaries and D65 white point [[ITU-R BT.709]],
 which are given in <a href="#12-table121"><span class=
 "tabref">Table 12.1</span></a>.</p>
 
@@ -5256,8 +5289,7 @@ primaries and D65 whitepoint</b></a></caption>
 </tr>
 </table>
 
-<p>An older but still very popular video standard is SMPTE-C <a
-href="#SMPTE-170M"><span class="bibref">[SMPTE-170M]</span></a>
+<p>An older but still very popular video standard is SMPTE-C [[SMPTE 170M]]
 given in <a href="#12-table122"><span class="tabref">Table
 12.2</span></a>.</p>
 
@@ -6239,8 +6271,7 @@ data received so far. One simple yet pleasing effect can be
 obtained by expanding each received pixel to fill a rectangle
 covering the yet-to-be-transmitted pixel positions below and to
 the right of the received pixel. This process can be described by
-the following ISO C code <a href="#2-ISO-9899"><span class=
-"NormRef">[ISO-9899]</span></a>:</p>
+the following ISO C code [[ISO 9899]]:</p>
 
 <pre>
 /*
@@ -6414,8 +6445,7 @@ handling</h2>
 "xref">Gamma and chromaticity</span></a> for a brief introduction
 to gamma issues.</p>
 
-<p>Viewers capable of full colour management <a href=
-"#ICC"><span class="bibref">[ICC]</span></a> will perform more
+<p>Viewers capable of full colour management  will perform more
 sophisticated calculations than those described here.</p>
 
 <p>For an image display program to produce correct tone
@@ -6497,9 +6527,7 @@ being displayed against a nonuniform background.</p>
 
 <p>If floating-point calculations are not possible, gamma
 correction tables can be computed using integer arithmetic and a
-precomputed table of logarithms. Example code appears in <a href=
-"#PNG-EXTENSIONS"><span class=
-"bibref">[PNG-EXTENSIONS]</span></a>.</p>
+precomputed table of logarithms. Example code appears in [[PNG-EXTENSIONS]].</p>
 
 <p>When the incoming image has unknown gamma (<a href=
 "#gama-image-gamma"><span class="chunk">gAMA</span></a>, <a href=
@@ -6599,8 +6627,7 @@ the facilities in Level 2 PostScript to specify image data in
 calibrated RGB space or in a device-independent colour space such
 as XYZ. This will provide better colour fidelity than a simple
 RGB to CMYK conversion. The PostScript Language Reference manual
-<a href="#POSTSCRIPT"><span class=
-"bibref">[POSTSCRIPT]</span></a> gives examples. Such decoders
+[[?POSTSCRIPT]] gives examples. Such decoders
 are responsible for implementing gamut mapping between source RGB
 (specified in the <a href="#chrm-primary-chromaticities-and-white-point"><span class=
 "chunk">cHRM</span></a> chunk) and the target printer. The
@@ -6616,9 +6643,7 @@ upon the monitor type, i.e. the values in the <a href=
 "#chrm-primary-chromaticities-and-white-point"><span class="chunk">cHRM</span></a> chunk. PNG decoders
 may wish to do this for PNG datastreams with no <a href=
 "#chrm-primary-chromaticities-and-white-point"><span class="chunk">cHRM</span></a> chunk. In this
-case, a reasonable default would be the CCIR 709 primaries <a
-href="#ITU-R-BT709"><span class=
-"bibref">[ITU-R-BT709]</span></a>. The original NTSC primaries
+case, a reasonable default would be the CCIR 709 primaries [[ITU-R BT.709]]. The original NTSC primaries
 should <strong>not</strong> be used unless the PNG image really
 was colour-balanced for such a monitor.</p>
 </section>
@@ -6705,8 +6730,7 @@ should be made without first checking.</p>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<p>This code is ISO C <a href="#2-ISO-9899"><span class=
-"NormRef">[ISO-9899]</span></a>, with line numbers added for
+<p>This code is ISO C [[ISO-9899]], with line numbers added for
 reference in the comments below.</p>
 
 <pre>
@@ -7735,13 +7759,10 @@ implementation</h2>
 
 <p>The following sample code represents a practical
 implementation of the CRC (Cyclic Redundancy Check) employed in
-PNG chunks. (See also ISO 3309 <a href="#2-ISO-3309"><span class=
-"NormRef">[ISO-3309]</span></a> or ITU-T V.42 <a href=
-"#ITU-T-V42"><span class="bibref">[ITU-T-V42]</span></a> for a
+PNG chunks. (See also ISO 3309 [[ISO 3309]] or ITU-T V.42 [[ITU-T-V42]] for a
 formal specification.)</p>
 
-<p>The sample code is in the ISO C <a href="#2-ISO-9899"><span
-class="NormRef">[ISO-9899]</span></a> programming language. The
+<p>The sample code is in the ISO C [[ISO 9899]] programming language. The
 hints in <a href="#D-tabled1"><span class="tabref">Table
 D.1</span></a> may help non-C users to read the code more
 easily.</p>
@@ -8181,9 +8202,9 @@ Imagery</i>. Springer-Verlag, New York, 1989. ISBN
 <dd>ISO 3664:2000, <i>Viewing conditions &mdash; Graphic
 technology and photography</i>.</dd>
 
-<!-- Maintain a fragment named "G-ITU-R-BT709" to preserve incoming links to it -->
-<dt id="G-ITU-R-BT709">
-<a name="ITU-R-BT709">[ITU-R-BT709]</a></dt>
+<!-- Maintain a fragment named "G-ITU-R-BT.709" to preserve incoming links to it -->
+<dt id="G-ITU-R-BT.709">
+<a name="ITU-R BT.709">[ITU-R BT.709]</a></dt>
 
 <dd>International Telecommunications Union, <i>Basic Parameter
 Values for the HDTV Standard for the Studio and for International
@@ -8295,11 +8316,11 @@ Video</i>. John Wiley and Sons, Inc., New York, 1996. ISBN
 
 <!-- Maintain a fragment named "G-SMPTE-170M" to preserve incoming links to it -->
 <dt id="G-SMPTE-170M">
-<a name="SMPTE-170M">[SMPTE-170M]</a></dt>
+<a name="SMPTE 170M">[SMPTE 170M]</a></dt>
 
 <dd>Society of Motion Picture and Television Engineers,
 <i>Television &mdash; Composite Analog Video Signal &mdash; NTSC
-for Studio Applications</i>, SMPTE-170M, 1994.</dd>
+for Studio Applications</i>, SMPTE 170M, 1994.</dd>
 
 <!-- Maintain a fragment named "G-STONE" to preserve incoming links to it -->
 <dt id="G-STONE">
@@ -8311,7 +8332,7 @@ Graphics</i>, vol. 7, no. 3, pp. 249-292, 1988.</dd>
 
 <!-- Maintain a fragment named "G-TIFF-6.0" to preserve incoming links to it -->
 <dt id="G-TIFF-6.0">
-<a name="TIFF-6.0">[TIFF-6.0]</a></dt>
+<a name="TIFF 6.0">[TIFF 6.0]</a></dt>
 
 <dd>TIFF<sup>TM</sup> Revision 6.0, Aldus Corporation, June
 1992.</dd>

@@ -1172,9 +1172,12 @@ sample, sample depth, pixel, and channel" />
 <h2>Colour spaces</h2>
 
 <p>The RGB colour space in which colour samples are situated may
-be specified in one of three ways:</p>
+be specified in one of four ways:</p>
 
 <!-- <ol start="1"> --><ol>
+
+<li>by CICP metadata;</li>
+
 <li>by an ICC profile;</li>
 
 <li>by specifying explicitly that the colour space is sRGB when
@@ -1185,16 +1188,17 @@ chromaticities of the red, green, and blue primaries used in the
 image and the reference white point.</li>
 </ol>
 
-<p>For high-end applications the first method provides the most
-flexibility and control. The second method enables one particular
-colour space to be indicated. The third method enables the exact
+<p>For high-end applications the first two methods provides the most
+flexibility and control. The third method enables one particular
+colour space to be indicated. The fourth method enables the exact
 chromaticities of the RGB data to be specified, along with the
 gamma correction (the power function relating the desired display
 output with the image samples) to be applied (see Annex C: <a
 href="#C-GammaAppendix"><span class="xref">Gamma and
 chromaticity</span></a>). It is recommended that explicit gamma
-information also be provided when either the first or second
-method is used, for use by PNG decoders that do not support full
+information also be provided when either the first, second or third
+method is used, for use by PNG decoders that do not support
+CICP metadata, full
 ICC profiles or the sRGB colour space. Such PNG decoders can
 still make sensible use of gamma information. PNG decoders are
 strongly encouraged to use this information, plus information

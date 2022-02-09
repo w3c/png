@@ -13,7 +13,6 @@
       var respecConfig = {
           specStatus: "ED",
 	  shortName: "PNG",
-	  subtitle: "Information technology — Computer graphics and image processing — Portable Network Graphics (PNG): Functional specification. ISO/IEC 15948:2003 (E)",
 	  copyrightStart: "1996",
 	  previousPublishDate: "2003-11-10",
 	  previousMaturity: "REC",
@@ -173,7 +172,7 @@ with these exceptions:
 
 <p></p>
 
-<p>The design goals for this International Standard were:</p>
+<p>The design goals for this specification were:</p>
 
 <ol>
 <li>Portability: encoding, decoding, and transmission should be
@@ -229,7 +228,7 @@ that are not freely available.</li>
 <h2 id="1Scope">Scope</h2>
 
 
-<p>This International Standard specifies a datastream and an
+<p>This specification specifies a datastream and an
 associated file format, Portable Network Graphics (PNG,
 pronounced "ping"), for a lossless, portable, compressed
 individual computer graphics image transmitted across the
@@ -408,7 +407,7 @@ abbreviated terms</h2>
 <!-- Maintain a fragment named "3Definitions" to preserve incoming links to it -->
 <h2 id="3Definitions">Definitions</h2>
 
-<p>For the purposes of this International Standard the following
+<p>For the purposes of this specification the following
 definitions apply.</p>
 
 <dl>
@@ -631,7 +630,7 @@ screen by loading the image into the frame buffer.</dd>
 
 <dd>exponent that describes approximations to certain non-linear
 transfer functions encountered in image capture and reproduction.
-Within this International Standard, gamma is the exponent in the
+Within this specification, gamma is the exponent in the
 transfer function from <tt>display_output</tt> to
 <tt>image_sample</tt>
 <pre>
@@ -1069,7 +1068,7 @@ class="Definition">byte</span></a> value.</dd>
 <!-- Maintain a fragment named "4Concepts.Sourceimage" to preserve incoming links to it -->
 <h2 name="4Concepts.Sourceimage">Images</h2>
 
-<p>This International Standard specifies the PNG datastream, and
+<p>This specification specifies the PNG datastream, and
 places some requirements on PNG encoders, which generate PNG
 datastreams, PNG decoders, which interpret PNG datastreams, and
 PNG editors, which transform one PNG datastream into another. It
@@ -1478,7 +1477,7 @@ sequence of reduced images where the first image defines a coarse
 view and subsequent images enhance this coarse view until the
 last image completes the PNG image. The set of reduced images is
 also called an interlaced PNG image. Two interlace methods are
-defined in this International Standard. The first method is a
+defined in this specification. The first method is a
 null method; pixels are stored sequentially from left to right
 and scanlines from top to bottom. The second method makes
 multiple scans over the image to produce a sequence of seven
@@ -1698,7 +1697,7 @@ Standard. Chunk types are four-byte sequences chosen so that they
 correspond to readable labels when interpreted in the ISO 646.IRV:1991
 character set. The first four are termed critical chunks, which
 shall be understood and correctly interpreted according to the
-provisions of this International Standard. These are:</p>
+provisions of this specification. These are:</p>
 
 <!-- <ol start="1"> --><ol>
 <li><a href="#ihdr-image-header"><span class="chunk">IHDR</span></a>: image
@@ -1782,7 +1781,7 @@ registration</h2>
 
 <p>
   For some facilities in PNG, there are a number of alternatives
-  defined, and this International Standard allows other
+  defined, and this specification allows other
   alternatives to be defined by registration.
 </p>
 
@@ -1937,7 +1936,7 @@ are assigned so that a decoder can determine some properties of a
 chunk even when the type is not recognized. These rules allow
 safe, flexible extension of the PNG format, by allowing a PNG
 decoder to decide what to do when it encounters an unknown chunk.
-(The chunk types standardized in this International Standard are
+(The chunk types standardized in this specification are
 defined in clause&#160;11: <a href="#chunk-specifications"><span class=
 "xref">Chunk specifications</span></a>, and the way to add
 non-standard chunks is defined in clause&#160;14: <a href=
@@ -2092,7 +2091,7 @@ are listed in <a href="#table53"><span class="tabref">Table
 "#lattice-diagram-with-plte"></a> and <a
 href="#lattice-diagram-without-plte"></a>.
 These lattice diagrams represent the constraints on positioning
-imposed by this International Standard. The lines in the diagrams
+imposed by this specification. The lines in the diagrams
 define partial ordering relationships. Chunks higher up shall
 appear before chunks lower down. Chunks which are horizontally
 aligned and appear between two other chunk types (higher and
@@ -2664,7 +2663,7 @@ improving compression. PNG allows for a number of filter methods.
 All the reduced
 images in an interlaced image shall use a single filter method.
 Only filter method 0
-is defined by this International Standard. Other filter methods
+is defined by this specification. Other filter methods
 are reserved for future standardization (see 4.9 <a href=
 "#extension-and-registration"><span class="xref">Extension and
 registration</span></a>).
@@ -2837,7 +2836,7 @@ Paeth</h2>
 <p>The Paeth filter function computes a simple linear function of
 the three neighbouring pixels (left, above, upper left), then
 chooses as predictor the neighbouring pixel closest to the
-computed value. The algorithm used in this International Standard
+computed value. The algorithm used in this specification
 is an adaptation of the technique due to Alan W. Paeth
 [[Paeth]].</p>
 
@@ -3193,19 +3192,19 @@ sample depth is always 8 bits (see 4.4: <a href=
 <p>Compression method is a single-byte integer that indicates the
 method used to compress the image data. Only compression method 0
 (deflate/inflate compression with a sliding window of at most
-32768 bytes) is defined in this International Standard. All
+32768 bytes) is defined in this specification. All
 conforming PNG images shall be compressed with this scheme.</p>
 
 <p>Filter method is a single-byte integer that indicates the
 preprocessing method applied to the image data before
 compression. Only filter method 0 (adaptive filtering with five
-basic filter types) is defined in this International Standard.
+basic filter types) is defined in this specification.
 See clause&#160;9: <a href="#filtering-2"><span class=
 "xref">Filtering</span></a> for details.</p>
 
 <p>Interlace method is a single-byte integer that indicates the
 transmission order of the image data. Two values are defined in
-this International Standard: 0 (no interlace) or 1 (Adam7
+this specification: 0 (no interlace) or 1 (Adam7
 interlace). See clause&#160;8: <a href="#interlacing-and-pass-extraction"><span class=
 "xref">Interlacing and pass extraction</span></a> for
 details.</p>
@@ -3332,7 +3331,7 @@ PNG datastream. The chunk's data field is empty.</p>
 
 <!-- Maintain a fragment named "11AcGen" to preserve incoming links to it -->
 <section class="introductory" id="11AcGen">
-<p>The ancillary chunks defined in this International Standard
+<p>The ancillary chunks defined in this specification
 are listed in the order in 4.7.2: <a href=
 "#chunk-types"><span class="xref">Chunk
 types</span></a>. This is not the order in which they appear in a
@@ -3640,7 +3639,7 @@ the profile. It is case-sensitive. Profile names shall contain
 only printable Latin-1 characters and spaces (only character
 codes 32-126 and 161-255 decimal are allowed). Leading, trailing,
 and consecutive spaces are not permitted. The only compression
-method defined in this International Standard is method 0 (zlib
+method defined in this specification is method 0 (zlib
 datastream with deflate compression, see 10.3: <a href=
 '#other-uses-of-compression'><span class="xref">Other uses of
 compression</span></a>). The compression method entry is followed
@@ -4462,7 +4461,7 @@ strings</span></a>.</p>
 <p>The compression flag is 0 for uncompressed text, 1 for
 compressed text. Only the text field may be compressed. The
 compression method entry defines the compression method used. The
-only compression method defined in this International Standard is
+only compression method defined in this specification is
 0 (zlib datastream with deflate compression, see 10.3: <a href=
 '#other-uses-of-compression'><span class="xref">Other uses of
 compression</span></a>). For uncompressed text, encoders shall
@@ -5607,7 +5606,7 @@ decoders that do not recognize the <a href="#splt-suggested-palette"><span class
 <section id="12Interlacing">
 <h2>Interlacing</h2>
 
-<p>This International Standard defines two interlace methods,
+<p>This specification defines two interlace methods,
 one of which is no interlacing. Interlacing provides a convenient
 basis from which decoders can progressively display an image, as
 described in 13.8: <a href="#interlacing-and-progressive-display"><span class=
@@ -5646,7 +5645,7 @@ gained with PNG.</p>
 
 <p>Filtering according to these recommendations is effective in
 conjunction with either of the two interlace methods defined in
-this International Standard.</p>
+this specification.</p>
 </section>
 
 <!-- Maintain a fragment named "12Compression" to preserve incoming links to it -->
@@ -5882,7 +5881,7 @@ this definition, the three classes are as follows:</p>
 
 <!-- <ol start="4"> --><ol>
 <li>known chunks, which necessarily includes all of the critical
-chunks defined in this International Standard (<a href=
+chunks defined in this specification (<a href=
 "#ihdr-image-header"><span class="chunk">IHDR</span></a>, <a href=
 "#plte-palette"><span class="chunk">PLTE</span></a>, <a href=
 "#idat-image-data"><span class="chunk">IDAT</span></a>, <a href=
@@ -6217,12 +6216,12 @@ creating lines in excess of 79 characters.</p>
 <section id="13Decompression">
 <h2>Decompression</h2>
 
-<p>The compression technique used in this International Standard
+<p>The compression technique used in this specification
 does not require the entire compressed datastream to be available
 before decompression can start. Display can therefore commence
 before the entire decompressed datastream is available. It is
 extremely unlikely that any general purpose compression methods
-in future versions of this International Standard will not have
+in future versions of this specification will not have
 this property.</p>
 
 <p>It is important to emphasize that <a href="#idat-image-data"><span
@@ -7021,7 +7020,7 @@ used.</p>
 <h2>Additional chunk
 types</h2>
 
-<p>The provisions of this International Standard may be extended
+<p>The provisions of this specification may be extended
 by adding new chunk types, which may be either private or public.
 Applications can use private chunk types to carry data that is
 not of interest to other people's applications.</p>
@@ -7244,7 +7243,7 @@ are:</p>
 
 <!-- <ol start="1"> --><ol>
 <li>to promote interoperability by eliminating arbitrary subsets
-of, or extensions to, this International Standard;</li>
+of, or extensions to, this specification;</li>
 
 <li>to promote uniformity in the development of conformance
 tests;</li>
@@ -7282,7 +7281,7 @@ interchange of PNG datastreams.</p>
 <section id="15FileConformance">
 <h2>Conformance of PNG
 datastreams</h2>
-<p>A PNG datastream conforms to this International Standard if
+<p>A PNG datastream conforms to this specification if
 the following conditions are met.</p>
 <ol>
 <li>The PNG datastream contains a PNG signature as the first
@@ -7306,22 +7305,22 @@ following the PNG signature;</li>
 class="chunk">IEND</span></a> chunk.</li>
 
 <li>All chunks contained therein match the specification of the
-corresponding chunk types of this International Standard.
+corresponding chunk types of this specification.
 The PNG datastream shall obey the relationships among chunk types
-defined in this International Standard.</li>
+defined in this specification.</li>
 
 <li>The sequence of chunks in the PNG datastream obeys the
 ordering relationship specified in this International
 Standard.</li>
 
 <li>All field values in the PNG datastream obey the relationships
-specified in this International Standard producing the structure
-specified in this International Standard.</li>
+specified in this specification producing the structure
+specified in this specification.</li>
 
 <li>No chunks appear in the PNG datastream other than those
-specified in this International Standard or those defined
+specified in this specification or those defined
 according to the rules for creating new chunk types as defined in
-this International Standard.</li>
+this specification.</li>
 
 <li>The PNG datastream is encoded according to the rules of this
 International Standard.</li>
@@ -7335,7 +7334,7 @@ International Standard.</li>
 <h2>Conformance of PNG
 encoders</h2>
 
-<p>A PNG encoder conforms to this International Standard if it
+<p>A PNG encoder conforms to this specification if it
 satisfies the following conditions.</p>
 
 <!-- <ol start="1"> --><ol>
@@ -7359,7 +7358,7 @@ fields.</li>
 <h2>Conformance of PNG
 decoders</h2>
 
-<p>A PNG decoder conforms to this International Standard if it
+<p>A PNG decoder conforms to this specification if it
 satisfies the following conditions.</p>
 
 <!-- <ol start="1"> --><ol>
@@ -7426,7 +7425,7 @@ ordering rules.</li>
 <h2>Conformance of PNG
 editors</h2>
 
-<p>A PNG editor conforms to this International Standard if it satisfies the following conditions.</p>
+<p>A PNG editor conforms to this specification if it satisfies the following conditions.</p>
 
 <ol>
 <li>It conforms to the requirements for PNG encoders.</li>
@@ -7595,7 +7594,7 @@ losslessly represents the same reference image.</li>
 <!-- Maintain a fragment named "newchunks" to preserve incoming links to it -->
 <h2 class="Annex" id="newchunks">Guidelines for new chunk types</h2>
 
-<p>This International Standard allows extension through the
+<p>This specification allows extension through the
 addition of new chunk types and new interlace, filter, and
 compression methods. Such extensions might be made to the
 standard either for experimental purposes or by organizations for
@@ -7661,7 +7660,7 @@ constant)<sup>exponent</sup></tt></p>
 (CRT) displays. It is often assumed, as in this International
 Standard, that the constant is zero.</p>
 
-<p>For the purposes of this International Standard, it is
+<p>For the purposes of this specification, it is
 convenient to consider five places in a general image pipeline at
 which non-linear transfer functions may occur and which may be
 modelled by power laws. The characteristic exponent associated
@@ -7887,7 +7886,7 @@ is incomplete and subject to change.</p>
 <section id="E-Archive-sites">
 <h2>Archive sites</h2>
 
-<p>This International Standard can be found at
+<p>This specification can be found at
 <a href="http://www.w3.org/TR/2003/REC-PNG-20031110/index.html"
 ><code>http://www.w3.org/TR/2003/REC-PNG-20031110/index.html</code></a>.</p>
 </section>
@@ -7939,7 +7938,7 @@ accessed from the PNG web site.</p>
 <!-- Maintain a fragment named "relationshiptofirstedition" to preserve incoming links to it -->
 <h2 class="Annex" id="relationshiptofirstedition">Relationship to W3C PNG</h2>
 
-<p>This International Standard is strongly based on W3C
+<p>This specification is strongly based on W3C
 Recommendation PNG Specification Version 1.0 <a href=
 "#PNG-1.0">[PNG-1.0]</a> which was reviewed by W3C members,
 approved as a W3C Recommendation, and published in October 1996

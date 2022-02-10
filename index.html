@@ -1676,10 +1676,16 @@ image.</td>
 <section id="4Concepts.Format">
 <h2>PNG datastream</h2>
 
-<p>As specified at <a href="#5DataRep"></a>, the PNG datastream consists of a
-PNG signature followed by a sequence of chunks. Each chunk has a chunk type
-which specifies its function.</p>
-
+<!-- Maintain a fragment named "4Concepts.FormatChunks" to preserve incoming links to it -->
+<section id="4Concepts.FormatChunks">
+<h2>Chunks</h2>
+  
+<p>The PNG datastream consists of a PNG signature (see 5.2: <a
+href="#png-signature"><span class="xref">PNG
+signature</span></a>) followed by a sequence of chunks (see
+clause&#160;11: <a href="#chunk-specifications"><span class="xref">Chunk
+specifications</span></a>). Each chunk has a chunk type which
+specifies its function.</p>
 </section>
 
 <!-- Maintain a fragment named "4Concepts.FormatTypes" to preserve incoming links to it -->
@@ -1878,7 +1884,7 @@ it would not be correct to represent the chunk type <a href=
 "#idat-image-data"><span class="chunk">IDAT</span></a> by the equivalents
 of those letters in the UCS 2 character set. Additional naming
 conventions for chunk types are discussed in 5.4: <a href=
-"#chunk-naming-conventions"><span class="xref">Chunk naming
+"#5Chunk-naming-conventions"><span class="xref">Chunk naming
 conventions</span></a>.</td>
 </tr>
 
@@ -1908,7 +1914,7 @@ aligned on any boundaries larger than bytes.</p>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <!-- Maintain a fragment named "5Chunk-naming-conventions" to preserve incoming links to it -->
-<section id="chunk-naming-conventions">
+<section id="5Chunk-naming-conventions">
 <h2>Chunk naming conventions</h2>
 
 <p>Chunk types are chosen to be meaningful names when the bytes
@@ -2293,7 +2299,7 @@ class="chunk">PLTE</span></a> in datastream</figcaption>
 <section id="sec-defining-public-chunks">
   <h3>General</h3>
 
-  <p>All chunks, private and publicm SHOULD be listed at [[png-reg]].</a>
+  <p>All chunks, private and publicm SHOULD be listed at [[PNG-EXTENSIONS]].</a>
 
 </section>
 
@@ -2326,7 +2332,7 @@ class="chunk">PLTE</span></a> in datastream</figcaption>
     class= "chunk">tEXt</span></a> chunk SHOULD BE used and corresponding
     keyword SHOULD BE used and a suitable keyword defined.</p>
 
-    <p>Listing private chunks at [[png-reg]] reduces, but does not eliminate,
+    <p>Listing private chunks at [[PNG-EXTENSIONS]] reduces, but does not eliminate,
     the chance that the same private chunk is used for incompatible purposes by
     different applications.If a private chunk type is used, additional
     identifying information SHOULD BE be stored at the beginning of the chunk
@@ -4253,7 +4259,7 @@ interest.</p>
   incompatible purposes by different applications.</li>
 </ul>
 
-<p>Keywords of general interest SHOULD be listed in [[png-reg]].</p>
+<p>Keywords of general interest SHOULD be listed in [[PNG-EXTENSIONS]].</p>
   
 <p>Keywords shall contain only printable Latin-1 [[ISO 8859-1]]
 characters and spaces; that is, only character codes 32-126 and
@@ -5840,7 +5846,7 @@ type is 0)</li>
 chunk type is 1)</li>
 </ol>
 
-<p>See <a href="#chunk-naming-conventions"></a> for a description
+<p>See <a href="#5Chunk-naming-conventions"></a> for a description
 of chunk naming conventions.</p>
 
 <!-- ************Page Break******************* -->
@@ -6968,28 +6974,16 @@ used.</p>
 <!-- ************Page Break******************* -->
 <!-- Maintain a fragment named "14EditorsExt" to preserve incoming links to it -->
 <section id="14EditorsExt">
-<h2>Editors and extensions</h2>
+<h2>Editors</h2>
 
 <!-- Maintain a fragment named "14Additional-chunk-types" to preserve incoming links to it -->
 <section id="14Additional-chunk-types">
-<h2>Additional chunk
-types</h2>
+<h2>Additional chunk types</h2>
 
-<p>The provisions of this specification may be extended
-by adding new chunk types, which may be either private or public.
-Applications can use private chunk types to carry data that is
-not of interest to other people's applications.</p>
-
-<p>Decoders shall be prepared to encounter unrecognized public or
-private chunk types. The chunk naming conventions (see 5.4:
-<a href="#chunk-naming-conventions"><span class="xref">Chunk
-naming conventions</span></a>) enable critical/ancillary,
-public/private, and safe/unsafe to copy chunks to be
-distinguished.</p>
-
-<p>Authors are encouraged to use those chunk types whenever appropriate for
-their applications.</p>
-
+<p>Authors are encouraged to look existing chunk types in both this
+specification and [[PNG-EXTENSIONS]] before considering introducing a new chunk
+types. The chunk types at [[PNG-EXTENSIONS]] are expected to be less widely
+supported than those defined in this specification.</p>
 
 </section>
 
@@ -7090,7 +7084,7 @@ general rules instead.</li>
 input datastream to an output datastream, but they apply in the
 obvious way if a PNG datastream is modified in place.</p>
 
-<p>See also 5.4: <a href="#chunk-naming-conventions"><span
+<p>See also 5.4: <a href="#5Chunk-naming-conventions"><span
 class="xref">Chunk naming conventions</span></a>.</p>
 
 <p>PNG editors that do not change the image data should not
@@ -7312,7 +7306,7 @@ in any PNG datastream that conforms to this International
 Standard.</li>
 
 <li>Unknown chunk types are handled as described in <a href=
-"#chunk-naming-conventions"><span class="xref">5.4 Chunk naming
+"#5Chunk-naming-conventions"><span class="xref">5.4 Chunk naming
 conventions</span></a>. An unknown chunk type is <strong>not</strong>
 treated as an error unless it is a critical chunk.</li>
 
@@ -7403,8 +7397,8 @@ losslessly represents the same reference image.</li>
 <!-- Maintain a fragment named "IANA-registrations" to preserve incoming links to it -->
 <h2 id="IANA-registrations">Internet Media Types</h2>
 
-<!-- Maintain a fragment named "image-png-registration" to preserve incoming links to it -->
-<h2 id="image-png-registration">image/png</h2>
+<!-- Maintain a fragment named "image-PNG-EXTENSIONSistration" to preserve incoming links to it -->
+<h2 id="image-PNG-EXTENSIONSistration">image/png</h2>
 
 <p>This updates the existing
   <span class="tt">image/png</span> Internet Media type, under the

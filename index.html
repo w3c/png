@@ -1781,19 +1781,9 @@ handling</span></a>.</p>
 <p>The PNG format exposes several extension points:</p>
 
 <ul>
-<li>chunk type;</li>
-
-<li>text keyword.</li>
-
-<li>undefined field values less than 128;</li>
-
-<li>filter method;</li>
-
-<li>filter type;</li>
-
-<li>interlace method; and</li>
-
-<li>compression method.</li>
+<li><a href="#sec-defining-new-chunks">chunk type</a>;</li>
+<li><a href="#text-textual-data">text keyword</a>; and</li>
+<li><a>private field values</a>.</li>
 </ul>
 
 <p>Some of these extension points are reserved by W3C, while others are
@@ -2354,6 +2344,30 @@ class="chunk">PLTE</span></a> in datastream</figcaption>
 
 </section>
 </section>
+
+<section id="sec-field-value-extensibility">
+  <h2>Private field values</h2>
+
+  <p>Values greater than or equal to 128 in the following fields are
+  <dfn>private field values</dfn>:</p>
+  <ul>
+    <li><a href="#10CompressionCM0">compression method</a></li>
+    <li><a href="#8InterlaceMethods">interlace method</a></li>
+    <li><a href="#9FtIntro">filter method</a></li>
+  </ul>
+
+  <p>These <a>private field values</a> are neither defined nor reserved by this
+  specification.</p>
+  
+  <p><a>Private field values</a>  MAY be used for experimental or private
+  semantics.</p>
+
+  <p><a>Private field values</a> SHOULD NOT appear in publicly available
+  software or datastreams since they can result in datastreams that are
+  unreadable by PNG decoders as detailed at <a href="#13Decoders"></a>.</p>
+
+</section>  
+
 </section>
 
 <!-- ************Page Break******************* -->
@@ -7281,7 +7295,7 @@ samples up to the next higher sample depth that is allowed by
 PNG. The data are scaled in such a way that the high-order bits
 match the original data.</li>
 
-<li>Numbers greater than 127 are used when encoding experimental
+<li><a>Private field values</a> are used when encoding experimental
 or private definitions of values for any of the method or type
 fields.</li>
 </ol>

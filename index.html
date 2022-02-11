@@ -1679,7 +1679,7 @@ image.</td>
 <!-- Maintain a fragment named "4Concepts.FormatChunks" to preserve incoming links to it -->
 <section id="4Concepts.FormatChunks">
 <h2>Chunks</h2>
-
+  
 <p>The PNG datastream consists of a PNG signature (see 5.2: <a
 href="#png-signature"><span class="xref">PNG
 signature</span></a>) followed by a sequence of chunks (see
@@ -1775,42 +1775,19 @@ handling</span></a>.</p>
 </section>
 
 <!-- Maintain a fragment named "4Concepts.Registration" to preserve incoming links to it -->
-<section id="4Concepts.Registration">
-<h2>Extension and
-registration</h2>
+<section class="informative" id="4Concepts.Registration">
+<h2>Extensions</h2>
 
-<p>
-  For some facilities in PNG, there are a number of alternatives
-  defined, and this specification allows other
-  alternatives to be defined by registration.
-</p>
+<p>The PNG format exposes several extension points:</p>
 
-<p>The following entities may be registered:</p>
+<ul>
+<li><a href="#sec-defining-new-chunks">chunk type</a>;</li>
+<li><a href="#text-textual-data">text keyword</a>; and</li>
+<li><a>private field values</a>.</li>
+</ul>
 
-<!-- <ol start="1"> --><ol>
-<li>chunk type;</li>
-
-<li>text keyword.</li>
-</ol>
-
-<p>The following entities are reserved for future
-standardization:</p>
-
-<!-- <ol start="4"> --><ol>
-<li>undefined field values less than 128;</li>
-
-<li>filter method;</li>
-
-<li>filter type;</li>
-
-<li>interlace method;</li>
-
-<li>compression method.</li>
-</ol>
-
-<p>
-  Registration requests should be made by
-  <a href="https://github.com/w3c/PNG-spec/issues">raising an issue on GitHub</a>.
+<p>Some of these extension points are reserved by W3C, while others are
+available for private use.
 </p>
 </section>
 </section>
@@ -1820,11 +1797,12 @@ standardization:</p>
 <h2>Datastream structure</h2>
 
 <!-- Maintain a fragment named "5Introduction" to preserve incoming links to it -->
-<section class="introductory" id="5Introduction">
-<p>This clause defines the PNG signature and the basic properties
-of chunks. Individual chunk types are discussed in clause&#160;11: <a
-href="#chunk-specifications"><span class="xref">Chunk
-specifications</span></a>.</p>
+<section id="5Introduction">
+
+<h2>Introduction</h2>
+
+<p>The PNG datastream consists of a PNG signature followed by a sequence of chunks.</p>
+
 </section>
 
 <!-- Maintain a fragment named "5PNG-file-signature" to preserve incoming links to it -->
@@ -1896,7 +1874,7 @@ it would not be correct to represent the chunk type <a href=
 "#idat-image-data"><span class="chunk">IDAT</span></a> by the equivalents
 of those letters in the UCS 2 character set. Additional naming
 conventions for chunk types are discussed in 5.4: <a href=
-"#chunk-naming-conventions"><span class="xref">Chunk naming
+"#5Chunk-naming-conventions"><span class="xref">Chunk naming
 conventions</span></a>.</td>
 </tr>
 
@@ -1927,33 +1905,24 @@ aligned on any boundaries larger than bytes.</p>
 <!-- ************Page Break******************* -->
 <!-- Maintain a fragment named "5Chunk-naming-conventions" to preserve incoming links to it -->
 <section id="5Chunk-naming-conventions">
-<h2>Chunk naming
-conventions</h2>
+<h2>Chunk naming conventions</h2>
 
 <p>Chunk types are chosen to be meaningful names when the bytes
 of the chunk type are interpreted as ISO 646 letters. Chunk types
 are assigned so that a decoder can determine some properties of a
 chunk even when the type is not recognized. These rules allow
 safe, flexible extension of the PNG format, by allowing a PNG
-decoder to decide what to do when it encounters an unknown chunk.
-(The chunk types standardized in this specification are
-defined in clause&#160;11: <a href="#chunk-specifications"><span class=
-"xref">Chunk specifications</span></a>, and the way to add
-non-standard chunks is defined in clause&#160;14: <a href=
-"#editors-and-extensions"><span class="xref">Editors and
-extensions</span></a>.) The naming rules are normally of interest
-only when the decoder does not recognize the chunk's type.</p>
+decoder to decide what to do when it encounters an unknown chunk.</p>
+
+<p>The naming rules are normally of interest only when the decoder does not
+recognize the chunk's type, as specified at <a href="#13Decoders"></a>.</p>
 
 <p>Four bits of the chunk type, the property bits, namely bit 5
 (value 32) of each byte, are used to convey chunk properties.
 This choice means that a human can read off the assigned
 properties according to whether the letter corresponding to each
 byte of the chunk type is uppercase (bit 5 is 0) or lowercase
-(bit 5 is 1). However, decoders should test the properties of an
-unknown chunk type by numerically testing the specified bits;
-testing whether a character is uppercase or lowercase is
-inefficient, and even incorrect if a locale-specific case
-definition is used.</p>
+(bit 5 is 1).</p>
 
 <p>The property bits are an inherent part of the chunk type, and
 hence are fixed for any chunk type. Thus, <span class=
@@ -1992,22 +1961,12 @@ and proceed to display the image.</td>
 <td class="Regular">Private bit: second byte</td>
 <td class="Regular">0 (uppercase) = public,<br class="xhtml" />
  1 (lowercase) = private.</td>
-<td class="Regular">A public chunk is one that is defined in this International
-Standard or is registered in the list of PNG special-purpose
-public chunk types maintained by the Registration Authority (see
-4.9 <a href="extension-and-registration"><span class=
-"xref">Extension and registration</span></a>). Applications can
-also define private (unregistered) chunk types for their own
-purposes. The names of private chunks have a lowercase second
-letter, while public chunks will always be assigned names with
-uppercase second letters. Decoders do not need to test the
-private-chunk property bit, since it has no functional
-significance; it is simply an administrative convenience to
-ensure that public and private chunk names will not conflict. See
-clause&#160;14: <a href="#editors-and-extensions"><span class="xref">Editors and
-extensions</span></a> and 12.10.2: <a href=
-"#use-of-private-chunks"><span class="xref">Use of private
-chunks</span></a>.</td>
+<td class="Regular">Public chunks are reserved for definition by the W3C. The
+definition of private chunks is specified at <a
+href="#12Use-of-private-chunks"></a>. The names of private chunks have a
+lowercase second letter, while the names of public chunks have uppercase second
+letters.
+</td>
 </tr>
 
 <tr>
@@ -2323,6 +2282,92 @@ class="chunk">PLTE</span></a> in datastream</figcaption>
 </figure>
 
 </section>
+
+<section id="sec-defining-new-chunks">
+<h2>Defining chunks</h2>
+
+<section id="sec-defining-public-chunks">
+  <h3>General</h3>
+
+  <p>All chunks, private and publicm SHOULD be listed at [[PNG-EXTENSIONS]].</a>
+
+</section>
+
+<section id="sec-defining-public-chunks">
+  <h3>Defining public chunks</h3>
+
+  <p>Public chunks are reserved for definition by the W3C.</p>
+
+  <p>Public chunks are intended for broad use consistent with the philosophy of PNG.</p>
+
+  <p>Organizations and applications are encouraged to submit any chunk that meet
+  the criteria above for definition as a public chunk by the <a>PNG WG</a>.</p>
+
+  <p>The definition as a public chunk is neither automatic nor immediate. A
+  proposed public chunk type SHALL not be used in publicly available software or
+  datastreams until defined as such.</p>
+    
+  <p>The definition of new critical chunk types is discouraged unless
+  necessary.</p>
+</section>
+
+<section id="sec-defining-private-chunks">
+  <h3>Defining private chunks</h3>
+
+    <p>Organizations and applications MAY define private chunks for private and
+    experimental use.</p>
+
+    <p>A private chunk SHOULD NOT be defined merely to carry textual information
+    of interest to a human user. Instead <a href="#text-textual-data"><span
+    class= "chunk">tEXt</span></a> chunk SHOULD BE used and corresponding
+    keyword SHOULD BE used and a suitable keyword defined.</p>
+
+    <p>Listing private chunks at [[PNG-EXTENSIONS]] reduces, but does not eliminate,
+    the chance that the same private chunk is used for incompatible purposes by
+    different applications.If a private chunk type is used, additional
+    identifying information SHOULD BE be stored at the beginning of the chunk
+    data to further reduce the risk of conflicts.</p>
+      
+    <p>An ancillary chunk type, not a critical chunk type, SHOULD be used for
+    all private chunks that store information that is not absolutely essential
+    to view the image.</p>
+    
+    <p>Private critical chunks SHOULD NOT be defined because PNG datastreams
+    containing such chunks are not portable, and SHOULD NOT be used in publicly
+    available software or datastreams. If a private critical chunk is essential
+    for an application, it SHOULD appear near the start of the datastream, so
+    that a standard decoder need not read very far before discovering that it
+    cannot handle the datastream.</p>
+
+    <p>See <a href="#newchunks"></a> for additional guidelines on defining
+    private chunks.</p>
+
+</section>
+</section>
+
+<section id="sec-field-value-extensibility">
+  <h2>Private field values</h2>
+
+  <p>Values greater than or equal to 128 in the following fields are
+  <dfn>private field values</dfn>:</p>
+  <ul>
+    <li><a href="#10CompressionCM0">compression method</a></li>
+    <li><a href="#8InterlaceMethods">interlace method</a></li>
+    <li><a href="#9FtIntro">filter method</a></li>
+  </ul>
+
+  <p>These <a>private field values</a> are neither defined nor reserved by this
+  specification.</p>
+  
+  <p><a>Private field values</a>  MAY be used for experimental or private
+  semantics.</p>
+
+  <p><a>Private field values</a> SHOULD NOT appear in publicly available
+  software or datastreams since they can result in datastreams that are
+  unreadable by PNG decoders as detailed at <a href="#13Decoders"></a>.</p>
+
+</section>  
+
 </section>
 
 <!-- ************Page Break******************* -->
@@ -2594,9 +2639,7 @@ display much more rapidly.</p>
 
 <p>Two interlace methods are defined in this International
 Standard, methods 0 and 1. Other values of interlace method are
-reserved for future standardization (see 4.9: <a href=
-"#extension-and-registration"><span class="xref">Extension and
-registration</span></a>).</p>
+reserved for future standardization.</p>
 
 <p>With interlace method 0, the null method, pixels are extracted
 sequentially from left to right, and scanlines sequentially from
@@ -2664,9 +2707,7 @@ All the reduced
 images in an interlaced image shall use a single filter method.
 Only filter method 0
 is defined by this specification. Other filter methods
-are reserved for future standardization (see 4.9 <a href=
-"#extension-and-registration"><span class="xref">Extension and
-registration</span></a>).
+are reserved for future standardization.
 Filter method 0 provides a set of five filter types,
 and individual scanlines in each reduced image may use
 different filter types.</p>
@@ -2895,9 +2936,7 @@ encoder and decoder.</p>
 
 <p>Only PNG compression method 0 is defined by this International
 Standard. Other values of compression method are reserved for
-future standardization (see 4.9: <a href=
-"#extension-and-registration"><span class="xref">Extension and
-registration</span></a>). PNG compression method 0 is
+future standardization. PNG compression method 0 is
 deflate/inflate compression with a sliding window
 (which is an upper bound on the distances appearing in the
 deflate stream) of at most
@@ -3024,19 +3063,9 @@ an independent zlib datastream (see 10.1: <a href=
 <h2>Chunk specifications</h2>
 
 <!-- Maintain a fragment named "11Introduction" to preserve incoming links to it -->
-<section class="introductory" id="11Introduction">
-<p>The PNG datastream consists of a PNG signature (see 5.2: <a
-href="#png-signature"><span class="xref">PNG
-signature</span></a>) followed by a sequence of chunks. Each
-chunk has a chunk type which specifies its function. This clause
-defines the PNG chunk types standardized in this International
-Standard. The PNG datastream structure is defined in clause&#160;5: <a
-href="#datastream-structure"><span class="xref">Datastream
-structure</span></a>. This also defines the order in which chunks
-may appear. For details specific to encoders see 12.11: <a href=
-"#chunking-1"><span class="xref">Chunking</span></a>.
-For details specific to decoders see 13.5: <a href=
-"#chunking-2"><span class="xref">Chunking</span></a>.</p>
+<section id="11Introduction">
+<h3>General</h3>
+<p>This clause defines chunk used in this specification.</p>
 </section>
 
 <!-- Maintain a fragment named "11Critical-chunks" to preserve incoming links to it -->
@@ -4163,8 +4192,7 @@ more than one with the same keyword is permitted.</p>
 
 <!-- Maintain a fragment named "11keywords" to preserve incoming links to it -->
 <section id="11keywords">
-<h2>Keywords and text
-strings</h2>
+<h2>Keywords and text strings</h2>
 
 <p>The following keywords are predefined and should be used where
 appropriate.</p>
@@ -4234,15 +4262,19 @@ appropriate.</p>
 </tr>
 </table>
 
-<p>Other keywords may be defined for other purposes. Keywords of
-general interest can be registered with the PNG Registration
-Authority (see 4.9 <a href="#extension-and-registration"><span class=
-"xref">Extension and registration</span></a>). It is also
-permitted to use private unregistered keywords. (Private keywords
-should be reasonably self-explanatory, in order to minimize the
-chance that the same keyword is used for incompatible purposes by
-different people.)</p>
+<p>Other keywords MAY be defined by any application for private or general
+interest.</p>
 
+<p>Keywords SHOULD be .</p>
+<ul>
+  <li>reasonably self-explanatory, since the aim is to let other human users
+  understand what the chunk contains; and</li>
+  <li>chosen to minimize the chance that the same keyword is used for
+  incompatible purposes by different applications.</li>
+</ul>
+
+<p>Keywords of general interest SHOULD be listed in [[PNG-EXTENSIONS]].</p>
+  
 <p>Keywords shall contain only printable Latin-1 [[ISO 8859-1]]
 characters and spaces; that is, only character codes 32-126 and
 161-255 decimal are allowed. To reduce the chances for human
@@ -4380,9 +4412,7 @@ chunk is recommended for storing large blocks of text.</p>
 compressed. The compression method entry defines the compression
 method used. The only value defined in this International
 Standard is 0 (deflate/inflate compression). Other values are
-reserved for future standardization (see 4.9 <a href=
-"#extension-and-registration"><span class="xref">Extension and
-registration</span></a>). The compression method entry is
+reserved for future standardization. The compression method entry is
 followed by the compressed text datastream that makes up the
 remainder of the chunk. For compression method 0, this datastream
 is a zlib datastream with deflate compression (see 10.3: <a href=
@@ -5708,81 +5738,19 @@ title, appear before the <a href="#idat-image-data"><span class=
 
 <!-- Maintain a fragment named "12Use-of-private-chunks" to preserve incoming links to it -->
 <section id="12Use-of-private-chunks">
-<h2>Use of private
-chunks</h2>
+<h2>Use of private chunks</h2>
 
-<p>
-Chunk types are classified as public or private depending on bit 5
-of the second byte (the private bit), and classified as critical or
-ancillary depending on bit 5 of the first byte (the ancillary bit).
-See 5.4: <a href=
-"#chunk-naming-conventions"><span class="xref">Chunk naming
-conventions</span></a>.
-</p>
+<p>Encoders MAY use private chunks to carry information
+that need not be understood by other applications.</p>
 
-<p>Applications can use PNG private chunks to carry information
-that need not be understood by other applications. Such chunks
-shall be given private chunk types,
-to ensure that they can never conflict
-with any future public chunk definition. However, there is no
-guarantee that some other application will not use the same
-private chunk type. If a private chunk type is used, it is
-prudent to store additional identifying information at the
-beginning of the chunk data.</p>
-
-<p>An ancillary chunk type, not a critical chunk type, should be
-used for all private chunks that store information that is not
-absolutely essential to view the image. Creation of private
-critical chunks is discouraged because PNG datastreams containing
-such chunks are not portable. Such chunks should not be used in
-publicly available software or datastreams. If private critical
-chunks are essential for an application, it is recommended that
-one appear near the start of the datastream, so that a standard
-decoder need not read very far before discovering that it cannot
-handle the datastream.</p>
-
-<p>If other organizations need to understand a new chunk type, it
-should be submitted to the Registration Authority (see 4.9: <a
-href="#extension-and-registration"><span class="xref">Extension and
-registration</span></a>). A proposed public chunk type
-shall not be used in publicly available software or
-datastreams until registration has been approved.</p>
-
-<p>If an ancillary chunk contains textual information that might
-be of interest to a human user, a special chunk type should not
-be defined for it. Instead a <a href="#text-textual-data"><span class=
-"chunk">tEXt</span></a> chunk should be used and a suitable
-keyword defined. The information will then be available to other
-users.</p>
-
-<p>Keywords in <a href="#text-textual-data"><span class=
-"chunk">tEXt</span></a> chunks should be reasonably
-self-explanatory, since the aim is to let other users understand
-what the chunk contains. If generally useful, new keywords should
-be registered with the Registration Authority (see 4.9: <a href=
-"#extension-and-registration"><span class="xref">Extension and
-registration</span></a>). However, it is permissible to use
-keywords without registering them first.</p>
 </section>
 
 <!-- Maintain a fragment named "12Private-type-and-method-codes" to preserve incoming links to it -->
 <section id="12Private-type-and-method-codes">
-<h2>Private
-type and method codes</h2>
+<h2>Use of non-reserved field values</h2>
 
-<p>This specification defines the meaning of only some of the
-possible values of some fields. For example, only compression
-method 0 and filter types 0 through 4 are defined in this
-International Standard. Numbers greater than 127 shall be used
-when inventing experimental or private definitions of values for
-any of these fields. Numbers below 128 are reserved for possible
-public extensions of this specification through future
-standardization (see 4.9 <a href="#extension-and-registration"><span
-class="xref">Extension and registration</span></a>). The use of
-private type codes may render a datastream unreadable by standard
-decoders. Such codes are strongly discouraged except for
-experimental purposes, and should not appear in publicly
-available software or datastreams.</p>
+<p>Encoders MAY use non-reserved field values for experimental or private use.</p>
+
 </section>
 
 <!-- Maintain a fragment named "12Ancillary" to preserve incoming links to it -->
@@ -5804,6 +5772,7 @@ ancillary chunks when the information is available.</p>
 
 <!-- Maintain a fragment named "13Introduction" to preserve incoming links to it -->
 <section class="introductory" id="13Introduction">
+<h2>Introduction</h2>
 <p>This clause gives some requirements and recommendations for PNG
 decoder behaviour and viewer behaviour. A viewer presents the
 decoded PNG image to the user. Since viewer and decoder behaviour
@@ -5819,9 +5788,6 @@ depth, colour type, compression method, filter method, and
 interlace method that are explicitly defined in this
 International Standard.</p>
 
-<p>All ancillary chunks are optional; decoders may ignore them.
-However, decoders are encouraged to interpret these chunks when
-appropriate and feasible.</p>
 </section>
 
 <section>
@@ -5894,8 +5860,7 @@ type is 0)</li>
 chunk type is 1)</li>
 </ol>
 
-<p>See 5.4: <a href="#chunk-naming-conventions"><span class=
-"xref">Chunk naming conventions</span></a> for a full description
+<p>See <a href="#5Chunk-naming-conventions"></a> for a description
 of chunk naming conventions.</p>
 
 <!-- ************Page Break******************* -->
@@ -5983,10 +5948,8 @@ possibility.</p>
 href="#error-handling-1"><span class="xref">Error
 handling</span></a>.</p>
 
-<p>Unknown chunk types shall be handled as described in 5.4: <a
-href="#chunk-naming-conventions"><span class="xref">Chunk naming
-conventions</span></a>. An unknown chunk type is <strong>not</strong> to
-be treated as an error unless it is a critical chunk.</p>
+<p> An unknown chunk type is <strong>not</strong> to be treated as an error
+unless it is a critical chunk.</p>
 
 <p>The chunk type can be checked for plausibility by seeing
 whether all four bytes are in the range codes 65-90 and 97-122
@@ -6039,12 +6002,10 @@ malicious code. But there is no known risk that such malicious
 code could be executed on the recipient's computer as a result of
 decoding the PNG image.</p>
 
-<p>The possible security risks associated with future chunk types
-cannot be specified at this time. Security issues will be
-considered by the Registration Authority when evaluating chunks
-proposed for registration as public chunks. There is no
-additional security risk associated with unknown or unimplemented
-chunk types, because such chunks will be ignored, or at most be
+<p>The possible security risks associated with future chunk types cannot be
+specified at this time. Security issues will be considered when defining future
+public chunks. There is no additional security risk associated with unknown or
+unimplemented chunk types, because such chunks will be ignored, or at most be
 copied into another PNG datastream.</p>
 
 <p>The <a href="#itxt-international-textual-data"><span class="chunk">iTXt</span></a>, <a
@@ -6098,11 +6059,25 @@ encountering an unknown chunk in which the ancillary bit is 0,
 indicating a critical chunk, shall indicate to the user that the
 image contains information it cannot safely interpret.</p>
 
-<p>(Decoders should not flag an error if the reserved bit is set
+<p>Decoders should test the properties of an unknown chunk type by numerically
+testing the specified bits. Testing whether a character is uppercase or
+lowercase is inefficient, and even incorrect if a locale-specific case
+definition is used.</p>
+
+<p>Decoders should not flag an error if the reserved bit is set
 to 1, however, as some future version of the PNG specification
 could define a meaning for this bit. It is sufficient to treat a
 chunk with this bit set in the same way as any other unknown
-chunk type.)</p>
+chunk type.</p>
+
+<p>Decoders do not need to test the chunk type private bit, since it has no
+functional significance and is used to avoid conflicts between chunks defined by
+W3C and those defined privately.</p>
+
+<p>All ancillary chunks are optional; decoders may ignore them.
+  However, decoders are encouraged to interpret these chunks when
+  appropriate and feasible.</p>
+
 </section>
 
 <!-- Maintain a fragment named "13Pixel-dimensions" to preserve incoming links to it -->
@@ -7013,44 +6988,17 @@ used.</p>
 <!-- ************Page Break******************* -->
 <!-- Maintain a fragment named "14EditorsExt" to preserve incoming links to it -->
 <section id="14EditorsExt">
-<h2>Editors and extensions</h2>
+<h2>Editors</h2>
 
 <!-- Maintain a fragment named "14Additional-chunk-types" to preserve incoming links to it -->
 <section id="14Additional-chunk-types">
-<h2>Additional chunk
-types</h2>
+<h2>Additional chunk types</h2>
 
-<p>The provisions of this specification may be extended
-by adding new chunk types, which may be either private or public.
-Applications can use private chunk types to carry data that is
-not of interest to other people's applications.</p>
+<p>Authors are encouraged to look existing chunk types in both this
+specification and [[PNG-EXTENSIONS]] before considering introducing a new chunk
+types. The chunk types at [[PNG-EXTENSIONS]] are expected to be less widely
+supported than those defined in this specification.</p>
 
-<p>Decoders shall be prepared to encounter unrecognized public or
-private chunk types. The chunk naming conventions (see 5.4:
-<a href="#chunk-naming-conventions"><span class="xref">Chunk
-naming conventions</span></a>) enable critical/ancillary,
-public/private, and safe/unsafe to copy chunks to be
-distinguished.</p>
-
-<p>Additional public PNG chunk types are defined in the document
-Register of PNG Public Chunks and Keywords <a href=
-"#PNG-EXTENSIONS"><span class=
-"bibref">[PNG-EXTENSIONS]</span></a>. Chunks described there are
-expected to be less widely supported than those defined in this
-International Standard. However, application authors are
-encouraged to use those chunk types whenever appropriate for
-their applications. Additional chunk types can be proposed for
-inclusion in that list by contacting the PNG Registration
-Authority (see 4.9: <a href="#extension-and-registration"><span
-class="xref">Extension and registration</span></a>).</p>
-
-<p>New public chunks will be registered only if they are of use
-to others and do not violate the design philosophy of PNG. Chunk
-registration is not automatic, although it is the intent of the
-Registration Authority that it be straightforward when a new
-chunk of potentially wide application is needed. The creation of
-new critical chunk types is discouraged unless absolutely
-necessary.</p>
 </section>
 
 <!-- Maintain a fragment named "14Ordering" to preserve incoming links to it -->
@@ -7150,7 +7098,7 @@ general rules instead.</li>
 input datastream to an output datastream, but they apply in the
 obvious way if a PNG datastream is modified in place.</p>
 
-<p>See also 5.4: <a href="#chunk-naming-conventions"><span
+<p>See also 5.4: <a href="#5Chunk-naming-conventions"><span
 class="xref">Chunk naming conventions</span></a>.</p>
 
 <p>PNG editors that do not change the image data should not
@@ -7347,7 +7295,7 @@ samples up to the next higher sample depth that is allowed by
 PNG. The data are scaled in such a way that the high-order bits
 match the original data.</li>
 
-<li>Numbers greater than 127 are used when encoding experimental
+<li><a>Private field values</a> are used when encoding experimental
 or private definitions of values for any of the method or type
 fields.</li>
 </ol>
@@ -7372,7 +7320,7 @@ in any PNG datastream that conforms to this International
 Standard.</li>
 
 <li>Unknown chunk types are handled as described in <a href=
-"#chunk-naming-conventions"><span class="xref">5.4 Chunk naming
+"#5Chunk-naming-conventions"><span class="xref">5.4 Chunk naming
 conventions</span></a>. An unknown chunk type is <strong>not</strong>
 treated as an error unless it is a critical chunk.</li>
 
@@ -7463,8 +7411,8 @@ losslessly represents the same reference image.</li>
 <!-- Maintain a fragment named "IANA-registrations" to preserve incoming links to it -->
 <h2 id="IANA-registrations">Internet Media Types</h2>
 
-<!-- Maintain a fragment named "image-png-registration" to preserve incoming links to it -->
-<h2 id="image-png-registration">image/png</h2>
+<!-- Maintain a fragment named "image-PNG-EXTENSIONSistration" to preserve incoming links to it -->
+<h2 id="image-PNG-EXTENSIONSistration">image/png</h2>
 
 <p>This updates the existing
   <span class="tt">image/png</span> Internet Media type, under the
@@ -7592,25 +7540,9 @@ losslessly represents the same reference image.</li>
 <!-- Maintain a fragment named "B-NewChunksAppendix" to preserve incoming links to it -->
 <section class="appendix informative" id="B-NewChunksAppendix">
 <!-- Maintain a fragment named "newchunks" to preserve incoming links to it -->
-<h2 class="Annex" id="newchunks">Guidelines for new chunk types</h2>
+<h2 class="Annex" id="newchunks">Guidelines for private chunk types</h2>
 
-<p>This specification allows extension through the
-addition of new chunk types and new interlace, filter, and
-compression methods. Such extensions might be made to the
-standard either for experimental purposes or by organizations for
-internal use.</p>
-
-<p>Chunk types that are intended for general public use, or are
-required for specific application domains, should be standardized
-through registration (see 4.9 <a href=
-"#extension-and-registration"><span class="xref">Extension and
-registration</span></a>). The process for registration is defined
-by the Registration Authority. The conventions for naming chunks
-are given in 5.4: <a href="#chunk-naming-conventions"><span
-class="xref">Chunk naming conventions</span></a>.</p>
-
-<p>Some guidelines for defining private chunks are given
-below.</p>
+<p>The following specifies guidelines for the definition of private chunks:</p>
 
 <!-- <ol start="1"> --><ol>
 <li>Do not define new chunks that redefine the meaning of

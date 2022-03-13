@@ -4256,9 +4256,9 @@ range" which is typically used in YC<sub>B</sub>C<sub>R</sub> video imagery. For
 "narrow range" the Full-Range Flag would be set to "0". In the future, if PNG is 
 updated to include the YC<sub>B</sub>C<sub>R</sub> colour representation, 
 narrow-range signal scaling would be the default.  In the future, if PNG is 
-updated to include IC<sub>T</sub>C<sub>P</sub> the full-range flag would be set 
-to a value of "1" since it uses the PQ transfer function and therefore doesn't 
-benefit from the existence of sub-blacks or super-whites.
+updated to include IC<sub>T</sub>C<sub>P</sub> the full-range flag would be set
+to a value of "1" since this is the standardized default and PQ doesn't benefit 
+from the additional range.
 </td>
 </tr>
 
@@ -4326,22 +4326,25 @@ values for cICP">
 
 
 
-<p>Here is an example of source content that uses the BT.2100 colour primaries,
-with the PQ transfer function, Matrix Coefficients (using RGB Identity)and Full-Range signal scaling</p> 
+<p>Here is an example of source content that uses BT.2100 colour primaries,
+with the PQ transfer function, Matrix Coefficients (using RGB Identity)and 
+Full-Range signal scaling</p> 
 
 <pre>
 9 16 0 1
 </pre>
 
-<p>Here is an example of source content that uses the BT.2100 colour primaries,
-with the HLG transfer function, Matrix Coefficients (using RGB Identity)and Full-Range signal scaling</p> 
+<p>Here is an example of source content that uses BT.2100 colour primaries,
+with the HLG transfer function, Matrix Coefficients (using RGB Identity)and 
+Full-Range signal scaling</p> 
 
 <pre>
 9 18 0 1
 </pre>
 
-<p>Here is an example of source content that uses BT.709 colour primaries,
-with the BT.709 transfer function, Matrix Coefficients (using RGB Identity)and Full-Range signal scaling</p>
+<p>Here is an example of source content that uses BT.709 colour primaries, 
+BT.709(Gamma 2.4) transfer function, Matrix Coefficients (using RGB Identity)and 
+Full-Range signal scaling</p>
 
 <pre>
 1 1 0 1

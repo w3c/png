@@ -471,6 +471,16 @@ necessarily the best possible image.
 <!-- agreed: don't need to define a bit -->
 </dd>
 
+<!-- Maintain a fragment named "3animatedImage" to preserve incoming links to it -->
+<dfn id="3animatedImage">
+  <dt>animated image</dt></dfn>
+
+  <dd>Optional animation, consisting of a series of frames.
+    The first frame may be,
+    but need not be,
+    the <a href="#3staticImage">static image</a>.
+  </dd>
+
 <!-- Maintain a fragment named "3bitDepth" to preserve incoming links to it -->
 <dfn id="3bitDepth">
 <dt>bit depth</dt></dfn>
@@ -616,6 +626,8 @@ datastream</span></a>.</dd>
 "#3scanline"><span class="Definition">scanlines</span></a> with
 the aim of improving their compressibility. PNG uses only
 lossless (reversible) filter algorithms.</dd>
+
+<!-- need a definition of frame -->
 
 <!-- Maintain a fragment named "3frameBuffer" to preserve incoming links to it -->
 <dfn id="3frameBuffer">
@@ -968,6 +980,17 @@ image</span></a>.</dd>
 <dd>image which is presented to a <a href="#3PNGencoder"><span
 class="Definition">PNG encoder</span></a>.</dd>
 
+<!-- Maintain a fragment named "3staticImage" to preserve incoming links to it -->
+<dfn id="3staticImage">
+  <dt>static image</dt></dfn>
+
+  <dd>non-animated image
+    corresponding to the <a href="#3referenceImage">reference image</a>.
+    All PNG and APNG images contain a static image,
+    and non animation-capable displays (such as printers)
+    will display this rather than the animation.
+  </dd>
+
 <!-- Maintain a fragment named "3truecolour" to preserve incoming links to it -->
 <dfn id="3truecolour">
 <dt>truecolour</dt></dfn>
@@ -982,7 +1005,7 @@ alpha).</dd>
 
 <!-- Maintain a fragment named "3whitePoint" to preserve incoming links to it -->
 <dfn id="3whitePoint">
-<dt>white point</dt></dfnn>
+<dt>white point</dt></dfn>
 
 <dd><a href="#3chromaticity"><span class=
 "Definition">chromaticity</span></a> of a computer display's
@@ -1007,6 +1030,19 @@ The format is defined in [[rfc1950]].</dd>
 <h2 id="3Abbreviations"><a id="abbreviated-terms">Abbreviated terms</a></h2>
 
 <dl>
+<!-- Maintain a fragment named "3APNG" to preserve incoming links to it -->
+<dfn id="3APNG">
+  <dt>APNG</dt></dfn>
+
+  <dd>Animated PNG, a type of PNG
+    which, in addition to a
+    <a href="#3staticImage">static image</a>,
+    also contains an
+    <a href="#3animatedImage"></a>.
+
+  </dd>
+
+
 <!-- Maintain a fragment named "3CRC" to preserve incoming links to it -->
 <dfn id="3CRC">
 <dt>CRC</dt></dfn>
@@ -1064,6 +1100,32 @@ class="Definition">byte</span></a> value.</dd>
 <section>
 <!-- Maintain a fragment named "4Concepts" to preserve incoming links to it -->
 <h2 id="4Concepts">Concepts</h2>
+
+<section>
+  <h2 id="4Concepts.StaticAnimated">Static and Animated images</h2>
+
+  <p>
+    All PNG images contain a single
+    <a href="#3staticImage">static image</a>.
+    Some PNG images,
+    called <a href="#3APNG">APNG</a>
+    for Animated PNG,
+    also contain a frame-based animation sequence,
+    the <a href="#3animatedImage">animated image</a>.
+    The first frame of this may be,
+    but need not be,
+    the <a href="#3staticImage">static image</a>.
+  </p>
+
+  <p>
+    The <a href="#3staticImage">static image</a>,
+    and each individual frame of an
+    <a href="#3animatedImage">animated image</a>,
+    corresponds to a <em>reference image</em>
+    and is stored as a <em>PNG image</em>.
+  </p>
+
+</section>
 
 <section>
 <!-- Maintain a fragment named "4Concepts.Sourceimage" to preserve incoming links to it -->

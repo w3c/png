@@ -2138,7 +2138,21 @@ class="chunk">PLTE</span></a> is optional)</th>
 </tr>
 
 <tr>
+<td class="Regular"><a href="#11acTL"><span class="chunk">acTL</span></a> </td>
+<td class="Regular">No</td>
+<td class="Regular">Before <a href="#plte-palette"><span class="chunk">PLTE</span></a>
+and <a href="#idat-image-data"><span class="chunk">IDAT</span></a> </td>
+</tr>
+
+<tr>
 <td class="Regular"><a href="#chrm-primary-chromaticities-and-white-point"><span class="chunk">cHRM</span></a> </td>
+<td class="Regular">No</td>
+<td class="Regular">Before <a href="#plte-palette"><span class="chunk">PLTE</span></a>
+and <a href="#idat-image-data"><span class="chunk">IDAT</span></a> </td>
+</tr>
+
+<tr>
+<td class="Regular"><a href="#11cICP"><span class="chunk">cICP</span></a> </td>
 <td class="Regular">No</td>
 <td class="Regular">Before <a href="#plte-palette"><span class="chunk">PLTE</span></a>
 and <a href="#idat-image-data"><span class="chunk">IDAT</span></a> </td>
@@ -2203,6 +2217,18 @@ before <a href="#idat-image-data"><span class="chunk">IDAT</span></a>
 </tr>
 
 <tr>
+<td class="Regular"><a href="#eXIf"><span class="chunk">eXIf</span></a> </td>
+<td class="Regular">No</td>
+<td class="Regular">Before <a href="#idat-image-data"><span class="chunk">IDAT</span></a> </td>
+</tr>
+
+<tr>
+<td class="Regular"><a href="#11fcTL"><span class="chunk">fcTL</span></a> </td>
+<td class="Regular">Yes</td>
+<td class="Regular">One may occur before <a href="#idat-image-data"><span class="chunk">IDAT</span></a>; all others shall be after <a href="#idat-image-data"><span class="chunk">IDAT</span></a> </td>
+</tr>
+
+<tr>
 <td class="Regular"><a href="#phys-physical-pixel-dimensions"><span class="chunk">pHYs</span></a> </td>
 <td class="Regular">No</td>
 <td class="Regular">Before <a href="#idat-image-data"><span class="chunk">IDAT</span></a>
@@ -2214,6 +2240,12 @@ before <a href="#idat-image-data"><span class="chunk">IDAT</span></a>
 <td class="Regular">Yes</td>
 <td class="Regular">Before <a href="#idat-image-data"><span class="chunk">IDAT</span></a>
 </td>
+</tr>
+
+<tr>
+  <td class="Regular"><a href="#11fdAT"><span class="chunk">fdAT</span></a> </td>
+  <td class="Regular">Yes</td>
+  <td class="Regular">After <a href="#idat-image-data"><span class="chunk">IDAT</span></a> </td>
 </tr>
 
 <tr>
@@ -2276,13 +2308,15 @@ symbols used in lattice diagrams</b></a></caption>
 </tr>
 </table>
 
+<!-- these lattice diagrams need the new chunks added -->
+
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <figure id="lattice-diagram-with-plte">
 <!-- Maintain a fragment named "figure52" to preserve incoming links to it -->
 <a id="figure52"></a>
 <object height="540" width="800" data="figures/lattice-diagram-with-plte.svg" type="image/svg+xml">
- <img height="540" width="800" src="png-figures/lattice-diagram-with-plte.png" alt="Lattice diagram: PNG images with PLTE in datastream" />
+ <img height="540" width="800" src="png-figures/lattice-diagram-with-plte.png" alt="Lattice diagram: static PNG images with PLTE in datastream" />
 </object>
 <figcaption>Lattice diagram: PNG images with <a href="#plte-palette"><span class=
 "chunk">PLTE</span></a> in datastream</figcaption>
@@ -2292,9 +2326,9 @@ symbols used in lattice diagrams</b></a></caption>
 <figure id="lattice-diagram-without-plte">
 <!-- Maintain a fragment named "figure53" to preserve incoming links to it -->
 <a id="figure53"></a>
-<object height="540" width="900" data="figures/lattice-diagram-without-plte.svg"
+<object height="580" width="900" data="figures/lattice-diagram-without-plte.svg"
 type="image/svg+xml">
- <img height="540" width="900" src="png-figures/lattice-diagram-without-plte.png" alt="Lattice diagram: PNG images without PLTE in datastream" />
+ <img height="580" width="900" src="png-figures/lattice-diagram-without-plte.png" alt="Lattice diagram: static PNG images without PLTE in datastream" />
 </object>
 <figcaption>Lattice diagram: PNG images without <a href="#plte-palette"><span
 class="chunk">PLTE</span></a> in datastream</figcaption>
@@ -2308,7 +2342,7 @@ class="chunk">PLTE</span></a> in datastream</figcaption>
 <section id="sec-defining-public-chunks">
   <h3>General</h3>
 
-  <p>All chunks, private and publicm SHOULD be listed at [[PNG-EXTENSIONS]].</a>
+  <p>All chunks, private and public, SHOULD be listed at [[PNG-EXTENSIONS]].</a>
 
 </section>
 
@@ -5067,9 +5101,6 @@ the image data are changed.</p>
       this chunk name is exceptionally defined as if it were a private chunk.
     </p>
 
-<!-- TODO add this chunk to
-  6.6 Chunk ordering
--->
   </section>
 
   <section id="11fcTL">
@@ -5296,13 +5327,9 @@ the image data are changed.</p>
   this chunk name is exceptionally defined as if it were a private chunk.
 </p>
 
-<!-- TODO add this chunk to
-  6.6 Chunk ordering
--->
+</section>
 
-  </section>
-
-  <section id="11fdAT">
+<section id="11fdAT">
     <h2><span class="chunk">fdAT</span>
     Frame Data Chunk</h2>
 
@@ -5382,9 +5409,6 @@ the image data are changed.</p>
       this chunk name is exceptionally defined as if it were a private chunk.
     </p>
 
-    <!-- TODO add this chunk to
-      6.6 Chunk ordering
-    -->
   </section>
 </section>
 

@@ -1680,7 +1680,7 @@ image.</td>
 <!-- Maintain a fragment named "4Concepts.FormatChunks" to preserve incoming links to it -->
 <section id="4Concepts.FormatChunks">
 <h2>Chunks</h2>
-  
+
 <p>The PNG datastream consists of a PNG signature (see 5.2: <a
 href="#png-signature"><span class="xref">PNG
 signature</span></a>) followed by a sequence of chunks (see
@@ -1714,7 +1714,7 @@ data chunks.</li>
 trailer, which is the last chunk in a PNG datastream.</li>
 </ol>
 
-<p>The remaining 14 chunk types are termed ancillary chunk types,
+<p>The remaining 18 chunk types are termed ancillary chunk types,
 which encoders may generate and decoders may interpret.</p>
 
 <!-- <ol start="5"> --><ol>
@@ -1748,6 +1748,14 @@ which encoders may generate and decoders may interpret.</p>
 <li>Time information: <a href="#time-image-last-modification-time"><span class=
 "chunk">tIME</span></a> (see 11.3.6: <a class='Href' href=
 '#time-stamp-information'>Time stamp information</a>).</li>
+
+<li>Animation information:
+  <a href="#actl-animation-control"><span class="chunk">acTL</span></a>,
+  <a href="#fctl-frame-control"><span class="chunk">fcTL</span></a>,
+  <a href="#fdat-frame-data"><span class="chunk">fdAT</span></a>
+  (see 11.3.7:
+  <a class='Href' href="#animation-information">Animation information</a>).
+</li>
 </ol>
 </section>
 </section>
@@ -2307,7 +2315,7 @@ class="chunk">PLTE</span></a> in datastream</figcaption>
   <p>The definition as a public chunk is neither automatic nor immediate. A
   proposed public chunk type SHALL not be used in publicly available software or
   datastreams until defined as such.</p>
-    
+
   <p>The definition of new critical chunk types is discouraged unless
   necessary.</p>
 </section>
@@ -2328,11 +2336,11 @@ class="chunk">PLTE</span></a> in datastream</figcaption>
     different applications.If a private chunk type is used, additional
     identifying information SHOULD BE be stored at the beginning of the chunk
     data to further reduce the risk of conflicts.</p>
-      
+
     <p>An ancillary chunk type, not a critical chunk type, SHOULD be used for
     all private chunks that store information that is not absolutely essential
     to view the image.</p>
-    
+
     <p>Private critical chunks SHOULD NOT be defined because PNG datastreams
     containing such chunks are not portable, and SHOULD NOT be used in publicly
     available software or datastreams. If a private critical chunk is essential
@@ -2359,7 +2367,7 @@ class="chunk">PLTE</span></a> in datastream</figcaption>
 
   <p>These <a>private field values</a> are neither defined nor reserved by this
   specification.</p>
-  
+
   <p><a>Private field values</a>  MAY be used for experimental or private
   semantics.</p>
 
@@ -2367,7 +2375,7 @@ class="chunk">PLTE</span></a> in datastream</figcaption>
   software or datastreams since they can result in datastreams that are
   unreadable by PNG decoders as detailed at <a href="#13Decoders"></a>.</p>
 
-</section>  
+</section>
 
 </section>
 
@@ -4275,7 +4283,7 @@ interest.</p>
 </ul>
 
 <p>Keywords of general interest SHOULD be listed in [[PNG-EXTENSIONS]].</p>
-  
+
 <p>Keywords shall contain only printable Latin-1 [[ISO 8859-1]]
 characters and spaces; that is, only character codes 32-126 and
 161-255 decimal are allowed. To reduce the chances for human
@@ -4993,7 +5001,384 @@ as an automatically-applied time stamp that is updated whenever
 the image data are changed.</p>
 </section>
 </section>
+
+<section id="11animationinfo">
+  <h2>Animation information</h2>
+
+  <section id="11acTL">
+    <h2><span class="chunk">acTL</span>
+    Animation Control Chunk</h2>
+
+    <p>The four-byte chunk type field contains the decimal values</p>
+
+    <pre>
+    97 99 84 76
+    </pre>
+
+    <p>The <span class="chunk">acTL</span> chunk declares that this is an
+    animated PNG image, gives the number of frames, and the number of times to loop.
+    It contains:</p>
+
+    <table class="Regular" summary=
+    "This table defines the acTL chunk">
+    <tr>
+    <td class="Regular">`num_frames`</td>
+    <td class="Regular">4 bytes</td>
+    </tr>
+
+    <tr>
+    <td class="Regular">`num_plays`</td>
+    <td class="Regular">4 bytes</td>
+    </tr>
+    </table>
+
+    <p>Each value is encoded as a four-byte PNG unsigned integer.</p>
+
+    <p>`num_frames` indicates the total number of frames in the animation.
+      This must equal the number of <span class="chunk">fcTL</span> chunks.
+      0 is not a valid value.
+      1 is a valid value, for a single-frame PNG.
+      If this value does not equal the actual number of frames
+      it should be treated as an error. </p>
+
+    <p>`num_plays` indicates the number of times that this animation should play;
+      if it is 0, the animation should play indefinitely.
+      If nonzero, the animation should come to rest on the final frame
+      at the end of the last play. </p>
+
+    <p>The <span class="chunk">acTL</span> chunk
+      must appear before
+      the first <span class="chunk">IDAT</span> chunk
+      within a valid PNG stream.</p>
+
+    <p class="note">For Web compatibility,
+      due to the long time between the development and deployment of this chunk
+      and it's incorporation into the PNG specification,
+      this chunk name is exceptionally defined as if it were a private chunk.
+    </p>
+
+<!-- TODO add this chunk to
+  6.6 Chunk ordering
+-->
+  </section>
+
+  <section id="11fcTL">
+    <h2><span class="chunk">fcTL</span>
+      Frame Control Chunk</h2>
+
+    <p>The four-byte chunk type field contains the decimal values</p>
+
+    <pre>
+    102 99 84 76
+    </pre>
+
+    <p>The <span class="chunk">fcTL</span> chunk defines
+      the dimensions, position, delay and disposal of an individual frame.
+      Exactly one <span class="chunk">fcTL</span> chunk chunk
+      is required for each frame.
+      It contains:</p>
+
+    <table class="Regular" summary=
+    "This table defines the fcTL chunk">
+    <tr>
+    <td class="Regular">`sequence_number`</td>
+    <td class="Regular">4 bytes</td>
+    </tr>
+
+    <tr>
+    <td class="Regular">`width`</td>
+    <td class="Regular">4 bytes</td>
+    </tr>
+
+    <tr>
+    <td class="Regular">`height`</td>
+    <td class="Regular">4 bytes</td>
+    </tr>
+
+    <tr>
+    <td class="Regular">`x_offset`</td>
+    <td class="Regular">4 bytes</td>
+    </tr>
+
+    <tr>
+    <td class="Regular">`y_offset`</td>
+    <td class="Regular">4 bytes</td>
+    </tr>
+
+    <tr>
+    <td class="Regular">`delay_num`</td>
+    <td class="Regular">2 bytes</td>
+    </tr>
+
+    <tr>
+    <td class="Regular">`delay_den`</td>
+    <td class="Regular">2 bytes</td>
+    </tr>
+
+    <tr>
+    <td class="Regular">`dispose_op`</td>
+    <td class="Regular">1 byte</td>
+    </tr>
+
+    <tr>
+      <td class="Regular">`blend_op`</td>
+      <td class="Regular">1 byte</td>
+    </tr>
+    </table>
+
+<p>`sequence_number` defines the sequence number of the animation chunk,
+  starting from 0. It is encoded as a four-byte PNG unsigned integer.
+</p>
+
+<p>`width` and `height` define the width and height of the following frame.
+  They are encoded as four-byte PNG unsigned integers.
+  They must be greater than zero.
+</p>
+
+<p>`x_offset` and `y_offset` define the x and y position of the following frame.
+  They are encoded as four-byte PNG unsigned integers.
+  They must be greater than or equal to zero.</p>
+
+<p>The frame must be rendered within the region defined by
+  `x_offset`, `y_offset`, `width`, and `height`.
+  This region may not fall outside of the default image; thus
+  `x_offset` plus `width` must not be greater than the
+  <span class="chunk">IHDR</span> width;
+  similarly
+  `y_offset` plus `height` must not be greater than the
+  <span class="chunk">IHDR</span> height.
+</p>
+
+<p>`delay_num` and `delay_den` define the numerator and denominator
+  of the delay fraction;
+  indicating the time to display the current frame, in seconds.
+  If the denominator is 0, it is to be treated as if it were 100
+  (that is, `delay_num` then specifies 1/100ths of a second).
+  If the the value of the numerator is 0
+  the decoder should render the next frame as quickly as possible,
+  though viewers may impose a reasonable lower bound.
+  They are encoded as two-byte PNG unsigned integers.
+</p>
+
+<p>Frame timings should be independent of the time required
+  for decoding and display of each frame,
+  so that animations will run at the same rate
+  regardless of the performance of the decoder implementation. </p>
+
+<p>`dispose_op` defines the type of frame area disposal
+  to be done after rendering this frame;
+  in other words,
+  it specifies how the output buffer should be changed
+  at the end of the delay (before rendering the next frame).
+  It is encoded as a one-byte unsigned integer.
+</p>
+
+<p>Valid values for `dispose_op` are: </p>
+
+<table class="Regular" summary=
+    "This table defines the disposal operators">
+    <tr>
+    <td class="Regular">0</td>
+    <td class="Regular">`APNG_DISPOSE_OP_NONE`</td>
+    </tr>
+    <tr>
+    <td class="Regular">1</td>
+    <td class="Regular">`APNG_DISPOSE_OP_BACKGROUND`</td>
+    </tr>
+    <tr>
+    <td class="Regular">2</td>
+    <td class="Regular">`APNG_DISPOSE_OP_PREVIOUS`</td>
+    </tr>
+</table>
+
+  <dl>
+    <dt>`APNG_DISPOSE_OP_NONE`</dt>
+    <dd>no disposal is done on this frame before rendering the next; the contents of the output buffer are left as is.</dd>
+    <dt>`APNG_DISPOSE_OP_BACKGROUND`</dt>
+    <dd>the frame's region of the output buffer is to be cleared to fully transparent black before rendering the next frame.</dd>
+    <dt>`APNG_DISPOSE_OP_PREVIOUS`</dt>
+    <dd>the frame's region of the output buffer is to be reverted to the previous contents before rendering the next frame.</dd>
+  </dl>
+
+  <p>If the first <span class="chunk">fcTL</span> chunk uses a `dispose_op` of `APNG_DISPOSE_OP_PREVIOUS` it should be treated as `APNG_DISPOSE_OP_BACKGROUND`. </p>
+
+  <p>`blend_op` specifies whether the frame is to be alpha blended
+    into the current output buffer content,
+    or whether it should completely replace its region
+    in the output buffer.
+    It is encoded as a one-byte unsigned integer.
+  </p>
+
+  <p>Valid values for `blend_op` are:</p>
+
+  <table class="Regular" summary=
+    "This table defines the blend operators">
+    <tr>
+    <td class="Regular">0</td>
+    <td class="Regular">`APNG_BLEND_OP_SOURCE`</td>
+    </tr>
+    <tr>
+    <td class="Regular">1</td>
+    <td class="Regular">`APNG_BLEND_OP_OVER`</td>
+    </tr>
+</table>
+
+<p>If `blend_op` is `APNG_BLEND_OP_SOURCE`
+  all color components of the frame,
+  including alpha,
+  overwrite the current contents of the frame's output buffer region.
+  If `blend_op` is `APNG_BLEND_OP_OVER`
+  the frame should be composited onto the output buffer
+  based on its alpha,
+  using a simple OVER operation as described in
+  <a href="#13Alpha-channel-processing">Alpha Channel Processing</a>.
+  Note that the second variation of the sample code is applicable. </p>
+
+<p>
+  Note that for the first frame,
+  the two blend modes are functionally equivalent
+  due to the clearing of the output buffer
+  at the beginning of each play.
+</p>
+
+<p>
+  The <span class="chunk">fcTL</span> chunk
+  corresponding to the default image,
+  if it exists,
+  has these restrictions:</p>
+
+  <ul>
+    <li>The `x_offset` and `y_offset` fields must be 0.</li>
+    <li>The `width` and `height` fields must equal
+      the corresponding fields from the <span class="chunk">IHDR</span> chunk.</li>
+  </ul>
+
+<p>
+  As noted earlier,
+  the output buffer must be completely initialized
+  to fully transparent black
+  at the beginning of each play.
+  This is to ensure that each play of the animation will be identical.
+  Decoders are free to avoid an explicit clear step
+  as long as the result is guaranteed to be identical.
+  For example, if the default image is included in the animation,
+  and uses a `blend_op` of `APNG_BLEND_OP_SOURCE`,
+  clearing is not necessary
+  because the entire output buffer will be overwritten.
+</p>
+
+<!-- Not clear this para is needed, but the original specification had it -->
+<p>
+  Note, at the end of the <span class="chunk">fcTL</span> chunk
+  is a 32-bit CRC checksum.
+  The checksum is calculated using the <span class="chunk">fcTL</span> chunk
+  and includes the 'fcTL' chunk type field.
+</p>
+
+<!--
+  8.1 Integers and byte order only covers multibuye integers. So add:
+   a "byte" shall be an 8-bit unsigned integer with the range 0 to (2^8)-1
+ -->
+
+<p class="note">For Web compatibility,
+  due to the long time between the development and deployment of this chunk
+  and it's incorporation into the PNG specification,
+  this chunk name is exceptionally defined as if it were a private chunk.
+</p>
+
+<!-- TODO add this chunk to
+  6.6 Chunk ordering
+-->
+
+  </section>
+
+  <section id="11fdAT">
+    <h2><span class="chunk">fdAT</span>
+    Frame Data Chunk</h2>
+
+    <p>The four-byte chunk type field contains the decimal values</p>
+
+    <pre>
+    102 100 65 84
+    </pre>
+
+    <p>The <span class="chunk">fdAT</span> chunk
+      serves the same purpose for animations
+      as the <span class="chunk">IDAT</span> chunk
+      does for static images;
+      it contains the image data
+      for all frames
+      (or, for animations which include the static image as first frame,
+      for all frames after the first one).
+    It contains:</p>
+
+    <table class="Regular" summary=
+    "This table defines the acTL chunk">
+    <tr>
+    <td class="Regular">`sequence_number`</td>
+    <td class="Regular">4 bytes</td>
+    </tr>
+
+    <tr>
+    <td class="Regular">`frame_data`</td>
+    <td class="Regular"><i>n</i> bytes</td>
+    </tr>
+    </table>
+
+    <p>At least one <span class="chunk">fdAT</span> chunk
+      is required for each frame,
+      except for the first frame, if that frame is represented by
+      an <span class="chunk">IDAT</span> chunk.
+    </p>
+
+    <p>
+      The compressed datastream is then
+      the concatenation of the contents of the data fields
+      of all the <span class="chunk">fdAT</span> chunks
+      within a frame.
+      When decompressed,
+      the datastream is the complete pixel data of a PNG image,
+      including the filter byte at the beginning of each scanline,
+      similar to the uncompressed data
+      of all the <span class="chunk">IDAT</span> chunks.
+      It utilizes the same bit depth, color type,
+      compression method, filter method, interlace method,
+      and palette (if any) as the static image.
+    </p>
+
+    <p>
+      Each frame inherits every property specified by
+      any critical or ancillary chunks <em>before</em>
+      the first <span class="chunk">IDAT</span> chunk
+      in the file,
+      except the width and height,
+      which come from the <span class="chunk">fcTL</span> chunk.
+    </p>
+
+    <p>
+      If the PNG <span class="chunk">pHYs<span class="chunk"> chunk
+      is present, the APNG images
+      and their `x_offset` and `y_offset` values
+      must be scaled in the same way as the main image.
+      Conceptually, such scaling occurs while mapping
+      the output buffer onto the canvas.
+    </p>
+
+
+
+    <p class="note">For Web compatibility,
+      due to the long time between the development and deployment of this chunk
+      and it's incorporation into the PNG specification,
+      this chunk name is exceptionally defined as if it were a private chunk.
+    </p>
+
+    <!-- TODO add this chunk to
+      6.6 Chunk ordering
+    -->
+  </section>
 </section>
+
+
 </section>
 
 <!-- ************Page Break******************* -->

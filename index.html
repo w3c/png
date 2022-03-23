@@ -7798,7 +7798,8 @@ losslessly represents the same reference image.</li>
 <h2 id="IANA-registrations">Internet Media Types</h2>
 
 <!-- Maintain a fragment named "A-Media-type" to preserve incoming links to image/png registration -->
-<h2 id="A-Media-type">image/png</h2>
+<section>
+<h3 id="A-Media-type">image/png</h3>
 
 <p>This updates the existing
   <span class="tt">image/png</span> Internet Media type, under the
@@ -7828,15 +7829,20 @@ losslessly represents the same reference image.</li>
     <dd>
       <p>A PNG document is composed of a collection of explicitly typed "chunks".
         For each of the chunk types defined in the PNG specification (except
-        for "gIFx"), the only effect associated with those chunks is to cause
+        for <span class="chunk">gIFx</span>), the only effect associated with those chunks is to cause
         an image to be rendered on the recipient's display or printer.</p>
-      <p>The gIFx chunk type is used to encapsulate Application Extension
+      <p>The <span class="chunk">gIFx</span> chunk type is used
+        to encapsulate Application Extension
         data, and some use of that data might present security risks, though
         no risks are known.  Likewise, the security risks associated with
         future chunk types cannot be evaluated, particularly unregistered
-        chunks.  However, it is the intention of the PNG group to disallow
+        chunks.  However, it is the intention of the PNG Working Group to disallow
         chunks containing "executable" data to become registered chunks.</p>
-      <p>The text chunks, tEXt and zTXt, contain data that can be displayed in
+      <p>The text chunks,
+        <span class="chunk">tEXt</span>,
+        <span class="chunk">iTXT</span> and
+        <span class="chunk">zTXt</span>,
+        contain data that can be displayed in
         the form of comments, etc.  Some operating systems or terminals might
         allow the display of textual data with embedded control characters to
         perform operations such as re-mapping of keys, creation of files, etc.
@@ -7916,6 +7922,126 @@ losslessly represents the same reference image.</li>
     <dd>W3C</dd>
 
   </dl>
+</section>
+
+<section>
+  <h3 id="A-Media-type-animated">image/apng</h3>
+
+  <p>
+    This appendix is in conformance with
+      <a href="https://www.rfc-editor.org/info/bcp13">BCP 13</a> and
+      <a href="https://www.w3.org/2020/01/registering-mediatypes.html">W3CRegMedia</a>.
+    </p>
+
+    <dl>
+      <dt>Media type name:</dt>
+      <dd>image</dd>
+
+      <dt>Media subtype name:</dt>
+      <dd>apng</dd>
+
+      <dt>Required parameters:</dt>
+      <dd>None</dd>
+
+      <dt>Optional parameters:</dt>
+      <dd>None</dd>
+
+      <dt>Encoding considerations:</dt>
+      <dd>binary</dd>
+
+      <dt>Security considerations:</dt>
+      <dd>
+        <p>An APNG document is composed of a collection of explicitly typed "chunks".
+          For each of the chunk types defined in the PNG specification (except
+          for <span class="chunk">gIFx</span>), the only effect associated with those chunks is to cause
+          an animated image to be rendered on the recipient's display.</p>
+        <p>The <span class="chunk">gIFx</span> chunk type is used
+          to encapsulate Application Extension
+          data, and some use of that data might present security risks, though
+          no risks are known.  Likewise, the security risks associated with
+          future chunk types cannot be evaluated, particularly unregistered
+          chunks.  However, it is the intention of the PNG Working Group to disallow
+          chunks containing "executable" data to become registered chunks.</p>
+        <p>The text chunks,
+          <span class="chunk">tEXt</span>,
+          <span class="chunk">iTXT</span> and
+          <span class="chunk">zTXt</span>,
+          contain data that can be displayed in
+          the form of comments, etc.  Some operating systems or terminals might
+          allow the display of textual data with embedded control characters to
+          perform operations such as re-mapping of keys, creation of files, etc.
+          For this reason, the specification recommends that the text chunks be
+          filtered for control characters before direct display.</p>
+        <p>The PNG format is specifically designed to facilitate early detection
+          of file transmission errors, and makes use of cyclical redundancy
+          checks to ensure the integrity of the data contained in its chunks.</p>
+      </dd>
+
+      <dt>Interoperability considerations:</dt>
+      <dd>Network byte order used throughout.</dd>
+
+      <dt>Published specification:</dt>
+      <dd><a href="https://www.w3.org/TR/PNG/
+        ">Portable Network Graphics (PNG) Specification</a>,
+        <a href="https://www.w3.org/TR/PNG/
+        ">https://www.w3.org/TR/PNG/</a>
+      </dd>
+
+      <dt>Applications which use this media:</dt>
+      <dd>Animated PNG (APNG) is widely implemented
+        in all Web browsers, image viewers, and animation and image creation tools
+      </dd>
+
+      <dt>Fragment identifier considerations:
+      </dt>
+      <dd>N/A</dd>
+
+      <dt>Restrictions on usage:
+      </dt>
+      <dd>N/A</dd>
+
+      <dt>Provisional registration? (standards tree only):</dt>
+      <dd>No</dd>
+
+      <dt>Additional information:
+      </dt>
+      <dd>
+        <dl>
+          <dt>Deprecated alias names for this type:</dt>
+          <dd>N/A</dd>
+          <dt>Magic number(s):</dt>
+          <dd>89 50 4E 47 0D 0A 1A 0A</dd>
+          <dt>File extension(s):</dt>
+          <dd>.apng</dd>
+          <dt>Object Identifiers:</dt>
+          <dd>N/A</dd>
+        </dl>
+      </dd>
+
+      <dt>General Comments:</dt>
+      <dd>
+        <p>This registration brings the PNG specification
+          into alignment with already widely-deployed reality.
+
+      <dt>Person to contact for further information:</dt>
+      <dd>
+        <dl>
+          <dt>Name:</dt>
+          <dd>PNG Working Group</dd>
+          <dt>Email:</dt>
+          <dd><a href="mailto:public-png@w3.org">public-png@w3.org</a></dd>
+        </dl>
+      </dd>
+
+      <dt>Intended usage:</dt>
+      <dd>Common</dd>
+
+      <dt>Author/Change controller:</dt>
+      <dd>W3C</dd>
+
+    </dl>
+  </section>
+
 </section>
 
 

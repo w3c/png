@@ -508,7 +508,9 @@ that appears in the <a href="#ihdr-image-header"><span class=
 
 <dd>8 bits; also called an octet. The highest bit (value 128) of
 a byte is numbered bit 7; the lowest bit (value 1) is numbered
-bit 0.</dd>
+bit 0.
+It represents an unsigned integer limited to the range 0 to
+2<sup>8</sup>-1.</dd>
 
 <!-- Maintain a fragment named "3byteOrder" to preserve incoming links to it -->
 <dfn id="3byteOrder">
@@ -521,6 +523,15 @@ or <a href="#PNG-datastream"><span class="Definition">PNG
 datastream</span></a>. PNG uses <a href=
 "#3networkByteOrder"><span class="Definition">network byte
 order</span></a>.</dd>
+
+<!-- Maintain a fragment named "3canvas" to preserve incoming links to it -->
+<dt id="3canvas">
+<dt>canvas</dt></dfn>
+
+<dd>the area on the output device on which the frames are to be displayed.
+  The contents of the canvas are not necessarily available to the decoder.
+  If a <span class="chunk">bKGD</span> chunk exists,
+  it may be used to fill the canvas if there is no preferable background</dd>
 
 <!-- Maintain a fragment named "3channel" to preserve incoming links to it -->
 <dt id="3channel">
@@ -644,6 +655,12 @@ lossless (reversible) filter algorithms.</dd>
 types of computer display. Software causes an image to appear on
 screen by loading the image into the frame buffer.</dd>
 
+<!-- Maintain a fragment named "3fullyTransparentBlack" to preserve incoming links to it -->
+<dfn id="3fullyTransparentBlack">
+<dt>fully transparent black</dt></dfn>
+
+<dd>the red, green, blue and alpha components are all set to zero.</dd>
+
 <!-- Maintain a fragment named "3gamma" to preserve incoming links to it -->
 <dfn id="3gamma">
 <dt>gamma</dt></dfn>
@@ -758,6 +775,14 @@ significance (<a href="#3MSB"><span class=
 "#3LSB"><span class="Definition">LSB</span></a> for four-byte
 integers).</dd>
 
+<!-- Maintain a fragment named "3outputBuffer" to preserve incoming links to it -->
+<dfn id="3outputBuffer">
+<dt>output buffer</dt></dfn>
+
+<dd>The output buffer is a pixel array
+  with dimensions specified by the width and height parameters of the PNG `IHDR` chunk. Conceptually, each frame is constructed in the output buffer before being composited onto the canvas. The contents of the output buffer are available to the decoder. The corners of the output buffer are mapped to the corners of the canvas. </dd>
+
+
 <!-- Maintain a fragment named "3palette" to preserve incoming links to it -->
 <dfn id="3palette">
 <dt>palette</dt></dfn>
@@ -870,6 +895,16 @@ unsigned integer</dt></dfn>
 2<sup>31</sup>-1. The restriction is imposed in order to
 accommodate languages that have difficulty with unsigned
 four-byte values.</dd>
+
+<!-- Maintain a fragment named "3PNGtwoByteUnSignedInteger" to preserve incoming links to it -->
+<dfn id="3PNGtwoByteUnSignedInteger">
+  <dt>PNG two-byte
+  unsigned integer</dt></dfn>
+
+  <dd>a two-byte unsigned integer limited to the range 0 to
+  2<sup>16</sup>-1. The restriction is imposed in order to
+  accommodate languages that have difficulty with unsigned
+  two-byte values.</dd>
 
 <!-- Maintain a fragment named "3PNGimage" to preserve incoming links to it -->
 <dfn id="3PNGimage">

@@ -479,14 +479,13 @@ necessarily the best possible image.
 <!-- agreed: don't need to define a bit -->
 </dd>
 
-<!-- Maintain a fragment named "3animatedImage" to preserve incoming links to it -->
-<dfn id="3animatedImage">
+<dfn>
   <dt>animated image</dt></dfn>
 
   <dd>Optional animation, consisting of a series of frames.
     The first frame may be,
     but need not be,
-    the <a href="#3staticImage">static image</a>.
+    the [[static image]].
   </dd>
 
 <!-- Maintain a fragment named "3bitDepth" to preserve incoming links to it -->
@@ -525,8 +524,7 @@ datastream</span></a>. PNG uses <a href=
 "#3networkByteOrder"><span class="Definition">network byte
 order</span></a>.</dd>
 
-<!-- Maintain a fragment named "3canvas" to preserve incoming links to it -->
-<dt id="3canvas">
+<dt>
 <dt>canvas</dt></dfn>
 
 <dd>the area on the output device on which the frames are to be displayed.
@@ -656,8 +654,7 @@ lossless (reversible) filter algorithms.</dd>
 types of computer display. Software causes an image to appear on
 screen by loading the image into the frame buffer.</dd>
 
-<!-- Maintain a fragment named "3fullyTransparentBlack" to preserve incoming links to it -->
-<dfn id="3fullyTransparentBlack">
+<dfn>
 <dt>fully transparent black</dt></dfn>
 
 <dd>the red, green, blue and alpha components are all set to zero.</dd>
@@ -776,8 +773,7 @@ significance (<a href="#3MSB"><span class=
 "#3LSB"><span class="Definition">LSB</span></a> for four-byte
 integers).</dd>
 
-<!-- Maintain a fragment named "3outputBuffer" to preserve incoming links to it -->
-<dfn id="3outputBuffer">
+<dfn>
 <dt>output buffer</dt></dfn>
 
 <dd>The output buffer is a pixel array
@@ -897,8 +893,7 @@ unsigned integer</dt></dfn>
 accommodate languages that have difficulty with unsigned
 four-byte values.</dd>
 
-<!-- Maintain a fragment named "3PNGtwoByteUnSignedInteger" to preserve incoming links to it -->
-<dfn id="3PNGtwoByteUnSignedInteger">
+<dfn>
   <dt>PNG two-byte
   unsigned integer</dt></dfn>
 
@@ -1023,8 +1018,7 @@ image</span></a>.</dd>
 <dd>image which is presented to a <a href="#3PNGencoder"><span
 class="Definition">PNG encoder</span></a>.</dd>
 
-<!-- Maintain a fragment named "3staticImage" to preserve incoming links to it -->
-<dfn id="3staticImage">
+<dfn>
   <dt>static image</dt></dfn>
 
   <dd>non-animated image
@@ -1049,7 +1043,7 @@ alpha).</dd>
 
 <!-- Maintain a fragment named "3whitePoint" to preserve incoming links to it -->
 <dfn id="3whitePoint">
-<dt>white point</dt></dfn>
+<dt>white point</dt></dfnn>
 
 <dd><a href="#3chromaticity"><span class=
 "Definition">chromaticity</span></a> of a computer display's
@@ -1074,15 +1068,13 @@ The format is defined in [[rfc1950]].</dd>
 <h2 id="3Abbreviations"><a id="abbreviated-terms">Abbreviated terms</a></h2>
 
 <dl>
-<!-- Maintain a fragment named "3APNG" to preserve incoming links to it -->
-<dfn id="3APNG">
+<dfn>
   <dt>APNG</dt></dfn>
 
   <dd>Animated PNG, a type of PNG
-    which, in addition to a
-    <a href="#3staticImage">static image</a>,
-    also contains an
-    <a href="#3animatedImage"></a>.
+    which — in addition to a
+    [[static image]] —
+    also contains an [[animated image]].
 
   </dd>
 
@@ -1146,25 +1138,25 @@ class="Definition">byte</span></a> value.</dd>
 <h2 id="4Concepts">Concepts</h2>
 
 <section>
-  <h2 id="4Concepts.StaticAnimated">Static and Animated images</h2>
+  <h2>Static and Animated images</h2>
 
   <p>
     All PNG images contain a single
-    <a href="#3staticImage">static image</a>.
-    Some PNG images,
-    called <a href="#3APNG">APNG</a>
-    for Animated PNG,
+    [[static image]].
+    Some PNG images —
+    called [[APNG]]
+    for Animated PNG —
     also contain a frame-based animation sequence,
-    the <a href="#3animatedImage">animated image</a>.
-    The first frame of this may be,
-    but need not be,
-    the <a href="#3staticImage">static image</a>.
+    the [[animated image]].
+    The first frame of this may be —
+    but need not be —
+    the [[static image]].
   </p>
 
   <p>
-    The <a href="#3staticImage">static image</a>,
+    The [[static image]],
     and each individual frame of an
-    <a href="#3animatedImage">animated image</a>,
+    [[animated image]],
     corresponds to a <em>reference image</em>
     and is stored as a <em>PNG image</em>.
   </p>
@@ -1713,8 +1705,8 @@ ancillary information</b></a></caption>
     defined as a series of frames with associated timing,
     position and handling information,
     to be displayed if the viewer is capable of doing so.
-    For other cases, such as printers,
-    the <a href="#3staticImage">static image</a> will be displayed instead.</td>
+    For other cases such as printers,
+    the [[static image]] will be displayed instead.</td>
   </tr>
 
 <tr>
@@ -1795,9 +1787,8 @@ image.</td>
   <section id="4Concepts.FormatChunks">
   <h2>Chunks</h2>
 
-  <p>The PNG datastream consists of a PNG signature (see 5.2: <a
-  href="#png-signature"><span class="xref">PNG
-  signature</span></a>) followed by a sequence of chunks (see
+  <p>The PNG datastream consists of a PNG signature (see
+  [[#PNG signature]]) followed by a sequence of chunks (see
   clause&#160;11: <a href="#chunk-specifications"><span class="xref">Chunk
   specifications</span></a>). Each chunk has a chunk type which
   specifies its function.</p>
@@ -1833,22 +1824,19 @@ image.</td>
 
   <!-- <ol start="5"> --><ol>
   <li>Transparency information: <a href="#trns-transparency"><span class=
-  "chunk">tRNS</span></a> (see 11.3.2: <a class='Href' href=
-  '#transparency-information'>Transparency information</a>).</li>
+  "chunk">tRNS</span></a> (see [[#transparency-information]]).</li>
 
   <li>Colour space information: <a href="#chrm-primary-chromaticities-and-white-point"><span class=
   "chunk">cHRM</span></a>, <a href="#gama-image-gamma"><span class=
   "chunk">gAMA</span></a>, <a href="#iccp-embedded-icc-profile"><span class=
   "chunk">iCCP</span></a>, <a href="#sbit-significant-bits"><span class=
   "chunk">sBIT</span></a>, <a href="#srgb-standard-rgb-colour-space"><span class=
-  "chunk">sRGB</span></a> (see 11.3.3: <a class='Href' href=
-  '#colour-space-information'>Colour space information</a>).</li>
+  "chunk">sRGB</span></a> (see [[#colour-space-information]]).</li>
 
   <li>Textual information: <a href="#itxt-international-textual-data"><span class=
   "chunk">iTXt</span></a>, <a href="#text-textual-data"><span class=
   "chunk">tEXt</span></a>, <a href="#ztxt-compressed-textual-data"><span class=
-  "chunk">zTXt</span></a> (see 11.3.4: <a class='Href' href=
-  '#textual-information'>Textual information</a>).</li>
+  "chunk">zTXt</span></a> (see [[#textual-information]]).</li>
 
   <li>Miscellaneous information: <a href="#bkgd-background-colour"><span class=
   "chunk">bKGD</span></a>, <a href="#hist-image-histogram"><span class=
@@ -1856,29 +1844,25 @@ image.</td>
   "chunk">pHYs</span></a>, <a href="#splt-suggested-palette"><span class=
   "chunk">sPLT</span></a>, <a href="#exif"><span class=
   "chunk">eXIf</span></a>
-  (see 11.3.5: <a class='Href' href=
-  '#miscellaneous-information'>Miscellaneous information</a>).</li>
+  (see [[#miscellaneous-information]]).</li>
 
   <li>Time information: <a href="#time-image-last-modification-time"><span class=
-  "chunk">tIME</span></a> (see 11.3.6: <a class='Href' href=
-  '#time-stamp-information'>Time stamp information</a>).</li>
+  "chunk">tIME</span></a> (see [[#time-stamp-information]]).</li>
 
   <li>Animation information:
     <a href="#actl-animation-control"><span class="chunk">acTL</span></a>,
     <a href="#fctl-frame-control"><span class="chunk">fcTL</span></a>,
     <a href="#fdat-frame-data"><span class="chunk">fdAT</span></a>
-    (see 11.3.7:
-    <a class='Href' href="#animation-information">Animation information</a>).
+    (see [[#animation-information]]).
   </li>
   </ol>
   </section>
   </section>
 
-<!-- Maintain a fragment named "4Concepts.APNG" to preserve incoming links to it -->
-<section id="4Concepts.APNG">
+<section>
 <h2>APNG: frame-based animation</h2>
 
-<section id="4Concepts.APNGGeneral">
+<section>
 <h3>General</h3>
 
 <p>Animated PNG (APNG)
@@ -1891,11 +1875,11 @@ image.</td>
 
 <p>APNG is backwards-compatible with earlier versions of PNG;
   a non-animated PNG decoder will ignore the ancillary APNG-specific chunks
-  and display the <a href="#3staticImage">static image</a>. </p>
+  and display the [[static image]]. </p>
 
 </section>
 
-<section id="4Concepts.APNGStructure">
+<section>
 <h3>Structure</h3>
 
 <p>An APNG stream is a normal PNG stream
@@ -1910,9 +1894,9 @@ image.</td>
   <a href="#animation-information">described below</a>. </p>
 
 <p>Conceptually, at the beginning of each play
-  the <a href="#3outputBuffer">output buffer</a>
+  the [[output buffer]]
   shall be completely initialized to a
-  <a href="#3fullyTransparentBlack">fully transparent black</a> rectangle,
+  [[fully transparent black]] rectangle,
   with width and height dimensions from the <span class="chunk">IHDR</span> chunk. </p>
 
 <p>The static image may be included
@@ -1934,7 +1918,7 @@ image.</td>
   of the `IHDR` chunk,
   regardless of whether the default image is part of the animation.
   The default image should be appropriately padded
-  with <a href="#3fullyTransparentBlack">fully transparent black</a> pixels
+  with [[fully transparent black]] pixels
   if extra space will be needed for later frames. </p>
 
 <p>Each frame is identical for each play,
@@ -1942,7 +1926,7 @@ image.</td>
 
 </section>
 
-<section id="4Concepts.APNGSequence">
+<section>
 <h3>Sequence numbers</h3>
 
 <p>The <span class="chunk">fcTL</span> and <span class="chunk">fdAT</span> chunks
@@ -1968,9 +1952,9 @@ image.</td>
   omitted in these tables, for clarity).
 </p>
 
-<table class="Regular" summary=
+<table class="Regular" id="table52" summary=
 "sequence numbers, if the static image is also the first frame">
-<caption><a id="table52"><b>Table 5.2 &mdash; If the static image is also the first frame</b></a></caption>
+<caption><b>Table 5.2 &mdash; If the static image is also the first frame</b></caption>
 <tr>
   <th>Sequence number</th>
   <th>Chunk</th>
@@ -2001,9 +1985,9 @@ image.</td>
 </tr>
 </table>
 
-<table class="Regular" summary=
+<table class="Regular" id="table53" summary=
 "sequence numbers, if the static image is not part of the animation">
-<caption><a id="table53"><b>Table 5.3 &mdash; If the static image is not part of the animation</b></a></caption>
+<caption><b>Table 5.3 &mdash; If the static image is not part of the animation</b></caption>
 <tr>
   <th>Sequence number</th>
   <th>Chunk</th>
@@ -2416,7 +2400,7 @@ class="chunk">PLTE</span></a> is optional)</th>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11acTL"><span class="chunk">acTL</span></a> </td>
+<td class="Regular"><span class="chunk">[[acTL]]</span> </td>
 <td class="Regular">No</td>
 <td class="Regular">Before <a href="#plte-palette"><span class="chunk">PLTE</span></a>
 and <a href="#idat-image-data"><span class="chunk">IDAT</span></a> </td>
@@ -2429,12 +2413,6 @@ and <a href="#idat-image-data"><span class="chunk">IDAT</span></a> </td>
 and <a href="#idat-image-data"><span class="chunk">IDAT</span></a> </td>
 </tr>
 
-<tr>
-<td class="Regular"><a href="#11cICP"><span class="chunk">cICP</span></a> </td>
-<td class="Regular">No</td>
-<td class="Regular">Before <a href="#plte-palette"><span class="chunk">PLTE</span></a>
-and <a href="#idat-image-data"><span class="chunk">IDAT</span></a> </td>
-</tr>
 
 <tr>
 <td class="Regular"><a href="#gama-image-gamma"><span class="chunk">gAMA</span></a> </td>
@@ -2492,12 +2470,6 @@ before <a href="#idat-image-data"><span class="chunk">IDAT</span></a>
 <td class="Regular">After <a href="#plte-palette"><span class="chunk">PLTE</span></a>;
 before <a href="#idat-image-data"><span class="chunk">IDAT</span></a>
 </td>
-</tr>
-
-<tr>
-<td class="Regular"><a href="#eXIf"><span class="chunk">eXIf</span></a> </td>
-<td class="Regular">No</td>
-<td class="Regular">Before <a href="#idat-image-data"><span class="chunk">IDAT</span></a> </td>
 </tr>
 
 <tr>
@@ -2604,9 +2576,9 @@ symbols used in lattice diagrams</b></a></caption>
 <figure id="lattice-diagram-without-plte">
 <!-- Maintain a fragment named "figure53" to preserve incoming links to it -->
 <a id="figure53"></a>
-<object height="580" width="900" data="figures/lattice-diagram-without-plte.svg"
+<object height="540" width="900" data="figures/lattice-diagram-without-plte.svg"
 type="image/svg+xml">
- <img height="580" width="900" src="png-figures/lattice-diagram-without-plte.png" alt="Lattice diagram: static PNG images without PLTE in datastream" />
+ <img height="540" width="900" src="png-figures/lattice-diagram-without-plte.png" alt="Lattice diagram: static PNG images without PLTE in datastream" />
 </object>
 <figcaption>Lattice diagram: PNG images without <a href="#plte-palette"><span
 class="chunk">PLTE</span></a> in datastream</figcaption>
@@ -2620,7 +2592,7 @@ class="chunk">PLTE</span></a> in datastream</figcaption>
 <section id="sec-defining-public-chunks">
   <h3>General</h3>
 
-  <p>All chunks, private and public, SHOULD be listed at [[PNG-EXTENSIONS]].</a>
+  <p>All chunks, private and publicm SHOULD be listed at [[PNG-EXTENSIONS]].</a>
 
 </section>
 
@@ -5324,10 +5296,10 @@ the image data are changed.</p>
 </section>
 </section>
 
-<section id="11animationinfo">
+<section>
   <h2>Animation information</h2>
 
-  <section id="11acTL">
+  <section>
     <h2><span class="chunk">acTL</span>
     Animation Control Chunk</h2>
 
@@ -5381,7 +5353,7 @@ the image data are changed.</p>
 
   </section>
 
-  <section id="11fcTL">
+  <section>
     <h2><span class="chunk">fcTL</span>
       Frame Control Chunk</h2>
 
@@ -5595,7 +5567,7 @@ the image data are changed.</p>
 </p>
 
 <!--
-  8.1 Integers and byte order only covers multibuye integers. So add:
+  8.1 Integers and byte order only covers multibyte integers. So add:
    a "byte" shall be an 8-bit unsigned integer with the range 0 to (2^8)-1
  -->
 
@@ -5607,7 +5579,7 @@ the image data are changed.</p>
 
 </section>
 
-<section id="11fdAT">
+<section>
     <h2><span class="chunk">fdAT</span>
     Frame Data Chunk</h2>
 
@@ -5623,12 +5595,12 @@ the image data are changed.</p>
       does for static images;
       it contains the image data
       for all frames
-      (or, for animations which include the <a href="#3staticImage">static image</a> as first frame,
+      (or, for animations which include the [[static image]] as first frame,
       for all frames after the first one).
     It contains:</p>
 
     <table class="Regular" summary=
-    "This table defines the acTL chunk">
+    "This table defines the fdAT chunk">
     <tr>
     <td class="Regular">`sequence_number`</td>
     <td class="Regular">4 bytes</td>
@@ -5658,7 +5630,7 @@ the image data are changed.</p>
       of all the <span class="chunk">IDAT</span> chunks.
       It utilizes the same bit depth, color type,
       compression method, filter method, interlace method,
-      and palette (if any) as the <a href="#3staticImage">static image</a>.
+      and palette (if any) as the [[static image]].
     </p>
 
     <p>
@@ -8259,7 +8231,7 @@ losslessly represents the same reference image.</li>
 </section>
 
 <section>
-  <h3 id="A-Media-type-animated">image/apng</h3>
+  <h3>image/apng</h3>
 
   <p>
     This appendix is in conformance with

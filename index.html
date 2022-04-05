@@ -7,6 +7,7 @@
     <style type="text/css">
     /* remove annoying green colour from definition terms */
     dt {color: black}
+    span.chunk { color: #622;}
     </style>
     <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
     <script class="remove">
@@ -51,6 +52,7 @@
 	      { name: "Chris Lilley", url: "https://svgees.us", company: "W3C", companyURL: "https://www.w3.org" },
 	      { name: "Dave Martindale" },
 	      { name: "Owen Mortensen" },
+        { name: "Stuart Parmenter"},
 	      { name: "Keith S. Pickens" },
 	      { name: "Robert P. Poole", url: "http://www.users.qwest.net/~lionlad/" },
 	      { name: "Glenn Randers-Pehrson" },
@@ -58,7 +60,9 @@
 	      { name: "Willem van Schaik", url: "http://www.schaik.com/" },
 	      { name: "Guy Schalnat" },
 	      { name: "Paul Schmidt" },
+        { name: "Andrew Smith" }
 	      { name: "Michael Stokes" },
+        { name: "Vladimir Vukicevic" },
 	      { name: "Tim Wegner" },
 	      { name: "Jeremy Wohl" }
 	  ],
@@ -148,9 +152,9 @@
   </head>
   <body>
     <section id="abstract">
-      <p>This document describes PNG (Portable Network Graphics), an extensible file format for the lossless, portable, well-compressed storage of raster images. PNG provides a patent-free replacement for GIF and can also replace many common uses of TIFF. Indexed-colour, greyscale, and truecolour images are supported, plus an optional alpha channel. Sample depths range from 1 to 16 bits.</p>
-      <p>PNG is designed to work well in online viewing applications, such as the World Wide Web, so it is fully streamable with a progressive display option. PNG is robust, providing both full file integrity checking and simple detection of common transmission errors. Also, PNG can store gamma and chromaticity data for improved colour matching on heterogeneous platforms.</p>
-      <p>This specification defines an Internet Media Type image/png.</p>
+      <p>This document describes PNG (Portable Network Graphics), an extensible file format for the lossless, portable, well-compressed storage of static and animated raster images. PNG provides a patent-free replacement for GIF and can also replace many common uses of TIFF. Indexed-colour, greyscale, and truecolour images are supported, plus an optional alpha channel. Sample depths range from 1 to 16 bits.</p>
+      <p>PNG is designed to work well in online viewing applications, such as the World Wide Web, so it is fully streamable with a progressive display option. PNG is robust, providing both full file integrity checking and simple detection of common transmission errors. Also, PNG can store colour space data for improved colour matching on heterogeneous platforms.</p>
+      <p>This specification defines two Internet Media Types, image/png and image/apng.</p>
 
 <!--
 needs update, comment out for now
@@ -232,15 +236,19 @@ that are not freely available.</li>
 <p>This specification specifies a datastream and an
 associated file format, Portable Network Graphics (PNG,
 pronounced "ping"), for a lossless, portable, compressed
-individual computer graphics image transmitted across the
+individual computer graphics image
+or frame-based animation,
+transmitted across the
 Internet. Indexed-colour, greyscale, and truecolour images are
 supported, with optional transparency. Sample depths range from 1
 to 16 bits. PNG is fully streamable with a progressive display
 option. It is robust, providing both full file integrity checking
 and simple detection of common transmission errors. PNG can store
 gamma and chromaticity data as well as a full ICC colour profile
+or CICP metadata,
 for accurate colour matching on heterogenous platforms. This
-Standard defines the Internet Media type "image/png". The
+Standard defines the Internet Media types "image/png"
+and "image/apng". The
 datastream and associated file format have value outside of the
 main design goal.</p>
 </section>
@@ -471,6 +479,15 @@ necessarily the best possible image.
 <!-- agreed: don't need to define a bit -->
 </dd>
 
+<dfn>
+  <dt>animated image</dt></dfn>
+
+  <dd>Optional animation, consisting of a series of frames.
+    The first frame may be,
+    but need not be,
+    the [[static image]].
+  </dd>
+
 <!-- Maintain a fragment named "3bitDepth" to preserve incoming links to it -->
 <dfn id="3bitDepth">
 <dt>bit depth</dt></dfn>
@@ -491,7 +508,9 @@ that appears in the <a href="#ihdr-image-header"><span class=
 
 <dd>8 bits; also called an octet. The highest bit (value 128) of
 a byte is numbered bit 7; the lowest bit (value 1) is numbered
-bit 0.</dd>
+bit 0.
+It represents an unsigned integer limited to the range 0 to
+2<sup>8</sup>-1.</dd>
 
 <!-- Maintain a fragment named "3byteOrder" to preserve incoming links to it -->
 <dfn id="3byteOrder">
@@ -504,6 +523,14 @@ or <a href="#PNG-datastream"><span class="Definition">PNG
 datastream</span></a>. PNG uses <a href=
 "#3networkByteOrder"><span class="Definition">network byte
 order</span></a>.</dd>
+
+<dt>
+<dt>canvas</dt></dfn>
+
+<dd>the area on the output device on which the frames are to be displayed.
+  The contents of the canvas are not necessarily available to the decoder.
+  If a <span class="chunk">bKGD</span> chunk exists,
+  it may be used to fill the canvas if there is no preferable background</dd>
 
 <!-- Maintain a fragment named "3channel" to preserve incoming links to it -->
 <dt id="3channel">
@@ -617,6 +644,8 @@ datastream</span></a>.</dd>
 the aim of improving their compressibility. PNG uses only
 lossless (reversible) filter algorithms.</dd>
 
+<!-- need a definition of frame -->
+
 <!-- Maintain a fragment named "3frameBuffer" to preserve incoming links to it -->
 <dfn id="3frameBuffer">
 <dt>frame buffer</dt></dfn>
@@ -624,6 +653,11 @@ lossless (reversible) filter algorithms.</dd>
 <dd>the final digital storage area for the image shown by most
 types of computer display. Software causes an image to appear on
 screen by loading the image into the frame buffer.</dd>
+
+<dfn>
+<dt>fully transparent black</dt></dfn>
+
+<dd>the red, green, blue and alpha components are all set to zero.</dd>
 
 <!-- Maintain a fragment named "3gamma" to preserve incoming links to it -->
 <dfn id="3gamma">
@@ -739,6 +773,13 @@ significance (<a href="#3MSB"><span class=
 "#3LSB"><span class="Definition">LSB</span></a> for four-byte
 integers).</dd>
 
+<dfn>
+<dt>output buffer</dt></dfn>
+
+<dd>The output buffer is a pixel array
+  with dimensions specified by the width and height parameters of the PNG `IHDR` chunk. Conceptually, each frame is constructed in the output buffer before being composited onto the canvas. The contents of the output buffer are available to the decoder. The corners of the output buffer are mapped to the corners of the canvas. </dd>
+
+
 <!-- Maintain a fragment named "3palette" to preserve incoming links to it -->
 <dfn id="3palette">
 <dt>palette</dt></dfn>
@@ -851,6 +892,15 @@ unsigned integer</dt></dfn>
 2<sup>31</sup>-1. The restriction is imposed in order to
 accommodate languages that have difficulty with unsigned
 four-byte values.</dd>
+
+<dfn>
+  <dt>PNG two-byte
+  unsigned integer</dt></dfn>
+
+  <dd>a two-byte unsigned integer limited to the range 0 to
+  2<sup>16</sup>-1. The restriction is imposed in order to
+  accommodate languages that have difficulty with unsigned
+  two-byte values.</dd>
 
 <!-- Maintain a fragment named "3PNGimage" to preserve incoming links to it -->
 <dfn id="3PNGimage">
@@ -968,6 +1018,17 @@ image</span></a>.</dd>
 <dd>image which is presented to a <a href="#3PNGencoder"><span
 class="Definition">PNG encoder</span></a>.</dd>
 
+<dfn>
+  <dt>static image</dt></dfn>
+
+  <dd>non-animated image
+    corresponding to the <a href="#3referenceImage">reference image</a>
+    encoded in the <span class="chunk">IDAT</span> chunk.
+    All PNG and APNG images contain a static image,
+    and non animation-capable displays (such as printers)
+    will display this rather than the animation.
+  </dd>
+
 <!-- Maintain a fragment named "3truecolour" to preserve incoming links to it -->
 <dfn id="3truecolour">
 <dt>truecolour</dt></dfn>
@@ -1007,6 +1068,17 @@ The format is defined in [[rfc1950]].</dd>
 <h2 id="3Abbreviations"><a id="abbreviated-terms">Abbreviated terms</a></h2>
 
 <dl>
+<dfn>
+  <dt>APNG</dt></dfn>
+
+  <dd>Animated PNG, a type of PNG
+    which — in addition to a
+    [[static image]] —
+    also contains an [[animated image]].
+
+  </dd>
+
+
 <!-- Maintain a fragment named "3CRC" to preserve incoming links to it -->
 <dfn id="3CRC">
 <dt>CRC</dt></dfn>
@@ -1064,6 +1136,32 @@ class="Definition">byte</span></a> value.</dd>
 <section>
 <!-- Maintain a fragment named "4Concepts" to preserve incoming links to it -->
 <h2 id="4Concepts">Concepts</h2>
+
+<section>
+  <h2>Static and Animated images</h2>
+
+  <p>
+    All PNG images contain a single
+    [[static image]].
+    Some PNG images —
+    called [[APNG]]
+    for Animated PNG —
+    also contain a frame-based animation sequence,
+    the [[animated image]].
+    The first frame of this may be —
+    but need not be —
+    the [[static image]].
+  </p>
+
+  <p>
+    The [[static image]],
+    and each individual frame of an
+    [[animated image]],
+    corresponds to a <em>reference image</em>
+    and is stored as a <em>PNG image</em>.
+  </p>
+
+</section>
 
 <section>
 <!-- Maintain a fragment named "4Concepts.Sourceimage" to preserve incoming links to it -->
@@ -1603,6 +1701,16 @@ ancillary information</b></caption>
 </tr>
 
 <tr>
+  <td class="Regular">Animation information</td>
+  <td class="Regular">An animated image,
+    defined as a series of frames with associated timing,
+    position and handling information,
+    to be displayed if the viewer is capable of doing so.
+    For other cases such as printers,
+    the [[static image]] will be displayed instead.</td>
+  </tr>
+
+<tr>
 <td class="Regular">Background colour</td>
 <td class="Regular">Solid background colour to be used when presenting the image
 if no better option is available.</td>
@@ -1672,86 +1780,258 @@ image.</td>
 </table>
 </section>
 
-<!-- ************Page Break******************* -->
-<!-- ************Page Break******************* -->
 <!-- Maintain a fragment named "4Concepts.Format" to preserve incoming links to it -->
 <section id="4Concepts.Format">
-<h2>PNG datastream</h2>
+  <h2>PNG datastream</h2>
 
-<!-- Maintain a fragment named "4Concepts.FormatChunks" to preserve incoming links to it -->
-<section id="4Concepts.FormatChunks">
-<h2>Chunks</h2>
-  
-<p>The PNG datastream consists of a PNG signature (see 5.2: <a
-href="#png-signature"><span class="xref">PNG
-signature</span></a>) followed by a sequence of chunks (see
-clause&#160;11: <a href="#chunk-specifications"><span class="xref">Chunk
-specifications</span></a>). Each chunk has a chunk type which
-specifies its function.</p>
+  <!-- Maintain a fragment named "4Concepts.FormatChunks" to preserve incoming links to it -->
+  <section id="4Concepts.FormatChunks">
+  <h2>Chunks</h2>
+
+  <p>The PNG datastream consists of a PNG signature (see
+  [[#PNG signature]]) followed by a sequence of chunks (see
+  clause&#160;11: <a href="#chunk-specifications"><span class="xref">Chunk
+  specifications</span></a>). Each chunk has a chunk type which
+  specifies its function.</p>
+  </section>
+
+  <!-- Maintain a fragment named "4Concepts.FormatTypes" to preserve incoming links to it -->
+  <section id="4Concepts.FormatTypes">
+  <h2>Chunk types</h2>
+
+  <p>There are 19 chunk types defined in this International
+  Standard. Chunk types are four-byte sequences chosen so that they
+  correspond to readable labels when interpreted in the ISO 646.IRV:1991
+  character set. The first four are termed critical chunks, which
+  shall be understood and correctly interpreted according to the
+  provisions of this specification. These are:</p>
+
+  <!-- <ol start="1"> --><ol>
+  <li><a href="#ihdr-image-header"><span class="chunk">IHDR</span></a>: image
+  header, which is the first chunk in a PNG datastream.</li>
+
+  <li><a href="#plte-palette"><span class="chunk">PLTE</span></a>:
+  palette table associated with indexed PNG images.</li>
+
+  <li><a href="#idat-image-data"><span class="chunk">IDAT</span></a>: image
+  data chunks.</li>
+
+  <li><a href="#iend-image-trailer"><span class="chunk">IEND</span></a>: image
+  trailer, which is the last chunk in a PNG datastream.</li>
+  </ol>
+
+  <p>The remaining 18 chunk types are termed ancillary chunk types,
+  which encoders may generate and decoders may interpret.</p>
+
+  <!-- <ol start="5"> --><ol>
+  <li>Transparency information: <a href="#trns-transparency"><span class=
+  "chunk">tRNS</span></a> (see [[#transparency-information]]).</li>
+
+  <li>Colour space information: <a href="#chrm-primary-chromaticities-and-white-point"><span class=
+  "chunk">cHRM</span></a>, <a href="#gama-image-gamma"><span class=
+  "chunk">gAMA</span></a>, <a href="#iccp-embedded-icc-profile"><span class=
+  "chunk">iCCP</span></a>, <a href="#sbit-significant-bits"><span class=
+  "chunk">sBIT</span></a>, <a href="#srgb-standard-rgb-colour-space"><span class=
+  "chunk">sRGB</span></a> (see [[#colour-space-information]]).</li>
+
+  <li>Textual information: <a href="#itxt-international-textual-data"><span class=
+  "chunk">iTXt</span></a>, <a href="#text-textual-data"><span class=
+  "chunk">tEXt</span></a>, <a href="#ztxt-compressed-textual-data"><span class=
+  "chunk">zTXt</span></a> (see [[#textual-information]]).</li>
+
+  <li>Miscellaneous information: <a href="#bkgd-background-colour"><span class=
+  "chunk">bKGD</span></a>, <a href="#hist-image-histogram"><span class=
+  "chunk">hIST</span></a>, <a href="#phys-physical-pixel-dimensions"><span class=
+  "chunk">pHYs</span></a>, <a href="#splt-suggested-palette"><span class=
+  "chunk">sPLT</span></a>, <a href="#exif"><span class=
+  "chunk">eXIf</span></a>
+  (see [[#miscellaneous-information]]).</li>
+
+  <li>Time information: <a href="#time-image-last-modification-time"><span class=
+  "chunk">tIME</span></a> (see [[#time-stamp-information]]).</li>
+
+  <li>Animation information:
+    <a href="#actl-animation-control"><span class="chunk">acTL</span></a>,
+    <a href="#fctl-frame-control"><span class="chunk">fcTL</span></a>,
+    <a href="#fdat-frame-data"><span class="chunk">fdAT</span></a>
+    (see [[#animation-information]]).
+  </li>
+  </ol>
+  </section>
+  </section>
+
+<section>
+<h2>APNG: frame-based animation</h2>
+
+<section>
+<h3>General</h3>
+
+<p>Animated PNG (APNG)
+  is an extension of the PNG format,
+  adding support for frame-based animated images.
+  It is intended to be a replacement for simple animated images
+  that have traditionally used the GIF format [[GIF]],
+  while adding support for 24-bit images and 8-bit transparency,
+  which GIF lacks.</p>
+
+<p>APNG is backwards-compatible with earlier versions of PNG;
+  a non-animated PNG decoder will ignore the ancillary APNG-specific chunks
+  and display the [[static image]]. </p>
+
 </section>
 
-<!-- Maintain a fragment named "4Concepts.FormatTypes" to preserve incoming links to it -->
-<section id="4Concepts.FormatTypes">
-<h2>Chunk types</h2>
+<section>
+<h3>Structure</h3>
 
-<p>There are 19 chunk types defined in this International
-Standard. Chunk types are four-byte sequences chosen so that they
-correspond to readable labels when interpreted in the ISO 646.IRV:1991
-character set. The first four are termed critical chunks, which
-shall be understood and correctly interpreted according to the
-provisions of this specification. These are:</p>
+<p>An APNG stream is a normal PNG stream
+  as defined in previous versions of the PNG Specification,
+  with three additional chunk types
+  describing the animation
+  and providing additional frame data. </p>
 
-<!-- <ol start="1"> --><ol>
-<li><a href="#ihdr-image-header"><span class="chunk">IHDR</span></a>: image
-header, which is the first chunk in a PNG datastream.</li>
+<p>To be recognized as an APNG, an <span class="chunk">acTL</span> chunk
+  must appear in the stream before any <span class="chunk">IDAT</span> chunks.
+  The <span class="chunk">acTL</span> structure is
+  <a href="#animation-information">described below</a>. </p>
 
-<li><a href="#plte-palette"><span class="chunk">PLTE</span></a>:
-palette table associated with indexed PNG images.</li>
+<p>Conceptually, at the beginning of each play
+  the [[output buffer]]
+  shall be completely initialized to a
+  [[fully transparent black]] rectangle,
+  with width and height dimensions from the <span class="chunk">IHDR</span> chunk. </p>
 
-<li><a href="#idat-image-data"><span class="chunk">IDAT</span></a>: image
-data chunks.</li>
+<p>The static image may be included
+  as the first frame of the animation
+  by the presence of a single <span class="chunk">fcTL</span> chunk before <span class="chunk">IDAT</span>.
+  Otherwise, the static image is not part of the animation. </p>
 
-<li><a href="#iend-image-trailer"><span class="chunk">IEND</span></a>: image
-trailer, which is the last chunk in a PNG datastream.</li>
-</ol>
+<p>Subsequent frames are encoded in <span class="chunk">fdAT</span> chunks,
+  which have the same structure as <span class="chunk">IDAT</span> chunks,
+  except preceded by a <a href="#4Concepts.APNGSequence">sequence number</a>.
+  Information for each frame
+  about placement and rendering
+  is stored in <span class="chunk">fcTL</span> chunks.
+  The full layout of <span class="chunk">fdAT</span> and <span class="chunk">fcTL</span> chunks is
+  <a href="#animation-information">described below</a>. </p>
 
-<p>The remaining 14 chunk types are termed ancillary chunk types,
-which encoders may generate and decoders may interpret.</p>
+<p>The boundaries of the entire animation
+  are specified by the width and height parameters
+  of the `IHDR` chunk,
+  regardless of whether the default image is part of the animation.
+  The default image should be appropriately padded
+  with [[fully transparent black]] pixels
+  if extra space will be needed for later frames. </p>
 
-<!-- <ol start="5"> --><ol>
-<li>Transparency information: <a href="#trns-transparency"><span class=
-"chunk">tRNS</span></a> (see 11.3.2: <a class='Href' href=
-'#transparency-information'>Transparency information</a>).</li>
+<p>Each frame is identical for each play,
+  therefore it is safe for applications to cache the frames. </p>
 
-<li>Colour space information: <a href="#chrm-primary-chromaticities-and-white-point"><span class=
-"chunk">cHRM</span></a>, <a href="#gama-image-gamma"><span class=
-"chunk">gAMA</span></a>, <a href="#iccp-embedded-icc-profile"><span class=
-"chunk">iCCP</span></a>, <a href="#sbit-significant-bits"><span class=
-"chunk">sBIT</span></a>, <a href="#srgb-standard-rgb-colour-space"><span class=
-"chunk">sRGB</span></a> (see 11.3.3: <a class='Href' href=
-'#colour-space-information'>Colour space information</a>).</li>
-
-<li>Textual information: <a href="#itxt-international-textual-data"><span class=
-"chunk">iTXt</span></a>, <a href="#text-textual-data"><span class=
-"chunk">tEXt</span></a>, <a href="#ztxt-compressed-textual-data"><span class=
-"chunk">zTXt</span></a> (see 11.3.4: <a class='Href' href=
-'#textual-information'>Textual information</a>).</li>
-
-<li>Miscellaneous information: <a href="#bkgd-background-colour"><span class=
-"chunk">bKGD</span></a>, <a href="#hist-image-histogram"><span class=
-"chunk">hIST</span></a>, <a href="#phys-physical-pixel-dimensions"><span class=
-"chunk">pHYs</span></a>, <a href="#splt-suggested-palette"><span class=
-"chunk">sPLT</span></a>, <a href="#exif"><span class=
-"chunk">eXIf</span></a>
-(see 11.3.5: <a class='Href' href=
-'#miscellaneous-information'>Miscellaneous information</a>).</li>
-
-<li>Time information: <a href="#time-image-last-modification-time"><span class=
-"chunk">tIME</span></a> (see 11.3.6: <a class='Href' href=
-'#time-stamp-information'>Time stamp information</a>).</li>
-</ol>
 </section>
+
+<section>
+<h3>Sequence numbers</h3>
+
+<p>The <span class="chunk">fcTL</span> and <span class="chunk">fdAT</span> chunks
+  have a zero-based, 4 byte sequence number.
+  Both chunk types share the sequence.
+  The purpose of this number is to detect (and optionally correct)
+  sequence errors in an Animated PNG,
+  since the PNG specification does not impose ordering restrictions on ancillary chunks. </p>
+
+<p>The first <span class="chunk">fcTL</span> chunk shall contain sequence number 0,
+  and the sequence numbers in the remaining
+  <span class="chunk">fcTL</span> and <span class="chunk">fdAT</span> chunks
+  shall be in ascending order,
+  with no gaps or duplicates.
+</p>
+
+<p>The tables below illustrates the use of sequence numbers
+  for images with more than one frame,
+  and more than one <span class="chunk">fdAT</span> chunk
+  for the second frame.
+  (<span class="chunk">IHDR</span> and
+  <span class="chunk">IEND</span> chunks
+  omitted in these tables, for clarity).
+</p>
+
+<table class="Regular" id="table52" summary=
+"sequence numbers, if the static image is also the first frame">
+<caption><b>Table 5.2 &mdash; If the static image is also the first frame</b></caption>
+<tr>
+  <th>Sequence number</th>
+  <th>Chunk</th>
+</tr>
+<tr>
+  <td>(none)</td>
+  <td><span class="chunk"acTL</span></td>
+</tr>
+<tr>
+  <td>0</td>
+  <td><span class="chunk">fcTL</span> first frame</td>
+</tr>
+<tr>
+  <td>(none)</td>
+  <td><span class="chunk">IDAT</span> first frame / static image</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td><span class="chunk">fcTL</span> second frame</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>first <span class="chunk">fdAT</span> for second frame</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>second <span class="chunk">fdAT</span> for second frame</td>
+</tr>
+</table>
+
+<table class="Regular" id="table53" summary=
+"sequence numbers, if the static image is not part of the animation">
+<caption><b>Table 5.3 &mdash; If the static image is not part of the animation</b></caption>
+<tr>
+  <th>Sequence number</th>
+  <th>Chunk</th>
+</tr>
+<tr>
+  <td>(none)</td>
+  <td><span class="chunk"acTL</span></td>
+</tr>
+<tr>
+  <td>(none)</td>
+  <td><span class="chunk">IDAT</span> static image</td>
+</tr>
+<tr>
+  <td>0</td>
+  <td><span class="chunk">fcTL</span> first frame</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>first <span class="chunk">fdAT</span> for first frame</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>second <span class="chunk">fdAT</span> for first frame</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><span class="chunk">fcTL</span> second frame</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>first <span class="chunk">fdAT</span> for second frame</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>second <span class="chunk">fdAT</span> for second frame</td>
+</tr>
+</table>
+
+
+
+
 </section>
+
 
 <!-- Maintain a fragment named "4Concepts.Errors" to preserve incoming links to it -->
 <section id="4Concepts.Errors">
@@ -2125,11 +2405,19 @@ class="chunk">PLTE</span></a> is optional)</th>
 </tr>
 
 <tr>
+<td class="Regular"><span class="chunk">[[acTL]]</span> </td>
+<td class="Regular">No</td>
+<td class="Regular">Before <a href="#plte-palette"><span class="chunk">PLTE</span></a>
+and <a href="#idat-image-data"><span class="chunk">IDAT</span></a> </td>
+</tr>
+
+<tr>
 <td class="Regular"><a href="#chrm-primary-chromaticities-and-white-point"><span class="chunk">cHRM</span></a> </td>
 <td class="Regular">No</td>
 <td class="Regular">Before <a href="#plte-palette"><span class="chunk">PLTE</span></a>
 and <a href="#idat-image-data"><span class="chunk">IDAT</span></a> </td>
 </tr>
+
 
 <tr>
 <td class="Regular"><a href="#gama-image-gamma"><span class="chunk">gAMA</span></a> </td>
@@ -2190,6 +2478,12 @@ before <a href="#idat-image-data"><span class="chunk">IDAT</span></a>
 </tr>
 
 <tr>
+<td class="Regular"><a href="#11fcTL"><span class="chunk">fcTL</span></a> </td>
+<td class="Regular">Yes</td>
+<td class="Regular">One may occur before <a href="#idat-image-data"><span class="chunk">IDAT</span></a>; all others shall be after <a href="#idat-image-data"><span class="chunk">IDAT</span></a> </td>
+</tr>
+
+<tr>
 <td class="Regular"><a href="#phys-physical-pixel-dimensions"><span class="chunk">pHYs</span></a> </td>
 <td class="Regular">No</td>
 <td class="Regular">Before <a href="#idat-image-data"><span class="chunk">IDAT</span></a>
@@ -2201,6 +2495,12 @@ before <a href="#idat-image-data"><span class="chunk">IDAT</span></a>
 <td class="Regular">Yes</td>
 <td class="Regular">Before <a href="#idat-image-data"><span class="chunk">IDAT</span></a>
 </td>
+</tr>
+
+<tr>
+  <td class="Regular"><a href="#11fdAT"><span class="chunk">fdAT</span></a> </td>
+  <td class="Regular">Yes</td>
+  <td class="Regular">After <a href="#idat-image-data"><span class="chunk">IDAT</span></a> </td>
 </tr>
 
 <tr>
@@ -2264,13 +2564,15 @@ symbols used in lattice diagrams</b></caption>
 </tr>
 </table>
 
+<!-- these lattice diagrams need the new chunks added -->
+
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <figure id="lattice-diagram-with-plte">
 <!-- Maintain a fragment named "figure52" to preserve incoming links to it -->
 <a id="figure52"></a>
 <object height="540" width="800" data="figures/lattice-diagram-with-plte.svg" type="image/svg+xml">
- <img height="540" width="800" src="png-figures/lattice-diagram-with-plte.png" alt="Lattice diagram: PNG images with PLTE in datastream" />
+ <img height="540" width="800" src="png-figures/lattice-diagram-with-plte.png" alt="Lattice diagram: static PNG images with PLTE in datastream" />
 </object>
 <figcaption>Lattice diagram: PNG images with <a href="#plte-palette"><span class=
 "chunk">PLTE</span></a> in datastream</figcaption>
@@ -2282,7 +2584,7 @@ symbols used in lattice diagrams</b></caption>
 <a id="figure53"></a>
 <object height="540" width="900" data="figures/lattice-diagram-without-plte.svg"
 type="image/svg+xml">
- <img height="540" width="900" src="png-figures/lattice-diagram-without-plte.png" alt="Lattice diagram: PNG images without PLTE in datastream" />
+ <img height="540" width="900" src="png-figures/lattice-diagram-without-plte.png" alt="Lattice diagram: static PNG images without PLTE in datastream" />
 </object>
 <figcaption>Lattice diagram: PNG images without <a href="#plte-palette"><span
 class="chunk">PLTE</span></a> in datastream</figcaption>
@@ -2313,7 +2615,7 @@ class="chunk">PLTE</span></a> in datastream</figcaption>
   <p>The definition as a public chunk is neither automatic nor immediate. A
   proposed public chunk type SHALL not be used in publicly available software or
   datastreams until defined as such.</p>
-    
+
   <p>The definition of new critical chunk types is discouraged unless
   necessary.</p>
 </section>
@@ -2334,11 +2636,11 @@ class="chunk">PLTE</span></a> in datastream</figcaption>
     different applications.If a private chunk type is used, additional
     identifying information SHOULD BE be stored at the beginning of the chunk
     data to further reduce the risk of conflicts.</p>
-      
+
     <p>An ancillary chunk type, not a critical chunk type, SHOULD be used for
     all private chunks that store information that is not absolutely essential
     to view the image.</p>
-    
+
     <p>Private critical chunks SHOULD NOT be defined because PNG datastreams
     containing such chunks are not portable, and SHOULD NOT be used in publicly
     available software or datastreams. If a private critical chunk is essential
@@ -2365,7 +2667,7 @@ class="chunk">PLTE</span></a> in datastream</figcaption>
 
   <p>These <a>private field values</a> are neither defined nor reserved by this
   specification.</p>
-  
+
   <p><a>Private field values</a>  MAY be used for experimental or private
   semantics.</p>
 
@@ -2373,7 +2675,7 @@ class="chunk">PLTE</span></a> in datastream</figcaption>
   software or datastreams since they can result in datastreams that are
   unreadable by PNG decoders as detailed at <a href="#13Decoders"></a>.</p>
 
-</section>  
+</section>
 
 </section>
 
@@ -4284,7 +4586,7 @@ interest.</p>
 </ul>
 
 <p>Keywords of general interest SHOULD be listed in [[PNG-EXTENSIONS]].</p>
-  
+
 <p>Keywords shall contain only printable Latin-1 [[ISO 8859-1]]
 characters and spaces; that is, only character codes 32-126 and
 161-255 decimal are allowed. To reduce the chances for human
@@ -5002,7 +5304,374 @@ as an automatically-applied time stamp that is updated whenever
 the image data are changed.</p>
 </section>
 </section>
+
+<section>
+  <h2>Animation information</h2>
+
+  <section>
+    <h2><span class="chunk">acTL</span>
+    Animation Control Chunk</h2>
+
+    <p>The four-byte chunk type field contains the decimal values</p>
+
+    <pre>
+    97 99 84 76
+    </pre>
+
+    <p>The <span class="chunk">acTL</span> chunk declares that this is an
+    animated PNG image, gives the number of frames, and the number of times to loop.
+    It contains:</p>
+
+    <table class="Regular" summary=
+    "This table defines the acTL chunk">
+    <tr>
+    <td class="Regular">`num_frames`</td>
+    <td class="Regular">4 bytes</td>
+    </tr>
+
+    <tr>
+    <td class="Regular">`num_plays`</td>
+    <td class="Regular">4 bytes</td>
+    </tr>
+    </table>
+
+    <p>Each value is encoded as a four-byte PNG unsigned integer.</p>
+
+    <p>`num_frames` indicates the total number of frames in the animation.
+      This must equal the number of <span class="chunk">fcTL</span> chunks.
+      0 is not a valid value.
+      1 is a valid value, for a single-frame PNG.
+      If this value does not equal the actual number of frames
+      it should be treated as an error. </p>
+
+    <p>`num_plays` indicates the number of times that this animation should play;
+      if it is 0, the animation should play indefinitely.
+      If nonzero, the animation should come to rest on the final frame
+      at the end of the last play. </p>
+
+    <p>The <span class="chunk">acTL</span> chunk
+      must appear before
+      the first <span class="chunk">IDAT</span> chunk
+      within a valid PNG stream.</p>
+
+    <p class="note">For Web compatibility,
+      due to the long time between the development and deployment of this chunk
+      and it's incorporation into the PNG specification,
+      this chunk name is exceptionally defined as if it were a private chunk.
+    </p>
+
+  </section>
+
+  <section>
+    <h2><span class="chunk">fcTL</span>
+      Frame Control Chunk</h2>
+
+    <p>The four-byte chunk type field contains the decimal values</p>
+
+    <pre>
+    102 99 84 76
+    </pre>
+
+    <p>The <span class="chunk">fcTL</span> chunk defines
+      the dimensions, position, delay and disposal of an individual frame.
+      Exactly one <span class="chunk">fcTL</span> chunk chunk
+      is required for each frame.
+      It contains:</p>
+
+    <table class="Regular" summary=
+    "This table defines the fcTL chunk">
+    <tr>
+    <td class="Regular">`sequence_number`</td>
+    <td class="Regular">4 bytes</td>
+    </tr>
+
+    <tr>
+    <td class="Regular">`width`</td>
+    <td class="Regular">4 bytes</td>
+    </tr>
+
+    <tr>
+    <td class="Regular">`height`</td>
+    <td class="Regular">4 bytes</td>
+    </tr>
+
+    <tr>
+    <td class="Regular">`x_offset`</td>
+    <td class="Regular">4 bytes</td>
+    </tr>
+
+    <tr>
+    <td class="Regular">`y_offset`</td>
+    <td class="Regular">4 bytes</td>
+    </tr>
+
+    <tr>
+    <td class="Regular">`delay_num`</td>
+    <td class="Regular">2 bytes</td>
+    </tr>
+
+    <tr>
+    <td class="Regular">`delay_den`</td>
+    <td class="Regular">2 bytes</td>
+    </tr>
+
+    <tr>
+    <td class="Regular">`dispose_op`</td>
+    <td class="Regular">1 byte</td>
+    </tr>
+
+    <tr>
+      <td class="Regular">`blend_op`</td>
+      <td class="Regular">1 byte</td>
+    </tr>
+    </table>
+
+<p>`sequence_number` defines the sequence number of the animation chunk,
+  starting from 0. It is encoded as a four-byte PNG unsigned integer.
+</p>
+
+<p>`width` and `height` define the width and height of the following frame.
+  They are encoded as four-byte PNG unsigned integers.
+  They must be greater than zero.
+</p>
+
+<p>`x_offset` and `y_offset` define the x and y position of the following frame.
+  They are encoded as four-byte PNG unsigned integers.
+  They must be greater than or equal to zero.</p>
+
+<p>The frame must be rendered within the region defined by
+  `x_offset`, `y_offset`, `width`, and `height`.
+  This region may not fall outside of the default image; thus
+  `x_offset` plus `width` must not be greater than the
+  <span class="chunk">IHDR</span> width;
+  similarly
+  `y_offset` plus `height` must not be greater than the
+  <span class="chunk">IHDR</span> height.
+</p>
+
+<p>`delay_num` and `delay_den` define the numerator and denominator
+  of the delay fraction;
+  indicating the time to display the current frame, in seconds.
+  If the denominator is 0, it is to be treated as if it were 100
+  (that is, `delay_num` then specifies 1/100ths of a second).
+  If the the value of the numerator is 0
+  the decoder should render the next frame as quickly as possible,
+  though viewers may impose a reasonable lower bound.
+  They are encoded as two-byte PNG unsigned integers.
+</p>
+
+<p>Frame timings should be independent of the time required
+  for decoding and display of each frame,
+  so that animations will run at the same rate
+  regardless of the performance of the decoder implementation. </p>
+
+<p>`dispose_op` defines the type of frame area disposal
+  to be done after rendering this frame;
+  in other words,
+  it specifies how the output buffer should be changed
+  at the end of the delay (before rendering the next frame).
+  It is encoded as a one-byte unsigned integer.
+</p>
+
+<p>Valid values for `dispose_op` are: </p>
+
+<table class="Regular" summary=
+    "This table defines the disposal operators">
+    <tr>
+    <td class="Regular">0</td>
+    <td class="Regular">`APNG_DISPOSE_OP_NONE`</td>
+    </tr>
+    <tr>
+    <td class="Regular">1</td>
+    <td class="Regular">`APNG_DISPOSE_OP_BACKGROUND`</td>
+    </tr>
+    <tr>
+    <td class="Regular">2</td>
+    <td class="Regular">`APNG_DISPOSE_OP_PREVIOUS`</td>
+    </tr>
+</table>
+
+  <dl>
+    <dt>`APNG_DISPOSE_OP_NONE`</dt>
+    <dd>no disposal is done on this frame before rendering the next; the contents of the output buffer are left as is.</dd>
+    <dt>`APNG_DISPOSE_OP_BACKGROUND`</dt>
+    <dd>the frame's region of the output buffer is to be cleared to fully transparent black before rendering the next frame.</dd>
+    <dt>`APNG_DISPOSE_OP_PREVIOUS`</dt>
+    <dd>the frame's region of the output buffer is to be reverted to the previous contents before rendering the next frame.</dd>
+  </dl>
+
+  <p>If the first <span class="chunk">fcTL</span> chunk uses a `dispose_op` of `APNG_DISPOSE_OP_PREVIOUS` it should be treated as `APNG_DISPOSE_OP_BACKGROUND`. </p>
+
+  <p>`blend_op` specifies whether the frame is to be alpha blended
+    into the current output buffer content,
+    or whether it should completely replace its region
+    in the output buffer.
+    It is encoded as a one-byte unsigned integer.
+  </p>
+
+  <p>Valid values for `blend_op` are:</p>
+
+  <table class="Regular" summary=
+    "This table defines the blend operators">
+    <tr>
+    <td class="Regular">0</td>
+    <td class="Regular">`APNG_BLEND_OP_SOURCE`</td>
+    </tr>
+    <tr>
+    <td class="Regular">1</td>
+    <td class="Regular">`APNG_BLEND_OP_OVER`</td>
+    </tr>
+</table>
+
+<p>If `blend_op` is `APNG_BLEND_OP_SOURCE`
+  all color components of the frame,
+  including alpha,
+  overwrite the current contents of the frame's output buffer region.
+  If `blend_op` is `APNG_BLEND_OP_OVER`
+  the frame should be composited onto the output buffer
+  based on its alpha,
+  using a simple OVER operation as described in
+  <a href="#13Alpha-channel-processing">Alpha Channel Processing</a>.
+  Note that the second variation of the sample code is applicable. </p>
+
+<p>
+  Note that for the first frame,
+  the two blend modes are functionally equivalent
+  due to the clearing of the output buffer
+  at the beginning of each play.
+</p>
+
+<p>
+  The <span class="chunk">fcTL</span> chunk
+  corresponding to the default image,
+  if it exists,
+  has these restrictions:</p>
+
+  <ul>
+    <li>The `x_offset` and `y_offset` fields must be 0.</li>
+    <li>The `width` and `height` fields must equal
+      the corresponding fields from the <span class="chunk">IHDR</span> chunk.</li>
+  </ul>
+
+<p>
+  As noted earlier,
+  the output buffer must be completely initialized
+  to fully transparent black
+  at the beginning of each play.
+  This is to ensure that each play of the animation will be identical.
+  Decoders are free to avoid an explicit clear step
+  as long as the result is guaranteed to be identical.
+  For example, if the default image is included in the animation,
+  and uses a `blend_op` of `APNG_BLEND_OP_SOURCE`,
+  clearing is not necessary
+  because the entire output buffer will be overwritten.
+</p>
+
+<!-- Not clear this para is needed, but the original specification had it -->
+<p>
+  Note, at the end of the <span class="chunk">fcTL</span> chunk
+  is a 32-bit CRC checksum.
+  The checksum is calculated using the <span class="chunk">fcTL</span> chunk
+  and includes the 'fcTL' chunk type field.
+</p>
+
+<!--
+  8.1 Integers and byte order only covers multibyte integers. So add:
+   a "byte" shall be an 8-bit unsigned integer with the range 0 to (2^8)-1
+ -->
+
+<p class="note">For Web compatibility,
+  due to the long time between the development and deployment of this chunk
+  and it's incorporation into the PNG specification,
+  this chunk name is exceptionally defined as if it were a private chunk.
+</p>
+
 </section>
+
+<section>
+    <h2><span class="chunk">fdAT</span>
+    Frame Data Chunk</h2>
+
+    <p>The four-byte chunk type field contains the decimal values</p>
+
+    <pre>
+    102 100 65 84
+    </pre>
+
+    <p>The <span class="chunk">fdAT</span> chunk
+      serves the same purpose for animations
+      as the <span class="chunk">IDAT</span> chunk
+      does for static images;
+      it contains the image data
+      for all frames
+      (or, for animations which include the [[static image]] as first frame,
+      for all frames after the first one).
+    It contains:</p>
+
+    <table class="Regular" summary=
+    "This table defines the fdAT chunk">
+    <tr>
+    <td class="Regular">`sequence_number`</td>
+    <td class="Regular">4 bytes</td>
+    </tr>
+
+    <tr>
+    <td class="Regular">`frame_data`</td>
+    <td class="Regular"><i>n</i> bytes</td>
+    </tr>
+    </table>
+
+    <p>At least one <span class="chunk">fdAT</span> chunk
+      is required for each frame,
+      except for the first frame, if that frame is represented by
+      an <span class="chunk">IDAT</span> chunk.
+    </p>
+
+    <p>
+      The compressed datastream is then
+      the concatenation of the contents of the data fields
+      of all the <span class="chunk">fdAT</span> chunks
+      within a frame.
+      When decompressed,
+      the datastream is the complete pixel data of a PNG image,
+      including the filter byte at the beginning of each scanline,
+      similar to the uncompressed data
+      of all the <span class="chunk">IDAT</span> chunks.
+      It utilizes the same bit depth, color type,
+      compression method, filter method, interlace method,
+      and palette (if any) as the [[static image]].
+    </p>
+
+    <p>
+      Each frame inherits every property specified by
+      any critical or ancillary chunks <em>before</em>
+      the first <span class="chunk">IDAT</span> chunk
+      in the file,
+      except the width and height,
+      which come from the <span class="chunk">fcTL</span> chunk.
+    </p>
+
+    <p>
+      If the PNG <span class="chunk">pHYs<span class="chunk"> chunk
+      is present, the APNG images
+      and their `x_offset` and `y_offset` values
+      must be scaled in the same way as the main image.
+      Conceptually, such scaling occurs while mapping
+      the output buffer onto the canvas.
+    </p>
+
+
+
+    <p class="note">For Web compatibility,
+      due to the long time between the development and deployment of this chunk
+      and it's incorporation into the PNG specification,
+      this chunk name is exceptionally defined as if it were a private chunk.
+    </p>
+
+  </section>
+</section>
+
+
 </section>
 
 <!-- ************Page Break******************* -->
@@ -5950,6 +6619,28 @@ checking</span></a>).</p>
 "chunk">iCCP</span></a>) could lead to buffer overruns.
 Implementors of deflate decompressors should guard against this
 possibility.</p>
+
+<p>
+  APNG is designed to allow incremental display of frames
+  before the entire <a href="#5DataRep">datastream</a> has been read.
+  This implies that some errors may not be detected
+  until partway through the animation.
+  It is strongly recommended that when any error is encountered
+  decoders should discard all subsequent frames,
+  stop the animation,
+  and revert to displaying the static image.
+  A decoder which detects an error
+  before the animation has started
+  should display the static image.
+  An error message may be displayed to the user if appropriate.
+</p>
+
+<p>Decoders shall treat
+  out-of-order APNG chunks
+  as an error.
+  APNG-aware PNG editors
+  should restore them to correct order,
+  using the sequence numbers. </p>
 </section>
 
 <!-- Maintain a fragment named "13Error-checking" to preserve incoming links to it -->
@@ -7423,8 +8114,9 @@ losslessly represents the same reference image.</li>
 <!-- Maintain a fragment named "IANA-registrations" to preserve incoming links to it -->
 <h2 id="IANA-registrations">Internet Media Types</h2>
 
-<!-- Maintain a fragment named "image-PNG-EXTENSIONSistration" to preserve incoming links to it -->
-<h2 id="image-PNG-EXTENSIONSistration">image/png</h2>
+<!-- Maintain a fragment named "A-Media-type" to preserve incoming links to image/png registration -->
+<section>
+<h3 id="A-Media-type">image/png</h3>
 
 <p>This updates the existing
   <span class="tt">image/png</span> Internet Media type, under the
@@ -7454,15 +8146,20 @@ losslessly represents the same reference image.</li>
     <dd>
       <p>A PNG document is composed of a collection of explicitly typed "chunks".
         For each of the chunk types defined in the PNG specification (except
-        for "gIFx"), the only effect associated with those chunks is to cause
+        for <span class="chunk">gIFx</span>), the only effect associated with those chunks is to cause
         an image to be rendered on the recipient's display or printer.</p>
-      <p>The gIFx chunk type is used to encapsulate Application Extension
+      <p>The <span class="chunk">gIFx</span> chunk type is used
+        to encapsulate Application Extension
         data, and some use of that data might present security risks, though
         no risks are known.  Likewise, the security risks associated with
         future chunk types cannot be evaluated, particularly unregistered
-        chunks.  However, it is the intention of the PNG group to disallow
+        chunks.  However, it is the intention of the PNG Working Group to disallow
         chunks containing "executable" data to become registered chunks.</p>
-      <p>The text chunks, tEXt and zTXt, contain data that can be displayed in
+      <p>The text chunks,
+        <span class="chunk">tEXt</span>,
+        <span class="chunk">iTXT</span> and
+        <span class="chunk">zTXt</span>,
+        contain data that can be displayed in
         the form of comments, etc.  Some operating systems or terminals might
         allow the display of textual data with embedded control characters to
         perform operations such as re-mapping of keys, creation of files, etc.
@@ -7542,6 +8239,126 @@ losslessly represents the same reference image.</li>
     <dd>W3C</dd>
 
   </dl>
+</section>
+
+<section>
+  <h3>image/apng</h3>
+
+  <p>
+    This appendix is in conformance with
+      <a href="https://www.rfc-editor.org/info/bcp13">BCP 13</a> and
+      <a href="https://www.w3.org/2020/01/registering-mediatypes.html">W3CRegMedia</a>.
+    </p>
+
+    <dl>
+      <dt>Media type name:</dt>
+      <dd>image</dd>
+
+      <dt>Media subtype name:</dt>
+      <dd>apng</dd>
+
+      <dt>Required parameters:</dt>
+      <dd>None</dd>
+
+      <dt>Optional parameters:</dt>
+      <dd>None</dd>
+
+      <dt>Encoding considerations:</dt>
+      <dd>binary</dd>
+
+      <dt>Security considerations:</dt>
+      <dd>
+        <p>An APNG document is composed of a collection of explicitly typed "chunks".
+          For each of the chunk types defined in the PNG specification (except
+          for <span class="chunk">gIFx</span>), the only effect associated with those chunks is to cause
+          an animated image to be rendered on the recipient's display.</p>
+        <p>The <span class="chunk">gIFx</span> chunk type is used
+          to encapsulate Application Extension
+          data, and some use of that data might present security risks, though
+          no risks are known.  Likewise, the security risks associated with
+          future chunk types cannot be evaluated, particularly unregistered
+          chunks.  However, it is the intention of the PNG Working Group to disallow
+          chunks containing "executable" data to become registered chunks.</p>
+        <p>The text chunks,
+          <span class="chunk">tEXt</span>,
+          <span class="chunk">iTXT</span> and
+          <span class="chunk">zTXt</span>,
+          contain data that can be displayed in
+          the form of comments, etc.  Some operating systems or terminals might
+          allow the display of textual data with embedded control characters to
+          perform operations such as re-mapping of keys, creation of files, etc.
+          For this reason, the specification recommends that the text chunks be
+          filtered for control characters before direct display.</p>
+        <p>The PNG format is specifically designed to facilitate early detection
+          of file transmission errors, and makes use of cyclical redundancy
+          checks to ensure the integrity of the data contained in its chunks.</p>
+      </dd>
+
+      <dt>Interoperability considerations:</dt>
+      <dd>Network byte order used throughout.</dd>
+
+      <dt>Published specification:</dt>
+      <dd><a href="https://www.w3.org/TR/PNG/
+        ">Portable Network Graphics (PNG) Specification</a>,
+        <a href="https://www.w3.org/TR/PNG/
+        ">https://www.w3.org/TR/PNG/</a>
+      </dd>
+
+      <dt>Applications which use this media:</dt>
+      <dd>Animated PNG (APNG) is widely implemented
+        in all Web browsers, image viewers, and animation and image creation tools
+      </dd>
+
+      <dt>Fragment identifier considerations:
+      </dt>
+      <dd>N/A</dd>
+
+      <dt>Restrictions on usage:
+      </dt>
+      <dd>N/A</dd>
+
+      <dt>Provisional registration? (standards tree only):</dt>
+      <dd>No</dd>
+
+      <dt>Additional information:
+      </dt>
+      <dd>
+        <dl>
+          <dt>Deprecated alias names for this type:</dt>
+          <dd>N/A</dd>
+          <dt>Magic number(s):</dt>
+          <dd>89 50 4E 47 0D 0A 1A 0A</dd>
+          <dt>File extension(s):</dt>
+          <dd>.apng</dd>
+          <dt>Object Identifiers:</dt>
+          <dd>N/A</dd>
+        </dl>
+      </dd>
+
+      <dt>General Comments:</dt>
+      <dd>
+        <p>This registration brings the PNG specification
+          into alignment with already widely-deployed reality.
+
+      <dt>Person to contact for further information:</dt>
+      <dd>
+        <dl>
+          <dt>Name:</dt>
+          <dd>PNG Working Group</dd>
+          <dt>Email:</dt>
+          <dd><a href="mailto:public-png@w3.org">public-png@w3.org</a></dd>
+        </dl>
+      </dd>
+
+      <dt>Intended usage:</dt>
+      <dd>Common</dd>
+
+      <dt>Author/Change controller:</dt>
+      <dd>W3C</dd>
+
+    </dl>
+  </section>
+
 </section>
 
 

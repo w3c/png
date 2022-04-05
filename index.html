@@ -485,7 +485,7 @@ necessarily the best possible image.
   <dd>Optional animation, consisting of a series of frames.
     The first frame may be,
     but need not be,
-    the [[static image]].
+    the [=static image=].
   </dd>
 
 <!-- Maintain a fragment named "3bitDepth" to preserve incoming links to it -->
@@ -1073,8 +1073,8 @@ The format is defined in [[rfc1950]].</dd>
 
   <dd>Animated PNG, a type of PNG
     which — in addition to a
-    [[static image]] —
-    also contains an [[animated image]].
+    [=static image=] —
+    also contains an [=animated image=].
 
   </dd>
 
@@ -1142,21 +1142,21 @@ class="Definition">byte</span></a> value.</dd>
 
   <p>
     All PNG images contain a single
-    [[static image]].
+    [=static image=].
     Some PNG images —
-    called [[APNG]]
+    called [=APNG=]
     for Animated PNG —
     also contain a frame-based animation sequence,
-    the [[animated image]].
+    the [=animated image=].
     The first frame of this may be —
     but need not be —
-    the [[static image]].
+    the [=static image=].
   </p>
 
   <p>
-    The [[static image]],
+    The [=static image=],
     and each individual frame of an
-    [[animated image]],
+    [=animated image=],
     corresponds to a <em>reference image</em>
     and is stored as a <em>PNG image</em>.
   </p>
@@ -1707,7 +1707,7 @@ ancillary information</b></caption>
     position and handling information,
     to be displayed if the viewer is capable of doing so.
     For other cases such as printers,
-    the [[static image]] will be displayed instead.</td>
+    the [=static image=] will be displayed instead.</td>
   </tr>
 
 <tr>
@@ -1876,7 +1876,7 @@ image.</td>
 
 <p>APNG is backwards-compatible with earlier versions of PNG;
   a non-animated PNG decoder will ignore the ancillary APNG-specific chunks
-  and display the [[static image]]. </p>
+  and display the [=static image=]. </p>
 
 </section>
 
@@ -1895,9 +1895,9 @@ image.</td>
   <a href="#animation-information">described below</a>. </p>
 
 <p>Conceptually, at the beginning of each play
-  the [[output buffer]]
+  the [=output buffer=]
   shall be completely initialized to a
-  [[fully transparent black]] rectangle,
+  [=fully transparent black=] rectangle,
   with width and height dimensions from the <span class="chunk">IHDR</span> chunk. </p>
 
 <p>The static image may be included
@@ -1919,7 +1919,7 @@ image.</td>
   of the `IHDR` chunk,
   regardless of whether the default image is part of the animation.
   The default image should be appropriately padded
-  with [[fully transparent black]] pixels
+  with [=fully transparent black=] pixels
   if extra space will be needed for later frames. </p>
 
 <p>Each frame is identical for each play,
@@ -5604,7 +5604,7 @@ the image data are changed.</p>
       does for static images;
       it contains the image data
       for all frames
-      (or, for animations which include the [[static image]] as first frame,
+      (or, for animations which include the [=static image=] as first frame,
       for all frames after the first one).
     It contains:</p>
 
@@ -5639,7 +5639,7 @@ the image data are changed.</p>
       of all the <span class="chunk">IDAT</span> chunks.
       It utilizes the same bit depth, color type,
       compression method, filter method, interlace method,
-      and palette (if any) as the [[static image]].
+      and palette (if any) as the [=static image=].
     </p>
 
     <p>

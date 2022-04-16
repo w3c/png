@@ -1560,7 +1560,7 @@ sample, sample depth, pixel, and channel" />
 <p class="Figuretitle">Figure 4.2 &mdash; Relationships between
 sample, sample depth, pixel, and channel</p>
 
-<h2><a name="4Concepts.ColourSpaces">4.2 Colour spaces</a></h2>
+<h2><a name="4Concepts.ColourSpaces">4.2 Colour spaces and Transfer Functions</a></h2>
 
 <p>The RGB colour space in which colour samples are situated may
 be specified in one of three ways:</p>
@@ -1574,6 +1574,13 @@ the samples conform to this colour space;</li>
 <li>by specifying the value of gamma and the 1931 CIE <i>x,y</i>
 chromaticities of the red, green, and blue primaries used in the
 image and the reference white point.</li>
+
+<li>by specifying specific CICP index values as described in
+  <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]</span></a> 
+  which specify an explicit color space, transfer function and matrix 
+  coefficients for the source content.
+</li>
+
 </ol>
 
 <p>For high-end applications the first method provides the most
@@ -1590,12 +1597,19 @@ ICC profiles or the sRGB colour space. Such PNG decoders can
 still make sensible use of gamma information. PNG decoders are
 strongly encouraged to use this information, plus information
 about the display system, in order to present the image to the
-viewer in a way that reproduces as closely as possible what the image's original author
-saw.</p>
+viewer in a way that reproduces as closely as possible what the image's
+original author saw.</p>
 
 <p>Gamma correction is not applied to the alpha channel, if
 present. Alpha samples always represent a linear fraction of full
 opacity.</p>
+
+<p>The fourth method does not tag content for translation onto a display
+  but instead identifies source content against a display which explicityly
+  supports the specific contents display as-is.  The CICP tags identify specific
+  video content described in <a href="#2-ITU-T-H.273"><span class="NormRef">
+    [ITU-T H.273]</span></a>.
+  </p>
 
 <h2><a name="4Concepts.PNGImageTransformation">4.3 Reference
 image to PNG image transformation</a></h2>

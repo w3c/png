@@ -3866,7 +3866,12 @@ Embedded ICC profile</a></h4>
 the profile. It is case-sensitive. Profile names shall contain
 only printable Latin-1 characters and spaces (only character
 codes 32-126 and 161-255 decimal are allowed). Leading, trailing,
-and consecutive spaces are not permitted. The only compression
+and consecutive spaces are not permitted. For more flexiblity with profile
+names, use <a class='Href' href='#11iCCN'>iCCN</span></a> which supports UTF-8 
+profile naming.</p>
+
+<p>
+The only compression
 method defined in this International Standard is method 0 (zlib
 datastream with deflate compression, see 10.3: <a href=
 '#10CompressionOtherUses'><span class="xref">Other uses of
@@ -3908,10 +3913,12 @@ whether specified explicitly with an <span class=
 "chunk">iCCP</span> chunk or implicitly with an <a href=
 "#11sRGB"><span class="chunk">sRGB</span></a> chunk.</p>
 
-<p>The iCCP chunk shall take precedence over a cICP chunk if the 
-  display/graphics plane does not support the explicit codepoints specified 
-  in cICP in <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]
-  </span></a><a</td></a>. </p>
+<p>PNG files should not embed both iCCP and iCCN tags.</p>
+
+<p>The iCCP chunk shall take precedence over a <a class='Href' href='#11cICP'>
+  cICP</a> chunk if the display/graphics plane does not support the explicit 
+  codepoints specified in cICP in <a href="#2-ITU-T-H.273"><span 
+    class="NormRef">[ITU-T H.273]</span></a><a</td></a>. </p>
 
 <h4><a name="11sBIT">11.3.3.4 <span class="chunk">sBIT</span>
 Significant bits</a></h4>
@@ -4422,12 +4429,12 @@ it's associated recommendations.</p>
   Latin-1 characters, spaces and includes UTF-8 characters.  Leading, trailing,
   and consecutive spaces are not permitted.</p>
 
-  <p>PNG files must choose either the iCCP or iCCN tags.</p>
+  <p>PNG files should not embed both iCCP and iCCN tags.</p>
 
-  <p>The iCCN chunk shall take precedence over a cICP chunk if the 
-    display/graphics plane does not support the explicit codepoints specified 
-    in cICP in <a href="#2-ITU-T-H.273"><span class="NormRef">[ITU-T H.273]
-    </span></a><a</td></a>. </p>
+  <p>The iCCN chunk shall take precedence over a <a class='Href' href='#11cICP'>
+    cICP</a> chunk if the display/graphics plane does not support the explicit 
+    codepoints specified in cICP in <a href="#2-ITU-T-H.273"><span 
+      class="NormRef">[ITU-T H.273]</span></a><a</td></a>. </p>
 
 
 

@@ -2432,6 +2432,16 @@ present, the <a href="#srgb-standard-rgb-colour-space"><span class=
 </tr>
 
 <tr>
+  <td class="Regular"><a href="#iccn-embedded-icc-profile"><span class="chunk">iCCN</span></a> </td>
+  <td class="Regular">No</td>
+  <td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
+  and <a href="#idat-image-data"><span class="chunk">IDAT</span></a>. If the
+  <a href="#iccp-embedded-icc-profile"><span class="chunk">iCCN</span></a> chunk is
+  present, the <a href="#srgb-standard-rgb-colour-space"><span class=
+  "chunk">sRGB</span></a> chunk should not be present.</td>
+  </tr>
+
+<tr>
 <td class="Regular"><a href="#sbit-significant-bits"><span class="chunk">sBIT</span></a> </td>
 <td class="Regular">No</td>
 <td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
@@ -4481,7 +4491,6 @@ with the BT.709 transfer function, Matrix Coefficients (using RGB Identity)and F
 decoder should be capable of producing the proper rendering intent as described in
 [[ITU-T H.273]] and
 it's associated recommendations.</p>
-</section>
 </section>
 
 <!-- Maintain a fragment named "11textinfo" to preserve incoming links to it -->

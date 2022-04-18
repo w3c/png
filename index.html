@@ -1800,7 +1800,7 @@ image.</td>
   <li><a href="#ihdr-image-header"><span class="chunk">IHDR</span></a>: image
   header, which is the first chunk in a PNG datastream.</li>
 
-  <li><a href="#plte-palette"><span class="chunk">PLTE</span></a>:
+  <li><a href="#11PLTE"><span class="chunk">PLTE</span></a>:
   palette table associated with indexed PNG images.</li>
 
   <li><a href="#idat-image-data"><span class="chunk">IDAT</span></a>: image
@@ -2346,7 +2346,7 @@ rules</b></caption>
 
 <tr>
 <th colspan="3">Critical chunks<br class="xhtml" />
- (shall appear in this order, except <a href="#plte-palette"><span
+ (shall appear in this order, except <a href="#11PLTE"><span
 class="chunk">PLTE</span></a> is optional)</th>
 </tr>
 
@@ -2363,7 +2363,7 @@ class="chunk">PLTE</span></a> is optional)</th>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#plte-palette"><span class="chunk">PLTE</span></a> </td>
+<td class="Regular"><a href="#11PLTE"><span class="chunk">PLTE</span></a> </td>
 <td class="Regular">No</td>
 <td class="Regular">Before first <a href="#idat-image-data"><span class=
 "chunk">IDAT</span></a> </td>
@@ -2396,35 +2396,35 @@ class="chunk">PLTE</span></a> is optional)</th>
 <tr>
 <td class="Regular"><span class="chunk">[[acTL]]</span> </td>
 <td class="Regular">No</td>
-<td class="Regular">Before <a href="#plte-palette"><span class="chunk">PLTE</span></a>
+<td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
 and <a href="#idat-image-data"><span class="chunk">IDAT</span></a> </td>
 </tr>
 
 <tr>
 <td class="Regular"><a href="#chrm-primary-chromaticities-and-white-point"><span class="chunk">cHRM</span></a> </td>
 <td class="Regular">No</td>
-<td class="Regular">Before <a href="#plte-palette"><span class="chunk">PLTE</span></a>
+<td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
 and <a href="#idat-image-data"><span class="chunk">IDAT</span></a> </td>
 </tr>
 
 <tr>
 <td class="Regular"><a href="#11cICP"><span class="chunk">cICP</span></a></td>
 <td class="Regular">No</td>
-<td class="Regular">Before <a href="#plte-palette"><span class="chunk">PLTE</span></a>
+<td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
 and <a href="#idat-image-data"><span class="chunk">IDAT</span></a> </td>
 </tr>
 
 <tr>
 <td class="Regular"><a href="#gama-image-gamma"><span class="chunk">gAMA</span></a> </td>
 <td class="Regular">No</td>
-<td class="Regular">Before <a href="#plte-palette"><span class="chunk">PLTE</span></a>
+<td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
 and <a href="#idat-image-data"><span class="chunk">IDAT</span></a> </td>
 </tr>
 
 <tr>
 <td class="Regular"><a href="#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a> </td>
 <td class="Regular">No</td>
-<td class="Regular">Before <a href="#plte-palette"><span class="chunk">PLTE</span></a>
+<td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
 and <a href="#idat-image-data"><span class="chunk">IDAT</span></a>. If the
 <a href="#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a> chunk is
 present, the <a href="#srgb-standard-rgb-colour-space"><span class=
@@ -2434,14 +2434,14 @@ present, the <a href="#srgb-standard-rgb-colour-space"><span class=
 <tr>
 <td class="Regular"><a href="#sbit-significant-bits"><span class="chunk">sBIT</span></a> </td>
 <td class="Regular">No</td>
-<td class="Regular">Before <a href="#plte-palette"><span class="chunk">PLTE</span></a>
+<td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
 and <a href="#idat-image-data"><span class="chunk">IDAT</span></a> </td>
 </tr>
 
 <tr>
 <td class="Regular"><a href="#srgb-standard-rgb-colour-space"><span class="chunk">sRGB</span></a> </td>
 <td class="Regular">No</td>
-<td class="Regular">Before <a href="#plte-palette"><span class="chunk">PLTE</span></a>
+<td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
 and <a href="#idat-image-data"><span class="chunk">IDAT</span></a>. If the
 <a href="#srgb-standard-rgb-colour-space"><span class="chunk">sRGB</span></a> chunk is
 present, the <a href="#iccp-embedded-icc-profile"><span class=
@@ -2451,7 +2451,7 @@ present, the <a href="#iccp-embedded-icc-profile"><span class=
 <tr>
 <td class="Regular"><a href="#bkgd-background-colour"><span class="chunk">bKGD</span></a> </td>
 <td class="Regular">No</td>
-<td class="Regular">After <a href="#plte-palette"><span class="chunk">PLTE</span></a>;
+<td class="Regular">After <a href="#11PLTE"><span class="chunk">PLTE</span></a>;
 before <a href="#idat-image-data"><span class="chunk">IDAT</span></a>
 </td>
 </tr>
@@ -2459,7 +2459,7 @@ before <a href="#idat-image-data"><span class="chunk">IDAT</span></a>
 <tr>
 <td class="Regular"><a href="#hist-image-histogram"><span class="chunk">hIST</span></a> </td>
 <td class="Regular">No</td>
-<td class="Regular">After <a href="#plte-palette"><span class="chunk">PLTE</span></a>;
+<td class="Regular">After <a href="#11PLTE"><span class="chunk">PLTE</span></a>;
 before <a href="#idat-image-data"><span class="chunk">IDAT</span></a>
 </td>
 </tr>
@@ -2467,7 +2467,7 @@ before <a href="#idat-image-data"><span class="chunk">IDAT</span></a>
 <tr>
 <td class="Regular"><a href="#trns-transparency"><span class="chunk">tRNS</span></a> </td>
 <td class="Regular">No</td>
-<td class="Regular">After <a href="#plte-palette"><span class="chunk">PLTE</span></a>;
+<td class="Regular">After <a href="#11PLTE"><span class="chunk">PLTE</span></a>;
 before <a href="#idat-image-data"><span class="chunk">IDAT</span></a>
 </td>
 </tr>
@@ -2574,7 +2574,7 @@ symbols used in lattice diagrams</b></caption>
 <object id="figure52" height="540" width="800" data="figures/lattice-diagram-with-plte.svg" type="image/svg+xml">
  <img height="540" width="800" src="png-figures/lattice-diagram-with-plte.png" alt="Lattice diagram: static PNG images with PLTE in datastream" />
 </object>
-<figcaption>Lattice diagram: PNG images with <a href="#plte-palette"><span class=
+<figcaption>Lattice diagram: PNG images with <a href="#11PLTE"><span class=
 "chunk">PLTE</span></a> in datastream</figcaption>
 </figure>
 
@@ -2585,7 +2585,7 @@ symbols used in lattice diagrams</b></caption>
 type="image/svg+xml">
  <img height="540" width="900" src="png-figures/lattice-diagram-without-plte.png" alt="Lattice diagram: static PNG images without PLTE in datastream" />
 </object>
-<figcaption>Lattice diagram: PNG images without <a href="#plte-palette"><span
+<figcaption>Lattice diagram: PNG images without <a href="#11PLTE"><span
 class="chunk">PLTE</span></a> in datastream</figcaption>
 </figure>
 
@@ -3501,7 +3501,7 @@ combinations of colour type and bit depth</b></caption>
 <td class="Regular">Indexed-colour</td>
 <td class="Regular" align="center">3</td>
 <td class="Regular">1, 2, 4, 8</td>
-<td class="Regular">Each pixel is a palette index; a <a href="#plte-palette"><span
+<td class="Regular">Each pixel is a palette index; a <a href="#11PLTE"><span
 class="chunk">PLTE</span></a> chunk shall appear.</td>
 </tr>
 
@@ -3755,7 +3755,7 @@ greyscale and truecolour images). The <span class=
 
 <p>For colour type 3 (indexed-colour), the <span class=
 "chunk">tRNS</span> chunk contains a series of one-byte alpha
-values, corresponding to entries in the <a href="#plte-palette"><span
+values, corresponding to entries in the <a href="#11PLTE"><span
 class="chunk">PLTE</span></a> chunk. Each entry indicates that
 pixels of the corresponding palette index shall be treated as
 having the specified alpha value. Alpha values have the same
@@ -4944,14 +4944,14 @@ two-byte (16-bit) unsigned integers:</p>
 
 <p>The <span class="chunk">hIST</span> chunk gives the
 approximate usage frequency of each colour in the palette. A
-histogram chunk can appear only when a <a href="#plte-palette"><span
+histogram chunk can appear only when a <a href="#11PLTE"><span
 class="chunk">PLTE</span></a> chunk appears. If a viewer is
 unable to provide all the colours listed in the palette, the
 histogram may help it decide how to choose a subset of the
 colours for display.</p>
 
 <p>There shall be exactly one
-entry for each entry in the <a href="#plte-palette"><span class=
+entry for each entry in the <a href="#11PLTE"><span class=
 "chunk">PLTE</span></a> chunk. Each entry is proportional to the
 fraction of pixels in the image that have that palette index; the
 exact scale factor is chosen by the encoder.</p>
@@ -6198,7 +6198,7 @@ palettes</h2>
 
 <p>Suggested palettes may appear as <a href="#splt-suggested-palette"><span
 class="chunk">sPLT</span></a> chunks in any PNG datastream, or as
-a <a href="#plte-palette"><span class="chunk">PLTE</span></a> chunk in
+a <a href="#11PLTE"><span class="chunk">PLTE</span></a> chunk in
 truecolour PNG datastreams. In either case, the suggested palette
 is not an essential part of the image data, but it may be used to
 present the image on indexed-colour display hardware. Suggested
@@ -6220,9 +6220,9 @@ computed for the uncomposited image.</p>
 <p>Even for indexed-colour images, <a href="#splt-suggested-palette"><span class=
 "chunk">sPLT</span></a> can be used to define alternative reduced
 palettes for viewers that are unable to display all the colours
-present in the <a href="#plte-palette"><span class=
+present in the <a href="#11PLTE"><span class=
 "chunk">PLTE</span></a> chunk.
-If the <a href="#plte-palette"><span class="chunk">PLTE</span></a>
+If the <a href="#11PLTE"><span class="chunk">PLTE</span></a>
 chunk appears without the <a href="#bkgd-background-colour"><span class=
 "chunk">bKGD</span></a> chunk in an image of colour type 6, the
 circumstances under which the palette was computed are
@@ -6230,11 +6230,11 @@ unspecified.</p>
 
 
 <p>An older method for including a suggested palette in a
-truecolour PNG datastream uses the <a href="#plte-palette"><span class=
+truecolour PNG datastream uses the <a href="#11PLTE"><span class=
 "chunk">PLTE</span></a> chunk. If this method is used, the
 histogram (frequencies) should appear in a separate <a href=
 "#hist-image-histogram"><span class="chunk">hIST</span></a> chunk. The <a href=
-"#plte-palette"><span class="chunk">PLTE</span></a> chunk does not
+"#11PLTE"><span class="chunk">PLTE</span></a> chunk does not
 include transparency information. Hence for images of colour type
 6 (truecolour with alpha), it is recommended that a <a href=
 "#bkgd-background-colour"><span class="chunk">bKGD</span></a> chunk appear and
@@ -6250,7 +6250,7 @@ class="chunk">bKGD</span></a> chunk in an image of colour type
 6.</p>
 
 <p>For images of colour type 2 (truecolour), it is recommended
-that the <a href="#plte-palette"><span class="chunk">PLTE</span></a>
+that the <a href="#11PLTE"><span class="chunk">PLTE</span></a>
 and <a href="#hist-image-histogram"><span class="chunk">hIST</span></a> chunks
 be computed with reference to the RGB data only, ignoring any
 transparent-colour specification. If the datastream uses
@@ -6264,7 +6264,7 @@ Histogram and suggested palette usage</span></a>).
 
 <p>For providing suggested palettes,
 the <a href="#splt-suggested-palette"><span class="chunk">sPLT</span></a>
-chunk is more flexible than the <a href="#plte-palette"><span class=
+chunk is more flexible than the <a href="#11PLTE"><span class=
 "chunk">PLTE</span></a> chunk in
 the following ways:</p>
 
@@ -6275,7 +6275,7 @@ choose an appropriate palette based on name or number of
 entries.</li>
 
 <li>In a PNG datastream of colour type 6 (truecolour with alpha
-channel), the <a href="#plte-palette"><span class=
+channel), the <a href="#11PLTE"><span class=
 "chunk">PLTE</span></a> chunk represents a palette already
 composited against the <a href="#bkgd-background-colour"><span class=
 "chunk">bKGD</span></a> colour, so it is useful only for display
@@ -6292,7 +6292,7 @@ discard unknown unsafe-to-copy chunks.</li>
 <li>Whereas the <a href="#splt-suggested-palette"><span class=
 "chunk">sPLT</span></a> chunk is allowed in PNG datastreams for
 colour types 0, 3, and 4 (greyscale and indexed), the <a href=
-"#plte-palette"><span class="chunk">PLTE</span></a> chunk cannot be
+"#11PLTE"><span class="chunk">PLTE</span></a> chunk cannot be
 used to provide reduced palettes in these cases.</li>
 
 <li>More than 256 entries may appear in the <a href=
@@ -6301,7 +6301,7 @@ used to provide reduced palettes in these cases.</li>
 
 <p>A PNG encoder that uses the <a href="#splt-suggested-palette"><span class=
 "chunk">sPLT</span></a> chunk may choose to write a suggested
-palette represented by <a href="#plte-palette"><span class=
+palette represented by <a href="#11PLTE"><span class=
 "chunk">PLTE</span></a> and <a href="#hist-image-histogram"><span class=
 "chunk">hIST</span></a> chunks as well, for compatibility with
 decoders that do not recognize the <a href="#splt-suggested-palette"><span class=
@@ -6485,7 +6485,7 @@ error on a storage device, in which one or more blocks (typically
 512 bytes each) will have garbled or random values. Some examples
 of syntax errors are an invalid value for a row filter, an
 invalid compression method, an invalid chunk length, the absence
-of a <a href="#plte-palette"><span class="chunk">PLTE</span></a> chunk
+of a <a href="#11PLTE"><span class="chunk">PLTE</span></a> chunk
 before the first <a href="#idat-image-data"><span class=
 "chunk">IDAT</span></a> chunk in an indexed image, or the
 presence of multiple <a href="#gama-image-gamma"><span class=
@@ -6527,7 +6527,7 @@ this definition, the three classes are as follows:</p>
 <li>known chunks, which necessarily includes all of the critical
 chunks defined in this specification (<a href=
 "#ihdr-image-header"><span class="chunk">IHDR</span></a>, <a href=
-"#plte-palette"><span class="chunk">PLTE</span></a>, <a href=
+"#11PLTE"><span class="chunk">PLTE</span></a>, <a href=
 "#idat-image-data"><span class="chunk">IDAT</span></a>, <a href=
 "#iend-image-trailer"><span class="chunk">IEND</span></a>)</li>
 
@@ -6546,7 +6546,7 @@ of chunk naming conventions.</p>
 <p>PNG chunk types are marked "critical" or "ancillary" according
 to whether the chunks are critical for the purpose of extracting
 a viewable image (as with <a href="#ihdr-image-header"><span class=
-"chunk">IHDR</span></a>, <a href="#plte-palette"><span class=
+"chunk">IHDR</span></a>, <a href="#11PLTE"><span class=
 "chunk">PLTE</span></a>, and <a href="#idat-image-data"><span class=
 "chunk">IDAT</span></a>) or critical to understanding the
 datastream structure (as with <a href="#iend-image-trailer"><span class=
@@ -6567,9 +6567,9 @@ example, most decoders can ignore an invalid <a href=
 "#iend-image-trailer"><span class="chunk">IEND</span></a> chunk; a
 text-extraction program can ignore the absence of <a href=
 "#idat-image-data"><span class="chunk">IDAT</span></a>; an image viewer
-cannot recover from an empty <a href="#plte-palette"><span class=
+cannot recover from an empty <a href="#11PLTE"><span class=
 "chunk">PLTE</span></a> chunk in an indexed image but it can
-ignore an invalid <a href="#plte-palette"><span class=
+ignore an invalid <a href="#11PLTE"><span class=
 "chunk">PLTE</span></a> chunk in a truecolour image; and a
 program that extracts the alpha channel can ignore an invalid <a
 href="#gama-image-gamma"><span class="chunk">gAMA</span></a> chunk, but may
@@ -7279,7 +7279,7 @@ because the geometric distance between two colours in CIE LAB is
 strongly related to how different those colours appear (unlike,
 for example, RGB or XYZ spaces). The resulting palette of
 colours, once transformed back into RGB colour space, could be
-used for display or written into a <a href="#plte-palette"><span class=
+used for display or written into a <a href="#11PLTE"><span class=
 "chunk">PLTE</span></a> chunk.</p>
 
 <p>Decoders that are part of image processing applications might
@@ -7623,7 +7623,7 @@ not a solid colour, no suggested palette is likely to be
 useful.</p>
 
 <p>For truecolour images, a suggested palette might also be
-provided in a <a href="#plte-palette"><span class=
+provided in a <a href="#11PLTE"><span class=
 "chunk">PLTE</span></a> chunk. If the image has a <a href=
 "#trns-transparency"><span class="chunk">tRNS</span></a> chunk and the
 background is a solid colour, the viewer will need to adapt the
@@ -7632,11 +7632,11 @@ do this, the palette entry closest to the <a href="#trns-transparency"><span
 class="chunk">tRNS</span></a> colour should be replaced with the
 desired background colour; or alternatively a palette entry for
 the background colour can be added, if the viewer can handle more
-colours than there are <a href="#plte-palette"><span class=
+colours than there are <a href="#11PLTE"><span class=
 "chunk">PLTE</span></a> entries.</p>
 
 <p>For images of colour type 6 (truecolour with alpha), any <a
-href="#plte-palette"><span class="chunk">PLTE</span></a> chunk should
+href="#11PLTE"><span class="chunk">PLTE</span></a> chunk should
 have been designed for display of the image against a uniform
 background of the colour specified by the <a href="#bkgd-background-colour"><span
 class="chunk">bKGD</span></a> chunk. Viewers should probably
@@ -7653,7 +7653,7 @@ composite image. In this case it is best to perform a truecolour
 compositing step on the truecolour PNG image and background
 image, then colour-quantize the resulting image.</p>
 
-<p>In truecolour PNG datastreams, if both <a href="#plte-palette"><span
+<p>In truecolour PNG datastreams, if both <a href="#11PLTE"><span
 class="chunk">PLTE</span></a> and <a href="#splt-suggested-palette"><span class=
 "chunk">sPLT</span></a> chunks appear, the PNG decoder may choose
 from among the palettes suggested by both, bearing in mind the
@@ -7721,11 +7721,11 @@ encounters an unknown chunk.</p>
 
 <p>EXAMPLE Consider a hypothetical new ancillary chunk type that
 is safe-to-copy and is required to appear after <a href=
-"#plte-palette"><span class="chunk">PLTE</span></a> if <a href=
-"#plte-palette"><span class="chunk">PLTE</span></a> is present. If a
-program attempts to add a <a href="#plte-palette"><span class=
+"#11PLTE"><span class="chunk">PLTE</span></a> if <a href=
+"#11PLTE"><span class="chunk">PLTE</span></a> is present. If a
+program attempts to add a <a href="#11PLTE"><span class=
 "chunk">PLTE</span></a> chunk and does not recognize the new
-chunk, it may insert the <a href="#plte-palette"><span class=
+chunk, it may insert the <a href="#11PLTE"><span class=
 "chunk">PLTE</span></a> chunk in the wrong place, namely after
 the new chunk. Such problems could be prevented by requiring PNG
 editors to discard all unknown chunks, but that is a very
@@ -8880,7 +8880,7 @@ allowed in signed integers.</li>
 output rather than the original scene, introduced in PNG version
 1.1, has been incorporated.</li>
 
-<li>The use of the <a href="#plte-palette"><span class=
+<li>The use of the <a href="#11PLTE"><span class=
 "chunk">PLTE</span></a> and <a href="#hist-image-histogram"><span class=
 "chunk">hIST</span></a> chunks in non-indexed-colour images has
 been discouraged in favour of the <a href="#splt-suggested-palette"><span class=

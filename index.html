@@ -4031,7 +4031,7 @@ full-fledged colour management should use the <a href=
 "#chrm-primary-chromaticitieis-and-white-point"><span class="chunk">cHRM</span></a> chunks if
 present.</p>
 
-<p>A PNG datastream should contain at most one embedded profile,
+<p>Unless a cICP chunk exists, a PNG datastream should contain at most one embedded profile,
 whether specified explicitly with an <span class="chunk">iCCP</span>, 
 <span class="chunk">iCCN</span>, or implicitly with an 
 <a href="#srgb-standard-colour-space"><span class="chunk">sRGB</span></a> chunk.</p>
@@ -4547,7 +4547,7 @@ it's associated recommendations.</p>
     Latin-1 characters, spaces and includes UTF-8 characters.  Leading, trailing,
     and consecutive spaces are not permitted.</p>
   
-    <p>PNG files should not contain both iCCP and iCCN tags.</p>
+    <p>PNG files should not simultaneously contain embedded iCCP and iCCN tags.</p>
   
     <p>The iCCN chunk shall take precedence over a <a class='Href' href='#11cICP'>
       cICP</a> chunk if the display/graphics plane does not support the explicit 

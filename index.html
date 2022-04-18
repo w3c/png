@@ -4394,13 +4394,14 @@ benefit from the existence of sub-blacks or super-whites.
 </table>
 <p>The cICP chunk must come before the IDAT chunk.</p>
 
-<p>When the cICP chunk is present, PNG decoders that recognize it shall ignore
-the following chunks:</p>
+<p>When the cICP chunk is present, PNG decoders with attached displays that support it
+  shall ignore the following chunks:</p>
 <ul>
   <li>iCCP</li>
   <li>gAMA </li>
   <li>cHRM </li>
   <li>sRGB </li>
+  <li>ICCN </li>
 </ul>
 
 

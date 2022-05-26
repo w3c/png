@@ -1831,8 +1831,8 @@ image.</td>
   "chunk">iCCP</span></a>, <a href="#iccn-embedded-icc-profile"><span class=
   "chunk">iCCN</span></a>, <a href="#sbit-significant-bits"><span class=
   "chunk">sBIT</span></a>, <a href="#srgb-standard-rgb-colour-space"><span class=
-    "chunk">sRGB</span></a>, <a href="#cicp-video-rendering-colour-spaces"><span class=
-      "chunk">cICP</span></a> (see [[#colour-space-information]]).</li>
+  "chunk">sRGB</span></a>, <a href="#cicp-video-rendering-colour-spaces"><span class=
+  "chunk">cICP</span></a> (see [[#colour-space-information]]).</li>
 
   <li>Textual information: <a href="#itxt-international-textual-data"><span class=
   "chunk">iTXt</span></a>, <a href="#text-textual-data"><span class=
@@ -3957,7 +3957,7 @@ handling</span></a> for more information.</p>
 
 <p>An <a href="#srgb-standard-colour-space"><span class="chunk">sRGB</span></a>,
 <a href="#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a>, or
-<a href="#iccN-embedded-icc-profile"><span class="chunk">iCCN</span></a> chunk,
+<a href="#iccn-embedded-icc-profile"><span class="chunk">iCCN</span></a> chunk,
 when present and recognized, overrides the <span class=
 "chunk">gAMA</span> chunk.</p>
 </section>
@@ -4421,8 +4421,8 @@ benefit from the existence of sub-blacks or super-whites.
 </table>
 <p>The cICP chunk must come before the IDAT chunk.</p>
 
-<p>When the cICP chunk is present, PNG decoders with attached displays that support it
-  shall ignore the following chunks:</p>
+<p>When the cICP chunk is present, PNG decoders that recognize it shall ignore
+the following chunks:</p>
 <ul>
   <li>iCCP</li>
   <li>ICCN </li>
@@ -4510,12 +4510,11 @@ decoder should be capable of producing the proper rendering intent as described 
 it's associated recommendations.</p>
 </section>
 
-<!-- Maintain a fragment named "11iCCN" to preserve incoming links to it -->
-<section id="11iCCN">
+<section>
   <h2><span class="chunk">iCCN</span>
     Embedded ICC Profiles v4 and UTF-8 Profile Names</h2>
   
-    <p>iCCN profiles are the same is iCCP chunks but can support UTF-8 Profile
+    <p>iCCN profiles are the same as iCCP chunks but can support UTF-8 Profile
       Names</p>
     
     <p>The four decimal values below correspond to the four-byte iCCN chunk type field:</p>
@@ -4551,11 +4550,8 @@ it's associated recommendations.</p>
     
     <p>The iCCN profile name may be any convenient name for referring to
     the profile. It is case-sensitive. Profile names shall contain printable 
-    Latin-1 characters, spaces and includes UTF-8 characters.  Leading, trailing,
-    and consecutive spaces are not permitted.</p>
-  
-    <p>PNG files should not simultaneously contain embedded iCCP and iCCN tags.</p>
-  
+    characters.  Leading, trailing, and consecutive spaces are not permitted.</p>
+   
     <p>The iCCN chunk shall take precedence over a <a class='Href' href='#11cICP'>
       cICP</a> chunk if the display/graphics plane does not support the explicit 
       codepoints specified in cICP with formulas referenced in <a href="#2-ITU-T-H.273"><span 
@@ -5780,7 +5776,7 @@ to gamma issues.</p>
 <p>PNG encoders capable of full colour management will perform more
 sophisticated calculations than those described here and may
 choose to use the <a href="#iccp-embedded-icc-profile"><span class=
-"chunk">iCCP</span></a> or <a href="#iccN-embedded-icc-profile"><span class=
+"chunk">iCCP</span></a> or <a href="#iccn-embedded-icc-profile"><span class=
   "chunk">iCCN</span></a> chunks (but not both). If it is known that the image
 samples conform to the sRGB specification [[SRGB]], encoders are strongly encouraged to write
 the <a href="#srgb-standard-colour-space"><span class="chunk">sRGB</span></a> chunk
@@ -5788,7 +5784,7 @@ without performing additional gamma handling. In both cases it is
 recommended that an appropriate <a href="#gama-image-gamma"><span class=
 "chunk">gAMA</span></a> chunk be generated for use by PNG
 decoders that do not recognize the <a href="#iccp-embedded-icc-profile"><span class=
-"chunk">iCCP</span></a>, <a href="#iccN-embedded-icc-profile"><span class=
+"chunk">iCCP</span></a>, <a href="#iccn-embedded-icc-profile"><span class=
   "chunk">iCCN</span></a>, or <a href="#srgb-standard-colour-space"><span class=
 "chunk">sRGB</span></a> chunks.</p>
 
@@ -6799,7 +6795,7 @@ href="#text-textual-data"><span class="chunk">tEXt</span></a>, and <a href=
 "#ztxt-compressed-textual-data"><span class="chunk">zTXt</span></a> chunks contain keywords
 and data
 that are meant to be displayed as plain text. The <a href=
-"#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a>, "#iccn-embedded-icc-profile">
+"#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a>, <a href="#iccn-embedded-icc-profile">
 <span class="chunk">iCCN</span></a>, and <a href= "#splt-suggested-palette"><span class="chunk">
 sPLT</span></a> chunks contain keywords that are meant to be displayed as plain text. It is
 possible that if the decoder displays such text without filtering
@@ -7297,7 +7293,7 @@ precomputed table of logarithms. Example code appears in [[PNG-EXTENSIONS]].</p>
 "#gama-image-gamma"><span class="chunk">gAMA</span></a>, <a href=
 "#srgb-standard-colour-space"><span class="chunk">sRGB</span></a>, <a href=
 "#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a>, and 
-<a href="#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a> 
+<a href="#iccn-embedded-icc-profile"><span class="chunk">iCCN</span></a> 
 all absent), standalone image viewers should choose
 a likely default gamma value, but allow the user to select a new
 one if the result proves too dark or too light. The default gamma

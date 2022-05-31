@@ -1828,8 +1828,8 @@ image.</td>
   <li>Colour space information: <a href="#chrm-primary-chromaticities-and-white-point"><span class=
   "chunk">cHRM</span></a>, <a href="#gama-image-gamma"><span class=
   "chunk">gAMA</span></a>, <a href="#iccp-embedded-icc-profile"><span class=
-  "chunk">iCCP</span></a>, <a href="#iccn-embedded-icc-profile"><span class=
-  "chunk">iCCN</span></a>, <a href="#sbit-significant-bits"><span class=
+  "chunk">iCCP</span></a>, <span class=
+  "chunk">[[[#iccn-embedded-icc-profiles-v4-and-utf-8-profile-names]]]</span>, <a href="#sbit-significant-bits"><span class=
   "chunk">sBIT</span></a>, <a href="#srgb-standard-rgb-colour-space"><span class=
   "chunk">sRGB</span></a>, <a href="#cicp-video-rendering-colour-spaces"><span class=
   "chunk">cICP</span></a> (see [[#colour-space-information]]).</li>
@@ -2441,11 +2441,11 @@ present, the <a href="#srgb-standard-rgb-colour-space"><span class=
 </tr>
 
 <tr>
-  <td class="Regular"><a href="#iccn-embedded-icc-profile"><span class="chunk">iCCN</span></a> </td>
+  <td class="Regular"><span class="chunk">[[[#iccn-embedded-icc-profiles-v4-and-utf-8-profile-names]]]</span> </td>
   <td class="Regular">No</td>
   <td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
   and <a href="#idat-image-data"><span class="chunk">IDAT</span></a>. If the
-  <a href="#iccn-embedded-icc-profile"><span class="chunk">iCCN</span></a> chunk is
+  <span class="chunk">[[[#iccn-embedded-icc-profiles-v4-and-utf-8-profile-names]]]</span> chunk is
   present, the <a href="#srgb-standard-rgb-colour-space"><span class=
   "chunk">sRGB</span></a> chunk should not be present.</td>
   </tr>
@@ -2464,8 +2464,8 @@ and <a href="#idat-image-data"><span class="chunk">IDAT</span></a> </td>
 and <a href="#idat-image-data"><span class="chunk">IDAT</span></a>. If the
 <a href="#srgb-standard-rgb-colour-space"><span class="chunk">sRGB</span></a> chunk is
 present, the <a href="#iccp-embedded-icc-profile"><span class=
-"chunk">iCCP</span></a> and <a href="#iccn-embedded-icc-profile"><span class=
-  "chunk">iCCN</span></a>chunks should not be present.</td>
+"chunk">iCCP</span></a> and <span class=
+  "chunk">[[[#iccn-embedded-icc-profiles-v4-and-utf-8-profile-names]]]</span> chunks should not be present.</td>
 </tr>
 
 <tr>
@@ -2770,8 +2770,8 @@ space is indicated (by <a href="#gama-image-gamma"><span class=
 "chunk">gAMA</span></a> and <a href="#chrm-primary-chromaticities-and-white-point"><span class=
 "chunk">cHRM</span></a>, or <a href="#srgb-standard-rgb-colour-space"><span class=
 "chunk">sRGB</span></a>, or <a href="#iccp-embedded-icc-profile"><span class=
-"chunk">iCCP</span></a>, <a href="#iccn-embedded-icc-profile"><span class=
-  "chunk">iCCN</span></a> or uncalibrated device-dependent colour
+"chunk">iCCP</span></a>, <span class=
+  "chunk">[[[#iccn-embedded-icc-profiles-v4-and-utf-8-profile-names]]]</span> or uncalibrated device-dependent colour
 if not.</p>
 
 <p>Sample values are not necessarily proportional to light
@@ -3376,8 +3376,8 @@ compression</h2>
 
 <p>PNG also uses compression method 0 in <a href="#itxt-international-textual-data"><span
 class="chunk">iTXt</span></a>, <a href="#iccp-embedded-icc-profile"><span class=
-"chunk">iCCP</span></a>, <a href="#iccn-embedded-icc-profile"><span class=
-  "chunk">iCCN</span></a>, and <a href="#ztxt-compressed-textual-data"><span class=
+"chunk">iCCP</span></a>, <span class=
+  "chunk">[[[#iccn-embedded-icc-profiles-v4-and-utf-8-profile-names]]]</span>, and <a href="#ztxt-compressed-textual-data"><span class=
 "chunk">zTXt</span></a> chunks. Unlike the image data, such
 datastreams are not split across chunks; each such chunk contains
 an independent zlib datastream (see 10.1: <a href=
@@ -3837,7 +3837,7 @@ green, and blue display primaries used in the image, and the referenced
 white point. See Annex C: <a href="#C-GammaAppendix"><span class=
 "xref">Gamma and chromaticity</span></a> for more information.
 The <a href="#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a>, 
-<a href="#iccn-embedded-icc-profile"><span class="chunk">iCCN</span></a>, and <a
+<span class="chunk">[[[#iccn-embedded-icc-profiles-v4-and-utf-8-profile-names]]]</span>, and <a
 href="#srgb-standard-rgb-colour-space"><span class="chunk">sRGB</span></a> chunks provide
 more sophisticated support for colour management and control.</p>
 
@@ -3900,7 +3900,7 @@ images.</p>
 
 <p>An <a href="#srgb-standard-rgb-colour-space"><span class="chunk">sRGB</span></a>, 
 <a href="#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a>, or 
-<a href="#iccn-embedded-icc-profile"><span class="chunk">iCCN</span></a> chunk
+<span class="chunk">[[[#iccn-embedded-icc-profiles-v4-and-utf-8-profile-names]]]</span> chunk
 when present and recognized, overrides the <span class=
 "chunk">cHRM</span> chunk.</p>
 </section>
@@ -3931,8 +3931,8 @@ by a Colour Management System. If the adjustment is not
 performed, the error is usually small. Applications desiring high
 colour fidelity may wish to use an <a href="#srgb-standard-rgb-colour-space"><span class=
 "chunk">sRGB</span></a>, <a href="#iccp-embedded-icc-profile"><span class=
-"chunk">iCCP</span></a>, or <a href="#iccn-embedded-icc-profile"><span class=
-  "chunk">iCCN</span></a> chunk.</p>
+"chunk">iCCP</span></a>, or <span class=
+  "chunk">[[[#iccn-embedded-icc-profiles-v4-and-utf-8-profile-names]]]</span> chunk.</p>
 
 <p>The <span class="chunk">gAMA</span> chunk contains:</p>
 
@@ -3957,7 +3957,7 @@ handling</span></a> for more information.</p>
 
 <p>An <a href="#srgb-standard-colour-space"><span class="chunk">sRGB</span></a>,
 <a href="#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a>, or
-<a href="#iccn-embedded-icc-profile"><span class="chunk">iCCN</span></a> chunk,
+<span class="chunk">[[[#iccn-embedded-icc-profiles-v4-and-utf-8-profile-names]]]</span> chunk,
 when present and recognized, overrides the <span class=
 "chunk">gAMA</span> chunk.</p>
 </section>
@@ -4299,7 +4299,7 @@ values given above as if they had appeared in <a href=
 
 <p>It is recommended that the <span class="chunk">sRGB</span>,
 <a href="#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a>, or 
-<a href="#iccn-embedded-icc-profile"><span class="chunk">iCCN</span></a> chunks do
+<span class="chunk">[[[#iccn-embedded-icc-profiles-v4-and-utf-8-profile-names]]]</span> chunks do
 not appear simultaneously in a PNG datastream.</p>
 </section>
 
@@ -5776,16 +5776,16 @@ to gamma issues.</p>
 <p>PNG encoders capable of full colour management will perform more
 sophisticated calculations than those described here and may
 choose to use the <a href="#iccp-embedded-icc-profile"><span class=
-"chunk">iCCP</span></a> or <a href="#iccn-embedded-icc-profile"><span class=
-  "chunk">iCCN</span></a> chunks (but not both). If it is known that the image
+"chunk">iCCP</span></a> or <span class=
+  "chunk">[[[#iccn-embedded-icc-profiles-v4-and-utf-8-profile-names]]]</span> chunks (but not both). If it is known that the image
 samples conform to the sRGB specification [[SRGB]], encoders are strongly encouraged to write
 the <a href="#srgb-standard-colour-space"><span class="chunk">sRGB</span></a> chunk
 without performing additional gamma handling. In both cases it is
 recommended that an appropriate <a href="#gama-image-gamma"><span class=
 "chunk">gAMA</span></a> chunk be generated for use by PNG
 decoders that do not recognize the <a href="#iccp-embedded-icc-profile"><span class=
-"chunk">iCCP</span></a>, <a href="#iccn-embedded-icc-profile"><span class=
-  "chunk">iCCN</span></a>, or <a href="#srgb-standard-colour-space"><span class=
+"chunk">iCCP</span></a>, <span class=
+  "chunk">[[[#iccn-embedded-icc-profiles-v4-and-utf-8-profile-names]]]</span>, or <a href="#srgb-standard-colour-space"><span class=
 "chunk">sRGB</span></a> chunks.</p>
 
 <p>A PNG encoder has to determine:</p>
@@ -5971,8 +5971,8 @@ issues.</p>
 <p>PNG encoders capable of full colour management will perform more
 sophisticated calculations than those described here and may
 choose to use the <a href="#iccp-embedded-icc-profile"><span class=
-"chunk">iCCP</span></a> and <a href="#iccn-embedded-icc-profile"><span class=
-  "chunk">iCCN</span></a> chunks. If it is known that the image
+"chunk">iCCP</span></a> and <span class=
+  "chunk">[[[#iccn-embedded-icc-profiles-v4-and-utf-8-profile-names]]]</span> chunks. If it is known that the image
 samples conform to the sRGB specification [[SRGB]], PNG encoders are strongly encouraged to
 use the <a href="#srgb-standard-colour-space"><span class="chunk">sRGB</span></a>
 chunk.</p>
@@ -6694,8 +6694,8 @@ checking</span></a>).</p>
 "chunk">IDAT</span></a>, <a href="#ztxt-compressed-textual-data"><span class=
 "chunk">zTXt</span></a>, <a href="#itxt-international-textual-data"><span class=
 "chunk">iTXt</span></a>, <a href="#iccp-embedded-icc-profile"><span class=
-"chunk">iCCP</span></a>), <a href="#iccn-embedded-icc-profile"><span class=
-  "chunk">iCCN</span></a>) could lead to buffer overruns.
+"chunk">iCCP</span></a>), <span class=
+  "chunk">[[[#iccn-embedded-icc-profiles-v4-and-utf-8-profile-names]]]</span>) could lead to buffer overruns.
 Implementors of deflate decompressors should guard against this
 possibility.</p>
 
@@ -6795,8 +6795,8 @@ href="#text-textual-data"><span class="chunk">tEXt</span></a>, and <a href=
 "#ztxt-compressed-textual-data"><span class="chunk">zTXt</span></a> chunks contain keywords
 and data
 that are meant to be displayed as plain text. The <a href=
-"#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a>, <a href="#iccn-embedded-icc-profile">
-<span class="chunk">iCCN</span></a>, and <a href= "#splt-suggested-palette"><span class="chunk">
+"#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a>, 
+<span class="chunk">[[[#iccn-embedded-icc-profiles-v4-and-utf-8-profile-names]]]</span>, and <a href= "#splt-suggested-palette"><span class="chunk">
 sPLT</span></a> chunks contain keywords that are meant to be displayed as plain text. It is
 possible that if the decoder displays such text without filtering
 out control characters, especially the ESC (escape) character,
@@ -7293,7 +7293,7 @@ precomputed table of logarithms. Example code appears in [[PNG-EXTENSIONS]].</p>
 "#gama-image-gamma"><span class="chunk">gAMA</span></a>, <a href=
 "#srgb-standard-colour-space"><span class="chunk">sRGB</span></a>, <a href=
 "#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a>, and 
-<a href="#iccn-embedded-icc-profile"><span class="chunk">iCCN</span></a> 
+<span class="chunk">[[[#iccn-embedded-icc-profiles-v4-and-utf-8-profile-names]]]</span> 
 all absent), standalone image viewers should choose
 a likely default gamma value, but allow the user to select a new
 one if the result proves too dark or too light. The default gamma

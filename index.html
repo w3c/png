@@ -312,13 +312,13 @@ pixel.</dd>
 <!-- Maintain a fragment named "3alphaCompaction" to preserve incoming links to it -->
 <dt><dfn id="3alphaCompaction">alpha compaction</dfn></dt>
 
-<dd>an implicit representation of transparent <a href=
-"#3pixel"><span class="Definition">pixels</span></a>. If every
+<dd>an implicit representation of transparent 
+<span class="Definition">[=pixels=]</span>. If every
 pixel with a specific colour or <span
 class="Definition">[=greyscale=]</span> value is fully
-transparent and all other pixels are fully opaque, the
-<span class="Definition">[=alpha=]</span> <a href=
-"#3channel"><span class="Definition">channel</span></a> may be
+transparent and all other pixels are fully opaque, the 
+<span class="Definition">[=alpha=]</span> 
+<span class="Definition">[=channel=]</span> may be
 represented implicitly.</dd>
 
 <!-- Maintain a fragment named "3alphaSeparation" to preserve incoming links to it -->
@@ -693,8 +693,8 @@ progressive display.</dd>
 
 <dd>information stored for a single grid point in an image. A
 pixel consists of (or points to) a sequence of <span class=
-"Definition">[=samples=]</span> from all <a href=
-"#3channel"><span class="Definition">channels</span></a>. The
+"Definition">[=samples=]</span> from all 
+<span class="Definition">[=channels=]</span>. The
 complete image is a rectangular array of pixels.</dd>
 
 
@@ -706,8 +706,8 @@ complete image is a rectangular array of pixels.</dd>
 <dt>PNG datastream</dt></dfn>
 
 <dd>result of encoding a <span class=
-"Definition">[=PNG image=]</span>. A PNG <a href=
-"#3datastream"><span class="Definition">datastream</span></a>
+"Definition">[=PNG image=]</span>. A PNG 
+<span class="Definition">[=datastream=]</span>
 consists of a <span class=
 "Definition">[=PNG signature=]</span></a> followed by a sequence of
 <span class=
@@ -785,8 +785,8 @@ four-byte values.</dd>
 <dfn id="3PNGimage">
 <dt>PNG image</dt></dfn>
 
-<dd>result of transformations applied by a <a href=
-"#3PNGencoder"><span class="Definition">PNG encoder</span></a> to
+<dd>result of transformations applied by a 
+<span class="Definition">[=PNG encoder=]</span> to
 a <span class="Definition">[=reference
 image=]</span>, in preparation for encoding as a
 <span class="Definition">[=PNG
@@ -797,40 +797,40 @@ datastream.</dd>
 <dfn id="3PNGsignature">
 <dt>PNG signature</dt></dfn>
 
-<dd>sequence of <a href="#3byte"><span class=
-"Definition">bytes</span></a> appearing at the start of every
+<dd>sequence of <span class=
+"Definition">[=bytes=]</span> appearing at the start of every 
 <span class="Definition">[=PNG
 datastream=]</span>. It differentiates a PNG datastream from
-other types of <a href="#3datastream"><span class=
-"Definition">datastream</span></a> and allows early detection of
+other types of <span class=
+"Definition">[=datastream=]</span></a> and allows early detection of
 some transmission errors.</dd>
 
 <!-- Maintain a fragment named "3reducedImage" to preserve incoming links to it -->
 <dfn id="3reducedImage">
 <dt>reduced image</dt></dfn>
 
-<dd>pass of the <a href="#3interlacedPNGimage"><span class=
-"Definition">interlaced PNG image</span></a> extracted from the
+<dd>pass of the <span class=
+"Definition">[=interlaced PNG image=]</span> extracted from the
 <span class="Definition">[=PNG
-image=]</span> by <a href="#3passExtraction"><span class=
-"Definition">pass extraction</span></a>.</dd>
+image=]</span> by <span class=
+"Definition">[=pass extraction=]</span>.</dd>
 
 <!-- Maintain a fragment named "3referenceImage" to preserve incoming links to it -->
 <dfn id="3referenceImage">
 <dt>reference image</dt></dfn>
 
-<dd>rectangular array of rectangular <a href="#3pixel"><span
-class="Definition">pixels</span></a>, each having the same number
+<dd>rectangular array of rectangular <span
+class="Definition">[=pixels=]</span>, each having the same number
 of <span class=
 "Definition">[=samples=]</span>, either three (red, green, blue)
 or four (red, green, blue, <span class=
 "Definition">[=alpha=]</span>). Every reference image can be
 represented exactly by a <span class=
 "Definition">[=PNG datastream=]</span> and every PNG datastream
-can be converted into a reference image. Each <a href=
-"#3channel"><span class="Definition">channel</span></a> has a <a
-href="#3sampleDepth"><span class="Definition">sample
-depth</span></a> in the range 1 to 16. All samples in the same
+can be converted into a reference image. Each 
+<span class="Definition">[=channel=]</span> has a 
+<span class="Definition">[=sample
+depth=]</span> in the range 1 to 16. All samples in the same
 channel have the same sample depth. Different channels may have
 different sample depths.</dd>
 
@@ -840,20 +840,20 @@ different sample depths.</dd>
 
 <dd>converting an image in which the red, green, and blue
 <span class="Definition">[=samples=]</span> for
-each <a href="#3pixel"><span class="Definition">pixel</span></a>
-have the same value, and the same <a href="#3sampleDepth"><span
-class="Definition">sample depth</span></a>, into an image with a
-single <a href="#3greyscale"><span class=
-"Definition">greyscale</span></a> <a href="#3channel"><span
-class="Definition">channel</span></a>.</dd>
+each <span class="Definition">[=pixel=]</span>
+have the same value, and the same <span
+class="Definition">[=sample depth=]</span>, into an image with a
+single <span class=
+"Definition">[=greyscale=]</span> <span
+class="Definition">[=channel=]</span>.</dd>
 
 <!-- Maintain a fragment named "3sample" to preserve incoming links to it -->
 <dfn id="3sample">
 <dt>sample</dt></dfn>
 
-<dd>intersection of a <a href="#3channel"><span class=
-"Definition">channel</span></a> and a <a href="#3pixel"><span
-class="Definition">pixel</span></a> in an image.</dd>
+<dd>intersection of a <span class=
+"Definition">[=channel=]</span> and a <span
+class="Definition">[=pixel=]</span> in an image.</dd>
 
 <!-- Maintain a fragment named "3sampleDepth" to preserve incoming links to it -->
 <dfn id="3sampleDepth">
@@ -864,11 +864,11 @@ class="Definition">[=sample=]</span> value. In an
 <span class=
 "Definition">[=indexed-colour=]</span> <span
 class="Definition">[=PNG image=]</span>, samples are stored in
-the <a href="#3palette"><span class=
-"Definition">palette</span></a> and thus the sample depth is
+the <span class=
+"Definition">[=palette=]</span> and thus the sample depth is
 always 8 by definition of the palette. In other types of PNG
-image it is the same as the <a href="#3bitDepth"><span class=
-"Definition">bit depth</span></a>.</dd>
+image it is the same as the <span class=
+"Definition">[=bit depth=]</span>.</dd>
 
 <!-- Maintain a fragment named "3sampleDepthScaling" to preserve incoming links to it -->
 <dfn id="3sampleDepthScaling">
@@ -876,26 +876,26 @@ image it is the same as the <a href="#3bitDepth"><span class=
 scaling</dt></dfn>
 
 <dd>mapping of a range of <span class=
-"Definition">[=sample=]</span> values onto the full range of a <a
-href="#3sampleDepth"><span class="Definition">sample
-depth</span></a> allowed in a <span class=
+"Definition">[=sample=]</span> values onto the full range of a 
+<span class="Definition">[=sample
+depth=]</span> allowed in a <span class=
 "Definition">[=PNG image=]</span>.</dd>
 
 <!-- Maintain a fragment named "3scanline" to preserve incoming links to it -->
 <dfn id="3scanline">
 <dt>scanline</dt></dfn>
 
-<dd>row of <a href="#3pixel"><span class=
-"Definition">pixels</span></a> within an image or <a href=
-"#3interlacedPNGimage"><span class="Definition">interlaced PNG
-image</span></a>.</dd>
+<dd>row of <span class=
+"Definition">[=pixels=]</span> within an image or 
+<span class="Definition">[=interlaced PNG
+image=]</span>.</dd>
 
 <!-- Maintain a fragment named "3sourceImage" to preserve incoming links to it -->
 <dfn id="3sourceImage">
 <dt>source image</dt></dfn>
 
-<dd>image which is presented to a <a href="#3PNGencoder"><span
-class="Definition">PNG encoder</span></a>.</dd>
+<dd>image which is presented to a <span
+class="Definition">[=PNG encoder=]</span>.</dd>
 
 <dfn>
   <dt>static image</dt></dfn>
@@ -912,8 +912,8 @@ class="Definition">PNG encoder</span></a>.</dd>
 <dfn id="3truecolour">
 <dt>truecolour</dt></dfn>
 
-<dd>image representation in which each <a href="#3pixel"><span
-class="Definition">pixel</span></a> is defined by
+<dd>image representation in which each <span
+class="Definition">[=pixel=]</span> is defined by 
 <span class="Definition">[=samples=]</span>,
 representing red, green, and blue intensities and optionally an
 <span class="Definition">[=alpha=]</span>
@@ -981,8 +981,8 @@ hardware.</dd>
 <dfn id="3LSB">
 <dt>LSB</dt></dfn>
 
-<dd>Least Significant Byte of a multi-<a href="#3byte"><span
-class="Definition">byte</span></a> value.</dd>
+<dd>Least Significant Byte of a multi-<span
+class="Definition">[=byte=]</span> value.</dd>
 
 <!-- Maintain a fragment named "3LUT" to preserve incoming links to it -->
 <dfn id="3LUT">
@@ -991,8 +991,8 @@ class="Definition">byte</span></a> value.</dd>
 <dd>Look Up Table. In <a href="#3frameBuffer"><span class=
 "Definition">frame buffer</span></a> hardware, a LUT can be used
 to map <span class=
-"Definition">[=indexed-colour=]</span> <a href="#3pixel"><span
-class="Definition">pixels</span></a> into a selected set of <a
+"Definition">[=indexed-colour=]</span> <span
+class="Definition">[=pixels=]</span> into a selected set of <a
 href="#3truecolour"><span class=
 "Definition">truecolour</span></a> values, or to perform <a href=
 "#3gamma"><span class="Definition">gamma</span></a> correction.
@@ -1004,8 +1004,8 @@ variable.</dd>
 <dfn id="3MSB">
 <dt>MSB</dt></dfn>
 
-<dd>Most Significant Byte of a multi-<a href="#3byte"><span
-class="Definition">byte</span></a> value.</dd>
+<dd>Most Significant Byte of a multi-<span
+class="Definition">[=byte=]</span> value.</dd>
 </dl>
 </section>
 </section>

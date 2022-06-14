@@ -429,7 +429,7 @@ definitions apply.</p>
 
 <dl>
 <!-- Maintain a fragment named "3alpha" to preserve incoming links to it -->
-<dfn id="3alpha"><dt>alpha</dt></dfn>
+<dt><dfn id="3alpha">alpha</dfn></dt>
 
 <dd>a value representing a <span class=
 "Definition">[=pixel=]</span> degree of opacity. The more
@@ -438,7 +438,7 @@ the image is presented. Zero alpha represents a completely
 transparent pixel, maximum alpha represents a completely opaque
 pixel.</dd>
 <!-- Maintain a fragment named "3alphaCompaction" to preserve incoming links to it -->
-<dfn id="3alphaCompaction"><dt>alpha compaction</dt></dfn>
+<dt><dfn id="3alphaCompaction">alpha compaction</dfn></dt>
 
 <dd>an implicit representation of transparent <a href=
 "#3pixel"><span class="Definition">pixels</span></a>. If every
@@ -450,7 +450,7 @@ transparent and all other pixels are fully opaque, the <a href=
 represented implicitly.</dd>
 
 <!-- Maintain a fragment named "3alphaSeparation" to preserve incoming links to it -->
-<dfn id="3alphaSeparation"><dt>alpha separation</dt></dfn>
+<dt><dfn id="3alphaSeparation">alpha separation</dfn></dt>
 
 <dd>separating an <span class=
 "Definition">[=alpha=]</span> <span class=
@@ -1221,9 +1221,8 @@ exactly from a PNG datastream.</li>
 <li>The <i>PNG image</i> is obtained from the reference image by
 a series of transformations: alpha separation, indexing, RGB
 merging, alpha compaction, and sample depth scaling. Five types
-of PNG image are defined (see 6.1: <a href=
-"#colour-types-and-values"><span class="xref">Colour types and
-values</span></a>). (If the PNG encoder actually transforms the
+of PNG image are defined (see <a href=
+"#6Colour-values"></a>). (If the PNG encoder actually transforms the
 source image directly into the PNG image, and the source image
 format is already similar to the PNG image format, the encoder
 may be able to avoid doing some of these transformations.)
@@ -1296,9 +1295,8 @@ flexibility and control. The third method enables one particular
 colour space to be indicated. The fourth method enables the exact
 chromaticities of the RGB data to be specified, along with the
 gamma correction (the power function relating the desired display
-output with the image samples) to be applied (see Annex C: <a
-href="#C-GammaAppendix"><span class="xref">Gamma and
-chromaticity</span></a>). It is recommended that explicit gamma
+output with the image samples) to be applied (see <a
+href="#C-GammaAppendix"></a>). It is recommended that explicit gamma
 information also be provided when either the first, second or third
 method is used, for use by PNG decoders that do not support
 CICP metadata, full
@@ -1433,8 +1431,7 @@ can be represented more compactly by merely identifying the RGB
 scaling</h2>
 
 <p>In the PNG image, not all sample depths are supported (see
-6.1: <a href="#colour-types-and-values"><span class="xref">Colour types
-and values</span></a>), and all channels shall have the same
+<a href="#6Colour-values"></a>), and all channels shall have the same
 sample depth. All channels of the PNG image use the smallest
 allowable sample depth that is not less than any sample depth in
 the reference image, and the possible sample values in the
@@ -1458,11 +1455,9 @@ that decoders have to cope with. Sample depth scaling is
 reversible with no loss of data, because the reference image
 sample depths can be recorded in the PNG datastream. In the
 absence of recorded sample depths, the reference image sample
-depth equals the PNG image sample depth. See 12.5: <a href=
-"#sample-depth-scaling-1"><span class="xref">Sample depth
-scaling</span></a> and 13.12: <a href=
-"#sample-depth-rescaling"><span class="xref">Sample depth
-rescaling</span></a>.</p>
+depth equals the PNG image sample depth. See <a href=
+"#12Sample-depth-scaling"></a> and <a href=
+"#13Sample-depth-rescaling"></a>.</p>
 
 <figure id="possible-pixel-types">
 <!-- Maintain a fragment named "figure46" to preserve incoming links to it -->
@@ -1582,8 +1577,7 @@ null method; pixels are stored sequentially from left to right
 and scanlines from top to bottom. The second method makes
 multiple scans over the image to produce a sequence of seven
 reduced images. The seven passes for a sample image are
-illustrated in [[[#encoding-png-image]]]. See clause&#160;8: <a href="#interlacing-and-pass-extraction"><span class=
-"xref">Interlacing and pass extraction</span></a>.</p>
+illustrated in [[[#encoding-png-image]]]. See <a href="#8Interlace"></a>.</p>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
@@ -1630,8 +1624,7 @@ example). The filter type byte defines
 the specific filtering to be applied to a specific
 scanline. The encoder shall use only a single filter method for
 an interlaced PNG image, but may use different filter types for
-each scanline in a reduced image. See clause&#160;9: <a href=
-"#filtering-2"><span class="xref">Filtering</span></a>.</p>
+each scanline in a reduced image. See <a href="#9Filters"></a>.</p>
 
 <figure id="serializing-and-filtering-scanline">
 <!-- Maintain a fragment named "figure49" to preserve incoming links to it -->
@@ -1651,8 +1644,7 @@ filtering a scanline" />
 the PNG image is compressed (see <a href="#compression"></a>) by one of the defined
 compression methods. The concatenated filtered scanlines form the
 input to the compression stage. The output from the compression
-stage is a single compressed datastream. See clause&#160;10: <a href=
-"#compression-1"><span class="xref">Compression</span></a>.</p>
+stage is a single compressed datastream. See <a href="#10Compression"></a>.</p>
 </section>
 
 <!-- Maintain a fragment named "4Concepts.EncodingChunking" to preserve incoming links to it -->
@@ -1661,8 +1653,7 @@ stage is a single compressed datastream. See clause&#160;10: <a href=
 
 <p>Chunking provides a convenient breakdown of the compressed
 datastream into manageable chunks (see <a href="#compression"></a>). Each chunk has its own
-redundancy check. See clause&#160;11: <a href="#chunk-specifications"><span class=
-"xref">Chunk specifications</span></a>.</p>
+redundancy check. See <a href="#11Chunks"></a>.</p>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
@@ -1787,8 +1778,7 @@ image.</td>
 
   <p>The PNG datastream consists of a PNG signature (see
   [[#PNG signature]]) followed by a sequence of chunks (see
-  clause&#160;11: <a href="#chunk-specifications"><span class="xref">Chunk
-  specifications</span></a>). Each chunk has a chunk type which
+  <a href="#11Chunks"></a>). Each chunk has a chunk type which
   specifies its function.</p>
   </section>
 
@@ -1804,13 +1794,13 @@ image.</td>
   provisions of this specification. These are:</p>
 
   <!-- <ol start="1"> --><ol>
-  <li><a href="#ihdr-image-header"><span class="chunk">IHDR</span></a>: image
+  <li><a href="#11IHDR"><span class="chunk">IHDR</span></a>: image
   header, which is the first chunk in a PNG datastream.</li>
 
   <li><a href="#11PLTE"><span class="chunk">PLTE</span></a>:
   palette table associated with indexed PNG images.</li>
 
-  <li><a href="#idat-image-data"><span class="chunk">IDAT</span></a>: image
+  <li><a href="#11IDAT"><span class="chunk">IDAT</span></a>: image
   data chunks.</li>
 
   <li><a href="#iend-image-trailer"><span class="chunk">IEND</span></a>: image
@@ -1834,13 +1824,13 @@ image.</td>
   "chunk">cICP</span></a> (see [[#colour-space-information]]).</li>
 
   <li>Textual information: <a href="#itxt-international-textual-data"><span class=
-  "chunk">iTXt</span></a>, <a href="#text-textual-data"><span class=
+  "chunk">iTXt</span></a>, <a href="#11tEXt"><span class=
   "chunk">tEXt</span></a>, <a href="#ztxt-compressed-textual-data"><span class=
   "chunk">zTXt</span></a> (see [[#textual-information]]).</li>
 
   <li>Miscellaneous information: <a href="#bkgd-background-colour"><span class=
   "chunk">bKGD</span></a>, <a href="#hist-image-histogram"><span class=
-  "chunk">hIST</span></a>, <a href="#phys-physical-pixel-dimensions"><span class=
+  "chunk">hIST</span></a>, <a href="#11pHYs"><span class=
   "chunk">pHYs</span></a>, <a href="#splt-suggested-palette"><span class=
   "chunk">sPLT</span></a>, <a href="#exif"><span class=
   "chunk">eXIf</span></a>
@@ -2049,8 +2039,7 @@ private values, if those values are unknown to the decoder.</li>
 <p>PNG decoders should detect errors as early as possible,
 recover from errors whenever possible, and fail gracefully
 otherwise. The error handling philosophy is described in detail
-in 13.2: <a href="#error-handling-1"><span class="xref">Error
-handling</span></a>.</p>
+in <a href="#13Decoders.Errors"></a>.</p>
 </section>
 
 <!-- Maintain a fragment named "4Concepts.Registration" to preserve incoming links to it -->
@@ -2061,7 +2050,7 @@ handling</span></a>.</p>
 
 <ul>
 <li><a href="#sec-defining-new-chunks">chunk type</a>;</li>
-<li><a href="#text-textual-data">text keyword</a>; and</li>
+<li><a href="#11tEXt">text keyword</a>; and</li>
 <li><a>private field values</a>.</li>
 </ul>
 
@@ -2104,7 +2093,7 @@ following (decimal) values:</p>
 
 <p>This signature indicates that the remainder of the datastream
 contains a single PNG image, consisting of a series of chunks
-beginning with an <a href="#ihdr-image-header"><span class=
+beginning with an <a href="#11IHDR"><span class=
 "chunk">IHDR</span></a> chunk and ending with an <a href=
 "#iend-image-trailer"><span class="chunk">IEND</span></a> chunk.</p>
 </section>
@@ -2113,14 +2102,13 @@ beginning with an <a href="#ihdr-image-header"><span class=
 <section id="5Chunk-layout">
 <h2>Chunk layout</h2>
 
-<p>Each chunk consists of three or four fields (see figure 5.1).
-The meaning of the fields is described in
-<a href="#table51"><span class="tabref">Table 5.1</span></a>.
+<p>Each chunk consists of three or four fields (see <a href="#figure411"></a>).
+The meaning of the fields is described in <a href="#table51"><span class="tabref">Table 5.1</span></a>.
 The chunk data field may be empty.</p>
 
-<figure id="chunk-parts">
+<figure id="figure411">
 <!-- Maintain a fragment named "figure411" to preserve incoming links to it -->
-<object id="figure411" height="160" width="480" data="figures/chunk-parts.svg" type="image/svg+xml">
+<object height="160" width="480" data="figures/chunk-parts.svg" type="image/svg+xml">
  <img height="160" width="480" src="png-figures/chunk-parts.png" alt="Chunk parts" />
 </object>
 <figcaption>Chunk parts</figcaption>
@@ -2151,11 +2139,9 @@ respectively for convenience in description and examination of
 PNG datastreams. Encoders and decoders shall treat the chunk
 types as fixed binary values, not character strings. For example,
 it would not be correct to represent the chunk type <a href=
-"#idat-image-data"><span class="chunk">IDAT</span></a> by the equivalents
+"#11IDAT"><span class="chunk">IDAT</span></a> by the equivalents
 of those letters in the UCS 2 character set. Additional naming
-conventions for chunk types are discussed in 5.4: <a href=
-"#5Chunk-naming-conventions"><span class="xref">Chunk naming
-conventions</span></a>.</td>
+conventions for chunk types are discussed in <a href="#5Chunk-naming-conventions"></a>.</td>
 </tr>
 
 <tr>
@@ -2171,8 +2157,7 @@ preceding bytes in the chunk, including the chunk type field and
 chunk data fields, but <strong>not</strong> including the length
 field. The CRC can be used to check for corruption of the data.
 The CRC is always present, even for chunks containing no data.
-See 5.5: <a href="#cycling-redundancy-code-algorithm"><span class="xref">Cyclic
-Redundancy Code algorithm</span></a>.</td>
+See <a href="#5CRC-algorithm"></a>.</td>
 </tr>
 </table>
 
@@ -2226,7 +2211,7 @@ defined in
  1 (lowercase) = ancillary.</td>
 <td class="Regular">Critical chunks are necessary for successful display of the
 contents of the datastream, for example the image header chunk
-(<a href="#ihdr-image-header"><span class="chunk">IHDR</span></a>). A
+(<a href="#11IHDR"><span class="chunk">IHDR</span></a>). A
 decoder trying to extract the image, upon encountering an unknown
 chunk type in which the ancillary bit is 0, shall indicate to the
 user that the image contains information it cannot safely
@@ -2269,9 +2254,7 @@ third letters.</td>
 <td class="Regular">This property bit is not of interest to pure decoders, but it
 is needed by PNG editors. This bit defines the proper handling of
 unrecognized chunks in a datastream that is being modified. Rules
-for PNG editors are discussed further in 14.2: <a href=
-"#behaviour-of-png-editors"><span class="xref">Behaviour of PNG
-editors</span></a>.</td>
+for PNG editors are discussed further in <a href="#14Ordering"></a>.</td>
 </tr>
 </table>
 
@@ -2317,9 +2300,8 @@ least significant bit of the 32-bit CRC is defined to be the
 coefficient of the <tt>x<sup>31</sup></tt> term.</p>
 
 <p>Practical calculation of the CRC often employs a precalculated
-table to accelerate the computation. See Annex D: <a href=
-"#D-CRCAppendix"><span class="xref">Sample Cyclic Redundancy Code
-implementation</span></a>.</p>
+table to accelerate the computation. See <a href=
+"#D-CRCAppendix"></a>.</p>
 </section>
 
 <!-- Maintain a fragment 5ChunkOrderingg" to preserve incoming links to it -->
@@ -2365,7 +2347,7 @@ class="chunk">PLTE</span></a> is optional)</th>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#ihdr-image-header"><span class="chunk">IHDR</span></a> </td>
+<td class="Regular"><a href="#11IHDR"><span class="chunk">IHDR</span></a> </td>
 <td class="Regular">No</td>
 <td class="Regular">Shall be first</td>
 </tr>
@@ -2373,14 +2355,14 @@ class="chunk">PLTE</span></a> is optional)</th>
 <tr>
 <td class="Regular"><a href="#11PLTE"><span class="chunk">PLTE</span></a> </td>
 <td class="Regular">No</td>
-<td class="Regular">Before first <a href="#idat-image-data"><span class=
+<td class="Regular">Before first <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a> </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#idat-image-data"><span class="chunk">IDAT</span></a> </td>
+<td class="Regular"><a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
 <td class="Regular">Yes</td>
-<td class="Regular">Multiple <a href="#idat-image-data"><span class=
+<td class="Regular">Multiple <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a> chunks shall be consecutive</td>
 </tr>
 
@@ -2405,35 +2387,35 @@ class="chunk">PLTE</span></a> is optional)</th>
 <td class="Regular"><span class="chunk">[[acTL]]</span> </td>
 <td class="Regular">No</td>
 <td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
-and <a href="#idat-image-data"><span class="chunk">IDAT</span></a> </td>
+and <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
 </tr>
 
 <tr>
 <td class="Regular"><a href="#chrm-primary-chromaticities-and-white-point"><span class="chunk">cHRM</span></a> </td>
 <td class="Regular">No</td>
 <td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
-and <a href="#idat-image-data"><span class="chunk">IDAT</span></a> </td>
+and <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
 </tr>
 
 <tr>
 <td class="Regular"><a href="#11cICP"><span class="chunk">cICP</span></a></td>
 <td class="Regular">No</td>
 <td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
-and <a href="#idat-image-data"><span class="chunk">IDAT</span></a> </td>
+and <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
 </tr>
 
 <tr>
 <td class="Regular"><a href="#gama-image-gamma"><span class="chunk">gAMA</span></a> </td>
 <td class="Regular">No</td>
 <td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
-and <a href="#idat-image-data"><span class="chunk">IDAT</span></a> </td>
+and <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
 </tr>
 
 <tr>
 <td class="Regular"><a href="#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a> </td>
 <td class="Regular">No</td>
 <td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
-and <a href="#idat-image-data"><span class="chunk">IDAT</span></a>. If the
+and <a href="#11IDAT"><span class="chunk">IDAT</span></a>. If the
 <a href="#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a> chunk is
 present, the <a href="#srgb-standard-rgb-colour-space"><span class=
 "chunk">sRGB</span></a> chunk should not be present.</td>
@@ -2443,7 +2425,7 @@ present, the <a href="#srgb-standard-rgb-colour-space"><span class=
   <td class="Regular"><span class="chunk">[[[#iccn-embedded-icc-profiles-v4-and-utf-8-profile-names]]]</span> </td>
   <td class="Regular">No</td>
   <td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
-  and <a href="#idat-image-data"><span class="chunk">IDAT</span></a>. If the
+  and <a href="#11IDAT"><span class="chunk">IDAT</span></a>. If the
   <span class="chunk">[[[#iccn-embedded-icc-profiles-v4-and-utf-8-profile-names]]]</span> chunk is
   present, the <a href="#srgb-standard-rgb-colour-space"><span class=
   "chunk">sRGB</span></a> chunk should not be present.</td>
@@ -2453,14 +2435,14 @@ present, the <a href="#srgb-standard-rgb-colour-space"><span class=
 <td class="Regular"><a href="#sbit-significant-bits"><span class="chunk">sBIT</span></a> </td>
 <td class="Regular">No</td>
 <td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
-and <a href="#idat-image-data"><span class="chunk">IDAT</span></a> </td>
+and <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
 </tr>
 
 <tr>
 <td class="Regular"><a href="#srgb-standard-rgb-colour-space"><span class="chunk">sRGB</span></a> </td>
 <td class="Regular">No</td>
 <td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
-and <a href="#idat-image-data"><span class="chunk">IDAT</span></a>. If the
+and <a href="#11IDAT"><span class="chunk">IDAT</span></a>. If the
 <a href="#srgb-standard-rgb-colour-space"><span class="chunk">sRGB</span></a> chunk is
 present, the <a href="#iccp-embedded-icc-profile"><span class=
 "chunk">iCCP</span></a> and <span class=
@@ -2471,7 +2453,7 @@ present, the <a href="#iccp-embedded-icc-profile"><span class=
 <td class="Regular"><a href="#bkgd-background-colour"><span class="chunk">bKGD</span></a> </td>
 <td class="Regular">No</td>
 <td class="Regular">After <a href="#11PLTE"><span class="chunk">PLTE</span></a>;
-before <a href="#idat-image-data"><span class="chunk">IDAT</span></a>
+before <a href="#11IDAT"><span class="chunk">IDAT</span></a>
 </td>
 </tr>
 
@@ -2479,7 +2461,7 @@ before <a href="#idat-image-data"><span class="chunk">IDAT</span></a>
 <td class="Regular"><a href="#hist-image-histogram"><span class="chunk">hIST</span></a> </td>
 <td class="Regular">No</td>
 <td class="Regular">After <a href="#11PLTE"><span class="chunk">PLTE</span></a>;
-before <a href="#idat-image-data"><span class="chunk">IDAT</span></a>
+before <a href="#11IDAT"><span class="chunk">IDAT</span></a>
 </td>
 </tr>
 
@@ -2487,40 +2469,40 @@ before <a href="#idat-image-data"><span class="chunk">IDAT</span></a>
 <td class="Regular"><a href="#trns-transparency"><span class="chunk">tRNS</span></a> </td>
 <td class="Regular">No</td>
 <td class="Regular">After <a href="#11PLTE"><span class="chunk">PLTE</span></a>;
-before <a href="#idat-image-data"><span class="chunk">IDAT</span></a>
+before <a href="#11IDAT"><span class="chunk">IDAT</span></a>
 </td>
 </tr>
 
 <tr>
 <td class="Regular"><a href="#eXIf"><span class="chunk">eXIf</span></a> </td>
 <td class="Regular">No</td>
-<td class="Regular">Before <a href="#idat-image-data"><span class="chunk">IDAT</span></a> </td>
+<td class="Regular">Before <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
 </tr>
 
 <tr>
 <td class="Regular"><a href="#11fcTL"><span class="chunk">fcTL</span></a> </td>
 <td class="Regular">Yes</td>
-<td class="Regular">One may occur before <a href="#idat-image-data"><span class="chunk">IDAT</span></a>; all others shall be after <a href="#idat-image-data"><span class="chunk">IDAT</span></a> </td>
+<td class="Regular">One may occur before <a href="#11IDAT"><span class="chunk">IDAT</span></a>; all others shall be after <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#phys-physical-pixel-dimensions"><span class="chunk">pHYs</span></a> </td>
+<td class="Regular"><a href="#11pHYs"><span class="chunk">pHYs</span></a> </td>
 <td class="Regular">No</td>
-<td class="Regular">Before <a href="#idat-image-data"><span class="chunk">IDAT</span></a>
+<td class="Regular">Before <a href="#11IDAT"><span class="chunk">IDAT</span></a>
 </td>
 </tr>
 
 <tr>
 <td class="Regular"><a href="#splt-suggested-palette"><span class="chunk">sPLT</span></a> </td>
 <td class="Regular">Yes</td>
-<td class="Regular">Before <a href="#idat-image-data"><span class="chunk">IDAT</span></a>
+<td class="Regular">Before <a href="#11IDAT"><span class="chunk">IDAT</span></a>
 </td>
 </tr>
 
 <tr>
   <td class="Regular"><a href="#11fdAT"><span class="chunk">fdAT</span></a> </td>
   <td class="Regular">Yes</td>
-  <td class="Regular">After <a href="#idat-image-data"><span class="chunk">IDAT</span></a> </td>
+  <td class="Regular">After <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
 </tr>
 
 <tr>
@@ -2536,7 +2518,7 @@ before <a href="#idat-image-data"><span class="chunk">IDAT</span></a>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#text-textual-data"><span class="chunk">tEXt</span></a> </td>
+<td class="Regular"><a href="#11tEXt"><span class="chunk">tEXt</span></a> </td>
 <td class="Regular">Yes</td>
 <td class="Regular">None</td>
 </tr>
@@ -2645,7 +2627,7 @@ class="chunk">PLTE</span></a> in datastream</figcaption>
     experimental use.</p>
 
     <p>A private chunk SHOULD NOT be defined merely to carry textual information
-    of interest to a human user. Instead <a href="#text-textual-data"><span
+    of interest to a human user. Instead <a href="#11tEXt"><span
     class= "chunk">tEXt</span></a> chunk SHOULD BE used and corresponding
     keyword SHOULD BE used and a suitable keyword defined.</p>
 
@@ -2708,8 +2690,7 @@ transformation</h2>
 <section id="6Colour-values">
 <h2>Colour types and values</h2>
 
-<p>As explained in 4.4: <a href="#png-image"><span
-class="xref">PNG image</span></a> there are five types of PNG
+<p>As explained in <a href="#4Concepts.PNGImage"></a> there are five types of PNG
 image. Corresponding to each type is a colour type, which is the
 sum of the following values: 1 (palette used), 2 (truecolour
 used) and 4 (alpha used). Greyscale and truecolour images may
@@ -2755,8 +2736,7 @@ and colour types</b></caption>
 </table>
 
 <p>The allowed bit depths and sample depths for each PNG image
-type are listed in 11.2.2: <a href="#ihdr-image-header"><span class=
-"xref"><span class="chunk">IHDR</span> Image
+type are listed in <a href="#11IHDR"></span> Image
 header</span></a>.</p>
 
 <p>Greyscale samples represent luminance if the transfer curve is
@@ -2777,12 +2757,9 @@ if not.</p>
 intensity; the <a href="#gama-image-gamma"><span class=
 "chunk">gAMA</span></a> chunk specifies the relationship between
 sample values and display output intensity. Viewers are strongly
-encouraged to compensate properly. See 4.2: <a href=
-"#colour-spaces"><span class="xref">Colour
-spaces</span></a>, 13.13: <a href=
-"#decoder-gamma-handling"><span class="xref">Decoder gamma
-handling</span></a> and Annex C: <a href="#C-GammaAppendix"><span
-class="xref">Gamma and chromaticity</span></a>.</p>
+encouraged to compensate properly. See <a href=
+"#4Concepts.ColourSpaces"></a>, <a href=
+"#13Decoder-gamma-handling"></a> and <a href="#C-GammaAppendix"></a>.</p>
 </section>
 
 <!-- Maintain a fragment named "6AlphaRepresentation" to preserve incoming links to it -->
@@ -2791,11 +2768,8 @@ class="xref">Gamma and chromaticity</span></a>.</p>
 representation</h2>
 
 <p>In a PNG datastream transparency may be represented in one of
-four ways, depending on the PNG image type (see 4.3.2: <a href=
-"#3alphaSeparation"><span class="xref">Alpha
-separation</span></a> and 4.3.5: <a href=
-"#3alphaCompaction"><span class="xref">Alpha
-compaction</span></a>).</p>
+four ways, depending on the PNG image type (see <a>alpha separation</a> 
+and <a>alpha compaction</a>).</p>
 
 <!-- <ol start="1"> --><ol>
 <li>Truecolour with alpha, greyscale with alpha: an alpha channel
@@ -2832,11 +2806,8 @@ technique is to store sample values premultiplied by the alpha
 value; in effect, such an image is already composited against a
 black background. PNG does <strong>not</strong> use premultiplied alpha.
 In consequence an image editor can take a PNG image and easily
-change its transparency.) See 12.4: <a href=
-"#alpha-channel-creation"><span class="xref">Alpha channel
-creation</span></a> and 13.16: <a href=
-"#alpha-channel-processing"><span class="xref">Alpha channel
-processing</span></a>.</p>
+change its transparency.) See <a href="#12Alpha-channel-creation"></a>
+and <a href="#13Alpha-channel-processing"></a>.</p>
 </section>
 </section>
 
@@ -2884,9 +2855,7 @@ with the value -2<sup>31</sup>.</p>
 <section id="7Scanline">
 <h2>Scanlines</h2>
 
-<p>A PNG image (or pass, see clause&#160;8: <a href=
-"#interlacing-and-pass-extraction"><span class="xref">Interlacing and pass
-extraction</span></a>) is a rectangular pixel array, with pixels
+<p>A PNG image (or pass, see <a href="#8Interlace"></a>) is a rectangular pixel array, with pixels
 appearing left-to-right within each scanline, and scanlines
 appearing top-to-bottom. The size of each pixel is determined by
 the number of bits per pixel.</p>
@@ -2935,8 +2904,7 @@ compression step. An intelligent encoder can switch filters from
 one scanline to the next. The method for choosing which filter to
 employ is left to the encoder.</p>
 
-<p>See clause&#160;9: <a href="#filtering-2"><span class=
-"xref">Filtering</span></a>.</p>
+<p>See <a href="#9Filters"></a>.</p>
 </section>
 </section>
 
@@ -3009,8 +2977,7 @@ containing four pixels (see <a href="#figure48"><span class=
 "figref">figure 4.8</span></a>).</p>
 
 <p>Scanlines that do not completely fill an integral number of
-bytes are padded as defined in 7.2: <a href="#scanlines"><span
-class="xref">Scanlines</span></a>.</p>
+bytes are padded as defined in <a href="#7Scanline"></a>.</p>
 
 <p class="Note">NOTE If the reference image contains fewer than
 five columns or fewer than five rows, some passes will be
@@ -3042,16 +3009,14 @@ different filter types.</p>
 
 <p>PNG imposes no additional restriction on which filter types
 can be applied to an interlaced PNG image. However, the filter
-types are not equally effective on all types of data. See 12.8:
-<a href="#filter-selection"><span class="xref">Filter
-selection</span></a>.</p>
+types are not equally effective on all types of data. See
+<a href="#12Filter-selection"></a>.</p>
 
 <p>Filtering transforms the byte sequence in a scanline to an
 equal length sequence of bytes preceded by the filter type.
 Filter type bytes are associated only with non-empty scanlines.
-No filter type bytes are present in an empty pass. See 13.8: <a
-href="#interlacing-and-progressive-display"><span class="xref">Interlacing and
-progressive display</span></a>.</p>
+No filter type bytes are present in an empty pass. See <a
+href="#13Progressive-display"></a>.</p>
 </section>
 
 <!-- Maintain a fragment named "9Filter-types" to preserve incoming links to it -->
@@ -3062,8 +3027,7 @@ progressive display</span></a>.</p>
 <p>Filters are applied to <strong>bytes</strong>, not to pixels,
 regardless of the bit depth or colour type of the image. The
 filters operate on the byte sequence formed by a scanline that
-has been represented as described in 7.2: <a href=
-"#scanlines"><span class="xref">Scanlines</span></a>. If the image
+has been represented as described in <a href="#7Scanline"></a>. If the image
 includes an alpha channel, the alpha data is filtered in the same
 way as the image data.</p>
 
@@ -3110,8 +3074,7 @@ applied. The filter function for the Paeth type
 types and this shall not be extended.
 This ensures that decoders need not decompress the data
 to determine whether it contains unsupported filter types:
-it is sufficient to check the filter method in <a href="#ihdr-image-header"><span class=
-"chunk">IHDR</span></a>.</p>
+it is sufficient to check the filter method in <a href="#11IHDR"></a>.</p>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
@@ -3305,9 +3268,8 @@ method/flags code shall specify method code 8 (deflate
 compression) and an LZ77 window size of not more than 32768
 bytes. The zlib compression method number is not the same as the
 PNG compression method number in the <a href=
-"#ihdr-image-header"><span class="chunk">IHDR</span></a> chunk (see 11.2.2
-<a href="#ihdr-image-header"><span class="xref"><span class=
-"chunk">IHDR</span> Image header</span></a>). The additional
+"#11IHDR"><span class="chunk">IHDR</span></a> chunk (see 
+<a href="#11IHDR"></a>). The additional
 flags shall not specify a preset dictionary.</p>
 
 <p>If the data to be compressed contain 16384 bytes or fewer, the
@@ -3341,28 +3303,28 @@ the PNG datastream has been transmitted undamaged.</p>
 of filtered scanlines</h2>
 
 <p>The sequence of filtered scanlines is compressed and the
-resulting data stream is split into <a href="#idat-image-data"><span
+resulting data stream is split into <a href="#11IDAT"><span
 class="chunk">IDAT</span></a> chunks. The concatenation of the
-contents of all the <a href="#idat-image-data"><span class=
+contents of all the <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a> chunks makes up a zlib datastream. This
 datastream decompresses to filtered image data.</p>
 
 <p>It is important to emphasize that the boundaries between <a
-href="#idat-image-data"><span class="chunk">IDAT</span></a> chunks are
+href="#11IDAT"><span class="chunk">IDAT</span></a> chunks are
 arbitrary and can fall anywhere in the zlib datastream. There is
-not necessarily any correlation between <a href="#idat-image-data"><span
+not necessarily any correlation between <a href="#11IDAT"><span
 class="chunk">IDAT</span></a> chunk boundaries and deflate block
 boundaries or any other feature of the zlib data. For example, it
 is entirely possible for the terminating zlib check value to be
-split across <a href="#idat-image-data"><span class=
+split across <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a> chunks.</p>
 
 <p>Similarly, there is no required correlation between the
 structure of the image data (i.e., scanline boundaries) and
-deflate block boundaries or <a href="#idat-image-data"><span class=
+deflate block boundaries or <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a> chunk boundaries. The complete filtered
 PNG image is represented by a single zlib datastream that is
-stored in a number of <a href="#idat-image-data"><span class=
+stored in a number of <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a> chunks.</p>
 </section>
 
@@ -3379,9 +3341,7 @@ class="chunk">iTXt</span></a>, <a href="#iccp-embedded-icc-profile"><span class=
   "chunk">[[[#iccn-embedded-icc-profiles-v4-and-utf-8-profile-names]]]</span>, and <a href="#ztxt-compressed-textual-data"><span class=
 "chunk">zTXt</span></a> chunks. Unlike the image data, such
 datastreams are not split across chunks; each such chunk contains
-an independent zlib datastream (see 10.1: <a href=
-"#compression-method-0"><span class="xref">Compression method
-0</span></a>).</p>
+an independent zlib datastream (see <a href="#10CompressionCM0"></a>).</p>
 </section>
 </section>
 
@@ -3406,16 +3366,15 @@ an independent zlib datastream (see 10.1: <a href=
 <p>Critical chunks are those chunks that are absolutely required
 in order to successfully decode a PNG image from a PNG
 datastream. Extension chunks may be defined as critical chunks
-(see clause&#160;14: <a href="#editors-and-extensions"><span class=
-"xref">Editors and extensions</span></a>), though this practice
+(see <a href="#14EditorsExt"></a>), though this practice
 is strongly discouraged.</p>
 
 <p>A valid PNG datastream shall begin with a PNG signature,
-immediately followed by an <a href="#ihdr-image-header"><span class=
+immediately followed by an <a href="#11IHDR"><span class=
 "chunk">IHDR</span></a> chunk, then one or more <a href=
-"#idat-image-data"><span class="chunk">IDAT</span></a> chunks, and shall
+"#11IDAT"><span class="chunk">IDAT</span></a> chunks, and shall
 end with an <a href="#iend-image-trailer"><span class="chunk">IEND</span></a>
-chunk. Only one <a href="#ihdr-image-header"><span class=
+chunk. Only one <a href="#11IHDR"><span class=
 "chunk">IHDR</span></a> chunk and one <a href="#iend-image-trailer"><span
 class="chunk">IEND</span></a> chunk are allowed in a PNG
 datastream.</p>
@@ -3480,8 +3439,7 @@ value.</p>
 <p>Bit depth is a single-byte integer giving the number of bits
 per sample or per palette index (not per pixel). Valid values are
 1, 2, 4, 8, and 16, although not all values are allowed for all
-colour types. See 6.1: <a href="#colour-types-and-values"><span class=
-"xref">Colour types and values</span></a>.</p>
+colour types. See <a href="#6Colour-values"></a>.</p>
 
 <p>Colour type is a single-byte integer that defines the PNG
 image type. Valid values are 0, 2, 3, 4, and 6.</p>
@@ -3545,8 +3503,8 @@ sample.</td>
 
 <p>The sample depth is the same as the bit depth except in the
 case of indexed-colour PNG images (colour type 3), in which the
-sample depth is always 8 bits (see 4.4: <a href=
-"#png-image"><span class="xref">PNG image</span></a>).</p>
+sample depth is always 8 bits (see <a href=
+"#4Concepts.PNGImage"></a>).</p>
 
 <p>Compression method is a single-byte integer that indicates the
 method used to compress the image data. Only compression method 0
@@ -3558,14 +3516,12 @@ conforming PNG images shall be compressed with this scheme.</p>
 preprocessing method applied to the image data before
 compression. Only filter method 0 (adaptive filtering with five
 basic filter types) is defined in this specification.
-See clause&#160;9: <a href="#filtering-2"><span class=
-"xref">Filtering</span></a> for details.</p>
+See <a href="#9Filters"></a> for details.</p>
 
 <p>Interlace method is a single-byte integer that indicates the
 transmission order of the image data. Two values are defined in
 this specification: 0 (no interlace) or 1 (Adam7
-interlace). See clause&#160;8: <a href="#interlacing-and-pass-extraction"><span class=
-"xref">Interlacing and pass extraction</span></a> for
+interlace). See <a href="#8Interlace"></a> for
 details.</p>
 </section>
 
@@ -3631,8 +3587,7 @@ chunk. If neither <span class="chunk">PLTE</span> nor <a href=
 and the image cannot be displayed directly, quantization has to
 be done by the viewing system. However, it is often preferable
 for the selection of colours to be done once by the PNG encoder.
-(See 12.6: <a href="#suggested-palettes"><span class=
-"xref">Suggested palettes</span></a>.)</p>
+(See <a href="#12Suggested-palettes"></a>.)</p>
 
 <p>Note that the palette uses 8 bits (1 byte) per sample
 regardless of the image bit depth. In particular,
@@ -3656,9 +3611,7 @@ data</h2>
 
 <p>The <span class="chunk">IDAT</span> chunk contains the actual
 image data which is the output stream of the compression
-algorithm. See clause&#160;9: <a href="#filtering-2"><span class=
-"xref">Filtering</span></a> and clause&#160;10: <a href=
-"#compression-1"><span class="xref">Compression</span></a> for
+algorithm. See <a href="#9Filters"></a> and <a href="#10Compression"></a> for
 details.</p>
 
 <p>There may be multiple <span class="chunk">IDAT</span> chunks;
@@ -3691,9 +3644,7 @@ PNG datastream. The chunk's data field is empty.</p>
 <!-- Maintain a fragment named "11AcGen" to preserve incoming links to it -->
 <section class="introductory" id="11AcGen">
 <p>The ancillary chunks defined in this specification
-are listed in the order in 4.7.2: <a href=
-"#chunk-types"><span class="xref">Chunk
-types</span></a>. This is not the order in which they appear in a
+are listed in the order in <a href="#4Concepts.FormatTypes"></a>. This is not the order in which they appear in a
 PNG datastream. Ancillary chunks may be ignored by a decoder. For
 each ancillary chunk, the actions described are under the
 assumption that the decoder is not ignoring the chunk.</p>
@@ -3793,9 +3744,8 @@ palette indices are opaque, the <span class="chunk">tRNS</span>
 chunk may be omitted.</p>
 
 <p>For colour types 0 or 2, two bytes per sample are used
-regardless of the image bit depth (see 7.1: <a href=
-"#integers-and-byte-order"><span class="xref">Integers and byte
-order</span></a>). Pixels of the specified grey sample value or
+regardless of the image bit depth (see <a href="#7Integers-and-byte-order"></a>).
+Pixels of the specified grey sample value or
 RGB sample values are treated as transparent (equivalent to alpha
 value 0); all other pixels are to be treated as fully opaque
 (alpha value 2<sup>bitdepth</sup>-1). If the image bit depth is
@@ -3833,8 +3783,7 @@ Primary chromaticities and white point</h2>
 <p>The <span class="chunk">cHRM</span> chunk may be used to
 specify the 1931 CIE <i>x,y</i> chromaticities of the red,
 green, and blue display primaries used in the image, and the referenced
-white point. See Annex C: <a href="#C-GammaAppendix"><span class=
-"xref">Gamma and chromaticity</span></a> for more information.
+white point. See <a href="#C-GammaAppendix"></a> for more information.
 The <a href="#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a>, 
 <span class="chunk">[[[#iccn-embedded-icc-profiles-v4-and-utf-8-profile-names]]]</span>, and <a
 href="#srgb-standard-rgb-colour-space"><span class="chunk">sRGB</span></a> chunks provide
@@ -3949,10 +3898,8 @@ representing gamma times 100000.</p>
 <p>EXAMPLE A gamma of 1/2.2 would be stored as the integer
 45455.</p>
 
-<p>See 12.2: <a href="#encoder-gamma-handling"><span class=
-"xref">Encoder gamma handling</span></a> and 13.13: <a href=
-"#decoder-gamma-handling"><span class="xref">Decoder gamma
-handling</span></a> for more information.</p>
+<p>See <a href="#12Encoder-gamma-handling"></a> and <a href=
+"#13Decoder-gamma-handling"></a> for more information.</p>
 
 <p>An <a href="#srgb-standard-colour-space"><span class="chunk">sRGB</span></a>,
 <a href="#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a>, or
@@ -4003,9 +3950,8 @@ only printable Latin-1 characters and spaces (only character
 codes 32-126 and 161-255 decimal are allowed). Leading, trailing,
 and consecutive spaces are not permitted. The only compression
 method defined in this specification is method 0 (zlib
-datastream with deflate compression, see 10.3: <a href=
-'#other-uses-of-compression'><span class="xref">Other uses of
-compression</span></a>). The compression method entry is followed
+datastream with deflate compression, see <a href=
+'#10CompressionOtherUses'></a>). The compression method entry is followed
 by a compressed profile that makes up the remainder of the chunk.
 Decompression of this datastream yields the embedded ICC
 profile.</p>
@@ -4141,7 +4087,7 @@ supported by PNG.</p>
 <p>Each depth specified in <span class="chunk">sBIT</span> shall
 be greater than zero and less than or equal to the sample depth
 (which is 8 for indexed-colour images, and the bit depth given in
-<a href="#ihdr-image-header"><span class="chunk">IHDR</span></a> for other
+<a href="#11IHDR"><span class="chunk">IHDR</span></a> for other
 colour types).
 Note that <span class="chunk">sBIT</span> does not provide a sample depth
 for the alpha channel that is implied by a
@@ -4566,7 +4512,7 @@ it's associated recommendations.</p>
 
 <!-- Maintain a fragment named "11textIntro" to preserve incoming links to it -->
 <section class="introductory" id="11textIntro">
-<p>PNG provides the <a href="#text-textual-data"><span class=
+<p>PNG provides the <a href="#11tEXt"><span class=
 "chunk">tEXt</span></a>, <a href="#itxt-international-textual-data"><span class=
 "chunk">iTXt</span></a>, and <a href="#ztxt-compressed-textual-data"><span class=
 "chunk">zTXt</span></a> chunks for storing text strings
@@ -4678,14 +4624,13 @@ length.</p>
 <p>For the Creation Time keyword, the date format defined in
 section&#160;5.2.14 of RFC 1123 is suggested, but not required [[rfc1123]].</p>
 
-<p>In the <a href="#text-textual-data"><span class="chunk">tEXt</span></a>
+<p>In the <a href="#11tEXt"><span class="chunk">tEXt</span></a>
 and <a href="#ztxt-compressed-textual-data"><span class="chunk">zTXt</span></a> chunks,
 the text string associated with a keyword is restricted to the
 Latin-1 character set plus the linefeed character. Text strings
 in <a href="#ztxt-compressed-textual-data"><span class="chunk">zTXt</span></a> are
 compressed into zlib datastreams using deflate compression (see
-10.3: <a href='#other-uses-of-compression'><span class="xref">Other
-uses of compression</span></a>). The <a href="#itxt-international-textual-data"><span
+<a href='#10CompressionOtherUses'></a>). The <a href="#itxt-international-textual-data"><span
 class="chunk">iTXt</span></a> chunk can be used to convey
 characters outside the Latin-1 set. It uses the UTF-8 encoding [[rfc3629]].
 There is an option to compress text strings
@@ -4695,7 +4640,7 @@ chunk.</p>
 
 <!-- Maintain a fragment named "11tEXt" to preserve incoming links to it -->
 <section id="11tEXt">
-<h2 id="text-textual-data"><span class="chunk">tEXt</span>
+<h2 id="11tEXt"><span class="chunk">tEXt</span>
 Textual data</h2>
 
 <p>The four-byte chunk type field contains the decimal values</p>
@@ -4735,9 +4680,7 @@ length from zero bytes up to the maximum permissible chunk size
 less the length of the keyword and null character separator.</p>
 
 <p>The keyword indicates the type of information represented by
-the text string as described in 11.3.4.2: <a href=
-"#keywords-and-text-strings"><span class="xref">Keywords and text
-strings</span></a>.</p>
+the text string as described in <a href="#11keywords"></a>.</p>
 
 <p>Text is interpreted according to the Latin-1 character set [[ISO 8859-1]].
 The text string may contain
@@ -4762,7 +4705,7 @@ Compressed textual data</h2>
 </pre>
 
 <p>The <span class="chunk">zTXt</span> and <a href=
-"#text-textual-data"><span class="chunk">tEXt</span></a> chunks are
+"#11tEXt"><span class="chunk">tEXt</span></a> chunks are
 semantically equivalent, but the <span class="chunk">zTXt</span>
 chunk is recommended for storing large blocks of text.</p>
 
@@ -4792,20 +4735,18 @@ chunk is recommended for storing large blocks of text.</p>
 </table>
 
 <p>The keyword and null character are the same as in the <a href=
-"#text-textual-data"><span class="chunk">tEXt</span></a> chunk (see
-11.3.4.3: <a href="#text-textual-data"><span class="xref"><span class=
-"chunk">tEXt</span> Textual data</span></a>). The keyword is not
+"#11tEXt"><span class="chunk">tEXt</span></a> chunk (see
+<a href="#11tEXt"></a>). The keyword is not
 compressed. The compression method entry defines the compression
 method used. The only value defined in this International
 Standard is 0 (deflate/inflate compression). Other values are
 reserved for future standardization. The compression method entry is
 followed by the compressed text datastream that makes up the
 remainder of the chunk. For compression method 0, this datastream
-is a zlib datastream with deflate compression (see 10.3: <a href=
-"#other-uses-of-compression"><span class="xref">Other uses of
-compression</span></a>). Decompression of this datastream yields
+is a zlib datastream with deflate compression (see <a href=
+"#10CompressionOtherUses"></a>). Decompression of this datastream yields
 Latin-1 text that is identical to the text that would be stored
-in an equivalent <a href="#text-textual-data"><span class=
+in an equivalent <a href="#11tEXt"><span class=
 "chunk">tEXt</span></a> chunk.</p>
 </section>
 
@@ -4870,17 +4811,14 @@ International textual data</h2>
 </tr>
 </table>
 
-<p>The keyword is described in 11.3.4.2: <a href=
-"#keywords-and-text-strings"><span class="xref">Keywords and text
-strings</span></a>.</p>
+<p>The keyword is described in <a href="#11keywords"></a>.</p>
 
 <p>The compression flag is 0 for uncompressed text, 1 for
 compressed text. Only the text field may be compressed. The
 compression method entry defines the compression method used. The
 only compression method defined in this specification is
-0 (zlib datastream with deflate compression, see 10.3: <a href=
-'#other-uses-of-compression'><span class="xref">Other uses of
-compression</span></a>). For uncompressed text, encoders shall
+0 (zlib datastream with deflate compression, see <a href=
+'#10CompressionOtherUses'></a>). For uncompressed text, encoders shall
 set the compression method to 0, and decoders shall ignore
 it.</p>
 
@@ -5184,7 +5122,7 @@ datastream.</p>
 
 <p>The palette name is case-sensitive, and subject to the same
 restrictions as the keyword parameter for the <a href=
-"#text-textual-data"><span class="chunk">tEXt</span></a> chunk. Palette
+"#11tEXt"><span class="chunk">tEXt</span></a> chunk. Palette
 names shall contain only printable Latin-1 characters and spaces
 (only character codes 32-126 and 161-255 decimal are allowed).
 Leading, trailing, and consecutive spaces are not permitted.</p>
@@ -5768,8 +5706,7 @@ additional recommendations given here.</p>
 <h2>Encoder gamma
 handling</h2>
 
-<p>See Annex C: <a href="#C-GammaAppendix"><span class=
-"xref">Gamma and chromaticity</span></a> for a brief introduction
+<p>See <a href="#C-GammaAppendix"></a> for a brief introduction
 to gamma issues.</p>
 
 <p>PNG encoders capable of full colour management will perform more
@@ -5799,8 +5736,8 @@ to be written in the PNG datastream.</li>
 
 <p>The value to write in the <a href="#gama-image-gamma"><span class=
 "chunk">gAMA</span></a> chunk is that value which causes a PNG
-decoder to behave in the desired way. See 13.13: <a class='Href'
-href='#decoder-gamma-handling'>Decoder gamma handling</a>.</p>
+decoder to behave in the desired way. See <a class='Href'
+href='#13Decoder-gamma-handling'></a>.</p>
 
 <p>The transform to be applied depends on the nature of the image
 samples and their precision. If the samples represent light
@@ -5954,8 +5891,7 @@ this should be left to the PNG decoder.</p>
 <p>Gamma does not apply to alpha samples; alpha is always
 represented linearly.</p>
 
-<p>See also 13.13: <a href="#decoder-gamma-handling"><span
-class="xref">Decoder gamma handling</span></a>.</p>
+<p>See also <a href="#13Decoder-gamma-handling"></a>.</p>
 </section>
 
 <!-- Maintain a fragment named "12Encoder-colour-handling" to preserve incoming links to it -->
@@ -5963,8 +5899,7 @@ class="xref">Decoder gamma handling</span></a>.</p>
 <h2>Encoder colour
 handling</h2>
 
-<p>See Annex C: <a href="#C-GammaAppendix"><span class=
-"xref">Gamma and chromaticity</span></a> for references to colour
+<p>See <a href="#C-GammaAppendix"></a> for references to colour
 issues.</p>
 
 <p>PNG encoders capable of full colour management will perform more
@@ -6124,8 +6059,7 @@ mismatches and rounding errors. As with gamma conversions, it is
 better to store the data losslessly and incur at most one
 conversion when the image is finally displayed.</p>
 
-<p>See also 13.14: <a href="#decoder-colour-handling"><span
-class="xref">Decoder colour handling</span></a>.</p>
+<p>See <a href="#13Decoder-colour-handling"></a>.</p>
 </section>
 
 <!-- Maintain a fragment named "12Alpha-channel-creation" to preserve incoming links to it -->
@@ -6144,9 +6078,8 @@ pixels should all be assigned the same colour value for best
 compression.</p>
 
 <p>Image authors should keep in mind the possibility that a
-decoder will not support transparency control in full (see 13.16:
-<a href="#alpha-channel-processing"><span class="xref">Alpha
-channel processing</span></a>). Hence, the colours assigned to
+decoder will not support transparency control in full (see
+<a href="#13Alpha-channel-processing"></a>). Hence, the colours assigned to
 transparent pixels should be reasonable background colours
 whenever feasible.</p>
 
@@ -6337,9 +6270,7 @@ transparent-colour specification. If the datastream uses
 transparency (has a <a href="#trns-transparency"><span class=
 "chunk">tRNS</span></a> chunk), viewers can easily adapt the
 resulting palette for use with their intended background colour
-(see 13.17: <a href=
-"#histogram-and-suggested-palette-usage"><span class="xref">
-Histogram and suggested palette usage</span></a>).
+(see <a href="#13Histogram-and-suggested-palette-usage"></a>).
 </p>
 
 <p>For providing suggested palettes,
@@ -6397,8 +6328,7 @@ decoders that do not recognize the <a href="#splt-suggested-palette"><span class
 <p>This specification defines two interlace methods,
 one of which is no interlacing. Interlacing provides a convenient
 basis from which decoders can progressively display an image, as
-described in 13.8: <a href="#interlacing-and-progressive-display"><span class=
-"xref">Interlacing and progressive display</span></a>.</p>
+described in <a href="#13Progressive-display"></a>.</p>
 </section>
 
 <!-- Maintain a fragment named "12Filter-selection" to preserve incoming links to it -->
@@ -6441,14 +6371,14 @@ this specification.</p>
 <h2>Compression</h2>
 
 <p>The encoder may divide the compressed datastream into <a href=
-"#idat-image-data"><span class="chunk">IDAT</span></a> chunks however it
-wishes. (Multiple <a href="#idat-image-data"><span class=
+"#11IDAT"><span class="chunk">IDAT</span></a> chunks however it
+wishes. (Multiple <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a> chunks are allowed so that encoders may
 work in a fixed amount of memory; typically the chunk size will
 correspond to the encoder's buffer size.) A PNG datastream in
-which each <a href="#idat-image-data"><span class="chunk">IDAT</span></a>
+which each <a href="#11IDAT"><span class="chunk">IDAT</span></a>
 chunk contains only one data byte is valid, though remarkably
-wasteful of space. (Zero-length <a href="#idat-image-data"><span class=
+wasteful of space. (Zero-length <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a> chunks are also valid, though even more
 wasteful.)</p>
 </section>
@@ -6464,7 +6394,7 @@ the text is available. If a user-supplied keyword is used,
 encoders should check that it meets the restrictions on
 keywords.</p>
 
-<p>For the <a href="#text-textual-data"><span class="chunk">tEXt</span></a>
+<p>For the <a href="#11tEXt"><span class="chunk">tEXt</span></a>
 and <a href="#ztxt-compressed-textual-data"><span class="chunk">zTXt</span></a> chunks,
 PNG text strings are expected to use the Latin-1 character set.
 Encoders should avoid storing characters that are not defined in
@@ -6480,11 +6410,11 @@ text chunks. It is
 recommended that the basic title and author keywords be output
 using uncompressed text chunks.
 Placing large text chunks after the
-image data (after the <a href="#idat-image-data"><span class=
+image data (after the <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a> chunks) can speed up image display in
 some situations, as the decoder will decode the image data first.
 It is recommended that small text chunks, such as the image
-title, appear before the <a href="#idat-image-data"><span class=
+title, appear before the <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a> chunks.</p>
 </section>
 
@@ -6554,8 +6484,7 @@ International Standard.</p>
 <h2 id="13Decoders.Errors">Error handling</h2>
 <p>Errors in a PNG datastream will fall into two general classes,
 transmission errors and syntax errors (see <a href=
-"#error-handling"><span class="xref">4.8 Error
-handling</span></a>).</p>
+"#4Concepts.Errors"></a>).</p>
 
 <p>Examples of transmission errors are transmission in "text" or
 "ascii" mode, in which byte codes 13 and/or 10 may be added,
@@ -6566,7 +6495,7 @@ error on a storage device, in which one or more blocks (typically
 of syntax errors are an invalid value for a row filter, an
 invalid compression method, an invalid chunk length, the absence
 of a <a href="#11PLTE"><span class="chunk">PLTE</span></a> chunk
-before the first <a href="#idat-image-data"><span class=
+before the first <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a> chunk in an indexed image, or the
 presence of multiple <a href="#gama-image-gamma"><span class=
 "chunk">gAMA</span></a> chunks. A PNG decoder should handle
@@ -6577,11 +6506,11 @@ errors as follows:</p>
 bytes and CRCs on each chunk. Decoders should verify that all
 eight bytes of the PNG signature are correct. A decoder can
 have additional confidence in the datastream's integrity if the
-next eight bytes begin an <a href="#ihdr-image-header"><span class=
+next eight bytes begin an <a href="#11IHDR"><span class=
 "chunk">IHDR</span></a> chunk with the correct chunk length. A
 CRC should be checked before processing the chunk data. Sometimes
 this is impractical, for example when a streaming PNG decoder is
-processing a large <a href="#idat-image-data"><span class=
+processing a large <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a> chunk. In this case the CRC should be
 checked when the end of the chunk is reached.</li>
 
@@ -6606,9 +6535,9 @@ this definition, the three classes are as follows:</p>
 <!-- <ol start="4"> --><ol>
 <li>known chunks, which necessarily includes all of the critical
 chunks defined in this specification (<a href=
-"#ihdr-image-header"><span class="chunk">IHDR</span></a>, <a href=
+"#11IHDR"><span class="chunk">IHDR</span></a>, <a href=
 "#11PLTE"><span class="chunk">PLTE</span></a>, <a href=
-"#idat-image-data"><span class="chunk">IDAT</span></a>, <a href=
+"#11IDAT"><span class="chunk">IDAT</span></a>, <a href=
 "#iend-image-trailer"><span class="chunk">IEND</span></a>)</li>
 
 <li>unknown critical chunks (bit 5 of the first byte of the chunk
@@ -6625,9 +6554,9 @@ of chunk naming conventions.</p>
 <!-- ************Page Break******************* -->
 <p>PNG chunk types are marked "critical" or "ancillary" according
 to whether the chunks are critical for the purpose of extracting
-a viewable image (as with <a href="#ihdr-image-header"><span class=
+a viewable image (as with <a href="#11IHDR"><span class=
 "chunk">IHDR</span></a>, <a href="#11PLTE"><span class=
-"chunk">PLTE</span></a>, and <a href="#idat-image-data"><span class=
+"chunk">PLTE</span></a>, and <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a>) or critical to understanding the
 datastream structure (as with <a href="#iend-image-trailer"><span class=
 "chunk">IEND</span></a>). This is a specific kind of criticality
@@ -6646,7 +6575,7 @@ not, depending on its requirements and the situation. For
 example, most decoders can ignore an invalid <a href=
 "#iend-image-trailer"><span class="chunk">IEND</span></a> chunk; a
 text-extraction program can ignore the absence of <a href=
-"#idat-image-data"><span class="chunk">IDAT</span></a>; an image viewer
+"#11IDAT"><span class="chunk">IDAT</span></a>; an image viewer
 cannot recover from an empty <a href="#11PLTE"><span class=
 "chunk">PLTE</span></a> chunk in an indexed image but it can
 ignore an invalid <a href="#11PLTE"><span class=
@@ -6685,11 +6614,9 @@ warning to the user if appropriate, recover from the error, and
 continue processing normally.</p>
 
 <p>Decoders that do not compute CRCs should interpret apparent
-syntax errors as indications of corruption (see also 13.3: <a
-href="#error-checking"><span class="xref">Error
-checking</span></a>).</p>
+syntax errors as indications of corruption (see also <a href="#13Error-checking"></a>).</p>
 
-<p>Errors in compressed chunks (<a href="#idat-image-data"><span class=
+<p>Errors in compressed chunks (<a href="#11IDAT"><span class=
 "chunk">IDAT</span></a>, <a href="#ztxt-compressed-textual-data"><span class=
 "chunk">zTXt</span></a>, <a href="#itxt-international-textual-data"><span class=
 "chunk">iTXt</span></a>, <a href="#iccp-embedded-icc-profile"><span class=
@@ -6725,9 +6652,7 @@ possibility.</p>
 <section id="13Error-checking">
 <h2>Error checking</h2>
 
-<p>The PNG error handling philosophy is described in 13.2: <a
-href="#error-handling-1"><span class="xref">Error
-handling</span></a>.</p>
+<p>The PNG error handling philosophy is described in <a href="#13Decoders.Errors"></a>.</p>
 
 <p> An unknown chunk type is <strong>not</strong> to be treated as an error
 unless it is a critical chunk.</p>
@@ -6742,7 +6667,7 @@ dropped/added data bytes or an erroneous chunk length can cause
 the decoder to get out of step and misinterpret subsequent data
 as a chunk header.</p>
 
-<p>For known-length chunks, such as <a href="#ihdr-image-header"><span
+<p>For known-length chunks, such as <a href="#11IHDR"><span
 class="chunk">IHDR</span></a>, decoders should treat an
 unexpected chunk length as an error. Future extensions to this
 specification will not add new fields to existing chunks;
@@ -6750,7 +6675,7 @@ instead, new chunk types will be added to carry new
 information.</p>
 
 <p>Unexpected values in fields of known chunks (for example, an
-unexpected compression method in the <a href="#ihdr-image-header"><span
+unexpected compression method in the <a href="#11IHDR"><span
 class="chunk">IHDR</span></a> chunk) shall be checked for and
 treated as errors. However, it is recommended that unexpected
 field values be treated as fatal errors only in <strong>critical</strong>
@@ -6762,12 +6687,11 @@ treat any unexpected value as indicating a corrupted
 datastream.)</p>
 
 <p>Standard PNG images shall be compressed with compression
-method 0. The compression method field of the <a href="#ihdr-image-header"><span class=
+method 0. The compression method field of the <a href="#11IHDR"><span class=
 "chunk">IHDR</span></a> chunk is
 provided for possible future standardization or proprietary
 variants. Decoders shall check this byte and report an error if
-it holds an unrecognized code. See clause&#160;10: <a href=
-"#compression-1"><span class="xref">Compression</span></a> for
+it holds an unrecognized code. See <a href="#10Compression"></a> for
 details.</p>
 </section>
 
@@ -6790,7 +6714,7 @@ unimplemented chunk types, because such chunks will be ignored, or at most be
 copied into another PNG datastream.</p>
 
 <p>The <a href="#itxt-international-textual-data"><span class="chunk">iTXt</span></a>, <a
-href="#text-textual-data"><span class="chunk">tEXt</span></a>, and <a href=
+href="#11tEXt"><span class="chunk">tEXt</span></a>, and <a href=
 "#ztxt-compressed-textual-data"><span class="chunk">zTXt</span></a> chunks contain keywords
 and data
 that are meant to be displayed as plain text. The <a href=
@@ -6801,9 +6725,7 @@ possible that if the decoder displays such text without filtering
 out control characters, especially the ESC (escape) character,
 certain systems or terminals could behave in undesirable and
 insecure ways. It is recommended that decoders filter out control
-characters to avoid this risk; see 13.5.3: <a href=
-"#text-chunk-processing-1"><span class="xref">Text chunk
-processing</span></a>.</p>
+characters to avoid this risk; see <a href="#13Text-chunk-processing"></a>.</p>
 
 <p>Every chunk begins with a length field, which makes it easier
 to write decoders that are invulnerable to fraudulent chunks that
@@ -6815,11 +6737,9 @@ transmission errors.</p>
 <p>A decoder that fails to check CRCs could be subject to data
 corruption. The only likely consequence of such corruption is
 incorrectly displayed pixels within the image. Worse things might
-happen if the CRC of the <a href="#ihdr-image-header"><span class=
+happen if the CRC of the <a href="#11IHDR"><span class=
 "chunk">IHDR</span></a> chunk is not checked and the width or
-height fields are corrupted. See 13.3: <a href=
-"#error-checking"><span class="xref">Error
-checking</span></a>.</p>
+height fields are corrupted. See <a href="#13Error-checking"></a>.</p>
 
 <p>A poorly written decoder might be subject to buffer overflow,
 because chunks can be extremely large, up to 2<sup>31</sup>-1
@@ -6865,9 +6785,8 @@ W3C and those defined privately.</p>
 <section id="13Pixel-dimensions">
 <h2>Pixel dimensions</h2>
 
-<p>Non-square pixels can be represented (see 11.3.5.3: <a href=
-"#phys-physical-pixel-dimensions"><span class="xref"><span class="chunk">pHYs</span>
-Physical pixel dimensions</span></a>), but viewers are not
+<p>Non-square pixels can be represented (see <a href=
+"#11pHYs"></a>), but viewers are not
 required to account for them; a viewer can present any PNG
 datastream as though its pixels are square.</p>
 
@@ -6876,12 +6795,12 @@ aspect ratio of the physical pixel dimensions defined in the PNG
 datastream, viewers are strongly encouraged to rescale images for
 proper display.</p>
 
-<p>When the <a href="#phys-physical-pixel-dimensions"><span class="xref"><span class=
-"chunk">pHYs</span></span></a> chunk has a unit specifier of 0
+<p>When the <a href="#11pHYs"><span class=
+"chunk">pHYs</span></a> chunk has a unit specifier of 0
 (unit is unknown), the behaviour of a decoder may depend on the
 ratio of the two pixels-per-unit values, but should not depend on
-their magnitudes. For example, a <a href="#phys-physical-pixel-dimensions"><span class=
-"xref"><span class="chunk">pHYs</span></span></a> chunk
+their magnitudes. For example, a <a href="#11pHYs">
+<span class="chunk">pHYs</span></a> chunk
 containing <tt>(ppuX, ppuY, unit) = (2, 1, 0)</tt> is equivalent
 to one containing <tt>(1000, 500, 0)</tt>; both are equally valid
 indications that the image pixels are twice as tall as they are
@@ -6901,8 +6820,8 @@ scale_factor_Y = max(1.0, display_ratio/image_ratio)</tt>
 </pre>
 
 <p>Because other methods such as maintaining the image area are
-also reasonable, and because ignoring the <a href="#phys-physical-pixel-dimensions"><span
-class="xref"><span class="chunk">pHYs</span></span></a> chunk is
+also reasonable, and because ignoring the <a href="#11pHYs">
+<span class="chunk">pHYs</span></a> chunk is
 permissible, authors should not assume that all viewing
 applications will use this scaling method.</p>
 
@@ -6921,13 +6840,13 @@ processing</h2>
 
 <p>If practical, PNG decoders should have a way to display to the
 user all the <a href="#itxt-international-textual-data"><span class=
-"chunk">iTXt</span></a>, <a href="#text-textual-data"><span class=
+"chunk">iTXt</span></a>, <a href="#11tEXt"><span class=
 "chunk">tEXt</span></a>, and <a href="#ztxt-compressed-textual-data"><span class=
 "chunk">zTXt</span></a> chunks found in the datastream. Even if
 the decoder does not recognize a particular text keyword, the
 user might be able to understand it.</p>
 
-<p>When processing <a href="#text-textual-data"><span class=
+<p>When processing <a href="#11tEXt"><span class=
 "chunk">tEXt</span></a> and <a href="#ztxt-compressed-textual-data"><span class=
 "chunk">zTXt</span></a> chunks, decoders could encounter
 characters other than those permitted. Some can be safely
@@ -6937,12 +6856,10 @@ respectively), but others, especially the ESC character (decimal
 be taken by display hardware or software). Decoders should not
 attempt to directly display any non-Latin-1 characters (except
 for newline and perhaps TAB, FF, CR) encountered in a <a href=
-"#text-textual-data"><span class="chunk">tEXt</span></a> or <a href=
+"#11tEXt"><span class="chunk">tEXt</span></a> or <a href=
 "#ztxt-compressed-textual-data"><span class="chunk">zTXt</span></a> chunk. Instead,
 they should be ignored or displayed in a visible notation such as
-"<tt>\</tt>nnn". See 13.4: <a href=
-"#security-considerations"><span class="xref">Security
-considerations</span></a>.</p>
+"<tt>\</tt>nnn". See <a href="#13Security-considerations"></a>.</p>
 
 <p>Even though encoders are recommended to represent newlines as
 linefeed (decimal 10), it is recommended that decoders not rely
@@ -6980,15 +6897,15 @@ extremely unlikely that any general purpose compression methods
 in future versions of this specification will not have
 this property.</p>
 
-<p>It is important to emphasize that <a href="#idat-image-data"><span
+<p>It is important to emphasize that <a href="#11IDAT"><span
 class="chunk">IDAT</span></a> chunk boundaries have no semantic
 significance and can occur at any point in the compressed
 datastream. There is no required correlation between the
 structure of the image data (for example, scanline boundaries) and
-deflate block boundaries or <a href="#idat-image-data"><span class=
+deflate block boundaries or <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a> chunk boundaries. The complete image data
 is represented by a single zlib datastream that is stored in some
-number of <a href="#idat-image-data"><span class="chunk">IDAT</span></a>
+number of <a href="#11IDAT"><span class="chunk">IDAT</span></a>
 chunks; a decoder that assumes any more than this is incorrect.
 Some encoder implementations may emit datastreams in which some
 of these structures are indeed related, but decoders cannot rely
@@ -7159,15 +7076,13 @@ low-order byte can be discarded. In many situations the shift
 method is sufficiently accurate for display purposes, and it is
 certainly much faster. (But if gamma correction is being done,
 sample rescaling can be merged into the gamma correction lookup
-table, as is illustrated in 13.13: <a href=
-"#decoder-gamma-handling"><span class="xref">Decoder gamma
-handling</span></a>.)</p>
+table, as is illustrated in <a href=
+"#13Decoder-gamma-handling"></a>.)</p>
 
 <p>If the decoder needs to scale samples up (for example, if the
 frame buffer has a greater sample depth than the PNG image), it
 should use linear scaling or left-bit-replication as described in
-12.5: <a href="#sample-depth-scaling-1"><span class="xref">Sample
-depth scaling</span></a>.</p>
+<a href="#12Sample-depth-scaling"></a>.</p>
 
 <p>When an <a href="#sbit-significant-bits"><span class="chunk">sBIT</span></a>
 chunk is present, the reference image data can be recovered by
@@ -7182,7 +7097,7 @@ be more accurate than linear scaling. A decoder need not pay
 attention to the <a href="#sbit-significant-bits"><span class=
 "chunk">sBIT</span></a> chunk; the stored image is a valid PNG
 datastream of the sample depth indicated by the <a href=
-"#ihdr-image-header"><span class="chunk">IHDR</span></a> chunk; however,
+"#11IHDR"><span class="chunk">IHDR</span></a> chunk; however,
 using <a href="#sbit-significant-bits"><span class="chunk">sBIT</span></a> to
 recover the original samples before scaling them to suit the
 display often yields a more accurate display than ignoring <a
@@ -7200,8 +7115,7 @@ precision.</p>
 <h2>Decoder gamma
 handling</h2>
 
-<p>See Annex C: <a href="#C-GammaAppendix"><span class=
-"xref">Gamma and chromaticity</span></a> for a brief introduction
+<p>See <a href="#C-GammaAppendix"></a> for a brief introduction
 to gamma issues.</p>
 
 <p>Viewers capable of full colour management  will perform more
@@ -7336,8 +7250,7 @@ nearly gives the desired brightness.</p>
 <h2>Decoder colour
 handling</h2>
 
-<p>See Annex C: <a href="#C-GammaAppendix"><span class=
-"xref">Gamma and chromaticity</span></a> for references to colour
+<p>See <a href="#C-GammaAppendix"></a> for references to colour
 issues.</p>
 
 <p>In many cases, the image data in PNG datastreams will be
@@ -7692,9 +7605,8 @@ provided one or more suggested palettes in <a href=
 these is found to be suitable, based on size and perhaps name,
 the PNG decoder can use that palette. Suggested palettes with a
 sample depth different from what the decoder needs can be
-converted using sample depth rescaling (see 13.12: <a href=
-"#sample-depth-rescaling"><span class="xref">Sample depth
-rescaling</span></a>).</p>
+converted using sample depth rescaling (see <a href=
+"#13Sample-depth-rescaling"></a>).</p>
 
 <p>When the background is a solid colour, the viewer should
 composite the image and the suggested palette against that
@@ -7751,17 +7663,16 @@ best to choose entirely new representative colours, rather than
 trying to use a subset of the existing palette. This amounts to
 performing a new colour quantization step; however, the existing
 palette and histogram can be used as the input data, thus
-avoiding a scan of the image data in the <a href="#idat-image-data"><span
+avoiding a scan of the image data in the <a href="#11IDAT"><span
 class="chunk">IDAT</span></a> chunks.</p>
 
 <p>If no suggested palette is provided, a decoder can develop its
 own, at the cost of an extra pass over the image data in the <a
-href="#idat-image-data"><span class="chunk">IDAT</span></a> chunks.
+href="#11IDAT"><span class="chunk">IDAT</span></a> chunks.
 Alternatively, a default palette (probably a colour cube) can be
 used.</p>
 
-<p>See also 12.6: <a href="#suggested-palettes"><span class=
-"xref">Suggested palettes</span></a>.</p>
+<p>See also <a href="#12Suggested-palettes"></a>.</p>
 </section>
 </section>
 
@@ -7863,9 +7774,9 @@ preserving unknown unsafe-to-copy chunks.)</li>
 
 <li>When copying an unknown <strong>safe-to-copy</strong> ancillary
 chunk, a PNG editor shall not move the chunk from before <a href=
-"#idat-image-data"><span class="chunk">IDAT</span></a> to after <a href=
-"#idat-image-data"><span class="chunk">IDAT</span></a> or vice versa.
-(This is well defined because <a href="#idat-image-data"><span class=
+"#11IDAT"><span class="chunk">IDAT</span></a> to after <a href=
+"#11IDAT"><span class="chunk">IDAT</span></a> or vice versa.
+(This is well defined because <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a> is always present.) Any other reordering
 is permitted.</li>
 
@@ -7879,12 +7790,11 @@ general rules instead.</li>
 input datastream to an output datastream, but they apply in the
 obvious way if a PNG datastream is modified in place.</p>
 
-<p>See also 5.4: <a href="#5Chunk-naming-conventions"><span
-class="xref">Chunk naming conventions</span></a>.</p>
+<p>See also <a href="#5Chunk-naming-conventions"></a>.</p>
 
 <p>PNG editors that do not change the image data should not
 change the <a href="#time-image-last-modification-time"><span class="chunk">tIME</span></a>
-chunk. The Creation Time keyword in the <a href="#text-textual-data"><span
+chunk. The Creation Time keyword in the <a href="#11tEXt"><span
 class="chunk">tEXt</span></a>, <a href="#ztxt-compressed-textual-data"><span class=
 "chunk">zTXt</span></a>, and <a href="#itxt-international-textual-data"><span class=
 "chunk">iTXt</span></a> chunks may be used for a user-supplied
@@ -7903,7 +7813,7 @@ critical chunks</h2>
 
 <p>Critical chunks may have arbitrary ordering requirements,
 because PNG editors are required to terminate if they encounter
-unknown critical chunks. For example <a href="#ihdr-image-header"><span
+unknown critical chunks. For example <a href="#11IHDR"><span
 class="chunk">IHDR</span></a> has the specific ordering rule that
 it shall always appear first. A PNG editor, or indeed any
 PNG-writing program, shall know and follow the ordering rules for
@@ -7923,14 +7833,12 @@ are:</p>
 to critical chunks.</li>
 
 <li>Safe-to-copy chunks may have ordering requirements relative
-to <a href="#idat-image-data"><span class="chunk">IDAT</span></a>.</li>
+to <a href="#11IDAT"><span class="chunk">IDAT</span></a>.</li>
 </ol>
 
 <p>The actual ordering rules for any particular ancillary chunk
 type may be weaker. See for example the ordering rules for the
-standard ancillary chunk types in 5.6: <a href=
-"#chunk-ordering"><span class="xref">Chunk
-ordering</span></a>.</p>
+standard ancillary chunk types in <a href="#5ChunkOrdering"></a>.</p>
 
 <p>Decoders shall not assume more about the positioning of any
 ancillary chunk than is specified by the chunk ordering rules. In
@@ -7944,7 +7852,7 @@ class="chunk">IEND</span></a>. Even if it is always written in
 that position by a particular application, a PNG editor might
 have inserted some other ancillary chunk after it. But it is safe
 to assume that the chunk will remain somewhere between <a href=
-"#idat-image-data"><span class="chunk">IDAT</span></a> and <a href=
+"#11IDAT"><span class="chunk">IDAT</span></a> and <a href=
 "#iend-image-trailer"><span class="chunk">IEND</span></a>.</p>
 </section>
 </section>
@@ -8014,15 +7922,14 @@ datastreams</h2>
 the following conditions are met.</p>
 <ol>
 <li>The PNG datastream contains a PNG signature as the first
-content (see 5.2: <a href="#png-signature"><span class=
-"xref">PNG file signature</span></a>).</li>
+content (see <a href="#5PNG-file-signature"></a>).</li>
 
 <li>With respect to the chunk types defined in this International
 Standard:
 
 <ul>
 <li>the PNG datastream contains as its first chunk, an <a href=
-"#ihdr-image-header"><span class="chunk">IHDR</span></a> chunk, immediately
+"#11IHDR"><span class="chunk">IHDR</span></a> chunk, immediately
 following the PNG signature;</li>
 
 <li>the PNG datastream contains as its last chunk, an <a href=
@@ -8100,13 +8007,12 @@ standardized compression, filter, and interlace methods and types
 in any PNG datastream that conforms to this International
 Standard.</li>
 
-<li>Unknown chunk types are handled as described in <a href=
-"#5Chunk-naming-conventions"><span class="xref">5.4 Chunk naming
-conventions</span></a>. An unknown chunk type is <strong>not</strong>
+<li>Unknown chunk types are handled as described in <a href="#5Chunk-naming-conventions"></a>.
+An unknown chunk type is <strong>not</strong>
 treated as an error unless it is a critical chunk.</li>
 
 <li>Unexpected values in fields of known chunks (for example, an
-unexpected compression method in the <a href="#ihdr-image-header"><span
+unexpected compression method in the <a href="#11IHDR"><span
 class="chunk">IHDR</span></a> chunk) are treated as errors.</li>
 
 <li>All types of PNG images (indexed-colour, truecolour,
@@ -8123,13 +8029,12 @@ image.</li>
 an unknown chunk type.</li>
 
 <li>All valid combinations of bit depth and colour type as
-defined in 11.2.2: <a href="#ihdr-image-header"><span class="xref"><span
-class="chunk">IHDR</span> Image header</span></a> are
+defined in <a href="#11IHDR"></a> are
 supported.</li>
 
 <li>An error is reported if an unrecognized value is encountered
 in the bit depth, colour type, compression method, filter method,
-or interlace method bytes of the <a href="#ihdr-image-header"><span class=
+or interlace method bytes of the <a href="#11IHDR"><span class=
 "chunk">IHDR</span></a> chunk.</li>
 
 <li>When processing 16-bit greyscale or truecolour data in the <a
@@ -8140,7 +8045,7 @@ pixel is transparent.</li>
 <li>When processing an image compressed by compression method 0,
 the decoder assumes no more than that the complete image data is
 represented by a single compressed datastream that is stored in
-some number of <a href="#idat-image-data"><span class=
+some number of <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a> chunks.</li>
 
 <li>No assumptions are made concerning the positioning of any
@@ -8164,8 +8069,7 @@ editors</h2>
 <li>It is able to encode all chunks that it decodes.</li>
 
 <li>It preserves the ordering of the chunks presented within the
-rules in 5.6: <a href="#chunk-ordering"><span class="xref">Chunk
-ordering</span></a>.</li>
+rules in <a href="#5ChunkOrdering"></a>.</li>
 
 <li>It properly processes the safe-to-copy bit information and
 preserves unknown chunks when the safe-to-copy rules permit
@@ -8464,7 +8368,7 @@ contents. If such chunks have to be defined, make them critical
 chunks.</li>
 
 <li>For textual information that is representable in Latin-1
-avoid defining a new chunk type. Use a <a href="#text-textual-data"><span
+avoid defining a new chunk type. Use a <a href="#11tEXt"><span
 class="chunk">tEXt</span></a> or <a href="#ztxt-compressed-textual-data"><span class=
 "chunk">zTXt</span></a> chunk with a suitable keyword to identify
 the type of information. For textual information that is not

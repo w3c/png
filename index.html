@@ -279,11 +279,6 @@ the normative document referred to applies. Members of ISO and
 IEC maintain registers of currently valid International
 Standards.</p>
 
-<!-- Maintain a fragment named "2-ISO-646" to preserve incoming links to it -->
-<p class="NormRefDef" id="2-ISO-646">ISO/IEC 646:1991,
-<i>International Organization for Standardization, Information
-technology &mdash; ISO 7-bit coded character set for information
-interchange</i>.</p>
 
 <!-- Maintain a fragment named "2-ISO-3309" to preserve incoming links to it -->
 <p class="NormRefDef" id="2-ISO-3309">ISO/IEC 3309:1993</a>,
@@ -303,11 +298,6 @@ alphabet No. 1</i>.<br class="xhtml" />
 <p class="NormRefDef" id="2-ISO-9899">ISO/IEC
 9899:1990(R1997), <i>Programming languages &mdash; C</i>.</p>
 
-<!-- Maintain a fragment named "2-ISO-10656-1" to preserve incoming links to it -->
-<p class="NormRefDef" id="2-ISO-10646-1">ISO/IEC
-10646-1:1993/AMD.2, <i>Information technology &mdash;
-Universal Multiple-Octet Coded Character Sets (UCS) &mdash; Part
-1: Architecture and Basic Multilingual Plane</i>.</p>
 
 <!-- Maintain a fragment named "2-IEC-61966-2-1" to preserve incoming links to it -->
 <p class="NormRefDef" id="2-IEC-61966-2-1">IEC
@@ -1779,7 +1769,7 @@ image.</td>
 
   <p>There are 19 chunk types defined in this International
   Standard. Chunk types are four-byte sequences chosen so that they
-  correspond to readable labels when interpreted in the ISO 646.IRV:1991
+  correspond to readable labels when interpreted in the ISO 646.IRV:1991 [[ISO646]]
   character set. The first four are termed critical chunks, which
   shall be understood and correctly interpreted according to the
   provisions of this specification. These are:</p>
@@ -2125,7 +2115,7 @@ should treat the length as unsigned, its value shall not exceed
 <td class="Regular">A sequence of four bytes defining the chunk type. Each byte
 of a chunk type is restricted to the decimal values 65 to 90 and
 97 to 122. These correspond to the uppercase and lowercase ISO
-646 letters (<tt>A</tt>-<tt>Z</tt> and <tt>a</tt>-<tt>z</tt>)
+646 [[ISO646]] letters (<tt>A</tt>-<tt>Z</tt> and <tt>a</tt>-<tt>z</tt>)
 respectively for convenience in description and examination of
 PNG datastreams. Encoders and decoders shall treat the chunk
 types as fixed binary values, not character strings. For example,
@@ -2164,7 +2154,7 @@ aligned on any boundaries larger than bytes.</p>
 <h2>Chunk naming conventions</h2>
 
 <p>Chunk types are chosen to be meaningful names when the bytes
-of the chunk type are interpreted as ISO 646 letters. Chunk types
+of the chunk type are interpreted as ISO 646 letters [[ISO646]]. Chunk types
 are assigned so that a decoder can determine some properties of a
 chunk even when the type is not recognized. These rules allow
 safe, flexible extension of the PNG format, by allowing a PNG
@@ -4816,7 +4806,7 @@ it.</p>
 <p>The language tag defined in [[rfc3066]]
 indicates the human language used by the translated keyword and
 the text. Unlike the keyword, the language tag is
-case-insensitive. It is an ISO 646.IRV:1991 [[ISO 646]] string consisting of
+case-insensitive. It is an ISO 646.IRV:1991 [[ISO646]] string consisting of
 hyphen-separated words of 1-8 alphanumeric characters each (for example cn,
 en-uk, no-bok, x-klingon, x-KlInGoN). If the first word is two or three
 letters long, it is an ISO language code [[BCP47]]. If the

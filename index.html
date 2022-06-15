@@ -320,11 +320,6 @@ measurement and management &mdash; Part 2-1: Default RGB colour
 space &mdash; sRGB,</i> available at <code><a href=
 "http://www.iec.ch">http://www.iec.ch/</a></code>.</p>
 
-<!-- Maintain a fragment named "2-CIE-15.2" to preserve incoming links to it -->
-<p class="NormRefDef" id="2-CIE-15.2">CIE-15.2, CIE,
-"Colorimetry, Second Edition". CIE Publication 15.2-1986. ISBN
-3-900-734-00-3.</p>
-
 
 <!-- Maintain a fragment named "2-ICC-1" to preserve incoming links to it -->
 <p class="NormRefDef" id="2-ICC-1">ICC-1, International
@@ -444,7 +439,7 @@ pixel.</dd>
 "#3pixel"><span class="Definition">pixels</span></a>. If every
 pixel with a specific colour or <span
 class="Definition">[=greyscale=]</span> value is fully
-transparent and all other pixels are fully opaque, the 
+transparent and all other pixels are fully opaque, the
 <span class="Definition">[=alpha=]</span> <a href=
 "#3channel"><span class="Definition">channel</span></a> may be
 represented implicitly.</dd>
@@ -454,7 +449,7 @@ represented implicitly.</dd>
 
 <dd>separating an <span class=
 "Definition">[=alpha=]</span> <span class=
-"Definition">[=channel=]</span> in which every 
+"Definition">[=channel=]</span> in which every
 <span class="Definition">[=pixel=]</span> is fully
 opaque; all alpha values are the maximum value.
 The fact that all pixels are fully opaque is represented implicitly.
@@ -527,7 +522,7 @@ It represents an unsigned integer limited to the range 0 to
 "Definition">[=bytes=]</span> for multi-byte data values within a
 <span class="Definition">[=PNG file=]</span>
 or <span class="Definition">[[[#4Concepts.Format]]]
-</span>. PNG uses 
+</span>. PNG uses
 <span class="Definition">[=network byte
 order=]</span>.</dd>
 
@@ -570,7 +565,7 @@ type. Most chunks also include data. The format and meaning of
 the data within the chunk are determined by the chunk type.
 Each chunk is either a
 <span class=
-"Definition">[=critical chunk=]</span> or an 
+"Definition">[=critical chunk=]</span> or an
 <span class=
 "Definition">[=ancillary chunk=]</span>.
 </dd>
@@ -580,7 +575,7 @@ Each chunk is either a
 <dt>colour type</dt></dfn>
 
 <dd>value denoting how colour and <span class=
-"Definition">[=alpha=]</span> are specified in the 
+"Definition">[=alpha=]</span> are specified in the
 <span class="Definition">[=PNG image=]</span>.
 Colour types are sums of the following values: 1 (
 <span class="Definition">[=palette=]</span> used), 2
@@ -624,7 +619,7 @@ a stored file at all.</dd>
 <dt>deflate</dt></dfn>
 
 <dd>name of a particular compression algorithm. This algorithm is
-used, in compression mode 0, in conforming 
+used, in compression mode 0, in conforming
 <span class="Definition">[=PNG
 datastreams=]</span>. Deflate is a member of the <a href=
 "#3LZ77"><span class="Definition">LZ77</span></a> family of
@@ -638,7 +633,7 @@ compression methods. It is defined in [[rfc1951]].</dd>
 <dfn id="3deliveredImage">
 <dt>delivered image</dt></dfn>
 
-<dd>image constructed from a decoded 
+<dd>image constructed from a decoded
 <span class="Definition">[=PNG
 datastream=]</span>.</dd>
 
@@ -687,11 +682,11 @@ are scaled to the range 0 to 1.
 <dt>greyscale</dt></dfn>
 
 <dd>image representation in which each <span
-class="Definition">[=pixel=]</span></a> is defined by a single 
+class="Definition">[=pixel=]</span></a> is defined by a single
 <span class="Definition">[=sample=]</span> of
-colour information, representing overall 
+colour information, representing overall
 <span class="Definition">[=luminance=]</span> (on a
-scale from black to white), and optionally an 
+scale from black to white), and optionally an
 <span class="Definition">[=alpha=]</span> sample (in
 which case it is called greyscale with alpha).</dd>
 
@@ -727,7 +722,7 @@ indices pointing to entries in the palette and alpha table.</dd>
 image</dt></dfn>
 
 <dd>sequence of <span class=
-"Definition">[=reduced images=]</span> generated from the 
+"Definition">[=reduced images=]</span> generated from the
 <span class="Definition">[=PNG image=]</span>
 by <span class="Definition">[=pass
 extraction=]</span>.</dd>
@@ -752,7 +747,7 @@ original data approximately, rather than exactly.</dd>
 <dt>luminance</dt></dfn>
 
 <dd>formal definition of luminance is in [[COLORIMETRY]].
-Informally it is the perceived brightness, or 
+Informally it is the perceived brightness, or
 <span class="Definition">[=greyscale=]</span>
 level, of a colour. Luminance and <span
 class="Definition">[=chromaticity (CIE)=]</span> together fully define
@@ -775,8 +770,8 @@ order=]</span> in which the most significant byte comes first,
 then the less significant bytes in descending order of
 significance (<span class=
 "Definition">[=MSB=]</span> <span class=
-"Definition">[=LSB=]</span> for two-byte integers, 
-<span class="Definition">[=MSB=]</span> B2 B1 
+"Definition">[=LSB=]</span> for two-byte integers,
+<span class="Definition">[=MSB=]</span> B2 B1
 <span class="Definition">[=LSB=]</span> for four-byte
 integers).</dd>
 
@@ -795,7 +790,7 @@ integers).</dd>
 "Definition">[=sample=]</span> values, red, green, and blue,
 which with an <span class=
 "Definition">[=indexed-colour=]</span> image defines the red,
-green, and blue sample values of the 
+green, and blue sample values of the
 <span class="Definition">[=reference
 image=]</span>. In other cases, the palette may be a suggested
 palette that viewers may use to present the image on
@@ -845,7 +840,7 @@ consists of a <span class=
 <dfn id="3PNGdecoder">
 <dt>PNG decoder</dt></dfn>
 
-<dd>process or device which reconstructs the 
+<dd>process or device which reconstructs the
 <span class="Definition">[=reference
 image=]</span> from a <span class=
 "Definition">[=PNG datastream=]</span> and generates a
@@ -858,7 +853,7 @@ corresponding delivered image.</dd>
 <dd>process or device which creates a modification of an existing
 <span class="Definition">[=PNG
 datastream=]</span>, preserving unmodified ancillary
-information wherever possible, and obeying the 
+information wherever possible, and obeying the
 <span class="Definition">[=chunk=]</span> ordering
 rules, even for unknown chunk types.</dd>
 
@@ -866,10 +861,10 @@ rules, even for unknown chunk types.</dd>
 <dfn id="3PNGencoder">
 <dt>PNG encoder</dt></dfn>
 
-<dd>process or device which constructs a 
+<dd>process or device which constructs a
 <span class="Definition">[=reference
 image=]</span> from a <span class=
-"Definition">[=source image=]</span>, and generates a 
+"Definition">[=source image=]</span>, and generates a
 <span class="Definition">[=PNG
 datastream=]</span> representing the reference image.</dd>
 
@@ -916,7 +911,7 @@ four-byte values.</dd>
 <dd>result of transformations applied by a <a href=
 "#3PNGencoder"><span class="Definition">PNG encoder</span></a> to
 a <span class="Definition">[=reference
-image=]</span>, in preparation for encoding as a 
+image=]</span>, in preparation for encoding as a
 <span class="Definition">[=PNG
 datastream=]</span>, and the result of decoding a PNG
 datastream.</dd>
@@ -926,7 +921,7 @@ datastream.</dd>
 <dt>PNG signature</dt></dfn>
 
 <dd>sequence of <a href="#3byte"><span class=
-"Definition">bytes</span></a> appearing at the start of every 
+"Definition">bytes</span></a> appearing at the start of every
 <span class="Definition">[=PNG
 datastream=]</span>. It differentiates a PNG datastream from
 other types of <a href="#3datastream"><span class=
@@ -966,7 +961,7 @@ different sample depths.</dd>
 <dfn id="3RGBmerging">
 <dt>RGB merging</dt></dfn>
 
-<dd>converting an image in which the red, green, and blue 
+<dd>converting an image in which the red, green, and blue
 <span class="Definition">[=samples=]</span> for
 each <a href="#3pixel"><span class="Definition">pixel</span></a>
 have the same value, and the same <a href="#3sampleDepth"><span
@@ -988,7 +983,7 @@ class="Definition">pixel</span></a> in an image.</dd>
 <dt>sample depth</dt></dfn>
 
 <dd>number of bits used to represent a <span
-class="Definition">[=sample=]</span> value. In an 
+class="Definition">[=sample=]</span> value. In an
 <span class=
 "Definition">[=indexed-colour=]</span> <span
 class="Definition">[=PNG image=]</span>, samples are stored in
@@ -1041,7 +1036,7 @@ class="Definition">PNG encoder</span></a>.</dd>
 <dt>truecolour</dt></dfn>
 
 <dd>image representation in which each <a href="#3pixel"><span
-class="Definition">pixel</span></a> is defined by 
+class="Definition">pixel</span></a> is defined by
 <span class="Definition">[=samples=]</span>,
 representing red, green, and blue intensities and optionally an
 <span class="Definition">[=alpha=]</span>
@@ -2768,7 +2763,7 @@ encouraged to compensate properly. See <a href=
 representation</h2>
 
 <p>In a PNG datastream transparency may be represented in one of
-four ways, depending on the PNG image type (see <a>alpha separation</a> 
+four ways, depending on the PNG image type (see <a>alpha separation</a>
 and <a>alpha compaction</a>).</p>
 
 <!-- <ol start="1"> --><ol>
@@ -3268,7 +3263,7 @@ method/flags code shall specify method code 8 (deflate
 compression) and an LZ77 window size of not more than 32768
 bytes. The zlib compression method number is not the same as the
 PNG compression method number in the <a href=
-"#11IHDR"><span class="chunk">IHDR</span></a> chunk (see 
+"#11IHDR"><span class="chunk">IHDR</span></a> chunk (see
 <a href="#11IHDR"></a>). The additional
 flags shall not specify a preset dictionary.</p>
 
@@ -3784,7 +3779,7 @@ Primary chromaticities and white point</h2>
 specify the 1931 CIE <i>x,y</i> chromaticities of the red,
 green, and blue display primaries used in the image, and the referenced
 white point. See <a href="#C-GammaAppendix"></a> for more information.
-The <a href="#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a>, 
+The <a href="#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a>,
 <span class="chunk">[[[#iccn-embedded-icc-profiles-v4-and-utf-8-profile-names]]]</span>, and <a
 href="#srgb-standard-rgb-colour-space"><span class="chunk">sRGB</span></a> chunks provide
 more sophisticated support for colour management and control.</p>
@@ -3846,8 +3841,8 @@ representing the <i>x</i> or <i>y</i> value times 100000.</p>
 PNG datastreams, although it is of little value for greyscale
 images.</p>
 
-<p>An <a href="#srgb-standard-rgb-colour-space"><span class="chunk">sRGB</span></a>, 
-<a href="#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a>, or 
+<p>An <a href="#srgb-standard-rgb-colour-space"><span class="chunk">sRGB</span></a>,
+<a href="#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a>, or
 <span class="chunk">[[[#iccn-embedded-icc-profiles-v4-and-utf-8-profile-names]]]</span> chunk
 when present and recognized, overrides the <span class=
 "chunk">cHRM</span> chunk.</p>
@@ -3984,8 +3979,8 @@ full-fledged colour management should use the <a href=
 present.</p>
 
 <p>Unless a cICP chunk exists, a PNG datastream should contain at most one embedded profile,
-whether specified explicitly with an <span class="chunk">iCCP</span>, 
-<span class="chunk">iCCN</span>, or implicitly with an 
+whether specified explicitly with an <span class="chunk">iCCP</span>,
+<span class="chunk">iCCN</span>, or implicitly with an
 <a href="#srgb-standard-colour-space"><span class="chunk">sRGB</span></a> chunk.</p>
 </section>
 
@@ -4243,7 +4238,7 @@ values given above as if they had appeared in <a href=
 "#chrm-primary-chromaticities-and-white-point"><span class="chunk">cHRM</span></a> chunks.</p>
 
 <p>It is recommended that the <span class="chunk">sRGB</span>,
-<a href="#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a>, or 
+<a href="#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a>, or
 <span class="chunk">[[[#iccn-embedded-icc-profiles-v4-and-utf-8-profile-names]]]</span> chunks do
 not appear simultaneously in a PNG datastream.</p>
 </section>
@@ -4458,48 +4453,48 @@ it's associated recommendations.</p>
 <section>
   <h2><span class="chunk">iCCN</span>
     Embedded ICC Profiles v4 and UTF-8 Profile Names</h2>
-  
+
     <p>iCCN profiles are the same as iCCP chunks but can support UTF-8 Profile
       Names</p>
-    
+
     <p>The four decimal values below correspond to the four-byte iCCN chunk type field:</p>
-    
+
     <pre>
     105 67 67 78
     </pre>
-    
+
     <p>The <span class="chunk">iCCN</span> chunk contains:</p>
-    
+
     <table class="Regular" summary=
     "This table defines the iCCP chunk">
     <tr>
     <td class="Regular">Profile name</td>
     <td class="Regular">UTF-8 (character string)</td>
     </tr>
-    
+
     <tr>
     <td class="Regular">Null separator</td>
     <td class="Regular">1 byte (null character)</td>
     </tr>
-    
+
     <tr>
     <td class="Regular">Compression method</td>
     <td class="Regular">1 byte</td>
     </tr>
-    
+
     <tr>
     <td class="Regular">Compressed profile</td>
     <td class="Regular">n bytes</td>
     </tr>
     </table>
-    
+
     <p>The iCCN profile name may be any convenient name for referring to
-    the profile. It is case-sensitive. Profile names shall contain printable 
+    the profile. It is case-sensitive. Profile names shall contain printable
     characters.  Leading, trailing, and consecutive spaces are not permitted.</p>
-   
+
     <p>The iCCN chunk shall take precedence over a <a class='Href' href='#11cICP'>
-      cICP</a> chunk if the display/graphics plane does not support the explicit 
-      codepoints specified in cICP with formulas referenced in <a href="#2-ITU-T-H.273"><span 
+      cICP</a> chunk if the display/graphics plane does not support the explicit
+      codepoints specified in cICP with formulas referenced in <a href="#2-ITU-T-H.273"><span
         class="NormRef">[ITU-T H.273]</span></a><a</td></a>. </p>
   </section>
 
@@ -6718,7 +6713,7 @@ href="#11tEXt"><span class="chunk">tEXt</span></a>, and <a href=
 "#ztxt-compressed-textual-data"><span class="chunk">zTXt</span></a> chunks contain keywords
 and data
 that are meant to be displayed as plain text. The <a href=
-"#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a>, 
+"#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a>,
 <span class="chunk">[[[#iccn-embedded-icc-profiles-v4-and-utf-8-profile-names]]]</span>, and <a href= "#splt-suggested-palette"><span class="chunk">
 sPLT</span></a> chunks contain keywords that are meant to be displayed as plain text. It is
 possible that if the decoder displays such text without filtering
@@ -7205,8 +7200,8 @@ precomputed table of logarithms. Example code appears in [[PNG-EXTENSIONS]].</p>
 <p>When the incoming image has unknown gamma (<a href=
 "#gama-image-gamma"><span class="chunk">gAMA</span></a>, <a href=
 "#srgb-standard-colour-space"><span class="chunk">sRGB</span></a>, <a href=
-"#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a>, and 
-<span class="chunk">[[[#iccn-embedded-icc-profiles-v4-and-utf-8-profile-names]]]</span> 
+"#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a>, and
+<span class="chunk">[[[#iccn-embedded-icc-profiles-v4-and-utf-8-profile-names]]]</span>
 all absent), standalone image viewers should choose
 a likely default gamma value, but allow the user to select a new
 one if the result proves too dark or too light. The default gamma

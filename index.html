@@ -145,12 +145,25 @@
         date: "2021",
         href: "https://w3c.github.io/PNG-spec/extensions/Overview.html"
       },
+      "PostScript": {
+        title: "PostScript Language Reference Manual",
+        author: "Adobe Systems Incorporated",
+        publisher: "Addison-Wesley",
+        date: "1990",
+        edition: "2",
+        isbn: "0-201-18127-4"
+      },
       "SMPTE 170M": {
         title: "Television — Composite Analog Video Signal — NTSC for Studio Applications",
         publisher: "Society of Motion Picture and Television Engineers",
         date: "2004-11-30",
         href: "https://standards.globalspec.com/std/892300/SMPTE%20ST%20170M"
       },
+      "TIFF 6.0": {
+        "href": "https://www.loc.gov/preservation/digital/formats/fdd/fdd000022.shtml",
+        "title": "TIFF Revision 6.0",
+        "date": "3 June 1992"
+		  },
       "Ziv-Lempel": {
         authors: ["J. Ziv", "A. Lempel"],
         title: "A Universal Algorithm for Sequential Data Compression, IEEE Transactions on Information Theory, vol. IT-23, no. 3, pp. 337 - 343",
@@ -7158,7 +7171,7 @@ the facilities in Level 2 PostScript to specify image data in
 calibrated RGB space or in a device-independent colour space such
 as XYZ. This will provide better colour fidelity than a simple
 RGB to CMYK conversion. The PostScript Language Reference manual
-[[?POSTSCRIPT]] gives examples. Such decoders
+[[?PostScript]] gives examples. Such decoders
 are responsible for implementing gamut mapping between source RGB
 (specified in the <a href="#chrm-primary-chromaticities-and-white-point"><span class=
 "chunk">cHRM</span></a> chunk) and the target printer. The
@@ -8364,7 +8377,7 @@ implementation</h2>
 
 <p>The following sample code represents a practical
 implementation of the CRC (Cyclic Redundancy Check) employed in
-PNG chunks. (See also ISO 3309 [[ISO 3309]] or ITU-T V.42 [[ITU-T-V42]] for a
+PNG chunks. (See also ISO 3309 [[ISO 3309]] or ITU-T V.42 [[ITU-T V.42]] for a
 formal specification.)</p>
 
 <p>The sample code is in the ISO C [[ISO 9899]] programming language. The
@@ -8650,12 +8663,6 @@ Imagery</i>. Springer-Verlag, New York, 1989. ISBN
 technology and photography</i>.</dd>
 
 
-<!-- Maintain a fragment named "G-ITU-T-V42" to preserve incoming links to it -->
-<dt id="G-ITU-T-V42">[ITU-T-V42]</dt>
-
-<dd>International Telecommunications Union, <i>Error-correcting
-Procedures for DCEs Using Asynchronous-to-Synchronous
-Conversion</i>, ITU-T Recommendation V.42, 1994, Rev. 1.</dd>
 
 <!-- Maintain a fragment named "G-KASSON" to preserve incoming links to it -->
 <dt id="G-KASSON">[KASSON]</dt>
@@ -8728,12 +8735,6 @@ Available  from:<br class="xhtml" />
 <a href=
 "https://w3c.github.io/PNG-spec/extensions/Overview.html"><code>https://w3c.github.io/PNG-spec/extensions/Overview.html</code></a></dd>
 
-<!-- Maintain a fragment named "G-POSTSCRIPT" to preserve incoming links to it -->
-<dt id="G-POSTSCRIPT">[POSTSCRIPT]</dt>
-
-<dd>Adobe Systems Incorporated, <i>PostScript Language Reference
-Manual</i>, 2nd edition. Addison-Wesley, Reading, 1990. ISBN
-0-201-18127-4.</dd>
 
 <!-- Maintain a fragment named "G-POYNTON" to preserve incoming links to it -->
 <dt id="G-POYNTON">[POYNTON]</dt>

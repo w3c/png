@@ -310,7 +310,7 @@ definitions apply.</p>
 <dt><dfn id="3alpha">alpha</dfn></dt>
 
 <dd>a value representing a <span class=
-"Definition">[=pixel=]</span> degree of opacity. The more
+"Definition"><a>pixel</a></span> degree of opacity. The more
 opaque a pixel, the more it hides the background against which
 the image is presented. Zero alpha represents a completely
 transparent pixel, maximum alpha represents a completely opaque
@@ -331,9 +331,9 @@ represented implicitly.</dd>
 <dt><dfn id="3alphaSeparation">alpha separation</dfn></dt>
 
 <dd>separating an <span class=
-"Definition">[=alpha=]</span> <span class=
-"Definition">[=channel=]</span> in which every
-<span class="Definition">[=pixel=]</span> is fully
+"Definition"><a>alpha</a></span> <span class=
+"Definition"><a>channel</a></span> in which every
+<span class="Definition"><a>pixel</a></span> is fully
 opaque; all alpha values are the maximum value.
 The fact that all pixels are fully opaque is represented implicitly.
 </dd>
@@ -343,22 +343,22 @@ The fact that all pixels are fully opaque is represented implicitly.
 <dt>alpha table</dt></dfn>
 
 <dd>indexed table of <span class=
-"Definition">[=alpha=]</span> <span class=
-"Definition">[=sample=]</span> values, which in an <span class=
-"Definition">[=indexed-colour=]</span> image defines the alpha
+"Definition"><a>alpha</a></span> <span class=
+"Definition"><a>sample</a></span> values, which in an <span class=
+"Definition"><a>indexed-colour</a></span> image defines the alpha
 sample values of the <span class=
-"Definition">[=reference image=]</span>. The alpha table has the
+"Definition"><a>reference image</a></span>. The alpha table has the
 same number of entries as the <span class=
-"Definition">[=palette=]</span>.</dd>
+"Definition"><a>palette</a></span>.</dd>
 
 <!-- Maintain a fragment named "3ancillaryChunk" to preserve incoming links to it -->
 <dfn id="3ancillaryChunk">
 <dt>ancillary chunk</dt></dfn>
 
 <dd>class of <span class=
-"Definition">[=chunk=]</span></a> that provides additional
+"Definition"><a>chunk</a></span></a> that provides additional
 information. A <span class=
-"Definition">[=PNG decoder=]</span>, without processing an
+"Definition"><a>PNG decoder</a></span>, without processing an
 ancillary chunk, can still produce a meaningful image, though not
 necessarily the best possible image.
 <!-- agreed: don't need to define a bit -->
@@ -370,7 +370,7 @@ necessarily the best possible image.
   <dd>Optional animation, consisting of a series of frames.
     The first frame may be,
     but need not be,
-    the [=static image=].
+    the <a>static image</a>.
   </dd>
 
 <!-- Maintain a fragment named "3bitDepth" to preserve incoming links to it -->
@@ -378,14 +378,14 @@ necessarily the best possible image.
 <dt>bit depth</dt></dfn>
 
 <dd>for <span class=
-"Definition">[=indexed-colour=]</span> images, the number of bits
+"Definition"><a>indexed-colour</a></span> images, the number of bits
 per <span class=
-"Definition">[=palette=]</span> index. For other images, the
+"Definition"><a>palette</a></span> index. For other images, the
 number of bits per <span class=
-"Definition">[=sample=]</span> in the image. This is the value
+"Definition"><a>sample</a></span> in the image. This is the value
 that appears in the <span class=
-"chunk">[[[#11IHDR]]]</span> <span class=
-"Definition">[=chunk=]</span>.</dd>
+"chunk"><a href="#11IHDR"></a></span> <span class=
+"Definition"><a>chunk</a></span>.</dd>
 
 <!-- Maintain a fragment named "3byte" to preserve incoming links to it -->
 <dfn id="3byte">
@@ -402,12 +402,12 @@ It represents an unsigned integer limited to the range 0 to
 <dt>byte order</dt></dfn>
 
 <dd>ordering of <span class=
-"Definition">[=bytes=]</span> for multi-byte data values within a
-<span class="Definition">[=PNG file=]</span>
-or <span class="Definition">[[[#4Concepts.Format]]]
+"Definition"><a>bytes</a></span> for multi-byte data values within a
+<span class="Definition"><a>PNG file</a></span>
+or <span class="Definition"><a href="#4Concepts.Format"></a>
 </span>. PNG uses
-<span class="Definition">[=network byte
-order=]</span>.</dd>
+<span class="Definition"><a>network byte
+		order</a></span>.</dd>
 
 <dt>
 <dt>canvas</dt></dfn>
@@ -422,12 +422,12 @@ order=]</span>.</dd>
 <dt>channel</dt></dfn>
 
 <dd>array of all per-<span class=
-"Definition">[=pixel=]</span> information of a particular kind
+"Definition"><a>pixel</a></span> information of a particular kind
 within a <span class=
-"Definition">[=reference image=]</span>. There are five kinds of
+"Definition"><a>reference image</a></span>. There are five kinds of
 information: red, green, blue, <span class=
-"Definition">[=greyscale=]</span>, and <span
-class="Definition">[=alpha=]</span>. For example the alpha
+"Definition"><a>greyscale</a></span>, and <span
+class="Definition"><a>alpha</a></span>. For example the alpha
 channel is the array of alpha values within a reference
 image.</dd>
 
@@ -443,14 +443,14 @@ except for the brightness information.</dd>
 <dt>chunk</dt></dfn>
 
 <dd>section of a <span class=
-"Definition">[[[#4Concepts.Format]]]</span>. Each chunk has a chunk
+"Definition"><a href="#4Concepts.Format"></a></span>. Each chunk has a chunk
 type. Most chunks also include data. The format and meaning of
 the data within the chunk are determined by the chunk type.
 Each chunk is either a
 <span class=
-"Definition">[=critical chunk=]</span> or an
+"Definition"><a>critical chunk</a></span> or an
 <span class=
-"Definition">[=ancillary chunk=]</span>.
+"Definition"><a>ancillary chunk</a></span>.
 </dd>
 
 <!-- Maintain a fragment named "3colourType" to preserve incoming links to it -->
@@ -458,12 +458,12 @@ Each chunk is either a
 <dt>colour type</dt></dfn>
 
 <dd>value denoting how colour and <span class=
-"Definition">[=alpha=]</span> are specified in the
-<span class="Definition">[=PNG image=]</span>.
+"Definition"><a>alpha</a></span> are specified in the
+<span class="Definition"><a>PNG image</a></span>.
 Colour types are sums of the following values: 1 (
-<span class="Definition">[=palette=]</span> used), 2
+<span class="Definition"><a>palette</a></span> used), 2
 (<span class=
-"Definition">[=truecolour=]</span> used), 4 (alpha used). The
+"Definition"><a>truecolour</a></span> used), 4 (alpha used). The
 permitted values of colour type are 0, 2, 3, 4, and 6.</dd>
 
 <!-- Maintain a fragment named "3composite" to preserve incoming links to it -->
@@ -480,18 +480,18 @@ background.</dd>
 <dfn id="3criticalChunk">
 <dt>critical chunk</dt></dfn>
 
-<dd><span class="Definition">[=chunk=]</span>
+<dd><span class="Definition"><a>chunk</a></span>
 that <!--must be understood and processed by the decoder-->
  shall be understood and processed by the decoder in order to
 produce a meaningful image from a <span
-class="Definition">[[[#4Concepts.Format]]]</span>.</dd>
+class="Definition"><a href="#4Concepts.Format"></a></span>.</dd>
 
 <!-- Maintain a fragment named "3datastream" to preserve incoming links to it -->
 <dfn id="3datastream">
 <dt>datastream</dt></dfn>
 
 <dd>sequence of <span class=
-"Definition">[=bytes=]</span>. This term is used rather than
+"Definition"><a>bytes</a></span>. This term is used rather than
 "file" to describe a byte sequence that may be only a portion of
 a file. It is also used to emphasize that the sequence of bytes
 might be generated and consumed "on the fly", never appearing in
@@ -569,12 +569,12 @@ are scaled to the range 0 to 1.
 <dt>greyscale</dt></dfn>
 
 <dd>image representation in which each <span
-class="Definition">[=pixel=]</span></a> is defined by a single
-<span class="Definition">[=sample=]</span> of
+class="Definition"><a>pixel</a></span></a> is defined by a single
+<span class="Definition"><a>sample</a></span> of
 colour information, representing overall
-<span class="Definition">[=luminance=]</span> (on a
+<span class="Definition"><a>luminance</a></span> (on a
 scale from black to white), and optionally an
-<span class="Definition">[=alpha=]</span> sample (in
+<span class="Definition"><a>alpha</a></span> sample (in
 which case it is called greyscale with alpha).</dd>
 
 <!-- Maintain a fragment named "3imageData" to preserve incoming links to it -->
@@ -582,16 +582,16 @@ which case it is called greyscale with alpha).</dd>
 <dt>image data</dt></dfn>
 
 <dd>1-dimensional array of <span class=
-"Definition">[=scanlines=]</span> within an image.</dd>
+"Definition"><a>scanlines</a></span> within an image.</dd>
 
 <!-- Maintain a fragment named "3indexedColour" to preserve incoming links to it -->
 <dfn id="3indexedColour">
 <dt>indexed-colour</dt></dfn>
 
 <dd>image representation in which each <span
-class="Definition">[=pixel=]</span> of the original image is
+class="Definition"><a>pixel</a></span> of the original image is
 represented by a single index into a <span
-class="Definition">[=palette=]</span>. The selected palette entry
+class="Definition"><a>palette</a></span>. The selected palette entry
 defines the actual colour of the pixel.</dd>
 
 <!-- Maintain a fragment named "3indexing" to preserve incoming links to it -->
@@ -599,8 +599,8 @@ defines the actual colour of the pixel.</dd>
 <dt>indexing</dt></dfn>
 
 <dd>representing an image by a <span class=
-"Definition">[=palette=]</span>, an <span
-class="Definition">[=alpha table=]</span>, and an array of
+"Definition"><a>palette</a></span>, an <span
+class="Definition"><a>alpha table</a></span>, and an array of
 indices pointing to entries in the palette and alpha table.</dd>
 
 <!-- Maintain a fragment named "3interlacedPNGimage" to preserve incoming links to it -->
@@ -609,10 +609,10 @@ indices pointing to entries in the palette and alpha table.</dd>
 image</dt></dfn>
 
 <dd>sequence of <span class=
-"Definition">[=reduced images=]</span> generated from the
-<span class="Definition">[=PNG image=]</span>
-by <span class="Definition">[=pass
-extraction=]</span>.</dd>
+"Definition"><a>reduced images</a></span> generated from the
+<span class="Definition"><a>PNG image</a></span>
+by <span class="Definition"><a>pass
+extraction</a></span>.</dd>
 
 <!-- Maintain a fragment named "3losslessCompression" to preserve incoming links to it -->
 <dfn id="3losslessCompression">
@@ -635,9 +635,9 @@ original data approximately, rather than exactly.</dd>
 
 <dd>formal definition of luminance is in [[COLORIMETRY]].
 Informally it is the perceived brightness, or
-<span class="Definition">[=greyscale=]</span>
+<span class="Definition"><a>greyscale</a></span>
 level, of a colour. Luminance and <span
-class="Definition">[=chromaticity=]</span> together fully define
+class="Definition"><a>chromaticity</a></span> together fully define
 a perceived colour.</dd>
 
 <!-- Maintain a fragment named "3LZ77" to preserve incoming links to it -->

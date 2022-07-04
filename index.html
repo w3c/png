@@ -77,11 +77,23 @@
         date: "2019-05-17",
         publisher: "Camera & Imaging Products Association",
       },
+      "COLOR FAQ": {
+        title: "Color FAQ",
+        author: "Poynton, C.",
+        href: "http://poynton.ca/ColorFAQ.html",
+        date: "2009-10-19"
+      },
       "ICC-2": {
         title: "Specification ICC.2:2019 (Profile version 5.0.0 - iccMAX)",
         date: "2019",
         href: "https://www.color.org/specification/ICC.2-2019.pdf",
         publisher: "International Color Consortium"
+      },
+      "GAMMA FAQ": {
+        title: "Gamma FAQ",
+        author: "Poynton, C.",
+        href: "http://poynton.ca/GammaFAQ.html",
+        date: "1998-08-04"
       },
       "ISO 3309": {
         title: "ISO/IEC 3309:1993, Information Technology — Telecommunications and information exchange between systems — High-level data link control (HDLC) procedures — Frame structure.",
@@ -323,12 +335,12 @@ pixel.</dd>
 <!-- Maintain a fragment named "3alphaCompaction" to preserve incoming links to it -->
 <dt><dfn id="3alphaCompaction">alpha compaction</dfn></dt>
 
-<dd>an implicit representation of transparent 
+<dd>an implicit representation of transparent
 <span class="Definition"><a>pixels</a></span>. If every
 pixel with a specific colour or <span
 class="Definition"><a>greyscale</a></span> value is fully
-transparent and all other pixels are fully opaque, the 
-<span class="Definition"><a>alpha</a></span> 
+transparent and all other pixels are fully opaque, the
+<span class="Definition"><a>alpha</a></span>
 <span class="Definition"><a>channel</a></span> may be
 represented implicitly.</dd>
 
@@ -507,7 +519,7 @@ a stored file at all.</dd>
 <dt>deflate</dt></dfn>
 
 <dd>name of a particular compression algorithm. This algorithm is
-used, in compression mode 0, in conforming 
+used, in compression mode 0, in conforming
 <span class="Definition"><a>PNG
 datastreams</a></span>. Deflate is a member of the <a href=
 "#3LZ77"><span class="Definition">LZ77</span></a> family of
@@ -521,7 +533,7 @@ compression methods. It is defined in [[rfc1951]].</dd>
 <dfn id="3deliveredImage">
 <dt>delivered image</dt></dfn>
 
-<dd>image constructed from a decoded 
+<dd>image constructed from a decoded
 <span class="Definition"><a>PNG
 datastream</a></span>.</dd>
 
@@ -666,8 +678,8 @@ order</a></span> in which the most significant byte comes first,
 then the less significant bytes in descending order of
 significance (<span class=
 "Definition"><a>MSB</a></span> <span class=
-"Definition"><a>LSB</a></span> for two-byte integers, 
-<span class="Definition"><a>MSB</a></span> B2 B1 
+"Definition"><a>LSB</a></span> for two-byte integers,
+<span class="Definition"><a>MSB</a></span> B2 B1
 <span class="Definition"><a>LSB</a></span> for four-byte
 integers).</dd>
 
@@ -686,7 +698,7 @@ integers).</dd>
 "Definition"><a>sample</a></span> values, red, green, and blue,
 which with an <span class=
 "Definition"><a>indexed-colour</a></span> image defines the red,
-green, and blue sample values of the 
+green, and blue sample values of the
 <span class="Definition"><a>reference
 image</a></span>. In other cases, the palette may be a suggested
 palette that viewers may use to present the image on
@@ -712,7 +724,7 @@ progressive display.</dd>
 
 <dd>information stored for a single grid point in an image. A
 pixel consists of (or points to) a sequence of <span class=
-"Definition"><a>samples</a></span> from all 
+"Definition"><a>samples</a></span> from all
 <span class="Definition"><a>channels</a></span>. The
 complete image is a rectangular array of pixels.</dd>
 
@@ -725,7 +737,7 @@ complete image is a rectangular array of pixels.</dd>
 <dt>PNG datastream</dt></dfn>
 
 <dd>result of encoding a <span class=
-"Definition"><a>PNG image</a></span>. A PNG 
+"Definition"><a>PNG image</a></span>. A PNG
 <span class="Definition"><a>datastream</a></span>
 consists of a <span class=
 "Definition"><a>PNG signature</a></span></a> followed by a sequence of
@@ -736,7 +748,7 @@ consists of a <span class=
 <dfn id="3PNGdecoder">
 <dt>PNG decoder</dt></dfn>
 
-<dd>process or device which reconstructs the 
+<dd>process or device which reconstructs the
 <span class="Definition"><a>reference
 image</a></span> from a <span class=
 "Definition"><a>PNG datastream</a></span> and generates a
@@ -749,7 +761,7 @@ corresponding delivered image.</dd>
 <dd>process or device which creates a modification of an existing
 <span class="Definition"><a>PNG
 datastream</a></span>, preserving unmodified ancillary
-information wherever possible, and obeying the 
+information wherever possible, and obeying the
 <span class="Definition"><a>chunk</a></span> ordering
 rules, even for unknown chunk types.</dd>
 
@@ -757,10 +769,10 @@ rules, even for unknown chunk types.</dd>
 <dfn id="3PNGencoder">
 <dt>PNG encoder</dt></dfn>
 
-<dd>process or device which constructs a 
+<dd>process or device which constructs a
 <span class="Definition"><a>reference
 image</a></span> from a <span class=
-"Definition"><a>source image</a></span>, and generates a 
+"Definition"><a>source image</a></span>, and generates a
 <span class="Definition"><a>PNG
 datastream</a></span> representing the reference image.</dd>
 
@@ -804,10 +816,10 @@ four-byte values.</dd>
 <dfn id="3PNGimage">
 <dt>PNG image</dt></dfn>
 
-<dd>result of transformations applied by a 
+<dd>result of transformations applied by a
 <span class="Definition"><a>PNG encoder</a></span> to
 a <span class="Definition"><a>reference
-image</a></span>, in preparation for encoding as a 
+image</a></span>, in preparation for encoding as a
 <span class="Definition"><a>PNG
 datastream</a></span>, and the result of decoding a PNG
 datastream.</dd>
@@ -817,7 +829,7 @@ datastream.</dd>
 <dt>PNG signature</dt></dfn>
 
 <dd>sequence of <span class=
-"Definition"><a>bytes</a></span> appearing at the start of every 
+"Definition"><a>bytes</a></span> appearing at the start of every
 <span class="Definition"><a>PNG
 datastream</a></span>. It differentiates a PNG datastream from
 other types of <span class=
@@ -846,8 +858,8 @@ or four (red, green, blue, <span class=
 "Definition"><a>alpha</a></span>). Every reference image can be
 represented exactly by a <span class=
 "Definition"><a>PNG datastream</a></span> and every PNG datastream
-can be converted into a reference image. Each 
-<span class="Definition"><a>channel</a></span> has a 
+can be converted into a reference image. Each
+<span class="Definition"><a>channel</a></span> has a
 <span class="Definition"><a>sample
 depth</a></span> in the range 1 to 16. All samples in the same
 channel have the same sample depth. Different channels may have
@@ -857,7 +869,7 @@ different sample depths.</dd>
 <dfn id="3RGBmerging">
 <dt>RGB merging</dt></dfn>
 
-<dd>converting an image in which the red, green, and blue 
+<dd>converting an image in which the red, green, and blue
 <span class="Definition"><a>samples</a></span> for
 each <span class="Definition"><a>pixel</a></span>
 have the same value, and the same <span
@@ -879,7 +891,7 @@ class="Definition"><a>pixel</a></span> in an image.</dd>
 <dt>sample depth</dt></dfn>
 
 <dd>number of bits used to represent a <span
-class="Definition"><a>sample</a></span> value. In an 
+class="Definition"><a>sample</a></span> value. In an
 <span class=
 "Definition"><a>indexed-colour</a></span> <span
 class="Definition"><a>PNG image</a></span>, samples are stored in
@@ -895,7 +907,7 @@ image it is the same as the <span class=
 scaling</dt></dfn>
 
 <dd>mapping of a range of <span class=
-"Definition"><a>sample</a></span> values onto the full range of a 
+"Definition"><a>sample</a></span> values onto the full range of a
 <span class="Definition"><a>sample
 depth</a></span> allowed in a <span class=
 "Definition"><a>PNG image</a></span>.</dd>
@@ -905,7 +917,7 @@ depth</a></span> allowed in a <span class=
 <dt>scanline</dt></dfn>
 
 <dd>row of <span class=
-"Definition"><a>pixels</a></span> within an image or 
+"Definition"><a>pixels</a></span> within an image or
 <span class="Definition"><a>interlaced PNG
 image</a></span>.</dd>
 
@@ -932,7 +944,7 @@ class="Definition"><a>PNG encoder</a></span>.</dd>
 <dt>truecolour</dt></dfn>
 
 <dd>image representation in which each <span
-class="Definition"><a>pixel</a></span> is defined by 
+class="Definition"><a>pixel</a></span> is defined by
 <span class="Definition"><a>samples</a></span>,
 representing red, green, and blue intensities and optionally an
 <span class="Definition"><a>alpha</a></span>
@@ -8195,24 +8207,11 @@ used by decoders together with additional information about the
 display environment in order to achieve, or approximate, the
 desired display output.</p>
 
-<p>Additional information about this subject may be found in the
-references <a href="#G-GAMMA-TUTORIAL"><span class=
-"bibref">[GAMMA-TUTORIAL]</span></a>, <a href=
-"#G-GAMMA-FAQ"><span class="bibref">[GAMMA-FAQ]</span></a>, and
-<a href="#G-POYNTON"><span class="bibref">[POYNTON]</span></a>
-(especially chapter 6).</p>
+<p>Additional information about this subject may be found [[?GAMMA FAQ]].</p>
 
 <p>Background information about [=chromaticity=] and colour spaces
-may be found in references [[?Luminance-Chromaticity]]
+may be found in [[?Luminance-Chromaticity]] and [[?COLOR FAQ]].</p>
 
-<a href="#G-COLOUR-TUTORIAL"><span
-class="bibref">[COLOUR-TUTORIAL]</span></a>, <a href=
-"#G-COLOUR-FAQ"><span class="bibref">[COLOUR-FAQ]</span></a>, <a
-href="#G-HALL"><span class="bibref">[HALL]</span></a>, <a href=
-"#G-KASSON"><span class="bibref">[KASSON]</span></a>, <a href=
-"#G-LILLEY"><span class="bibref">[LILLEY]</span></a>, <a href=
-"#G-STONE"><span class="bibref">[STONE]</span></a>, and <a href=
-"#G-TRAVIS"><span class="bibref">[TRAVIS]</span></a>.</p>
 </section>
 
 <!-- ************Page Break******************* -->
@@ -8458,37 +8457,6 @@ see
 Bibliography</h2>
 
 <dl>
-<!-- Maintain a fragment named "G-COLOUR-FAQ" to preserve incoming links to it -->
-<dt id="G-COLOUR-FAQ">[COLOUR-FAQ]</dt>
-
-<dd>Poynton, C., "Colour FAQ".<br class="xhtml" />
- <a href=
-"http://www.poynton.com/ColorFAQ.html">
-<code>http://www.poynton.com/ColorFAQ.html</code></a></dd>
-
-<!-- Maintain a fragment named "G-COLOUR-TUTORIAL" to preserve incoming links to it -->
-<dt id="G-COLOUR-TUTORIAL">[COLOUR-TUTORIAL]</dt>
-
-<dd>PNG Group, "Colour tutorial".<br class="xhtml" />
- <a href=
-"http://www.libpng.org/pub/png/spec/1.2/PNG-ColorAppendix.html"><code>
-http://www.libpng.org/pub/png/spec/1.2/PNG-ColorAppendix.html</code></a></dd>
-
-<!-- Maintain a fragment named "G-GAMMA-TUTORIAL" to preserve incoming links to it -->
-<dt id="G-GAMMA-TUTORIAL">[GAMMA-TUTORIAL]</dt>
-
-<dd>PNG Group, "Gamma tutorial".<br class="xhtml" />
- <a href=
-"http://www.libpng.org/pub/png/spec/1.2/PNG-GammaAppendix.html"><code>
-http://www.libpng.org/pub/png/spec/1.2/PNG-GammaAppendix.html</code></a></dd>
-
-<!-- Maintain a fragment named "G-GAMMA-FAQ" to preserve incoming links to it -->
-<dt id="G-GAMMA-FAQ">[GAMMA-FAQ]</dt>
-
-<dd>Poynton, C., "Gamma FAQ".<br class="xhtml" />
- <a href=
-"http://www.poynton.com/Poynton-color.html">
-<code>http://www.poynton.com/Poynton-color.html</code></a></dd>
 
 <!-- Maintain a fragment named "G-HALL" to preserve incoming links to it -->
 <dt id="G-HALL">[HALL]</dt>

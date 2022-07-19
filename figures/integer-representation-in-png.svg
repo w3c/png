@@ -1,19 +1,30 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
-"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<svg width="810" height="310" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<?xml version="1.0" ?>
+<svg viewBox="0 0 810 310" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
-<style type="text/css">
-<![CDATA[
-rect {stroke:black;stroke-width:1;fill:none;}
-text {font-family:Verdana, sans-serif;font-size:14;text-anchor:start}
-line {stroke:black;stroke-width:2}
-]]>
+<style>
+    @font-face {
+        font-family: OS_Cond_Med;
+        src: url(./fonts/OS_Cond_Med.woff2);
+    }
+    rect {
+        stroke:#777;
+        stroke-width:1;
+        fill:none;
+        }
+    text {
+        font-family: OS_Cond_Med;
+        font-size:16px;
+        text-anchor:start
+        }
+    line {
+        stroke:black;
+        stroke-width:2
+        }
 </style>
 
 
 
-<symbol id="bit" >		
+<symbol id="bit" >
 <rect width="23" height="23" style="fill:#EEAAAA" />
 </symbol>
 

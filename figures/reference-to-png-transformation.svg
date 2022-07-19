@@ -1,7 +1,18 @@
 <?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
-"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<svg width="640" height="525" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg viewBox="0 0 370 525" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style>
+@font-face {
+	font-family: OS_Cond_Med;
+	src: url(./fonts/OS_Cond_Med.woff2);
+}
+text {
+	font-family: OS_Cond_Med;
+	fill: black;
+}
+rect {
+	fill: #BED;
+}
+</style>
 <!-- solid arrow heads right and left -->
 <marker id="arrend" refX="8" refY="4" markerWidth="8" markerHeight="8" orient="auto">
   <path d="M 1 4 L 1 1 8 4 1 7z"/>
@@ -13,21 +24,14 @@
 
 <g transform="translate(10,10)">
 
-<g style="fill:aqua; stroke:black; stroke-width:1">
-<!-- <rect x="0" y="0" width="640" height="505" style="fill:none"/> -->
-
-	<rect x="100" y="0" width="150" height="50" style="fill:aqua"/>
-
-	<rect x="200" y="80" width="150" height="50" style="fill:aqua"/>
-	<rect x="200" y="190" width="150" height="50" style="fill:aqua"/>
-	<rect x="200" y="295" width="150" height="50" style="fill:aqua"/>
-
-	<rect x="100" y="380" width="150" height="50" style="fill:aqua"/>
-
-	<rect x="100" y="455" width="150" height="50" style="fill:aqua"/>
-
-	<rect x="0" y="185" width="150" height="165" style="fill:aqua"/>
-	
+<g style="stroke:black; stroke-width:1">
+	<rect x="100" y="0" width="150" height="50" />
+	<rect x="200" y="80" width="150" height="50" />
+	<rect x="200" y="190" width="150" height="50" />
+	<rect x="200" y="295" width="150" height="50" />
+	<rect x="100" y="380" width="150" height="50" />
+	<rect x="100" y="455" width="150" height="50" />
+	<rect x="0" y="185" width="150" height="165" />
 </g>
 
 <g style="fill:none; stroke:black; stroke-width:1">
@@ -49,17 +53,17 @@
 
 </g>
 
-<g style="font-family:Verdana, sans-serif; stroke:none; font-size:14; fill:black; text-anchor:middle">
-	<text x="175" y="25">reference image</text>
-	<text x="275" y="105">alpha separation</text>
-	<text x="275" y="215">RGB merging</text>
-	<text x="275" y="320">alpha compaction</text>
+<g style="stroke:none; font-size:18px; fill:black; text-anchor:middle">
+	<text x="175" y="29">reference image</text>
+	<text x="275" y="109">alpha separation</text>
+	<text x="275" y="219">RGB merging</text>
+	<text x="275" y="324">alpha compaction</text>
 
-	<text x="75" y="267.5">indexing</text>
+	<text x="75" y="270.5">indexing</text>
 
-	<text x="175" y="405">sample depth scaling</text>
+	<text x="175" y="409">sample depth scaling</text>
 
-	<text x="175" y="480">PNG image</text>
+	<text x="175" y="484">PNG image</text>
 </g>
 
 </g>

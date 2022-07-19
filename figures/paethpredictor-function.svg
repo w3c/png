@@ -1,17 +1,39 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
-"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<svg width="640" height="360" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<style type="text/css">
-<![CDATA[
-  rect {stroke:black;fill:white;}
-  text {font-family:Verdana, sans-serif;font-size:14;text-anchor:middle}
-  text.ljust {font-family:Verdana, sans-serif;font-size:14;text-anchor:start}
-  text.rjust {font-family:Verdana, sans-serif;font-size:14;text-anchor:end}
-  line {stroke:black;stroke-width:1}
-  polyline {stroke:black;stroke-width:1;fill:none}
-  path {stroke:black;stroke-width:1;fill:white;}
-]]>
+<?xml version="1.0"?>
+<svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style>
+  @font-face {
+        font-family: OS_Cond_Med;
+        src: url(./fonts/OS_Cond_Med.woff2);
+    }
+  rect {
+    stroke:#777;
+    fill:white;
+    }
+  text {
+    font-family: OS_Cond_Med;
+    font-size:16pt;
+    text-anchor:middle
+    }
+  text.ljust {
+    text-anchor:start
+    }
+  text.rjust {
+    text-anchor:end
+    }
+  line {
+    stroke:#777;
+    stroke-width:1
+    }
+  polyline {
+    stroke:#777;
+    stroke-width:1;
+    fill:none
+    }
+  path {
+    stroke:#777;
+    stroke-width:1;
+    fill:white;
+    }
 </style>
 
 <!-- solid arrow head -->
@@ -22,11 +44,11 @@
 <g transform="translate(10,10)">
 
 <g>
-  <rect width="200" height="100"/>
-  <text x="100" y="20">p=a+b-c</text>
-  <text x="100" y="40">pa=abs(p-a)</text>
-  <text x="100" y="60">pb=abs(p-b)</text>
-  <text x="100" y="80">pc=abs(p-c)</text>
+  <rect y="-3" width="200" height="108"/>
+  <text x="100" y="20">p = a + b - c</text>
+  <text x="100" y="44">pa = abs(p - a)</text>
+  <text x="100" y="68">pb = abs(p - b)</text>
+  <text x="100" y="92">pc = abs(p - c)</text>
 
 </g>
 
@@ -35,8 +57,8 @@
   <text x="100" y="45">pa&lt;=pb AND pa&lt;=pc</text>
 	<g transform="translate(0,40)">
     <line marker-end="url(#arrend)" x1="0" y1="0" x2="-40" y2="0"/>
-   
-    <text class="rjust" x="-45" y="5">Pr=a</text>
+
+    <text class="rjust" x="-45" y="5">Pr = a</text>
     <text x="-20" y="-5">Yes</text>
   </g>
 </g>
@@ -46,7 +68,7 @@
   <text x="100" y="45">pb&lt;=pc</text>
 	<g transform="translate(0,40)">
     <line marker-end="url(#arrend)"  x1="0" y1="0" x2="-40" y2="0"/>
-    <text class="rjust" x="-45" y="5">Pr=b</text>
+    <text class="rjust" x="-45" y="5">Pr = b</text>
     <text x="-20" y="-5">Yes</text>
   </g>
 </g>
@@ -56,23 +78,17 @@
   <text class="ljust" x="425" y="270">No</text>
 </g>
 
-
-<text x="420" y="305">Pr=c</text>
+<text x="420" y="308">Pr = c</text>
 
 <g>
   <polyline marker-end="url(#arrend)" points="200,10 420,10 420,45"/>
 
 </g>
 
-
-
-
 <g>
   <line marker-end="url(#arrend)"  x1="420" y1="125" x2="420" y2="165"/>
   <text class="ljust" x="425" y="150">No</text>
 </g>
-
-
 
 
 <g transform="translate(500,260)">
@@ -92,7 +108,7 @@
     <rect width="20" height="20"/>
     <text x="10" y="15">x</text>
   </g>
-  <text x="22.5" y="-5">Bytes</text>
+  <text x="22.5" y="-6">Bytes</text>
 </g>
 </g>
 

@@ -1,60 +1,73 @@
 <?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
-"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-
-<svg width="700" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<style type="text/css">
-<![CDATA[
-rect {stroke:black;fill:white;}
-text {font-family:Verdana, sans-serif;font-size:14;text-anchor:start}
-line {stroke:black;stroke-width:1}
-polyline {stroke:black;stroke-width:1;fill:none}
-]]>
+<svg viewBox="0 0 700 450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style>
+  @font-face {
+    font-family: OS_Cond_Med;
+    src: url(./fonts/OS_Cond_Med.woff2);
+  }
+  rect {
+    stroke:none;
+    fill:white;
+    }
+  text {
+    font-family: OS_Cond_Med;
+    font-size:18px;
+    text-anchor:start
+    }
+  line {
+    stroke:black;
+    stroke-width:1
+    }
+  polyline {
+    stroke:black;
+    stroke-width:1;
+    fill:none
+    }
 </style>
 <defs>
 
-<symbol id="filter1" >		
+<symbol id="filter1" >
 <rect width="8" height="8" style="fill:#EECCAA" />
 </symbol>
 
 
-<symbol id="comp" >		
-<rect width="8" height="8" style="fill:#FF9955" />
+<symbol id="comp" >
+<rect width="8" height="8" style="fill:#F39" />
 </symbol>
 
 
 
-<symbol id="pixelfr" >		
+<symbol id="pixelfr" >
 <rect width="8" height="8" style="fill:#EEAAAA" />
 </symbol>
 
-<symbol id="pixelfg" >		
+<symbol id="pixelfg" >
 <rect width="8" height="8" style="fill:#AAEEAA" />
 </symbol>
 
-<symbol id="pixelfb" >		
+<symbol id="pixelfb" >
 <rect width="8" height="8" style="fill:#AAAAEE" />
 </symbol>
 
-<symbol id="pixelfa" >		
+<symbol id="pixelfa" >
 <rect width="8" height="8" style="fill:#DDDDDD" />
 </symbol>
 
 
 
-<symbol id="pixelr" >		
+<symbol id="pixelr" >
 <rect width="8" height="8" style="fill:red" />
 </symbol>
 
-<symbol id="pixelg" >		
+<symbol id="pixelg" >
 <rect width="8" height="8" style="fill:green" />
 </symbol>
 
-<symbol id="pixelb" >		
+<symbol id="pixelb" >
 <rect width="8" height="8" style="fill:blue" />
 </symbol>
 
-<symbol id="pixela" >		
+<symbol id="pixela" >
 <rect width="8" height="8" style="fill:grey" />
 </symbol>
 

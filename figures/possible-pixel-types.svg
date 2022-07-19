@@ -1,7 +1,17 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
-"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<svg width="660" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<?xml version="1.0" ?>
+<svg viewBox="0 0 570 450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style>
+@font-face {
+	font-family: OS_Cond_Med;
+	src: url(./fonts/OS_Cond_Med.woff2);
+}
+text {
+	font-family: OS_Cond_Med;
+	fill: black;
+	stroke: none;
+	font-size: 16px;
+}
+</style>
 <!-- solid arrow heads right and left -->
 <marker id="arrend" refX="8" refY="4" markerWidth="8" markerHeight="8" orient="auto">
   <path d="M 1 4 L 1 1 8 4 1 7z"/>
@@ -48,17 +58,10 @@
 <rect x="20" y="300" width="20" height="20"  style="stroke:black;stroke-width:1;fill:#ACA" />
 <text x="25" y="315">3</text>
 
-<polyline marker-end="url(#arrend)" style="stroke:black;stroke-width:1;fill:none" points="40 310 185 310 185 150 395 150" />
+<polyline marker-end="url(#arrend)" style="stroke:black;stroke-width:1;fill:none" points="40 310 185 310 185 150 335 150" />
 
-<!-- table entries -->
-
-
+<g transform="translate(-60,0)">
 <!--palette -->
-
-
-
-
-
 
   <path style="fill:none" d="M 420 40 H 540 V 420 H 420 z" />
 	<line x1="420" y1="80" x2="540" y2="80"/>
@@ -96,13 +99,8 @@
 	<line x1="420" y1="400" x2="540" y2="400"/>
         <text x="400" y="415">16</text>
 
-	
 	<line x1="460" y1="40" x2="460" y2="420"/>
 	<line x1="500" y1="40" x2="500" y2="420"/>
-	
-	
-
-
 
 <!-- palette entries -->
 
@@ -149,31 +147,33 @@
 	<line x1="560" y1="380" x2="600" y2="380"/>
 	<line x1="560" y1="400" x2="600" y2="400"/>
 
-</g>
 
+<g style="font-size:18px; text-anchor:middle">
 
+	<text x="440" y="62">R</text>
+	<text x="480" y="62">G</text>
+	<text x="520" y="62">B</text>
 
-
-
-<g style="font-family:Verdana, sans-serif; stroke:none; font-size:14; fill:black; text-anchor:middle">
-
-	<text x="440" y="60">R</text>
-	<text x="480" y="60">G</text>
-	<text x="520" y="60">B</text>
-
-	<text x="580" y="60">A</text>
+	<text x="580" y="62">A</text>
 
 </g>
 
-<g style="font-family:Verdana, sans-serif; stroke:none; font-size:14; fill:black; text-anchor:start">
-	<text x="20" y="55">Truecolour with alpha</text>
-  <text x="20" y="115">Greyscale with alpha</text>
-	<text x="20" y="175">Truecolour</text>
-	<text x="20" y="235">Greyscale</text>
-	<text x="20" y="295">Indexed-colour</text>
-  
-	<text x="420" y="20">Palette</text>
-	<text x="540" y="20">Alpha table</text>
+<g style="font-size:18px; text-anchor:middle">
+	<text x="480" y="20">Palette</text>
+	<text x="580" y="20">Alpha</text>
+
+</g>
+
+</g>
+
+</g>
+
+<g style="font-size:16px; text-anchor:start">
+	<text x="20" y="54">Truecolour with alpha</text>
+  	<text x="20" y="114">Greyscale with alpha</text>
+	<text x="20" y="174">Truecolour</text>
+	<text x="20" y="234">Greyscale</text>
+	<text x="20" y="294">Indexed colour</text>
 
 </g>
 

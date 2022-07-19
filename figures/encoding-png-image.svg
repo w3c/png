@@ -1,79 +1,92 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
-"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<svg width="645" height="575" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<style type="text/css">
-<![CDATA[
-rect {stroke:black;fill:white;}
-text {font-family:Verdana, sans-serif;font-size:14;text-anchor:start}
-line {stroke:black;stroke-width:1}
-]]>
+<?xml version="1.0" ?>
+<svg viewBox="0 0 645 575" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style >
+  @font-face {
+    font-family: OS_Cond_Med;
+    src: url(./fonts/OS_Cond_Med.woff2);
+  }
+  text {
+    font-family: OS_Cond_Med;
+    fill: black;
+    font-size:14px;
+    text-anchor:start
+  }
+  rect {
+    stroke:none;
+    fill:white;
+  }
+  line {
+    stroke:black;
+    stroke-width:1
+    }
 </style>
 <defs>
 
-<symbol id="filter1" >		
+<symbol id="filter1" >
 <rect width="8" height="8" style="fill:#EECCAA" />
 </symbol>
 
-<symbol id="filter2" >		
+<symbol id="filter2" >
 <rect width="8" height="8" style="fill:#AABBEE" />
 </symbol>
-<symbol id="filter3" >		
+<symbol id="filter3" >
 <rect width="8" height="8" style="fill:#BBEEAA" />
 </symbol>
 
-<symbol id="pixel" >		
-<rect width="8" height="8" style="fill:white" />
+<symbol id="pixel" >
+<rect width="8" height="8" style="fill:#CCC" />
+<rect width="6" height="6" x="1" y="1" style="fill:#F7F7F7; " />
 </symbol>
 
 <!-- compression header and trailer -->
-<symbol id="pixelh1" >		
+<symbol id="pixelh1" >
 <rect width="8" height="8" style="fill:black" />
 </symbol>
-<symbol id="pixelh2" >		
-<rect width="8" height="8" style="fill:gray" />
+<symbol id="pixelh2" >
+<rect width="8" height="8" style="fill:#666" />
 </symbol>
-<symbol id="pixelt" >		
-<rect width="8" height="8" style="fill:lightgray" />
+<symbol id="pixelt" >
+<rect width="8" height="8" style="fill:#AAA" />
 </symbol>
 
 <!-- chunk length, type, CRC -->
-<symbol id="pixellen" >		
+<symbol id="pixellen" >
 <rect width="8" height="8" style="fill:black" />
 </symbol>
-<symbol id="pixeltyp" >		
+<symbol id="pixeltyp" >
 <rect width="8" height="8" style="fill:gray" />
 </symbol>
-<symbol id="pixelcrc" >		
+<symbol id="pixelcrc" >
 <rect width="8" height="8" style="fill:lightgray" />
 </symbol>
 
-<symbol id="pixel1" >		
-<rect width="8" height="8" style="fill:#AAAACC" />
+<symbol id="pixel1" >
+<rect width="8" height="8" style="fill:#555" />
+<rect width="6" height="6" x="1" y="1" style="fill:#99A" />
 </symbol>
 
-<symbol id="pixel2" >		
-<rect width="8" height="8" style="fill:red" />
+<symbol id="pixel2" >
+<rect width="8" height="8" style="fill:#933" />
 </symbol>
 
-<symbol id="pixel3" >		
-<rect width="8" height="8" style="fill:green" />
+<symbol id="pixel3" >
+<rect width="8" height="8" style="fill:#363" />
 </symbol>
 
-<symbol id="pixel4" >		
-<rect width="8" height="8" style="fill:blue" />
+<symbol id="pixel4" >
+<rect width="8" height="8" style="fill:#55B" />
 </symbol>
 
-<symbol id="pixel5" >		
-<rect width="8" height="8" style="fill:#AA9977" />
+<symbol id="pixel5" >
+<rect width="8" height="8" style="fill:#B39955" />
 </symbol>
 
-<symbol id="pixel6" >		
+<symbol id="pixel6" >
 <rect width="8" height="8" style="fill:#77AA77" />
 </symbol>
 
-<symbol id="pixel7" >		
-<rect width="8" height="8" style="fill:yellow" />
+<symbol id="pixel7" >
+<rect width="8" height="8" style="fill:#E7E0C7" />
 </symbol>
 
 <symbol id="varrow" >
@@ -271,13 +284,13 @@ line {stroke:black;stroke-width:1}
 
 
 <g transform="translate(20,200)">
-<rect width="85" height="50" />
-<text x="5" y="20">Pass</text>
-<text x="5" y="40">extraction</text>
+<rect width="85" height="50"  style="stroke: #999"/>
+<text x="10" y="20">Pass</text>
+<text x="10" y="40">extraction</text>
 
 <g transform="translate(0,60)">
 <text x="1" y="20">Reduced</text>
-<text x="1" y="40">image</text>
+<text x="1" y="40">image 1</text>
 <g transform="translate(65,20)">
 <use transform="translate(0,0)" xlink:href="#pixel1" />
 <use transform="translate(10,0)" xlink:href="#pixel1" />
@@ -288,7 +301,7 @@ line {stroke:black;stroke-width:1}
 
 <g transform="translate(0,120)">
 <text x="1" y="20">Reduced</text>
-<text x="1" y="40">image</text>
+<text x="1" y="40">image 2</text>
 <g transform="translate(65,20)">
 <use transform="translate(0,0)" xlink:href="#pixel2" />
 <use transform="translate(0,10)" xlink:href="#pixel2" />
@@ -297,7 +310,7 @@ line {stroke:black;stroke-width:1}
 
 <g transform="translate(0,180)">
 <text x="1" y="20">Reduced</text>
-<text x="1" y="40">image</text>
+<text x="1" y="40">image 3</text>
 <g transform="translate(65,20)">
 <use transform="translate(0,0)" xlink:href="#pixel3" />
 <use transform="translate(10,0)" xlink:href="#pixel3" />
@@ -307,7 +320,7 @@ line {stroke:black;stroke-width:1}
 
 <g transform="translate(0,240)">
 <text x="1" y="20">Reduced</text>
-<text x="1" y="40">image</text>
+<text x="1" y="40">image 4</text>
 <g transform="translate(65,20)">
 <use transform="translate(0,0)" xlink:href="#pixel4" />
 <use transform="translate(10,0)" xlink:href="#pixel4" />
@@ -323,7 +336,7 @@ line {stroke:black;stroke-width:1}
 
 <g transform="translate(0,300)">
 <text x="1" y="20">Reduced</text>
-<text x="1" y="40">image</text>
+<text x="1" y="40">image 5</text>
 <g transform="translate(65,20)">
 <use transform="translate(0,0)" xlink:href="#pixel5" />
 <use transform="translate(10,0)" xlink:href="#pixel5" />
@@ -349,9 +362,9 @@ line {stroke:black;stroke-width:1}
 </g>
 
 <g transform="translate(140,200)">
-<rect width="90" height="50" />
-<text x="5" y="20">Scanline</text>
-<text x="3" y="40">serialization</text>
+<rect width="90" height="50"  style="stroke: #999"/>
+<text x="10" y="20">Scanline</text>
+<text x="10" y="40">serialization</text>
 <g transform="translate(20,60)">
 <use transform="translate(0,0)" xlink:href="#pixel1" />
 <use transform="translate(10,0)" xlink:href="#pixel1" />
@@ -404,8 +417,8 @@ line {stroke:black;stroke-width:1}
 </g>
 
 <g transform="translate(260,200)">
-<rect width="80" height="50" />
-<text x="3" y="30">Filtering</text>
+<rect width="80" height="50"  style="stroke: #999"/>
+<text x="10" y="30">Filtering</text>
 <g transform="translate(20,60)">
 <use transform="translate(-10,0)" xlink:href="#filter1" />
 <use transform="translate(0,0)" xlink:href="#pixel" />
@@ -468,8 +481,8 @@ line {stroke:black;stroke-width:1}
 </g>
 
 <g transform="translate(380,200)">
-<rect width="100" height="50" />
-<text x="3" y="30">Compression</text>
+<rect width="100" height="50" style="stroke: #999"/>
+<text x="10" y="30">Compression</text>
 <g transform="translate(20,60)">
 <use transform="translate(0,0)" xlink:href="#pixelh1" />
 <use transform="translate(0,10)" xlink:href="#pixelh2" />
@@ -496,8 +509,8 @@ line {stroke:black;stroke-width:1}
 </g>
 
 <g transform="translate(500,200)">
-<rect width="90" height="50" />
-<text x="3" y="30">Chunking</text>
+<rect width="90" height="50"  style="stroke: #999"/>
+<text x="10" y="30">Chunking</text>
 <g transform="translate(0,60)">
 <use transform="translate(0,0)" xlink:href="#pixellen" />
 <use transform="translate(10,0)" xlink:href="#pixeltyp" />
@@ -543,9 +556,9 @@ line {stroke:black;stroke-width:1}
 
 
 <g transform="translate(500,100)">
-<text x="5" y="20">Datastream</text>
-<text x="5" y="35">construction</text>
-<line marker-end="url(#arrend)" x1="30" y1="80" x2="30" y2="40"/>
+<text x="10" y="20">Datastream</text>
+<text x="10" y="35">construction</text>
+<line marker-end="url(#arrend)" x1="40" y1="80" x2="40" y2="40"/>
 </g>
 
 <!-- arrows joining stage boxes -->

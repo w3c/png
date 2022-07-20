@@ -1582,14 +1582,13 @@ information</h2>
 
 <p>Ancillary information may be associated with an image.
 Decoders may ignore all or some of the ancillary information. The
-types of ancillary information provided are described in <a href=
-"#table41"><span class="tabref">Table 4.1</span></a>.</p>
+types of ancillary information provided are described in <a href="#table41"></a>.</p>
 
 <!-- Maintain a fragment named "table41" to preserve incoming links to it -->
-<table id="table41" class="Regular" summary=
+<table id="table41" class="Regular simple numbered" summary=
 "This table lists the types of ancillary information that may be associated with an image">
-<caption><b>Table 4.1 &mdash; Types of
-ancillary information</b></caption>
+<caption>Types of
+ancillary information</caption>
 
 <tr>
 <th>Type of information</th>
@@ -1838,7 +1837,7 @@ image.</td>
   with no gaps or duplicates.
 </p>
 
-<p>The tables below illustrates the use of sequence numbers
+<p>The tables below illustrate the use of sequence numbers
   for images with more than one frame,
   and more than one <span class="chunk">fdAT</span> chunk
   for the second frame.
@@ -1847,9 +1846,9 @@ image.</td>
   omitted in these tables, for clarity).
 </p>
 
-<table class="Regular" id="table52" summary=
+<table class="Regular numbered simple" summary=
 "sequence numbers, if the static image is also the first frame">
-<caption><b>Table 5.2 &mdash; If the static image is also the first frame</b></caption>
+<caption>If the static image is also the first frame</caption>
 <tr>
   <th>Sequence number</th>
   <th>Chunk</th>
@@ -1880,9 +1879,9 @@ image.</td>
 </tr>
 </table>
 
-<table class="Regular" id="table53" summary=
+<table class="Regular numbered simple" summary=
 "sequence numbers, if the static image is not part of the animation">
-<caption><b>Table 5.3 &mdash; If the static image is not part of the animation</b></caption>
+<caption>If the static image is not part of the animation</caption>
 <tr>
   <th>Sequence number</th>
   <th>Chunk</th>
@@ -2010,7 +2009,7 @@ beginning with an <a href="#11IHDR"><span class=
 <h2>Chunk layout</h2>
 
 <p>Each chunk consists of three or four fields (see <a href="#figure411"></a>).
-The meaning of the fields is described in <a href="#table51"><span class="tabref">Table 5.1</span></a>.
+The meaning of the fields is described in <a href="#table51"></a>.
 The chunk data field may be empty.</p>
 
 <figure id="figure411">
@@ -2021,9 +2020,14 @@ The chunk data field may be empty.</p>
 </figure>
 
 <!-- Maintain a fragment named "table51" to preserve incoming links to it -->
-<table id="table51" class="Regular" summary=
+<table id="table51" class="Regular numbered simple" summary=
 "This table defines the chunk fields">
-<caption><b>Table 5.1 &mdash; Chunk fields</b></caption>
+<caption>Chunk fields</caption>
+
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
 
 <tr>
 <td class="Regular">Length</td>
@@ -2103,13 +2107,19 @@ properties.</p>
 
 <p>The semantics of the property bits are
 defined in
-<a href="#table52"><span class="tabref">Table 5.2</span></a>.
+<a href="#table52"></a>.
 </p>
 
 <!-- Maintain a fragment named "table52" to preserve incoming links to it -->
-<table id="table52" class="Regular" summary=
+<table id="table52" class="Regular numbered simple" summary=
 "This table defines the semantics of the property bits">
-<caption><b>Table 5.2 &mdash; Semantics of property bits</b></caption>
+<caption>Semantics of property bits</caption>
+
+<tr>
+<th>Name &amp; location</th>
+<th>Definition</th>
+<th>Description</th>
+</tr>
 
 <tr>
 <td class="Regular">Ancillary bit: first byte</td>
@@ -2215,8 +2225,8 @@ table to accelerate the computation. See <a href=
 <h2>Chunk ordering</h2>
 
 <p>The constraints on the positioning of the individual chunks
-are listed in <a href="#table53"><span class="tabref">Table
-5.3</span></a> and illustrated diagrammatically in <a href=
+are listed in <a href="#table53">
+</a> and illustrated diagrammatically in <a href=
 "#lattice-diagram-with-plte"></a> and <a
 href="#lattice-diagram-without-plte"></a>.
 These lattice diagrams represent the constraints on positioning
@@ -2227,18 +2237,18 @@ aligned and appear between two other chunk types (higher and
 lower than the horizontally aligned chunks) may appear in any
 order between the two higher and lower chunk types to which they
 are connected. The superscript associated with the chunk type is
-defined in <a href="#table54"><span class="tabref">Table
-5.4</span></a>. It indicates whether the chunk is mandatory,
+defined in <a href="#table54">
+</a>. It indicates whether the chunk is mandatory,
 optional, or may appear more than once. A vertical bar between
 two chunk types indicates alternatives.</p>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <!-- Maintain a fragment named "table53" to preserve incoming links to it -->
-<table id="table53" class="Regular" summary=
+<table id="table53" class="Regular numbered simple" summary=
 "This table lists the chunk ordering rules">
-<caption><b>Table 5.3 &mdash; Chunk ordering
-rules</b></caption>
+<caption>Chunk ordering
+rules</caption>
 
 <tr>
 <th colspan="3">Critical chunks<br class="xhtml" />
@@ -2427,10 +2437,10 @@ before <a href="#11IDAT"><span class="chunk">IDAT</span></a>
 </table>
 
 <!-- Maintain a fragment named "table54" to preserve incoming links to it -->
-<table id="table54" class="Regular"  summary=
+<table id="table54" class="Regular numbered simple"  summary=
 "This table lists the symbols used in lattice diagrams">
-<caption><b>Table 5.4 &mdash; Meaning of
-symbols used in lattice diagrams</b></caption>
+<caption>Meaning of
+symbols used in lattice diagrams</caption>
 
 <tr>
 <th>Symbol</th>
@@ -2590,13 +2600,13 @@ sum of the following values: 1 (palette used), 2 (truecolour
 used) and 4 (alpha used). Greyscale and truecolour images may
 have an explicit alpha channel. The PNG image types and
 corresponding colour types are listed in <a href=
-"#table6.1"><span class="tabref">Table 6.1</span></a>.</p>
+"#table6.1"></a>.</p>
 
 <!-- Maintain a fragment named "table6.1" to preserve incoming links to it -->
-<table id="table6.1" class="Regular"  summary=
+<table id="table6.1" class="Regular numbered simple"  summary=
 "This table lists the PNG image and colour types">
-<caption><b>Table 6.1 &mdash; PNG image types
-and colour types</b></caption>
+<caption>PNG image types
+and colour types</caption>
 
 <tr>
 <th>PNG image type</th>
@@ -2955,8 +2965,8 @@ generate the new byte value:</p>
 and <tt>c</tt>.</p>
 
 <p>PNG filter method 0 defines five basic filter types as listed
-in <a href="#9-table91"><span class="tabref">Table
-9.1</span></a>. <tt>Orig(y)</tt> denotes the original (unfiltered)
+in <a href="#9-table91">
+</a>. <tt>Orig(y)</tt> denotes the original (unfiltered)
 value of byte <tt>y</tt>. <tt>Filt(y)</tt> denotes the value
 after a filter has been applied. <tt>Recon(y)</tt> denotes the
 value after the corresponding reconstruction function has been
@@ -2972,10 +2982,10 @@ it is sufficient to check the filter method in <a href="#11IHDR"></a>.</p>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <!-- Maintain a fragment named "9-table91" to preserve incoming links to it -->
-<table id="9-table91" class="Regular" summary=
+<table id="9-table91" class="Regular numbered simple" summary=
 "This table lists the filter types">
-<caption><b>Table 9.1 &mdash; Filter
-types</b></caption>
+<caption>Filter
+types</caption>
 
 <tr>
 <th>Type</th>
@@ -3338,13 +3348,13 @@ image type. Valid values are 0, 2, 3, 4, and 6.</p>
 <p>Bit depth restrictions for each colour type are imposed to
 simplify implementations and to prohibit combinations that do not
 compress well. The allowed combinations are defined in <a href=
-"#table111"><span class="tabref">Table 11.1</span></a>.</p>
+"#table111"></a>.</p>
 
 <!-- Maintain a fragment named "table111" to preserve incoming links to it -->
-<table id="table111" class="Regular" summary=
+<table id="table111" class="Regular numbered simple" summary=
 "This table defines the colour types">
-<caption><b>Table 11.1 &mdash; Allowed
-combinations of colour type and bit depth</b></caption>
+<caption>Allowed
+combinations of colour type and bit depth</caption>
 
 <tr>
 <th>PNG image type</th>
@@ -3684,8 +3694,15 @@ more sophisticated support for colour management and control.</p>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<table class="Regular" summary=
+<table class="Regular numbered simple" summary=
 "This table defines the cHRM chunk">
+<caption>cHRM chunk components</caption>
+
+<tr>
+<th>Name</th>
+<th>Size</th>
+</tr>
+
 <tr>
 <td class="Regular">White point x</td>
 <td class="Regular">4 bytes</td>
@@ -3904,8 +3921,10 @@ supported by PNG.</p>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<table class="Regular" summary=
+<table class="Regular numbered simple" summary=
 "This table defines the sBIT chunk">
+<caption>sBIT chunk contents</caption>
+
 <tr>
 <th colspan="2">Colour type 0</th>
 </tr>
@@ -4006,8 +4025,15 @@ rendering intent defined by the International Color Consortium
 
 <p>The <span class="chunk">sRGB</span> chunk contains:</p>
 
-<table class="Regular" summary=
+<table class="Regular numbered simple" summary=
 "This table defines the sRGB chunk">
+<caption>sRGB chunk contents</caption>
+
+<tr>
+<th>Name</th>
+<th>Size</th>
+</tr>
+
 <tr>
 <td class="Regular">Rendering intent</td>
 <td class="Regular">1 byte</td>
@@ -4016,8 +4042,16 @@ rendering intent defined by the International Color Consortium
 
 <p>The following values are defined for rendering intent:</p>
 
-<table class="Regular" summary=
+<table class="Regular numbered simple" summary=
 "This table defines the values of rendering intent in the sRGB chunk">
+<caption>Rendering intent values</caption>
+
+<tr>
+<th>Value</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+
 <tr>
 <td class="Regular">0</td>
 <td class="Regular">Perceptual</td>
@@ -4057,8 +4091,10 @@ optionally a <a href="#chrm-primary-chromaticities-and-white-point"><span class=
 that do not use the <span class="chunk">sRGB</span> chunk. Only
 the following values shall be used.</p>
 
-<table class="Regular" summary=
+<table class="Regular numbered simple" summary=
 "This table defines the gAMA and cHRM values for sRGB">
+<caption>gAMA and cHRM values for sRGB</caption>
+
 <tr>
 <th colspan="2"><a href="#gama-image-gamma"><span class=
 "chunk">gAMA</span></a> </th>
@@ -4154,7 +4190,14 @@ when rendering the image.</p>
 
 <p>The following specifies the syntax of the <span class="chunk">cICP</span> chunk:</p>
 
-<table id="cICP-chunk-syntax" class="simple">
+<table id="cICP-chunk-syntax" class="numbered simple">
+<caption>cICP chunk components</caption>
+
+<tr>
+<th>Name</th>
+<th>Size</th>
+</tr>
+
 <tr>
 <td>Colour Primaries</td>
 <td>1 byte</td>
@@ -4263,8 +4306,15 @@ more than one with the same keyword is permitted.</p>
 <p>The following keywords are predefined and should be used where
 appropriate.</p>
 
-<table class="Regular" summary=
+<table class="Regular numbered simple" summary=
 "This table defines the keywords defined for tEXt, iTXt and zTXt chunks">
+<caption>Predefined keywords</caption>
+
+<tr>
+<th>Keyword value</th>
+<th>Description</th>
+</tr>
+
 <tr>
 <td class="Regular">Title</td>
 <td class="Regular">Short (one line) title or caption for image</td>
@@ -4611,8 +4661,10 @@ larger page (as in a browser), the <span class=
 "chunk">bKGD</span> chunk should be ignored. The <span class=
 "chunk">bKGD</span> chunk contains:</p>
 
-<table class="Regular" summary=
+<table class="Regular numbered simple" summary=
 "This table defines the bKGD chunk">
+<caption>bKGD chunk contents</caption>
+
 <tr>
 <th colspan="2">Colour types 0 and 4</th>
 </tr>
@@ -4732,8 +4784,15 @@ Physical pixel dimensions</h2>
 intended pixel size or aspect ratio for display of the image. It
 contains:</p>
 
-<table class="Regular" summary=
+<table class="Regular numbered simple" summary=
 "This table defines the pHYs chunk">
+<caption>pHYs chunk contents</caption>
+
+<tr>
+<th>Name</th>
+<th>Size</th>
+</tr>
+
 <tr>
 <td class="Regular">Pixels per unit, X axis</td>
 <td class="Regular">4 bytes (PNG unsigned integer)</td>
@@ -4752,8 +4811,15 @@ contains:</p>
 
 <p>The following values are defined for the unit specifier:</p>
 
-<table class="Regular" summary=
+<table class="Regular numbered simple" summary=
 "This table defines the allowed values for the unit specifier in the pHYs chunk">
+<caption>Unit specifier values</caption>
+
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+
 <tr>
 <td class="Regular">0</td>
 <td class="Regular">unit is unknown</td>
@@ -4787,8 +4853,15 @@ Suggested palette</h2>
 
 <p>The <span class="chunk">sPLT</span> chunk contains:</p>
 
-<table class="Regular" summary=
+<table class="Regular numbered simple" summary=
 "This table defines the sPLT chunk">
+<caption>sPLT chunk contents</caption>
+
+<tr>
+<th>Name</th>
+<th>Size</th>
+</tr>
+
 <tr>
 <td class="Regular">Palette name</td>
 <td class="Regular">1-79 bytes (character string)</td>
@@ -5009,8 +5082,15 @@ Image last-modification time</h2>
 the last image modification (<strong>not</strong> the time of initial
 image creation). It contains:</p>
 
-<table class="Regular" summary=
+<table class="Regular numbered simple" summary=
 "This table defines the tIME chunk">
+<caption>tIME chunk contents</caption>
+
+<tr>
+<th>Name</th>
+<th>Size</th>
+</tr>
+
 <tr>
 <td class="Regular">Year</td>
 <td class="Regular">2 bytes (complete; for example, 1995, <strong>not</strong> 95)</td>
@@ -5124,8 +5204,15 @@ the image data are changed.</p>
       is required for each frame.
       It contains:</p>
 
-    <table class="Regular" summary=
+    <table class="Regular numbered simple" summary=
     "This table defines the fcTL chunk">
+    <caption>fcTL chunk contents</caption>
+
+    <tr>
+    <th>Name</th>
+    <th>Size</th>
+    </tr>
+
     <tr>
     <td class="Regular">`sequence_number`</td>
     <td class="Regular">4 bytes</td>
@@ -5354,8 +5441,15 @@ the image data are changed.</p>
       for all frames after the first one).
     It contains:</p>
 
-    <table class="Regular" summary=
+    <table class="Regular numbered simple" summary=
     "This table defines the fdAT chunk">
+    <caption>fdAT chunk contents</caption>
+
+    <tr>
+    <th>Name</th>
+    <th>Size</th>
+    </tr>
+
     <tr>
     <td class="Regular">`sequence_number`</td>
     <td class="Regular">4 bytes</td>
@@ -5709,16 +5803,16 @@ be used to construct the <a href="#chrm-primary-chromaticities-and-white-point">
 
 <p>Video created with recent video equipment probably uses the
 CCIR 709 primaries and D65 white point [[ITU-R BT.709]],
-which are given in <a href="#12-table121"><span class=
-"tabref">Table 12.1</span></a>.</p>
+which are given in <a href="#12-table121">
+</a>.</p>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <!-- Maintain a fragment named "12-table121" to preserve incoming links to it -->
-<table id="12-table121" class="Regular" summary=
+<table id="12-table121" class="Regular numbered simple" summary=
 "CCIR 709 primaries and D65 whitepoint">
-<caption><b>Table 12.1 &mdash; CCIR 709
-primaries and D65 whitepoint</b></caption>
+<caption>CCIR 709
+primaries and D65 whitepoint</caption>
 
 <tr>
 <th>&nbsp;</th>
@@ -5746,14 +5840,14 @@ primaries and D65 whitepoint</b></caption>
 </table>
 
 <p>An older but still very popular video standard is SMPTE-C [[SMPTE 170M]]
-given in <a href="#12-table122"><span class="tabref">Table
-12.2</span></a>.</p>
+given in <a href="#12-table122">
+</a>.</p>
 
 <!-- Maintain a fragment named "12-table122" to preserve incoming links to it -->
-<table id="12-table122" class="Regular" summary=
+<table id="12-table122" class="Regular numbered simple" summary=
 "CSMPTE-C video standard">
-<caption><b>Table 12.2 &mdash; SMPTE-C
-video standard</b></caption>
+<caption>SMPTE-C
+video standard</caption>
 
 <tr>
 <th>&nbsp;</th>
@@ -8232,15 +8326,20 @@ PNG chunks. (See also ISO 3309 [[ISO 3309]] or ITU-T V.42 [[ITU-T V.42]] for a
 formal specification.)</p>
 
 <p>The sample code is in the ISO C [[ISO 9899]] programming language. The
-hints in <a href="#D-tabled1"><span class="tabref">Table
-D.1</span></a> may help non-C users to read the code more
+hints in <a href="#D-tabled1">
+</a> may help non-C users to read the code more
 easily.</p>
 
 <!-- Maintain a fragment named "D-tabled1" to preserve incoming links to it -->
-<table id="D-tabled1" class="Regular" summary=
+<table id="D-tabled1" class="Regular numbered simple" summary=
 "This table gives hints for reading the CRC code">
-<caption><b>Table D.1 &mdash; Hints for
-reading ISO C code</b></caption>
+<caption>Hints for
+reading ISO C code</caption>
+
+<tr>
+<th>Operator</th>
+<th>Description</th>
+</tr>
 
 <tr>
 <td class="Regular"><tt>&amp;</tt> </td>

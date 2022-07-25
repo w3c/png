@@ -2937,30 +2937,41 @@ way as the image data.</p>
 <p>Filters may use the original values of the following bytes to
 generate the new byte value:</p>
 
-<table class="Regular" summary=
-"This table defines the variables usedin table 9.1">
+<table class="Regular numbered simple" summary=
+"This table defines the variables used in the filter types table">
+<caption>Named filter bytes</caption>
 <tr>
-<td class="Regular"><tt>x</tt> </td>
+  <th>Name</th>
+  <th>Definition</th>
+</tr>
+<tr>
+<td class="Regular">x </td>
 <td class="Regular">the byte being filtered;</td>
 </tr>
 
 <tr>
-<td class="Regular"><tt>a</tt> </td>
+<td class="Regular">a </td>
 <td class="Regular">the byte corresponding to x in the pixel immediately before the pixel containing x (or the byte immediately before x, when the bit depth is less than 8);</td>
 </tr>
 
 <tr>
-<td class="Regular"><tt>b</tt> </td>
+<td class="Regular">b </td>
 <td class="Regular">the byte corresponding to x in the previous scanline;</td>
 </tr>
 
 <tr>
-<td class="Regular"><tt>c</tt> </td>
+<td class="Regular">c </td>
 <td class="Regular">the byte corresponding to b in the pixel immediately before the pixel containing b (or the byte immediately before b, when the bit depth is less than 8).</td>
 </tr>
 </table>
 
-<p><a href="#paethpredictor-function"></a> shows the relative positions of the bytes <tt>x</tt>,
+<figure id="integer-representation-in-png">
+  <object id="figure72" data="figures/filter-bytes.svg" type="image/svg+xml" style="width: 12vw">
+  </object>
+  <figcaption>Positions of filter bytes a, b and c relative to x</figcaption>
+  </figure>
+
+<p><a href="#integer-representation-in-png"></a> shows the relative positions of the bytes <tt>x</tt>,
 <tt>a</tt>, <tt>b</tt>,
 and <tt>c</tt>.</p>
 

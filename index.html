@@ -2900,7 +2900,14 @@ empty.</p>
 types</h2>
 
 <p>Filtering transforms the PNG image with the goal of
-improving compression. PNG allows for a number of filter methods.
+improving compression.
+The overall process is depicted in
+<a href="#encoding-png-image"></a>
+while the specifics of serializing and filtering a scanline
+are shown in <a href="#serializing-and-filtering-scanline"></a>.
+</p>
+
+<p>PNG allows for a number of filter methods.
 All the reduced
 images in an interlaced image shall use a single filter method.
 Only filter method 0

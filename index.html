@@ -468,7 +468,7 @@ Colour types are sums of the following values: 1 (
 permitted values of colour type are 0, 2, 3, 4, and 6.</dd>
 
 <!-- Maintain a fragment named "3composite" to preserve incoming links to it -->
-<dt id="3composite"><dfn>composite (verb)</dfn></dt>
+<dt id="3composite"><dfn data-lt="composited|composite">composite (verb)</dfn></dt>
 
 <dd>to form an image by merging a foreground image and a
 background image, using transparency information to determine
@@ -630,7 +630,7 @@ integers).</dd>
 <dt><dfn>output buffer</dfn></dt>
 
 <dd>The output buffer is a pixel array
-  with dimensions specified by the width and height parameters of the PNG `IHDR` chunk. Conceptually, each frame is constructed in the output buffer before being composited onto the canvas. The contents of the output buffer are available to the decoder. The corners of the output buffer are mapped to the corners of the canvas. </dd>
+  with dimensions specified by the width and height parameters of the PNG `IHDR` chunk. Conceptually, each frame is constructed in the output buffer before being <a>composited</a> onto the <a>canvas</a>. The contents of the output buffer are available to the decoder. The corners of the output buffer are mapped to the corners of the <a>canvas</a>. </dd>
 
 
 <!-- Maintain a fragment named "3palette" to preserve incoming links to it -->
@@ -677,7 +677,7 @@ consists of a <a>PNG signature</a></a> followed by a sequence of
 
 <dd>process or device which reconstructs the
 <a>reference image</a> from a <a>PNG datastream</a> and generates a
-corresponding delivered image.</dd>
+corresponding <a>delivered image</a>.</dd>
 
 <!-- Maintain a fragment named "3PNGeditor" to preserve incoming links to it -->
 <dt id="3PNGeditor"><dfn>PNG editor</dfn></dt>
@@ -828,9 +828,8 @@ nominal white value.</dd>
 <!-- Maintain a fragment named "3zlib" to preserve incoming links to it -->
 <dt id="3zlib"><dfn>zlib</dfn></dt>
 
-<dd>particular format for data that have been compressed using <a
-href="#3deflate"><span class=
-"Definition">deflate</span></a>-style compression. Also the name
+<dd>particular format for data that have been compressed using
+<a>deflate</a>-style compression. Also the name
 of a library containing a sample implementation of this method.
 The format is defined in [[rfc1950]].</dd>
 </dl>
@@ -990,9 +989,9 @@ encoder generates a PNG datastream from the PNG image. A PNG
 decoder takes the PNG datastream and recreates the PNG
 image.</li>
 
-<li>The <i>delivered image</i> is constructed from the PNG image
+<li>The <a>delivered image</a> is constructed from the PNG image
 obtained by decoding a PNG datastream. No specific format is
-specified for the delivered image. A viewer presents an image to
+specified for the <a>delivered image</a>. A viewer presents an image to
 the user as close to the appearance of the original source image
 as it can achieve.</li>
 </ol>
@@ -2531,14 +2530,14 @@ greyscale or RGB samples of the pixel. An alpha value of zero
 represents full transparency, and a value of
 2<sup>sampledepth</sup> - 1 represents full opacity. Intermediate
 values indicate partially transparent pixels that can be
-composited against a background image to yield the delivered
+<a>composited</a> against a background image to yield the delivered
 image.</p>
 
 <p>The colour values in a pixel are not premultiplied by the
 alpha value assigned to the pixel. This rule is sometimes called
 "unassociated" or "non-premultiplied" alpha. (Another common
 technique is to store sample values premultiplied by the alpha
-value; in effect, such an image is already composited against a
+value; in effect, such an image is already <a>composited</a> against a
 black background. PNG does <strong>not</strong> use premultiplied alpha.
 In consequence an image editor can take a PNG image and easily
 change its transparency.) See <a href="#12Alpha-channel-creation"></a>
@@ -2978,13 +2977,13 @@ encoder and decoder.</p>
 <p>Only PNG compression method 0 is defined by this International
 Standard. Other values of compression method are reserved for
 future standardization. PNG compression method 0 is
-deflate/inflate compression with a sliding window
+<a>deflate</a> compression with a sliding window
 (which is an upper bound on the distances appearing in the
-deflate stream) of at most
-32768 bytes. Deflate compression is an LZ77 derivative
+<a>deflate</a> stream) of at most
+32768 bytes. <a>Deflate</a> compression is an LZ77 derivative
 [[Ziv-Lempel]].</p>
 
-<p>Deflate-compressed datastreams within PNG are stored in the
+<p><a>Deflate</a>-compressed datastreams within PNG are stored in the
 "zlib" format, which has the structure:</p>
 
 <table class="Regular"  summary=
@@ -3014,7 +3013,7 @@ deflate stream) of at most
 specification [[rfc1950]].</p>
 
 <p>For PNG compression method 0, the zlib compression
-method/flags code shall specify method code 8 (deflate
+method/flags code shall specify method code 8 (<a>deflate</a>
 compression) and an LZ77 window size of not more than 32768
 bytes. The zlib compression method number is not the same as the
 PNG compression method number in the <a href=
@@ -3035,14 +3034,14 @@ LZ77-compressed data encoded with custom Huffman codes. A marker
 bit in the final block identifies it as the last block, allowing
 the decoder to recognize the end of the compressed datastream.
 Further details on the compression algorithm and the encoding are
-given in the deflate specification [[rfc1951]].</p>
+given in the <a>deflate</a> specification [[rfc1951]].</p>
 
 <p>The check value stored at the end of the zlib datastream is
 calculated on the uncompressed data represented by the
 datastream. The algorithm used to calculate this is not the same
 as the CRC calculation used for PNG chunk CRC field values. The
 zlib check value is useful mainly as a cross-check that the
-deflate and inflate algorithms are implemented correctly.
+<a>deflate</a> algorithms are implemented correctly.
 Verifying the individual PNG chunk CRCs provides confidence that
 the PNG datastream has been transmitted undamaged.</p>
 </section>
@@ -3063,7 +3062,7 @@ datastream decompresses to filtered image data.</p>
 href="#11IDAT"><span class="chunk">IDAT</span></a> chunks are
 arbitrary and can fall anywhere in the zlib datastream. There is
 not necessarily any correlation between <a href="#11IDAT"><span
-class="chunk">IDAT</span></a> chunk boundaries and deflate block
+class="chunk">IDAT</span></a> chunk boundaries and <a>deflate</a> block
 boundaries or any other feature of the zlib data. For example, it
 is entirely possible for the terminating zlib check value to be
 split across <a href="#11IDAT"><span class=
@@ -3071,7 +3070,7 @@ split across <a href="#11IDAT"><span class=
 
 <p>Similarly, there is no required correlation between the
 structure of the image data (i.e., scanline boundaries) and
-deflate block boundaries or <a href="#11IDAT"><span class=
+<a>deflate</a> block boundaries or <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a> chunk boundaries. The complete filtered
 PNG image is represented by a single zlib datastream that is
 stored in a number of <a href="#11IDAT"><span class=
@@ -3258,7 +3257,7 @@ sample depth is always 8 bits (see <a href=
 
 <p>Compression method is a single-byte integer that indicates the
 method used to compress the image data. Only compression method 0
-(deflate/inflate compression with a sliding window of at most
+(<a>deflate</a> compression with a sliding window of at most
 32768 bytes) is defined in this specification. All
 conforming PNG images shall be compressed with this scheme.</p>
 
@@ -3705,7 +3704,7 @@ only printable Latin-1 characters and spaces (only character
 codes 32-126 and 161-255 decimal are allowed). Leading, trailing,
 and consecutive spaces are not permitted. The only compression
 method defined in this specification is method 0 (zlib
-datastream with deflate compression, see <a href=
+datastream with <a>deflate</a> compression, see <a href=
 '#10CompressionOtherUses'></a>). The compression method entry is followed
 by a compressed profile that makes up the remainder of the chunk.
 Decompression of this datastream yields the embedded ICC
@@ -4263,7 +4262,7 @@ and <a href="#ztxt-compressed-textual-data"><span class="chunk">zTXt</span></a> 
 the text string associated with a keyword is restricted to the
 Latin-1 character set plus the linefeed character. Text strings
 in <a href="#ztxt-compressed-textual-data"><span class="chunk">zTXt</span></a> are
-compressed into zlib datastreams using deflate compression (see
+compressed into zlib datastreams using <a>deflate</a> compression (see
 <a href='#10CompressionOtherUses'></a>). The <a href="#itxt-international-textual-data"><span
 class="chunk">iTXt</span></a> chunk can be used to convey
 characters outside the Latin-1 set. It uses the UTF-8 encoding [[rfc3629]].
@@ -4373,7 +4372,7 @@ chunk is recommended for storing large blocks of text.</p>
 <a href="#11tEXt"></a>). The keyword is not
 compressed. The compression method entry defines the compression
 method used. The only value defined in this International
-Standard is 0 (deflate/inflate compression). Other values are
+Standard is 0 (<a>deflate</a> compression). Other values are
 reserved for future standardization. The compression method entry is
 followed by the compressed text datastream that makes up the
 remainder of the chunk. For compression method 0, this datastream
@@ -4451,7 +4450,7 @@ International textual data</h2>
 compressed text. Only the text field may be compressed. The
 compression method entry defines the compression method used. The
 only compression method defined in this specification is
-0 (zlib datastream with deflate compression, see <a href=
+0 (zlib datastream with <a>deflate</a> compression, see <a href=
 '#10CompressionOtherUses'></a>). For uncompressed text, encoders shall
 set the compression method to 0, and decoders shall ignore
 it.</p>
@@ -4807,7 +4806,7 @@ values even when the PNG image does not use transparency.</p>
 
 <p>Each frequency value is proportional to the fraction of
 the pixels in the image for which that palette entry
-is the closest match in RGBA space, before the image has been composited against any
+is the closest match in RGBA space, before the image has been <a>composited</a> against any
 background. The exact scale factor is chosen by the PNG encoder;
 it is recommended that the resulting range of individual values
 reasonably fills the range 0 to 65535. A PNG encoder may
@@ -5211,7 +5210,7 @@ the image data are changed.</p>
   including alpha,
   overwrite the current contents of the frame's output buffer region.
   If `blend_op` is `APNG_BLEND_OP_OVER`
-  the frame should be composited onto the output buffer
+  the frame should be <a>composited</a> onto the output buffer
   based on its alpha,
   using a simple OVER operation as described in
   <a href="#13Alpha-channel-processing">Alpha Channel Processing</a>.
@@ -5347,7 +5346,7 @@ the image data are changed.</p>
       and their `x_offset` and `y_offset` values
       must be scaled in the same way as the main image.
       Conceptually, such scaling occurs while mapping
-      the output buffer onto the canvas.
+      the output buffer onto the <a>canvas</a>.
     </p>
 
 
@@ -5903,7 +5902,7 @@ approximate usage of each RGBA palette entry if no dithering is
 applied. (These counts will often be available "for free" as a
 consequence of developing the suggested palette.) Because the
 suggested palette includes transparency information, it should be
-computed for the uncomposited image.</p>
+computed for the un-<a>composited</a> image.</p>
 
 <p>Even for indexed-colour images, <a href="#splt-suggested-palette"><span class=
 "chunk">sPLT</span></a> can be used to define alternative reduced
@@ -5963,10 +5962,10 @@ entries.</li>
 <li>In a PNG datastream of colour type 6 (truecolour with alpha
 channel), the <a href="#11PLTE"><span class=
 "chunk">PLTE</span></a> chunk represents a palette already
-composited against the <a href="#bkgd-background-colour"><span class=
+<a>composited</a> against the <a href="#bkgd-background-colour"><span class=
 "chunk">bKGD</span></a> colour, so it is useful only for display
 against that background colour. The <a href="#splt-suggested-palette"><span
-class="chunk">sPLT</span></a> chunk provides an uncomposited
+class="chunk">sPLT</span></a> chunk provides an un-<a>composited</a>
 palette, which is useful for display against backgrounds chosen
 by the PNG decoder.</li>
 
@@ -6296,7 +6295,7 @@ syntax errors as indications of corruption (see also <a href="#13Error-checking"
 "chunk">zTXt</span></a>, <a href="#itxt-international-textual-data"><span class=
 "chunk">iTXt</span></a>, <a href="#iccp-embedded-icc-profile"><span class=
 "chunk">iCCP</span></a>) could lead to buffer overruns.
-Implementors of deflate decompressors should guard against this
+Implementors of <a>deflate</a> decompressors should guard against this
 possibility.</p>
 
 <p>
@@ -6576,7 +6575,7 @@ class="chunk">IDAT</span></a> chunk boundaries have no semantic
 significance and can occur at any point in the compressed
 datastream. There is no required correlation between the
 structure of the image data (for example, scanline boundaries) and
-deflate block boundaries or <a href="#11IDAT"><span class=
+<a>deflate</a> block boundaries or <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a> chunk boundaries. The complete image data
 is represented by a single zlib datastream that is stored in some
 number of <a href="#11IDAT"><span class="chunk">IDAT</span></a>
@@ -7025,7 +7024,7 @@ transparent, even if it happens to match the colour given by the
 in the case of an indexed-colour image, refers to a palette index
 that is marked as transparent by the <a href="#trns-transparency"><span
 class="chunk">tRNS</span></a> chunk). Otherwise one would have to
-imagine something "behind the background" to composite against.
+imagine something "behind the background" to <a>composite</a> against.
 The background colour is either used as background or ignored; it
 is not an intermediate layer between the PNG image and some other
 background.</p>
@@ -7043,7 +7042,7 @@ partially-transparent pixels are present.</p>
 <h2>Alpha channel
 processing</h2>
 
-<p>The alpha channel can be used to composite a foreground image
+<p>The alpha channel can be used to <a>composite</a> a foreground image
 against a background image. The PNG datastream defines the
 foreground image and the transparency mask, but not the
 background image. PNG decoders are <strong>not</strong> required to
@@ -7051,7 +7050,7 @@ support this most general case. It is expected that most will be
 able to support compositing against a single background
 colour.</p>
 
-<p>The equation for computing a composited sample value is:</p>
+<p>The equation for computing a <a>composited</a> sample value is:</p>
 
 <pre>
 output = alpha * foreground + (1-alpha) * background
@@ -7236,7 +7235,7 @@ guarantee no overflow or underflow.</p>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <p>When displaying a PNG image with full alpha channel, it is
-important to be able to composite the image against some
+important to be able to <a>composite</a> the image against some
 background, even if it is only black. Ignoring the alpha channel
 will cause PNG images that have been converted from an
 associated-alpha representation to look wrong. (Of course, if the
@@ -7282,7 +7281,7 @@ converted using sample depth rescaling (see <a href=
 "#13Sample-depth-rescaling"></a>).</p>
 
 <p>When the background is a solid colour, the viewer should
-composite the image and the suggested palette against that
+<a>composite</a> the image and the suggested palette against that
 colour, then quantize the resulting image to the resulting RGB
 palette. When the image uses transparency and the background is
 not a solid colour, no suggested palette is likely to be
@@ -7315,7 +7314,7 @@ results may not be very good.</p>
 <p>If the viewer presents a transparent truecolour image against
 a background that is more complex than a uniform colour, it is
 unlikely that the suggested palette will be optimal for the
-composite image. In this case it is best to perform a truecolour
+<a>composite</a> image. In this case it is best to perform a truecolour
 compositing step on the truecolour PNG image and background
 image, then colour-quantize the resulting image.</p>
 
@@ -8325,8 +8324,8 @@ specifications</h2>
 This page is a central location for current information about PNG
 and PNG-related tools.</p>
 
-<p>Additional documentation and portable C code for deflate,
-inflate, and an optimized implementation of the CRC algorithm are
+<p>Additional documentation and portable C code for <a>deflate</a>,
+and an optimized implementation of the CRC algorithm are
 available from the zlib web site,
 <a href=
 "http://www.zlib.org/"><code>http://www.zlib.org/</code></a>.</p>

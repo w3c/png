@@ -348,8 +348,7 @@ definitions apply.</p>
 <!-- Maintain a fragment named "3alpha" to preserve incoming links to it -->
 <dt><dfn id="3alpha">alpha</dfn></dt>
 
-<dd>a value representing a <span class=
-"Definition"><a>pixel</a></span> degree of opacity. The more
+<dd>a value representing a <a>pixel</a> degree of opacity. The more
 opaque a pixel, the more it hides the background against which
 the image is presented. Zero alpha represents a completely
 transparent pixel, maximum alpha represents a completely opaque
@@ -358,46 +357,34 @@ pixel.</dd>
 <dt><dfn id="3alphaCompaction">alpha compaction</dfn></dt>
 
 <dd>an implicit representation of transparent
-<span class="Definition"><a>pixels</a></span>. If every
-pixel with a specific colour or <span
-class="Definition"><a>greyscale</a></span> value is fully
+<a>pixels</a>. If every
+pixel with a specific colour or <a>greyscale</a> value is fully
 transparent and all other pixels are fully opaque, the
-<span class="Definition"><a>alpha</a></span>
-<span class="Definition"><a>channel</a></span> may be
+<a>alpha</a>
+<a>channel</a> may be
 represented implicitly.</dd>
 
 <!-- Maintain a fragment named "3alphaSeparation" to preserve incoming links to it -->
 <dt><dfn id="3alphaSeparation">alpha separation</dfn></dt>
 
-<dd>separating an <span class=
-"Definition"><a>alpha</a></span> <span class=
-"Definition"><a>channel</a></span> in which every
-<span class="Definition"><a>pixel</a></span> is fully
+<dd>separating an <a>alpha</a> <a>channel</a> in which every
+<a>pixel</a> is fully
 opaque; all alpha values are the maximum value.
 The fact that all pixels are fully opaque is represented implicitly.
 </dd>
 
 <!-- Maintain a fragment named "3alphaTable" to preserve incoming links to it -->
-<dfn id="3alphaTable">
-<dt>alpha table</dt></dfn>
+<dt id="3alphaTable"><dfn>alpha table</dfn></dt>
 
-<dd>indexed table of <span class=
-"Definition"><a>alpha</a></span> <span class=
-"Definition"><a>sample</a></span> values, which in an <span class=
-"Definition"><a>indexed-colour</a></span> image defines the alpha
-sample values of the <span class=
-"Definition"><a>reference image</a></span>. The alpha table has the
-same number of entries as the <span class=
-"Definition"><a>palette</a></span>.</dd>
+<dd>indexed table of <a>alpha</a> <a>sample</a> values, which in an <a>indexed-colour</a> image defines the alpha
+sample values of the <a>reference image</a>. The alpha table has the
+same number of entries as the <a>palette</a>.</dd>
 
 <!-- Maintain a fragment named "3ancillaryChunk" to preserve incoming links to it -->
-<dfn id="3ancillaryChunk">
-<dt>ancillary chunk</dt></dfn>
+<dt id="3ancillaryChunk"><dfn>ancillary chunk</dfn></dt>
 
-<dd>class of <span class=
-"Definition"><a>chunk</a></span></a> that provides additional
-information. A <span class=
-"Definition"><a>PNG decoder</a></span>, without processing an
+<dd>class of <a>chunk</a></a> that provides additional
+information. A <a>PNG decoder</a>, without processing an
 ancillary chunk, can still produce a meaningful image, though not
 necessarily the best possible image.
 <!-- agreed: don't need to define a bit -->
@@ -413,22 +400,16 @@ necessarily the best possible image.
   </dd>
 
 <!-- Maintain a fragment named "3bitDepth" to preserve incoming links to it -->
-<dfn id="3bitDepth">
-<dt>bit depth</dt></dfn>
+<dt id="3bitDepth"><dfn>bit depth</dfn></dt>
 
-<dd>for <span class=
-"Definition"><a>indexed-colour</a></span> images, the number of bits
-per <span class=
-"Definition"><a>palette</a></span> index. For other images, the
-number of bits per <span class=
-"Definition"><a>sample</a></span> in the image. This is the value
+<dd>for <a>indexed-colour</a> images, the number of bits
+per <a>palette</a> index. For other images, the
+number of bits per <a>sample</a> in the image. This is the value
 that appears in the <span class=
-"chunk"><a href="#11IHDR"></a></span> <span class=
-"Definition"><a>chunk</a></span>.</dd>
+"chunk"><a href="#11IHDR"></a></span> <a>chunk</a>.</dd>
 
 <!-- Maintain a fragment named "3byte" to preserve incoming links to it -->
-<dfn id="3byte">
-<dt>byte</dt></dfn>
+<dt id="3byte"><dfn>byte</dfn></dt>
 
 <dd>8 bits; also called an octet. The highest bit (value 128) of
 a byte is numbered bit 7; the lowest bit (value 1) is numbered
@@ -437,16 +418,12 @@ It represents an unsigned integer limited to the range 0 to
 2<sup>8</sup>-1.</dd>
 
 <!-- Maintain a fragment named "3byteOrder" to preserve incoming links to it -->
-<dfn id="3byteOrder">
-<dt>byte order</dt></dfn>
+<dt id="3byteOrder"><dfn>byte order</dfn></dt>
 
-<dd>ordering of <span class=
-"Definition"><a>bytes</a></span> for multi-byte data values within a
-<span class="Definition"><a>PNG file</a></span>
-or <span class="Definition"><a href="#4Concepts.Format"></a>
-</span>. PNG uses
-<span class="Definition"><a>network byte
-		order</a></span>.</dd>
+<dd>ordering of <a>bytes</a> for multi-byte data values within a
+<a>PNG file</a>
+or <a>PNG datastream</a>. PNG uses
+<a>network byte order</a>.</dd>
 
 <dt>
 <dt>canvas</dt></dfn>
@@ -457,57 +434,43 @@ or <span class="Definition"><a href="#4Concepts.Format"></a>
   it may be used to fill the canvas if there is no preferable background</dd>
 
 <!-- Maintain a fragment named "3channel" to preserve incoming links to it -->
-<dfn id="3channel">
-<dt>channel</dt></dfn>
+<dt id="3channel"><dfn>channel</dfn></dt>
 
-<dd>array of all per-<span class=
-"Definition"><a>pixel</a></span> information of a particular kind
-within a <span class=
-"Definition"><a>reference image</a></span>. There are five kinds of
-information: red, green, blue, <span class=
-"Definition"><a>greyscale</a></span>, and <span
-class="Definition"><a>alpha</a></span>. For example the alpha
+<dd>array of all per-<a>pixel</a> information of a particular kind
+within a <a>reference image</a>. There are five kinds of
+information: red, green, blue, <a>greyscale</a>, and <a>alpha</a>. For example the alpha
 channel is the array of alpha values within a reference
 image.</dd>
 
 <!-- Maintain a fragment named "3chromaticity" to preserve incoming links to it -->
-<dfn id="3chromaticity">
-<dt>chromaticity</dt></dfn>
+<dt id="3chromaticity"><dfn>chromaticity</dfn></dt>
 
 <dd>pair of CIE <i>x,y</i> values [[COLORIMETRY]] that precisely specify a colour,
 except for the brightness information.</dd>
 
 <!-- Maintain a fragment named "3chunk" to preserve incoming links to it -->
-<dfn id="3chunk">
-<dt>chunk</dt></dfn>
+<dt id="3chunk"><dfn>chunk</dfn></dt>
 
-<dd>section of a <span class=
-"Definition"><a href="#4Concepts.Format"></a></span>. Each chunk has a chunk
+<dd>section of a <a>PNG datastream</a>. Each chunk has a chunk
 type. Most chunks also include data. The format and meaning of
 the data within the chunk are determined by the chunk type.
 Each chunk is either a
-<span class=
-"Definition"><a>critical chunk</a></span> or an
-<span class=
-"Definition"><a>ancillary chunk</a></span>.
+<a>critical chunk</a> or an
+<a>ancillary chunk</a>.
 </dd>
 
 <!-- Maintain a fragment named "3colourType" to preserve incoming links to it -->
-<dfn id="3colourType">
-<dt>colour type</dt></dfn>
+<dt id="3colourType"><dfn>colour type</dfn></dt>
 
-<dd>value denoting how colour and <span class=
-"Definition"><a>alpha</a></span> are specified in the
-<span class="Definition"><a>PNG image</a></span>.
+<dd>value denoting how colour and <a>alpha</a> are specified in the
+<a>PNG image</a>.
 Colour types are sums of the following values: 1 (
-<span class="Definition"><a>palette</a></span> used), 2
-(<span class=
-"Definition"><a>truecolour</a></span> used), 4 (alpha used). The
+<a>palette</a> used), 2
+(<a>truecolour</a> used), 4 (alpha used). The
 permitted values of colour type are 0, 2, 3, 4, and 6.</dd>
 
 <!-- Maintain a fragment named "3composite" to preserve incoming links to it -->
-<dfn id="3composite">
-<dt>composite (verb)</dt></dfn>
+<dt id="3composite"><dfn>composite (verb)</dfn></dt>
 
 <dd>to form an image by merging a foreground image and a
 background image, using transparency information to determine
@@ -516,35 +479,28 @@ foreground image is said to be "composited against" the
 background.</dd>
 
 <!-- Maintain a fragment named "3criticalChunk" to preserve incoming links to it -->
-<dfn id="3criticalChunk">
-<dt>critical chunk</dt></dfn>
+<dt id="3criticalChunk"><dfn>critical chunk</dfn></dt>
 
-<dd><span class="Definition"><a>chunk</a></span>
+<dd><a>chunk</a>
 that <!--must be understood and processed by the decoder-->
  shall be understood and processed by the decoder in order to
-produce a meaningful image from a <span
-class="Definition"><a href="#4Concepts.Format"></a></span>.</dd>
+produce a meaningful image from a <a>PNG datastream</a>.</dd>
 
 <!-- Maintain a fragment named "3datastream" to preserve incoming links to it -->
-<dfn id="3datastream">
-<dt>datastream</dt></dfn>
+<dt id="3datastream"><dfn>datastream</dfn></dt>
 
-<dd>sequence of <span class=
-"Definition"><a>bytes</a></span>. This term is used rather than
+<dd>sequence of <a>bytes</a>. This term is used rather than
 "file" to describe a byte sequence that may be only a portion of
 a file. It is also used to emphasize that the sequence of bytes
 might be generated and consumed "on the fly", never appearing in
 a stored file at all.</dd>
 
 <!-- Maintain a fragment named "3deflate" to preserve incoming links to it -->
-<dfn id="3deflate">
-<dt>deflate</dt></dfn>
+<dt id="3deflate"><dfn>deflate</dfn></dt>
 
 <dd>name of a particular compression algorithm. This algorithm is
 used, in compression mode 0, in conforming
-<span class="Definition"><a>PNG
-datastreams</a></span>. Deflate is a member of the <a href=
-"#3LZ77"><span class="Definition">LZ77</span></a> family of
+<<a>PNG datastreams</a>. Deflate is a member of the <a>LZ77</a> family of
 compression methods. It is defined in [[rfc1951]].</dd>
 
 
@@ -552,40 +508,33 @@ compression methods. It is defined in [[rfc1951]].</dd>
 <!-- ************Page Break******************* -->
 
 <!-- Maintain a fragment named "3deliveredImage" to preserve incoming links to it -->
-<dfn id="3deliveredImage">
-<dt>delivered image</dt></dfn>
+<dt id="3deliveredImage"><dfn>delivered image</dfn></dt>
 
 <dd>image constructed from a decoded
-<span class="Definition"><a>PNG
-datastream</a></span>.</dd>
+<a>PNG datastream</a>.</dd>
 
 <!-- Maintain a fragment named "3filter" to preserve incoming links to it -->
-<dfn id="3filter">
-<dt>filter</dt></dfn>
+<dt id="3filter"><dfn>filter</dfn></dt>
 
-<dd>transformation applied to an array of <a href=
-"#3scanline"><span class="Definition">scanlines</span></a> with
+<dd>transformation applied to an array of <a>scanlines</a> with
 the aim of improving their compressibility. PNG uses only
 lossless (reversible) filter algorithms.</dd>
 
 <!-- need a definition of frame -->
 
 <!-- Maintain a fragment named "3frameBuffer" to preserve incoming links to it -->
-<dfn id="3frameBuffer">
-<dt>frame buffer</dt></dfn>
+<dt id="3frameBuffer"><dfn>frame buffer</dfn></dt>
 
 <dd>the final digital storage area for the image shown by most
 types of computer display. Software causes an image to appear on
 screen by loading the image into the frame buffer.</dd>
 
-<dfn>
-<dt>fully transparent black</dt></dfn>
+<dt><dfn>fully transparent black</dfn></dt>
 
 <dd>the red, green, blue and alpha components are all set to zero.</dd>
 
 <!-- Maintain a fragment named "3gamma" to preserve incoming links to it -->
-<dfn id="3gamma">
-<dt>gamma</dt></dfn>
+<dt id="3gamma"><dfn>gamma</dfn></dt>
 
 <dd>exponent that describes approximations to certain non-linear
 transfer functions encountered in image capture and reproduction.
@@ -604,42 +553,32 @@ are scaled to the range 0 to 1.
 <code>0</code> and <code>2<sup>bit depth</sup> - 1</code>, respectively.</dd>
 
 <!-- Maintain a fragment named "3greyscale" to preserve incoming links to it -->
-<dfn id="3greyscale">
-<dt>greyscale</dt></dfn>
+<dt id="3greyscale"><dfn>greyscale</dfn></dt>
 
-<dd>image representation in which each <span
-class="Definition"><a>pixel</a></span></a> is defined by a single
-<span class="Definition"><a>sample</a></span> of
+<dd>image representation in which each <a>pixel</a></a> is defined by a single
+<a>sample</a> of
 colour information, representing overall
-<span class="Definition"><a>luminance</a></span> (on a
+<a>luminance</a> (on a
 scale from black to white), and optionally an
-<span class="Definition"><a>alpha</a></span> sample (in
+<a>alpha</a> sample (in
 which case it is called greyscale with alpha).</dd>
 
 <!-- Maintain a fragment named "3imageData" to preserve incoming links to it -->
-<dfn id="3imageData">
-<dt>image data</dt></dfn>
+<dt id="3imageData"><dfn>image data</dfn></dt>
 
-<dd>1-dimensional array of <span class=
-"Definition"><a>scanlines</a></span> within an image.</dd>
+<dd>1-dimensional array of <a>scanlines</a> within an image.</dd>
 
 <!-- Maintain a fragment named "3indexedColour" to preserve incoming links to it -->
-<dfn id="3indexedColour">
-<dt>indexed-colour</dt></dfn>
+<dt id="3indexedColour"><dfn>indexed-colour</dfn></dt>
 
-<dd>image representation in which each <span
-class="Definition"><a>pixel</a></span> of the original image is
-represented by a single index into a <span
-class="Definition"><a>palette</a></span>. The selected palette entry
+<dd>image representation in which each <a>pixel</a> of the original image is
+represented by a single index into a <a>palette</a>. The selected palette entry
 defines the actual colour of the pixel.</dd>
 
 <!-- Maintain a fragment named "3indexing" to preserve incoming links to it -->
-<dfn id="3indexing">
-<dt>indexing</dt></dfn>
+<dt id="3indexing"><dfn>indexing</dfn></dt>
 
-<dd>representing an image by a <span class=
-"Definition"><a>palette</a></span>, an <span
-class="Definition"><a>alpha table</a></span>, and an array of
+<dd>representing an image by a <a>palette</a>, an <a>alpha table</a>, and an array of
 indices pointing to entries in the palette and alpha table.</dd>
 
 <!-- Maintain a fragment named "3interlacedPNGimage" to preserve incoming links to it -->
@@ -647,11 +586,9 @@ indices pointing to entries in the palette and alpha table.</dd>
 <dt>interlaced PNG
 image</dt></dfn>
 
-<dd>sequence of <span class=
-"Definition"><a>reduced images</a></span> generated from the
-<span class="Definition"><a>PNG image</a></span>
-by <span class="Definition"><a>pass
-extraction</a></span>.</dd>
+<dd>sequence of <a>reduced images</a> generated from the
+<a>PNG image</a>
+by <a>pass extraction</a>.</dd>
 
 <!-- Maintain a fragment named "3losslessCompression" to preserve incoming links to it -->
 <dfn id="3losslessCompression">
@@ -662,26 +599,22 @@ compression</dt></dfn>
 original data exactly, bit-for-bit.</dd>
 
 <!-- Maintain a fragment named "3lossyCompression" to preserve incoming links to it -->
-<dfn id="3lossyCompression">
-<dt>lossy compression</dt></dfn>
+<dt id="3lossyCompression"><dfn>lossy compression</dfn></dt>
 
 <dd>method of data compression that permits reconstruction of the
 original data approximately, rather than exactly.</dd>
 
 <!-- Maintain a fragment named "3luminance" to preserve incoming links to it -->
-<dfn id="3luminance">
-<dt>luminance</dt></dfn>
+<dt id="3luminance"><dfn>luminance</dfn></dt>
 
 <dd>formal definition of luminance is in [[COLORIMETRY]].
 Informally it is the perceived brightness, or
-<span class="Definition"><a>greyscale</a></span>
-level, of a colour. Luminance and <span
-class="Definition"><a>chromaticity</a></span> together fully define
+<a>greyscale</a>
+level, of a colour. Luminance and <a>chromaticity</a> together fully define
 a perceived colour.</dd>
 
 <!-- Maintain a fragment named "3LZ77" to preserve incoming links to it -->
-<dfn id="3LZ77">
-<dt>LZ77</dt></dfn>
+<dt id="3LZ77"><dfn>LZ77</dfn></dt>
 
 <dd>data compression algorithm described by Ziv and Lempel in
 their 1977 paper [[Ziv-Lempel]].</dd>
@@ -695,59 +628,44 @@ their 1977 paper [[Ziv-Lempel]].</dd>
 <dt>network byte
 order</dt></dfn>
 
-<dd><span class="Definition"><a>byte
-order</a></span> in which the most significant byte comes first,
+<dd><a>byte order</a> in which the most significant byte comes first,
 then the less significant bytes in descending order of
-significance (<span class=
-"Definition"><a>MSB</a></span> <span class=
-"Definition"><a>LSB</a></span> for two-byte integers,
-<span class="Definition"><a>MSB</a></span> B2 B1
-<span class="Definition"><a>LSB</a></span> for four-byte
+significance (<a>MSB</a> <a>LSB</a> for two-byte integers,
+<a>MSB</a> B2 B1
+<a>LSB</a> for four-byte
 integers).</dd>
 
-<dfn>
-<dt>output buffer</dt></dfn>
+<dt><dfn>output buffer</dfn></dt>
 
 <dd>The output buffer is a pixel array
   with dimensions specified by the width and height parameters of the PNG `IHDR` chunk. Conceptually, each frame is constructed in the output buffer before being composited onto the canvas. The contents of the output buffer are available to the decoder. The corners of the output buffer are mapped to the corners of the canvas. </dd>
 
 
 <!-- Maintain a fragment named "3palette" to preserve incoming links to it -->
-<dfn id="3palette">
-<dt>palette</dt></dfn>
+<dt id="3palette"><dfn>palette</dfn></dt>
 
-<dd>indexed table of three 8-bit <span class=
-"Definition"><a>sample</a></span> values, red, green, and blue,
-which with an <span class=
-"Definition"><a>indexed-colour</a></span> image defines the red,
+<dd>indexed table of three 8-bit <a>sample</a> values, red, green, and blue,
+which with an <a>indexed-colour</a> image defines the red,
 green, and blue sample values of the
-<span class="Definition"><a>reference
-image</a></span>. In other cases, the palette may be a suggested
+<a>reference image</a>. In other cases, the palette may be a suggested
 palette that viewers may use to present the image on
-indexed-colour display hardware. <span class=
-"Definition"><a>Alpha</a></span> samples may be defined for palette
-entries via the <span class=
-"Definition"><a>alpha table</a></span> and may be used to
+indexed-colour display hardware. <a>Alpha</a> samples may be defined for palette
+entries via the <a>alpha table</a> and may be used to
 reconstruct the alpha sample values of the reference image.</dd>
 
 <!-- Maintain a fragment named "3passExtraction" to preserve incoming links to it -->
-<dfn id="3passExtraction">
-<dt>pass extraction</dt></dfn>
+<dt id="3passExtraction"><dfn>pass extraction</dfn></dt>
 
-<dd>organizing a <span class=
-"Definition"><a>PNG image</a></span> as a sequence of <a href=
-"#3reducedImage"><span class="Definition">reduced
-images</span></a> to change the order of transmission and enable
+<dd>organizing a <a>PNG image</a> as a sequence of <a>reduced images</a>
+to change the order of transmission and enable
 progressive display.</dd>
 
 <!-- Maintain a fragment named "3pixel" to preserve incoming links to it -->
-<dfn id="3pixel">
-<dt>pixel</dt></dfn>
+<dt id="3pixel"><dfn>pixel</dfn></dt>
 
 <dd>information stored for a single grid point in an image. A
-pixel consists of (or points to) a sequence of <span class=
-"Definition"><a>samples</a></span> from all
-<span class="Definition"><a>channels</a></span>. The
+pixel consists of (or points to) a sequence of <a>samples</a> from all
+<a>channels</a>. The
 complete image is a rectangular array of pixels.</dd>
 
 
@@ -755,55 +673,40 @@ complete image is a rectangular array of pixels.</dd>
 <!-- ************Page Break******************* -->
 
 <!-- Maintain a fragment named "3PNGdatastream" to preserve incoming links to it -->
-<dfn id="3PNGdatastream">
-<dt>PNG datastream</dt></dfn>
+<dt id="3PNGdatastream"><dfn>PNG datastream</dfn></dt>
 
-<dd>result of encoding a <span class=
-"Definition"><a>PNG image</a></span>. A PNG
-<span class="Definition"><a>datastream</a></span>
-consists of a <span class=
-"Definition"><a>PNG signature</a></span></a> followed by a sequence of
-<span class=
-"Definition"><a>chunks</a></span>.</dd>
+<dd>result of encoding a <a>PNG image</a>. A PNG
+<a>datastream</a>
+consists of a <a>PNG signature</a></a> followed by a sequence of
+<a>chunks</a>.</dd>
 
 <!-- Maintain a fragment named "3PNGdecoder" to preserve incoming links to it -->
-<dfn id="3PNGdecoder">
-<dt>PNG decoder</dt></dfn>
+<dt id="3PNGdecoder"><dfn>PNG decoder</dfn></dt>
 
 <dd>process or device which reconstructs the
-<span class="Definition"><a>reference
-image</a></span> from a <span class=
-"Definition"><a>PNG datastream</a></span> and generates a
+<a>reference image</a> from a <a>PNG datastream</a> and generates a
 corresponding delivered image.</dd>
 
 <!-- Maintain a fragment named "3PNGeditor" to preserve incoming links to it -->
-<dfn id="3PNGeditor">
-<dt>PNG editor</dt></dfn>
+<dt id="3PNGeditor"><dfn>PNG editor</dfn></dt>
 
 <dd>process or device which creates a modification of an existing
-<span class="Definition"><a>PNG
-datastream</a></span>, preserving unmodified ancillary
+<a>PNG datastream</a>, preserving unmodified ancillary
 information wherever possible, and obeying the
-<span class="Definition"><a>chunk</a></span> ordering
+<a>chunk</a> ordering
 rules, even for unknown chunk types.</dd>
 
 <!-- Maintain a fragment named "3PNGencoder" to preserve incoming links to it -->
-<dfn id="3PNGencoder">
-<dt>PNG encoder</dt></dfn>
+<dt id="3PNGencoder"><dfn>PNG encoder</dfn></dt>
 
 <dd>process or device which constructs a
-<span class="Definition"><a>reference
-image</a></span> from a <span class=
-"Definition"><a>source image</a></span>, and generates a
-<span class="Definition"><a>PNG
-datastream</a></span> representing the reference image.</dd>
+<a>reference image</a> from a <a>source image</a>, and generates a
+<a>PNG datastream</a> representing the reference image.</dd>
 
 <!-- Maintain a fragment named "3PNGfile" to preserve incoming links to it -->
-<dfn id="3PNGfile">
-<dt>PNG file</dt></dfn>
+<dt id="3PNGfile"><dfn>PNG file</dfn></dt>
 
-<dd><span class="Definition"><a>PNG
-datastream</a></span> stored as a file.</dd>
+<dd><a>PNG datastream</a> stored as a file.</dd>
 
 <!-- Maintain a fragment named "3PNGfourByteSignedInteger" to preserve incoming links to it -->
 <dfn id="3PNGfourByteSignedInteger">
@@ -835,120 +738,82 @@ four-byte values.</dd>
   two-byte values.</dd>
 
 <!-- Maintain a fragment named "3PNGimage" to preserve incoming links to it -->
-<dfn id="3PNGimage">
-<dt>PNG image</dt></dfn>
+<dt id="3PNGimage"><dfn>PNG image</dfn></dt>
 
 <dd>result of transformations applied by a
-<span class="Definition"><a>PNG encoder</a></span> to
-a <span class="Definition"><a>reference
-image</a></span>, in preparation for encoding as a
-<span class="Definition"><a>PNG
-datastream</a></span>, and the result of decoding a PNG
+<a>PNG encoder</a> to
+a <a>reference image</a>, in preparation for encoding as a
+<a>PNG datastream</a>, and the result of decoding a PNG
 datastream.</dd>
 
 <!-- Maintain a fragment named "3PNGsignature" to preserve incoming links to it -->
-<dfn id="3PNGsignature">
-<dt>PNG signature</dt></dfn>
+<dt id="3PNGsignature"><dfn>PNG signature</dfn></dt>
 
-<dd>sequence of <span class=
-"Definition"><a>bytes</a></span> appearing at the start of every
-<span class="Definition"><a>PNG
-datastream</a></span>. It differentiates a PNG datastream from
-other types of <span class=
-"Definition"><a>datastream</a></span></a> and allows early detection of
+<dd>sequence of <a>bytes</a> appearing at the start of every
+<a>PNG datastream</a>. It differentiates a PNG datastream from
+other types of <a>datastream</a></a> and allows early detection of
 some transmission errors.</dd>
 
 <!-- Maintain a fragment named "3reducedImage" to preserve incoming links to it -->
-<dfn id="3reducedImage">
-<dt>reduced image</dt></dfn>
+<dt id="3reducedImage"><dfn>reduced image</dfn></dt>
 
-<dd>pass of the <span class=
-"Definition"><a>interlaced PNG image</a></span> extracted from the
-<span class="Definition"><a>PNG
-image</a></span> by <span class=
-"Definition"><a>pass extraction</a></span>.</dd>
+<dd>pass of the <a>interlaced PNG image</a> extracted from the
+<a>PNG image</a> by <a>pass extraction</a>.</dd>
 
 <!-- Maintain a fragment named "3referenceImage" to preserve incoming links to it -->
-<dfn id="3referenceImage">
-<dt>reference image</dt></dfn>
+<dt id="3referenceImage"><dfn>reference image</dfn></dt>
 
-<dd>rectangular array of rectangular <span
-class="Definition"><a>pixels</a></span>, each having the same number
-of <span class=
-"Definition"><a>samples</a></span>, either three (red, green, blue)
-or four (red, green, blue, <span class=
-"Definition"><a>alpha</a></span>). Every reference image can be
-represented exactly by a <span class=
-"Definition"><a>PNG datastream</a></span> and every PNG datastream
+<dd>rectangular array of rectangular <a>pixels</a>, each having the same number
+of <a>samples</a>, either three (red, green, blue)
+or four (red, green, blue, <a>alpha</a>). Every reference image can be
+represented exactly by a <a>PNG datastream</a> and every PNG datastream
 can be converted into a reference image. Each
-<span class="Definition"><a>channel</a></span> has a
-<span class="Definition"><a>sample
-depth</a></span> in the range 1 to 16. All samples in the same
+<a>channel</a> has a
+<a>sample depth</a> in the range 1 to 16. All samples in the same
 channel have the same sample depth. Different channels may have
 different sample depths.</dd>
 
 <!-- Maintain a fragment named "3RGBmerging" to preserve incoming links to it -->
-<dfn id="3RGBmerging">
-<dt>RGB merging</dt></dfn>
+<dt id="3RGBmerging"><dfn>RGB merging</dfn></dt>
 
 <dd>converting an image in which the red, green, and blue
-<span class="Definition"><a>samples</a></span> for
-each <span class="Definition"><a>pixel</a></span>
-have the same value, and the same <span
-class="Definition"><a>sample depth</a></span>, into an image with a
-single <span class=
-"Definition"><a>greyscale</a></span> <span
-class="Definition"><a>channel</a></span>.</dd>
+<a>samples</a> for
+each <a>pixel</a>
+have the same value, and the same <a>sample depth</a>, into an image with a
+single <a>greyscale</a> <a>channel</a>.</dd>
 
 <!-- Maintain a fragment named "3sample" to preserve incoming links to it -->
-<dfn id="3sample">
-<dt>sample</dt></dfn>
+<dt id="3sample"><dfn>sample</dfn></dt>
 
-<dd>intersection of a <span class=
-"Definition"><a>channel</a></span> and a <span
-class="Definition"><a>pixel</a></span> in an image.</dd>
+<dd>intersection of a <a>channel</a> and a <a>pixel</a> in an image.</dd>
 
 <!-- Maintain a fragment named "3sampleDepth" to preserve incoming links to it -->
-<dfn id="3sampleDepth">
-<dt>sample depth</dt></dfn>
+<dt id="3sampleDepth"><dfn>sample depth</dfn></dt>
 
-<dd>number of bits used to represent a <span
-class="Definition"><a>sample</a></span> value. In an
-<span class=
-"Definition"><a>indexed-colour</a></span> <span
-class="Definition"><a>PNG image</a></span>, samples are stored in
-the <span class=
-"Definition"><a>palette</a></span> and thus the sample depth is
+<dd>number of bits used to represent a <a>sample</a> value. In an
+<a>indexed-colour</a> <a>PNG image</a>, samples are stored in
+the <a>palette</a> and thus the sample depth is
 always 8 by definition of the palette. In other types of PNG
-image it is the same as the <span class=
-"Definition"><a>bit depth</a></span>.</dd>
+image it is the same as the <a>bit depth</a>.</dd>
 
 <!-- Maintain a fragment named "3sampleDepthScaling" to preserve incoming links to it -->
 <dfn id="3sampleDepthScaling">
 <dt>sample depth
 scaling</dt></dfn>
 
-<dd>mapping of a range of <span class=
-"Definition"><a>sample</a></span> values onto the full range of a
-<span class="Definition"><a>sample
-depth</a></span> allowed in a <span class=
-"Definition"><a>PNG image</a></span>.</dd>
+<dd>mapping of a range of <a>sample</a> values onto the full range of a
+<a>sample depth</a> allowed in a <a>PNG image</a>.</dd>
 
 <!-- Maintain a fragment named "3scanline" to preserve incoming links to it -->
-<dfn id="3scanline">
-<dt>scanline</dt></dfn>
+<dt id="3scanline"><dfn>scanline</dfn></dt>
 
-<dd>row of <span class=
-"Definition"><a>pixels</a></span> within an image or
-<span class="Definition"><a>interlaced PNG
-image</a></span>.</dd>
+<dd>row of <a>pixels</a> within an image or
+<a>interlaced PNG image</a>.</dd>
 
 <!-- Maintain a fragment named "3sourceImage" to preserve incoming links to it -->
-<dfn id="3sourceImage">
-<dt>source image</dt></dfn>
+<dt id="3sourceImage"><dfn>source image</dfn></dt>
 
-<dd>image which is presented to a <span
-class="Definition"><a>PNG encoder</a></span>.</dd>
+<dd>image which is presented to a <a>PNG encoder</a>.</dd>
 
 <dfn>
   <dt>static image</dt></dfn>
@@ -962,28 +827,23 @@ class="Definition"><a>PNG encoder</a></span>.</dd>
   </dd>
 
 <!-- Maintain a fragment named "3truecolour" to preserve incoming links to it -->
-<dfn id="3truecolour">
-<dt>truecolour</dt></dfn>
+<dt id="3truecolour"><dfn>truecolour</dfn></dt>
 
-<dd>image representation in which each <span
-class="Definition"><a>pixel</a></span> is defined by
-<span class="Definition"><a>samples</a></span>,
+<dd>image representation in which each <a>pixel</a> is defined by
+<a>samples</a>,
 representing red, green, and blue intensities and optionally an
-<span class="Definition"><a>alpha</a></span>
+<a>alpha</a>
 sample (in which case it is referred to as truecolour with
 alpha).</dd>
 
 <!-- Maintain a fragment named "3whitePoint" to preserve incoming links to it -->
-<dfn id="3whitePoint">
-<dt>white point</dt></dfn>
+<dt id="3whitePoint"><dfn>white point</dfn></dt>
 
-<dd><span class=
-"Definition">[=chromaticity=]</span> of a computer display's
+<dd><a>chromaticity</a> of a computer display's
 nominal white value.</dd>
 
 <!-- Maintain a fragment named "3zlib" to preserve incoming links to it -->
-<dfn id="3zlib">
-<dt>zlib</dt></dfn>
+<dt id="3zlib"><dfn>zlib</dfn></dt>
 
 <dd>particular format for data that have been compressed using <a
 href="#3deflate"><span class=
@@ -1005,15 +865,14 @@ The format is defined in [[rfc1950]].</dd>
 
   <dd>Animated PNG, a type of PNG
     which — in addition to a
-    [=static image=] —
-    also contains an [=animated image=].
+    <a>static image</a> —
+    also contains an <a>animated image</a>.
 
   </dd>
 
 
 <!-- Maintain a fragment named "3CRC" to preserve incoming links to it -->
-<dfn id="3CRC">
-<dt>CRC</dt></dfn>
+<dt id="3CRC"><dfn>CRC</dfn></dt>
 
 <dd>Cyclic Redundancy Code. A CRC is a type of check value
 designed to detect most transmission errors. A decoder calculates
@@ -1024,41 +883,31 @@ indicates that the data or the CRC were corrupted in
 transit.</dd>
 
 <!-- Maintain a fragment named "3CRT" to preserve incoming links to it -->
-<dfn id="3CRT">
-<dt>CRT</dt></dfn>
+<dt id="3CRT"><dfn>CRT</dfn></dt>
 
 <dd>Cathode Ray Tube: a common type of computer display
 hardware.</dd>
 
 <!-- Maintain a fragment named "3LSB" to preserve incoming links to it -->
-<dfn id="3LSB">
-<dt>LSB</dt></dfn>
+<dt id="3LSB"><dfn>LSB</dfn></dt>
 
-<dd>Least Significant Byte of a multi-<span
-class="Definition"><a>byte</a></span> value.</dd>
+<dd>Least Significant Byte of a multi-<a>byte</a> value.</dd>
 
 <!-- Maintain a fragment named "3LUT" to preserve incoming links to it -->
-<dfn id="3LUT">
-<dt>LUT</dt></dfn>
+<dt id="3LUT"><dfn>LUT</dfn></dt>
 
-<dd>Look Up Table. In <a href="#3frameBuffer"><span class=
-"Definition">frame buffer</span></a> hardware, a LUT can be used
-to map <span class=
-"Definition"><a>indexed-colour</a></span> <span
-class="Definition"><a>pixels</a></span> into a selected set of <a
+<dd>Look Up Table. In <a>frame buffer</a> hardware, a LUT can be used
+to map <a>indexed-colour</a> <a>pixels</a> into a selected set of <a
 href="#3truecolour"><span class=
-"Definition">truecolour</span></a> values, or to perform <a href=
-"#3gamma"><span class="Definition">gamma</span></a> correction.
+"Definition">truecolour</span></a> values, or to perform <a>gamma</a> correction.
 In software, a LUT can often be used as a fast way of
 implementing any mathematical function of a single integer
 variable.</dd>
 
 <!-- Maintain a fragment named "3MSB" to preserve incoming links to it -->
-<dfn id="3MSB">
-<dt>MSB</dt></dfn>
+<dt id="3MSB"><dfn>MSB</dfn></dt>
 
-<dd>Most Significant Byte of a multi-<span
-class="Definition"><a>byte</a></span> value.</dd>
+<dd>Most Significant Byte of a multi-<a>byte</a> value.</dd>
 </dl>
 </section>
 </section>
@@ -1074,21 +923,21 @@ class="Definition"><a>byte</a></span> value.</dd>
 
   <p>
     All PNG images contain a single
-    [=static image=].
+    <a>static image</a>.
     Some PNG images —
-    called [=APNG=]
+    called <a>APNG</a>
     for Animated PNG —
     also contain a frame-based animation sequence,
-    the [=animated image=].
+    the <a>animated image</a>.
     The first frame of this may be —
     but need not be —
-    the [=static image=].
+    the <a>static image</a>.
   </p>
 
   <p>
-    The [=static image=],
+    The <a>static image</a>,
     and each individual frame of an
-    [=animated image=],
+    <a>animated image</a>,
     corresponds to a <em>reference image</em>
     and is stored as a <em>PNG image</em>.
   </p>
@@ -1602,7 +1451,7 @@ ancillary information</caption>
     position and handling information,
     to be displayed if the viewer is capable of doing so.
     For other cases such as printers,
-    the [=static image=] will be displayed instead.</td>
+    the <a>static image</a> will be displayed instead.</td>
   </tr>
 
 <tr>
@@ -1614,7 +1463,7 @@ if no better option is available.</td>
 <tr>
 <td class="Regular">Gamma and chromaticity</td>
 <td class="Regular">Gamma characteristic of the image with respect to the desired
-output intensity, and [=chromaticity=] characteristics of the RGB
+output intensity, and <a>chromaticity</a> characteristics of the RGB
 values used in the image.</td>
 </tr>
 
@@ -1769,7 +1618,7 @@ image.</td>
 
 <p>APNG is backwards-compatible with earlier versions of PNG;
   a non-animated PNG decoder will ignore the ancillary APNG-specific chunks
-  and display the [=static image=]. </p>
+  and display the <a>static image</a>. </p>
 
 </section>
 
@@ -1788,9 +1637,9 @@ image.</td>
   <a href="#animation-information">described below</a>. </p>
 
 <p>Conceptually, at the beginning of each play
-  the [=output buffer=]
+  the <a>output buffer</a>
   shall be completely initialized to a
-  [=fully transparent black=] rectangle,
+  <a>fully transparent black</a> rectangle,
   with width and height dimensions from the <span class="chunk">IHDR</span> chunk. </p>
 
 <p>The static image may be included
@@ -1812,7 +1661,7 @@ image.</td>
   of the `IHDR` chunk,
   regardless of whether the default image is part of the animation.
   The default image should be appropriately padded
-  with [=fully transparent black=] pixels
+  with <a>fully transparent black</a> pixels
   if extra space will be needed for later frames. </p>
 
 <p>Each frame is identical for each play,
@@ -4966,7 +4815,7 @@ fully transparent. An alpha value of 255 (when the <span class=
 class="chunk">sPLT</span> sample depth is 16) means fully opaque.
 The <span class="chunk">sPLT</span> chunk may appear for any PNG
 colour type. Entries in <span class="chunk">sPLT</span> use the
-same gamma and [=chromaticity=] values as the PNG image, but may fall
+same gamma and <a>chromaticity</a> values as the PNG image, but may fall
 outside the range of values used in the colour space of the PNG
 image; for example, in a greyscale PNG image, each <span class=
 "chunk">sPLT</span> entry would typically have equal red, green,
@@ -5456,7 +5305,7 @@ the image data are changed.</p>
       does for static images;
       it contains the image data
       for all frames
-      (or, for animations which include the [=static image=] as first frame,
+      (or, for animations which include the <a>static image</a> as first frame,
       for all frames after the first one).
     It contains:</p>
 
@@ -5498,7 +5347,7 @@ the image data are changed.</p>
       of all the <span class="chunk">IDAT</span> chunks.
       It utilizes the same bit depth, color type,
       compression method, filter method, interlace method,
-      and palette (if any) as the [=static image=].
+      and palette (if any) as the <a>static image</a>.
     </p>
 
     <p>
@@ -8326,7 +8175,7 @@ desired display output.</p>
   [??Kasson]] and [[?Hill]].
 </p>
 
-<p>Background information about [=chromaticity=] and colour spaces
+<p>Background information about <a>chromaticity</a> and colour spaces
 may be found in [[?Luminance-Chromaticity]] and [[?COLOR FAQ]].</p>
 
 </section>
@@ -8535,7 +8384,7 @@ accessed from the PNG web site.</p>
 <ul>
   <!-- to 5 Apr 2022 -->
   <li>The three previously defined, but unofficial, chunks
-    for [=APNG=] have been added.
+    for <a>APNG</a> have been added.
     This brings the PNG specification into alignment
     with widely deployed industry practice.
   </li>

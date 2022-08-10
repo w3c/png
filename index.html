@@ -2199,7 +2199,9 @@ algorithm</h2>
 <p>CRC fields are calculated using standardized CRC methods with
 pre and post conditioning, as defined by [[ISO 3309]]
 and [[ITU-T V.42]].
-The CRC polynomial employed
+The CRC polynomial employed,
+which is identical to that used in the
+GZIP file format specification [[RFC1952]]
 is</p>
 
 <p>x<sup>32</sup> + x<sup>26</sup> + x<sup>23</sup> +
@@ -8335,12 +8337,14 @@ may be found in [[?Luminance-Chromaticity]] and [[?COLOR FAQ]].</p>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <!-- Maintain a fragment named "D-CRCAppendix" to preserve incoming links to it -->
-<section class="appendix informative" id="D-CRCAppendix">
+<section class="appendix" id="D-CRCAppendix">
 <!-- Maintain a fragment named "samplecrc" to preserve incoming links to it -->
 <h2 class="Annex" id="samplecrc">Sample Cyclic Redundancy Code
 implementation</h2>
 
-<p>The following sample code represents a practical
+<p>The following sample code,
+which is informative,
+represents a practical
 implementation of the CRC (Cyclic Redundancy Check) employed in
 PNG chunks. (See also ISO 3309 [[ISO 3309]] or ITU-T V.42 [[ITU-T V.42]] for a
 formal specification.)</p>

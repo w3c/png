@@ -1214,21 +1214,18 @@ image and the reference white point.</li>
 </ol>
 
 <p>For high-end applications the first two methods provides the most
-flexibility and control. The third method enables one particular
-colour space to be indicated. The fourth method enables the exact
+flexibility and control. The third method enables one particular,
+but extremely common,
+colour space to be indicated. The fourth method,
+which was standardized before ICC profiles were widely adopted,
+enables the exact
 chromaticities of the RGB data to be specified, along with the
 gamma correction (the power function relating the desired display
 output with the image samples) to be applied (see <a
-href="#C-GammaAppendix"></a>). It is recommended that explicit gamma
-information also be provided when either the first, second or third
-method is used, for use by PNG decoders that do not support
-CICP metadata, full
-ICC profiles or the sRGB colour space. Such PNG decoders can
-still make sensible use of gamma information. PNG decoders are
-strongly encouraged to use this information, plus information
-about the display system, in order to present the image to the
-viewer in a way that reproduces as closely as possible what the image's original author
-saw.</p>
+href="#C-GammaAppendix"></a>).
+However, colour-aware applications will prefer one of the first three methods,
+while colour-unaware applications will typically ignore all four methods.
+</p>
 
 <p>Gamma correction is not applied to the alpha channel, if
 present. Alpha samples always represent a linear fraction of full

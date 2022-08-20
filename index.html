@@ -2229,9 +2229,16 @@ table to accelerate the computation. See <a href=
 
 <p>The constraints on the positioning of the individual chunks
 are listed in <a href="#table53">
-</a> and illustrated diagrammatically in <a href=
+</a> and illustrated diagrammatically
+for static images in <a href=
 "#lattice-diagram-with-plte"></a> and <a
-href="#lattice-diagram-without-plte"></a>.
+href="#lattice-diagram-without-plte"></a>,
+for animated images where the static image forms the first frame in
+<a href="#lattice-apng-static-with-plte"></a> and
+<a href="#lattice-apng-static-without-plte"></a>, and
+for animated images where the static image is not part of the animation in
+<a href="#lattice-apng-nostatic-with-plte"></a> and
+<a href="#lattice-apng-nostatic-without-plte"></a>.
 These lattice diagrams represent the constraints on positioning
 imposed by this specification. The lines in the diagrams
 define partial ordering relationships. Chunks higher up shall
@@ -2484,7 +2491,7 @@ symbols used in lattice diagrams</caption>
 <object id="figure52" data="figures/lattice-diagram-with-plte.svg" type="image/svg+xml">
 </object>
 <figcaption>Lattice diagram: Static PNG images with <a href="#11PLTE"><span class=
-"chunk">PLTE</span></a> in datastream</figcaption>
+"chunk">PLTE</span></a></figcaption>
 </figure>
 
 
@@ -2494,8 +2501,49 @@ symbols used in lattice diagrams</caption>
 type="image/svg+xml">
 </object>
 <figcaption>Lattice diagram: Static PNG images without <a href="#11PLTE"><span
-class="chunk">PLTE</span></a> in datastream</figcaption>
+class="chunk">PLTE</span></a></figcaption>
 </figure>
+
+<!--
+for animated images where the static image forms the first frame in
+<a href="#lattice-apng-static-with-plte"></a> and
+<a href="#lattice-apng-static-without-plte"></a>, and
+for animated images where the static image is not part of the animation in
+<a href="#lattice-apng-nostatic-with-plte"></a> and
+<a href="#lattice-apng-nostatic-without-plte"></a>. -->
+
+
+<figure id="lattice-apng-static-with-plte">
+<object id="figure52a" data="figures/lattice-diagram-apng-static-first-with-plte.svg" type="image/svg+xml">
+</object>
+<figcaption>Lattice diagram: Animated PNG images with <a href="#11PLTE"><span class=
+"chunk">PLTE</span></a>, static image forms the first frame</figcaption>
+</figure>
+
+
+<figure id="lattice-apng-static-without-plte">
+<object id="figure53a" data="figures/lattice-diagram-apng-static-first-without-plte.svg"
+type="image/svg+xml">
+</object>
+<figcaption>Lattice diagram: Animated PNG images without <a href="#11PLTE"><span
+class="chunk">PLTE</span></a>, static image forms the first frame</figcaption>
+</figure>
+
+<figure id="lattice-apng-nostatic-with-plte">
+  <object id="figure52b" data="figures/lattice-diagram-apng-static-notfirst-with-plte.svg" type="image/svg+xml">
+  </object>
+  <figcaption>Lattice diagram: Animated PNG images with <a href="#11PLTE"><span class=
+  "chunk">PLTE</span></a>, static image not part of animation</figcaption>
+  </figure>
+
+
+  <figure id="lattice-apng-nostatic-without-plte">
+  <object id="figure53b" data="figures/lattice-diagram-apng-static-notfirst-without-plte.svg"
+  type="image/svg+xml">
+  </object>
+  <figcaption>Lattice diagram: Animated PNG images without <a href="#11PLTE"><span
+  class="chunk">PLTE</span></a>, static image not part of animation</figcaption>
+  </figure>
 
 </section>
 

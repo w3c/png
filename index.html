@@ -1317,6 +1317,12 @@ colours.</p>
 so that the table entries with the maximum alpha value are
 grouped at the end. In this case the table can be encoded in a
 shortened form that does not include these entries.</p>
+
+<p>Encoders creating indexed-color PNG must not insert
+  index values greater than the actual length of the palette table;
+  to do so is an error, and decoders will vary in their handling of this error.
+</p>
+
 </section>
 
 <!-- Maintain a fragment named "4Concepts.RGBMerging" to preserve incoming links to it -->

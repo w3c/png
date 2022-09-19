@@ -75,11 +75,11 @@
         title: "Exchangeable image file format for digital still cameras: Exif Version 2.32",
         href: "https://www.cipa.jp/std/documents/download_e.html?DC-008-Translation-2019-E",
         date: "2019-05-17",
-        publisher: "Camera & Imaging Products Association",
+        publisher: "Camera & Imaging Products Association"
       },
       "COLOR FAQ": {
         title: "Color FAQ",
-        author: "Poynton, C.",
+        authors: ["Poynton, C."],
         href: "http://poynton.ca/ColorFAQ.html",
         date: "2009-10-19"
       },
@@ -91,13 +91,13 @@
       },
       "GAMMA FAQ": {
         title: "Gamma FAQ",
-        author: "Poynton, C.",
+        authors: ["Poynton, C."],
         href: "http://poynton.ca/GammaFAQ.html",
         date: "1998-08-04"
       },
       "Hill": {
         title: "Comparative analysis of the quantization of color spaces on the basis of the CIELAB color-difference formula",
-        authors: "Hill, B.; Roger, Th., Vorhagen, F.W.",
+        authors: ["Hill, B.", "Roger, Th.", "Vorhagen, F.W."],
         journal: "ACM Transactions on Graphics, Volume 16, Issue 2, pp. 109–154",
         date: "1997-04",
         href: "https://dl.acm.org/doi/10.1145/248210.248212"
@@ -109,7 +109,8 @@
       },
       "ISO 8859-1": {
         title: "ISO/IEC 8859-1:1998, Information technology — 8-bit single-byte coded graphic character sets — Part 1: Latin alphabet No. 1.",
-        date: "1998"
+        date: "1998",
+        publisher: "ISO"
       },
       "ISO 9899": {
         title: "ISO/IEC 9899:2018 Information technology — Programming languages — C",
@@ -152,7 +153,7 @@
       },
       "Kasson": {
         title: "An Analysis of Selected Computer Interchange Color Spaces",
-        authors: "Kasson, J., and W. Plouffe",
+        authors: ["Kasson, J.", "W. Plouffe"],
         journal: "ACM Transactions on Graphics, vol. 11, no. 4, pp. 373-405",
         date: "1992",
         href: "https://dl.acm.org/doi/abs/10.1145/146443.146479"
@@ -163,7 +164,7 @@
         publisher: "Color Usage Research Lab, NASA Ames Research Center"
       },
       "Paeth": {
-        author: "Paeth, A.W",
+        authors: ["Paeth, A.W"],
         title: "Image File Compression Made Easy, in Graphics Gems II, pp. 93-100",
         publisher: "Academic Press",
         date: "1991",
@@ -178,7 +179,7 @@
       },
       "PostScript": {
         title: "PostScript Language Reference Manual",
-        author: "Adobe Systems Incorporated",
+        authors: ["Adobe Systems Incorporated"],
         publisher: "Addison-Wesley",
         date: "1990",
         edition: "2",
@@ -186,7 +187,7 @@
       },
       "ROELOFS": {
         title: "PNG: The Definitive Guide",
-        author: "Roelofs, G.",
+        authors: ["Roelofs, G."],
         publisher: "O'Reilly &amp; Associates Inc",
         isbn: "1-56592-542-4",
         href: "http://www.libpng.org/pub/png/pngbook.html",
@@ -205,9 +206,9 @@
         href: "https://doi.org/10.5594/SMPTE.RP2077.2013"
       },
       "TIFF 6.0": {
-        "href": "https://www.loc.gov/preservation/digital/formats/fdd/fdd000022.shtml",
-        "title": "TIFF Revision 6.0",
-        "date": "3 June 1992"
+        href: "https://www.loc.gov/preservation/digital/formats/fdd/fdd000022.shtml",
+        title: "TIFF Revision 6.0",
+        date: "3 June 1992"
 		  },
       "Ziv-Lempel": {
         authors: ["J. Ziv", "A. Lempel"],
@@ -498,8 +499,10 @@ a stored file at all.</dd>
 
 <dd>name of a particular compression algorithm. This algorithm is
 used, in compression mode 0, in conforming
-<<a>PNG datastreams</a>. Deflate is a member of the <a>LZ77</a> family of
-compression methods. It is defined in [[rfc1951]].</dd>
+<span class="Definition"><a>PNG
+datastreams</a></span>. Deflate is a member of the <a href=
+"#3LZ77"><span class="Definition">LZ77</span></a> family of
+compression methods. It is defined in [[RFC1951]].</dd>
 
 
 <!-- ************Page Break******************* -->
@@ -1043,21 +1046,18 @@ image and the reference white point.</li>
 </ol>
 
 <p>For high-end applications the first two methods provides the most
-flexibility and control. The third method enables one particular
-colour space to be indicated. The fourth method enables the exact
+flexibility and control. The third method enables one particular,
+but extremely common,
+colour space to be indicated. The fourth method,
+which was standardized before ICC profiles were widely adopted,
+enables the exact
 chromaticities of the RGB data to be specified, along with the
 gamma correction (the power function relating the desired display
 output with the image samples) to be applied (see <a
-href="#C-GammaAppendix"></a>). It is recommended that explicit gamma
-information also be provided when either the first, second or third
-method is used, for use by PNG decoders that do not support
-CICP metadata, full
-ICC profiles or the sRGB colour space. Such PNG decoders can
-still make sensible use of gamma information. PNG decoders are
-strongly encouraged to use this information, plus information
-about the display system, in order to present the image to the
-viewer in a way that reproduces as closely as possible what the image's original author
-saw.</p>
+href="#C-GammaAppendix"></a>).
+However, colour-aware applications will prefer one of the first three methods,
+while colour-unaware applications will typically ignore all four methods.
+</p>
 
 <p>Gamma correction is not applied to the alpha channel, if
 present. Alpha samples always represent a linear fraction of full
@@ -1149,6 +1149,12 @@ colours.</p>
 so that the table entries with the maximum alpha value are
 grouped at the end. In this case the table can be encoded in a
 shortened form that does not include these entries.</p>
+
+<p>Encoders creating indexed-color PNG must not insert
+  index values greater than the actual length of the palette table;
+  to do so is an error, and decoders will vary in their handling of this error.
+</p>
+
 </section>
 
 <!-- Maintain a fragment named "4Concepts.RGBMerging" to preserve incoming links to it -->
@@ -1439,6 +1445,20 @@ ancillary information</caption>
 <td class="Regular">Background colour</td>
 <td class="Regular">Solid background colour to be used when presenting the image
 if no better option is available.</td>
+</tr>
+
+<tr>
+  <td class="Regular">Coding-independent code points</td>
+  <td class="Regular">Identifies the colour space by enumerating metadata
+    such as the transfer function and colour primaries.
+    Originally for SDR and HDR video, also used for
+    still and animated images.
+  </td>
+</tr>
+
+<tr>
+  <td class="Regular">EXIF information</td>
+  <td class="Regular">Exchangeable image file format metadata such as shutter speed, aperture, and orientation</td>
 </tr>
 
 <tr>
@@ -2028,7 +2048,9 @@ algorithm</h2>
 <p>CRC fields are calculated using standardized CRC methods with
 pre and post conditioning, as defined by [[ISO 3309]]
 and [[ITU-T V.42]].
-The CRC polynomial employed
+The CRC polynomial employed—
+which is identical to that used in the
+GZIP file format specification [[RFC1952]]—
 is</p>
 
 <p>x<sup>32</sup> + x<sup>26</sup> + x<sup>23</sup> +
@@ -2056,9 +2078,16 @@ table to accelerate the computation. See <a href=
 
 <p>The constraints on the positioning of the individual chunks
 are listed in <a href="#table53">
-</a> and illustrated diagrammatically in <a href=
+</a> and illustrated diagrammatically
+for static images in <a href=
 "#lattice-diagram-with-plte"></a> and <a
-href="#lattice-diagram-without-plte"></a>.
+href="#lattice-diagram-without-plte"></a>,
+for animated images where the static image forms the first frame in
+<a href="#lattice-apng-static-with-plte"></a> and
+<a href="#lattice-apng-static-without-plte"></a>, and
+for animated images where the static image is not part of the animation in
+<a href="#lattice-apng-nostatic-with-plte"></a> and
+<a href="#lattice-apng-nostatic-without-plte"></a>.
 These lattice diagrams represent the constraints on positioning
 imposed by this specification. The lines in the diagrams
 define partial ordering relationships. Chunks higher up shall
@@ -2311,7 +2340,7 @@ symbols used in lattice diagrams</caption>
 <object id="figure52" data="figures/lattice-diagram-with-plte.svg" type="image/svg+xml">
 </object>
 <figcaption>Lattice diagram: Static PNG images with <a href="#11PLTE"><span class=
-"chunk">PLTE</span></a> in datastream</figcaption>
+"chunk">PLTE</span></a></figcaption>
 </figure>
 
 
@@ -2321,8 +2350,41 @@ symbols used in lattice diagrams</caption>
 type="image/svg+xml">
 </object>
 <figcaption>Lattice diagram: Static PNG images without <a href="#11PLTE"><span
-class="chunk">PLTE</span></a> in datastream</figcaption>
+class="chunk">PLTE</span></a></figcaption>
 </figure>
+
+
+<figure id="lattice-apng-static-with-plte">
+<object id="figure52a" data="figures/lattice-diagram-apng-static-first-with-plte.svg" type="image/svg+xml">
+</object>
+<figcaption>Lattice diagram: Animated PNG images with <a href="#11PLTE"><span class=
+"chunk">PLTE</span></a>, static image forms the first frame</figcaption>
+</figure>
+
+
+<figure id="lattice-apng-static-without-plte">
+<object id="figure53a" data="figures/lattice-diagram-apng-static-first-without-plte.svg"
+type="image/svg+xml">
+</object>
+<figcaption>Lattice diagram: Animated PNG images without <a href="#11PLTE"><span
+class="chunk">PLTE</span></a>, static image forms the first frame</figcaption>
+</figure>
+
+<figure id="lattice-apng-nostatic-with-plte">
+  <object id="figure52b" data="figures/lattice-diagram-apng-static-notfirst-with-plte.svg" type="image/svg+xml">
+  </object>
+  <figcaption>Lattice diagram: Animated PNG images with <a href="#11PLTE"><span class=
+  "chunk">PLTE</span></a>, static image not part of animation</figcaption>
+  </figure>
+
+
+  <figure id="lattice-apng-nostatic-without-plte">
+  <object id="figure53b" data="figures/lattice-diagram-apng-static-notfirst-without-plte.svg"
+  type="image/svg+xml">
+  </object>
+  <figcaption>Lattice diagram: Animated PNG images without <a href="#11PLTE"><span
+  class="chunk">PLTE</span></a>, static image not part of animation</figcaption>
+  </figure>
 
 </section>
 
@@ -2344,7 +2406,7 @@ class="chunk">PLTE</span></a> in datastream</figcaption>
   <p>Public chunks are intended for broad use consistent with the philosophy of PNG.</p>
 
   <p>Organizations and applications are encouraged to submit any chunk that meet
-  the criteria above for definition as a public chunk by the <a>PNG WG</a>.</p>
+  the criteria above for definition as a public chunk by the <a href="https://www.w3.org/groups/wg/png">PNG Working Group</a>.</p>
 
   <p>The definition as a public chunk is neither automatic nor immediate. A
   proposed public chunk type SHALL not be used in publicly available software or
@@ -2361,8 +2423,8 @@ class="chunk">PLTE</span></a> in datastream</figcaption>
     experimental use.</p>
 
     <p>A private chunk SHOULD NOT be defined merely to carry textual information
-    of interest to a human user. Instead <a href="#11tEXt"><span
-    class= "chunk">tEXt</span></a> chunk SHOULD BE used and corresponding
+    of interest to a human user. Instead <a href="#11iTXt"><span
+    class= "chunk">iTXt</span></a> chunk SHOULD BE used and corresponding
     keyword SHOULD BE used and a suitable keyword defined.</p>
 
     <p>Listing private chunks at [[PNG-EXTENSIONS]] reduces, but does not eliminate,
@@ -6287,6 +6349,13 @@ need not terminate.</p>
 warning to the user if appropriate, recover from the error, and
 continue processing normally.</p>
 
+<p>When decoding an indexed-color PNG, if out-of-range indexes are encountered,
+  decoders have historically varied in their handling of this error.
+  Displaying the pixel as opaque black is one common error recovery tactic,
+  although such behaviour is not required by this specification
+  and must not be relied on by encoders.
+</p>
+
 <p>Decoders that do not compute CRCs should interpret apparent
 syntax errors as indications of corruption (see also <a href="#13Error-checking"></a>).</p>
 
@@ -8153,7 +8222,7 @@ desired display output.</p>
 
 <p>Additional information on the impact of color space
   on image encoding may be found in
-  [??Kasson]] and [[?Hill]].
+  [[?Kasson]] and [[?Hill]].
 </p>
 
 <p>Background information about <a>chromaticity</a> and colour spaces
@@ -8164,12 +8233,14 @@ may be found in [[?Luminance-Chromaticity]] and [[?COLOR FAQ]].</p>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <!-- Maintain a fragment named "D-CRCAppendix" to preserve incoming links to it -->
-<section class="appendix informative" id="D-CRCAppendix">
+<section class="appendix" id="D-CRCAppendix">
 <!-- Maintain a fragment named "samplecrc" to preserve incoming links to it -->
 <h2 class="Annex" id="samplecrc">Sample Cyclic Redundancy Code
 implementation</h2>
 
-<p>The following sample code represents a practical
+<p>The following sample code
+  — which is informative —
+represents a practical
 implementation of the CRC (Cyclic Redundancy Check) employed in
 PNG chunks. (See also ISO 3309 [[ISO 3309]] or ITU-T V.42 [[ITU-T V.42]] for a
 formal specification.)</p>

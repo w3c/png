@@ -1,0 +1,182 @@
+<?xml version="1.0" ?>
+<svg viewBox="0 0 925 535" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style>
+    @font-face {
+        font-family: OS_Cond_Med;
+        src: url(./fonts/OS_Cond_Med.woff2);
+    }
+    rect {
+        stroke:#777;
+        fill:white;
+        }
+    text {
+        font-family: OS_Cond_Med;
+        font-size:18px;
+        text-anchor:start
+        }
+    line {
+        stroke:#777;
+        stroke-width:1
+        }
+</style>
+
+<g transform="translate(400,10)">
+<rect width="80" height="40" />
+<text x="15" y="25">IHDR</text>
+<text x="55" y="12" style="font-size:8pt">1</text>
+</g>
+
+<line x1="403" y1="50" x2="35" y2="120"/>
+<line x1="409" y1="50" x2="95" y2="120"/>
+<line x1="415" y1="50" x2="155" y2="120"/>
+<line x1="421" y1="50" x2="215" y2="120"/>
+<line x1="427" y1="50" x2="275" y2="120"/>
+<line x1="433" y1="50" x2="335" y2="120"/>
+<line x1="439" y1="50" x2="425" y2="120"/>
+<line x1="445" y1="50" x2="515" y2="120"/>
+<line x1="451" y1="50" x2="575" y2="120"/>
+<line x1="457" y1="50" x2="635" y2="120"/>
+<line x1="463" y1="50" x2="695" y2="120"/>
+<line x1="465" y1="50" x2="755" y2="120"/>
+<line x1="467" y1="50" x2="815" y2="120"/>
+<line x1="469" y1="50" x2="875" y2="120"/>
+<!-- <line x1="469" y1="50" x2="935" y2="120"/> -->
+
+<g transform="translate(0,120)">
+
+
+<g transform="translate(10,0)">
+<rect width="50" height="40" />
+<text x="5" y="25">tIME</text>
+<text x="40" y="12" style="font-size:8pt">?</text>
+</g>
+<g transform="translate(70,0)">
+<rect width="50" height="40" />
+<text x="5" y="25">zTXt</text>
+<text x="40" y="12" style="font-size:8pt">*</text>
+</g>
+<g transform="translate(130,0)">
+<rect width="50" height="40" />
+<text x="5" y="25">tEXt</text>
+<text x="40" y="12" style="font-size:8pt">*</text>
+</g>
+<g transform="translate(190,0)">
+<rect width="50" height="40" />
+<text x="5" y="25">iTXt</text>
+<text x="40" y="12" style="font-size:8pt">*</text>
+</g>
+<g transform="translate(249,0)">
+<rect width="48" height="40" />
+<text x="5" y="25">pHYs</text>
+<text x="38" y="12" style="font-size:8pt">?</text>
+</g>
+<g transform="translate(307,0)">
+<rect width="47" height="40" />
+<text x="5" y="25">sPLT</text>
+<text x="37" y="12" style="font-size:8pt">*</text>
+</g>
+<g transform="translate(363,0)">
+<rect width="130" height="40" />
+<text x="2" y="25">(iCCP | cICP | sRGB)</text>
+<text x="120" y="12" style="font-size:8pt">?</text>
+</g>
+<g transform="translate(502,0)">
+<rect width="49" height="40" />
+<text x="5" y="25">sBIT</text>
+<text x="40" y="12" style="font-size:8pt">?</text>
+</g>
+<g transform="translate(560,0)">
+<rect width="50" height="40" />
+<text x="5" y="25">gAMA</text>
+<text x="40" y="12" style="font-size:8pt">?</text>
+</g>
+<g transform="translate(620,0)">
+<rect width="50" height="40" />
+<text x="5" y="25">cHRM</text>
+<text x="40" y="12" style="font-size:8pt">?</text>
+</g>
+
+<g transform="translate(680,0)">
+<rect width="50" height="40" />
+<text x="5" y="25">tRNS</text>
+<text x="40" y="12" style="font-size:8pt">?</text>
+</g>
+
+<g transform="translate(740,0)">
+<rect width="50" height="40" />
+<text x="5" y="25">bKGD</text>
+<text x="40" y="12" style="font-size:8pt">?</text>
+</g>
+
+<g transform="translate(800,0)">
+<rect width="50" height="40" />
+<text x="5" y="25">eXIf</text>
+<text x="40" y="12" style="font-size:8pt">?</text>
+</g>
+
+<g transform="translate(860,0)">
+<rect width="50" height="40" />
+<text x="5" y="25">acTL</text>
+<text x="40" y="12" style="font-size:8pt">1</text>
+</g>
+
+<!-- <g transform="translate(920,0)">
+<rect width="50" height="40" />
+<text x="5" y="25">fcTL</text>
+<text x="40" y="12" style="font-size:8pt">1</text>
+</g> -->
+
+
+</g>
+
+
+<line x1="275" y1="160" x2="524" y2="300"/>
+<line x1="335" y1="160" x2="532" y2="300"/>
+<line x1="425" y1="160" x2="540" y2="300"/>
+<line x1="515" y1="160" x2="548" y2="300"/>
+<line x1="575" y1="160" x2="556" y2="300"/>
+<line x1="635" y1="160" x2="564" y2="300"/>
+<line x1="695" y1="160" x2="572" y2="300"/>
+<line x1="755" y1="160" x2="580" y2="300"/>
+<line x1="815" y1="160" x2="580" y2="300"/>
+<line x1="875" y1="160" x2="580" y2="300"/>
+<!-- <line x1="935" y1="160" x2="580" y2="300"/> -->
+
+
+<g transform="translate(520,300)">
+<rect width="80" height="40" />
+<text x="20" y="25">IDAT</text>
+<text x="60" y="12" style="font-size:8pt">+</text>
+</g>
+
+<line x1="35" y1="160" x2="344" y2="480"/>
+<line x1="95" y1="160" x2="352" y2="480"/>
+<line x1="155" y1="160" x2="360" y2="480"/>
+<line x1="215" y1="160" x2="368" y2="480"/>
+
+<g transform="translate(495,390)">
+<rect width="50" height="40" />
+<text x="5" y="25">fdAT</text>
+<text x="40" y="12" style="font-size:8pt">+</text>
+</g>
+<g transform="translate(595,390)">
+<rect width="50" height="40" />
+<text x="5" y="25">fcTL</text>
+<text x="40" y="12" style="font-size:8pt">+</text>
+</g>
+
+<line x1="555" y1="340" x2="520" y2="390"/>
+<line x1="565" y1="340" x2="620" y2="390"/>
+
+<g transform="translate(340,480)">
+<rect width="60" height="40" />
+<text x="5" y="25">IEND</text>
+<text x="45" y="12" style="font-size:8pt">1</text>
+</g>
+
+<line x1="520" y1="430" x2="380" y2="480"/>
+<line x1="620" y1="430" x2="380" y2="480"/>
+
+
+</svg>
+

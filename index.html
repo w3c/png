@@ -1571,23 +1571,23 @@ image.</td>
   <li>Transparency information: <a href="#trns-transparency"><span class=
   "chunk">tRNS</span></a> (see [[#transparency-information]]).</li>
 
-  <li>Colour space information: <a href="#chrm-primary-chromaticities-and-white-point"><span class=
-  "chunk">cHRM</span></a>, <a href="#gama-image-gamma"><span class=
-  "chunk">gAMA</span></a>, <a href="#iccp-embedded-icc-profile"><span class=
+  <li>Colour space information: <a href="#11cHRM"><span class=
+  "chunk">cHRM</span></a>, <a href="#11gAMA"><span class=
+  "chunk">gAMA</span></a>, <a href="#11iCCP"><span class=
   "chunk">iCCP</span></a>, <a href="#sbit-significant-bits"><span class=
   "chunk">sBIT</span></a>, <a href="#srgb-standard-rgb-colour-space"><span class=
   "chunk">sRGB</span></a>, <a href="#cicp-video-rendering-colour-spaces"><span class=
   "chunk">cICP</span></a> (see [[#colour-space-information]]).</li>
 
-  <li>Textual information: <a href="#itxt-international-textual-data"><span class=
+  <li>Textual information: <a href="#11iTXt"><span class=
   "chunk">iTXt</span></a>, <a href="#11tEXt"><span class=
   "chunk">tEXt</span></a>, <a href="#ztxt-compressed-textual-data"><span class=
   "chunk">zTXt</span></a> (see [[#textual-information]]).</li>
 
   <li>Miscellaneous information: <a href="#bkgd-background-colour"><span class=
-  "chunk">bKGD</span></a>, <a href="#hist-image-histogram"><span class=
+  "chunk">bKGD</span></a>, <a href="#11hIST"><span class=
   "chunk">hIST</span></a>, <a href="#11pHYs"><span class=
-  "chunk">pHYs</span></a>, <a href="#splt-suggested-palette"><span class=
+  "chunk">pHYs</span></a>, <a href="#11sPLT"><span class=
   "chunk">sPLT</span></a>, <a href="#exif"><span class=
   "chunk">eXIf</span></a>
   (see [[#miscellaneous-information]]).</li>
@@ -1596,7 +1596,7 @@ image.</td>
   "chunk">tIME</span></a> (see [[#time-stamp-information]]).</li>
 
   <li>Animation information:
-    <a href="#actl-animation-control"><span class="chunk">acTL</span></a>,
+    <a href="#actl-animation-control-chunk"><span class="chunk">acTL</span></a>,
     <a href="#fctl-frame-control"><span class="chunk">fcTL</span></a>,
     <a href="#fdat-frame-data"><span class="chunk">fdAT</span></a>
     (see [[#animation-information]]).
@@ -1670,7 +1670,7 @@ image.</td>
 
 </section>
 
-<section>
+<section id="4Concepts.APNGSequence">
 <h3>Sequence numbers</h3>
 
 <p>The <span class="chunk">fcTL</span> and <span class="chunk">fdAT</span> chunks
@@ -2166,7 +2166,7 @@ and <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#chrm-primary-chromaticities-and-white-point"><span class="chunk">cHRM</span></a> </td>
+<td class="Regular"><a href="#11cHRM"><span class="chunk">cHRM</span></a> </td>
 <td class="Regular">No</td>
 <td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
 and <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
@@ -2180,18 +2180,18 @@ and <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#gama-image-gamma"><span class="chunk">gAMA</span></a> </td>
+<td class="Regular"><a href="#11gAMA"><span class="chunk">gAMA</span></a> </td>
 <td class="Regular">No</td>
 <td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
 and <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a> </td>
+<td class="Regular"><a href="#11iCCP"><span class="chunk">iCCP</span></a> </td>
 <td class="Regular">No</td>
 <td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
 and <a href="#11IDAT"><span class="chunk">IDAT</span></a>. If the
-<a href="#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a> chunk is
+<a href="#11iCCP"><span class="chunk">iCCP</span></a> chunk is
 present, the <a href="#srgb-standard-rgb-colour-space"><span class=
 "chunk">sRGB</span></a> chunk should not be present.</td>
 </tr>
@@ -2209,7 +2209,7 @@ and <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
 <td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
 and <a href="#11IDAT"><span class="chunk">IDAT</span></a>. If the
 <a href="#srgb-standard-rgb-colour-space"><span class="chunk">sRGB</span></a> chunk is
-present, the <a href="#iccp-embedded-icc-profile"><span class=
+present, the <a href="#11iCCP"><span class=
 		      "chunk">iCCP</span></a>
 chunk should not be present.</td>
 </tr>
@@ -2223,7 +2223,7 @@ before <a href="#11IDAT"><span class="chunk">IDAT</span></a>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#hist-image-histogram"><span class="chunk">hIST</span></a> </td>
+<td class="Regular"><a href="#11hIST"><span class="chunk">hIST</span></a> </td>
 <td class="Regular">No</td>
 <td class="Regular">After <a href="#11PLTE"><span class="chunk">PLTE</span></a>;
 before <a href="#11IDAT"><span class="chunk">IDAT</span></a>
@@ -2258,7 +2258,7 @@ before <a href="#11IDAT"><span class="chunk">IDAT</span></a>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#splt-suggested-palette"><span class="chunk">sPLT</span></a> </td>
+<td class="Regular"><a href="#11sPLT"><span class="chunk">sPLT</span></a> </td>
 <td class="Regular">Yes</td>
 <td class="Regular">Before <a href="#11IDAT"><span class="chunk">IDAT</span></a>
 </td>
@@ -2277,7 +2277,7 @@ before <a href="#11IDAT"><span class="chunk">IDAT</span></a>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#itxt-international-textual-data"><span class="chunk">iTXt</span></a> </td>
+<td class="Regular"><a href="#11iTXt"><span class="chunk">iTXt</span></a> </td>
 <td class="Regular">Yes</td>
 <td class="Regular">None</td>
 </tr>
@@ -2536,21 +2536,21 @@ type are listed in <a href="#11IHDR"></span> Image
 header</span></a>.</p>
 
 <p>Greyscale samples represent luminance if the transfer curve is
-indicated (by <a href="#gama-image-gamma"><span class=
+indicated (by <a href="#11gAMA"><span class=
 "chunk">gAMA</span></a>, <a href="#srgb-standard-rgb-colour-space"><span class=
-"chunk">sRGB</span></a>, or <a href="#iccp-embedded-icc-profile"><span class=
+"chunk">sRGB</span></a>, or <a href="#11iCCP"><span class=
 "chunk">iCCP</span></a>) or device-dependent greyscale if not.
 RGB samples represent calibrated colour information if the colour
-space is indicated (by <a href="#gama-image-gamma"><span class=
-"chunk">gAMA</span></a> and <a href="#chrm-primary-chromaticities-and-white-point"><span class=
+space is indicated (by <a href="#11gAMA"><span class=
+"chunk">gAMA</span></a> and <a href="#11cHRM"><span class=
 "chunk">cHRM</span></a>, or <a href="#srgb-standard-rgb-colour-space"><span class=
-"chunk">sRGB</span></a>, or <a href="#iccp-embedded-icc-profile"><span class=
+"chunk">sRGB</span></a>, or <a href="#11iCCP"><span class=
 "chunk">iCCP</span></a>,
 or uncalibrated device-dependent colour
 if not.</p>
 
 <p>Sample values are not necessarily proportional to light
-intensity; the <a href="#gama-image-gamma"><span class=
+intensity; the <a href="#11gAMA"><span class=
 "chunk">gAMA</span></a> chunk specifies the relationship between
 sample values and display output intensity. Viewers are strongly
 encouraged to compensate properly. See <a href=
@@ -3146,8 +3146,8 @@ stored in a number of <a href="#11IDAT"><span class=
 <h2>Other uses of
 compression</h2>
 
-<p>PNG also uses compression method 0 in <a href="#itxt-international-textual-data"><span
-class="chunk">iTXt</span></a>, <a href="#iccp-embedded-icc-profile"><span class=
+<p>PNG also uses compression method 0 in <a href="#11iTXt"><span
+class="chunk">iTXt</span></a>, <a href="#11iCCP"><span class=
 "chunk">iCCP</span></a>,
 and <a href="#ztxt-compressed-textual-data"><span class=
 "chunk">zTXt</span></a> chunks. Unlike the image data, such
@@ -3391,10 +3391,10 @@ alpha), the <span class="chunk">PLTE</span> chunk is optional. If
 present, it provides a suggested set of colours (from 1 to 256)
 to which the truecolour image can be quantized if it cannot be
 displayed directly. It is, however, recommended that the <a href=
-"#splt-suggested-palette"><span class="chunk">sPLT</span></a> chunk be used for
+"#11sPLT"><span class="chunk">sPLT</span></a> chunk be used for
 this purpose, rather than the <span class="chunk">PLTE</span>
 chunk. If neither <span class="chunk">PLTE</span> nor <a href=
-"#splt-suggested-palette"><span class="chunk">sPLT</span></a> chunks are present
+"#11sPLT"><span class="chunk">sPLT</span></a> chunks are present
 and the image cannot be displayed directly, quantization has to
 be done by the viewing system. However, it is often preferable
 for the selection of colours to be done once by the PNG encoder.
@@ -3595,7 +3595,7 @@ Primary chromaticities and white point</h2>
 specify the 1931 CIE <i>x,y</i> chromaticities of the red,
 green, and blue display primaries used in the image, and the referenced
 white point. See <a href="#C-GammaAppendix"></a> for more information.
-The <a href="#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a>,
+The <a href="#11iCCP"><span class="chunk">iCCP</span></a>,
 and <a
 href="#srgb-standard-rgb-colour-space"><span class="chunk">sRGB</span></a> chunks provide
 more sophisticated support for colour management and control.</p>
@@ -3665,7 +3665,7 @@ PNG datastreams, although it is of little value for greyscale
 images.</p>
 
 <p>An <a href="#srgb-standard-rgb-colour-space"><span class="chunk">sRGB</span></a> or
-<a href="#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a>
+<a href="#11iCCP"><span class="chunk">iCCP</span></a>
 chunk
 when present and recognized, overrides the <span class=
 "chunk">cHRM</span> chunk.</p>
@@ -3696,7 +3696,7 @@ Adjustment for different viewing conditions is normally handled
 by a Colour Management System. If the adjustment is not
 performed, the error is usually small. Applications desiring high
 colour fidelity may wish to use an <a href="#srgb-standard-rgb-colour-space"><span class=
-"chunk">sRGB</span></a>, <a href="#iccp-embedded-icc-profile"><span class=
+"chunk">sRGB</span></a>, <a href="#11iCCP"><span class=
 "chunk">iCCP</span></a> chunk.</p>
 
 <p>The <span class="chunk">gAMA</span> chunk contains:</p>
@@ -3719,7 +3719,7 @@ representing gamma times 100000.</p>
 "#13Decoder-gamma-handling"></a> for more information.</p>
 
 <p>An <a href="#srgb-standard-colour-space"><span class="chunk">sRGB</span></a> or
-<a href="#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a>
+<a href="#11iCCP"><span class="chunk">iCCP</span></a>
 chunk, when present and recognized, overrides the <span class=
 "chunk">gAMA</span> chunk.</p>
 </section>
@@ -3781,22 +3781,22 @@ shall be an RGB colour space for colour images (PNG colour types
 2, 3, and 6), or a greyscale colour space for greyscale images
 (PNG colour types 0 and 4). A PNG encoder that writes the <span
 class="chunk">iCCP</span> chunk is encouraged to also write <a
-href="#gama-image-gamma"><span class="chunk">gAMA</span></a> and <a href=
-"#chrm-primary-chromaticities-and-white-point"><span class="chunk">cHRM</span></a> chunks that
+href="#11gAMA"><span class="chunk">gAMA</span></a> and <a href=
+"#11cHRM"><span class="chunk">cHRM</span></a> chunks that
 approximate the ICC profile, to provide compatibility with
 applications that do not use the <span class="chunk">iCCP</span>
 chunk. When the <span class="chunk">iCCP</span> chunk is present,
 PNG decoders that recognize it and are capable of colour
 management
-shall ignore the <a href="#gama-image-gamma"><span class=
-"chunk">gAMA</span></a> and <a href="#chrm-primary-chromaticities-and-white-point"><span class=
+shall ignore the <a href="#11gAMA"><span class=
+"chunk">gAMA</span></a> and <a href="#11cHRM"><span class=
 "chunk">cHRM</span></a> chunks and use the <span class=
 "chunk">iCCP</span> chunk instead and interpret it according to
 [[ICC]].
 PNG decoders that are used in an environment that is incapable of
 full-fledged colour management should use the <a href=
-"#gama-image-gamma"><span class="chunk">gAMA</span></a> and <a href=
-"#chrm-primary-chromaticitieis-and-white-point"><span class="chunk">cHRM</span></a> chunks if
+"#11gAMA"><span class="chunk">gAMA</span></a> and <a href=
+"#11cHRM"><span class="chunk">cHRM</span></a> chunks if
 present.</p>
 
 <p>Unless a cICP chunk exists, a PNG datastream should contain at most one embedded profile,
@@ -3995,8 +3995,8 @@ such as previews of images destined for a different output device
 
 <p>It is recommended that a PNG encoder that writes the <span
 class="chunk">sRGB</span> chunk also write a <a href=
-"#gama-image-gamma"><span class="chunk">gAMA</span></a> chunk (and
-optionally a <a href="#chrm-primary-chromaticities-and-white-point"><span class=
+"#11gAMA"><span class="chunk">gAMA</span></a> chunk (and
+optionally a <a href="#11cHRM"><span class=
 "chunk">cHRM</span></a> chunk) for compatibility with decoders
 that do not use the <span class="chunk">sRGB</span> chunk. Only
 the following values shall be used.</p>
@@ -4006,7 +4006,7 @@ the following values shall be used.</p>
 <caption>gAMA and cHRM values for sRGB</caption>
 
 <tr>
-<th colspan="2"><a href="#gama-image-gamma"><span class=
+<th colspan="2"><a href="#11gAMA"><span class=
 "chunk">gAMA</span></a> </th>
 </tr>
 
@@ -4016,7 +4016,7 @@ the following values shall be used.</p>
 </tr>
 
 <tr>
-<th colspan="2"><a href="#chrm-primary-chromaticities-and-white-point"><span class=
+<th colspan="2"><a href="#11cHRM"><span class=
 "chunk">cHRM</span></a> </th>
 </tr>
 
@@ -4064,21 +4064,21 @@ the following values shall be used.</p>
 <p>When the <span class="chunk">sRGB</span> chunk is present, it
 is recommended that decoders that recognize it and are capable of
 colour management
-ignore the <a href="#gama-image-gamma"><span
-class="chunk">gAMA</span></a> and <a href="#chrm-primary-chromaticities-and-white-point"><span class=
+ignore the <a href="#11gAMA"><span
+class="chunk">gAMA</span></a> and <a href="#11cHRM"><span class=
 "chunk">cHRM</span></a> chunks and use the <span class=
 "chunk">sRGB</span> chunk instead. Decoders that recognize the
 <span class="chunk">sRGB</span> chunk but are not capable of
 colour management
 are recommended to ignore the <a href=
-"#gama-image-gamma"><span class="chunk">gAMA</span></a> and <a href=
-"#chrm-primary-chromaticities-and-white-point"><span class="chunk">cHRM</span></a> chunks, and use the
+"#11gAMA"><span class="chunk">gAMA</span></a> and <a href=
+"#11cHRM"><span class="chunk">cHRM</span></a> chunks, and use the
 values given above as if they had appeared in <a href=
-"#gama-image-gamma"><span class="chunk">gAMA</span></a> and <a href=
-"#chrm-primary-chromaticities-and-white-point"><span class="chunk">cHRM</span></a> chunks.</p>
+"#11gAMA"><span class="chunk">gAMA</span></a> and <a href=
+"#11cHRM"><span class="chunk">cHRM</span></a> chunks.</p>
 
 <p>It is recommended that the <span class="chunk">sRGB</span> and
-<a href="#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a>
+<a href="#11iCCP"><span class="chunk">iCCP</span></a>
 chunks do not appear simultaneously in a PNG datastream.</p>
 </section>
 
@@ -4201,7 +4201,7 @@ function defined at [[ITU-R BT.709]]:
 <!-- Maintain a fragment named "11textIntro" to preserve incoming links to it -->
 <section class="introductory" id="11textIntro">
 <p>PNG provides the <a href="#11tEXt"><span class=
-"chunk">tEXt</span></a>, <a href="#itxt-international-textual-data"><span class=
+"chunk">tEXt</span></a>, <a href="#11iTXt"><span class=
 "chunk">iTXt</span></a>, and <a href="#ztxt-compressed-textual-data"><span class=
 "chunk">zTXt</span></a> chunks for storing text strings
 associated with the image, such as an image description or
@@ -4325,11 +4325,11 @@ the text string associated with a keyword is restricted to the
 Latin-1 character set plus the linefeed character. Text strings
 in <a href="#ztxt-compressed-textual-data"><span class="chunk">zTXt</span></a> are
 compressed into zlib datastreams using <a>deflate</a> compression (see
-<a href='#10CompressionOtherUses'></a>). The <a href="#itxt-international-textual-data"><span
+<a href='#10CompressionOtherUses'></a>). The <a href="#11iTXt"><span
 class="chunk">iTXt</span></a> chunk can be used to convey
 characters outside the Latin-1 set. It uses the UTF-8 encoding [[rfc3629]].
 There is an option to compress text strings
-in the <a href="#itxt-international-textual-data"><span class="chunk">iTXt</span></a>
+in the <a href="#11iTXt"><span class="chunk">iTXt</span></a>
 chunk.</p>
 </section>
 
@@ -4384,7 +4384,7 @@ represented by a single linefeed character (decimal 10).
 Characters other than those defined in Latin-1 plus the linefeed
 character have no defined meaning in <span class="chunk">tEXt</span> chunks.
 Text containing characters outside the repertoire of ISO/IEC
-8859-1 should be encoded using the <a href="#itxt-international-textual-data"><span class=
+8859-1 should be encoded using the <a href="#11iTXt"><span class=
 "chunk">iTXt</span></a> chunk.</p>
 </section>
 
@@ -5082,7 +5082,7 @@ the image data are changed.</p>
       it should be treated as an error. </p>
 
     <p>`num_plays` indicates the number of times that this animation should play;
-      if it is 0, the animation should play indefinitely.
+      if it is 0, the animation should play indefinitely.fctl-fra
       If nonzero, the animation should come to rest on the final frame
       at the end of the last play. </p>
 
@@ -5099,7 +5099,7 @@ the image data are changed.</p>
 
   </section>
 
-  <section>
+  <section id="fctl-frame-control">
     <h2><span class="chunk">fcTL</span>
       Frame Control Chunk</h2>
 
@@ -5332,7 +5332,7 @@ the image data are changed.</p>
 
 </section>
 
-<section>
+<section id="11fdAT">
     <h2><span class="chunk">fdAT</span>
     Frame Data Chunk</h2>
 
@@ -5450,28 +5450,28 @@ to gamma issues.</p>
 
 <p>PNG encoders capable of full colour management will perform more
 sophisticated calculations than those described here and may
-choose to use the <a href="#iccp-embedded-icc-profile"><span class=
+choose to use the <a href="#11iCCP"><span class=
 "chunk">iCCP</span></a> chunk. If it is known that the image
 samples conform to the sRGB specification [[SRGB]], encoders are strongly encouraged to write
 the <a href="#srgb-standard-colour-space"><span class="chunk">sRGB</span></a> chunk
 without performing additional gamma handling. In both cases it is
-recommended that an appropriate <a href="#gama-image-gamma"><span class=
+recommended that an appropriate <a href="#11gAMA"><span class=
 "chunk">gAMA</span></a> chunk be generated for use by PNG
-decoders that do not recognize the <a href="#iccp-embedded-icc-profile"><span class=
+decoders that do not recognize the <a href="#11iCCP"><span class=
 "chunk">iCCP</span></a> or <a href="#srgb-standard-colour-space"><span class=
 "chunk">sRGB</span></a> chunks.</p>
 
 <p>A PNG encoder has to determine:</p>
 
 <!-- <ol start="1"> --><ol>
-<li>what value to write in the <a href="#gama-image-gamma"><span class=
+<li>what value to write in the <a href="#11gAMA"><span class=
 "chunk">gAMA</span></a> chunk;</li>
 
 <li>how to transform the provided image samples  into the values
 to be written in the PNG datastream.</li>
 </ol>
 
-<p>The value to write in the <a href="#gama-image-gamma"><span class=
+<p>The value to write in the <a href="#11gAMA"><span class=
 "chunk">gAMA</span></a> chunk is that value which causes a PNG
 decoder to behave in the desired way. See <a class='Href'
 href='#13Decoder-gamma-handling'></a>.</p>
@@ -5494,7 +5494,7 @@ floor((2<sup>sampledepth</sup>-1) * intensity<sup>encoding_exponent</sup>
 
 <p>If the intensity in the equation is the desired output
 intensity, the encoding exponent is the gamma value to be used in
-the <a href="#gama-image-gamma"><span class="chunk">gAMA</span></a>
+the <a href="#11gAMA"><span class="chunk">gAMA</span></a>
 chunk.</p>
 
 <p>If the intensity available to the PNG encoder is the original
@@ -5522,7 +5522,7 @@ gamma = encoding_exponent
 <!-- ************Page Break******************* -->
 <p>If the image is being written to a datastream only, the
 encoder is free to choose the encoding exponent. Choosing a value
-that causes the gamma value in the <a href="#gama-image-gamma"><span class=
+that causes the gamma value in the <a href="#11gAMA"><span class=
 "chunk">gAMA</span></a> chunk to be 1/2.2 is often a reasonable
 choice because it minimizes the work for a PNG decoder displaying
 on a typical video monitor.</p>
@@ -5537,7 +5537,7 @@ of the intended scene.</p>
 the PNG datastream, avoiding a separate gamma encoding step for
 the datastream, the renderer should approximate the transfer
 function of the display system by a power function, and write the
-reciprocal of the exponent into the <a href="#gama-image-gamma"><span
+reciprocal of the exponent into the <a href="#11gAMA"><span
 class="chunk">gAMA</span></a> chunk. This will allow a PNG
 decoder to reproduce what was displayed on screen for the
 originator during rendering.</p>
@@ -5546,7 +5546,7 @@ originator during rendering.</p>
 displayed pixels appropriate for the display device, and to
 perform separate gamma encoding for data storage and
 transmission, arranging to have a value in the <a href=
-"#gama-image-gamma"><span class="chunk">gAMA</span></a> chunk more
+"#11gAMA"><span class="chunk">gAMA</span></a> chunk more
 appropriate to the future use of the image.</p>
 
 <p>Computer graphics renderers often do not perform gamma
@@ -5556,7 +5556,7 @@ that have already been quantized into integer values, there is no
 point in doing gamma encoding on them; that would just result in
 further loss of information. The encoder should just write the
 sample values to the PNG datastream. This does not imply that the
-<a href="#gama-image-gamma"><span class="chunk">gAMA</span></a> chunk
+<a href="#11gAMA"><span class="chunk">gAMA</span></a> chunk
 should contain a gamma value of 1.0 because the desired
 end-to-end transfer function from scene intensity to display
 output intensity is not necessarily linear. However, the desired
@@ -5565,7 +5565,7 @@ whether the scene being rendered is a daylight scene or an indoor
 scene, etc.</p>
 
 <p>When the sample values come directly from a piece of hardware,
-the correct <a href="#gama-image-gamma"><span class="chunk">gAMA</span></a>
+the correct <a href="#11gAMA"><span class="chunk">gAMA</span></a>
 value can, in principle, be inferred from the transfer function
 of the hardware and lighting conditions of the scene. In the case
 of video digitizers ("frame grabbers"), the samples are probably
@@ -5594,7 +5594,7 @@ values intact from the input to the output file.</p>
 
 <p>If the source datastream describes the gamma characteristics
 of the image, a datastream converter is strongly encouraged to
-write a <a href="#gama-image-gamma"><span class="chunk">gAMA</span></a>
+write a <a href="#11gAMA"><span class="chunk">gAMA</span></a>
 chunk. Some datastream formats specify the display exponent (the
 exponent of the function which maps image samples to display
 output rather than the other direction). If the source file's
@@ -5617,11 +5617,11 @@ gamma = 1/display_exponent
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<p>It is better to write a <a href="#gama-image-gamma"><span class=
+<p>It is better to write a <a href="#11gAMA"><span class=
 "chunk">gAMA</span></a> chunk with a value that is approximately
 correct than to omit the chunk and force PNG decoders to guess an
 approximate gamma. If a PNG encoder is unable to infer the gamma
-value, it is preferable to omit the <a href="#gama-image-gamma"><span
+value, it is preferable to omit the <a href="#11gAMA"><span
 class="chunk">gAMA</span></a> chunk. If a guess has to be made
 this should be left to the PNG decoder.</p>
 
@@ -5641,7 +5641,7 @@ issues.</p>
 
 <p>PNG encoders capable of full colour management will perform more
 sophisticated calculations than those described here and may
-choose to use the <a href="#iccp-embedded-icc-profile"><span class=
+choose to use the <a href="#11iCCP"><span class=
 "chunk">iCCP</span></a> chunk. If it is known that the image
 samples conform to the sRGB specification [[SRGB]], PNG encoders are strongly encouraged to
 use the <a href="#srgb-standard-colour-space"><span class="chunk">sRGB</span></a>
@@ -5651,11 +5651,11 @@ chunk.</p>
 chromaticities of the source display primaries, or to make a
 strong guess based on the origin of the image, or the hardware
 running it, the encoder is strongly encouraged to output the <a
-href="#chrm-primary-chromaticities-and-white-point"><span class="chunk">cHRM</span></a> chunk. If this
-is done, the <a href="#gama-image-gamma"><span class=
+href="#11cHRM"><span class="chunk">cHRM</span></a> chunk. If this
+is done, the <a href="#11gAMA"><span class=
 "chunk">gAMA</span></a> chunk should also be written; decoders
-can do little with a <a href="#chrm-primary-chromaticities-and-white-point"><span class=
-"chunk">cHRM</span></a> chunk if the <a href="#gama-image-gamma"><span
+can do little with a <a href="#11cHRM"><span class=
+"chunk">cHRM</span></a> chunk if the <a href="#11gAMA"><span
 class="chunk">gAMA</span></a> chunk is missing.</p>
 
 <p>There are a number of recommendations and standards for
@@ -5675,7 +5675,7 @@ other format.</li>
 </ol>
 
 <!--  deleted - comment PDG 31<p>Scanners that produce PNG datastreams as output should insert
-the filter chromaticities into a <a href="#chrm-primary-chromaticities-and-white-point"><span class=
+the filter chromaticities into a <a href="#11cHRM"><span class=
 "chunk">cHRM</span></a> chunk.</p>-->
 
 <p>In the case of hand-drawn or digitally edited images, it is
@@ -5684,32 +5684,32 @@ being produced. Many image editing programs allow the type of
 monitor being used to be specified. This is often because they
 are working in some device-independent space internally. Such
 programs have enough information to write valid <a href=
-"#chrm-primary-chromaticities-and-white-point"><span class="chunk">cHRM</span></a> and <a href=
-"#gama-image-gamma"><span class="chunk">gAMA</span></a> chunks, and are
+"#11cHRM"><span class="chunk">cHRM</span></a> and <a href=
+"#11gAMA"><span class="chunk">gAMA</span></a> chunks, and are
 strongly encouraged to do so automatically.</p>
 
 <p>If the encoder is compiled as a portion of a computer image
 renderer that performs full-spectral rendering, the monitor
 values that were used to convert from the internal
 device-independent colour space to RGB should be written into the
-<a href="#chrm-primary-chromaticities-and-white-point"><span class="chunk">cHRM</span></a> chunk. Any
+<a href="#11cHRM"><span class="chunk">cHRM</span></a> chunk. Any
 colours that are outside the gamut of the chosen RGB device
 should be mapped to be within the gamut; PNG does not store
 out-of-gamut colours.</p>
 
 <p>If the computer image renderer performs calculations directly
-in device-dependent RGB space, a <a href="#chrm-primary-chromaticities-and-white-point"><span class=
+in device-dependent RGB space, a <a href="#11cHRM"><span class=
 "chunk">cHRM</span></a> chunk should not be written unless the
 scene description and rendering parameters have been adjusted for
 a particular monitor. In that case, the data for that monitor
-should be used to construct a <a href="#chrm-primary-chromaticities-and-white-point"><span class=
+should be used to construct a <a href="#11cHRM"><span class=
 "chunk">cHRM</span></a> chunk.</p>
 
 <p>A few image formats store calibration information, which can
-be used to fill in the <a href="#chrm-primary-chromaticities-and-white-point"><span class=
+be used to fill in the <a href="#11cHRM"><span class=
 "chunk">cHRM</span></a> chunk. For example, TIFF 6.0 files [[?TIFF 6.0]] can
 optionally store calibration information, which if present should
-be used to construct the <a href="#chrm-primary-chromaticities-and-white-point"><span class=
+be used to construct the <a href="#11cHRM"><span class=
 "chunk">cHRM</span></a> chunk.</p>
 
 <p>Video created with recent video equipment probably uses the
@@ -5945,7 +5945,7 @@ suggests that the original data range was exactly
 <h2>Suggested
 palettes</h2>
 
-<p>Suggested palettes may appear as <a href="#splt-suggested-palette"><span
+<p>Suggested palettes may appear as <a href="#11sPLT"><span
 class="chunk">sPLT</span></a> chunks in any PNG datastream, or as
 a <a href="#11PLTE"><span class="chunk">PLTE</span></a> chunk in
 truecolour PNG datastreams. In either case, the suggested palette
@@ -5954,7 +5954,7 @@ present the image on indexed-colour display hardware. Suggested
 palettes are of no interest to viewers running on truecolour
 hardware.</p>
 
-<p>When an <a href="#splt-suggested-palette"><span class="chunk">sPLT</span></a>
+<p>When an <a href="#11sPLT"><span class="chunk">sPLT</span></a>
 chunk is used to provide a suggested palette, it is recommended
 that the encoder use the frequency fields to indicate the
 relative importance of the palette entries, rather than leave
@@ -5966,7 +5966,7 @@ consequence of developing the suggested palette.) Because the
 suggested palette includes transparency information, it should be
 computed for the un-<a>composited</a> image.</p>
 
-<p>Even for indexed-colour images, <a href="#splt-suggested-palette"><span class=
+<p>Even for indexed-colour images, <a href="#11sPLT"><span class=
 "chunk">sPLT</span></a> can be used to define alternative reduced
 palettes for viewers that are unable to display all the colours
 present in the <a href="#11PLTE"><span class=
@@ -5982,7 +5982,7 @@ unspecified.</p>
 truecolour PNG datastream uses the <a href="#11PLTE"><span class=
 "chunk">PLTE</span></a> chunk. If this method is used, the
 histogram (frequencies) should appear in a separate <a href=
-"#hist-image-histogram"><span class="chunk">hIST</span></a> chunk. The <a href=
+"#11hIST"><span class="chunk">hIST</span></a> chunk. The <a href=
 "#11PLTE"><span class="chunk">PLTE</span></a> chunk does not
 include transparency information. Hence for images of colour type
 6 (truecolour with alpha), it is recommended that a <a href=
@@ -6000,7 +6000,7 @@ class="chunk">bKGD</span></a> chunk in an image of colour type
 
 <p>For images of colour type 2 (truecolour), it is recommended
 that the <a href="#11PLTE"><span class="chunk">PLTE</span></a>
-and <a href="#hist-image-histogram"><span class="chunk">hIST</span></a> chunks
+and <a href="#11hIST"><span class="chunk">hIST</span></a> chunks
 be computed with reference to the RGB data only, ignoring any
 transparent-colour specification. If the datastream uses
 transparency (has a <a href="#trns-transparency"><span class=
@@ -6010,13 +6010,13 @@ resulting palette for use with their intended background colour
 </p>
 
 <p>For providing suggested palettes,
-the <a href="#splt-suggested-palette"><span class="chunk">sPLT</span></a>
+the <a href="#11sPLT"><span class="chunk">sPLT</span></a>
 chunk is more flexible than the <a href="#11PLTE"><span class=
 "chunk">PLTE</span></a> chunk in
 the following ways:</p>
 
 <!-- <ol start="1"> --><ol>
-<li>With <a href="#splt-suggested-palette"><span class="chunk">sPLT</span></a>
+<li>With <a href="#11sPLT"><span class="chunk">sPLT</span></a>
 multiple suggested palettes may be provided. A PNG decoder may
 choose an appropriate palette based on name or number of
 entries.</li>
@@ -6026,32 +6026,32 @@ channel), the <a href="#11PLTE"><span class=
 "chunk">PLTE</span></a> chunk represents a palette already
 <a>composited</a> against the <a href="#bkgd-background-colour"><span class=
 "chunk">bKGD</span></a> colour, so it is useful only for display
-against that background colour. The <a href="#splt-suggested-palette"><span
+against that background colour. The <a href="#11sPLT"><span
 class="chunk">sPLT</span></a> chunk provides an un-<a>composited</a>
 palette, which is useful for display against backgrounds chosen
 by the PNG decoder.</li>
 
-<li>Since the <a href="#splt-suggested-palette"><span class=
+<li>Since the <a href="#11sPLT"><span class=
 "chunk">sPLT</span></a> chunk is an ancillary chunk, a PNG editor
 may add or modify suggested palettes without being forced to
 discard unknown unsafe-to-copy chunks.</li>
 
-<li>Whereas the <a href="#splt-suggested-palette"><span class=
+<li>Whereas the <a href="#11sPLT"><span class=
 "chunk">sPLT</span></a> chunk is allowed in PNG datastreams for
 colour types 0, 3, and 4 (greyscale and indexed), the <a href=
 "#11PLTE"><span class="chunk">PLTE</span></a> chunk cannot be
 used to provide reduced palettes in these cases.</li>
 
 <li>More than 256 entries may appear in the <a href=
-"#splt-suggested-palette"><span class="chunk">sPLT</span></a> chunk.</li>
+"#11sPLT"><span class="chunk">sPLT</span></a> chunk.</li>
 </ol>
 
-<p>A PNG encoder that uses the <a href="#splt-suggested-palette"><span class=
+<p>A PNG encoder that uses the <a href="#11sPLT"><span class=
 "chunk">sPLT</span></a> chunk may choose to write a suggested
 palette represented by <a href="#11PLTE"><span class=
-"chunk">PLTE</span></a> and <a href="#hist-image-histogram"><span class=
+"chunk">PLTE</span></a> and <a href="#11hIST"><span class=
 "chunk">hIST</span></a> chunks as well, for compatibility with
-decoders that do not recognize the <a href="#splt-suggested-palette"><span class=
+decoders that do not recognize the <a href="#11sPLT"><span class=
 "chunk">sPLT</span></a> chunk.</p>
 </section>
 
@@ -6136,7 +6136,7 @@ PNG text strings are expected to use the Latin-1 character set.
 Encoders should avoid storing characters that are not defined in
 Latin-1, and should provide character code remapping if the local
 system's character set is not Latin-1. The <a href=
-"#itxt-international-textual-data"><span class="chunk">iTXt</span></a> chunk provides
+"#11iTXt"><span class="chunk">iTXt</span></a> chunk provides
 support for international text, represented using the UTF-8
 encoding of UCS. Encoders should discourage the creation of
 single lines of text longer than 79 characters, in order to
@@ -6233,7 +6233,7 @@ invalid compression method, an invalid chunk length, the absence
 of a <a href="#11PLTE"><span class="chunk">PLTE</span></a> chunk
 before the first <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a> chunk in an indexed image, or the
-presence of multiple <a href="#gama-image-gamma"><span class=
+presence of multiple <a href="#11gAMA"><span class=
 "chunk">gAMA</span></a> chunks. A PNG decoder should handle
 errors as follows:</p>
 
@@ -6301,7 +6301,7 @@ decoder. For example, a program whose sole purpose is to extract
 text annotations (for example, copyright information) does not
 require a viewable image. Another decoder might consider the <a
 href="#trns-transparency"><span class="chunk">tRNS</span></a> and <a href=
-"#gama-image-gamma"><span class="chunk">gAMA</span></a> chunks essential to
+"#11gAMA"><span class="chunk">gAMA</span></a> chunks essential to
 its proper execution.</p>
 
 <p>Syntax errors always involve known chunks because syntax
@@ -6317,7 +6317,7 @@ cannot recover from an empty <a href="#11PLTE"><span class=
 ignore an invalid <a href="#11PLTE"><span class=
 "chunk">PLTE</span></a> chunk in a truecolour image; and a
 program that extracts the alpha channel can ignore an invalid <a
-href="#gama-image-gamma"><span class="chunk">gAMA</span></a> chunk, but may
+href="#11gAMA"><span class="chunk">gAMA</span></a> chunk, but may
 consider the presence of two <a href="#trns-transparency"><span class=
 "chunk">tRNS</span></a> chunks to be a fatal error. Anomalous
 situations other than syntax errors shall be treated as
@@ -6361,8 +6361,8 @@ syntax errors as indications of corruption (see also <a href="#13Error-checking"
 
 <p>Errors in compressed chunks (<a href="#11IDAT"><span class=
 "chunk">IDAT</span></a>, <a href="#ztxt-compressed-textual-data"><span class=
-"chunk">zTXt</span></a>, <a href="#itxt-international-textual-data"><span class=
-"chunk">iTXt</span></a>, <a href="#iccp-embedded-icc-profile"><span class=
+"chunk">zTXt</span></a>, <a href="#11iTXt"><span class=
+"chunk">iTXt</span></a>, <a href="#11iCCP"><span class=
 "chunk">iCCP</span></a>) could lead to buffer overruns.
 Implementors of <a>deflate</a> decompressors should guard against this
 possibility.</p>
@@ -6455,13 +6455,13 @@ public chunks. There is no additional security risk associated with unknown or
 unimplemented chunk types, because such chunks will be ignored, or at most be
 copied into another PNG datastream.</p>
 
-<p>The <a href="#itxt-international-textual-data"><span class="chunk">iTXt</span></a>, <a
+<p>The <a href="#11iTXt"><span class="chunk">iTXt</span></a>, <a
 href="#11tEXt"><span class="chunk">tEXt</span></a>, and <a href=
 "#ztxt-compressed-textual-data"><span class="chunk">zTXt</span></a> chunks contain keywords
 and data
 that are meant to be displayed as plain text. The <a href=
-"#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a>
-and <a href= "#splt-suggested-palette"><span class="chunk">
+"#11iCCP"><span class="chunk">iCCP</span></a>
+and <a href= "#11sPLT"><span class="chunk">
 sPLT</span></a> chunks contain keywords that are meant to be displayed as plain text. It is
 possible that if the decoder displays such text without filtering
 out control characters, especially the ESC (escape) character,
@@ -6581,7 +6581,7 @@ same size as they did on the display.</p>
 processing</h2>
 
 <p>If practical, PNG decoders should have a way to display to the
-user all the <a href="#itxt-international-textual-data"><span class=
+user all the <a href="#11iTXt"><span class=
 "chunk">iTXt</span></a>, <a href="#11tEXt"><span class=
 "chunk">tEXt</span></a>, and <a href="#ztxt-compressed-textual-data"><span class=
 "chunk">zTXt</span></a> chunks found in the datastream. Even if
@@ -6909,7 +6909,7 @@ images, the entire calculation is performed separately for R, G,
 and B values.</p>
 
 <p>The value of gamma can be taken directly from the <a href=
-"#gama-image-gamma"><span class="chunk">gAMA</span></a> chunk.
+"#11gAMA"><span class="chunk">gAMA</span></a> chunk.
 Alternatively, an application may wish to allow the user to
 adjust the appearance of the displayed image by influencing the
 value of gamma. For example, the user could manually set a
@@ -6926,7 +6926,7 @@ decoding_exponent = 1.0 / (gamma * display_exponent)
 darken the mid-level tones, or less than 1 to lighten them.</p>
 
 <p>A <a href=
-"#gama-image-gamma"><span class="chunk">gAMA</span></a> chunk containing zero is
+"#11gAMA"><span class="chunk">gAMA</span></a> chunk containing zero is
 meaningless but could appear by mistake.
 Decoders should ignore it,
 and editors may discard it and issue a warning to the user.</p>
@@ -6945,9 +6945,9 @@ correction tables can be computed using integer arithmetic and a
 precomputed table of logarithms. Example code appears in [[PNG-EXTENSIONS]].</p>
 
 <p>When the incoming image has unknown gamma (<a href=
-"#gama-image-gamma"><span class="chunk">gAMA</span></a>, <a href=
+"#11gAMA"><span class="chunk">gAMA</span></a>, <a href=
 "#srgb-standard-colour-space"><span class="chunk">sRGB</span></a>, and <a href=
-"#iccp-embedded-icc-profile"><span class="chunk">iCCP</span></a>
+"#11iCCP"><span class="chunk">iCCP</span></a>
 all absent), standalone image viewers should choose
 a likely default gamma value, but allow the user to select a new
 one if the result proves too dark or too light. The default gamma
@@ -7001,12 +7001,12 @@ provides the fastest display of PNG images. But unless the viewer
 uses exactly the same display hardware as that used by the author
 of the original image, the colours will not be exactly the same
 as those seen by the original author, particularly for darker or
-near-neutral colours. The <a href="#chrm-primary-chromaticities-and-white-point"><span class=
+near-neutral colours. The <a href="#11cHRM"><span class=
 "chunk">cHRM</span></a> chunk provides information that allows
 closer colour matching than that provided by gamma correction
 alone.</p>
 
-<p>The <a href="#chrm-primary-chromaticities-and-white-point"><span class="chunk">cHRM</span></a> data
+<p>The <a href="#11cHRM"><span class="chunk">cHRM</span></a> data
 can be used to transform the image data from RGB to XYZ and
 thence into a perceptually linear colour space such as CIE LAB.
 The colours can be partitioned to generate an optimal palette,
@@ -7030,8 +7030,8 @@ combining them to produce the overall transformation. The PNG
 decoder is responsible for implementing gamut mapping.</p>
 
 <p>Decoders running on platforms that have a Colour Management
-System (CMS) can pass the image data, <a href="#gama-image-gamma"><span
-class="chunk">gAMA</span></a>, and <a href="#chrm-primary-chromaticities-and-white-point"><span class=
+System (CMS) can pass the image data, <a href="#11gAMA"><span
+class="chunk">gAMA</span></a>, and <a href="#11cHRM"><span class=
 "chunk">cHRM</span></a> values to the CMS for display or further
 processing.</p>
 
@@ -7042,20 +7042,20 @@ as XYZ. This will provide better colour fidelity than a simple
 RGB to CMYK conversion. The PostScript Language Reference manual
 [[?PostScript]] gives examples. Such decoders
 are responsible for implementing gamut mapping between source RGB
-(specified in the <a href="#chrm-primary-chromaticities-and-white-point"><span class=
+(specified in the <a href="#11cHRM"><span class=
 "chunk">cHRM</span></a> chunk) and the target printer. The
 PostScript interpreter is then responsible for producing the
 required colours.</p>
 
-<p>PNG decoders can use the <a href="#chrm-primary-chromaticities-and-white-point"><span class=
+<p>PNG decoders can use the <a href="#11cHRM"><span class=
 "chunk">cHRM</span></a> data to calculate an accurate greyscale
 representation of a colour image. Conversion from RGB to grey is
 simply a case of calculating the Y (luminance) component of XYZ,
 which is a weighted sum of R, G, and B values. The weights depend
 upon the monitor type, i.e. the values in the <a href=
-"#chrm-primary-chromaticities-and-white-point"><span class="chunk">cHRM</span></a> chunk. PNG decoders
+"#11cHRM"><span class="chunk">cHRM</span></a> chunk. PNG decoders
 may wish to do this for PNG datastreams with no <a href=
-"#chrm-primary-chromaticities-and-white-point"><span class="chunk">cHRM</span></a> chunk. In this
+"#11cHRM"><span class="chunk">cHRM</span></a> chunk. In this
 case, a reasonable default would be the CCIR 709 primaries [[ITU-R BT.709]]. The original NTSC primaries
 should <strong>not</strong> be used unless the PNG image really
 was colour-balanced for such a monitor.</p>
@@ -7342,7 +7342,7 @@ the dither.</p>
 display a truecolour image, or an indexed-colour image whose
 palette is too large for the frame buffer, the encoder may have
 provided one or more suggested palettes in <a href=
-"#splt-suggested-palette"><span class="chunk">sPLT</span></a> chunks. If one of
+"#11sPLT"><span class="chunk">sPLT</span></a> chunks. If one of
 these is found to be suitable, based on size and perhaps name,
 the PNG decoder can use that palette. Suggested palettes with a
 sample depth different from what the decoder needs can be
@@ -7388,13 +7388,13 @@ compositing step on the truecolour PNG image and background
 image, then colour-quantize the resulting image.</p>
 
 <p>In truecolour PNG datastreams, if both <a href="#11PLTE"><span
-class="chunk">PLTE</span></a> and <a href="#splt-suggested-palette"><span class=
+class="chunk">PLTE</span></a> and <a href="#11sPLT"><span class=
 "chunk">sPLT</span></a> chunks appear, the PNG decoder may choose
 from among the palettes suggested by both, bearing in mind the
 different transparency semantics described above.</p>
 
-<p>The frequencies in the <a href="#splt-suggested-palette"><span class=
-"chunk">sPLT</span></a> and <a href="#hist-image-histogram"><span class=
+<p>The frequencies in the <a href="#11sPLT"><span class=
+"chunk">sPLT</span></a> and <a href="#11hIST"><span class=
 "chunk">hIST</span></a> chunks are useful when the viewer cannot
 provide as many colours as are used in the palette in the PNG
 datastream. If the viewer has a shortfall of only a few colours,
@@ -7537,7 +7537,7 @@ obvious way if a PNG datastream is modified in place.</p>
 change the <a href="#time-image-last-modification-time"><span class="chunk">tIME</span></a>
 chunk. The Creation Time keyword in the <a href="#11tEXt"><span
 class="chunk">tEXt</span></a>, <a href="#ztxt-compressed-textual-data"><span class=
-"chunk">zTXt</span></a>, and <a href="#itxt-international-textual-data"><span class=
+"chunk">zTXt</span></a>, and <a href="#11iTXt"><span class=
 "chunk">iTXt</span></a> chunks may be used for a user-supplied
 time.</p>
 </section>
@@ -8114,7 +8114,7 @@ class="chunk">tEXt</span></a> or <a href="#ztxt-compressed-textual-data"><span c
 "chunk">zTXt</span></a> chunk with a suitable keyword to identify
 the type of information. For textual information that is not
 representable in Latin-1 but which can be represented in UTF-8,
-use an <a href="#itxt-international-textual-data"><span class="chunk">iTXt</span></a>
+use an <a href="#11iTXt"><span class="chunk">iTXt</span></a>
 chunk with a suitable keyword.</li>
 
 <li>Group mutually dependent ancillary information into a single
@@ -8212,7 +8212,7 @@ in the range 1.0 to 1.5.</td>
 </tr>
 </table>
 
-<p>The PNG <a href="#gama-image-gamma"><span class="chunk">gAMA</span></a>
+<p>The PNG <a href="#11gAMA"><span class="chunk">gAMA</span></a>
 chunk is used to record the gamma value. This information may be
 used by decoders together with additional information about the
 display environment in order to achieve, or approximate, the

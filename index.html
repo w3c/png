@@ -1317,7 +1317,7 @@ datastream.</li>
 <h2>Pass
 extraction</h2>
 
-<p>Pass extraction (see [[[#encoding-png-image]]]) splits a PNG image into a
+<p>Pass extraction (see <a href="#encoding-png-image"></a>) splits a PNG image into a
 sequence of reduced images where the first image defines a coarse
 view and subsequent images enhance this coarse view until the
 last image completes the PNG image. The set of reduced images is
@@ -1327,7 +1327,7 @@ null method; pixels are stored sequentially from left to right
 and scanlines from top to bottom. The second method makes
 multiple scans over the image to produce a sequence of seven
 reduced images. The seven passes for a sample image are
-illustrated in [[[#encoding-png-image]]]. See <a href="#8Interlace"></a>.</p>
+illustrated in <a href="#encoding-png-image"></a>. See <a href="#8Interlace"></a>.</p>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
@@ -1534,7 +1534,7 @@ image.</td>
   <h2>Chunks</h2>
 
   <p>The PNG datastream consists of a PNG signature (see
-  [[#PNG signature]]) followed by a sequence of chunks (see
+  <a href="#5PNG-file-signature"></a>) followed by a sequence of chunks (see
   <a href="#11Chunks"></a>). Each chunk has a chunk type which
   specifies its function.</p>
   </section>
@@ -1569,7 +1569,7 @@ image.</td>
 
   <!-- <ol start="5"> --><ol>
   <li>Transparency information: <a href="#11tRNS"><span class=
-  "chunk">tRNS</span></a> (see [[#transparency-information]]).</li>
+  "chunk">tRNS</span></a> (see <a href="#11transinfo"></a></li>
 
   <li>Colour space information: <a href="#chrm-primary-chromaticities-and-white-point"><span class=
   "chunk">cHRM</span></a>, <a href="#gama-image-gamma"><span class=
@@ -1577,12 +1577,12 @@ image.</td>
   "chunk">iCCP</span></a>, <a href="#sbit-significant-bits"><span class=
   "chunk">sBIT</span></a>, <a href="#srgb-standard-rgb-colour-space"><span class=
   "chunk">sRGB</span></a>, <a href="#cicp-video-rendering-colour-spaces"><span class=
-  "chunk">cICP</span></a> (see [[#colour-space-information]]).</li>
+  "chunk">cICP</span></a> (see <a href="#11addnlcolinfo"></a></li>
 
   <li>Textual information: <a href="#itxt-international-textual-data"><span class=
   "chunk">iTXt</span></a>, <a href="#11tEXt"><span class=
   "chunk">tEXt</span></a>, <a href="#ztxt-compressed-textual-data"><span class=
-  "chunk">zTXt</span></a> (see [[#textual-information]]).</li>
+  "chunk">zTXt</span></a> (see <a href="#11textinfo"></a).</li>
 
   <li>Miscellaneous information: <a href="#bkgd-background-colour"><span class=
   "chunk">bKGD</span></a>, <a href="#hist-image-histogram"><span class=
@@ -1590,16 +1590,16 @@ image.</td>
   "chunk">pHYs</span></a>, <a href="#splt-suggested-palette"><span class=
   "chunk">sPLT</span></a>, <a href="#exif"><span class=
   "chunk">eXIf</span></a>
-  (see [[#miscellaneous-information]]).</li>
+  (see <a href="#11addnlsiinfo"></a>).</li>
 
   <li>Time information: <a href="#time-image-last-modification-time"><span class=
-  "chunk">tIME</span></a> (see [[#time-stamp-information]]).</li>
+  "chunk">tIME</span></a> (see <a href="#11timestampinfo"></a>).</li>
 
   <li>Animation information:
     <a href="#actl-animation-control"><span class="chunk">acTL</span></a>,
     <a href="#fctl-frame-control"><span class="chunk">fcTL</span></a>,
     <a href="#fdat-frame-data"><span class="chunk">fdAT</span></a>
-    (see [[#animation-information]]).
+    (see <a href="#animation-information"></a>).
   </li>
   </ol>
   </section>

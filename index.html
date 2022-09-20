@@ -1560,7 +1560,7 @@ image.</td>
   <li><a href="#11IDAT"><span class="chunk">IDAT</span></a>: image
   data chunks.</li>
 
-  <li><a href="#iend-image-trailer"><span class="chunk">IEND</span></a>: image
+  <li><a href="#11IEND"><span class="chunk">IEND</span></a>: image
   trailer, which is the last chunk in a PNG datastream.</li>
   </ol>
 
@@ -1851,7 +1851,7 @@ following (decimal) values:</p>
 contains a single PNG image, consisting of a series of chunks
 beginning with an <a href="#11IHDR"><span class=
 "chunk">IHDR</span></a> chunk and ending with an <a href=
-"#iend-image-trailer"><span class="chunk">IEND</span></a> chunk.</p>
+"#11IEND"><span class="chunk">IEND</span></a> chunk.</p>
 </section>
 
 <!-- Maintain a fragment named "5Chunk-layout" to preserve incoming links to it -->
@@ -2142,7 +2142,7 @@ class="chunk">PLTE</span></a> is optional)</th>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#iend-image-trailer"><span class="chunk">IEND</span></a> </td>
+<td class="Regular"><a href="#11IEND"><span class="chunk">IEND</span></a> </td>
 <td class="Regular">No</td>
 <td class="Regular">Shall be last</td>
 </tr>
@@ -3184,9 +3184,9 @@ is strongly discouraged.</p>
 immediately followed by an <a href="#11IHDR"><span class=
 "chunk">IHDR</span></a> chunk, then one or more <a href=
 "#11IDAT"><span class="chunk">IDAT</span></a> chunks, and shall
-end with an <a href="#iend-image-trailer"><span class="chunk">IEND</span></a>
+end with an <a href="#11IEND"><span class="chunk">IEND</span></a>
 chunk. Only one <a href="#11IHDR"><span class=
-"chunk">IHDR</span></a> chunk and one <a href="#iend-image-trailer"><span
+"chunk">IHDR</span></a> chunk and one <a href="#11IEND"><span
 class="chunk">IEND</span></a> chunk are allowed in a PNG
 datastream.</p>
 </section>
@@ -6274,7 +6274,7 @@ chunks defined in this specification (<a href=
 "#11IHDR"><span class="chunk">IHDR</span></a>, <a href=
 "#11PLTE"><span class="chunk">PLTE</span></a>, <a href=
 "#11IDAT"><span class="chunk">IDAT</span></a>, <a href=
-"#iend-image-trailer"><span class="chunk">IEND</span></a>)</li>
+"#11IEND"><span class="chunk">IEND</span></a>)</li>
 
 <li>unknown critical chunks (bit 5 of the first byte of the chunk
 type is 0)</li>
@@ -6294,7 +6294,7 @@ a viewable image (as with <a href="#11IHDR"><span class=
 "chunk">IHDR</span></a>, <a href="#11PLTE"><span class=
 "chunk">PLTE</span></a>, and <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a>) or critical to understanding the
-datastream structure (as with <a href="#iend-image-trailer"><span class=
+datastream structure (as with <a href="#11IEND"><span class=
 "chunk">IEND</span></a>). This is a specific kind of criticality
 and one that is not necessarily relevant to every conceivable
 decoder. For example, a program whose sole purpose is to extract
@@ -6309,7 +6309,7 @@ errors in unknown chunks cannot be detected. The PNG decoder has
 to determine whether a syntax error is fatal (unrecoverable) or
 not, depending on its requirements and the situation. For
 example, most decoders can ignore an invalid <a href=
-"#iend-image-trailer"><span class="chunk">IEND</span></a> chunk; a
+"#11IEND"><span class="chunk">IEND</span></a> chunk; a
 text-extraction program can ignore the absence of <a href=
 "#11IDAT"><span class="chunk">IDAT</span></a>; an image viewer
 cannot recover from an empty <a href="#11PLTE"><span class=
@@ -7588,13 +7588,13 @@ chunk type occurs with any particular positioning relative to
 other ancillary chunks.</p>
 
 <p>EXAMPLE It is unsafe to assume that a particular private
-ancillary chunk occurs immediately before <a href="#iend-image-trailer"><span
+ancillary chunk occurs immediately before <a href="#11IEND"><span
 class="chunk">IEND</span></a>. Even if it is always written in
 that position by a particular application, a PNG editor might
 have inserted some other ancillary chunk after it. But it is safe
 to assume that the chunk will remain somewhere between <a href=
 "#11IDAT"><span class="chunk">IDAT</span></a> and <a href=
-"#iend-image-trailer"><span class="chunk">IEND</span></a>.</p>
+"#11IEND"><span class="chunk">IEND</span></a>.</p>
 </section>
 </section>
 </section>
@@ -7674,11 +7674,11 @@ Standard:
 following the PNG signature;</li>
 
 <li>the PNG datastream contains as its last chunk, an <a href=
-"#iend-image-trailer"><span class="chunk">IEND</span></a> chunk.</li>
+"#11IEND"><span class="chunk">IEND</span></a> chunk.</li>
 </ul>
 </li>
 
-<li>No chunks or other content follow the <a href="#iend-image-trailer"><span
+<li>No chunks or other content follow the <a href="#11IEND"><span
 class="chunk">IEND</span></a> chunk.</li>
 
 <li>All chunks contained therein match the specification of the

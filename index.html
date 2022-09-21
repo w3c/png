@@ -1317,7 +1317,7 @@ datastream.</li>
 <h2>Pass
 extraction</h2>
 
-<p>Pass extraction (see [[[#encoding-png-image]]]) splits a PNG image into a
+<p>Pass extraction (see <a href="#encoding-png-image"></a>) splits a PNG image into a
 sequence of reduced images where the first image defines a coarse
 view and subsequent images enhance this coarse view until the
 last image completes the PNG image. The set of reduced images is
@@ -1327,7 +1327,7 @@ null method; pixels are stored sequentially from left to right
 and scanlines from top to bottom. The second method makes
 multiple scans over the image to produce a sequence of seven
 reduced images. The seven passes for a sample image are
-illustrated in [[[#encoding-png-image]]]. See <a href="#8Interlace"></a>.</p>
+illustrated in <a href="#encoding-png-image"></a>. See <a href="#8Interlace"></a>.</p>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
@@ -1534,7 +1534,7 @@ image.</td>
   <h2>Chunks</h2>
 
   <p>The PNG datastream consists of a PNG signature (see
-  [[#PNG signature]]) followed by a sequence of chunks (see
+  <a href="#5PNG-file-signature"></a>) followed by a sequence of chunks (see
   <a href="#11Chunks"></a>). Each chunk has a chunk type which
   specifies its function.</p>
   </section>
@@ -1568,8 +1568,8 @@ image.</td>
   which encoders may generate and decoders may interpret.</p>
 
   <!-- <ol start="5"> --><ol>
-  <li>Transparency information: <a href="#trns-transparency"><span class=
-  "chunk">tRNS</span></a> (see [[#transparency-information]]).</li>
+  <li>Transparency information: <a href="#11tRNS"><span class=
+  "chunk">tRNS</span></a> (see <a href="#11transinfo"></a></li>
 
   <li>Colour space information: <a href="#chrm-primary-chromaticities-and-white-point"><span class=
   "chunk">cHRM</span></a>, <a href="#gama-image-gamma"><span class=
@@ -1577,12 +1577,12 @@ image.</td>
   "chunk">iCCP</span></a>, <a href="#sbit-significant-bits"><span class=
   "chunk">sBIT</span></a>, <a href="#srgb-standard-rgb-colour-space"><span class=
   "chunk">sRGB</span></a>, <a href="#cicp-video-rendering-colour-spaces"><span class=
-  "chunk">cICP</span></a> (see [[#colour-space-information]]).</li>
+  "chunk">cICP</span></a> (see <a href="#11addnlcolinfo"></a></li>
 
   <li>Textual information: <a href="#itxt-international-textual-data"><span class=
   "chunk">iTXt</span></a>, <a href="#11tEXt"><span class=
   "chunk">tEXt</span></a>, <a href="#ztxt-compressed-textual-data"><span class=
-  "chunk">zTXt</span></a> (see [[#textual-information]]).</li>
+  "chunk">zTXt</span></a> (see <a href="#11textinfo"></a).</li>
 
   <li>Miscellaneous information: <a href="#bkgd-background-colour"><span class=
   "chunk">bKGD</span></a>, <a href="#hist-image-histogram"><span class=
@@ -1590,16 +1590,16 @@ image.</td>
   "chunk">pHYs</span></a>, <a href="#splt-suggested-palette"><span class=
   "chunk">sPLT</span></a>, <a href="#exif"><span class=
   "chunk">eXIf</span></a>
-  (see [[#miscellaneous-information]]).</li>
+  (see <a href="#11addnlsiinfo"></a>).</li>
 
   <li>Time information: <a href="#time-image-last-modification-time"><span class=
-  "chunk">tIME</span></a> (see [[#time-stamp-information]]).</li>
+  "chunk">tIME</span></a> (see <a href="#11timestampinfo"></a>).</li>
 
   <li>Animation information:
     <a href="#actl-animation-control"><span class="chunk">acTL</span></a>,
     <a href="#fctl-frame-control"><span class="chunk">fcTL</span></a>,
     <a href="#fdat-frame-data"><span class="chunk">fdAT</span></a>
-    (see [[#animation-information]]).
+    (see <a href="#animation-information"></a>).
   </li>
   </ol>
   </section>
@@ -2231,7 +2231,7 @@ before <a href="#11IDAT"><span class="chunk">IDAT</span></a>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#trns-transparency"><span class="chunk">tRNS</span></a> </td>
+<td class="Regular"><a href="#11tRNS"><span class="chunk">tRNS</span></a> </td>
 <td class="Regular">No</td>
 <td class="Regular">After <a href="#11PLTE"><span class="chunk">PLTE</span></a>;
 before <a href="#11IDAT"><span class="chunk">IDAT</span></a>
@@ -2571,17 +2571,17 @@ and <a>alpha compaction</a>).</p>
 <li>Truecolour with alpha, greyscale with alpha: an alpha channel
 is part of the image array.</li>
 
-<li>Truecolour, greyscale: A <a href="#trns-transparency"><span class=
+<li>Truecolour, greyscale: A <a href="#11tRNS"><span class=
 "chunk">tRNS</span></a> chunk contains a single pixel value
 distinguishing the fully transparent pixels from the fully opaque
 pixels.</li>
 
-<li>Indexed-colour: A <a href="#trns-transparency"><span class=
+<li>Indexed-colour: A <a href="#11tRNS"><span class=
 "chunk">tRNS</span></a> chunk contains the alpha table that
 associates an alpha sample with each palette entry.</li>
 
 <li>Truecolour, greyscale, indexed-colour: there is no <a href=
-"#trns-transparency"><span class="chunk">tRNS</span></a> chunk present and
+"#11tRNS"><span class="chunk">tRNS</span></a> chunk present and
 all pixels are fully opaque.</li>
 </ol>
 
@@ -3909,7 +3909,7 @@ be greater than zero and less than or equal to the sample depth
 colour types).
 Note that <span class="chunk">sBIT</span> does not provide a sample depth
 for the alpha channel that is implied by a
-<a href="#trns-transparency"><span class=
+<a href="#11tRNS"><span class=
 "chunk">tRNS</span></a> chunk; in that case, all of the sample bits of
 the alpha channel are to be treated as significant. If the <span
 class="chunk">sBIT</span> chunk is not present, then all of the
@@ -5821,7 +5821,7 @@ whenever feasible.</p>
 
 <p>For applications that do not require a full alpha channel, or
 cannot afford the price in compression efficiency, the <a href=
-"#trns-transparency"><span class="chunk">tRNS</span></a> transparency chunk
+"#11tRNS"><span class="chunk">tRNS</span></a> transparency chunk
 is also available.</p>
 
 <p>If the image has a known background colour, this colour should
@@ -6003,7 +6003,7 @@ that the <a href="#11PLTE"><span class="chunk">PLTE</span></a>
 and <a href="#hist-image-histogram"><span class="chunk">hIST</span></a> chunks
 be computed with reference to the RGB data only, ignoring any
 transparent-colour specification. If the datastream uses
-transparency (has a <a href="#trns-transparency"><span class=
+transparency (has a <a href="#11tRNS"><span class=
 "chunk">tRNS</span></a> chunk), viewers can easily adapt the
 resulting palette for use with their intended background colour
 (see <a href="#13Histogram-and-suggested-palette-usage"></a>).
@@ -6300,7 +6300,7 @@ and one that is not necessarily relevant to every conceivable
 decoder. For example, a program whose sole purpose is to extract
 text annotations (for example, copyright information) does not
 require a viewable image. Another decoder might consider the <a
-href="#trns-transparency"><span class="chunk">tRNS</span></a> and <a href=
+href="#11tRNS"><span class="chunk">tRNS</span></a> and <a href=
 "#gama-image-gamma"><span class="chunk">gAMA</span></a> chunks essential to
 its proper execution.</p>
 
@@ -6318,7 +6318,7 @@ ignore an invalid <a href="#11PLTE"><span class=
 "chunk">PLTE</span></a> chunk in a truecolour image; and a
 program that extracts the alpha channel can ignore an invalid <a
 href="#gama-image-gamma"><span class="chunk">gAMA</span></a> chunk, but may
-consider the presence of two <a href="#trns-transparency"><span class=
+consider the presence of two <a href="#11tRNS"><span class=
 "chunk">tRNS</span></a> chunks to be a fatal error. Anomalous
 situations other than syntax errors shall be treated as
 follows:</p>
@@ -6845,7 +6845,7 @@ recover the original samples before scaling them to suit the
 display often yields a more accurate display than ignoring <a
 href="#sbit-significant-bits"><span class="chunk">sBIT</span></a>.</p>
 
-<p>When comparing pixel values to <a href="#trns-transparency"><span class=
+<p>When comparing pixel values to <a href="#11tRNS"><span class=
 "chunk">tRNS</span></a> chunk values to detect transparent
 pixels, the comparison shall be done exactly. Therefore,
 transparent pixel detection shall be done before reducing sample
@@ -7089,9 +7089,9 @@ background image.</p>
 <p>The background colour given by the <a href="#bkgd-background-colour"><span
 class="chunk">bKGD</span></a> chunk is not to be considered
 transparent, even if it happens to match the colour given by the
-<a href="#trns-transparency"><span class="chunk">tRNS</span></a> chunk (or,
+<a href="#11tRNS"><span class="chunk">tRNS</span></a> chunk (or,
 in the case of an indexed-colour image, refers to a palette index
-that is marked as transparent by the <a href="#trns-transparency"><span
+that is marked as transparent by the <a href="#11tRNS"><span
 class="chunk">tRNS</span></a> chunk). Otherwise one would have to
 imagine something "behind the background" to <a>composite</a> against.
 The background colour is either used as background or ignored; it
@@ -7099,7 +7099,7 @@ is not an intermediate layer between the PNG image and some other
 background.</p>
 
 <p>Indeed, it will be common that the <a href="#bkgd-background-colour"><span
-class="chunk">bKGD</span></a> and <a href="#trns-transparency"><span class=
+class="chunk">bKGD</span></a> and <a href="#11tRNS"><span class=
 "chunk">tRNS</span></a> chunks specify the same colour, since
 then a decoder that does not implement transparency processing
 will give the intended display, at least when no
@@ -7315,10 +7315,10 @@ to be recovered.)</p>
 <p>Even if the decoder does not implement true compositing logic,
 it is simple to deal with images that contain only zero and one
 alpha values. (This is implicitly true for greyscale and
-truecolour PNG datastreams that use a <a href="#trns-transparency"><span
+truecolour PNG datastreams that use a <a href="#11tRNS"><span
 class="chunk">tRNS</span></a> chunk; for indexed-colour PNG
 datastreams it is easy to check whether the <a href=
-"#trns-transparency"><span class="chunk">tRNS</span></a> chunk contains any
+"#11tRNS"><span class="chunk">tRNS</span></a> chunk contains any
 values other than 0 and 255.) In this simple case, transparent
 pixels are replaced by the background colour, while others are
 unchanged.</p>
@@ -7359,10 +7359,10 @@ useful.</p>
 <p>For truecolour images, a suggested palette might also be
 provided in a <a href="#11PLTE"><span class=
 "chunk">PLTE</span></a> chunk. If the image has a <a href=
-"#trns-transparency"><span class="chunk">tRNS</span></a> chunk and the
+"#11tRNS"><span class="chunk">tRNS</span></a> chunk and the
 background is a solid colour, the viewer will need to adapt the
 suggested palette for use with its desired background colour. To
-do this, the palette entry closest to the <a href="#trns-transparency"><span
+do this, the palette entry closest to the <a href="#11tRNS"><span
 class="chunk">tRNS</span></a> colour should be replaced with the
 desired background colour; or alternatively a palette entry for
 the background colour can be added, if the viewer can handle more
@@ -7779,7 +7779,7 @@ or interlace method bytes of the <a href="#11IHDR"><span class=
 "chunk">IHDR</span></a> chunk.</li>
 
 <li>When processing 16-bit greyscale or truecolour data in the <a
-href="#trns-transparency"><span class="chunk">tRNS</span></a> chunk, both
+href="#11tRNS"><span class="chunk">tRNS</span></a> chunk, both
 bytes of the sample values are evaluated to determine whether a
 pixel is transparent.</li>
 

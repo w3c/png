@@ -1352,23 +1352,12 @@ sequence of bytes.</p>
 <section id="4Concepts.EncodingFiltering">
 <h2>Filtering</h2>
 
-<p>PNG standardizes one filter method and several filter types
-that may be used to prepare image data for compression. It
-transforms the byte sequence in a scanline to an equal length
-sequence of bytes preceded by a filter type byte (see <a href=
-"#serializing-and-filtering-scanline"></a> for an
-example). The filter type byte defines
-the specific filtering to be applied to a specific
-scanline. The encoder shall use only a single filter method for
-an interlaced PNG image, but may use different filter types for
-each scanline in a reduced image. See <a href="#9Filters"></a>.</p>
+<p>PNG allows image data to be filtered before it is compressed.
+Filtering can improve the compressibility of the data. The filter
+operation is deterministic, reversible, and lossless. This allows
+the decompressed data to be reverse-filtered in order to obtain
+the original data. See <a href="#7Filtering"></a>.</p>
 
-<figure id="serializing-and-filtering-scanline">
-<!-- Maintain a fragment named "figure49" to preserve incoming links to it -->
-<object id="figure49" data="figures/serializing-and-filtering-scanline.svg" type="image/svg+xml">
-</object>
-<figcaption>Serializing and filtering a scanline</figcaption>
-</figure>
 </section>
 
 <!-- Maintain a fragment named "4Concepts.EncodingCompression" to preserve incoming links to it -->
@@ -2674,23 +2663,30 @@ single pixel are never packed into one byte.</p>
 <section id="7Filtering">
 <h2>Filtering</h2>
 
-<p>PNG allows the scanline data to be <strong>filtered</strong> before it
-is compressed. Filtering can improve the compressibility of the
-data. The filter step itself results in a sequence of bytes of
-the same size as the incoming sequence, but in a different
-representation, preceded by a filter type byte. Filtering does
-not reduce the size of the actual scanline data. All PNG filters
-are strictly lossless.</p>
+<p>PNG standardizes one filter method and several filter types
+that may be used to prepare image data for compression. It
+transforms the byte sequence into an equal length
+sequence of bytes preceded by a filter type byte (see <a href=
+"#serializing-and-filtering-scanline"></a> for an
+example).</p>
 
-<p>Different filter types can be used for different scanlines,
-and the filter algorithm is specified for each scanline by a
-filter type byte. The filter type byte is not considered part of
+<p>The encoder shall use only a single filter method for
+an interlaced PNG image, but may use different filter types for
+each scanline in a reduced image. An intelligent encoder can
+switch filters from one scanline to the next. The method for
+choosing which filter to employ is left to the encoder.</p>
+
+<p>The filter type byte is not considered part of
 the image data, but it is included in the datastream sent to the
-compression step. An intelligent encoder can switch filters from
-one scanline to the next. The method for choosing which filter to
-employ is left to the encoder.</p>
+compression step. See <a href="#9Filters"></a>.</p>
 
-<p>See <a href="#9Filters"></a>.</p>
+<figure id="serializing-and-filtering-scanline">
+<!-- Maintain a fragment named "figure49" to preserve incoming links to it -->
+<object id="figure49" data="figures/serializing-and-filtering-scanline.svg" type="image/svg+xml">
+</object>
+<figcaption>Serializing and filtering a scanline</figcaption>
+</figure>
+
 </section>
 </section>
 
@@ -6656,7 +6652,8 @@ that at least one scanline's worth of image data needs to be
 stored by the decoder at all times. Even though some filter types
 do not refer to the prior scanline, the decoder will always need
 to store each scanline as it is decoded, since the next scanline
-might use a filter type that refers to it.</p>
+might use a filter type that refers to it. See
+<a href="#7Filtering"></a>.</p>
 </section>
 
 <!-- Maintain a fragment named "13Progressive-display" to preserve incoming links to it -->

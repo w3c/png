@@ -504,13 +504,6 @@ compression methods. It is defined in [[RFC1951]].</dd>
 <dd>image constructed from a decoded
 <a>PNG datastream</a>.</dd>
 
-<!-- Maintain a fragment named "3filter" to preserve incoming links to it -->
-<dt id="3filter"><dfn>filter</dfn></dt>
-
-<dd>transformation applied to an array of <a>scanlines</a> with
-the aim of improving their compressibility. PNG uses only
-lossless (reversible) filter algorithms.</dd>
-
 <!-- need a definition of frame -->
 
 <!-- Maintain a fragment named "3frameBuffer" to preserve incoming links to it -->
@@ -2663,14 +2656,19 @@ single pixel are never packed into one byte.</p>
 <section id="7Filtering">
 <h2>Filtering</h2>
 
-<p>PNG standardizes one filter method and several filter types
+
+<!-- Maintain a fragment named "3filter" to preserve incoming links to it -->
+<p>A <dfn id="3filter">filter method</dfn> is a transformation applied to an
+array of <a>scanlines</a> with the aim of improving their compressibility.<p>
+
+<p>PNG standardizes one <a>filter method</a> and several filter types
 that may be used to prepare image data for compression. It
 transforms the byte sequence into an equal length
 sequence of bytes preceded by a filter type byte (see <a href=
 "#serializing-and-filtering-scanline"></a> for an
 example).</p>
 
-<p>The encoder shall use only a single filter method for
+<p>The encoder shall use only a single <a>filter method</a> for
 an interlaced PNG image, but may use different filter types for
 each scanline in a reduced image. An intelligent encoder can
 switch filters from one scanline to the next. The method for
@@ -2786,13 +2784,13 @@ while the specifics of serializing and filtering a scanline
 are shown in <a href="#serializing-and-filtering-scanline"></a>.
 </p>
 
-<p>PNG allows for a number of filter methods.
+<p>PNG allows for a number of <a>filter methods</a>.
 All the reduced
-images in an interlaced image shall use a single filter method.
-Only filter method 0
-is defined by this specification. Other filter methods
+images in an interlaced image shall use a single <a>filter method</a>.
+Only <a>filter method</a> 0
+is defined by this specification. Other <a>filter methods</a>
 are reserved for future standardization.
-Filter method 0 provides a set of five filter types,
+<a>Filter method</a> 0 provides a set of five filter types,
 and individual scanlines in each reduced image may use
 different filter types.</p>
 
@@ -2861,20 +2859,20 @@ generate the new byte value:</p>
 <tt>a</tt>, <tt>b</tt>,
 and <tt>c</tt>.</p>
 
-<p>PNG filter method 0 defines five basic filter types as listed
+<p><a>Filter method</a> 0 defines five basic filter types as listed
 in <a href="#9-table91">
 </a>. <tt>Orig(y)</tt> denotes the original (unfiltered)
 value of byte <tt>y</tt>. <tt>Filt(y)</tt> denotes the value
-after a filter has been applied. <tt>Recon(y)</tt> denotes the
+after a filter type has been applied. <tt>Recon(y)</tt> denotes the
 value after the corresponding reconstruction function has been
-applied. The filter function for the Paeth type
+applied. The Paeth filter type
 <tt>PaethPredictor</tt> [[?Paeth]] is defined below.</p>
 
-<p>Filter method 0 specifies exactly this set of five filter
+<p><a>Filter method</a> 0 specifies exactly this set of five filter
 types and this shall not be extended.
 This ensures that decoders need not decompress the data
 to determine whether it contains unsupported filter types:
-it is sufficient to check the filter method in <a href="#11IHDR"></a>.</p>
+it is sufficient to check the <a>filter method</a> in <a href="#11IHDR"></a>.</p>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
@@ -2966,7 +2964,7 @@ division or right shift operation.</p>
 <h2>Filter type 4:
 Paeth</h2>
 
-<p>The Paeth filter function computes a simple linear function of
+<p>The Paeth filter type computes a simple linear function of
 the three neighbouring pixels (left, above, upper left), then
 chooses as predictor the neighbouring pixel closest to the
 computed value. The algorithm used in this specification
@@ -3311,7 +3309,7 @@ conforming PNG images shall be compressed with this scheme.</p>
 
 <p>Filter method is a single-byte integer that indicates the
 preprocessing method applied to the image data before
-compression. Only filter method 0 (adaptive filtering with five
+compression. Only <a>filter method</a> 0 (adaptive filtering with five
 basic filter types) is defined in this specification.
 See <a href="#9Filters"></a> for details.</p>
 
@@ -5375,7 +5373,7 @@ the image data are changed.</p>
       similar to the uncompressed data
       of all the <span class="chunk">IDAT</span> chunks.
       It utilizes the same bit depth, <a>colour type</a>,
-      compression method, filter method, interlace method,
+      compression method, <a>filter method</a>, interlace method,
       and palette (if any) as the <a>static image</a>.
     </p>
 
@@ -6069,17 +6067,17 @@ to 8-bit representation and then applying filtering.</p>
 
 <p>For truecolour and greyscale images, any of the five filters
 may prove the most effective. If an encoder uses a fixed filter,
-the Paeth filter is most likely to be the best.</p>
+the Paeth filter type is most likely to be the best.</p>
 
 <p>For best compression of truecolour and greyscale images,
 the recommended approach is
-adaptive filtering in which a filter is
+adaptive filtering in which a filter type is
 chosen for each scanline. The following simple heuristic has
 performed well in early tests: compute the output scanline using
 all five filters, and select the filter that gives the smallest
 sum of absolute values of outputs. (Consider the output bytes as
 signed differences for this test.) This method usually
-outperforms any single fixed filter choice. However, it is likely
+outperforms any single fixed filter type choice. However, it is likely
 that better heuristics will be found as more experience is
 gained with PNG.</p>
 
@@ -6194,7 +6192,7 @@ usually be achieved by following these additional
 recommendations.</p>
 
 <p>PNG decoders shall support all valid combinations of bit
-depth, <a>colour type</a>, compression method, filter method, and
+depth, <a>colour type</a>, compression method, <a>filter method</a>, and
 interlace method that are explicitly defined in this
 International Standard.</p>
 
@@ -7761,7 +7759,7 @@ defined in <a href="#11IHDR"></a> are
 supported.</li>
 
 <li>An error is reported if an unrecognized value is encountered
-in the bit depth, <a>colour type</a>, compression method, filter method,
+in the bit depth, <a>colour type</a>, compression method, <a>filter method</a>,
 or interlace method bytes of the <a href="#11IHDR"><span class=
 "chunk">IHDR</span></a> chunk.</li>
 

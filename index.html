@@ -1347,7 +1347,7 @@ sequence of bytes.</p>
 <section id="4Concepts.EncodingFiltering">
 <h2>Filtering</h2>
 
-<p>PNG allows image data to be filtered before it is compressed.
+<p>PNG allows <a>image data</a> to be filtered before it is compressed.
 Filtering can improve the compressibility of the data. The filter
 operation is deterministic, reversible, and lossless. This allows
 the decompressed data to be reverse-filtered in order to obtain
@@ -2665,7 +2665,7 @@ single pixel are never packed into one byte.</p>
 array of <a>scanlines</a> with the aim of improving their compressibility.<p>
 
 <p>PNG standardizes one <a>filter method</a> and several filter types
-that may be used to prepare image data for compression. It
+that may be used to prepare <a>image data</a> for compression. It
 transforms the byte sequence into an equal length
 sequence of bytes preceded by a filter type byte (see <a href=
 "#serializing-and-filtering-scanline"></a> for an
@@ -2678,7 +2678,7 @@ switch filters from one scanline to the next. The method for
 choosing which filter to employ is left to the encoder.</p>
 
 <p>The filter type byte is not considered part of
-the image data, but it is included in the datastream sent to the
+the <a>image data</a>, but it is included in the datastream sent to the
 compression step. See <a href="#9Filters"></a>.</p>
 
 <figure id="serializing-and-filtering-scanline">
@@ -2820,7 +2820,7 @@ regardless of the bit depth or <a>colour type</a> of the image. The
 filters operate on the byte sequence formed by a scanline that
 has been represented as described in <a href="#7Scanline"></a>. If the image
 includes an alpha channel, the alpha data is filtered in the same
-way as the image data.</p>
+way as the <a>image data</a>.</p>
 
 <p>Filters may use the original values of the following bytes to
 generate the new byte value:</p>
@@ -3107,7 +3107,7 @@ resulting data stream is split into <a href="#11IDAT"><span
 class="chunk">IDAT</span></a> chunks. The concatenation of the
 contents of all the <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a> chunks makes up a zlib datastream. This
-datastream decompresses to filtered image data.</p>
+datastream decompresses to filtered <a>image data</a>.</p>
 
 <p>It is important to emphasize that the boundaries between <a
 href="#11IDAT"><span class="chunk">IDAT</span></a> chunks are
@@ -3120,7 +3120,7 @@ split across <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a> chunks.</p>
 
 <p>Similarly, there is no required correlation between the
-structure of the image data (i.e., scanline boundaries) and
+structure of the <a>image data</a> (i.e., scanline boundaries) and
 <a>deflate</a> block boundaries or <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a> chunk boundaries. The complete filtered
 PNG image is represented by a single zlib datastream that is
@@ -3139,7 +3139,7 @@ compression</h2>
 class="chunk">iTXt</span></a>, <a href="#11iCCP"><span class=
 "chunk">iCCP</span></a>,
 and <a href="#11zTXt"><span class=
-"chunk">zTXt</span></a> chunks. Unlike the image data, such
+"chunk">zTXt</span></a> chunks. Unlike the <a>image data</a>, such
 datastreams are not split across chunks; each such chunk contains
 an independent zlib datastream (see <a href="#10CompressionCM0"></a>).</p>
 </section>
@@ -3307,19 +3307,19 @@ sample depth is always 8 bits (see <a href=
 "#4Concepts.PNGImage"></a>).</p>
 
 <p>Compression method is a single-byte integer that indicates the
-method used to compress the image data. Only compression method 0
+method used to compress the <a>image data</a>. Only compression method 0
 (<a>deflate</a> compression with a sliding window of at most
 32768 bytes) is defined in this specification. All
 conforming PNG images shall be compressed with this scheme.</p>
 
 <p>Filter method is a single-byte integer that indicates the
-preprocessing method applied to the image data before
+preprocessing method applied to the <a>image data</a> before
 compression. Only <a>filter method</a> 0 (adaptive filtering with five
 basic filter types) is defined in this specification.
 See <a href="#9Filters"></a> for details.</p>
 
 <p>Interlace method is a single-byte integer that indicates the
-transmission order of the image data. Two values are defined in
+transmission order of the <a>image data</a>. Two values are defined in
 this specification: 0 (no interlace) or 1 (Adam7
 interlace). See <a href="#8Interlace"></a> for
 details.</p>
@@ -3373,7 +3373,7 @@ not exceed the range that can be represented in the image bit
 depth (for example, 2<sup>4</sup> = 16 for a bit depth of 4). It
 is permissible to have fewer entries than the bit depth would
 allow. In that case, any out-of-range pixel value found in the
-image data is an error.</p>
+<a>image data</a> is an error.</p>
 
 <p>For <a>colour types</a> 2 and 6 (truecolour and truecolour with
 alpha), the <span class="chunk">PLTE</span> chunk is optional. If
@@ -3410,7 +3410,7 @@ data</h2>
 </pre>
 
 <p>The <span class="chunk">IDAT</span> chunk contains the actual
-image data which is the output stream of the compression
+<a>image data</a> which is the output stream of the compression
 algorithm. See <a href="#9Filters"></a> and <a href="#10Compression"></a> for
 details.</p>
 
@@ -4904,9 +4904,9 @@ but each shall have a different palette name.</p>
     Only one <span class="chunk">eXIf</span> chunk is allowed in a PNG datastream.</p>
 
   <p>The <span class="chunk">eXIf</span> chunk contains
-    metadata concerning the original image data.
+    metadata concerning the original <a>image data</a>.
     If the image has been edited subsequent to creation of the Exif profile,
-    this data might no longer apply to the PNG image data.
+    this data might no longer apply to the PNG <a>image data</a>.
     It is recommended that unless a decoder has independent knowledge
     of the validity of the Exif data,
     the data should be considered to be of historical value only.
@@ -5029,7 +5029,7 @@ time.</p>
 
 <p>The <span class="chunk">tIME</span> chunk is intended for use
 as an automatically-applied time stamp that is updated whenever
-the image data are changed.</p>
+the <a>image data</a> are changed.</p>
 </section>
 </section>
 
@@ -5337,7 +5337,7 @@ the image data are changed.</p>
       serves the same purpose for animations
       as the <span class="chunk">IDAT</span> chunk
       does for static images;
-      it contains the image data
+      it contains the <a>image data</a>
       for all frames
       (or, for animations which include the <a>static image</a> as first frame,
       for all frames after the first one).
@@ -5910,7 +5910,7 @@ original data by shifting right. The added low-order bits are not
 constrained. All the above scaling methods meet this
 restriction.</p>
 
-<p>When scaling up source image data, it is recommended that the
+<p>When scaling up source <a>image data</a>, it is recommended that the
 low-order bits be filled consistently for all samples; that is,
 the same source value should generate the same sample value at
 any pixel position. This improves compression by reducing the
@@ -5941,7 +5941,7 @@ palettes</h2>
 class="chunk">sPLT</span></a> chunks in any PNG datastream, or as
 a <a href="#11PLTE"><span class="chunk">PLTE</span></a> chunk in
 truecolour PNG datastreams. In either case, the suggested palette
-is not an essential part of the image data, but it may be used to
+is not an essential part of the <a>image data</a>, but it may be used to
 present the image on indexed-colour display hardware. Suggested
 palettes are of no interest to viewers running on truecolour
 hardware.</p>
@@ -6138,9 +6138,9 @@ text chunks. It is
 recommended that the basic title and author keywords be output
 using uncompressed text chunks.
 Placing large text chunks after the
-image data (after the <a href="#11IDAT"><span class=
+<a>image data</a> (after the <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a> chunks) can speed up image display in
-some situations, as the decoder will decode the image data first.
+some situations, as the decoder will decode the <a>image data</a> first.
 It is recommended that small text chunks, such as the image
 title, appear before the <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a> chunks.</p>
@@ -6333,7 +6333,7 @@ not be known.</li>
 
 <p>When a fatal condition occurs, the decoder should fail
 immediately, signal an error to the user if appropriate, and
-optionally continue displaying any image data already visible to
+optionally continue displaying any <a>image data</a> already visible to
 the user (i.e. "fail gracefully"). The application as a whole
 need not terminate.</p>
 
@@ -6635,9 +6635,9 @@ this property.</p>
 class="chunk">IDAT</span></a> chunk boundaries have no semantic
 significance and can occur at any point in the compressed
 datastream. There is no required correlation between the
-structure of the image data (for example, scanline boundaries) and
+structure of the <a>image data</a> (for example, scanline boundaries) and
 <a>deflate</a> block boundaries or <a href="#11IDAT"><span class=
-"chunk">IDAT</span></a> chunk boundaries. The complete image data
+"chunk">IDAT</span></a> chunk boundaries. The complete <a>image data</a>
 is represented by a single zlib datastream that is stored in some
 number of <a href="#11IDAT"><span class="chunk">IDAT</span></a>
 chunks; a decoder that assumes any more than this is incorrect.
@@ -6654,7 +6654,7 @@ on this.</p>
 to use the decoded values of the prior pixel on the same line,
 the pixel immediately above the current pixel on the prior line,
 and the pixel just to the left of the pixel above. This implies
-that at least one scanline's worth of image data needs to be
+that at least one scanline's worth of <a>image data</a> needs to be
 stored by the decoder at all times. Even though some filter types
 do not refer to the prior scanline, the decoder will always need
 to store each scanline as it is decoded, since the next scanline
@@ -6820,7 +6820,7 @@ should use linear scaling or left-bit-replication as described in
 <a href="#12Sample-depth-scaling"></a>.</p>
 
 <p>When an <a href="#11sBIT"><span class="chunk">sBIT</span></a>
-chunk is present, the reference image data can be recovered by
+chunk is present, the reference <a>image data</a> can be recovered by
 shifting right to the sample depth specified by <a href=
 "#11sBIT"><span class="chunk">sBIT</span></a>. Note that linear
 scaling will not necessarily reproduce the original data, because
@@ -6987,7 +6987,7 @@ handling</h2>
 <p>See <a href="#C-GammaAppendix"></a> for references to colour
 issues.</p>
 
-<p>In many cases, the image data in PNG datastreams will be
+<p>In many cases, the <a>image data</a> in PNG datastreams will be
 treated as device-dependent RGB values and displayed without
 modification (except for appropriate gamma correction). This
 provides the fastest display of PNG images. But unless the viewer
@@ -7000,7 +7000,7 @@ closer colour matching than that provided by gamma correction
 alone.</p>
 
 <p>The <a href="#11cHRM"><span class="chunk">cHRM</span></a> data
-can be used to transform the image data from RGB to XYZ and
+can be used to transform the <a>image data</a> from RGB to XYZ and
 thence into a perceptually linear colour space such as CIE LAB.
 The colours can be partitioned to generate an optimal palette,
 because the geometric distance between two colours in CIE LAB is
@@ -7011,11 +7011,11 @@ used for display or written into a <a href="#11PLTE"><span class=
 "chunk">PLTE</span></a> chunk.</p>
 
 <p>Decoders that are part of image processing applications might
-also transform image data into CIE LAB space for analysis.</p>
+also transform <a>image data</a> into CIE LAB space for analysis.</p>
 
 <p>In applications where colour fidelity is critical, such as
 product design, scientific visualization, medicine, architecture,
-or advertising, PNG decoders can transform the image data from
+or advertising, PNG decoders can transform the <a>image data</a> from
 source RGB to the display RGB space of the monitor used to view
 the image. This involves calculating the matrix to go from source
 RGB to XYZ and the matrix to go from XYZ to display RGB, then
@@ -7023,13 +7023,13 @@ combining them to produce the overall transformation. The PNG
 decoder is responsible for implementing gamut mapping.</p>
 
 <p>Decoders running on platforms that have a Colour Management
-System (CMS) can pass the image data, <a href="#11gAMA"><span
+System (CMS) can pass the <a>image data</a>, <a href="#11gAMA"><span
 class="chunk">gAMA</span></a>, and <a href="#11cHRM"><span class=
 "chunk">cHRM</span></a> values to the CMS for display or further
 processing.</p>
 
 <p>PNG decoders that provide colour printing facilities can use
-the facilities in Level 2 PostScript to specify image data in
+the facilities in Level 2 PostScript to specify <a>image data</a> in
 calibrated RGB space or in a device-independent colour space such
 as XYZ. This will provide better colour fidelity than a simple
 RGB to CMYK conversion. The PostScript Language Reference manual
@@ -7397,11 +7397,11 @@ best to choose entirely new representative colours, rather than
 trying to use a subset of the existing palette. This amounts to
 performing a new colour quantization step; however, the existing
 palette and histogram can be used as the input data, thus
-avoiding a scan of the image data in the <a href="#11IDAT"><span
+avoiding a scan of the <a>image data</a> in the <a href="#11IDAT"><span
 class="chunk">IDAT</span></a> chunks.</p>
 
 <p>If no suggested palette is provided, a decoder can develop its
-own, at the cost of an extra pass over the image data in the <a
+own, at the cost of an extra pass over the <a>image data</a> in the <a
 href="#11IDAT"><span class="chunk">IDAT</span></a> chunks.
 Alternatively, a default palette (probably a colour cube) can be
 used.</p>
@@ -7471,7 +7471,7 @@ recognizes the chunk type, and regardless of the extent of the
 datastream modifications.</li>
 
 <li>If a chunk's safe-to-copy bit is 0, it indicates that the
-chunk depends on the image data. If the program has made
+chunk depends on the <a>image data</a>. If the program has made
 <strong>any</strong> changes to <strong>critical</strong> chunks, including
 addition, modification, deletion, or reordering of critical
 chunks, then unrecognized unsafe chunks shall
@@ -7526,7 +7526,7 @@ obvious way if a PNG datastream is modified in place.</p>
 
 <p>See also <a href="#5Chunk-naming-conventions"></a>.</p>
 
-<p>PNG editors that do not change the image data should not
+<p>PNG editors that do not change the <a>image data</a> should not
 change the <a href="#11tIME"><span class="chunk">tIME</span></a>
 chunk. The Creation Time keyword in the <a href="#11tEXt"><span
 class="chunk">tEXt</span></a>, <a href="#11zTXt"><span class=
@@ -7777,7 +7777,7 @@ bytes of the sample values are evaluated to determine whether a
 pixel is transparent.</li>
 
 <li>When processing an image compressed by compression method 0,
-the decoder assumes no more than that the complete image data is
+the decoder assumes no more than that the complete <a>image data</a> is
 represented by a single compressed datastream that is stored in
 some number of <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a> chunks.</li>
@@ -8159,7 +8159,7 @@ process or device writing the datastream.</td>
 <tr>
 <td><tt>decoding_exponent</tt> </td>
 <td>the exponent of any transfer function performed by the
-software reading the image datastream.</td>
+software reading the <a>image data</a>stream.</td>
 </tr>
 
 <tr>

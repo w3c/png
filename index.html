@@ -603,7 +603,7 @@ integers).</dd>
 <dt><dfn>output buffer</dfn></dt>
 
 <dd>The output buffer is a pixel array
-  with dimensions specified by the width and height parameters of the PNG `IHDR` chunk. Conceptually, each frame is constructed in the output buffer before being <a>composited</a> onto the <a>canvas</a>. The contents of the output buffer are available to the decoder. The corners of the output buffer are mapped to the corners of the <a>canvas</a>. </dd>
+	with dimensions specified by the width and height parameters of the PNG <a class="chunk" href="11IHDR">IHDR</a> chunk. Conceptually, each frame is constructed in the output buffer before being <a>composited</a> onto the <a>canvas</a>. The contents of the output buffer are available to the decoder. The corners of the output buffer are mapped to the corners of the <a>canvas</a>. </dd>
 
 
 <!-- Maintain a fragment named "3palette" to preserve incoming links to it -->
@@ -1598,7 +1598,7 @@ tIME</a> (see <a href="#11timestampinfo"></a>).</li>
 
 <p>The boundaries of the entire animation
   are specified by the width and height parameters
-  of the `IHDR` chunk,
+  of the <a class="chunk" href="#11IHDR">IHDR</a> chunk,
   regardless of whether the default image is part of the animation.
   The default image should be appropriately padded
   with <a>fully transparent black</a> pixels
@@ -3154,7 +3154,7 @@ header</h2>
 73 72 68 82
 </pre>
 
-<p>The <span class="chunk">IHDR</span> chunk shall be the first
+<p>The <a class="chunk" href="#11IHDR">IHDR</a> chunk shall be the first
 chunk in the PNG datastream. It contains:</p>
 
 <table summary=
@@ -3751,7 +3751,7 @@ full-fledged colour management should use the <a class="chunk" href=
 "#11cHRM">cHRM</a> chunks if
 present.</p>
 
-<p>Unless a cICP chunk exists, a PNG datastream should contain at most one embedded profile,
+<p>Unless a <a class="chunk" href="cICP-chunk">cICP</a> chunk exists, a PNG datastream should contain at most one embedded profile,
 whether specified explicitly with an <span class="chunk">iCCP</span>
 or implicitly with an
 <a class="chunk" href="#srgb-standard-colour-space">sRGB</a> chunk.</p>
@@ -3772,8 +3772,8 @@ Significant bits</h2>
 <p>To simplify decoders, PNG specifies that only certain sample
 depths may be used, and further specifies that sample values
 should be scaled to the full range of possible values at the
-sample depth. The <a class="chunk" href="#11sBIT">
-sBIT</a> chunk defines the original number of
+sample depth. The <span class="chunk">
+sBIT</span> chunk defines the original number of
 significant bits (which can be less than or equal to the sample
 depth). This allows PNG decoders to recover the original data
 losslessly even if the data had a sample depth not directly
@@ -4029,7 +4029,7 @@ values given above as if they had appeared in <a class="chunk" href=
 "#11gAMA">gAMA</a> and <a class="chunk" href=
 "#11cHRM">cHRM</a> chunks.</p>
 
-<p>It is recommended that the <span class="chunk">sRGB</span> and
+<p>It is recommended that the <a class="chunk" href="#11sRGB">sRGB</a> and
 <a class="chunk" href="#11iCCP">iCCP</a>
 chunks do not appear simultaneously in a PNG datastream.</p>
 </section>
@@ -4101,15 +4101,15 @@ when rendering the image.</p>
   application. [[SMPTE RP 2077]] specifies mapping between <a>full-range
   images</a> and <a>narrow-range images</a>.</aside>
 
-<p>The <span class="chunk">cICP</span> chunk MUST come before the IDAT chunk.</p>
+  <p>The <span class="chunk">cICP</span> chunk MUST come before the <a class="chunk" href="#11IDAT">IDAT</a> chunk.</p>
 
 <p>When the <span class="chunk">cICP</span> chunk is present, decoders that
 recognize it SHALL ignore the following chunks:</p>
 <ul>
-  <li>iCCP</li>
-  <li>gAMA </li>
-  <li>cHRM </li>
-  <li>sRGB </li>
+  <li><a class="chunk" href="#11iCCP">iCCP</a></li>
+  <li><a class="chunk" href="#11gAMA">gAMA</a></li>
+  <li><a class="chunk" href="#11cHRM">cHRM</a></li>
+  <li><a class="chunk" href="#11sRGB">sRGB</a></li>
 </ul>
 
 <aside class="example"><span class="chunk">cICP</span> chunk field values for
@@ -7955,9 +7955,9 @@ losslessly represents the same reference image.</li>
           chunks.  However, it is the intention of the PNG Working Group to disallow
           chunks containing "executable" data to become registered chunks.</p>
         <p>The text chunks,
-          <span class="chunk">tEXt</span>,
-          <span class="chunk">iTXT</span> and
-          <span class="chunk">zTXt</span>,
+          <a class="chunk" href="#11tEXt">tEXt</a>,
+          <a class="chunk" href="#11iTXt">iTXt</a> and
+          <a class="chunk" href="#11zTXt">zTXt</a>,
           contain data that can be displayed in
           the form of comments, etc.  Some operating systems or terminals might
           allow the display of textual data with embedded control characters to
@@ -8392,7 +8392,7 @@ accessed from the PNG web site.</p>
     This brings the PNG specification into alignment
     with widely deployed industry practice.
   </li>
-  <li>Added the <a class="chunk" href="#11cICP">cICP</a> chunk,
+  <li>Added the <a class="chunk" href="#cICP-chunk">cICP</a> chunk,
     Coding-independent code points for video signal type identification,
     to contain image color space metadata
     defined in [[ITU-T H.273]]

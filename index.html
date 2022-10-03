@@ -405,8 +405,8 @@ necessarily the best possible image.
 <dd>for <a>indexed-colour</a> images, the number of bits
 per <a>palette</a> index. For other images, the
 number of bits per <a>sample</a> in the image. This is the value
-that appears in the <span class=
-"chunk"><a href="#11IHDR"></a></span> <a>chunk</a>.</dd>
+that appears in the 
+<a class="chunk" href="#11IHDR"></a> <a>chunk</a>.</dd>
 
 <!-- Maintain a fragment named "3byte" to preserve incoming links to it -->
 <dt id="3byte"><dfn>byte</dfn></dt>
@@ -429,7 +429,7 @@ or <a>PNG datastream</a>. PNG uses
 
 <dd>the area on the output device on which the frames are to be displayed.
   The contents of the canvas are not necessarily available to the decoder.
-  If a <span class="chunk">bKGD</span> chunk exists,
+  If a <a class="chunk" href="#11bKGD">bKGD</a> chunk exists,
   it may be used to fill the canvas if there is no preferable background</dd>
 
 <!-- Maintain a fragment named "3channel" to preserve incoming links to it -->
@@ -789,7 +789,7 @@ image it is the same as the <a>bit depth</a>.</dd>
 
   <dd>non-animated image
     corresponding to the <a>reference image</a>
-    encoded in the <span class="chunk">IDAT</span> chunk.
+    encoded in the <a class="chunk" href="11IDAT">IDAT</a> chunk.
     All PNG and APNG images contain a static image,
     and non animation-capable displays (such as printers)
     will display this rather than the animation.
@@ -1523,16 +1523,16 @@ image.</td>
   provisions of this specification. These are:</p>
 
   <!-- <ol start="1"> --><ol>
-  <li><a href="#11IHDR"><span class="chunk">IHDR</span></a>: image
+  <li><a class="chunk" href="#11IHDR">IHDR</a>: image
   header, which is the first chunk in a PNG datastream.</li>
 
-  <li><a href="#11PLTE"><span class="chunk">PLTE</span></a>:
+  <li><a class="chunk" href="#11PLTE">PLTE</a>:
   palette table associated with indexed PNG images.</li>
 
-  <li><a href="#11IDAT"><span class="chunk">IDAT</span></a>: image
+  <li><a class="chunk" href="#11IDAT">IDAT</a>: image
   data chunks.</li>
 
-  <li><a href="#11IEND"><span class="chunk">IEND</span></a>: image
+  <li><a class="chunk" href="#11IEND">IEND</a>: image
   trailer, which is the last chunk in a PNG datastream.</li>
   </ol>
 
@@ -1540,37 +1540,37 @@ image.</td>
   which encoders may generate and decoders may interpret.</p>
 
   <!-- <ol start="5"> --><ol>
-  <li>Transparency information: <a href="#11tRNS"><span class=
-  "chunk">tRNS</span></a> (see <a href="#11transinfo"></a></li>
+  <li>Transparency information: <a class="chunk" href="#11tRNS">
+tRNS</a> (see <a href="#11transinfo"></a></li>
 
-  <li>Colour space information: <a href="#11cHRM"><span class=
-  "chunk">cHRM</span></a>, <a href="#11gAMA"><span class=
-  "chunk">gAMA</span></a>, <a href="#11iCCP"><span class=
-  "chunk">iCCP</span></a>, <a href="#11sBIT"><span class=
-  "chunk">sBIT</span></a>, <a href="#11sRGB"><span class=
-  "chunk">sRGB</span></a>, <a href="#11cICP"><span class=
-    "chunk">cICP</span></a> (see <a href="#11addnlcolinfo"></a></li>
+  <li>Colour space information: <a class="chunk" href="#11cHRM">
+cHRM</a>, <a class="chunk" href="#11gAMA">
+gAMA</a>, <a class="chunk" href="#11iCCP">
+iCCP</a>, <a class="chunk" href="#11sBIT">
+sBIT</a>, <a class="chunk" href="#11sRGB">
+sRGB</a>, <a class="chunk" href="#11cICP">
+cICP</a> (see <a href="#11addnlcolinfo"></a></li>
 
-  <li>Textual information: <a href="#11iTXt"><span class=
-  "chunk">iTXt</span></a>, <a href="#11tEXt"><span class=
-  "chunk">tEXt</span></a>, <a href="#11zTXt"><span class=
-    "chunk">zTXt</span></a> (see <a href="#11textinfo"></a).</li>
+  <li>Textual information: <a class="chunk" href="#11iTXt">
+iTXt</a>, <a class="chunk" href="#11tEXt">
+tEXt</a>, <a class="chunk" href="#11zTXt">
+zTXt</a> (see <a href="#11textinfo"></a).</li>
 
-  <li>Miscellaneous information: <a href="#11bKGD"><span class=
-  "chunk">bKGD</span></a>, <a href="#11hIST"><span class=
-  "chunk">hIST</span></a>, <a href="#11pHYs"><span class=
-  "chunk">pHYs</span></a>, <a href="#11sPLT"><span class=
-  "chunk">sPLT</span></a>, <a href="#eXIf"><span class=
-  "chunk">eXIf</span></a>
+  <li>Miscellaneous information: <a class="chunk" href="#11bKGD">
+bKGD</a>, <a class="chunk" href="#11hIST">
+hIST</a>, <a class="chunk" href="#11pHYs">
+pHYs</a>, <a class="chunk" href="#11sPLT">
+sPLT</a>, <a class="chunk" href="#eXIf">
+eXIf</a>
   (see <a href="#11addnlsiinfo"></a>).</li>
 
-  <li>Time information: <a href="#11tIME"><span class=
-    "chunk">tIME</span></a> (see <a href="#11timestampinfo"></a>).</li>
+  <li>Time information: <a class="chunk" href="#11tIME">
+tIME</a> (see <a href="#11timestampinfo"></a>).</li>
 
   <li>Animation information:
-    <a href="#actl-animation-control-chunk"><span class="chunk">acTL</span></a>,
-    <a href="#fcTL-chunk"><span class="chunk">fcTL</span></a>,
-    <a href="#11fdAT"><span class="chunk">fdAT</span></a>
+    <a class="chunk" href="#actl-animation-control-chunk">acTL</a>,
+    <a class="chunk" href="#fcTL-chunk">fcTL</a>,
+    <a class="chunk" href="#11fdAT">fdAT</a>
     (see <a href="#animation-information"></a>).
   </li>
   </ol>
@@ -1604,29 +1604,29 @@ image.</td>
   describing the animation
   and providing additional frame data. </p>
 
-<p>To be recognized as an APNG, an <span class="chunk">acTL</span> chunk
-  must appear in the stream before any <span class="chunk">IDAT</span> chunks.
-  The <span class="chunk">acTL</span> structure is
+<p>To be recognized as an APNG, an <a class="chunk" href="#actl-animation-control-chunk">acTL</a> chunk
+  must appear in the stream before any <a class="chunk" href="#11IDAT">IDAT</a> chunks.
+  The <a class="chunk" href="#actl-animation-control-chunk">acTL</a> structure is
   <a href="#animation-information">described below</a>. </p>
 
 <p>Conceptually, at the beginning of each play
   the <a>output buffer</a>
   shall be completely initialized to a
   <a>fully transparent black</a> rectangle,
-  with width and height dimensions from the <span class="chunk">IHDR</span> chunk. </p>
+  with width and height dimensions from the <a class="chunk" href="#11IHDR">IHDR</a> chunk. </p>
 
 <p>The static image may be included
   as the first frame of the animation
-  by the presence of a single <span class="chunk">fcTL</span> chunk before <span class="chunk">IDAT</span>.
+  by the presence of a single <a class="chunk" href="#fcTL-chunk">fcTL</a> chunk before <a class="chunk" href="#11IDAT">IDAT</a>.
   Otherwise, the static image is not part of the animation. </p>
 
-<p>Subsequent frames are encoded in <span class="chunk">fdAT</span> chunks,
-  which have the same structure as <span class="chunk">IDAT</span> chunks,
+<p>Subsequent frames are encoded in <a class="chunk" href="#11fdAT">fdAT</a> chunks,
+  which have the same structure as <a class="chunk" href="#11IDAT">IDAT</a> chunks,
   except preceded by a <a href="#4Concepts.APNGSequence">sequence number</a>.
   Information for each frame
   about placement and rendering
-  is stored in <span class="chunk">fcTL</span> chunks.
-  The full layout of <span class="chunk">fdAT</span> and <span class="chunk">fcTL</span> chunks is
+  is stored in <a class="chunk" href="#fcTL-chunk">fcTL</a> chunks.
+  The full layout of <a class="chunk" href="#11fdAT">fdAT</a> and <a class="chunk" href="#fcTL-chunk">fcTL</a> chunks is
   <a href="#animation-information">described below</a>. </p>
 
 <p>The boundaries of the entire animation
@@ -1645,26 +1645,26 @@ image.</td>
 <section id="4Concepts.APNGSequence">
 <h3>Sequence numbers</h3>
 
-<p>The <span class="chunk">fcTL</span> and <span class="chunk">fdAT</span> chunks
+<p>The <a class="chunk" href="#fcTL-chunk">fcTL</a> and <a class="chunk" href="#11fdAT">fdAT</a> chunks
   have a zero-based, 4 byte sequence number.
   Both chunk types share the sequence.
   The purpose of this number is to detect (and optionally correct)
   sequence errors in an Animated PNG,
   since the PNG specification does not impose ordering restrictions on ancillary chunks. </p>
 
-<p>The first <span class="chunk">fcTL</span> chunk shall contain sequence number 0,
+<p>The first <a class="chunk" href="#fcTL-chunk">fcTL</a> chunk shall contain sequence number 0,
   and the sequence numbers in the remaining
-  <span class="chunk">fcTL</span> and <span class="chunk">fdAT</span> chunks
+  <a class="chunk" href="#fcTL-chunk">fcTL</a> and <a class="chunk" href="#11fdAT">fdAT</a> chunks
   shall be in ascending order,
   with no gaps or duplicates.
 </p>
 
 <p>The tables below illustrate the use of sequence numbers
   for images with more than one frame,
-  and more than one <span class="chunk">fdAT</span> chunk
+  and more than one <a class="chunk" href="#11fdAT">fdAT</a> chunk
   for the second frame.
-  (<span class="chunk">IHDR</span> and
-  <span class="chunk">IEND</span> chunks
+  (<a class="chunk" href="#11IHDR">IHDR</a> and
+  <a class="chunk" href="#11IEND">IEND</a> chunks
   omitted in these tables, for clarity).
 </p>
 
@@ -1677,27 +1677,27 @@ image.</td>
 </tr>
 <tr>
   <td>(none)</td>
-  <td><span class="chunk"acTL</span></td>
+  <td><a class="chunk" href="#actl-animation-control-chunk">acTL</a></td>
 </tr>
 <tr>
   <td>0</td>
-  <td><span class="chunk">fcTL</span> first frame</td>
+  <td><a class="chunk" href="#fcTL-chunk">fcTL</a> first frame</td>
 </tr>
 <tr>
   <td>(none)</td>
-  <td><span class="chunk">IDAT</span> first frame / static image</td>
+  <td><a class="chunk" href="#11IDAT">IDAT</a> first frame / static image</td>
 </tr>
 <tr>
   <td>1</td>
-  <td><span class="chunk">fcTL</span> second frame</td>
+  <td><a class="chunk" href="#fcTL-chunk">fcTL</a> second frame</td>
 </tr>
 <tr>
   <td>2</td>
-  <td>first <span class="chunk">fdAT</span> for second frame</td>
+  <td>first <a class="chunk" href="#11fdAT">fdAT</a> for second frame</td>
 </tr>
 <tr>
   <td>3</td>
-  <td>second <span class="chunk">fdAT</span> for second frame</td>
+  <td>second <a class="chunk" href="#11fdAT">fdAT</a> for second frame</td>
 </tr>
 </table>
 
@@ -1710,35 +1710,35 @@ image.</td>
 </tr>
 <tr>
   <td>(none)</td>
-  <td><span class="chunk"acTL</span></td>
+  <td><a class="chunk" href="#actl-animation-control-chunk">acTL</a></td>
 </tr>
 <tr>
   <td>(none)</td>
-  <td><span class="chunk">IDAT</span> static image</td>
+  <td><a class="chunk" href="#11IDAT">IDAT</a> static image</td>
 </tr>
 <tr>
   <td>0</td>
-  <td><span class="chunk">fcTL</span> first frame</td>
+  <td><a class="chunk" href="#fcTL-chunk">fcTL</a> first frame</td>
 </tr>
 <tr>
   <td>1</td>
-  <td>first <span class="chunk">fdAT</span> for first frame</td>
+  <td>first <a class="chunk" href="#11fdAT">fdAT</a> for first frame</td>
 </tr>
 <tr>
   <td>2</td>
-  <td>second <span class="chunk">fdAT</span> for first frame</td>
+  <td>second <a class="chunk" href="#11fdAT">fdAT</a> for first frame</td>
 </tr>
 <tr>
   <td>3</td>
-  <td><span class="chunk">fcTL</span> second frame</td>
+  <td><a class="chunk" href="#fcTL-chunk">fcTL</a> second frame</td>
 </tr>
 <tr>
   <td>4</td>
-  <td>first <span class="chunk">fdAT</span> for second frame</td>
+  <td>first <a class="chunk" href="#11fdAT">fdAT</a> for second frame</td>
 </tr>
 <tr>
   <td>5</td>
-  <td>second <span class="chunk">fdAT</span> for second frame</td>
+  <td>second <a class="chunk" href="#11fdAT">fdAT</a> for second frame</td>
 </tr>
 </table>
 
@@ -1821,9 +1821,9 @@ following (decimal) values:</p>
 
 <p>This signature indicates that the remainder of the datastream
 contains a single PNG image, consisting of a series of chunks
-beginning with an <a href="#11IHDR"><span class=
-"chunk">IHDR</span></a> chunk and ending with an <a href=
-"#11IEND"><span class="chunk">IEND</span></a> chunk.</p>
+beginning with an <a class="chunk" href="#11IHDR">
+IHDR</a> chunk and ending with an <a class="chunk" href=
+"#11IEND">IEND</a> chunk.</p>
 </section>
 
 <!-- Maintain a fragment named "5Chunk-layout" to preserve incoming links to it -->
@@ -1870,8 +1870,8 @@ of a chunk type is restricted to the decimal values 65 to 90 and
 respectively for convenience in description and examination of
 PNG datastreams. Encoders and decoders shall treat the chunk
 types as fixed binary values, not character strings. For example,
-it would not be correct to represent the chunk type <a href=
-"#11IDAT"><span class="chunk">IDAT</span></a> by the equivalents
+it would not be correct to represent the chunk type <a class="chunk" href=
+"#11IDAT">IDAT</a> by the equivalents
 of those letters in the UCS 2 character set. Additional naming
 conventions for chunk types are discussed in <a href="#5Chunk-naming-conventions"></a>.</td>
 </tr>
@@ -1949,15 +1949,15 @@ defined in
  1 (lowercase) = ancillary.</td>
 <td class="Regular">Critical chunks are necessary for successful display of the
 contents of the datastream, for example the image header chunk
-(<a href="#11IHDR"><span class="chunk">IHDR</span></a>). A
+(<a class="chunk" href="#11IHDR">IHDR</a>). A
 decoder trying to extract the image, upon encountering an unknown
 chunk type in which the ancillary bit is 0, shall indicate to the
 user that the image contains information it cannot safely
 interpret.<br class="xhtml" />
  Ancillary chunks are not strictly necessary in order to
 meaningfully display the contents of the datastream, for example
-the time chunk (<a href="#11tIME"><span class=
-"chunk">tIME</span></a>). A decoder encountering an unknown chunk
+the time chunk (<a class="chunk" href="#11tIME">
+tIME</a>). A decoder encountering an unknown chunk
 type in which the ancillary bit is 1 can safely ignore the chunk
 and proceed to display the image.</td>
 </tr>
@@ -2083,8 +2083,8 @@ rules</caption>
 
 <tr>
 <th colspan="3">Critical chunks<br class="xhtml" />
- (shall appear in this order, except <a href="#11PLTE"><span
-class="chunk">PLTE</span></a> is optional)</th>
+ (shall appear in this order, except <a class="chunk" href="#11PLTE">
+PLTE</a> is optional)</th>
 </tr>
 
 <tr>
@@ -2094,27 +2094,27 @@ class="chunk">PLTE</span></a> is optional)</th>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11IHDR"><span class="chunk">IHDR</span></a> </td>
+<td class="Regular"><a class="chunk" href="#11IHDR">IHDR</a> </td>
 <td class="Regular">No</td>
 <td class="Regular">Shall be first</td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11PLTE"><span class="chunk">PLTE</span></a> </td>
+<td class="Regular"><a class="chunk" href="#11PLTE">PLTE</a> </td>
 <td class="Regular">No</td>
-<td class="Regular">Before first <a href="#11IDAT"><span class=
-"chunk">IDAT</span></a> </td>
+<td class="Regular">Before first <a class="chunk" href="#11IDAT">
+IDAT</a> </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
+<td class="Regular"><a class="chunk" href="#11IDAT">IDAT</a> </td>
 <td class="Regular">Yes</td>
-<td class="Regular">Multiple <a href="#11IDAT"><span class=
-"chunk">IDAT</span></a> chunks shall be consecutive</td>
+<td class="Regular">Multiple <a class="chunk" href="#11IDAT">
+IDAT</a> chunks shall be consecutive</td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11IEND"><span class="chunk">IEND</span></a> </td>
+<td class="Regular"><a class="chunk" href="#11IEND">IEND</a> </td>
 <td class="Regular">No</td>
 <td class="Regular">Shall be last</td>
 </tr>
@@ -2131,137 +2131,137 @@ class="chunk">PLTE</span></a> is optional)</th>
 </tr>
 
 <tr>
-<td class="Regular"><span class="chunk">acTL</span> </td>
+<td class="Regular"><a class="chunk" href="#actl-animation-control-chunk">acTL</a> </td>
 <td class="Regular">No</td>
-<td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
-and <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
+<td class="Regular">Before <a class="chunk" href="#11PLTE">PLTE</a>
+and <a class="chunk" href="#11IDAT">IDAT</a> </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11cHRM"><span class="chunk">cHRM</span></a> </td>
+<td class="Regular"><a class="chunk" href="#11cHRM">cHRM</a> </td>
 <td class="Regular">No</td>
-<td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
-and <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
+<td class="Regular">Before <a class="chunk" href="#11PLTE">PLTE</a>
+and <a class="chunk" href="#11IDAT">IDAT</a> </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11cICP"><span class="chunk">cICP</span></a></td>
+<td class="Regular"><a class="chunk" href="#11cICP">cICP</a></td>
 <td class="Regular">No</td>
-<td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
-and <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
+<td class="Regular">Before <a class="chunk" href="#11PLTE">PLTE</a>
+and <a class="chunk" href="#11IDAT">IDAT</a> </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11gAMA"><span class="chunk">gAMA</span></a> </td>
+<td class="Regular"><a class="chunk" href="#11gAMA">gAMA</a> </td>
 <td class="Regular">No</td>
-<td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
-and <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
+<td class="Regular">Before <a class="chunk" href="#11PLTE">PLTE</a>
+and <a class="chunk" href="#11IDAT">IDAT</a> </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11iCCP"><span class="chunk">iCCP</span></a> </td>
+<td class="Regular"><a class="chunk" href="#11iCCP">iCCP</a> </td>
 <td class="Regular">No</td>
-<td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
-and <a href="#11IDAT"><span class="chunk">IDAT</span></a>. If the
-<a href="#11iCCP"><span class="chunk">iCCP</span></a> chunk is
-present, the <a href="#11sRGB"><span class=
-"chunk">sRGB</span></a> chunk should not be present.</td>
+<td class="Regular">Before <a class="chunk" href="#11PLTE">PLTE</a>
+and <a class="chunk" href="#11IDAT">IDAT</a>. If the
+<a class="chunk" href="#11iCCP">iCCP</a> chunk is
+present, the <a class="chunk" href="#11sRGB"><span class=
+sRGB</a> chunk should not be present.</td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11sBIT"><span class="chunk">sBIT</span></a> </td>
+<td class="Regular"><a class="chunk" href="#11sBIT">sBIT</a> </td>
 <td class="Regular">No</td>
-<td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
-and <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
+<td class="Regular">Before <a class="chunk" href="#11PLTE">PLTE</a>
+and <a class="chunk" href="#11IDAT">IDAT</a> </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11sRGB"><span class="chunk">sRGB</span></a> </td>
+<td class="Regular"><a class="chunk" href="#11sRGB">sRGB</a> </td>
 <td class="Regular">No</td>
-<td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
-and <a href="#11IDAT"><span class="chunk">IDAT</span></a>. If the
-<a href="#11sRGB"><span class="chunk">sRGB</span></a> chunk is
-present, the <a href="#11iCCP"><span class=
-		      "chunk">iCCP</span></a>
+<td class="Regular">Before <a class="chunk" href="#11PLTE">PLTE</a>
+and <a class="chunk" href="#11IDAT">IDAT</a>. If the
+<a class="chunk" href="#11sRGB">sRGB</a> chunk is
+present, the <a class="chunk" href="#11iCCP">
+iCCP</a>
 chunk should not be present.</td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11bKGD"><span class="chunk">bKGD</span></a> </td>
+<td class="Regular"><a class="chunk" href="#11bKGD">bKGD</a> </td>
 <td class="Regular">No</td>
-<td class="Regular">After <a href="#11PLTE"><span class="chunk">PLTE</span></a>;
-before <a href="#11IDAT"><span class="chunk">IDAT</span></a>
+<td class="Regular">After <a class="chunk" href="#11PLTE">PLTE</a>;
+before <a class="chunk" href="#11IDAT">IDAT</a>
 </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11hIST"><span class="chunk">hIST</span></a> </td>
+<td class="Regular"><a class="chunk" href="#11hIST">hIST</a> </td>
 <td class="Regular">No</td>
-<td class="Regular">After <a href="#11PLTE"><span class="chunk">PLTE</span></a>;
-before <a href="#11IDAT"><span class="chunk">IDAT</span></a>
+<td class="Regular">After <a class="chunk" href="#11PLTE">PLTE</a>;
+before <a class="chunk" href="#11IDAT">IDAT</a>
 </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11tRNS"><span class="chunk">tRNS</span></a> </td>
+<td class="Regular"><a class="chunk" href="#11tRNS">tRNS</a> </td>
 <td class="Regular">No</td>
-<td class="Regular">After <a href="#11PLTE"><span class="chunk">PLTE</span></a>;
-before <a href="#11IDAT"><span class="chunk">IDAT</span></a>
+<td class="Regular">After <a class="chunk" href="#11PLTE">PLTE</a>;
+before <a class="chunk" href="#11IDAT">IDAT</a>
 </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#eXIf"><span class="chunk">eXIf</span></a> </td>
+<td class="Regular"><a class="chunk" href="#eXIf">eXIf</a> </td>
 <td class="Regular">No</td>
-<td class="Regular">Before <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
+<td class="Regular">Before <a class="chunk" href="#11IDAT">IDAT</a> </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#fcTL-chunk"><span class="chunk">fcTL</span></a> </td>
+<td class="Regular"><a class="chunk" href="#fcTL-chunk">fcTL</a> </td>
 <td class="Regular">Yes</td>
-<td class="Regular">One may occur before <a href="#11IDAT"><span class="chunk">IDAT</span></a>; all others shall be after <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
+<td class="Regular">One may occur before <a class="chunk" href="#11IDAT">IDAT</a>; all others shall be after <a class="chunk" href="#11IDAT">IDAT</a> </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11pHYs"><span class="chunk">pHYs</span></a> </td>
+<td class="Regular"><a class="chunk" href="#11pHYs">pHYs</a> </td>
 <td class="Regular">No</td>
-<td class="Regular">Before <a href="#11IDAT"><span class="chunk">IDAT</span></a>
+<td class="Regular">Before <a class="chunk" href="#11IDAT">IDAT</a>
 </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11sPLT"><span class="chunk">sPLT</span></a> </td>
+<td class="Regular"><a class="chunk" href="#11sPLT">sPLT</a> </td>
 <td class="Regular">Yes</td>
-<td class="Regular">Before <a href="#11IDAT"><span class="chunk">IDAT</span></a>
+<td class="Regular">Before <a class="chunk" href="#11IDAT">IDAT</a>
 </td>
 </tr>
 
 <tr>
-  <td class="Regular"><a href="#11fdAT"><span class="chunk">fdAT</span></a> </td>
+  <td class="Regular"><a class="chunk" href="#11fdAT">fdAT</a> </td>
   <td class="Regular">Yes</td>
-  <td class="Regular">After <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
+  <td class="Regular">After <a class="chunk" href="#11IDAT">IDAT</a> </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11tIME"><span class="chunk">tIME</span></a> </td>
+<td class="Regular"><a class="chunk" href="#11tIME">tIME</a> </td>
 <td class="Regular">No</td>
 <td class="Regular">None</td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11iTXt"><span class="chunk">iTXt</span></a> </td>
+<td class="Regular"><a class="chunk" href="#11iTXt">iTXt</a> </td>
 <td class="Regular">Yes</td>
 <td class="Regular">None</td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11tEXt"><span class="chunk">tEXt</span></a> </td>
+<td class="Regular"><a class="chunk" href="#11tEXt">tEXt</a> </td>
 <td class="Regular">Yes</td>
 <td class="Regular">None</td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11zTXt"><span class="chunk">zTXt</span></a> </td>
+<td class="Regular"><a class="chunk" href="#11zTXt">zTXt</a> </td>
 <td class="Regular">Yes</td>
 <td class="Regular">None</td>
 </tr>
@@ -2311,8 +2311,8 @@ symbols used in lattice diagrams</caption>
 <!-- Maintain a fragment named "figure52" to preserve incoming links to it -->
 <object id="figure52" data="figures/lattice-diagram-with-plte.svg" type="image/svg+xml">
 </object>
-<figcaption>Lattice diagram: Static PNG images with <a href="#11PLTE"><span class=
-"chunk">PLTE</span></a></figcaption>
+<figcaption>Lattice diagram: Static PNG images with <a class="chunk" href="#11PLTE">
+PLTE</a></figcaption>
 </figure>
 
 
@@ -2321,16 +2321,16 @@ symbols used in lattice diagrams</caption>
 <object id="figure53" data="figures/lattice-diagram-without-plte.svg"
 type="image/svg+xml">
 </object>
-<figcaption>Lattice diagram: Static PNG images without <a href="#11PLTE"><span
-class="chunk">PLTE</span></a></figcaption>
+<figcaption>Lattice diagram: Static PNG images without <a class="chunk" href="#11PLTE">
+PLTE</a></figcaption>
 </figure>
 
 
 <figure id="lattice-apng-static-with-plte">
 <object id="figure52a" data="figures/lattice-diagram-apng-static-first-with-plte.svg" type="image/svg+xml">
 </object>
-<figcaption>Lattice diagram: Animated PNG images with <a href="#11PLTE"><span class=
-"chunk">PLTE</span></a>, static image forms the first frame</figcaption>
+<figcaption>Lattice diagram: Animated PNG images with <a class="chunk" href="#11PLTE">
+PLTE</a>, static image forms the first frame</figcaption>
 </figure>
 
 
@@ -2338,15 +2338,15 @@ class="chunk">PLTE</span></a></figcaption>
 <object id="figure53a" data="figures/lattice-diagram-apng-static-first-without-plte.svg"
 type="image/svg+xml">
 </object>
-<figcaption>Lattice diagram: Animated PNG images without <a href="#11PLTE"><span
-class="chunk">PLTE</span></a>, static image forms the first frame</figcaption>
+<figcaption>Lattice diagram: Animated PNG images without <a class="chunk" href="#11PLTE">
+PLTE</a>, static image forms the first frame</figcaption>
 </figure>
 
 <figure id="lattice-apng-nostatic-with-plte">
   <object id="figure52b" data="figures/lattice-diagram-apng-static-notfirst-with-plte.svg" type="image/svg+xml">
   </object>
-  <figcaption>Lattice diagram: Animated PNG images with <a href="#11PLTE"><span class=
-  "chunk">PLTE</span></a>, static image not part of animation</figcaption>
+  <figcaption>Lattice diagram: Animated PNG images with <a class="chunk" href="#11PLTE">
+PLTE</a>, static image not part of animation</figcaption>
   </figure>
 
 
@@ -2354,8 +2354,8 @@ class="chunk">PLTE</span></a>, static image forms the first frame</figcaption>
   <object id="figure53b" data="figures/lattice-diagram-apng-static-notfirst-without-plte.svg"
   type="image/svg+xml">
   </object>
-  <figcaption>Lattice diagram: Animated PNG images without <a href="#11PLTE"><span
-  class="chunk">PLTE</span></a>, static image not part of animation</figcaption>
+  <figcaption>Lattice diagram: Animated PNG images without <a class="chunk" href="#11PLTE">
+PLTE</a>, static image not part of animation</figcaption>
   </figure>
 
 </section>
@@ -2395,8 +2395,8 @@ class="chunk">PLTE</span></a>, static image forms the first frame</figcaption>
     experimental use.</p>
 
     <p>A private chunk SHOULD NOT be defined merely to carry textual information
-    of interest to a human user. Instead <a href="#11iTXt"><span
-    class= "chunk">iTXt</span></a> chunk SHOULD BE used and corresponding
+    of interest to a human user. Instead <a class="chunk" href="#11iTXt">
+    iTXt</a> chunk SHOULD BE used and corresponding
     keyword SHOULD BE used and a suitable keyword defined.</p>
 
     <p>Listing private chunks at [[PNG-EXTENSIONS]] reduces, but does not eliminate,
@@ -2509,22 +2509,22 @@ type are listed in <a href="#11IHDR"></span> Image
 header</span></a>.</p>
 
 <p>Greyscale samples represent luminance if the transfer curve is
-indicated (by <a href="#11gAMA"><span class=
-"chunk">gAMA</span></a>, <a href="#11sRGB"><span class=
-"chunk">sRGB</span></a>, or <a href="#11iCCP"><span class=
-"chunk">iCCP</span></a>) or device-dependent greyscale if not.
+indicated (by <a class="chunk" href="#11gAMA">
+gAMA</a>, <a class="chunk" href="#11sRGB">
+sRGB</a>, or <a class="chunk" href="#11iCCP">
+iCCP</a>) or device-dependent greyscale if not.
 RGB samples represent calibrated colour information if the colour
-space is indicated (by <a href="#11gAMA"><span class=
-"chunk">gAMA</span></a> and <a href="#11cHRM"><span class=
-"chunk">cHRM</span></a>, or <a href="#11sRGB"><span class=
-"chunk">sRGB</span></a>, or <a href="#11iCCP"><span class=
-"chunk">iCCP</span></a>,
+space is indicated (by <a class="chunk" href="#11gAMA">
+gAMA</a> and <a class="chunk" href="#11cHRM">
+cHRM</a>, or <a class="chunk" href="#11sRGB">
+sRGB</a>, or <a class="chunk" href="#11iCCP">
+iCCP</a>,
 or uncalibrated device-dependent colour
 if not.</p>
 
 <p>Sample values are not necessarily proportional to light
-intensity; the <a href="#11gAMA"><span class=
-"chunk">gAMA</span></a> chunk specifies the relationship between
+intensity; the <a class="chunk" href="#11gAMA">
+gAMA</a> chunk specifies the relationship between
 sample values and display output intensity. Viewers are strongly
 encouraged to compensate properly. See <a href=
 "#4Concepts.ColourSpaces"></a>, <a href=
@@ -2544,17 +2544,17 @@ and <a>alpha compaction</a>).</p>
 <li>Truecolour with alpha, greyscale with alpha: an alpha channel
 is part of the image array.</li>
 
-<li>Truecolour, greyscale: A <a href="#11tRNS"><span class=
-"chunk">tRNS</span></a> chunk contains a single pixel value
+<li>Truecolour, greyscale: A <a class="chunk" href="#11tRNS">
+tRNS</a> chunk contains a single pixel value
 distinguishing the fully transparent pixels from the fully opaque
 pixels.</li>
 
-<li>Indexed-colour: A <a href="#11tRNS"><span class=
-"chunk">tRNS</span></a> chunk contains the alpha table that
+<li>Indexed-colour: A <a class="chunk" href="#11tRNS">
+tRNS</a> chunk contains the alpha table that
 associates an alpha sample with each palette entry.</li>
 
-<li>Truecolour, greyscale, indexed-colour: there is no <a href=
-"#11tRNS"><span class="chunk">tRNS</span></a> chunk present and
+<li>Truecolour, greyscale, indexed-colour: there is no <a class="chunk" href=
+"#11tRNS">tRNS</a> chunk present and
 all pixels are fully opaque.</li>
 </ol>
 
@@ -3063,9 +3063,8 @@ specification [[rfc1950]].</p>
 method/flags code shall specify method code 8 (<a>deflate</a>
 compression) and an LZ77 window size of not more than 32768
 bytes. The zlib compression method number is not the same as the
-PNG compression method number in the <a href=
-"#11IHDR"><span class="chunk">IHDR</span></a> chunk (see
-<a href="#11IHDR"></a>). The additional
+PNG compression method number in the <a class="chunk" href=
+"#11IHDR">IHDR</a> chunk. The additional
 flags shall not specify a preset dictionary.</p>
 
 <p>If the data to be compressed contain 16384 bytes or fewer, the
@@ -3099,29 +3098,29 @@ the PNG datastream has been transmitted undamaged.</p>
 of filtered scanlines</h2>
 
 <p>The sequence of filtered scanlines is compressed and the
-resulting data stream is split into <a href="#11IDAT"><span
-class="chunk">IDAT</span></a> chunks. The concatenation of the
-contents of all the <a href="#11IDAT"><span class=
-"chunk">IDAT</span></a> chunks makes up a zlib datastream. This
+resulting data stream is split into <a class="chunk" href="#11IDAT">
+IDAT</a> chunks. The concatenation of the
+contents of all the <a class="chunk" href="#11IDAT">
+IDAT</a> chunks makes up a zlib datastream. This
 datastream decompresses to filtered image data.</p>
 
 <p>It is important to emphasize that the boundaries between <a
-href="#11IDAT"><span class="chunk">IDAT</span></a> chunks are
+class="chunk" href="#11IDAT">IDAT</a> chunks are
 arbitrary and can fall anywhere in the zlib datastream. There is
-not necessarily any correlation between <a href="#11IDAT"><span
-class="chunk">IDAT</span></a> chunk boundaries and <a>deflate</a> block
+not necessarily any correlation between <a class="chunk" href="#11IDAT">
+IDAT</a> chunk boundaries and <a>deflate</a> block
 boundaries or any other feature of the zlib data. For example, it
 is entirely possible for the terminating zlib check value to be
-split across <a href="#11IDAT"><span class=
-"chunk">IDAT</span></a> chunks.</p>
+split across <a class="chunk" href="#11IDAT">
+IDAT</a> chunks.</p>
 
 <p>Similarly, there is no required correlation between the
 structure of the image data (i.e., scanline boundaries) and
-<a>deflate</a> block boundaries or <a href="#11IDAT"><span class=
-"chunk">IDAT</span></a> chunk boundaries. The complete filtered
+<a>deflate</a> block boundaries or <a class="chunk" href="#11IDAT">
+IDAT</a> chunk boundaries. The complete filtered
 PNG image is represented by a single zlib datastream that is
-stored in a number of <a href="#11IDAT"><span class=
-"chunk">IDAT</span></a> chunks.</p>
+stored in a number of <a class="chunk" href="#11IDAT">
+IDAT</a> chunks.</p>
 </section>
 
 <!-- ************Page Break******************* -->
@@ -3131,11 +3130,11 @@ stored in a number of <a href="#11IDAT"><span class=
 <h2>Other uses of
 compression</h2>
 
-<p>PNG also uses compression method 0 in <a href="#11iTXt"><span
-class="chunk">iTXt</span></a>, <a href="#11iCCP"><span class=
-"chunk">iCCP</span></a>,
-and <a href="#11zTXt"><span class=
-"chunk">zTXt</span></a> chunks. Unlike the image data, such
+<p>PNG also uses compression method 0 in <a class="chunk" href="#11iTXt">
+iTXt</a>, <a class="chunk" href="#11iCCP">
+iCCP</a>,
+and <a class="chunk" href="#11zTXt">
+zTXt</a> chunks. Unlike the image data, such
 datastreams are not split across chunks; each such chunk contains
 an independent zlib datastream (see <a href="#10CompressionCM0"></a>).</p>
 </section>
@@ -3166,13 +3165,13 @@ datastream. Extension chunks may be defined as critical chunks
 is strongly discouraged.</p>
 
 <p>A valid PNG datastream shall begin with a PNG signature,
-immediately followed by an <a href="#11IHDR"><span class=
-"chunk">IHDR</span></a> chunk, then one or more <a href=
-"#11IDAT"><span class="chunk">IDAT</span></a> chunks, and shall
-end with an <a href="#11IEND"><span class="chunk">IEND</span></a>
-chunk. Only one <a href="#11IHDR"><span class=
-"chunk">IHDR</span></a> chunk and one <a href="#11IEND"><span
-class="chunk">IEND</span></a> chunk are allowed in a PNG
+immediately followed by an <a class="chunk" href="#11IHDR">
+IHDR</a> chunk, then one or more <a class="chunk" href=
+"#11IDAT">IDAT</a> chunks, and shall
+end with an <a class="chunk" href="#11IEND">IEND</a>
+chunk. Only one <a class="chunk" href="#11IHDR">
+IHDR</a> chunk and one <a class="chunk" href="#11IEND">
+IEND</a> chunk are allowed in a PNG
 datastream.</p>
 </section>
 
@@ -3275,8 +3274,8 @@ combinations of <a>colour type</a> and bit depth</caption>
 <td class="Regular">Indexed-colour</td>
 <td class="Regular" align="center">3</td>
 <td class="Regular">1, 2, 4, 8</td>
-<td class="Regular">Each pixel is a palette index; a <a href="#11PLTE"><span
-class="chunk">PLTE</span></a> chunk shall appear.</td>
+<td class="Regular">Each pixel is a palette index; a <a class="chunk" href="#11PLTE">
+PLTE</a> chunk shall appear.</td>
 </tr>
 
 <tr>
@@ -3374,11 +3373,11 @@ image data is an error.</p>
 alpha), the <span class="chunk">PLTE</span> chunk is optional. If
 present, it provides a suggested set of colours (from 1 to 256)
 to which the truecolour image can be quantized if it cannot be
-displayed directly. It is, however, recommended that the <a href=
-"#11sPLT"><span class="chunk">sPLT</span></a> chunk be used for
+displayed directly. It is, however, recommended that the <a class="chunk" href=
+"#11sPLT">sPLT</a> chunk be used for
 this purpose, rather than the <span class="chunk">PLTE</span>
-chunk. If neither <span class="chunk">PLTE</span> nor <a href=
-"#11sPLT"><span class="chunk">sPLT</span></a> chunks are present
+chunk. If neither <span class="chunk">PLTE</span> nor <a class="chunk" href=
+"#11sPLT">sPLT</a> chunks are present
 and the image cannot be displayed directly, quantization has to
 be done by the viewing system. However, it is often preferable
 for the selection of colours to be done once by the PNG encoder.
@@ -3522,8 +3521,8 @@ greyscale and truecolour images). The <span class=
 
 <p>For <a>colour type</a> 3 (indexed-colour), the <span class=
 "chunk">tRNS</span> chunk contains a series of one-byte alpha
-values, corresponding to entries in the <a href="#11PLTE"><span
-class="chunk">PLTE</span></a> chunk. Each entry indicates that
+values, corresponding to entries in the <a class="chunk" href="#11PLTE">
+PLTE</a> chunk. Each entry indicates that
 pixels of the corresponding palette index shall be treated as
 having the specified alpha value. Alpha values have the same
 interpretation as in an 8-bit full alpha channel: 0 is fully
@@ -3579,9 +3578,9 @@ Primary chromaticities and white point</h2>
 specify the 1931 CIE <i>x,y</i> chromaticities of the red,
 green, and blue display primaries used in the image, and the referenced
 white point. See <a href="#C-GammaAppendix"></a> for more information.
-The <a href="#11iCCP"><span class="chunk">iCCP</span></a>,
-and <a
-href="#11sRGB"><span class="chunk">sRGB</span></a> chunks provide
+The <a class="chunk" href="#11iCCP">iCCP</a>,
+and <a class="chunk"
+href="#11sRGB">sRGB</a> chunks provide
 more sophisticated support for colour management and control.</p>
 
 <p>The <span class="chunk">cHRM</span> chunk contains:</p>
@@ -3648,8 +3647,8 @@ representing the <i>x</i> or <i>y</i> value times 100000.</p>
 PNG datastreams, although it is of little value for greyscale
 images.</p>
 
-<p>An <a href="#11sRGB"><span class="chunk">sRGB</span></a> or
-<a href="#11iCCP"><span class="chunk">iCCP</span></a>
+<p>An <a class="chunk" href="#11sRGB">sRGB</a> or
+<a class="chunk" href="#11iCCP">iCCP</a>
 chunk
 when present and recognized, overrides the <span class=
 "chunk">cHRM</span> chunk.</p>
@@ -3679,9 +3678,9 @@ the sRGB specification [[SRGB]].
 Adjustment for different viewing conditions is normally handled
 by a Colour Management System. If the adjustment is not
 performed, the error is usually small. Applications desiring high
-colour fidelity may wish to use an <a href="#11sRGB"><span class=
-"chunk">sRGB</span></a>, <a href="#11iCCP"><span class=
-"chunk">iCCP</span></a> chunk.</p>
+colour fidelity may wish to use an <a class="chunk" href="#11sRGB">
+sRGB</a>, <a class="chunk" href="#11iCCP">
+iCCP</a> chunk.</p>
 
 <p>The <span class="chunk">gAMA</span> chunk contains:</p>
 
@@ -3702,8 +3701,8 @@ representing gamma times 100000.</p>
 <p>See <a href="#12Encoder-gamma-handling"></a> and <a href=
 "#13Decoder-gamma-handling"></a> for more information.</p>
 
-<p>An <a href="#srgb-standard-colour-space"><span class="chunk">sRGB</span></a> or
-<a href="#11iCCP"><span class="chunk">iCCP</span></a>
+<p>An <a class="chunk" href="#srgb-standard-colour-space">sRGB</a> or
+<a class="chunk" href="#11iCCP">iCCP</a>
 chunk, when present and recognized, overrides the <span class=
 "chunk">gAMA</span> chunk.</p>
 </section>
@@ -3765,28 +3764,28 @@ shall be an RGB colour space for colour images (<a>colour types</a>
 2, 3, and 6), or a greyscale colour space for greyscale images
 (<a>colour types</a> 0 and 4). A PNG encoder that writes the <span
 class="chunk">iCCP</span> chunk is encouraged to also write <a
-href="#11gAMA"><span class="chunk">gAMA</span></a> and <a href=
-"#11cHRM"><span class="chunk">cHRM</span></a> chunks that
+class="chunk" href="#11gAMA">gAMA</a> and <a class="chunk" href=
+"#11cHRM">cHRM</a> chunks that
 approximate the ICC profile, to provide compatibility with
 applications that do not use the <span class="chunk">iCCP</span>
 chunk. When the <span class="chunk">iCCP</span> chunk is present,
 PNG decoders that recognize it and are capable of colour
 management
-shall ignore the <a href="#11gAMA"><span class=
-"chunk">gAMA</span></a> and <a href="#11cHRM"><span class=
-"chunk">cHRM</span></a> chunks and use the <span class=
+shall ignore the <a class="chunk" href="#11gAMA">
+gAMA</a> and <a class="chunk" href="#11cHRM">
+cHRM</a> chunks and use the <span class=
 "chunk">iCCP</span> chunk instead and interpret it according to
 [[ICC]].
 PNG decoders that are used in an environment that is incapable of
-full-fledged colour management should use the <a href=
-"#11gAMA"><span class="chunk">gAMA</span></a> and <a href=
-"#11cHRM"><span class="chunk">cHRM</span></a> chunks if
+full-fledged colour management should use the <a class="chunk" href=
+"#11gAMA">gAMA</a> and <a class="chunk" href=
+"#11cHRM">cHRM</a> chunks if
 present.</p>
 
 <p>Unless a cICP chunk exists, a PNG datastream should contain at most one embedded profile,
 whether specified explicitly with an <span class="chunk">iCCP</span>
 or implicitly with an
-<a href="#srgb-standard-colour-space"><span class="chunk">sRGB</span></a> chunk.</p>
+<a class="chunk" href="#srgb-standard-colour-space">sRGB</a> chunk.</p>
 </section>
 
 <!-- Maintain a fragment named "11sBIT" to preserve incoming links to it -->
@@ -3804,8 +3803,8 @@ Significant bits</h2>
 <p>To simplify decoders, PNG specifies that only certain sample
 depths may be used, and further specifies that sample values
 should be scaled to the full range of possible values at the
-sample depth. The <a href="#11sBIT"><span class=
-"chunk">sBIT</span></a> chunk defines the original number of
+sample depth. The <a class="chunk" href="#11sBIT">
+sBIT</a> chunk defines the original number of
 significant bits (which can be less than or equal to the sample
 depth). This allows PNG decoders to recover the original data
 losslessly even if the data had a sample depth not directly
@@ -3889,12 +3888,12 @@ supported by PNG.</p>
 <p>Each depth specified in <span class="chunk">sBIT</span> shall
 be greater than zero and less than or equal to the sample depth
 (which is 8 for indexed-colour images, and the bit depth given in
-<a href="#11IHDR"><span class="chunk">IHDR</span></a> for other
+<a class="chunk" href="#11IHDR">IHDR</a> for other
 <a>colour types</a>).
 Note that <span class="chunk">sBIT</span> does not provide a sample depth
 for the alpha channel that is implied by a
-<a href="#11tRNS"><span class=
-"chunk">tRNS</span></a> chunk; in that case, all of the sample bits of
+<a class="chunk" href="#11tRNS">
+tRNS</a> chunk; in that case, all of the sample bits of
 the alpha channel are to be treated as significant. If the <span
 class="chunk">sBIT</span> chunk is not present, then all of the
 sample bits of all channels are to be treated as significant.</p>
@@ -3978,10 +3977,10 @@ such as previews of images destined for a different output device
 </table>
 
 <p>It is recommended that a PNG encoder that writes the <span
-class="chunk">sRGB</span> chunk also write a <a href=
-"#11gAMA"><span class="chunk">gAMA</span></a> chunk (and
-optionally a <a href="#11cHRM"><span class=
-"chunk">cHRM</span></a> chunk) for compatibility with decoders
+class="chunk">sRGB</span> chunk also write a <a class="chunk" href=
+"#11gAMA">gAMA</a> chunk (and
+optionally a <a class="chunk" href="#11cHRM">
+cHRM</a> chunk) for compatibility with decoders
 that do not use the <span class="chunk">sRGB</span> chunk. Only
 the following values shall be used.</p>
 
@@ -3990,8 +3989,8 @@ the following values shall be used.</p>
 <caption>gAMA and cHRM values for sRGB</caption>
 
 <tr>
-<th colspan="2"><a href="#11gAMA"><span class=
-"chunk">gAMA</span></a> </th>
+<th colspan="2"><a class="chunk" href="#11gAMA">
+gAMA</a> </th>
 </tr>
 
 <tr>
@@ -4000,8 +3999,8 @@ the following values shall be used.</p>
 </tr>
 
 <tr>
-<th colspan="2"><a href="#11cHRM"><span class=
-"chunk">cHRM</span></a> </th>
+<th colspan="2"><a class="chunk" href="#11cHRM">
+cHRM</a> </th>
 </tr>
 
 <tr>
@@ -4048,21 +4047,21 @@ the following values shall be used.</p>
 <p>When the <span class="chunk">sRGB</span> chunk is present, it
 is recommended that decoders that recognize it and are capable of
 colour management
-ignore the <a href="#11gAMA"><span
-class="chunk">gAMA</span></a> and <a href="#11cHRM"><span class=
-"chunk">cHRM</span></a> chunks and use the <span class=
+ignore the <a class="chunk" href="#11gAMA">
+gAMA</a> and <a class="chunk" href="#11cHRM">
+cHRM</a> chunks and use the <span class=
 "chunk">sRGB</span> chunk instead. Decoders that recognize the
 <span class="chunk">sRGB</span> chunk but are not capable of
 colour management
-are recommended to ignore the <a href=
-"#11gAMA"><span class="chunk">gAMA</span></a> and <a href=
-"#11cHRM"><span class="chunk">cHRM</span></a> chunks, and use the
-values given above as if they had appeared in <a href=
-"#11gAMA"><span class="chunk">gAMA</span></a> and <a href=
-"#11cHRM"><span class="chunk">cHRM</span></a> chunks.</p>
+are recommended to ignore the <a class="chunk" href=
+"#11gAMA">gAMA</a> and <a class="chunk" href=
+"#11cHRM">cHRM</a> chunks, and use the
+values given above as if they had appeared in <a class="chunk" href=
+"#11gAMA">gAMA</a> and <a class="chunk" href=
+"#11cHRM">cHRM</a> chunks.</p>
 
 <p>It is recommended that the <span class="chunk">sRGB</span> and
-<a href="#11iCCP"><span class="chunk">iCCP</span></a>
+<a class="chunk" href="#11iCCP">iCCP</a>
 chunks do not appear simultaneously in a PNG datastream.</p>
 </section>
 
@@ -4184,10 +4183,10 @@ function defined at [[ITU-R BT.709]]:
 
 <!-- Maintain a fragment named "11textIntro" to preserve incoming links to it -->
 <section class="introductory" id="11textIntro">
-<p>PNG provides the <a href="#11tEXt"><span class=
-"chunk">tEXt</span></a>, <a href="#11iTXt"><span class=
-"chunk">iTXt</span></a>, and <a href="#11zTXt"><span class=
-"chunk">zTXt</span></a> chunks for storing text strings
+<p>PNG provides the <a class="chunk" href="#11tEXt">
+tEXt</a>, <a class="chunk" href="#11iTXt">
+iTXt</a>, and <a class="chunk" href="#11zTXt">
+zTXt</a> chunks for storing text strings
 associated with the image, such as an image description or
 copyright notice. Keywords are used to indicate what each text
 string represents. Any number of such text chunks may appear, and
@@ -4264,7 +4263,7 @@ appropriate.</p>
   <td class="Regular">XML:com.adobe.xmp</td>
   <td class="Regular">Extensible Metadata Platform (XMP) information,
     formatted as required by the XMP specification [[XMP]].
-    The use of <span class="chunk">iTXt</span>,
+    The use of <a class="chunk" href="#11iTXt">iTXt</a>,
     with Compression Flag set to 0,
     and both Language Tag and
     Translated Keyword set to the null string,
@@ -4303,17 +4302,17 @@ length.</p>
 <p>For the Creation Time keyword, the date format defined in
 section&#160;5.2.14 of RFC 1123 is suggested, but not required [[rfc1123]].</p>
 
-<p>In the <a href="#11tEXt"><span class="chunk">tEXt</span></a>
-and <a href="#11zTXt"><span class="chunk">zTXt</span></a> chunks,
+<p>In the <a class="chunk" href="#11tEXt">tEXt</a>
+and <a class="chunk" href="#11zTXt">zTXt</a> chunks,
 the text string associated with a keyword is restricted to the
 Latin-1 character set plus the linefeed character. Text strings
-in <a href="#11zTXt"><span class="chunk">zTXt</span></a> are
+in <a class="chunk" href="#11zTXt">zTXt</a> are
 compressed into zlib datastreams using <a>deflate</a> compression (see
-<a href='#10CompressionOtherUses'></a>). The <a href="#11iTXt"><span
-class="chunk">iTXt</span></a> chunk can be used to convey
+<a href='#10CompressionOtherUses'></a>). The <a class="chunk" href="#11iTXt">
+iTXt</a> chunk can be used to convey
 characters outside the Latin-1 set. It uses the UTF-8 encoding [[rfc3629]].
 There is an option to compress text strings
-in the <a href="#11iTXt"><span class="chunk">iTXt</span></a>
+in the <a class="chunk" href="#11iTXt">iTXt</a>
 chunk.</p>
 </section>
 
@@ -4368,8 +4367,8 @@ represented by a single linefeed character (decimal 10).
 Characters other than those defined in Latin-1 plus the linefeed
 character have no defined meaning in <span class="chunk">tEXt</span> chunks.
 Text containing characters outside the repertoire of ISO/IEC
-8859-1 should be encoded using the <a href="#11iTXt"><span class=
-"chunk">iTXt</span></a> chunk.</p>
+8859-1 should be encoded using the <a class="chunk" href="#11iTXt">
+iTXt</a> chunk.</p>
 </section>
 
 <!-- Maintain a fragment named "11zTXt" to preserve incoming links to it -->
@@ -4383,8 +4382,8 @@ Compressed textual data</h2>
 122 84 88 116
 </pre>
 
-<p>The <span class="chunk">zTXt</span> and <a href=
-"#11tEXt"><span class="chunk">tEXt</span></a> chunks are
+<p>The <span class="chunk">zTXt</span> and <a class="chunk" href=
+"#11tEXt">tEXt</a> chunks are
 semantically equivalent, but the <span class="chunk">zTXt</span>
 chunk is recommended for storing large blocks of text.</p>
 
@@ -4413,8 +4412,8 @@ chunk is recommended for storing large blocks of text.</p>
 </tr>
 </table>
 
-<p>The keyword and null character are the same as in the <a href=
-"#11tEXt"><span class="chunk">tEXt</span></a> chunk (see
+<p>The keyword and null character are the same as in the <a class="chunk" href=
+"#11tEXt">tEXt</a> chunk (see
 <a href="#11tEXt"></a>). The keyword is not
 compressed. The compression method entry defines the compression
 method used. The only value defined in this International
@@ -4425,8 +4424,8 @@ remainder of the chunk. For compression method 0, this datastream
 is a zlib datastream with deflate compression (see <a href=
 "#10CompressionOtherUses"></a>). Decompression of this datastream yields
 Latin-1 text that is identical to the text that would be stored
-in an equivalent <a href="#11tEXt"><span class=
-"chunk">tEXt</span></a> chunk.</p>
+in an equivalent <a class="chunk" href="#11tEXt">
+tEXt</a> chunk.</p>
 </section>
 
 <!-- Maintain a fragment named "11iTXt" to preserve incoming links to it -->
@@ -4640,15 +4639,15 @@ two-byte (16-bit) unsigned integers:</p>
 
 <p>The <span class="chunk">hIST</span> chunk gives the
 approximate usage frequency of each colour in the palette. A
-histogram chunk can appear only when a <a href="#11PLTE"><span
-class="chunk">PLTE</span></a> chunk appears. If a viewer is
+histogram chunk can appear only when a <a class="chunk" href="#11PLTE">
+PLTE</a> chunk appears. If a viewer is
 unable to provide all the colours listed in the palette, the
 histogram may help it decide how to choose a subset of the
 colours for display.</p>
 
 <p>There shall be exactly one
-entry for each entry in the <a href="#11PLTE"><span class=
-"chunk">PLTE</span></a> chunk. Each entry is proportional to the
+entry for each entry in the <a class="chunk" href="#11PLTE">
+PLTE</a> chunk. Each entry is proportional to the
 fraction of pixels in the image that have that palette index; the
 exact scale factor is chosen by the encoder.</p>
 
@@ -4823,8 +4822,8 @@ suggested palette when more than one appears in a PNG
 datastream.</p>
 
 <p>The palette name is case-sensitive, and subject to the same
-restrictions as the keyword parameter for the <a href=
-"#11tEXt"><span class="chunk">tEXt</span></a> chunk. Palette
+restrictions as the keyword parameter for the <a class="chunk" href=
+"#11tEXt">tEXt</a> chunk. Palette
 names shall contain only printable Latin-1 characters and spaces
 (only character codes 32-126 and 161-255 decimal are allowed).
 Leading, trailing, and consecutive spaces are not permitted.</p>
@@ -4888,9 +4887,9 @@ but each shall have a different palette name.</p>
     are not included.</p>
 
   <p>The <span class="chunk">eXIf</span> chunk
-    may appear anywhere between the <span class="chunk">IHDR</span>
-    and <span class="chunk">IEND<span class="chunk"> chunks
-    except between <span class="chunk">IDAT</span> chunks.
+    may appear anywhere between the <a class="chunk" href="#11IHDR">IHDR</a>
+    and <a class="chunk" href="#11IEND">IEND</a> chunks
+    except between <a class="chunk" href="#11IDAT">IDAT</a> chunks.
     The <span class="chunk">eXIf</span> chunk size is constrained
     only by the maximum of 2<sup>31</sup>-1 bytes
     imposed by the PNG specification.
@@ -5059,7 +5058,7 @@ the image data are changed.</p>
     <p>Each value is encoded as a four-byte PNG unsigned integer.</p>
 
     <p>`num_frames` indicates the total number of frames in the animation.
-      This must equal the number of <span class="chunk">fcTL</span> chunks.
+      This must equal the number of <a class="chunk" href="#fcTL-chunk">fcTL</a> chunks.
       0 is not a valid value.
       1 is a valid value, for a single-frame PNG.
       If this value does not equal the actual number of frames
@@ -5072,7 +5071,7 @@ the image data are changed.</p>
 
     <p>The <span class="chunk">acTL</span> chunk
       must appear before
-      the first <span class="chunk">IDAT</span> chunk
+      the first <a class="chunk" href="#11IDAT">IDAT</a> chunk
       within a valid PNG stream.</p>
 
     <p class="note">For Web compatibility,
@@ -5171,10 +5170,10 @@ the image data are changed.</p>
   `x_offset`, `y_offset`, `width`, and `height`.
   This region may not fall outside of the default image; thus
   `x_offset` plus `width` must not be greater than the
-  <span class="chunk">IHDR</span> width;
+  <a class="chunk" href="#11IHDR">IHDR</a> width;
   similarly
   `y_offset` plus `height` must not be greater than the
-  <span class="chunk">IHDR</span> height.
+  <a class="chunk" href="#11IHDR">IHDR</a> height.
 </p>
 
 <p>`delay_num` and `delay_den` define the numerator and denominator
@@ -5278,7 +5277,7 @@ the image data are changed.</p>
   <ul>
     <li>The `x_offset` and `y_offset` fields must be 0.</li>
     <li>The `width` and `height` fields must equal
-      the corresponding fields from the <span class="chunk">IHDR</span> chunk.</li>
+      the corresponding fields from the <a class="chunk" href="#11IHDR">IHDR</a> chunk.</li>
   </ul>
 
 <p>
@@ -5328,7 +5327,7 @@ the image data are changed.</p>
 
     <p>The <span class="chunk">fdAT</span> chunk
       serves the same purpose for animations
-      as the <span class="chunk">IDAT</span> chunk
+      as the <a class="chunk" href="#11IDAT">IDAT</a> chunk
       does for static images;
       it contains the image data
       for all frames
@@ -5359,7 +5358,7 @@ the image data are changed.</p>
     <p>At least one <span class="chunk">fdAT</span> chunk
       is required for each frame,
       except for the first frame, if that frame is represented by
-      an <span class="chunk">IDAT</span> chunk.
+      an <a class="chunk" href="#11IDAT">IDAT</a> chunk.
     </p>
 
     <p>
@@ -5371,7 +5370,7 @@ the image data are changed.</p>
       the datastream is the complete pixel data of a PNG image,
       including the filter byte at the beginning of each scanline,
       similar to the uncompressed data
-      of all the <span class="chunk">IDAT</span> chunks.
+      of all the <a class="chunk" href="#11IDAT">IDAT</a> chunks.
       It utilizes the same bit depth, <a>colour type</a>,
       compression method, <a>filter method</a>, interlace method,
       and palette (if any) as the <a>static image</a>.
@@ -5380,14 +5379,14 @@ the image data are changed.</p>
     <p>
       Each frame inherits every property specified by
       any critical or ancillary chunks <em>before</em>
-      the first <span class="chunk">IDAT</span> chunk
+      the first <a class="chunk" href="#11IDAT">IDAT</a> chunk
       in the file,
       except the width and height,
       which come from the <span class="chunk">fcTL</span> chunk.
     </p>
 
     <p>
-      If the PNG <span class="chunk">pHYs<span class="chunk"> chunk
+      If the PNG <a class="chunk" href="#11pHYs">pHYs</a> chunk
       is present, the APNG images
       and their `x_offset` and `y_offset` values
       must be scaled in the same way as the main image.
@@ -5434,29 +5433,29 @@ to gamma issues.</p>
 
 <p>PNG encoders capable of full colour management will perform more
 sophisticated calculations than those described here and may
-choose to use the <a href="#11iCCP"><span class=
-"chunk">iCCP</span></a> chunk. If it is known that the image
+choose to use the <a class="chunk" href="#11iCCP">
+iCCP</a> chunk. If it is known that the image
 samples conform to the sRGB specification [[SRGB]], encoders are strongly encouraged to write
-the <a href="#srgb-standard-colour-space"><span class="chunk">sRGB</span></a> chunk
+the <a class="chunk" href="#srgb-standard-colour-space">sRGB</a> chunk
 without performing additional gamma handling. In both cases it is
-recommended that an appropriate <a href="#11gAMA"><span class=
-"chunk">gAMA</span></a> chunk be generated for use by PNG
-decoders that do not recognize the <a href="#11iCCP"><span class=
-"chunk">iCCP</span></a> or <a href="#srgb-standard-colour-space"><span class=
-"chunk">sRGB</span></a> chunks.</p>
+recommended that an appropriate <a class="chunk" href="#11gAMA">
+gAMA</a> chunk be generated for use by PNG
+decoders that do not recognize the <a class="chunk" href="#11iCCP">
+iCCP</a> or <a class="chunk" href="#srgb-standard-colour-space">
+sRGB</a> chunks.</p>
 
 <p>A PNG encoder has to determine:</p>
 
 <!-- <ol start="1"> --><ol>
-<li>what value to write in the <a href="#11gAMA"><span class=
-"chunk">gAMA</span></a> chunk;</li>
+<li>what value to write in the <a class="chunk" href="#11gAMA">
+gAMA</a> chunk;</li>
 
 <li>how to transform the provided image samples  into the values
 to be written in the PNG datastream.</li>
 </ol>
 
-<p>The value to write in the <a href="#11gAMA"><span class=
-"chunk">gAMA</span></a> chunk is that value which causes a PNG
+<p>The value to write in the <a class="chunk" href="#11gAMA">
+gAMA</a> chunk is that value which causes a PNG
 decoder to behave in the desired way. See <a class='Href'
 href='#13Decoder-gamma-handling'></a>.</p>
 
@@ -5478,7 +5477,7 @@ floor((2<sup>sampledepth</sup>-1) * intensity<sup>encoding_exponent</sup>
 
 <p>If the intensity in the equation is the desired output
 intensity, the encoding exponent is the gamma value to be used in
-the <a href="#11gAMA"><span class="chunk">gAMA</span></a>
+the <a class="chunk" href="#11gAMA">gAMA</a>
 chunk.</p>
 
 <p>If the intensity available to the PNG encoder is the original
@@ -5506,8 +5505,8 @@ gamma = encoding_exponent
 <!-- ************Page Break******************* -->
 <p>If the image is being written to a datastream only, the
 encoder is free to choose the encoding exponent. Choosing a value
-that causes the gamma value in the <a href="#11gAMA"><span class=
-"chunk">gAMA</span></a> chunk to be 1/2.2 is often a reasonable
+that causes the gamma value in the <a class="chunk" href="#11gAMA">
+gAMA</a> chunk to be 1/2.2 is often a reasonable
 choice because it minimizes the work for a PNG decoder displaying
 on a typical video monitor.</p>
 
@@ -5521,16 +5520,16 @@ of the intended scene.</p>
 the PNG datastream, avoiding a separate gamma encoding step for
 the datastream, the renderer should approximate the transfer
 function of the display system by a power function, and write the
-reciprocal of the exponent into the <a href="#11gAMA"><span
-class="chunk">gAMA</span></a> chunk. This will allow a PNG
+reciprocal of the exponent into the <a class="chunk" href="#11gAMA">
+gAMA</a> chunk. This will allow a PNG
 decoder to reproduce what was displayed on screen for the
 originator during rendering.</p>
 
 <p>However, it is equally reasonable for a renderer to compute
 displayed pixels appropriate for the display device, and to
 perform separate gamma encoding for data storage and
-transmission, arranging to have a value in the <a href=
-"#11gAMA"><span class="chunk">gAMA</span></a> chunk more
+transmission, arranging to have a value in the <a class="chunk" href=
+"#11gAMA">gAMA</a> chunk more
 appropriate to the future use of the image.</p>
 
 <p>Computer graphics renderers often do not perform gamma
@@ -5540,7 +5539,7 @@ that have already been quantized into integer values, there is no
 point in doing gamma encoding on them; that would just result in
 further loss of information. The encoder should just write the
 sample values to the PNG datastream. This does not imply that the
-<a href="#11gAMA"><span class="chunk">gAMA</span></a> chunk
+<a class="chunk" href="#11gAMA">gAMA</a> chunk
 should contain a gamma value of 1.0 because the desired
 end-to-end transfer function from scene intensity to display
 output intensity is not necessarily linear. However, the desired
@@ -5549,7 +5548,7 @@ whether the scene being rendered is a daylight scene or an indoor
 scene, etc.</p>
 
 <p>When the sample values come directly from a piece of hardware,
-the correct <a href="#11gAMA"><span class="chunk">gAMA</span></a>
+the correct <a class="chunk" href="#11gAMA">gAMA</a>
 value can, in principle, be inferred from the transfer function
 of the hardware and lighting conditions of the scene. In the case
 of video digitizers ("frame grabbers"), the samples are probably
@@ -5578,7 +5577,7 @@ values intact from the input to the output file.</p>
 
 <p>If the source datastream describes the gamma characteristics
 of the image, a datastream converter is strongly encouraged to
-write a <a href="#11gAMA"><span class="chunk">gAMA</span></a>
+write a <a class="chunk" href="#11gAMA">gAMA</a>
 chunk. Some datastream formats specify the display exponent (the
 exponent of the function which maps image samples to display
 output rather than the other direction). If the source file's
@@ -5601,12 +5600,12 @@ gamma = 1/display_exponent
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<p>It is better to write a <a href="#11gAMA"><span class=
-"chunk">gAMA</span></a> chunk with a value that is approximately
+<p>It is better to write a <a class="chunk" href="#11gAMA">
+gAMA</a> chunk with a value that is approximately
 correct than to omit the chunk and force PNG decoders to guess an
 approximate gamma. If a PNG encoder is unable to infer the gamma
-value, it is preferable to omit the <a href="#11gAMA"><span
-class="chunk">gAMA</span></a> chunk. If a guess has to be made
+value, it is preferable to omit the <a class="chunk" href="#11gAMA">
+gAMA</a> chunk. If a guess has to be made
 this should be left to the PNG decoder.</p>
 
 <p>Gamma does not apply to alpha samples; alpha is always
@@ -5625,22 +5624,22 @@ issues.</p>
 
 <p>PNG encoders capable of full colour management will perform more
 sophisticated calculations than those described here and may
-choose to use the <a href="#11iCCP"><span class=
-"chunk">iCCP</span></a> chunk. If it is known that the image
+choose to use the <a class="chunk" href="#11iCCP">
+iCCP</a> chunk. If it is known that the image
 samples conform to the sRGB specification [[SRGB]], PNG encoders are strongly encouraged to
-use the <a href="#srgb-standard-colour-space"><span class="chunk">sRGB</span></a>
+use the <a class="chunk" href="#srgb-standard-colour-space">sRGB</a>
 chunk.</p>
 
 <p>If it is possible for the encoder to determine the
 chromaticities of the source display primaries, or to make a
 strong guess based on the origin of the image, or the hardware
 running it, the encoder is strongly encouraged to output the <a
-href="#11cHRM"><span class="chunk">cHRM</span></a> chunk. If this
-is done, the <a href="#11gAMA"><span class=
-"chunk">gAMA</span></a> chunk should also be written; decoders
-can do little with a <a href="#11cHRM"><span class=
-"chunk">cHRM</span></a> chunk if the <a href="#11gAMA"><span
-class="chunk">gAMA</span></a> chunk is missing.</p>
+class="chunk" href="#11cHRM">cHRM</a> chunk. If this
+is done, the <a class="chunk" href="#11gAMA">
+gAMA</a> chunk should also be written; decoders
+can do little with a <a class="chunk" href="#11cHRM">
+cHRM</a> chunk if the <a class="chunk" href="#11gAMA">
+gAMA</a> chunk is missing.</p>
 
 <p>There are a number of recommendations and standards for
 primaries and white points, some of which are linked to
@@ -5659,42 +5658,42 @@ other format.</li>
 </ol>
 
 <!--  deleted - comment PDG 31<p>Scanners that produce PNG datastreams as output should insert
-the filter chromaticities into a <a href="#11cHRM"><span class=
-"chunk">cHRM</span></a> chunk.</p>-->
+the filter chromaticities into a <a class="chunk" href="#11cHRM">
+cHRM</a> chunk.</p>-->
 
 <p>In the case of hand-drawn or digitally edited images, it is
 necessary to determine what monitor they were viewed on when
 being produced. Many image editing programs allow the type of
 monitor being used to be specified. This is often because they
 are working in some device-independent space internally. Such
-programs have enough information to write valid <a href=
-"#11cHRM"><span class="chunk">cHRM</span></a> and <a href=
-"#11gAMA"><span class="chunk">gAMA</span></a> chunks, and are
+programs have enough information to write valid <a class="chunk" href=
+"#11cHRM">cHRM</a> and <a class="chunk" href=
+"#11gAMA">gAMA</a> chunks, and are
 strongly encouraged to do so automatically.</p>
 
 <p>If the encoder is compiled as a portion of a computer image
 renderer that performs full-spectral rendering, the monitor
 values that were used to convert from the internal
 device-independent colour space to RGB should be written into the
-<a href="#11cHRM"><span class="chunk">cHRM</span></a> chunk. Any
+<a class="chunk" href="#11cHRM">cHRM</a> chunk. Any
 colours that are outside the gamut of the chosen RGB device
 should be mapped to be within the gamut; PNG does not store
 out-of-gamut colours.</p>
 
 <p>If the computer image renderer performs calculations directly
-in device-dependent RGB space, a <a href="#11cHRM"><span class=
-"chunk">cHRM</span></a> chunk should not be written unless the
+in device-dependent RGB space, a <a class="chunk" href="#11cHRM">
+cHRM</a> chunk should not be written unless the
 scene description and rendering parameters have been adjusted for
 a particular monitor. In that case, the data for that monitor
-should be used to construct a <a href="#11cHRM"><span class=
-"chunk">cHRM</span></a> chunk.</p>
+should be used to construct a <a class="chunk" href="#11cHRM">
+cHRM</a> chunk.</p>
 
 <p>A few image formats store calibration information, which can
-be used to fill in the <a href="#11cHRM"><span class=
-"chunk">cHRM</span></a> chunk. For example, TIFF 6.0 files [[?TIFF 6.0]] can
+be used to fill in the <a class="chunk" href="#11cHRM">
+cHRM</a> chunk. For example, TIFF 6.0 files [[?TIFF 6.0]] can
 optionally store calibration information, which if present should
-be used to construct the <a href="#11cHRM"><span class=
-"chunk">cHRM</span></a> chunk.</p>
+be used to construct the <a class="chunk" href="#11cHRM">
+cHRM</a> chunk.</p>
 
 <p>Video created with recent video equipment probably uses the
 CCIR 709 primaries and D65 white point [[ITU-R BT.709]],
@@ -5804,15 +5803,15 @@ transparent pixels should be reasonable background colours
 whenever feasible.</p>
 
 <p>For applications that do not require a full alpha channel, or
-cannot afford the price in compression efficiency, the <a href=
-"#11tRNS"><span class="chunk">tRNS</span></a> transparency chunk
+cannot afford the price in compression efficiency, the <a class="chunk" href=
+"#11tRNS">tRNS</a> transparency chunk
 is also available.</p>
 
 <p>If the image has a known background colour, this colour should
-be written in the <a href="#11bKGD"><span class=
-"chunk">bKGD</span></a> chunk. Even decoders that ignore
-transparency may use the <a href="#11bKGD"><span class=
-"chunk">bKGD</span></a> colour to fill unused screen area.</p>
+be written in the <a class="chunk" href="#11bKGD">
+bKGD</a> chunk. Even decoders that ignore
+transparency may use the <a class="chunk" href="#11bKGD">
+bKGD</a> colour to fill unused screen area.</p>
 
 <p>If the original image has premultiplied (also called
 "associated") alpha data, it can be converted to PNG's
@@ -5891,11 +5890,11 @@ data, however, since many decoders will treat alpha values of all
 zeroes and all ones as special cases. It is important to
 represent both those values exactly in the scaled data.</p>
 
-<p>When the encoder writes an <a href="#11sBIT"><span class=
-"chunk">sBIT</span></a> chunk, it is required to do the scaling
+<p>When the encoder writes an <a class="chunk" href="#11sBIT">
+sBIT</a> chunk, it is required to do the scaling
 in such a way that the high-order bits of the stored samples
-match the original data. That is, if the <a href="#11sBIT"><span
-class="chunk">sBIT</span></a> chunk specifies a sample depth of
+match the original data. That is, if the <a class="chunk" href="#11sBIT">
+sBIT</a> chunk specifies a sample depth of
 S, the high-order S bits of the stored data shall agree with the
 original S-bit data values. This allows decoders to recover the
 original data by shifting right. The added low-order bits are not
@@ -5915,9 +5914,9 @@ size.</p>
 <p>In some applications the original source data may have a range
 that is not a power of 2. The linear scaling equation still works
 for this case, although the shifting methods do not. It is
-recommended that an <a href="#11sBIT"><span class=
-"chunk">sBIT</span></a> chunk not be written for such images,
-since <a href="#11sBIT"><span class="chunk">sBIT</span></a>
+recommended that an <a class="chunk" href="#11sBIT">
+sBIT</a> chunk not be written for such images,
+since <a class="chunk" href="#11sBIT">sBIT</a>
 suggests that the original data range was exactly
 0..2<sup>S</sup>-1.</p>
 </section>
@@ -5929,16 +5928,16 @@ suggests that the original data range was exactly
 <h2>Suggested
 palettes</h2>
 
-<p>Suggested palettes may appear as <a href="#11sPLT"><span
-class="chunk">sPLT</span></a> chunks in any PNG datastream, or as
-a <a href="#11PLTE"><span class="chunk">PLTE</span></a> chunk in
+<p>Suggested palettes may appear as <a class="chunk" href="#11sPLT">
+sPLT</a> chunks in any PNG datastream, or as
+a <a class="chunk" href="#11PLTE">PLTE</a> chunk in
 truecolour PNG datastreams. In either case, the suggested palette
 is not an essential part of the image data, but it may be used to
 present the image on indexed-colour display hardware. Suggested
 palettes are of no interest to viewers running on truecolour
 hardware.</p>
 
-<p>When an <a href="#11sPLT"><span class="chunk">sPLT</span></a>
+<p>When an <a class="chunk" href="#11sPLT">sPLT</a>
 chunk is used to provide a suggested palette, it is recommended
 that the encoder use the frequency fields to indicate the
 relative importance of the palette entries, rather than leave
@@ -5950,27 +5949,27 @@ consequence of developing the suggested palette.) Because the
 suggested palette includes transparency information, it should be
 computed for the un-<a>composited</a> image.</p>
 
-<p>Even for indexed-colour images, <a href="#11sPLT"><span class=
-"chunk">sPLT</span></a> can be used to define alternative reduced
+<p>Even for indexed-colour images, <a class="chunk" href="#11sPLT">
+sPLT</a> can be used to define alternative reduced
 palettes for viewers that are unable to display all the colours
-present in the <a href="#11PLTE"><span class=
-"chunk">PLTE</span></a> chunk.
-If the <a href="#11PLTE"><span class="chunk">PLTE</span></a>
-chunk appears without the <a href="#11bKGD"><span class=
-"chunk">bKGD</span></a> chunk in an image of <a>colour type</a> 6, the
+present in the <a class="chunk" href="#11PLTE">
+PLTE</a> chunk.
+If the <a class="chunk" href="#11PLTE">PLTE</a>
+chunk appears without the <a class="chunk" href="#11bKGD">
+bKGD</a> chunk in an image of <a>colour type</a> 6, the
 circumstances under which the palette was computed are
 unspecified.</p>
 
 
 <p>An older method for including a suggested palette in a
-truecolour PNG datastream uses the <a href="#11PLTE"><span class=
-"chunk">PLTE</span></a> chunk. If this method is used, the
-histogram (frequencies) should appear in a separate <a href=
-"#11hIST"><span class="chunk">hIST</span></a> chunk. The <a href=
-"#11PLTE"><span class="chunk">PLTE</span></a> chunk does not
+truecolour PNG datastream uses the <a class="chunk" href="#11PLTE">
+PLTE</a> chunk. If this method is used, the
+histogram (frequencies) should appear in a separate <a class="chunk" href=
+"#11hIST">hIST</a> chunk. The <a class="chunk" href=
+"#11PLTE">PLTE</a> chunk does not
 include transparency information. Hence for images of <a>colour type</a>
-6 (truecolour with alpha), it is recommended that a <a href=
-"#11bKGD"><span class="chunk">bKGD</span></a> chunk appear and
+6 (truecolour with alpha), it is recommended that a <a class="chunk" href=
+"#11bKGD">bKGD</a> chunk appear and
 that the palette and histogram be computed with reference to the
 image as it would appear after compositing against the specified
 background colour. This definition is necessary to ensure that
@@ -5978,65 +5977,65 @@ useful palette entries are generated for pixels having fractional
 alpha values. The resulting palette will probably be useful only
 to viewers that present the image against the same background
 colour. It is recommended that PNG editors delete or recompute
-the palette if they alter or remove the <a href="#11bKGD"><span
-class="chunk">bKGD</span></a> chunk in an image of <a>colour type</a>
+the palette if they alter or remove the <a class="chunk" href="#11bKGD">
+bKGD</a> chunk in an image of <a>colour type</a>
 6.</p>
 
 <p>For images of <a>colour type</a> 2 (truecolour), it is recommended
-that the <a href="#11PLTE"><span class="chunk">PLTE</span></a>
-and <a href="#11hIST"><span class="chunk">hIST</span></a> chunks
+that the <a class="chunk" href="#11PLTE">PLTE</a>
+and <a class="chunk" href="#11hIST">hIST</a> chunks
 be computed with reference to the RGB data only, ignoring any
 transparent-colour specification. If the datastream uses
-transparency (has a <a href="#11tRNS"><span class=
-"chunk">tRNS</span></a> chunk), viewers can easily adapt the
+transparency (has a <a class="chunk" href="#11tRNS">
+tRNS</a> chunk), viewers can easily adapt the
 resulting palette for use with their intended background colour
 (see <a href="#13Histogram-and-suggested-palette-usage"></a>).
 </p>
 
 <p>For providing suggested palettes,
-the <a href="#11sPLT"><span class="chunk">sPLT</span></a>
-chunk is more flexible than the <a href="#11PLTE"><span class=
-"chunk">PLTE</span></a> chunk in
+the <a class="chunk" href="#11sPLT">sPLT</a>
+chunk is more flexible than the <a class="chunk" href="#11PLTE">
+PLTE</a> chunk in
 the following ways:</p>
 
 <!-- <ol start="1"> --><ol>
-<li>With <a href="#11sPLT"><span class="chunk">sPLT</span></a>
+<li>With <a class="chunk" href="#11sPLT">sPLT</a>
 multiple suggested palettes may be provided. A PNG decoder may
 choose an appropriate palette based on name or number of
 entries.</li>
 
 <li>In a PNG datastream of <a>colour type</a> 6 (truecolour with alpha
-channel), the <a href="#11PLTE"><span class=
-"chunk">PLTE</span></a> chunk represents a palette already
-<a>composited</a> against the <a href="#11bKGD"><span class=
-"chunk">bKGD</span></a> colour, so it is useful only for display
-against that background colour. The <a href="#11sPLT"><span
-class="chunk">sPLT</span></a> chunk provides an un-<a>composited</a>
+channel), the <a class="chunk" href="#11PLTE">
+PLTE</a> chunk represents a palette already
+<a>composited</a> against the <a class="chunk" href="#11bKGD">
+bKGD</a> colour, so it is useful only for display
+against that background colour. The <a class="chunk" href="#11sPLT">
+sPLT</a> chunk provides an un-<a>composited</a>
 palette, which is useful for display against backgrounds chosen
 by the PNG decoder.</li>
 
-<li>Since the <a href="#11sPLT"><span class=
-"chunk">sPLT</span></a> chunk is an ancillary chunk, a PNG editor
+<li>Since the <a class="chunk" href="#11sPLT">
+sPLT</a> chunk is an ancillary chunk, a PNG editor
 may add or modify suggested palettes without being forced to
 discard unknown unsafe-to-copy chunks.</li>
 
-<li>Whereas the <a href="#11sPLT"><span class=
-"chunk">sPLT</span></a> chunk is allowed in PNG datastreams for
-<a>colour types</a> 0, 3, and 4 (greyscale and indexed), the <a href=
-"#11PLTE"><span class="chunk">PLTE</span></a> chunk cannot be
+<li>Whereas the <a class="chunk" href="#11sPLT">
+sPLT</a> chunk is allowed in PNG datastreams for
+<a>colour types</a> 0, 3, and 4 (greyscale and indexed), the <a class="chunk" href=
+"#11PLTE">PLTE</a> chunk cannot be
 used to provide reduced palettes in these cases.</li>
 
-<li>More than 256 entries may appear in the <a href=
-"#11sPLT"><span class="chunk">sPLT</span></a> chunk.</li>
+<li>More than 256 entries may appear in the <a class="chunk" href=
+"#11sPLT">sPLT</a> chunk.</li>
 </ol>
 
-<p>A PNG encoder that uses the <a href="#11sPLT"><span class=
-"chunk">sPLT</span></a> chunk may choose to write a suggested
-palette represented by <a href="#11PLTE"><span class=
-"chunk">PLTE</span></a> and <a href="#11hIST"><span class=
-"chunk">hIST</span></a> chunks as well, for compatibility with
-decoders that do not recognize the <a href="#11sPLT"><span class=
-"chunk">sPLT</span></a> chunk.</p>
+<p>A PNG encoder that uses the <a class="chunk" href="#11sPLT">
+sPLT</a> chunk may choose to write a suggested
+palette represented by <a class="chunk" href="#11PLTE">
+PLTE</a> and <a class="chunk" href="#11hIST">
+hIST</a> chunks as well, for compatibility with
+decoders that do not recognize the <a class="chunk" href="#11sPLT">
+sPLT</a> chunk.</p>
 </section>
 
 <!-- ************Page Break******************* -->
@@ -6090,16 +6089,16 @@ this specification.</p>
 <section id="12Compression">
 <h2>Compression</h2>
 
-<p>The encoder may divide the compressed datastream into <a href=
-"#11IDAT"><span class="chunk">IDAT</span></a> chunks however it
-wishes. (Multiple <a href="#11IDAT"><span class=
-"chunk">IDAT</span></a> chunks are allowed so that encoders may
+<p>The encoder may divide the compressed datastream into <a class="chunk" href=
+"#11IDAT">IDAT</a> chunks however it
+wishes. (Multiple <a class="chunk" href="#11IDAT">
+IDAT</a> chunks are allowed so that encoders may
 work in a fixed amount of memory; typically the chunk size will
 correspond to the encoder's buffer size.) A PNG datastream in
-which each <a href="#11IDAT"><span class="chunk">IDAT</span></a>
+which each <a class="chunk" href="#11IDAT">IDAT</a>
 chunk contains only one data byte is valid, though remarkably
-wasteful of space. (Zero-length <a href="#11IDAT"><span class=
-"chunk">IDAT</span></a> chunks are also valid, though even more
+wasteful of space. (Zero-length <a class="chunk" href="#11IDAT">
+IDAT</a> chunks are also valid, though even more
 wasteful.)</p>
 </section>
 
@@ -6114,13 +6113,13 @@ the text is available. If a user-supplied keyword is used,
 encoders should check that it meets the restrictions on
 keywords.</p>
 
-<p>For the <a href="#11tEXt"><span class="chunk">tEXt</span></a>
-and <a href="#11zTXt"><span class="chunk">zTXt</span></a> chunks,
+<p>For the <a class="chunk" href="#11tEXt">tEXt</a>
+and <a class="chunk" href="#11zTXt">zTXt</a> chunks,
 PNG text strings are expected to use the Latin-1 character set.
 Encoders should avoid storing characters that are not defined in
 Latin-1, and should provide character code remapping if the local
-system's character set is not Latin-1. The <a href=
-"#11iTXt"><span class="chunk">iTXt</span></a> chunk provides
+system's character set is not Latin-1. The <a class="chunk" href=
+"#11iTXt">iTXt</a> chunk provides
 support for international text, represented using the UTF-8
 encoding of UCS. Encoders should discourage the creation of
 single lines of text longer than 79 characters, in order to
@@ -6130,12 +6129,12 @@ text chunks. It is
 recommended that the basic title and author keywords be output
 using uncompressed text chunks.
 Placing large text chunks after the
-image data (after the <a href="#11IDAT"><span class=
-"chunk">IDAT</span></a> chunks) can speed up image display in
+image data (after the <a class="chunk" href="#11IDAT">
+IDAT</a> chunks) can speed up image display in
 some situations, as the decoder will decode the image data first.
 It is recommended that small text chunks, such as the image
-title, appear before the <a href="#11IDAT"><span class=
-"chunk">IDAT</span></a> chunks.</p>
+title, appear before the <a class="chunk" href="#11IDAT">
+IDAT</a> chunks.</p>
 </section>
 
 <!-- ************Page Break******************* -->
@@ -6214,11 +6213,11 @@ error on a storage device, in which one or more blocks (typically
 512 bytes each) will have garbled or random values. Some examples
 of syntax errors are an invalid value for a row filter, an
 invalid compression method, an invalid chunk length, the absence
-of a <a href="#11PLTE"><span class="chunk">PLTE</span></a> chunk
-before the first <a href="#11IDAT"><span class=
-"chunk">IDAT</span></a> chunk in an indexed image, or the
-presence of multiple <a href="#11gAMA"><span class=
-"chunk">gAMA</span></a> chunks. A PNG decoder should handle
+of a <a class="chunk" href="#11PLTE">PLTE</a> chunk
+before the first <a class="chunk" href="#11IDAT">
+IDAT</a> chunk in an indexed image, or the
+presence of multiple <a class="chunk" href="#11gAMA">
+gAMA</a> chunks. A PNG decoder should handle
 errors as follows:</p>
 
 <!-- <ol start="1"> --><ol>
@@ -6226,12 +6225,12 @@ errors as follows:</p>
 bytes and CRCs on each chunk. Decoders should verify that all
 eight bytes of the PNG signature are correct. A decoder can
 have additional confidence in the datastream's integrity if the
-next eight bytes begin an <a href="#11IHDR"><span class=
-"chunk">IHDR</span></a> chunk with the correct chunk length. A
+next eight bytes begin an <a class="chunk" href="#11IHDR">
+IHDR</a> chunk with the correct chunk length. A
 CRC should be checked before processing the chunk data. Sometimes
 this is impractical, for example when a streaming PNG decoder is
-processing a large <a href="#11IDAT"><span class=
-"chunk">IDAT</span></a> chunk. In this case the CRC should be
+processing a large <a class="chunk" href="#11IDAT">
+IDAT</a> chunk. In this case the CRC should be
 checked when the end of the chunk is reached.</li>
 
 <li>Recover from an error, if possible; otherwise fail
@@ -6254,11 +6253,11 @@ this definition, the three classes are as follows:</p>
 
 <!-- <ol start="4"> --><ol>
 <li>known chunks, which necessarily includes all of the critical
-chunks defined in this specification (<a href=
-"#11IHDR"><span class="chunk">IHDR</span></a>, <a href=
-"#11PLTE"><span class="chunk">PLTE</span></a>, <a href=
-"#11IDAT"><span class="chunk">IDAT</span></a>, <a href=
-"#11IEND"><span class="chunk">IEND</span></a>)</li>
+chunks defined in this specification (<a class="chunk" href=
+"#11IHDR">IHDR</a>, <a class="chunk" href=
+"#11PLTE">PLTE</a>, <a class="chunk" href=
+"#11IDAT">IDAT</a>, <a class="chunk" href=
+"#11IEND">IEND</a>)</li>
 
 <li>unknown critical chunks (bit 5 of the first byte of the chunk
 type is 0)</li>
@@ -6274,36 +6273,36 @@ of chunk naming conventions.</p>
 <!-- ************Page Break******************* -->
 <p>PNG chunk types are marked "critical" or "ancillary" according
 to whether the chunks are critical for the purpose of extracting
-a viewable image (as with <a href="#11IHDR"><span class=
-"chunk">IHDR</span></a>, <a href="#11PLTE"><span class=
-"chunk">PLTE</span></a>, and <a href="#11IDAT"><span class=
-"chunk">IDAT</span></a>) or critical to understanding the
-datastream structure (as with <a href="#11IEND"><span class=
-"chunk">IEND</span></a>). This is a specific kind of criticality
+a viewable image (as with <a class="chunk" href="#11IHDR">
+IHDR</a>, <a class="chunk" href="#11PLTE">
+PLTE</a>, and <a class="chunk" href="#11IDAT">
+IDAT</a>) or critical to understanding the
+datastream structure (as with <a class="chunk" href="#11IEND">
+IEND</a>). This is a specific kind of criticality
 and one that is not necessarily relevant to every conceivable
 decoder. For example, a program whose sole purpose is to extract
 text annotations (for example, copyright information) does not
 require a viewable image. Another decoder might consider the <a
-href="#11tRNS"><span class="chunk">tRNS</span></a> and <a href=
-"#11gAMA"><span class="chunk">gAMA</span></a> chunks essential to
+class="chunk" href="#11tRNS">tRNS</a> and <a class="chunk" href=
+"#11gAMA">gAMA</a> chunks essential to
 its proper execution.</p>
 
 <p>Syntax errors always involve known chunks because syntax
 errors in unknown chunks cannot be detected. The PNG decoder has
 to determine whether a syntax error is fatal (unrecoverable) or
 not, depending on its requirements and the situation. For
-example, most decoders can ignore an invalid <a href=
-"#11IEND"><span class="chunk">IEND</span></a> chunk; a
-text-extraction program can ignore the absence of <a href=
-"#11IDAT"><span class="chunk">IDAT</span></a>; an image viewer
-cannot recover from an empty <a href="#11PLTE"><span class=
-"chunk">PLTE</span></a> chunk in an indexed image but it can
-ignore an invalid <a href="#11PLTE"><span class=
-"chunk">PLTE</span></a> chunk in a truecolour image; and a
+example, most decoders can ignore an invalid <a class="chunk" href=
+"#11IEND">IEND</a> chunk; a
+text-extraction program can ignore the absence of <a class="chunk" href=
+"#11IDAT">IDAT</a>; an image viewer
+cannot recover from an empty <a class="chunk" href="#11PLTE">
+PLTE</a> chunk in an indexed image but it can
+ignore an invalid <a class="chunk" href="#11PLTE">
+PLTE</a> chunk in a truecolour image; and a
 program that extracts the alpha channel can ignore an invalid <a
-href="#11gAMA"><span class="chunk">gAMA</span></a> chunk, but may
-consider the presence of two <a href="#11tRNS"><span class=
-"chunk">tRNS</span></a> chunks to be a fatal error. Anomalous
+class="chunk" href="#11gAMA">gAMA</a> chunk, but may
+consider the presence of two <a class="chunk" href="#11tRNS">
+tRNS</a> chunks to be a fatal error. Anomalous
 situations other than syntax errors shall be treated as
 follows:</p>
 
@@ -6343,11 +6342,11 @@ continue processing normally.</p>
 <p>Decoders that do not compute CRCs should interpret apparent
 syntax errors as indications of corruption (see also <a href="#13Error-checking"></a>).</p>
 
-<p>Errors in compressed chunks (<a href="#11IDAT"><span class=
-"chunk">IDAT</span></a>, <a href="#11zTXt"><span class=
-"chunk">zTXt</span></a>, <a href="#11iTXt"><span class=
-"chunk">iTXt</span></a>, <a href="#11iCCP"><span class=
-"chunk">iCCP</span></a>) could lead to buffer overruns.
+<p>Errors in compressed chunks (<a class="chunk" href="#11IDAT">
+IDAT</a>, <a class="chunk" href="#11zTXt">
+zTXt</a>, <a class="chunk" href="#11iTXt">
+iTXt</a>, <a class="chunk" href="#11iCCP">
+iCCP</a>) could lead to buffer overruns.
 Implementors of <a>deflate</a> decompressors should guard against this
 possibility.</p>
 
@@ -6393,16 +6392,16 @@ dropped/added data bytes or an erroneous chunk length can cause
 the decoder to get out of step and misinterpret subsequent data
 as a chunk header.</p>
 
-<p>For known-length chunks, such as <a href="#11IHDR"><span
-class="chunk">IHDR</span></a>, decoders should treat an
+<p>For known-length chunks, such as <a class="chunk" href="#11IHDR">
+IHDR</a>, decoders should treat an
 unexpected chunk length as an error. Future extensions to this
 specification will not add new fields to existing chunks;
 instead, new chunk types will be added to carry new
 information.</p>
 
 <p>Unexpected values in fields of known chunks (for example, an
-unexpected compression method in the <a href="#11IHDR"><span
-class="chunk">IHDR</span></a> chunk) shall be checked for and
+unexpected compression method in the <a class="chunk" href="#11IHDR">
+IHDR</a> chunk) shall be checked for and
 treated as errors. However, it is recommended that unexpected
 field values be treated as fatal errors only in <strong>critical</strong>
 chunks. An unexpected value in an ancillary chunk can be handled
@@ -6413,8 +6412,8 @@ treat any unexpected value as indicating a corrupted
 datastream.)</p>
 
 <p>Standard PNG images shall be compressed with compression
-method 0. The compression method field of the <a href="#11IHDR"><span class=
-"chunk">IHDR</span></a> chunk is
+method 0. The compression method field of the <a class="chunk" href="#11IHDR">
+IHDR</a> chunk is
 provided for possible future standardization or proprietary
 variants. Decoders shall check this byte and report an error if
 it holds an unrecognized code. See <a href="#10Compression"></a> for
@@ -6439,14 +6438,14 @@ public chunks. There is no additional security risk associated with unknown or
 unimplemented chunk types, because such chunks will be ignored, or at most be
 copied into another PNG datastream.</p>
 
-<p>The <a href="#11iTXt"><span class="chunk">iTXt</span></a>, <a
-href="#11tEXt"><span class="chunk">tEXt</span></a>, and <a href=
-"#11zTXt"><span class="chunk">zTXt</span></a> chunks contain keywords
+<p>The <a class="chunk" href="#11iTXt">iTXt</a>, <a
+class="chunk" href="#11tEXt">tEXt</a>, and <a class="chunk" href=
+"#11zTXt">zTXt</a> chunks contain keywords
 and data
-that are meant to be displayed as plain text. The <a href=
-"#11iCCP"><span class="chunk">iCCP</span></a>
-and <a href= "#11sPLT"><span class="chunk">
-sPLT</span></a> chunks contain keywords that are meant to be displayed as plain text. It is
+that are meant to be displayed as plain text. The <a class="chunk" href=
+"#11iCCP">iCCP</a>
+and <a class="chunk" href= "#11sPLT">
+sPLT</a> chunks contain keywords that are meant to be displayed as plain text. It is
 possible that if the decoder displays such text without filtering
 out control characters, especially the ESC (escape) character,
 certain systems or terminals could behave in undesirable and
@@ -6463,8 +6462,8 @@ transmission errors.</p>
 <p>A decoder that fails to check CRCs could be subject to data
 corruption. The only likely consequence of such corruption is
 incorrectly displayed pixels within the image. Worse things might
-happen if the CRC of the <a href="#11IHDR"><span class=
-"chunk">IHDR</span></a> chunk is not checked and the width or
+happen if the CRC of the <a class="chunk" href="#11IHDR">
+IHDR</a> chunk is not checked and the width or
 height fields are corrupted. See <a href="#13Error-checking"></a>.</p>
 
 <p>A poorly written decoder might be subject to buffer overflow,
@@ -6521,12 +6520,12 @@ aspect ratio of the physical pixel dimensions defined in the PNG
 datastream, viewers are strongly encouraged to rescale images for
 proper display.</p>
 
-<p>When the <a href="#11pHYs"><span class=
-"chunk">pHYs</span></a> chunk has a unit specifier of 0
+<p>When the <a class="chunk" href="#11pHYs">
+pHYs</a> chunk has a unit specifier of 0
 (unit is unknown), the behaviour of a decoder may depend on the
 ratio of the two pixels-per-unit values, but should not depend on
-their magnitudes. For example, a <a href="#11pHYs">
-<span class="chunk">pHYs</span></a> chunk
+their magnitudes. For example, a <a class="chunk" href="#11pHYs">
+pHYs</a> chunk
 containing <tt>(ppuX, ppuY, unit) = (2, 1, 0)</tt> is equivalent
 to one containing <tt>(1000, 500, 0)</tt>; both are equally valid
 indications that the image pixels are twice as tall as they are
@@ -6546,8 +6545,8 @@ scale_factor_Y = max(1.0, display_ratio/image_ratio)</tt>
 </pre>
 
 <p>Because other methods such as maintaining the image area are
-also reasonable, and because ignoring the <a href="#11pHYs">
-<span class="chunk">pHYs</span></a> chunk is
+also reasonable, and because ignoring the <a class="chunk" href="#11pHYs">
+pHYs</a> chunk is
 permissible, authors should not assume that all viewing
 applications will use this scaling method.</p>
 
@@ -6565,25 +6564,25 @@ same size as they did on the display.</p>
 processing</h2>
 
 <p>If practical, PNG decoders should have a way to display to the
-user all the <a href="#11iTXt"><span class=
-"chunk">iTXt</span></a>, <a href="#11tEXt"><span class=
-"chunk">tEXt</span></a>, and <a href="#11zTXt"><span class=
-"chunk">zTXt</span></a> chunks found in the datastream. Even if
+user all the <a class="chunk" href="#11iTXt">
+iTXt</a>, <a class="chunk" href="#11tEXt">
+tEXt</a>, and <a class="chunk" href="#11zTXt">
+zTXt</a> chunks found in the datastream. Even if
 the decoder does not recognize a particular text keyword, the
 user might be able to understand it.</p>
 
-<p>When processing <a href="#11tEXt"><span class=
-"chunk">tEXt</span></a> and <a href="#11zTXt"><span class=
-"chunk">zTXt</span></a> chunks, decoders could encounter
+<p>When processing <a class="chunk" href="#11tEXt">
+tEXt</a> and <a class="chunk" href="#11zTXt">
+zTXt</a> chunks, decoders could encounter
 characters other than those permitted. Some can be safely
 displayed (e.g., TAB, FF, and CR, decimal 9, 12, and 13,
 respectively), but others, especially the ESC character (decimal
 27), could pose a security hazard (because unexpected actions may
 be taken by display hardware or software). Decoders should not
 attempt to directly display any non-Latin-1 characters (except
-for newline and perhaps TAB, FF, CR) encountered in a <a href=
-"#11tEXt"><span class="chunk">tEXt</span></a> or <a href=
-"#11zTXt"><span class="chunk">zTXt</span></a> chunk. Instead,
+for newline and perhaps TAB, FF, CR) encountered in a <a class="chunk" href=
+"#11tEXt">tEXt</a> or <a class="chunk" href=
+"#11zTXt">zTXt</a> chunk. Instead,
 they should be ignored or displayed in a visible notation such as
 "<tt>\</tt>nnn". See <a href="#13Security-considerations"></a>.</p>
 
@@ -6623,15 +6622,15 @@ extremely unlikely that any general purpose compression methods
 in future versions of this specification will not have
 this property.</p>
 
-<p>It is important to emphasize that <a href="#11IDAT"><span
-class="chunk">IDAT</span></a> chunk boundaries have no semantic
+<p>It is important to emphasize that <a class="chunk" href="#11IDAT">
+IDAT</span></a> chunk boundaries have no semantic
 significance and can occur at any point in the compressed
 datastream. There is no required correlation between the
 structure of the image data (for example, scanline boundaries) and
-<a>deflate</a> block boundaries or <a href="#11IDAT"><span class=
-"chunk">IDAT</span></a> chunk boundaries. The complete image data
+<a>deflate</a> block boundaries or <a class="chunk" href="#11IDAT">
+IDAT</a> chunk boundaries. The complete image data
 is represented by a single zlib datastream that is stored in some
-number of <a href="#11IDAT"><span class="chunk">IDAT</span></a>
+number of <a class="chunk" href="#11IDAT">IDAT</a>
 chunks; a decoder that assumes any more than this is incorrect.
 Some encoder implementations may emit datastreams in which some
 of these structures are indeed related, but decoders cannot rely
@@ -6811,27 +6810,27 @@ frame buffer has a greater sample depth than the PNG image), it
 should use linear scaling or left-bit-replication as described in
 <a href="#12Sample-depth-scaling"></a>.</p>
 
-<p>When an <a href="#11sBIT"><span class="chunk">sBIT</span></a>
+<p>When an <a class="chunk" href="#11sBIT">sBIT</a>
 chunk is present, the reference image data can be recovered by
-shifting right to the sample depth specified by <a href=
-"#11sBIT"><span class="chunk">sBIT</span></a>. Note that linear
+shifting right to the sample depth specified by <a class="chunk" href=
+"#11sBIT">sBIT</a>. Note that linear
 scaling will not necessarily reproduce the original data, because
 the encoder is not required to have used linear scaling to scale
 the data up. However, the encoder is required to have used a
 method that preserves the high-order bits, so shifting always
 works. This is the only case in which shifting might be said to
 be more accurate than linear scaling. A decoder need not pay
-attention to the <a href="#11sBIT"><span class=
-"chunk">sBIT</span></a> chunk; the stored image is a valid PNG
-datastream of the sample depth indicated by the <a href=
-"#11IHDR"><span class="chunk">IHDR</span></a> chunk; however,
-using <a href="#11sBIT"><span class="chunk">sBIT</span></a> to
+attention to the <a class="chunk" href="#11sBIT">
+sBIT</a> chunk; the stored image is a valid PNG
+datastream of the sample depth indicated by the <a class="chunk" href=
+"#11IHDR">IHDR</a> chunk; however,
+using <a class="chunk" href="#11sBIT">sBIT</a> to
 recover the original samples before scaling them to suit the
 display often yields a more accurate display than ignoring <a
-href="#11sBIT"><span class="chunk">sBIT</span></a>.</p>
+class="chunk" href="#11sBIT">sBIT</a>.</p>
 
-<p>When comparing pixel values to <a href="#11tRNS"><span class=
-"chunk">tRNS</span></a> chunk values to detect transparent
+<p>When comparing pixel values to <a class="chunk" href="#11tRNS">
+tRNS</a> chunk values to detect transparent
 pixels, the comparison shall be done exactly. Therefore,
 transparent pixel detection shall be done before reducing sample
 precision.</p>
@@ -6893,8 +6892,8 @@ sample<sup>decoding_exponent</sup></tt></p>
 images, the entire calculation is performed separately for R, G,
 and B values.</p>
 
-<p>The value of gamma can be taken directly from the <a href=
-"#11gAMA"><span class="chunk">gAMA</span></a> chunk.
+<p>The value of gamma can be taken directly from the <a class="chunk" href=
+"#11gAMA">gAMA</a> chunk.
 Alternatively, an application may wish to allow the user to
 adjust the appearance of the displayed image by influencing the
 value of gamma. For example, the user could manually set a
@@ -6910,8 +6909,8 @@ decoding_exponent = 1.0 / (gamma * display_exponent)
 <p>The user would set <tt>user_exponent</tt> greater than 1 to
 darken the mid-level tones, or less than 1 to lighten them.</p>
 
-<p>A <a href=
-"#11gAMA"><span class="chunk">gAMA</span></a> chunk containing zero is
+<p>A <a class="chunk" href=
+"#11gAMA">gAMA</a> chunk containing zero is
 meaningless but could appear by mistake.
 Decoders should ignore it,
 and editors may discard it and issue a warning to the user.</p>
@@ -6929,10 +6928,10 @@ being displayed against a nonuniform background.</p>
 correction tables can be computed using integer arithmetic and a
 precomputed table of logarithms. Example code appears in [[PNG-EXTENSIONS]].</p>
 
-<p>When the incoming image has unknown gamma (<a href=
-"#11gAMA"><span class="chunk">gAMA</span></a>, <a href=
-"#srgb-standard-colour-space"><span class="chunk">sRGB</span></a>, and <a href=
-"#11iCCP"><span class="chunk">iCCP</span></a>
+<p>When the incoming image has unknown gamma (<a class="chunk" href=
+"#11gAMA">gAMA</a>, <a class="chunk" href=
+"#srgb-standard-colour-space">sRGB</a>, and <a class="chunk" href=
+"#11iCCP">iCCP</a>
 all absent), standalone image viewers should choose
 a likely default gamma value, but allow the user to select a new
 one if the result proves too dark or too light. The default gamma
@@ -6986,12 +6985,12 @@ provides the fastest display of PNG images. But unless the viewer
 uses exactly the same display hardware as that used by the author
 of the original image, the colours will not be exactly the same
 as those seen by the original author, particularly for darker or
-near-neutral colours. The <a href="#11cHRM"><span class=
-"chunk">cHRM</span></a> chunk provides information that allows
+near-neutral colours. The <a class="chunk" href="#11cHRM">
+cHRM</a> chunk provides information that allows
 closer colour matching than that provided by gamma correction
 alone.</p>
 
-<p>The <a href="#11cHRM"><span class="chunk">cHRM</span></a> data
+<p>The <a class="chunk" href="#11cHRM">cHRM</a> data
 can be used to transform the image data from RGB to XYZ and
 thence into a perceptually linear colour space such as CIE LAB.
 The colours can be partitioned to generate an optimal palette,
@@ -6999,8 +6998,8 @@ because the geometric distance between two colours in CIE LAB is
 strongly related to how different those colours appear (unlike,
 for example, RGB or XYZ spaces). The resulting palette of
 colours, once transformed back into RGB colour space, could be
-used for display or written into a <a href="#11PLTE"><span class=
-"chunk">PLTE</span></a> chunk.</p>
+used for display or written into a <a class="chunk" href="#11PLTE">
+PLTE</a> chunk.</p>
 
 <p>Decoders that are part of image processing applications might
 also transform image data into CIE LAB space for analysis.</p>
@@ -7015,9 +7014,9 @@ combining them to produce the overall transformation. The PNG
 decoder is responsible for implementing gamut mapping.</p>
 
 <p>Decoders running on platforms that have a Colour Management
-System (CMS) can pass the image data, <a href="#11gAMA"><span
-class="chunk">gAMA</span></a>, and <a href="#11cHRM"><span class=
-"chunk">cHRM</span></a> values to the CMS for display or further
+System (CMS) can pass the image data, <a class="chunk" href="#11gAMA">
+gAMA</a>, and <a class="chunk" href="#11cHRM">
+cHRM</a> values to the CMS for display or further
 processing.</p>
 
 <p>PNG decoders that provide colour printing facilities can use
@@ -7027,20 +7026,20 @@ as XYZ. This will provide better colour fidelity than a simple
 RGB to CMYK conversion. The PostScript Language Reference manual
 [[?PostScript]] gives examples. Such decoders
 are responsible for implementing gamut mapping between source RGB
-(specified in the <a href="#11cHRM"><span class=
-"chunk">cHRM</span></a> chunk) and the target printer. The
+(specified in the <a class="chunk" href="#11cHRM">
+cHRM</a> chunk) and the target printer. The
 PostScript interpreter is then responsible for producing the
 required colours.</p>
 
-<p>PNG decoders can use the <a href="#11cHRM"><span class=
-"chunk">cHRM</span></a> data to calculate an accurate greyscale
+<p>PNG decoders can use the <a class="chunk" href="#11cHRM">
+cHRM</a> data to calculate an accurate greyscale
 representation of a colour image. Conversion from RGB to grey is
 simply a case of calculating the Y (luminance) component of XYZ,
 which is a weighted sum of R, G, and B values. The weights depend
-upon the monitor type, i.e. the values in the <a href=
-"#11cHRM"><span class="chunk">cHRM</span></a> chunk. PNG decoders
-may wish to do this for PNG datastreams with no <a href=
-"#11cHRM"><span class="chunk">cHRM</span></a> chunk. In this
+upon the monitor type, i.e. the values in the <a class="chunk" href=
+"#11cHRM">cHRM</a> chunk. PNG decoders
+may wish to do this for PNG datastreams with no <a class="chunk" href=
+"#11cHRM">cHRM</a> chunk. In this
 case, a reasonable default would be the CCIR 709 primaries [[ITU-R BT.709]]. The original NTSC primaries
 should <strong>not</strong> be used unless the PNG image really
 was colour-balanced for such a monitor.</p>
@@ -7051,13 +7050,13 @@ was colour-balanced for such a monitor.</p>
 <h2>Background
 colour</h2>
 
-<p>The background colour given by the <a href="#11bKGD"><span
-class="chunk">bKGD</span></a> chunk will typically be used to
+<p>The background colour given by the <a class="chunk" href="#11bKGD">
+bKGD</a> chunk will typically be used to
 fill unused screen space around the image, as well as any
-transparent pixels within the image. (Thus, <a href=
-"#11bKGD"><span class="chunk">bKGD</span></a> is valid and useful
-even when the image does not use transparency.) If no <a href=
-"#11bKGD"><span class="chunk">bKGD</span></a> chunk is present,
+transparent pixels within the image. (Thus, <a class="chunk" href=
+"#11bKGD">bKGD</a> is valid and useful
+even when the image does not use transparency.) If no <a class="chunk" href=
+"#11bKGD">bKGD</a> chunk is present,
 the viewer will need to decide upon a suitable background colour.
 When no other information is available, a medium grey such as 153
 in the 8-bit sRGB colour space would be a reasonable choice.
@@ -7066,26 +7065,26 @@ common, would all be legible against this background.</p>
 
 <p>Viewers that have a specific background against which to
 present the image (such as web browsers) should ignore the <a
-href="#11bKGD"><span class="chunk">bKGD</span></a> chunk, in
-effect overriding <a href="#11bKGD"><span class=
-"chunk">bKGD</span></a> with their preferred background colour or
+class="chunk" href="#11bKGD">bKGD</a> chunk, in
+effect overriding <a class="chunk" href="#11bKGD">
+bKGD</a> with their preferred background colour or
 background image.</p>
 
-<p>The background colour given by the <a href="#11bKGD"><span
-class="chunk">bKGD</span></a> chunk is not to be considered
+<p>The background colour given by the <a class="chunk" href="#11bKGD">
+bKGD</a> chunk is not to be considered
 transparent, even if it happens to match the colour given by the
-<a href="#11tRNS"><span class="chunk">tRNS</span></a> chunk (or,
+<a class="chunk" href="#11tRNS">tRNS</a> chunk (or,
 in the case of an indexed-colour image, refers to a palette index
-that is marked as transparent by the <a href="#11tRNS"><span
-class="chunk">tRNS</span></a> chunk). Otherwise one would have to
+that is marked as transparent by the <a class="chunk" href="#11tRNS">
+tRNS</a> chunk). Otherwise one would have to
 imagine something "behind the background" to <a>composite</a> against.
 The background colour is either used as background or ignored; it
 is not an intermediate layer between the PNG image and some other
 background.</p>
 
-<p>Indeed, it will be common that the <a href="#11bKGD"><span
-class="chunk">bKGD</span></a> and <a href="#11tRNS"><span class=
-"chunk">tRNS</span></a> chunks specify the same colour, since
+<p>Indeed, it will be common that the <a class="chunk" href="#11bKGD">
+bKGD</a> and <a class="chunk" href="#11tRNS">
+tRNS</a> chunks specify the same colour, since
 then a decoder that does not implement transparency processing
 will give the intended display, at least when no
 partially-transparent pixels are present.</p>
@@ -7300,10 +7299,10 @@ to be recovered.)</p>
 <p>Even if the decoder does not implement true compositing logic,
 it is simple to deal with images that contain only zero and one
 alpha values. (This is implicitly true for greyscale and
-truecolour PNG datastreams that use a <a href="#11tRNS"><span
-class="chunk">tRNS</span></a> chunk; for indexed-colour PNG
-datastreams it is easy to check whether the <a href=
-"#11tRNS"><span class="chunk">tRNS</span></a> chunk contains any
+truecolour PNG datastreams that use a <a class="chunk" href="#11tRNS">
+tRNS</a> chunk; for indexed-colour PNG
+datastreams it is easy to check whether the <a class="chunk" href=
+"#11tRNS">tRNS</a> chunk contains any
 values other than 0 and 255.) In this simple case, transparent
 pixels are replaced by the background colour, while others are
 unchanged.</p>
@@ -7326,8 +7325,8 @@ the dither.</p>
 <p>For viewers running on indexed-colour hardware attempting to
 display a truecolour image, or an indexed-colour image whose
 palette is too large for the frame buffer, the encoder may have
-provided one or more suggested palettes in <a href=
-"#11sPLT"><span class="chunk">sPLT</span></a> chunks. If one of
+provided one or more suggested palettes in <a class="chunk" href=
+"#11sPLT">sPLT</a> chunks. If one of
 these is found to be suitable, based on size and perhaps name,
 the PNG decoder can use that palette. Suggested palettes with a
 sample depth different from what the decoder needs can be
@@ -7342,25 +7341,25 @@ not a solid colour, no suggested palette is likely to be
 useful.</p>
 
 <p>For truecolour images, a suggested palette might also be
-provided in a <a href="#11PLTE"><span class=
-"chunk">PLTE</span></a> chunk. If the image has a <a href=
-"#11tRNS"><span class="chunk">tRNS</span></a> chunk and the
+provided in a <a class="chunk" href="#11PLTE">
+PLTE</a> chunk. If the image has a <a class="chunk" href=
+"#11tRNS">tRNS</a> chunk and the
 background is a solid colour, the viewer will need to adapt the
 suggested palette for use with its desired background colour. To
-do this, the palette entry closest to the <a href="#11tRNS"><span
-class="chunk">tRNS</span></a> colour should be replaced with the
+do this, the palette entry closest to the <a class="chunk" href="#11tRNS">
+tRNS</a> colour should be replaced with the
 desired background colour; or alternatively a palette entry for
 the background colour can be added, if the viewer can handle more
-colours than there are <a href="#11PLTE"><span class=
-"chunk">PLTE</span></a> entries.</p>
+colours than there are <a class="chunk" href="#11PLTE">
+PLTE</a> entries.</p>
 
 <p>For images of <a>colour type</a> 6 (truecolour with alpha), any <a
-href="#11PLTE"><span class="chunk">PLTE</span></a> chunk should
+class="chunk" href="#11PLTE">PLTE</a> chunk should
 have been designed for display of the image against a uniform
-background of the colour specified by the <a href="#11bKGD"><span
-class="chunk">bKGD</span></a> chunk. Viewers should probably
+background of the colour specified by the <a class="chunk" href="#11bKGD">
+bKGD</a> chunk. Viewers should probably
 ignore the palette if they intend to use a different background,
-or if the <a href="#11bKGD"><span class="chunk">bKGD</span></a>
+or if the <a class="chunk" href="#11bKGD">bKGD</a>
 chunk is missing. Viewers can use a suggested palette for display
 against a different background than it was intended for, but the
 results may not be very good.</p>
@@ -7372,15 +7371,15 @@ unlikely that the suggested palette will be optimal for the
 compositing step on the truecolour PNG image and background
 image, then colour-quantize the resulting image.</p>
 
-<p>In truecolour PNG datastreams, if both <a href="#11PLTE"><span
-class="chunk">PLTE</span></a> and <a href="#11sPLT"><span class=
-"chunk">sPLT</span></a> chunks appear, the PNG decoder may choose
+<p>In truecolour PNG datastreams, if both <a class="chunk" href="#11PLTE">
+PLTE</a> and <a class="chunk" href="#11sPLT">
+sPLT</a> chunks appear, the PNG decoder may choose
 from among the palettes suggested by both, bearing in mind the
 different transparency semantics described above.</p>
 
-<p>The frequencies in the <a href="#11sPLT"><span class=
-"chunk">sPLT</span></a> and <a href="#11hIST"><span class=
-"chunk">hIST</span></a> chunks are useful when the viewer cannot
+<p>The frequencies in the <a class="chunk" href="#11sPLT">
+sPLT</a> and <a class="chunk" href="#11hIST">
+hIST</a> chunks are useful when the viewer cannot
 provide as many colours as are used in the palette in the PNG
 datastream. If the viewer has a shortfall of only a few colours,
 it is usually adequate to drop the least-used colours from the
@@ -7389,12 +7388,12 @@ best to choose entirely new representative colours, rather than
 trying to use a subset of the existing palette. This amounts to
 performing a new colour quantization step; however, the existing
 palette and histogram can be used as the input data, thus
-avoiding a scan of the image data in the <a href="#11IDAT"><span
-class="chunk">IDAT</span></a> chunks.</p>
+avoiding a scan of the image data in the <a class="chunk" href="#11IDAT">
+IDAT</a> chunks.</p>
 
 <p>If no suggested palette is provided, a decoder can develop its
 own, at the cost of an extra pass over the image data in the <a
-href="#11IDAT"><span class="chunk">IDAT</span></a> chunks.
+class="chunk" href="#11IDAT">IDAT</a> chunks.
 Alternatively, a default palette (probably a colour cube) can be
 used.</p>
 
@@ -7438,13 +7437,13 @@ types. Otherwise a PNG editor does not know what to do when it
 encounters an unknown chunk.</p>
 
 <p>EXAMPLE Consider a hypothetical new ancillary chunk type that
-is safe-to-copy and is required to appear after <a href=
-"#11PLTE"><span class="chunk">PLTE</span></a> if <a href=
-"#11PLTE"><span class="chunk">PLTE</span></a> is present. If a
-program attempts to add a <a href="#11PLTE"><span class=
-"chunk">PLTE</span></a> chunk and does not recognize the new
-chunk, it may insert the <a href="#11PLTE"><span class=
-"chunk">PLTE</span></a> chunk in the wrong place, namely after
+is safe-to-copy and is required to appear after <a class="chunk" href=
+"#11PLTE">PLTE</a> if <a class="chunk" href=
+"#11PLTE">PLTE</a> is present. If a
+program attempts to add a <a class="chunk" href="#11PLTE">
+PLTE</a> chunk and does not recognize the new
+chunk, it may insert the <a class="chunk" href="#11PLTE">
+PLTE</a> chunk in the wrong place, namely after
 the new chunk. Such problems could be prevented by requiring PNG
 editors to discard all unknown chunks, but that is a very
 unattractive solution. Instead, PNG requires ancillary chunks not
@@ -7499,11 +7498,11 @@ add, delete, modify, or reorder critical chunks if it is
 preserving unknown unsafe-to-copy chunks.)</li>
 
 <li>When copying an unknown <strong>safe-to-copy</strong> ancillary
-chunk, a PNG editor shall not move the chunk from before <a href=
-"#11IDAT"><span class="chunk">IDAT</span></a> to after <a href=
-"#11IDAT"><span class="chunk">IDAT</span></a> or vice versa.
-(This is well defined because <a href="#11IDAT"><span class=
-"chunk">IDAT</span></a> is always present.) Any other reordering
+chunk, a PNG editor shall not move the chunk from before <a class="chunk" href=
+"#11IDAT">IDAT</a> to after <a class="chunk" href=
+"#11IDAT">IDAT</a> or vice versa.
+(This is well defined because <a class="chunk" href="#11IDAT">
+IDAT</a> is always present.) Any other reordering
 is permitted.</li>
 
 <li>When copying a <strong>known</strong> ancillary chunk type, an editor
@@ -7519,11 +7518,11 @@ obvious way if a PNG datastream is modified in place.</p>
 <p>See also <a href="#5Chunk-naming-conventions"></a>.</p>
 
 <p>PNG editors that do not change the image data should not
-change the <a href="#11tIME"><span class="chunk">tIME</span></a>
-chunk. The Creation Time keyword in the <a href="#11tEXt"><span
-class="chunk">tEXt</span></a>, <a href="#11zTXt"><span class=
-"chunk">zTXt</span></a>, and <a href="#11iTXt"><span class=
-"chunk">iTXt</span></a> chunks may be used for a user-supplied
+change the <a class="chunk" href="#11tIME">tIME</a>
+chunk. The Creation Time keyword in the <a class="chunk" href="#11tEXt">
+tEXt</a>, <a class="chunk" href="#11zTXt">
+zTXt</a>, and <a class="chunk" href="#11iTXt">
+iTXt</a> chunks may be used for a user-supplied
 time.</p>
 </section>
 
@@ -7539,8 +7538,8 @@ critical chunks</h2>
 
 <p>Critical chunks may have arbitrary ordering requirements,
 because PNG editors are required to terminate if they encounter
-unknown critical chunks. For example <a href="#11IHDR"><span
-class="chunk">IHDR</span></a> has the specific ordering rule that
+unknown critical chunks. For example <a class="chunk" href="#11IHDR">
+IHDR</a> has the specific ordering rule that
 it shall always appear first. A PNG editor, or indeed any
 PNG-writing program, shall know and follow the ordering rules for
 any critical chunk type that it can generate.</p>
@@ -7559,7 +7558,7 @@ are:</p>
 to critical chunks.</li>
 
 <li>Safe-to-copy chunks may have ordering requirements relative
-to <a href="#11IDAT"><span class="chunk">IDAT</span></a>.</li>
+to <a class="chunk" href="#11IDAT">IDAT</a>.</li>
 </ol>
 
 <p>The actual ordering rules for any particular ancillary chunk
@@ -7573,13 +7572,13 @@ chunk type occurs with any particular positioning relative to
 other ancillary chunks.</p>
 
 <p>EXAMPLE It is unsafe to assume that a particular private
-ancillary chunk occurs immediately before <a href="#11IEND"><span
-class="chunk">IEND</span></a>. Even if it is always written in
+ancillary chunk occurs immediately before <a class="chunk" href="#11IEND">
+IEND</a>. Even if it is always written in
 that position by a particular application, a PNG editor might
 have inserted some other ancillary chunk after it. But it is safe
-to assume that the chunk will remain somewhere between <a href=
-"#11IDAT"><span class="chunk">IDAT</span></a> and <a href=
-"#11IEND"><span class="chunk">IEND</span></a>.</p>
+to assume that the chunk will remain somewhere between <a class="chunk" href=
+"#11IDAT">IDAT</a> and <a class="chunk" href=
+"#11IEND">IEND</a>.</p>
 </section>
 </section>
 </section>
@@ -7654,17 +7653,17 @@ content (see <a href="#5PNG-file-signature"></a>).</li>
 Standard:
 
 <ul>
-<li>the PNG datastream contains as its first chunk, an <a href=
-"#11IHDR"><span class="chunk">IHDR</span></a> chunk, immediately
+<li>the PNG datastream contains as its first chunk, an <a class="chunk" href=
+"#11IHDR">IHDR</a> chunk, immediately
 following the PNG signature;</li>
 
-<li>the PNG datastream contains as its last chunk, an <a href=
-"#11IEND"><span class="chunk">IEND</span></a> chunk.</li>
+<li>the PNG datastream contains as its last chunk, an <a class="chunk" href=
+"#11IEND">IEND</a> chunk.</li>
 </ul>
 </li>
 
-<li>No chunks or other content follow the <a href="#11IEND"><span
-class="chunk">IEND</span></a> chunk.</li>
+<li>No chunks or other content follow the <a class="chunk" href="#11IEND">
+IEND</a> chunk.</li>
 
 <li>All chunks contained therein match the specification of the
 corresponding chunk types of this specification.
@@ -7738,8 +7737,8 @@ An unknown chunk type is <strong>not</strong>
 treated as an error unless it is a critical chunk.</li>
 
 <li>Unexpected values in fields of known chunks (for example, an
-unexpected compression method in the <a href="#11IHDR"><span
-class="chunk">IHDR</span></a> chunk) are treated as errors.</li>
+unexpected compression method in the <a class="chunk" href="#11IHDR">
+IHDR</a> chunk) are treated as errors.</li>
 
 <li>All types of PNG images (indexed-colour, truecolour,
 greyscale, truecolour with alpha, and greyscale with alpha) are
@@ -7755,24 +7754,24 @@ image.</li>
 an unknown chunk type.</li>
 
 <li>All valid combinations of bit depth and <a>colour type</a> as
-defined in <a href="#11IHDR"></a> are
+defined in <a class="chunk" href="#11IHDR"></a> are
 supported.</li>
 
 <li>An error is reported if an unrecognized value is encountered
 in the bit depth, <a>colour type</a>, compression method, <a>filter method</a>,
-or interlace method bytes of the <a href="#11IHDR"><span class=
-"chunk">IHDR</span></a> chunk.</li>
+or interlace method bytes of the <a class="chunk" href="#11IHDR">
+IHDR</a> chunk.</li>
 
 <li>When processing 16-bit greyscale or truecolour data in the <a
-href="#11tRNS"><span class="chunk">tRNS</span></a> chunk, both
+class="chunk" href="#11tRNS">tRNS</a> chunk, both
 bytes of the sample values are evaluated to determine whether a
 pixel is transparent.</li>
 
 <li>When processing an image compressed by compression method 0,
 the decoder assumes no more than that the complete image data is
 represented by a single compressed datastream that is stored in
-some number of <a href="#11IDAT"><span class=
-"chunk">IDAT</span></a> chunks.</li>
+some number of <a class="chunk" href="#11IDAT">
+IDAT</a> chunks.</li>
 
 <li>No assumptions are made concerning the positioning of any
 ancillary chunk other than those that are specified by the chunk
@@ -7864,9 +7863,9 @@ losslessly represents the same reference image.</li>
         chunks.  However, it is the intention of the PNG Working Group to disallow
         chunks containing "executable" data to become registered chunks.</p>
       <p>The text chunks,
-        <span class="chunk">tEXt</span>,
-        <span class="chunk">iTXT</span> and
-        <span class="chunk">zTXt</span>,
+        <a class="chunk" href="#11tEXt">tEXt</a>,
+        <a class="chunk" href="#11iTXt">iTXT</a> and
+        <a class="chunk" href="#11zTXt">zTXt</a>,
         contain data that can be displayed in
         the form of comments, etc.  Some operating systems or terminals might
         allow the display of textual data with embedded control characters to
@@ -8094,12 +8093,12 @@ contents. If such chunks have to be defined, make them critical
 chunks.</li>
 
 <li>For textual information that is representable in Latin-1
-avoid defining a new chunk type. Use a <a href="#11tEXt"><span
-class="chunk">tEXt</span></a> or <a href="#11zTXt"><span class=
-"chunk">zTXt</span></a> chunk with a suitable keyword to identify
+avoid defining a new chunk type. Use a <a class="chunk" href="#11tEXt">
+tEXt</a> or <a class="chunk" href="#11zTXt">
+zTXt</a> chunk with a suitable keyword to identify
 the type of information. For textual information that is not
 representable in Latin-1 but which can be represented in UTF-8,
-use an <a href="#11iTXt"><span class="chunk">iTXt</span></a>
+use an <a class="chunk" href="#11iTXt">iTXt</a>
 chunk with a suitable keyword.</li>
 
 <li>Group mutually dependent ancillary information into a single
@@ -8197,7 +8196,7 @@ in the range 1.0 to 1.5.</td>
 </tr>
 </table>
 
-<p>The PNG <a href="#11gAMA"><span class="chunk">gAMA</span></a>
+<p>The PNG <a class="chunk" href="#11gAMA">gAMA</a>
 chunk is used to record the gamma value. This information may be
 used by decoders together with additional information about the
 display environment in order to achieve, or approximate, the
@@ -8425,13 +8424,13 @@ accessed from the PNG web site.</p>
     This brings the PNG specification into alignment
     with widely deployed industry practice.
   </li>
-  <li>Added the <span class="chunk">cICP</span> chunk,
+  <li>Added the <a class="chunk" href="#11cICP">cICP</a> chunk,
     Coding-independent code points for video signal type identification,
     to contain image color space metadata
     defined in [[ITU-T H.273]]
     which enables PNG to contain High Dynamic Range (HDR) images.
   </li>
-  <li>The previously defined <span class="chunk">eXIf</span> chunk
+  <li>The previously defined <a class="chunk" href="#eXIf">eXIf</a> chunk
     has been moved from the PNG-Extensions document [[PNG-EXTENSIONS]]
     into the main body of this specification,
     to reflect it's widespready use.

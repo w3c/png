@@ -489,9 +489,9 @@ a stored file at all.</dd>
 
 <dd>name of a particular compression algorithm. This algorithm is
 used, in compression mode 0, in conforming
-<span class="Definition"><a>PNG
-datastreams</a></span>. Deflate is a member of the <a href=
-"#3LZ77"><span class="Definition">LZ77</span></a> family of
+<a>PNG
+datastreams</a>. Deflate is a member of the <a href=
+"#3LZ77">LZ77</a> family of
 compression methods. It is defined in [[RFC1951]].</dd>
 
 
@@ -865,8 +865,8 @@ hardware.</dd>
 
 <dd>Look Up Table. In <a>frame buffer</a> hardware, a LUT can be used
 to map <a>indexed-colour</a> <a>pixels</a> into a selected set of <a
-href="#3truecolour"><span class=
-"Definition">truecolour</span></a> values, or to perform <a>gamma</a> correction.
+href="#3truecolour">
+truecolour</a> values, or to perform <a>gamma</a> correction.
 In software, a LUT can often be used as a fast way of
 implementing any mathematical function of a single integer
 variable.</dd>
@@ -1182,7 +1182,7 @@ be mapped into samples of depth 4.</p>
 <!-- Maintain a fragment named "figure45" to preserve incoming links to it -->
 <object id="figure45" height="320" width="280" data="figures/scaling-sample-values.svg" type="image/svg+xml">
 </object>
-<figcaption class="Figuretitle">Scaling sample values</figcaption>
+<figcaption>Scaling sample values</figcaption>
 </figure>
 
 <p>Allowing only a few sample depths reduces the number of cases
@@ -1265,7 +1265,7 @@ image</h2>
 <!-- Maintain a fragment named "4Concepts.EncodingIntro" to preserve incoming links to it -->
 <section class="introductory" id="4Concepts.EncodingIntro">
 <p>A conceptual model of the process of encoding a PNG image is
-given in <a href="#encoding-png-image"><span class="figref"></a>.
+given in <a href="#encoding-png-image"></a>.
 The steps refer to the operations on the array of
 pixels or indices in the PNG image. The palette and alpha table
 are not encoded in this way.</p>
@@ -1393,7 +1393,7 @@ Decoders may ignore all or some of the ancillary information. The
 types of ancillary information provided are described in <a href="#table41"></a>.</p>
 
 <!-- Maintain a fragment named "table41" to preserve incoming links to it -->
-<table id="table41" class="Regular simple numbered" summary=
+<table id="table41" class="simple numbered" summary=
 "This table lists the types of ancillary information that may be associated with an image">
 <caption>Types of
 ancillary information</caption>
@@ -1404,8 +1404,8 @@ ancillary information</caption>
 </tr>
 
 <tr>
-  <td class="Regular">Animation information</td>
-  <td class="Regular">An animated image,
+  <td>Animation information</td>
+  <td>An animated image,
     defined as a series of frames with associated timing,
     position and handling information,
     to be displayed if the viewer is capable of doing so.
@@ -1414,14 +1414,14 @@ ancillary information</caption>
   </tr>
 
 <tr>
-<td class="Regular">Background colour</td>
-<td class="Regular">Solid background colour to be used when presenting the image
+<td>Background colour</td>
+<td>Solid background colour to be used when presenting the image
 if no better option is available.</td>
 </tr>
 
 <tr>
-  <td class="Regular">Coding-independent code points</td>
-  <td class="Regular">Identifies the colour space by enumerating metadata
+  <td>Coding-independent code points</td>
+  <td>Identifies the colour space by enumerating metadata
     such as the transfer function and colour primaries.
     Originally for SDR and HDR video, also used for
     still and animated images.
@@ -1429,68 +1429,68 @@ if no better option is available.</td>
 </tr>
 
 <tr>
-  <td class="Regular">EXIF information</td>
-  <td class="Regular">Exchangeable image file format metadata such as shutter speed, aperture, and orientation</td>
+  <td>EXIF information</td>
+  <td>Exchangeable image file format metadata such as shutter speed, aperture, and orientation</td>
 </tr>
 
 <tr>
-<td class="Regular">Gamma and chromaticity</td>
-<td class="Regular">Gamma characteristic of the image with respect to the desired
+<td>Gamma and chromaticity</td>
+<td>Gamma characteristic of the image with respect to the desired
 output intensity, and <a>chromaticity</a> characteristics of the RGB
 values used in the image.</td>
 </tr>
 
 <tr>
-<td class="Regular">ICC profile</td>
-<td class="Regular">Description of the colour space (in the form of an
+<td>ICC profile</td>
+<td>Description of the colour space (in the form of an
 International Color Consortium (ICC) profile) to which the
 samples in the image conform.</td>
 </tr>
 
 <tr>
-<td class="Regular">Image histogram</td>
-<td class="Regular">Estimates of how frequently the image uses each palette entry.</td>
+<td>Image histogram</td>
+<td>Estimates of how frequently the image uses each palette entry.</td>
 </tr>
 
 <tr>
-<td class="Regular">Physical pixel dimensions</td>
-<td class="Regular">Intended pixel size and aspect ratio to be used in presenting
+<td>Physical pixel dimensions</td>
+<td>Intended pixel size and aspect ratio to be used in presenting
 the PNG image.</td>
 </tr>
 
 <tr>
-<td class="Regular">Significant bits</td>
-<td class="Regular">The number of bits that are significant in the samples.</td>
+<td>Significant bits</td>
+<td>The number of bits that are significant in the samples.</td>
 </tr>
 
 <tr>
-<td class="Regular">sRGB colour space</td>
-<td class="Regular">A rendering intent (as defined by the International Color
+<td>sRGB colour space</td>
+<td>A rendering intent (as defined by the International Color
 Consortium) and an indication that the image samples conform to
 this colour space.</td>
 </tr>
 
 <tr>
-<td class="Regular">Suggested palette</td>
-<td class="Regular">A reduced palette that may be used when the display device is
+<td>Suggested palette</td>
+<td>A reduced palette that may be used when the display device is
 not capable of displaying the full range of colours in the
 image.</td>
 </tr>
 
 <tr>
-<td class="Regular">Textual data</td>
-<td class="Regular">Textual information (which may be compressed) associated with
+<td>Textual data</td>
+<td>Textual information (which may be compressed) associated with
 the image.</td>
 </tr>
 
 <tr>
-<td class="Regular">Time</td>
-<td class="Regular">The time when the PNG image was last modified.</td>
+<td>Time</td>
+<td>The time when the PNG image was last modified.</td>
 </tr>
 
 <tr>
-<td class="Regular">Transparency</td>
-<td class="Regular">Alpha information that allows the reference image to be
+<td>Transparency</td>
+<td>Alpha information that allows the reference image to be
 reconstructed when the alpha channel is not retained in the PNG
 image.</td>
 </tr>
@@ -1668,7 +1668,7 @@ image.</td>
   omitted in these tables, for clarity).
 </p>
 
-<table class="Regular numbered simple" summary=
+<table class="numbered simple" summary=
 "sequence numbers, if the static image is also the first frame">
 <caption>If the static image is also the first frame</caption>
 <tr>
@@ -1701,7 +1701,7 @@ image.</td>
 </tr>
 </table>
 
-<table class="Regular numbered simple" summary=
+<table class="numbered simple" summary=
 "sequence numbers, if the static image is not part of the animation">
 <caption>If the static image is not part of the animation</caption>
 <tr>
@@ -1842,7 +1842,7 @@ The chunk data field may be empty.</p>
 </figure>
 
 <!-- Maintain a fragment named "table51" to preserve incoming links to it -->
-<table id="table51" class="Regular numbered simple" summary=
+<table id="table51" class="numbered simple" summary=
 "This table defines the chunk fields">
 <caption>Chunk fields</caption>
 
@@ -1852,8 +1852,8 @@ The chunk data field may be empty.</p>
 </tr>
 
 <tr>
-<td class="Regular">Length</td>
-<td class="Regular">A four-byte unsigned integer giving the number of bytes in
+<td>Length</td>
+<td>A four-byte unsigned integer giving the number of bytes in
 the chunk's data field. The length counts <strong>only</strong>
 the data field, <strong>not</strong> itself, the chunk type, or
 the CRC. Zero is a valid length. Although encoders and decoders
@@ -1862,8 +1862,8 @@ should treat the length as unsigned, its value shall not exceed
 </tr>
 
 <tr>
-<td class="Regular">Chunk Type</td>
-<td class="Regular">A sequence of four bytes defining the chunk type. Each byte
+<td>Chunk Type</td>
+<td>A sequence of four bytes defining the chunk type. Each byte
 of a chunk type is restricted to the decimal values 65 to 90 and
 97 to 122. These correspond to the uppercase and lowercase ISO
 646 [[ISO646]] letters (<tt>A</tt>-<tt>Z</tt> and <tt>a</tt>-<tt>z</tt>)
@@ -1877,14 +1877,14 @@ conventions for chunk types are discussed in <a href="#5Chunk-naming-conventions
 </tr>
 
 <tr>
-<td class="Regular">Chunk Data</td>
-<td class="Regular">The data bytes appropriate to the chunk type, if any. This
+<td>Chunk Data</td>
+<td>The data bytes appropriate to the chunk type, if any. This
 field can be of zero length.</td>
 </tr>
 
 <tr>
-<td class="Regular">CRC</td>
-<td class="Regular">A four-byte CRC (Cyclic Redundancy Code) calculated on the
+<td>CRC</td>
+<td>A four-byte CRC (Cyclic Redundancy Code) calculated on the
 preceding bytes in the chunk, including the chunk type field and
 chunk data fields, but <strong>not</strong> including the length
 field. The CRC can be used to check for corruption of the data.
@@ -1933,7 +1933,7 @@ defined in
 </p>
 
 <!-- Maintain a fragment named "table52" to preserve incoming links to it -->
-<table id="table52" class="Regular numbered simple" summary=
+<table id="table52" class="numbered simple" summary=
 "This table defines the semantics of the property bits">
 <caption>Semantics of property bits</caption>
 
@@ -1944,16 +1944,16 @@ defined in
 </tr>
 
 <tr>
-<td class="Regular">Ancillary bit: first byte</td>
-<td class="Regular">0 (uppercase) = critical,<br class="xhtml" />
+<td>Ancillary bit: first byte</td>
+<td>0 (uppercase) = critical,<br />
  1 (lowercase) = ancillary.</td>
-<td class="Regular">Critical chunks are necessary for successful display of the
+<td>Critical chunks are necessary for successful display of the
 contents of the datastream, for example the image header chunk
 (<a href="#11IHDR"><span class="chunk">IHDR</span></a>). A
 decoder trying to extract the image, upon encountering an unknown
 chunk type in which the ancillary bit is 0, shall indicate to the
 user that the image contains information it cannot safely
-interpret.<br class="xhtml" />
+interpret.<br />
  Ancillary chunks are not strictly necessary in order to
 meaningfully display the contents of the datastream, for example
 the time chunk (<a href="#11tIME"><span class=
@@ -1963,10 +1963,10 @@ and proceed to display the image.</td>
 </tr>
 
 <tr>
-<td class="Regular">Private bit: second byte</td>
-<td class="Regular">0 (uppercase) = public,<br class="xhtml" />
+<td>Private bit: second byte</td>
+<td>0 (uppercase) = public,<br />
  1 (lowercase) = private.</td>
-<td class="Regular">Public chunks are reserved for definition by the W3C. The
+<td>Public chunks are reserved for definition by the W3C. The
 definition of private chunks is specified at <a
 href="#12Use-of-private-chunks"></a>. The names of private chunks have a
 lowercase second letter, while the names of public chunks have uppercase second
@@ -1975,21 +1975,21 @@ letters.
 </tr>
 
 <tr>
-<td class="Regular">Reserved bit: third byte</td>
-<td class="Regular">0 (uppercase) in this version of PNG.<br class="xhtml" />
+<td>Reserved bit: third byte</td>
+<td>0 (uppercase) in this version of PNG.<br />
  If the reserved bit is 1, the datastream does not conform to
 this version of PNG.</td>
-<td class="Regular">The significance of the case of the third letter of the chunk
+<td>The significance of the case of the third letter of the chunk
 name is reserved for possible future extension. In this
 International Standard, all chunk names shall have uppercase
 third letters.</td>
 </tr>
 
 <tr>
-<td class="Regular">Safe-to-copy bit: fourth byte</td>
-<td class="Regular">0 (uppercase) = unsafe to copy,<br class="xhtml" />
+<td>Safe-to-copy bit: fourth byte</td>
+<td>0 (uppercase) = unsafe to copy,<br />
 1 (lowercase) = safe to copy.</td>
-<td class="Regular">This property bit is not of interest to pure decoders, but it
+<td>This property bit is not of interest to pure decoders, but it
 is needed by PNG editors. This bit defines the proper handling of
 unrecognized chunks in a datastream that is being modified. Rules
 for PNG editors are discussed further in <a href="#14Ordering"></a>.</td>
@@ -2076,13 +2076,13 @@ two chunk types indicates alternatives.</p>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <!-- Maintain a fragment named "table53" to preserve incoming links to it -->
-<table id="table53" class="Regular numbered simple" summary=
+<table id="table53" class="numbered simple" summary=
 "This table lists the chunk ordering rules">
 <caption>Chunk ordering
 rules</caption>
 
 <tr>
-<th colspan="3">Critical chunks<br class="xhtml" />
+<th colspan="3">Critical chunks<br />
  (shall appear in this order, except <a href="#11PLTE"><span
 class="chunk">PLTE</span></a> is optional)</th>
 </tr>
@@ -2094,33 +2094,33 @@ class="chunk">PLTE</span></a> is optional)</th>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11IHDR"><span class="chunk">IHDR</span></a> </td>
-<td class="Regular">No</td>
-<td class="Regular">Shall be first</td>
+<td><a href="#11IHDR"><span class="chunk">IHDR</span></a> </td>
+<td>No</td>
+<td>Shall be first</td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11PLTE"><span class="chunk">PLTE</span></a> </td>
-<td class="Regular">No</td>
-<td class="Regular">Before first <a href="#11IDAT"><span class=
+<td><a href="#11PLTE"><span class="chunk">PLTE</span></a> </td>
+<td>No</td>
+<td>Before first <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a> </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
-<td class="Regular">Yes</td>
-<td class="Regular">Multiple <a href="#11IDAT"><span class=
+<td><a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
+<td>Yes</td>
+<td>Multiple <a href="#11IDAT"><span class=
 "chunk">IDAT</span></a> chunks shall be consecutive</td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11IEND"><span class="chunk">IEND</span></a> </td>
-<td class="Regular">No</td>
-<td class="Regular">Shall be last</td>
+<td><a href="#11IEND"><span class="chunk">IEND</span></a> </td>
+<td>No</td>
+<td>Shall be last</td>
 </tr>
 
 <tr>
-<th colspan="3">Ancillary chunks<br class="xhtml" />
+<th colspan="3">Ancillary chunks<br />
  (need not appear in this order)</th>
 </tr>
 
@@ -2131,37 +2131,37 @@ class="chunk">PLTE</span></a> is optional)</th>
 </tr>
 
 <tr>
-<td class="Regular"><span class="chunk">acTL</span> </td>
-<td class="Regular">No</td>
-<td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
+<td><span class="chunk">acTL</span> </td>
+<td>No</td>
+<td>Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
 and <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11cHRM"><span class="chunk">cHRM</span></a> </td>
-<td class="Regular">No</td>
-<td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
+<td><a href="#11cHRM"><span class="chunk">cHRM</span></a> </td>
+<td>No</td>
+<td>Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
 and <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#cICP-chunk"><span class="chunk">cICP</span></a></td>
-<td class="Regular">No</td>
-<td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
+<td><a href="#cICP-chunk"><span class="chunk">cICP</span></a></td>
+<td>No</td>
+<td>Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
 and <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11gAMA"><span class="chunk">gAMA</span></a> </td>
-<td class="Regular">No</td>
-<td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
+<td><a href="#11gAMA"><span class="chunk">gAMA</span></a> </td>
+<td>No</td>
+<td>Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
 and <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11iCCP"><span class="chunk">iCCP</span></a> </td>
-<td class="Regular">No</td>
-<td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
+<td><a href="#11iCCP"><span class="chunk">iCCP</span></a> </td>
+<td>No</td>
+<td>Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
 and <a href="#11IDAT"><span class="chunk">IDAT</span></a>. If the
 <a href="#11iCCP"><span class="chunk">iCCP</span></a> chunk is
 present, the <a href="#11sRGB"><span class=
@@ -2169,16 +2169,16 @@ present, the <a href="#11sRGB"><span class=
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11sBIT"><span class="chunk">sBIT</span></a> </td>
-<td class="Regular">No</td>
-<td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
+<td><a href="#11sBIT"><span class="chunk">sBIT</span></a> </td>
+<td>No</td>
+<td>Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
 and <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11sRGB"><span class="chunk">sRGB</span></a> </td>
-<td class="Regular">No</td>
-<td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
+<td><a href="#11sRGB"><span class="chunk">sRGB</span></a> </td>
+<td>No</td>
+<td>Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
 and <a href="#11IDAT"><span class="chunk">IDAT</span></a>. If the
 <a href="#11sRGB"><span class="chunk">sRGB</span></a> chunk is
 present, the <a href="#11iCCP"><span class=
@@ -2187,88 +2187,88 @@ chunk should not be present.</td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11bKGD"><span class="chunk">bKGD</span></a> </td>
-<td class="Regular">No</td>
-<td class="Regular">After <a href="#11PLTE"><span class="chunk">PLTE</span></a>;
+<td><a href="#11bKGD"><span class="chunk">bKGD</span></a> </td>
+<td>No</td>
+<td>After <a href="#11PLTE"><span class="chunk">PLTE</span></a>;
 before <a href="#11IDAT"><span class="chunk">IDAT</span></a>
 </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11hIST"><span class="chunk">hIST</span></a> </td>
-<td class="Regular">No</td>
-<td class="Regular">After <a href="#11PLTE"><span class="chunk">PLTE</span></a>;
+<td><a href="#11hIST"><span class="chunk">hIST</span></a> </td>
+<td>No</td>
+<td>After <a href="#11PLTE"><span class="chunk">PLTE</span></a>;
 before <a href="#11IDAT"><span class="chunk">IDAT</span></a>
 </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11tRNS"><span class="chunk">tRNS</span></a> </td>
-<td class="Regular">No</td>
-<td class="Regular">After <a href="#11PLTE"><span class="chunk">PLTE</span></a>;
+<td><a href="#11tRNS"><span class="chunk">tRNS</span></a> </td>
+<td>No</td>
+<td>After <a href="#11PLTE"><span class="chunk">PLTE</span></a>;
 before <a href="#11IDAT"><span class="chunk">IDAT</span></a>
 </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#eXIf"><span class="chunk">eXIf</span></a> </td>
-<td class="Regular">No</td>
-<td class="Regular">Before <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
+<td><a href="#eXIf"><span class="chunk">eXIf</span></a> </td>
+<td>No</td>
+<td>Before <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#fcTL-chunk"><span class="chunk">fcTL</span></a> </td>
-<td class="Regular">Yes</td>
-<td class="Regular">One may occur before <a href="#11IDAT"><span class="chunk">IDAT</span></a>; all others shall be after <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
+<td><a href="#fcTL-chunk"><span class="chunk">fcTL</span></a> </td>
+<td>Yes</td>
+<td>One may occur before <a href="#11IDAT"><span class="chunk">IDAT</span></a>; all others shall be after <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11pHYs"><span class="chunk">pHYs</span></a> </td>
-<td class="Regular">No</td>
-<td class="Regular">Before <a href="#11IDAT"><span class="chunk">IDAT</span></a>
+<td><a href="#11pHYs"><span class="chunk">pHYs</span></a> </td>
+<td>No</td>
+<td>Before <a href="#11IDAT"><span class="chunk">IDAT</span></a>
 </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11sPLT"><span class="chunk">sPLT</span></a> </td>
-<td class="Regular">Yes</td>
-<td class="Regular">Before <a href="#11IDAT"><span class="chunk">IDAT</span></a>
+<td><a href="#11sPLT"><span class="chunk">sPLT</span></a> </td>
+<td>Yes</td>
+<td>Before <a href="#11IDAT"><span class="chunk">IDAT</span></a>
 </td>
 </tr>
 
 <tr>
-  <td class="Regular"><a href="#fdAT-chunk"><span class="chunk">fdAT</span></a> </td>
-  <td class="Regular">Yes</td>
-  <td class="Regular">After <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
+  <td><a href="#fdAT-chunk"><span class="chunk">fdAT</span></a> </td>
+  <td>Yes</td>
+  <td>After <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11tIME"><span class="chunk">tIME</span></a> </td>
-<td class="Regular">No</td>
-<td class="Regular">None</td>
+<td><a href="#11tIME"><span class="chunk">tIME</span></a> </td>
+<td>No</td>
+<td>None</td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11iTXt"><span class="chunk">iTXt</span></a> </td>
-<td class="Regular">Yes</td>
-<td class="Regular">None</td>
+<td><a href="#11iTXt"><span class="chunk">iTXt</span></a> </td>
+<td>Yes</td>
+<td>None</td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11tEXt"><span class="chunk">tEXt</span></a> </td>
-<td class="Regular">Yes</td>
-<td class="Regular">None</td>
+<td><a href="#11tEXt"><span class="chunk">tEXt</span></a> </td>
+<td>Yes</td>
+<td>None</td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11zTXt"><span class="chunk">zTXt</span></a> </td>
-<td class="Regular">Yes</td>
-<td class="Regular">None</td>
+<td><a href="#11zTXt"><span class="chunk">zTXt</span></a> </td>
+<td>Yes</td>
+<td>None</td>
 </tr>
 </table>
 
 <!-- Maintain a fragment named "table54" to preserve incoming links to it -->
-<table id="table54" class="Regular numbered simple"  summary=
+<table id="table54" class="numbered simple"  summary=
 "This table lists the symbols used in lattice diagrams">
 <caption>Meaning of
 symbols used in lattice diagrams</caption>
@@ -2279,27 +2279,27 @@ symbols used in lattice diagrams</caption>
 </tr>
 
 <tr>
-<td class="Regular">+</td>
-<td class="Regular">One or more</td>
+<td>+</td>
+<td>One or more</td>
 </tr>
 
 <tr>
-<td class="Regular">1</td>
-<td class="Regular">Only one</td>
+<td>1</td>
+<td>Only one</td>
 </tr>
 
 <tr>
-<td class="Regular">?</td>
-<td class="Regular">Zero or one</td>
+<td>?</td>
+<td>Zero or one</td>
 </tr>
 
 <tr>
-<td class="Regular">*</td>
-<td class="Regular">Zero or more</td>
+<td>*</td>
+<td>Zero or more</td>
 </tr>
 <tr>
-<td class="Regular">|</td>
-<td class="Regular">Alternative</td>
+<td>|</td>
+<td>Alternative</td>
 </tr>
 </table>
 
@@ -2468,7 +2468,7 @@ corresponding <a>colour types</a> are listed in <a href=
 "#table6.1"></a>.</p>
 
 <!-- Maintain a fragment named "table6.1" to preserve incoming links to it -->
-<table id="table6.1" class="Regular numbered simple"  summary=
+<table id="table6.1" class="numbered simple"  summary=
 "This table lists the PNG image and colour types">
 <caption>PNG image types
 and colour types</caption>
@@ -2479,28 +2479,28 @@ and colour types</caption>
 </tr>
 
 <tr>
-<td class="Regular">Greyscale</td>
-<td class="Regular">0</td>
+<td>Greyscale</td>
+<td>0</td>
 </tr>
 
 <tr>
-<td class="Regular">Truecolour</td>
-<td class="Regular">2</td>
+<td>Truecolour</td>
+<td>2</td>
 </tr>
 
 <tr>
-<td class="Regular">Indexed-colour</td>
-<td class="Regular">3</td>
+<td>Indexed-colour</td>
+<td>3</td>
 </tr>
 
 <tr>
-<td class="Regular">Greyscale with alpha</td>
-<td class="Regular">4</td>
+<td>Greyscale with alpha</td>
+<td>4</td>
 </tr>
 
 <tr>
-<td class="Regular">Truecolour with alpha</td>
-<td class="Regular">6</td>
+<td>Truecolour with alpha</td>
+<td>6</td>
 </tr>
 </table>
 
@@ -2697,8 +2697,8 @@ extraction</h2>
 
 <!-- Maintain a fragment named "8InterlaceIntro" to preserve incoming links to it -->
 <section class="introductory" id="8InterlaceIntro">
-<p>Pass extraction (see <a href="#figure48"><span class=
-"figref">figure 4.8</span></a>) splits a PNG image into a
+<p>Pass extraction (see <a href="#figure48">
+figure 4.8</a>) splits a PNG image into a
 sequence of reduced images (the interlaced PNG image) where the
 first image defines a coarse view and subsequent images enhance
 this coarse view until the last image completes the PNG image.
@@ -2740,7 +2740,7 @@ upper left corner:</p>
    7 7 7 7 7 7 7 7
 </pre>
 
-<p><a href="#figure48"><span class="figref">Figure 4.8</span></a>
+<p><a href="#figure48">Figure 4.8</a>
 shows the seven passes of interlace method 1. Within each pass,
 the selected pixels are transmitted left to right within a
 scanline, and selected scanlines sequentially from top to bottom.
@@ -2753,8 +2753,8 @@ is necessary for proper application of some of the filters. The
 interlaced PNG image consists of a sequence of seven reduced
 images. For example, if the PNG image is 16 by 16 pixels, then
 the third pass will be a reduced image of two scanlines, each
-containing four pixels (see <a href="#figure48"><span class=
-"figref">figure 4.8</span></a>).</p>
+containing four pixels (see <a href="#figure48">
+figure 4.8</a>).</p>
 
 <p>Scanlines that do not completely fill an integral number of
 bytes are padded as defined in <a href="#7Scanline"></a>.</p>
@@ -2821,7 +2821,7 @@ way as the <a>image data</a>.</p>
 <p>Filters may use the original values of the following bytes to
 generate the new byte value:</p>
 
-<table class="Regular numbered simple" summary=
+<table class="numbered simple" summary=
 "This table defines the variables used in the filter types table">
 <caption>Named filter bytes</caption>
 <tr>
@@ -2829,23 +2829,23 @@ generate the new byte value:</p>
   <th>Definition</th>
 </tr>
 <tr>
-<td class="Regular">x </td>
-<td class="Regular">the byte being filtered;</td>
+<td>x </td>
+<td>the byte being filtered;</td>
 </tr>
 
 <tr>
-<td class="Regular">a </td>
-<td class="Regular">the byte corresponding to x in the pixel immediately before the pixel containing x (or the byte immediately before x, when the bit depth is less than 8);</td>
+<td>a </td>
+<td>the byte corresponding to x in the pixel immediately before the pixel containing x (or the byte immediately before x, when the bit depth is less than 8);</td>
 </tr>
 
 <tr>
-<td class="Regular">b </td>
-<td class="Regular">the byte corresponding to x in the previous scanline;</td>
+<td>b </td>
+<td>the byte corresponding to x in the previous scanline;</td>
 </tr>
 
 <tr>
-<td class="Regular">c </td>
-<td class="Regular">the byte corresponding to b in the pixel immediately before the pixel containing b (or the byte immediately before b, when the bit depth is less than 8).</td>
+<td>c </td>
+<td>the byte corresponding to b in the pixel immediately before the pixel containing b (or the byte immediately before b, when the bit depth is less than 8).</td>
 </tr>
 </table>
 
@@ -2877,7 +2877,7 @@ it is sufficient to check the <a>filter method</a> in <a href="#11IHDR"></a>.</p
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <!-- Maintain a fragment named "9-table91" to preserve incoming links to it -->
-<table id="9-table91" class="Regular numbered simple" summary=
+<table id="9-table91" class="numbered simple" summary=
 "This table lists the filter types">
 <caption>Filter
 types</caption>
@@ -2890,41 +2890,41 @@ types</caption>
 </tr>
 
 <tr>
-<td class="Regular" align="center">0</td>
-<td class="Regular">None</td>
-<td class="Regular"><tt>Filt(x) = Orig(x)</tt> </td>
-<td class="Regular"><tt>Recon(x) = Filt(x)</tt> </td>
+<td align="center">0</td>
+<td>None</td>
+<td><tt>Filt(x) = Orig(x)</tt> </td>
+<td><tt>Recon(x) = Filt(x)</tt> </td>
 </tr>
 
 <tr>
-<td class="Regular" align="center">1</td>
-<td class="Regular">Sub</td>
-<td class="Regular"><tt>Filt(x) = Orig(x) - Orig(a)</tt> </td>
-<td class="Regular"><tt>Recon(x) = Filt(x) + Recon(a)</tt> </td>
+<td align="center">1</td>
+<td>Sub</td>
+<td><tt>Filt(x) = Orig(x) - Orig(a)</tt> </td>
+<td><tt>Recon(x) = Filt(x) + Recon(a)</tt> </td>
 </tr>
 
 <tr>
-<td class="Regular" align="center">2</td>
-<td class="Regular">Up</td>
-<td class="Regular"><tt>Filt(x) = Orig(x) - Orig(b)</tt> </td>
-<td class="Regular"><tt>Recon(x) = Filt(x) + Recon(b)</tt> </td>
+<td align="center">2</td>
+<td>Up</td>
+<td><tt>Filt(x) = Orig(x) - Orig(b)</tt> </td>
+<td><tt>Recon(x) = Filt(x) + Recon(b)</tt> </td>
 </tr>
 
 <tr>
-<td class="Regular" align="center">3</td>
-<td class="Regular">Average</td>
-<td class="Regular"><tt>Filt(x) = Orig(x) - floor((Orig(a) + Orig(b)) /
+<td align="center">3</td>
+<td>Average</td>
+<td><tt>Filt(x) = Orig(x) - floor((Orig(a) + Orig(b)) /
 2)</tt> </td>
-<td class="Regular"><tt>Recon(x) = Filt(x) + floor((Recon(a) + Recon(b)) /
+<td><tt>Recon(x) = Filt(x) + floor((Recon(a) + Recon(b)) /
 2)</tt> </td>
 </tr>
 
 <tr>
-<td class="Regular" align="center">4</td>
-<td class="Regular">Paeth</td>
-<td class="Regular"><tt>Filt(x) = Orig(x) - PaethPredictor(Orig(a),
+<td align="center">4</td>
+<td>Paeth</td>
+<td><tt>Filt(x) = Orig(x) - PaethPredictor(Orig(a),
 Orig(b), Orig(c))</tt> </td>
-<td class="Regular"><tt>Recon(x) = Filt(x) + PaethPredictor(Recon(a), Recon(b),
+<td><tt>Recon(x) = Filt(x) + PaethPredictor(Recon(a), Recon(b),
 Recon(c))</tt> </td>
 </tr>
 </table>
@@ -3033,26 +3033,26 @@ future standardization. PNG compression method 0 is
 <p><a>Deflate</a>-compressed datastreams within PNG are stored in the
 "zlib" format, which has the structure:</p>
 
-<table class="Regular"  summary=
+<table summary=
 "This table gives the structure of the zlib format">
 <tr>
-<td class="Regular">zlib compression method/flags code</td>
-<td class="Regular">1 byte</td>
+<td>zlib compression method/flags code</td>
+<td>1 byte</td>
 </tr>
 
 <tr>
-<td class="Regular">Additional flags/check bits</td>
-<td class="Regular">1 byte</td>
+<td>Additional flags/check bits</td>
+<td>1 byte</td>
 </tr>
 
 <tr>
-<td class="Regular">Compressed data blocks</td>
-<td class="Regular">n bytes</td>
+<td>Compressed data blocks</td>
+<td>n bytes</td>
 </tr>
 
 <tr>
-<td class="Regular">Check value</td>
-<td class="Regular">4 bytes</td>
+<td>Check value</td>
+<td>4 bytes</td>
 </tr>
 </table>
 
@@ -3190,41 +3190,41 @@ header</h2>
 <p>The <span class="chunk">IHDR</span> chunk shall be the first
 chunk in the PNG datastream. It contains:</p>
 
-<table class="Regular"  summary=
+<table summary=
 "This table defines the IHDR chunk">
 <tr>
-<td class="Regular">Width</td>
-<td class="Regular">4 bytes</td>
+<td>Width</td>
+<td>4 bytes</td>
 </tr>
 
 <tr>
-<td class="Regular">Height</td>
-<td class="Regular">4 bytes</td>
+<td>Height</td>
+<td>4 bytes</td>
 </tr>
 
 <tr>
-<td class="Regular">Bit depth</td>
-<td class="Regular">1 byte</td>
+<td>Bit depth</td>
+<td>1 byte</td>
 </tr>
 
 <tr>
-<td class="Regular">Colour type</td>
-<td class="Regular">1 byte</td>
+<td>Colour type</td>
+<td>1 byte</td>
 </tr>
 
 <tr>
-<td class="Regular">Compression method</td>
-<td class="Regular">1 byte</td>
+<td>Compression method</td>
+<td>1 byte</td>
 </tr>
 
 <tr>
-<td class="Regular">Filter method</td>
-<td class="Regular">1 byte</td>
+<td>Filter method</td>
+<td>1 byte</td>
 </tr>
 
 <tr>
-<td class="Regular">Interlace method</td>
-<td class="Regular">1 byte</td>
+<td>Interlace method</td>
+<td>1 byte</td>
 </tr>
 </table>
 
@@ -3245,7 +3245,7 @@ compress well. The allowed combinations are defined in <a href=
 "#table111"></a>.</p>
 
 <!-- Maintain a fragment named "table111" to preserve incoming links to it -->
-<table id="table111" class="Regular numbered simple" summary=
+<table id="table111" class="numbered simple" summary=
 "This table defines the colour types">
 <caption>Allowed
 combinations of <a>colour type</a> and bit depth</caption>
@@ -3258,40 +3258,40 @@ combinations of <a>colour type</a> and bit depth</caption>
 </tr>
 
 <tr>
-<td class="Regular">Greyscale</td>
-<td class="Regular" align="center">0</td>
-<td class="Regular">1, 2, 4, 8, 16</td>
-<td class="Regular">Each pixel is a greyscale sample</td>
+<td>Greyscale</td>
+<td align="center">0</td>
+<td>1, 2, 4, 8, 16</td>
+<td>Each pixel is a greyscale sample</td>
 </tr>
 
 <tr>
-<td class="Regular">Truecolour</td>
-<td class="Regular" align="center">2</td>
-<td class="Regular">8, 16</td>
-<td class="Regular">Each pixel is an R,G,B triple</td>
+<td>Truecolour</td>
+<td align="center">2</td>
+<td>8, 16</td>
+<td>Each pixel is an R,G,B triple</td>
 </tr>
 
 <tr>
-<td class="Regular">Indexed-colour</td>
-<td class="Regular" align="center">3</td>
-<td class="Regular">1, 2, 4, 8</td>
-<td class="Regular">Each pixel is a palette index; a <a href="#11PLTE"><span
+<td>Indexed-colour</td>
+<td align="center">3</td>
+<td>1, 2, 4, 8</td>
+<td>Each pixel is a palette index; a <a href="#11PLTE"><span
 class="chunk">PLTE</span></a> chunk shall appear.</td>
 </tr>
 
 <tr>
-<td class="Regular">Greyscale with alpha</td>
-<td class="Regular" align="center">4</td>
-<td class="Regular">8, 16</td>
-<td class="Regular">Each pixel is a greyscale sample followed by an alpha
+<td>Greyscale with alpha</td>
+<td align="center">4</td>
+<td>8, 16</td>
+<td>Each pixel is a greyscale sample followed by an alpha
 sample.</td>
 </tr>
 
 <tr>
-<td class="Regular">Truecolour with alpha</td>
-<td class="Regular" align="center">6</td>
-<td class="Regular">8, 16</td>
-<td class="Regular">Each pixel is an R,G,B triple followed by an alpha
+<td>Truecolour with alpha</td>
+<td align="center">6</td>
+<td>8, 16</td>
+<td>Each pixel is an R,G,B triple followed by an alpha
 sample.</td>
 </tr>
 </table>
@@ -3334,21 +3334,21 @@ Palette</h2>
 <p>The <span class="chunk">PLTE</span> chunk contains from 1 to
 256 palette entries, each a three-byte series of the form:</p>
 
-<table class="Regular" summary=
+<table summary=
 "This table defines the PLTE palette table entries">
 <tr>
-<td class="Regular">Red</td>
-<td class="Regular">1 byte</td>
+<td>Red</td>
+<td>1 byte</td>
 </tr>
 
 <tr>
-<td class="Regular">Green</td>
-<td class="Regular">1 byte</td>
+<td>Green</td>
+<td>1 byte</td>
 </tr>
 
 <tr>
-<td class="Regular">Blue</td>
-<td class="Regular">1 byte</td>
+<td>Blue</td>
+<td>1 byte</td>
 </tr>
 </table>
 
@@ -3470,15 +3470,15 @@ greyscale and truecolour images). The <span class=
 </p>
 
 <!-- ************Page Break******************* -->
-<table class="Regular" summary=
+<table summary=
 "This table defines the tRNS chunk">
 <tr>
 <th colspan="2"><a>Colour type</a> 0</th>
 </tr>
 
 <tr>
-<td class="Regular">Grey sample value</td>
-<td class="Regular">2 bytes</td>
+<td>Grey sample value</td>
+<td>2 bytes</td>
 </tr>
 
 <tr>
@@ -3486,18 +3486,18 @@ greyscale and truecolour images). The <span class=
 </tr>
 
 <tr>
-<td class="Regular">Red sample value</td>
-<td class="Regular">2 bytes</td>
+<td>Red sample value</td>
+<td>2 bytes</td>
 </tr>
 
 <tr>
-  <td class="Regular">Green sample value</td>
-  <td class="Regular">2 bytes</td>
+  <td>Green sample value</td>
+  <td>2 bytes</td>
 </tr>
 
 <tr>
-<td class="Regular">Blue sample value</td>
-<td class="Regular">2 bytes</td>
+<td>Blue sample value</td>
+<td>2 bytes</td>
 </tr>
 
 <tr>
@@ -3505,18 +3505,18 @@ greyscale and truecolour images). The <span class=
 </tr>
 
 <tr>
-<td class="Regular">Alpha for palette index 0</td>
-<td class="Regular">1 byte</td>
+<td>Alpha for palette index 0</td>
+<td>1 byte</td>
 </tr>
 
 <tr>
-<td class="Regular">Alpha for palette index 1</td>
-<td class="Regular">1 byte</td>
+<td>Alpha for palette index 1</td>
+<td>1 byte</td>
 </tr>
 
 <tr>
-<td class="Regular">...etc...</td>
-<td class="Regular">1 byte</td>
+<td>...etc...</td>
+<td>1 byte</td>
 </tr>
 </table>
 
@@ -3588,7 +3588,7 @@ more sophisticated support for colour management and control.</p>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<table class="Regular numbered simple" summary=
+<table class="numbered simple" summary=
 "This table defines the cHRM chunk">
 <caption>cHRM chunk components</caption>
 
@@ -3598,43 +3598,43 @@ more sophisticated support for colour management and control.</p>
 </tr>
 
 <tr>
-<td class="Regular">White point x</td>
-<td class="Regular">4 bytes</td>
+<td>White point x</td>
+<td>4 bytes</td>
 </tr>
 
 <tr>
-<td class="Regular">White point y</td>
-<td class="Regular">4 bytes</td>
+<td>White point y</td>
+<td>4 bytes</td>
 </tr>
 
 <tr>
-<td class="Regular">Red x</td>
-<td class="Regular">4 bytes</td>
+<td>Red x</td>
+<td>4 bytes</td>
 </tr>
 
 <tr>
-<td class="Regular">Red y</td>
-<td class="Regular">4 bytes</td>
+<td>Red y</td>
+<td>4 bytes</td>
 </tr>
 
 <tr>
-<td class="Regular">Green x</td>
-<td class="Regular">4 bytes</td>
+<td>Green x</td>
+<td>4 bytes</td>
 </tr>
 
 <tr>
-<td class="Regular">Green y</td>
-<td class="Regular">4 bytes</td>
+<td>Green y</td>
+<td>4 bytes</td>
 </tr>
 
 <tr>
-<td class="Regular">Blue x</td>
-<td class="Regular">4 bytes</td>
+<td>Blue x</td>
+<td>4 bytes</td>
 </tr>
 
 <tr>
-<td class="Regular">Blue y</td>
-<td class="Regular">4 bytes</td>
+<td>Blue y</td>
+<td>4 bytes</td>
 </tr>
 </table>
 
@@ -3685,11 +3685,11 @@ colour fidelity may wish to use an <a href="#11sRGB"><span class=
 
 <p>The <span class="chunk">gAMA</span> chunk contains:</p>
 
-<table class="Regular" summary=
+<table summary=
 "This table defines the gAMA chunk">
 <tr>
-<td class="Regular">Image gamma</td>
-<td class="Regular">4 bytes</td>
+<td>Image gamma</td>
+<td>4 bytes</td>
 </tr>
 </table>
 
@@ -3721,26 +3721,26 @@ Embedded ICC profile</h2>
 
 <p>The <span class="chunk">iCCP</span> chunk contains:</p>
 
-<table class="Regular" summary=
+<table summary=
 "This table defines the iCCP chunk">
 <tr>
-<td class="Regular">Profile name</td>
-<td class="Regular">1-79 bytes (character string)</td>
+<td>Profile name</td>
+<td>1-79 bytes (character string)</td>
 </tr>
 
 <tr>
-<td class="Regular">Null separator</td>
-<td class="Regular">1 byte (null character)</td>
+<td>Null separator</td>
+<td>1 byte (null character)</td>
 </tr>
 
 <tr>
-<td class="Regular">Compression method</td>
-<td class="Regular">1 byte</td>
+<td>Compression method</td>
+<td>1 byte</td>
 </tr>
 
 <tr>
-<td class="Regular">Compressed profile</td>
-<td class="Regular">n bytes</td>
+<td>Compressed profile</td>
+<td>n bytes</td>
 </tr>
 </table>
 
@@ -3815,7 +3815,7 @@ supported by PNG.</p>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<table class="Regular numbered simple" summary=
+<table class="numbered simple" summary=
 "This table defines the sBIT chunk">
 <caption>sBIT chunk contents</caption>
 
@@ -3824,8 +3824,8 @@ supported by PNG.</p>
 </tr>
 
 <tr>
-<td class="Regular">significant greyscale bits</td>
-<td class="Regular">1 byte</td>
+<td>significant greyscale bits</td>
+<td>1 byte</td>
 </tr>
 
 <tr>
@@ -3833,18 +3833,18 @@ supported by PNG.</p>
 </tr>
 
 <tr>
-<td class="Regular">significant red bits</td>
-<td class="Regular">1 byte</td>
+<td>significant red bits</td>
+<td>1 byte</td>
 </tr>
 
 <tr>
-<td class="Regular">significant green bits</td>
-<td class="Regular">1 byte</td>
+<td>significant green bits</td>
+<td>1 byte</td>
 </tr>
 
 <tr>
-<td class="Regular">significant blue bits</td>
-<td class="Regular">1 byte</td>
+<td>significant blue bits</td>
+<td>1 byte</td>
 </tr>
 
 <tr>
@@ -3852,13 +3852,13 @@ supported by PNG.</p>
 </tr>
 
 <tr>
-<td class="Regular">significant greyscale bits</td>
-<td class="Regular">1 byte</td>
+<td>significant greyscale bits</td>
+<td>1 byte</td>
 </tr>
 
 <tr>
-<td class="Regular">significant alpha bits</td>
-<td class="Regular">1 byte</td>
+<td>significant alpha bits</td>
+<td>1 byte</td>
 </tr>
 
 <tr>
@@ -3866,23 +3866,23 @@ supported by PNG.</p>
 </tr>
 
 <tr>
-<td class="Regular">significant red bits</td>
-<td class="Regular">1 byte</td>
+<td>significant red bits</td>
+<td>1 byte</td>
 </tr>
 
 <tr>
-<td class="Regular">significant green bits</td>
-<td class="Regular">1 byte</td>
+<td>significant green bits</td>
+<td>1 byte</td>
 </tr>
 
 <tr>
-<td class="Regular">significant blue bits</td>
-<td class="Regular">1 byte</td>
+<td>significant blue bits</td>
+<td>1 byte</td>
 </tr>
 
 <tr>
-<td class="Regular">significant alpha bits</td>
-<td class="Regular">1 byte</td>
+<td>significant alpha bits</td>
+<td>1 byte</td>
 </tr>
 </table>
 
@@ -3919,7 +3919,7 @@ rendering intent defined by the International Color Consortium
 
 <p>The <span class="chunk">sRGB</span> chunk contains:</p>
 
-<table class="Regular numbered simple" summary=
+<table class="numbered simple" summary=
 "This table defines the sRGB chunk">
 <caption>sRGB chunk contents</caption>
 
@@ -3929,14 +3929,14 @@ rendering intent defined by the International Color Consortium
 </tr>
 
 <tr>
-<td class="Regular">Rendering intent</td>
-<td class="Regular">1 byte</td>
+<td>Rendering intent</td>
+<td>1 byte</td>
 </tr>
 </table>
 
 <p>The following values are defined for rendering intent:</p>
 
-<table class="Regular numbered simple" summary=
+<table class="numbered simple" summary=
 "This table defines the values of rendering intent in the sRGB chunk">
 <caption>Rendering intent values</caption>
 
@@ -3947,31 +3947,31 @@ rendering intent defined by the International Color Consortium
 </tr>
 
 <tr>
-<td class="Regular">0</td>
-<td class="Regular">Perceptual</td>
-<td class="Regular">for images preferring good adaptation to the output device
+<td>0</td>
+<td>Perceptual</td>
+<td>for images preferring good adaptation to the output device
 gamut at the expense of colorimetric accuracy, such as
 photographs.</td>
 </tr>
 
 <tr>
-<td class="Regular">1</td>
-<td class="Regular">Relative colorimetric</td>
-<td class="Regular">for images requiring colour appearance matching (relative to
+<td>1</td>
+<td>Relative colorimetric</td>
+<td>for images requiring colour appearance matching (relative to
 the output device white point), such as logos.</td>
 </tr>
 
 <tr>
-<td class="Regular">2</td>
-<td class="Regular">Saturation</td>
-<td class="Regular">for images preferring preservation of saturation at the
+<td>2</td>
+<td>Saturation</td>
+<td>for images preferring preservation of saturation at the
 expense of hue and lightness, such as charts and graphs.</td>
 </tr>
 
 <tr>
-<td class="Regular">3</td>
-<td class="Regular">Absolute colorimetric</td>
-<td class="Regular">for images requiring preservation of absolute colorimetry,
+<td>3</td>
+<td>Absolute colorimetric</td>
+<td>for images requiring preservation of absolute colorimetry,
 such as previews of images destined for a different output device
 (proofs).</td>
 </tr>
@@ -3985,7 +3985,7 @@ optionally a <a href="#11cHRM"><span class=
 that do not use the <span class="chunk">sRGB</span> chunk. Only
 the following values shall be used.</p>
 
-<table class="Regular numbered simple" summary=
+<table class="numbered simple" summary=
 "This table defines the gAMA and cHRM values for sRGB">
 <caption>gAMA and cHRM values for sRGB</caption>
 
@@ -3995,8 +3995,8 @@ the following values shall be used.</p>
 </tr>
 
 <tr>
-<td class="Regular">Gamma</td>
-<td class="Regular">45455</td>
+<td>Gamma</td>
+<td>45455</td>
 </tr>
 
 <tr>
@@ -4005,43 +4005,43 @@ the following values shall be used.</p>
 </tr>
 
 <tr>
-<td class="Regular">White point x</td>
-<td class="Regular">31270</td>
+<td>White point x</td>
+<td>31270</td>
 </tr>
 
 <tr>
-<td class="Regular">White point y</td>
-<td class="Regular">32900</td>
+<td>White point y</td>
+<td>32900</td>
 </tr>
 
 <tr>
-<td class="Regular">Red x</td>
-<td class="Regular">64000</td>
+<td>Red x</td>
+<td>64000</td>
 </tr>
 
 <tr>
-<td class="Regular">Red y</td>
-<td class="Regular">33000</td>
+<td>Red y</td>
+<td>33000</td>
 </tr>
 
 <tr>
-<td class="Regular">Green x</td>
-<td class="Regular">30000</td>
+<td>Green x</td>
+<td>30000</td>
 </tr>
 
 <tr>
-<td class="Regular">Green y</td>
-<td class="Regular">60000</td>
+<td>Green y</td>
+<td>60000</td>
 </tr>
 
 <tr>
-<td class="Regular">Blue x</td>
-<td class="Regular">15000</td>
+<td>Blue x</td>
+<td>15000</td>
 </tr>
 
 <tr>
-<td class="Regular">Blue y</td>
-<td class="Regular">6000</td>
+<td>Blue y</td>
+<td>6000</td>
 </tr>
 </table>
 
@@ -4201,7 +4201,7 @@ more than one with the same keyword is permitted.</p>
 <p>The following keywords are predefined and should be used where
 appropriate.</p>
 
-<table class="Regular numbered simple" summary=
+<table class="numbered simple" summary=
 "This table defines the keywords defined for tEXt, iTXt and zTXt chunks">
 <caption>Predefined keywords</caption>
 
@@ -4211,58 +4211,58 @@ appropriate.</p>
 </tr>
 
 <tr>
-<td class="Regular">Title</td>
-<td class="Regular">Short (one line) title or caption for image</td>
+<td>Title</td>
+<td>Short (one line) title or caption for image</td>
 </tr>
 
 <tr>
-<td class="Regular">Author</td>
-<td class="Regular">Name of image's creator</td>
+<td>Author</td>
+<td>Name of image's creator</td>
 </tr>
 
 <tr>
-<td class="Regular">Description</td>
-<td class="Regular">Description of image (possibly long)</td>
+<td>Description</td>
+<td>Description of image (possibly long)</td>
 </tr>
 
 <tr>
-<td class="Regular">Copyright</td>
-<td class="Regular">Copyright notice</td>
+<td>Copyright</td>
+<td>Copyright notice</td>
 </tr>
 
 <tr>
-<td class="Regular">Creation Time</td>
-<td class="Regular">Time of original image creation</td>
+<td>Creation Time</td>
+<td>Time of original image creation</td>
 </tr>
 
 <tr>
-<td class="Regular">Software</td>
-<td class="Regular">Software used to create the image</td>
+<td>Software</td>
+<td>Software used to create the image</td>
 </tr>
 
 <tr>
-<td class="Regular">Disclaimer</td>
-<td class="Regular">Legal disclaimer</td>
+<td>Disclaimer</td>
+<td>Legal disclaimer</td>
 </tr>
 
 <tr>
-<td class="Regular">Warning</td>
-<td class="Regular">Warning of nature of content</td>
+<td>Warning</td>
+<td>Warning of nature of content</td>
 </tr>
 
 <tr>
-<td class="Regular">Source</td>
-<td class="Regular">Device used to create the image</td>
+<td>Source</td>
+<td>Device used to create the image</td>
 </tr>
 
 <tr>
-<td class="Regular">Comment</td>
-<td class="Regular">Miscellaneous comment</td>
+<td>Comment</td>
+<td>Miscellaneous comment</td>
 </tr>
 
 <tr>
-  <td class="Regular">XML:com.adobe.xmp</td>
-  <td class="Regular">Extensible Metadata Platform (XMP) information,
+  <td>XML:com.adobe.xmp</td>
+  <td>Extensible Metadata Platform (XMP) information,
     formatted as required by the XMP specification [[XMP]].
     The use of <span class="chunk">iTXt</span>,
     with Compression Flag set to 0,
@@ -4331,21 +4331,21 @@ Textual data</h2>
 <p>Each <span class="chunk">tEXt</span> chunk contains a keyword
 and a text string, in the format:</p>
 
-<table class="Regular" summary=
+<table summary=
 "This table defines the tEXt chunk">
 <tr>
-<td class="Regular">Keyword</td>
-<td class="Regular">1-79 bytes (character string)</td>
+<td>Keyword</td>
+<td>1-79 bytes (character string)</td>
 </tr>
 
 <tr>
-<td class="Regular">Null separator</td>
-<td class="Regular">1 byte (null character)</td>
+<td>Null separator</td>
+<td>1 byte (null character)</td>
 </tr>
 
 <tr>
-<td class="Regular">Text string</td>
-<td class="Regular">0 or more bytes (character string)</td>
+<td>Text string</td>
+<td>0 or more bytes (character string)</td>
 </tr>
 </table>
 
@@ -4390,26 +4390,26 @@ chunk is recommended for storing large blocks of text.</p>
 
 <p>A <span class="chunk">zTXt</span> chunk contains:</p>
 
-<table class="Regular" summary=
+<table summary=
 "This table defines the zTXt chunk">
 <tr>
-<td class="Regular">Keyword</td>
-<td class="Regular">1-79 bytes (character string)</td>
+<td>Keyword</td>
+<td>1-79 bytes (character string)</td>
 </tr>
 
 <tr>
-<td class="Regular">Null separator</td>
-<td class="Regular">1 byte (null character)</td>
+<td>Null separator</td>
+<td>1 byte (null character)</td>
 </tr>
 
 <tr>
-<td class="Regular">Compression method</td>
-<td class="Regular">1 byte</td>
+<td>Compression method</td>
+<td>1 byte</td>
 </tr>
 
 <tr>
-<td class="Regular">Compressed text datastream</td>
-<td class="Regular">n bytes</td>
+<td>Compressed text datastream</td>
+<td>n bytes</td>
 </tr>
 </table>
 
@@ -4442,51 +4442,51 @@ International textual data</h2>
 
 <p>An <span class="chunk">iTXt</span> chunk contains:</p>
 
-<table class="Regular" summary=
+<table summary=
 "This table defines the iTXt chunk">
 <tr>
-<td class="Regular">Keyword</td>
-<td class="Regular">1-79 bytes (character string)</td>
+<td>Keyword</td>
+<td>1-79 bytes (character string)</td>
 </tr>
 
 <tr>
-<td class="Regular">Null separator</td>
-<td class="Regular">1 byte (null character)</td>
+<td>Null separator</td>
+<td>1 byte (null character)</td>
 </tr>
 
 <tr>
-<td class="Regular">Compression flag</td>
-<td class="Regular">1 byte</td>
+<td>Compression flag</td>
+<td>1 byte</td>
 </tr>
 
 <tr>
-<td class="Regular">Compression method</td>
-<td class="Regular">1 byte</td>
+<td>Compression method</td>
+<td>1 byte</td>
 </tr>
 
 <tr>
-<td class="Regular">Language tag</td>
-<td class="Regular">0 or more bytes (character string)</td>
+<td>Language tag</td>
+<td>0 or more bytes (character string)</td>
 </tr>
 
 <tr>
-<td class="Regular">Null separator</td>
-<td class="Regular">1 byte (null character)</td>
+<td>Null separator</td>
+<td>1 byte (null character)</td>
 </tr>
 
 <tr>
-<td class="Regular">Translated keyword</td>
-<td class="Regular">0 or more bytes</td>
+<td>Translated keyword</td>
+<td>0 or more bytes</td>
 </tr>
 
 <tr>
-<td class="Regular">Null separator</td>
-<td class="Regular">1 byte (null character)</td>
+<td>Null separator</td>
+<td>1 byte (null character)</td>
 </tr>
 
 <tr>
-<td class="Regular">Text</td>
-<td class="Regular">0 or more bytes</td>
+<td>Text</td>
+<td>0 or more bytes</td>
 </tr>
 </table>
 
@@ -4556,7 +4556,7 @@ larger page (as in a browser), the <span class=
 "chunk">bKGD</span> chunk should be ignored. The <span class=
 "chunk">bKGD</span> chunk contains:</p>
 
-<table class="Regular numbered simple" summary=
+<table class="numbered simple" summary=
 "This table defines the bKGD chunk">
 <caption>bKGD chunk contents</caption>
 
@@ -4565,8 +4565,8 @@ larger page (as in a browser), the <span class=
 </tr>
 
 <tr>
-<td class="Regular">Greyscale</td>
-<td class="Regular">2 bytes</td>
+<td>Greyscale</td>
+<td>2 bytes</td>
 </tr>
 
 <tr>
@@ -4574,18 +4574,18 @@ larger page (as in a browser), the <span class=
 </tr>
 
 <tr>
-<td class="Regular">Red</td>
-<td class="Regular">2 bytes</td>
+<td>Red</td>
+<td>2 bytes</td>
 </tr>
 
 <tr>
-<td class="Regular">Green</td>
-<td class="Regular">2 bytes</td>
+<td>Green</td>
+<td>2 bytes</td>
 </tr>
 
 <tr>
-<td class="Regular">Blue</td>
-<td class="Regular">2 bytes</td>
+<td>Blue</td>
+<td>2 bytes</td>
 </tr>
 
 <tr>
@@ -4593,8 +4593,8 @@ larger page (as in a browser), the <span class=
 </tr>
 
 <tr>
-<td class="Regular">Palette index</td>
-<td class="Regular">1 byte</td>
+<td>Palette index</td>
+<td>1 byte</td>
 </tr>
 </table>
 
@@ -4626,15 +4626,15 @@ Image histogram</h2>
 <p>The <span class="chunk">hIST</span> chunk contains a series of
 two-byte (16-bit) unsigned integers:</p>
 
-<table class="Regular" summary=
+<table summary=
 "This table defines the hIST chunk">
 <tr>
-<td class="Regular">Frequency</td>
-<td class="Regular">2 bytes (unsigned integer)</td>
+<td>Frequency</td>
+<td>2 bytes (unsigned integer)</td>
 </tr>
 <tr>
-<td class="Regular">...etc...</td>
-<td class="Regular">&nbsp;</td>
+<td>...etc...</td>
+<td>&nbsp;</td>
 </tr>
 </table>
 
@@ -4679,7 +4679,7 @@ Physical pixel dimensions</h2>
 intended pixel size or aspect ratio for display of the image. It
 contains:</p>
 
-<table class="Regular numbered simple" summary=
+<table class="numbered simple" summary=
 "This table defines the pHYs chunk">
 <caption>pHYs chunk contents</caption>
 
@@ -4689,24 +4689,24 @@ contains:</p>
 </tr>
 
 <tr>
-<td class="Regular">Pixels per unit, X axis</td>
-<td class="Regular">4 bytes (PNG unsigned integer)</td>
+<td>Pixels per unit, X axis</td>
+<td>4 bytes (PNG unsigned integer)</td>
 </tr>
 
 <tr>
-<td class="Regular">Pixels per unit, Y axis</td>
-<td class="Regular">4 bytes (PNG unsigned integer)</td>
+<td>Pixels per unit, Y axis</td>
+<td>4 bytes (PNG unsigned integer)</td>
 </tr>
 
 <tr>
-<td class="Regular">Unit specifier</td>
-<td class="Regular">1 byte</td>
+<td>Unit specifier</td>
+<td>1 byte</td>
 </tr>
 </table>
 
 <p>The following values are defined for the unit specifier:</p>
 
-<table class="Regular numbered simple" summary=
+<table class="numbered simple" summary=
 "This table defines the allowed values for the unit specifier in the pHYs chunk">
 <caption>Unit specifier values</caption>
 
@@ -4716,13 +4716,13 @@ contains:</p>
 </tr>
 
 <tr>
-<td class="Regular">0</td>
-<td class="Regular">unit is unknown</td>
+<td>0</td>
+<td>unit is unknown</td>
 </tr>
 
 <tr>
-<td class="Regular">1</td>
-<td class="Regular">unit is the metre</td>
+<td>1</td>
+<td>unit is the metre</td>
 </tr>
 </table>
 
@@ -4748,7 +4748,7 @@ Suggested palette</h2>
 
 <p>The <span class="chunk">sPLT</span> chunk contains:</p>
 
-<table class="Regular numbered simple" summary=
+<table class="numbered simple" summary=
 "This table defines the sPLT chunk">
 <caption>sPLT chunk contents</caption>
 
@@ -4758,48 +4758,48 @@ Suggested palette</h2>
 </tr>
 
 <tr>
-<td class="Regular">Palette name</td>
-<td class="Regular">1-79 bytes (character string)</td>
+<td>Palette name</td>
+<td>1-79 bytes (character string)</td>
 </tr>
 
 <tr>
-<td class="Regular">Null separator</td>
-<td class="Regular">1 byte (null character)</td>
+<td>Null separator</td>
+<td>1 byte (null character)</td>
 </tr>
 
 <tr>
-<td class="Regular">Sample depth</td>
-<td class="Regular">1 byte</td>
+<td>Sample depth</td>
+<td>1 byte</td>
 </tr>
 
 <tr>
-<td class="Regular">Red</td>
-<td class="Regular">1 or 2 bytes</td>
+<td>Red</td>
+<td>1 or 2 bytes</td>
 </tr>
 
 <tr>
-<td class="Regular">Green</td>
-<td class="Regular">1 or 2 bytes</td>
+<td>Green</td>
+<td>1 or 2 bytes</td>
 </tr>
 
 <tr>
-<td class="Regular">Blue</td>
-<td class="Regular">1 or 2 bytes</td>
+<td>Blue</td>
+<td>1 or 2 bytes</td>
 </tr>
 
 <tr>
-<td class="Regular">Alpha</td>
-<td class="Regular">1 or 2 bytes</td>
+<td>Alpha</td>
+<td>1 or 2 bytes</td>
 </tr>
 
 <tr>
-<td class="Regular">Frequency</td>
-<td class="Regular">2 bytes</td>
+<td>Frequency</td>
+<td>2 bytes</td>
 </tr>
 
 <tr>
-<td class="Regular">...etc...</td>
-<td class="Regular">&nbsp;</td>
+<td>...etc...</td>
+<td>&nbsp;</td>
 </tr>
 </table>
 
@@ -4977,7 +4977,7 @@ Image last-modification time</h2>
 the last image modification (<strong>not</strong> the time of initial
 image creation). It contains:</p>
 
-<table class="Regular numbered simple" summary=
+<table class="numbered simple" summary=
 "This table defines the tIME chunk">
 <caption>tIME chunk contents</caption>
 
@@ -4987,33 +4987,33 @@ image creation). It contains:</p>
 </tr>
 
 <tr>
-<td class="Regular">Year</td>
-<td class="Regular">2 bytes (complete; for example, 1995, <strong>not</strong> 95)</td>
+<td>Year</td>
+<td>2 bytes (complete; for example, 1995, <strong>not</strong> 95)</td>
 </tr>
 
 <tr>
-<td class="Regular">Month</td>
-<td class="Regular">1 byte (1-12)</td>
+<td>Month</td>
+<td>1 byte (1-12)</td>
 </tr>
 
 <tr>
-<td class="Regular">Day</td>
-<td class="Regular">1 byte (1-31)</td>
+<td>Day</td>
+<td>1 byte (1-31)</td>
 </tr>
 
 <tr>
-<td class="Regular">Hour</td>
-<td class="Regular">1 byte (0-23)</td>
+<td>Hour</td>
+<td>1 byte (0-23)</td>
 </tr>
 
 <tr>
-<td class="Regular">Minute</td>
-<td class="Regular">1 byte (0-59)</td>
+<td>Minute</td>
+<td>1 byte (0-59)</td>
 </tr>
 
 <tr>
-<td class="Regular">Second</td>
-<td class="Regular">1 byte (0-60) (to allow for leap seconds)</td>
+<td>Second</td>
+<td>1 byte (0-60) (to allow for leap seconds)</td>
 </tr>
 </table>
 
@@ -5043,16 +5043,16 @@ the <a>image data</a> are changed.</p>
     animated PNG image, gives the number of frames, and the number of times to loop.
     It contains:</p>
 
-    <table class="Regular" summary=
+    <table summary=
     "This table defines the acTL chunk">
     <tr>
-    <td class="Regular">`num_frames`</td>
-    <td class="Regular">4 bytes</td>
+    <td>`num_frames`</td>
+    <td>4 bytes</td>
     </tr>
 
     <tr>
-    <td class="Regular">`num_plays`</td>
-    <td class="Regular">4 bytes</td>
+    <td>`num_plays`</td>
+    <td>4 bytes</td>
     </tr>
     </table>
 
@@ -5099,7 +5099,7 @@ the <a>image data</a> are changed.</p>
       is required for each frame.
       It contains:</p>
 
-    <table class="Regular numbered simple" summary=
+    <table class="numbered simple" summary=
     "This table defines the fcTL chunk">
     <caption>fcTL chunk contents</caption>
 
@@ -5109,48 +5109,48 @@ the <a>image data</a> are changed.</p>
     </tr>
 
     <tr>
-    <td class="Regular">`sequence_number`</td>
-    <td class="Regular">4 bytes</td>
+    <td>`sequence_number`</td>
+    <td>4 bytes</td>
     </tr>
 
     <tr>
-    <td class="Regular">`width`</td>
-    <td class="Regular">4 bytes</td>
+    <td>`width`</td>
+    <td>4 bytes</td>
     </tr>
 
     <tr>
-    <td class="Regular">`height`</td>
-    <td class="Regular">4 bytes</td>
+    <td>`height`</td>
+    <td>4 bytes</td>
     </tr>
 
     <tr>
-    <td class="Regular">`x_offset`</td>
-    <td class="Regular">4 bytes</td>
+    <td>`x_offset`</td>
+    <td>4 bytes</td>
     </tr>
 
     <tr>
-    <td class="Regular">`y_offset`</td>
-    <td class="Regular">4 bytes</td>
+    <td>`y_offset`</td>
+    <td>4 bytes</td>
     </tr>
 
     <tr>
-    <td class="Regular">`delay_num`</td>
-    <td class="Regular">2 bytes</td>
+    <td>`delay_num`</td>
+    <td>2 bytes</td>
     </tr>
 
     <tr>
-    <td class="Regular">`delay_den`</td>
-    <td class="Regular">2 bytes</td>
+    <td>`delay_den`</td>
+    <td>2 bytes</td>
     </tr>
 
     <tr>
-    <td class="Regular">`dispose_op`</td>
-    <td class="Regular">1 byte</td>
+    <td>`dispose_op`</td>
+    <td>1 byte</td>
     </tr>
 
     <tr>
-      <td class="Regular">`blend_op`</td>
-      <td class="Regular">1 byte</td>
+      <td>`blend_op`</td>
+      <td>1 byte</td>
     </tr>
     </table>
 
@@ -5203,19 +5203,19 @@ the <a>image data</a> are changed.</p>
 
 <p>Valid values for `dispose_op` are: </p>
 
-<table class="Regular" summary=
+<table summary=
     "This table defines the disposal operators">
     <tr>
-    <td class="Regular">0</td>
-    <td class="Regular">`APNG_DISPOSE_OP_NONE`</td>
+    <td>0</td>
+    <td>`APNG_DISPOSE_OP_NONE`</td>
     </tr>
     <tr>
-    <td class="Regular">1</td>
-    <td class="Regular">`APNG_DISPOSE_OP_BACKGROUND`</td>
+    <td>1</td>
+    <td>`APNG_DISPOSE_OP_BACKGROUND`</td>
     </tr>
     <tr>
-    <td class="Regular">2</td>
-    <td class="Regular">`APNG_DISPOSE_OP_PREVIOUS`</td>
+    <td>2</td>
+    <td>`APNG_DISPOSE_OP_PREVIOUS`</td>
     </tr>
 </table>
 
@@ -5239,15 +5239,15 @@ the <a>image data</a> are changed.</p>
 
   <p>Valid values for `blend_op` are:</p>
 
-  <table class="Regular" summary=
+  <table summary=
     "This table defines the blend operators">
     <tr>
-    <td class="Regular">0</td>
-    <td class="Regular">`APNG_BLEND_OP_SOURCE`</td>
+    <td>0</td>
+    <td>`APNG_BLEND_OP_SOURCE`</td>
     </tr>
     <tr>
-    <td class="Regular">1</td>
-    <td class="Regular">`APNG_BLEND_OP_OVER`</td>
+    <td>1</td>
+    <td>`APNG_BLEND_OP_OVER`</td>
     </tr>
 </table>
 
@@ -5336,7 +5336,7 @@ the <a>image data</a> are changed.</p>
       for all frames after the first one).
     It contains:</p>
 
-    <table class="Regular numbered simple" summary=
+    <table class="numbered simple" summary=
     "This table defines the fdAT chunk">
     <caption>fdAT chunk contents</caption>
 
@@ -5346,13 +5346,13 @@ the <a>image data</a> are changed.</p>
     </tr>
 
     <tr>
-    <td class="Regular">`sequence_number`</td>
-    <td class="Regular">4 bytes</td>
+    <td>`sequence_number`</td>
+    <td>4 bytes</td>
     </tr>
 
     <tr>
-    <td class="Regular">`frame_data`</td>
-    <td class="Regular"><i>n</i> bytes</td>
+    <td>`frame_data`</td>
+    <td><i>n</i> bytes</td>
     </tr>
     </table>
 
@@ -5704,7 +5704,7 @@ which are given in <a href="#12-table121">
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <!-- Maintain a fragment named "12-table121" to preserve incoming links to it -->
-<table id="12-table121" class="Regular numbered simple" summary=
+<table id="12-table121" class="numbered simple" summary=
 "CCIR 709 primaries and D65 whitepoint">
 <caption>CCIR 709
 primaries and D65 whitepoint</caption>
@@ -5718,19 +5718,19 @@ primaries and D65 whitepoint</caption>
 </tr>
 
 <tr>
-<td class="Regular">x</td>
-<td class="Regular">0.640</td>
-<td class="Regular">0.300</td>
-<td class="Regular">0.150</td>
-<td class="Regular">0.3127</td>
+<td>x</td>
+<td>0.640</td>
+<td>0.300</td>
+<td>0.150</td>
+<td>0.3127</td>
 </tr>
 
 <tr>
-<td class="Regular">y</td>
-<td class="Regular">0.330</td>
-<td class="Regular">0.600</td>
-<td class="Regular">0.060</td>
-<td class="Regular">0.3290</td>
+<td>y</td>
+<td>0.330</td>
+<td>0.600</td>
+<td>0.060</td>
+<td>0.3290</td>
 </tr>
 </table>
 
@@ -5739,7 +5739,7 @@ given in <a href="#12-table122">
 </a>.</p>
 
 <!-- Maintain a fragment named "12-table122" to preserve incoming links to it -->
-<table id="12-table122" class="Regular numbered simple" summary=
+<table id="12-table122" class="numbered simple" summary=
 "CSMPTE-C video standard">
 <caption>SMPTE-C
 video standard</caption>
@@ -5753,19 +5753,19 @@ video standard</caption>
 </tr>
 
 <tr>
-<td class="Regular">x</td>
-<td class="Regular">0.630</td>
-<td class="Regular">0.310</td>
-<td class="Regular">0.155</td>
-<td class="Regular">0.3127</td>
+<td>x</td>
+<td>0.630</td>
+<td>0.310</td>
+<td>0.155</td>
+<td>0.3127</td>
 </tr>
 
 <tr>
-<td class="Regular">y</td>
-<td class="Regular">0.340</td>
-<td class="Regular">0.595</td>
-<td class="Regular">0.070</td>
-<td class="Regular">0.3290</td>
+<td>y</td>
+<td>0.340</td>
+<td>0.595</td>
+<td>0.070</td>
+<td>0.3290</td>
 </tr>
 </table>
 
@@ -6793,7 +6793,7 @@ equation</p>
 
 <p>where</p>
 
-<p><tt>MAXINSAMPLE = (2<sup>sampledepth</sup>)-1</tt><br class="xhtml" />
+<p><tt>MAXINSAMPLE = (2<sup>sampledepth</sup>)-1</tt><br />
  <tt>MAXOUTSAMPLE = (2<sup>desired_sampledepth</sup>)-1</tt></p>
 
 <p>A slightly less accurate conversion is achieved by simply
@@ -6855,9 +6855,9 @@ function of the display system. This can be done by
 calculating:</p>
 
 <p><tt>sample = integer_sample / (2<sup>sampledepth</sup> -
-1.0)<br class="xhtml" />
- display_output = sample<sup>1.0/gamma</sup><br class="xhtml" />
- display_input = inverse_display_transfer(display_output)<br class="xhtml" />
+1.0)<br />
+ display_output = sample<sup>1.0/gamma</sup><br />
+ display_input = inverse_display_transfer(display_output)<br />
  framebuf_sample = floor((display_input *
 MAX_FRAMEBUF_SAMPLE)+0.5)</tt></p>
 
@@ -8135,35 +8135,35 @@ which non-linear transfer functions may occur and which may be
 modelled by power laws. The characteristic exponent associated
 with each is given a specific name.</p>
 
-<table class="Regular" summary=
+<table summary=
 "This table describes characteristic exponents">
 <tr>
-<td class="Regular"><tt>input_exponent</tt> </td>
-<td class="Regular">the exponent of the image sensor.</td>
+<td><tt>input_exponent</tt> </td>
+<td>the exponent of the image sensor.</td>
 </tr>
 
 <tr>
-<td class="Regular"><tt>encoding_exponent</tt> </td>
-<td class="Regular">the exponent of any transfer function performed by the
+<td><tt>encoding_exponent</tt> </td>
+<td>the exponent of any transfer function performed by the
 process or device writing the datastream.</td>
 </tr>
 
 <tr>
-<td class="Regular"><tt>decoding_exponent</tt> </td>
-<td class="Regular">the exponent of any transfer function performed by the
+<td><tt>decoding_exponent</tt> </td>
+<td>the exponent of any transfer function performed by the
 software reading the <a>image data</a>stream.</td>
 </tr>
 
 <tr>
-<td class="Regular"><tt>LUT_exponent</tt> </td>
-<td class="Regular">the exponent of the transfer function applied between the
+<td><tt>LUT_exponent</tt> </td>
+<td>the exponent of the transfer function applied between the
 frame buffer and the display device (typically this is applied by
 a Look Up Table).</td>
 </tr>
 
 <tr>
-<td class="Regular"><tt>output_exponent</tt> </td>
-<td class="Regular">the exponent of the display device. For a CRT, this is
+<td><tt>output_exponent</tt> </td>
+<td>the exponent of the display device. For a CRT, this is
 typically a value close to 2.2.</td>
 </tr>
 </table>
@@ -8172,26 +8172,26 @@ typically a value close to 2.2.</td>
 describe some composite transfer functions, or combinations of
 stages.</p>
 
-<table class="Regular" summary=
+<table summary=
 "This table characterises additional entities that are used to describe transfer functions">
 <tr>
-<td class="Regular"><tt>display_exponent</tt> </td>
-<td class="Regular">exponent of the transfer function applied between the frame
-buffer and the display surface of the display device.<br class="xhtml" />
+<td><tt>display_exponent</tt> </td>
+<td>exponent of the transfer function applied between the frame
+buffer and the display surface of the display device.<br />
 <tt>display_exponent = LUT_exponent * output_exponent</tt> </td>
 </tr>
 
 <tr>
-<td class="Regular"><tt>gamma</tt> </td>
-<td class="Regular">exponent of the function mapping display output intensity to
-samples in the PNG datastream.<br class="xhtml" />
+<td><tt>gamma</tt> </td>
+<td>exponent of the function mapping display output intensity to
+samples in the PNG datastream.<br />
 <tt>gamma = 1.0 / (decoding_exponent * display_exponent)</tt>
 </td>
 </tr>
 
 <tr>
-<td class="Regular"><tt>end_to_end_exponent</tt> </td>
-<td class="Regular">the exponent of the function mapping image sensor input
+<td><tt>end_to_end_exponent</tt> </td>
+<td>the exponent of the function mapping image sensor input
 intensity to display output intensity. This is generally a value
 in the range 1.0 to 1.5.</td>
 </tr>
@@ -8236,7 +8236,7 @@ hints in <a href="#D-tabled1">
 easily.</p>
 
 <!-- Maintain a fragment named "D-tabled1" to preserve incoming links to it -->
-<table id="D-tabled1" class="Regular numbered simple" summary=
+<table id="D-tabled1" class="numbered simple" summary=
 "This table gives hints for reading the CRC code">
 <caption>Hints for
 reading ISO C code</caption>
@@ -8247,40 +8247,40 @@ reading ISO C code</caption>
 </tr>
 
 <tr>
-<td class="Regular"><tt>&amp;</tt> </td>
-<td class="Regular">Bitwise AND operator.</td>
+<td><tt>&amp;</tt> </td>
+<td>Bitwise AND operator.</td>
 </tr>
 
 <tr>
-<td class="Regular"><tt>^</tt> </td>
-<td class="Regular">Bitwise exclusive-OR operator.</td>
+<td><tt>^</tt> </td>
+<td>Bitwise exclusive-OR operator.</td>
 </tr>
 
 <tr>
-<td class="Regular"><tt>&gt;&gt;</tt> </td>
-<td class="Regular">Bitwise right shift operator. When applied to an unsigned
+<td><tt>&gt;&gt;</tt> </td>
+<td>Bitwise right shift operator. When applied to an unsigned
 quantity, as here, right shift inserts zeroes at the left.</td>
 </tr>
 
 <tr>
-<td class="Regular"><tt>!</tt> </td>
-<td class="Regular">Logical NOT operator.</td>
+<td><tt>!</tt> </td>
+<td>Logical NOT operator.</td>
 </tr>
 
 <tr>
-<td class="Regular"><tt>++</tt> </td>
-<td class="Regular">"<tt>n++</tt>" increments the variable <tt>n</tt>. In "for"
+<td><tt>++</tt> </td>
+<td>"<tt>n++</tt>" increments the variable <tt>n</tt>. In "for"
 loops, it is applied after the variable is tested.</td>
 </tr>
 
 <tr>
-<td class="Regular"><tt>0xNNN</tt> </td>
-<td class="Regular"><tt>0x</tt> introduces a hexadecimal (base 16) constant.
+<td><tt>0xNNN</tt> </td>
+<td><tt>0x</tt> introduces a hexadecimal (base 16) constant.
 Suffix <tt>L</tt> indicates a long value (at least 32 bits).</td>
 </tr>
 </table>
 
-<hr class="xhtml" />
+<hr />
 <pre>
    /* Table of CRCs of all 8-bit messages. */
    unsigned long crc_table[256];

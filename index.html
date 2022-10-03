@@ -559,12 +559,6 @@ which case it is called greyscale with alpha).</dd>
 represented by a single index into a <a>palette</a>. The selected palette entry
 defines the actual colour of the pixel.</dd>
 
-<!-- Maintain a fragment named "3indexing" to preserve incoming links to it -->
-<dt id="3indexing"><dfn>indexing</dfn></dt>
-
-<dd>representing an image by a <a>palette</a>, an <a>alpha table</a>, and an array of
-indices pointing to entries in the palette and alpha table.</dd>
-
 <!-- Maintain a fragment named "3interlacedPNGimage" to preserve incoming links to it -->
 <dt id="3interlacedPNGimage"><dfn>interlaced PNG image</dfn></dt>
 
@@ -960,7 +954,7 @@ The reference image, however, can always be recovered
 exactly from a PNG datastream.</li>
 
 <li>The <i>PNG image</i> is obtained from the reference image by
-a series of transformations: alpha separation, indexing, RGB
+a series of transformations: alpha separation, <a>indexing</a>, RGB
 merging, alpha compaction, and sample depth scaling. Five types
 of PNG image are defined (see <a href=
 "#6Colour-values"></a>). (If the PNG encoder actually transforms the
@@ -1068,7 +1062,7 @@ square brackets mean the transformation is optional:</p>
 </pre>
 
 <p>When every pixel is either fully transparent or fully opaque,
-the alpha separation, alpha compaction, and indexing
+the alpha separation, alpha compaction, and <a>indexing</a>
 transformations can cause the recovered reference image to have
 an alpha sample depth different from the original reference
 image, or to have no alpha channel. This has no effect on the
@@ -1108,7 +1102,8 @@ RGB sample depths are not greater than 8, and the alpha channel
 is absent or exactly 8 bits deep or every pixel is either fully
 transparent or fully opaque, then an alternative representation
 called indexed-colour may be more efficient for encoding.
-Each pixel is replaced by an index into a palette.
+<!-- Maintain a fragment named "3indexing" to preserve incoming links to it -->
+In the <dfn id="3indexing">indexing</dfn> transformation, each pixel is replaced by an index into a palette.
 The palette is a list of entries each containing
 three 8-bit samples (red, green, blue). If an alpha channel is
 present, there is also a parallel table of 8-bit alpha

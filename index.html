@@ -918,7 +918,7 @@ variable.</dd>
 <p>This specification specifies the PNG datastream, and
 places some requirements on PNG encoders, which generate PNG
 datastreams, PNG decoders, which interpret PNG datastreams, and
-PNG editors, which transform one PNG datastream into another. It
+<a>PNG editors</a>, which transform one PNG datastream into another. It
 does not specify the interface between an application and either
 a PNG encoder, decoder, or editor. The precise form in which an
 image is presented to an encoder or delivered by a decoder is not
@@ -1990,9 +1990,9 @@ third letters.</td>
 <td>0 (uppercase) = unsafe to copy,<br />
 1 (lowercase) = safe to copy.</td>
 <td>This property bit is not of interest to pure decoders, but it
-is needed by PNG editors. This bit defines the proper handling of
+is needed by <a>PNG editors</a>. This bit defines the proper handling of
 unrecognized chunks in a datastream that is being modified. Rules
-for PNG editors are discussed further in <a href="#14Ordering"></a>.</td>
+for <a>PNG editors</a> are discussed further in <a href="#14Ordering"></a>.</td>
 </tr>
 </table>
 
@@ -5977,7 +5977,7 @@ background colour. This definition is necessary to ensure that
 useful palette entries are generated for pixels having fractional
 alpha values. The resulting palette will probably be useful only
 to viewers that present the image against the same background
-colour. It is recommended that PNG editors delete or recompute
+colour. It is recommended that <a>PNG editors</a> delete or recompute
 the palette if they alter or remove the <a href="#11bKGD"><span
 class="chunk">bKGD</span></a> chunk in an image of <a>colour type</a>
 6.</p>
@@ -6016,7 +6016,7 @@ palette, which is useful for display against backgrounds chosen
 by the PNG decoder.</li>
 
 <li>Since the <a href="#11sPLT"><span class=
-"chunk">sPLT</span></a> chunk is an ancillary chunk, a PNG editor
+"chunk">sPLT</span></a> chunk is an ancillary chunk, a <a>PNG editor</a>
 may add or modify suggested palettes without being forced to
 discard unknown unsafe-to-copy chunks.</li>
 
@@ -6369,7 +6369,7 @@ possibility.</p>
 <p>Decoders shall treat
   out-of-order APNG chunks
   as an error.
-  APNG-aware PNG editors
+  APNG-aware <a>PNG editors</a>
   should restore them to correct order,
   using the sequence numbers. </p>
 </section>
@@ -7423,18 +7423,16 @@ supported than those defined in this specification.</p>
 <section id="14Ordering">
 <h2>Behaviour of PNG editors</h2>
 
-<p>A "PNG editor" is defined as a program that reads a PNG
-datastream, makes modifications, and writes a new PNG datastream
-while preserving as much ancillary information as possible. Two
-examples of PNG editors are a program that adds or modifies text
+<p>Two
+examples of <a>PNG editors</a> are a program that adds or modifies text
 chunks, and a program that adds a suggested palette to a
-truecolour PNG datastream. Ordinary image editors are not PNG
-editors because they usually discard all unrecognized information
+truecolour PNG datastream. Ordinary image editors are not <a>PNG
+editors</a> because they usually discard all unrecognized information
 while reading in an image.</p>
 
 <p>To allow new chunk types to be added to PNG, it is necessary
 to establish rules about the ordering requirements for all chunk
-types. Otherwise a PNG editor does not know what to do when it
+types. Otherwise a <a>PNG editor</a> does not know what to do when it
 encounters an unknown chunk.</p>
 
 <p>EXAMPLE Consider a hypothetical new ancillary chunk type that
@@ -7445,20 +7443,20 @@ program attempts to add a <a href="#11PLTE"><span class=
 "chunk">PLTE</span></a> chunk and does not recognize the new
 chunk, it may insert the <a href="#11PLTE"><span class=
 "chunk">PLTE</span></a> chunk in the wrong place, namely after
-the new chunk. Such problems could be prevented by requiring PNG
-editors to discard all unknown chunks, but that is a very
+the new chunk. Such problems could be prevented by requiring <a>PNG
+editors</a> to discard all unknown chunks, but that is a very
 unattractive solution. Instead, PNG requires ancillary chunks not
 to have ordering restrictions like this.</p>
 
 <p>To prevent this type of problem while allowing for future
-extension, constraints are placed on both the behaviour of PNG
-editors and the allowed ordering requirements for chunks. The
+extension, constraints are placed on both the behaviour of <a>PNG
+editors</a> and the allowed ordering requirements for chunks. The
 safe-to-copy bit defines the proper handling of unrecognized
 chunks in a datastream that is being modified.</p>
 
 <!-- <ol start="1"> --><ol>
 <li>If a chunk's safe-to-copy bit is 1, the chunk may be copied
-to a modified PNG datastream whether or not the PNG editor
+to a modified PNG datastream whether or not the <a>PNG editor</a>
 recognizes the chunk type, and regardless of the extent of the
 datastream modifications.</li>
 
@@ -7471,13 +7469,13 @@ chunks, then unrecognized unsafe chunks shall
 course, if the program <strong>does</strong> recognize the chunk,
 it can choose to output an appropriately modified version.)</li>
 
-<li>A PNG editor is always allowed to copy all unrecognized
+<li>A <a>PNG editor</a> is always allowed to copy all unrecognized
 ancillary chunks if it has only added, deleted, modified, or
 reordered <strong>ancillary</strong> chunks. This implies that it is not
 permissible for ancillary chunks to depend on other ancillary
 chunks.</li>
 
-<li>PNG editors shall terminate on encountering an unrecognized
+<li><a>PNG editors</a> shall terminate on encountering an unrecognized
 critical chunk type, because there is no way to be certain that a
 valid datastream will result from modifying a datastream
 containing such a chunk. (Simply discarding the chunk is not good
@@ -7491,7 +7489,7 @@ always be 0 for critical chunks.</li>
 
 <!-- <ol start="5"> --><ol>
 <li>When copying an unknown <strong>unsafe-to-copy</strong> ancillary
-chunk, a PNG editor shall not move the chunk relative to any
+chunk, a <a>PNG editor</a> shall not move the chunk relative to any
 critical chunk. It may relocate the chunk freely relative to
 other ancillary chunks that occur between the same pair of
 critical chunks. (This is well defined since the editor shall not
@@ -7499,7 +7497,7 @@ add, delete, modify, or reorder critical chunks if it is
 preserving unknown unsafe-to-copy chunks.)</li>
 
 <li>When copying an unknown <strong>safe-to-copy</strong> ancillary
-chunk, a PNG editor shall not move the chunk from before <a href=
+chunk, a <a>PNG editor</a> shall not move the chunk from before <a href=
 "#11IDAT"><span class="chunk">IDAT</span></a> to after <a href=
 "#11IDAT"><span class="chunk">IDAT</span></a> or vice versa.
 (This is well defined because <a href="#11IDAT"><span class=
@@ -7518,7 +7516,7 @@ obvious way if a PNG datastream is modified in place.</p>
 
 <p>See also <a href="#5Chunk-naming-conventions"></a>.</p>
 
-<p>PNG editors that do not change the image data should not
+<p><a>PNG editors</a> that do not change the image data should not
 change the <a href="#11tIME"><span class="chunk">tIME</span></a>
 chunk. The Creation Time keyword in the <a href="#11tEXt"><span
 class="chunk">tEXt</span></a>, <a href="#11zTXt"><span class=
@@ -7538,10 +7536,10 @@ chunks</h2>
 critical chunks</h2>
 
 <p>Critical chunks may have arbitrary ordering requirements,
-because PNG editors are required to terminate if they encounter
+because <a>PNG editors</a> are required to terminate if they encounter
 unknown critical chunks. For example <a href="#11IHDR"><span
 class="chunk">IHDR</span></a> has the specific ordering rule that
-it shall always appear first. A PNG editor, or indeed any
+it shall always appear first. A <a>PNG editor</a>, or indeed any
 PNG-writing program, shall know and follow the ordering rules for
 any critical chunk type that it can generate.</p>
 </section>
@@ -7575,7 +7573,7 @@ other ancillary chunks.</p>
 <p>EXAMPLE It is unsafe to assume that a particular private
 ancillary chunk occurs immediately before <a href="#11IEND"><span
 class="chunk">IEND</span></a>. Even if it is always written in
-that position by a particular application, a PNG editor might
+that position by a particular application, a <a>PNG editor</a> might
 have inserted some other ancillary chunk after it. But it is safe
 to assume that the chunk will remain somewhere between <a href=
 "#11IDAT"><span class="chunk">IDAT</span></a> and <a href=
@@ -7599,7 +7597,7 @@ to assume that the chunk will remain somewhere between <a href=
 <h2>Objectives</h2>
 
 <p>This clause addresses conformance of PNG datastreams, PNG
-encoders, PNG decoders, and PNG editors.</p>
+encoders, PNG decoders, and <a>PNG editors</a>.</p>
 
 <p>The primary objectives of the specifications in this clause
 are:</p>
@@ -7627,7 +7625,7 @@ encoders, decoders, and editors.</p>
 
 <p>This clause addresses the PNG datastream and implementation
 requirements including the range of allowable differences for PNG
-encoders, PNG decoders, and PNG editors. This clause does not
+encoders, PNG decoders, and <a>PNG editors</a>. This clause does not
 directly address the environmental, performance, or resource
 requirements of the encoder, decoder, or editor.</p>
 
@@ -7782,10 +7780,9 @@ ordering rules.</li>
 
 <!-- Maintain a fragment named "15ConformanceEditor" to preserve incoming links to it -->
 <section id="15ConformanceEditor">
-<h2>Conformance of PNG
-editors</h2>
+<h2>Conformance of PNG editors</h2>
 
-<p>A PNG editor conforms to this specification if it satisfies the following conditions.</p>
+<p>A <a>PNG editor</a> conforms to this specification if it satisfies the following conditions.</p>
 
 <ol>
 <li>It conforms to the requirements for PNG encoders.</li>

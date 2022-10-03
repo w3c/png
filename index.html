@@ -490,8 +490,7 @@ a stored file at all.</dd>
 <dd>name of a particular compression algorithm. This algorithm is
 used, in compression mode 0, in conforming
 <a>PNG
-datastreams</a>. Deflate is a member of the <a href=
-"#3LZ77">LZ77</a> family of
+datastreams</a>. Deflate is a member of the <a>LZ77</a> family of
 compression methods. It is defined in [[RFC1951]].</dd>
 
 
@@ -588,10 +587,10 @@ level, of a colour. Luminance and <a>chromaticity</a> together fully define
 a perceived colour.</dd>
 
 <!-- Maintain a fragment named "3LZ77" to preserve incoming links to it -->
-<dt id="3LZ77"><dfn>LZ77</dfn></dt>
+<dt><dfn id="3LZ77">LZ77</dfn></dt>
 
-<dd>data compression algorithm described by Ziv and Lempel in
-their 1977 paper [[Ziv-Lempel]].</dd>
+<dd>data compression algorithm described in
+[[Ziv-Lempel]].</dd>
 
 <dt><dfn>narrow-range image</dfn></dt>
 <dd>Image where reference black and white do not correspond to sample values
@@ -3026,8 +3025,7 @@ future standardization. PNG compression method 0 is
 <a>deflate</a> compression with a sliding window
 (which is an upper bound on the distances appearing in the
 <a>deflate</a> stream) of at most
-32768 bytes. <a>Deflate</a> compression is an LZ77 derivative
-[[Ziv-Lempel]].</p>
+32768 bytes. <a>Deflate</a> compression is derived from <a>LZ77</a>.</p>
 
 <p><a>Deflate</a>-compressed datastreams within PNG are stored in the
 "zlib" format, which has the structure:</p>
@@ -3060,7 +3058,7 @@ specification [[rfc1950]].</p>
 
 <p>For PNG compression method 0, the zlib compression
 method/flags code shall specify method code 8 (<a>deflate</a>
-compression) and an LZ77 window size of not more than 32768
+compression) and an <a>LZ77</a> window size of not more than 32768
 bytes. The zlib compression method number is not the same as the
 PNG compression method number in the <a href=
 "#11IHDR"><span class="chunk">IHDR</span></a> chunk (see
@@ -3075,8 +3073,8 @@ compression ratio.</p>
 
 <p>The compressed data within the zlib datastream are stored as a
 series of blocks, each of which can represent raw (uncompressed)
-data, LZ77-compressed data encoded with fixed Huffman codes, or
-LZ77-compressed data encoded with custom Huffman codes. A marker
+data, <a>LZ77</a>-compressed data encoded with fixed Huffman codes, or
+<a>LZ77</a>-compressed data encoded with custom Huffman codes. A marker
 bit in the final block identifies it as the last block, allowing
 the decoder to recognize the end of the compressed datastream.
 Further details on the compression algorithm and the encoding are

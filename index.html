@@ -1548,7 +1548,7 @@ image.</td>
   "chunk">gAMA</span></a>, <a href="#11iCCP"><span class=
   "chunk">iCCP</span></a>, <a href="#11sBIT"><span class=
   "chunk">sBIT</span></a>, <a href="#11sRGB"><span class=
-  "chunk">sRGB</span></a>, <a href="#11cICP"><span class=
+  "chunk">sRGB</span></a>, <a href="#cICP-chunk"><span class=
     "chunk">cICP</span></a> (see <a href="#11addnlcolinfo"></a></li>
 
   <li>Textual information: <a href="#11iTXt"><span class=
@@ -1570,7 +1570,7 @@ image.</td>
   <li>Animation information:
     <a href="#actl-animation-control-chunk"><span class="chunk">acTL</span></a>,
     <a href="#fcTL-chunk"><span class="chunk">fcTL</span></a>,
-    <a href="#11fdAT"><span class="chunk">fdAT</span></a>
+    <a href="#fdAT-chunk"><span class="chunk">fdAT</span></a>
     (see <a href="#animation-information"></a>).
   </li>
   </ol>
@@ -2145,7 +2145,7 @@ and <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
 </tr>
 
 <tr>
-<td class="Regular"><a href="#11cICP"><span class="chunk">cICP</span></a></td>
+<td class="Regular"><a href="#cICP-chunk"><span class="chunk">cICP</span></a></td>
 <td class="Regular">No</td>
 <td class="Regular">Before <a href="#11PLTE"><span class="chunk">PLTE</span></a>
 and <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
@@ -2237,7 +2237,7 @@ before <a href="#11IDAT"><span class="chunk">IDAT</span></a>
 </tr>
 
 <tr>
-  <td class="Regular"><a href="#11fdAT"><span class="chunk">fdAT</span></a> </td>
+  <td class="Regular"><a href="#fdAT-chunk"><span class="chunk">fdAT</span></a> </td>
   <td class="Regular">Yes</td>
   <td class="Regular">After <a href="#11IDAT"><span class="chunk">IDAT</span></a> </td>
 </tr>
@@ -4066,8 +4066,8 @@ values given above as if they had appeared in <a href=
 chunks do not appear simultaneously in a PNG datastream.</p>
 </section>
 
-<!-- Maintain a fragment named "11cICP" to preserve incoming links to it -->
-<section id="11cICP">
+<!-- Maintain a fragment named "cICP-chunk" to preserve incoming links to it -->
+<section id="cICP-chunk">
 <h2><span class="chunk">cICP</span>
 Coding-independent code points for video signal type identification</h2>
 
@@ -5316,7 +5316,7 @@ the image data are changed.</p>
 
 </section>
 
-<section id="11fdAT">
+<section id="fdAT-chunk">
     <h2><span class="chunk">fdAT</span>
     Frame Data Chunk</h2>
 

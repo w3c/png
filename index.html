@@ -822,10 +822,10 @@ indicates that the data or the CRC were corrupted in
 transit.</dd>
 
 <!-- Maintain a fragment named "3CRT" to preserve incoming links to it -->
+<dt>Cathode Ray Tube</dt>
 <dt id="3CRT"><dfn>CRT</dfn></dt>
 
-<dd>Cathode Ray Tube: a common type of computer display
-hardware.</dd>
+<dd>vacuum tube containing one or more electron guns, which emit electron beams that are manipulated to display images on a phosphorescent screen.</dd>
 
 <!-- Maintain a fragment named "3LSB" to preserve incoming links to it -->
 <dt id="3LSB"><dfn>LSB</dfn></dt>
@@ -6927,13 +6927,13 @@ that they treat other untagged images.
 <p>In practice, it is often difficult to determine what value of
 display exponent should be used. In systems with no built-in
 gamma correction, the display exponent is determined entirely by
-the CRT. A display exponent of 2.2 should be used unless detailed
-calibration measurements are available for the particular CRT
+the <a>CRT</a>. A display exponent of 2.2 should be used unless detailed
+calibration measurements are available for the particular <a>CRT</a>
 used.</p>
 
 <p>Many modern frame buffers have lookup tables that are used to
 perform gamma correction, and on these systems the display
-exponent value should be the exponent of the lookup table and CRT
+exponent value should be the exponent of the lookup table and <a>CRT</a>
 combined. It may not be possible to find out what the lookup
 table contains from within the viewer application, in which case
 it may be necessary to ask the user to supply the display
@@ -8102,8 +8102,7 @@ function. For example the function:</p>
 <p><tt>intensity = (voltage +
 constant)<sup>exponent</sup></tt></p>
 
-<p>which is used to model the non-linearity of cathode ray tube
-(CRT) displays. It is often assumed, as in this International
+<p>which is used to model the non-linearity of <a>CRT</a> displays. It is often assumed, as in this International
 Standard, that the constant is zero.</p>
 
 <p>For the purposes of this specification, it is
@@ -8140,7 +8139,7 @@ a Look Up Table).</td>
 
 <tr>
 <td><tt>output_exponent</tt> </td>
-<td>the exponent of the display device. For a CRT, this is
+<td>the exponent of the display device. For a <a>CRT</a>, this is
 typically a value close to 2.2.</td>
 </tr>
 </table>

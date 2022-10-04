@@ -755,12 +755,6 @@ the <a>palette</a> and thus the sample depth is
 always 8 by definition of the palette. In other types of PNG
 image it is the same as the <a>bit depth</a>.</dd>
 
-<!-- Maintain a fragment named "3sampleDepthScaling" to preserve incoming links to it -->
-<dt id="3sampleDepthScaling"><dfn>sample depth scaling</dfn></dt>
-
-<dd>mapping of a range of <a>sample</a> values onto the full range of a
-<a>sample depth</a> allowed in a <a>PNG image</a>.</dd>
-
 <!-- Maintain a fragment named "3scanline" to preserve incoming links to it -->
 <dt id="3scanline"><dfn>scanline</dfn></dt>
 
@@ -948,7 +942,7 @@ exactly from a PNG datastream.</li>
 
 <li>The <i>PNG image</i> is obtained from the reference image by
 a series of transformations: alpha separation, <a>indexing</a>, RGB
-merging, alpha compaction, and sample depth scaling. Five types
+merging, alpha compaction, and <a>sample depth scaling</a>. Five types
 of PNG image are defined (see <a href=
 "#6Colour-values"></a>). (If the PNG encoder actually transforms the
 source image directly into the PNG image, and the source image
@@ -1153,8 +1147,8 @@ can be represented more compactly by merely identifying the RGB
 
 <!-- Maintain a fragment named "4Concepts.Scaling" to preserve incoming links to it -->
 <section id="4Concepts.Scaling">
-<h2>Sample depth
-scaling</h2>
+<!-- Maintain a fragment named "3sampleDepthScaling" to preserve incoming links to it -->
+<h2><dfn id="3sampleDepthScaling">Sample depth scaling</dfn></h2>
 
 <p>In the PNG image, not all sample depths are supported (see
 <a href="#6Colour-values"></a>), and all channels shall have the same
@@ -1175,7 +1169,7 @@ be mapped into samples of depth 4.</p>
 </figure>
 
 <p>Allowing only a few sample depths reduces the number of cases
-that decoders have to cope with. Sample depth scaling is
+that decoders have to cope with. <a>Sample depth scaling</a> is
 reversible with no loss of data, because the reference image
 sample depths can be recorded in the PNG datastream. In the
 absence of recorded sample depths, the reference image sample
@@ -5823,8 +5817,7 @@ black (zeroes).</p>
 <!-- ************Page Break******************* -->
 <!-- Maintain a fragment named "12Sample-depth-scaling" to preserve incoming links to it -->
 <section id="12Sample-depth-scaling">
-<h2>Sample depth
-scaling</h2>
+<h2>Sample depth scaling</h2>
 
 <p>When encoding input samples that have a sample depth that
 cannot be directly represented in PNG, the encoder shall scale

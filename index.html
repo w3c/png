@@ -732,15 +732,6 @@ can be converted into a reference image. Each
 channel have the same sample depth. Different channels may have
 different sample depths.</dd>
 
-<!-- Maintain a fragment named "3RGBmerging" to preserve incoming links to it -->
-<dt id="3RGBmerging"><dfn>RGB merging</dfn></dt>
-
-<dd>converting an image in which the red, green, and blue
-<a>samples</a> for
-each <a>pixel</a>
-have the same value, and the same <a>sample depth</a>, into an image with a
-single <a>greyscale</a> <a>channel</a>.</dd>
-
 <!-- Maintain a fragment named "3sample" to preserve incoming links to it -->
 <dt id="3sample"><dfn>sample</dfn></dt>
 
@@ -941,8 +932,8 @@ The reference image, however, can always be recovered
 exactly from a PNG datastream.</li>
 
 <li>The <i>PNG image</i> is obtained from the reference image by
-a series of transformations: alpha separation, <a>indexing</a>, RGB
-merging, alpha compaction, and <a>sample depth scaling</a>. Five types
+a series of transformations: alpha separation, <a>indexing</a>, <a>RGB
+merging</a>, alpha compaction, and <a>sample depth scaling</a>. Five types
 of PNG image are defined (see <a href=
 "#6Colour-values"></a>). (If the PNG encoder actually transforms the
 source image directly into the PNG image, and the source image
@@ -1125,12 +1116,14 @@ shortened form that does not include these entries.</p>
 
 <!-- Maintain a fragment named "4Concepts.RGBMerging" to preserve incoming links to it -->
 <section id="4Concepts.RGBMerging">
-<h2>RGB merging</h2>
+<!-- Maintain a fragment named "3RGBmerging" to preserve incoming links to it -->
+<h2><dfn id="3RGBmerging">RGB merging</dfn></h2>
 
 <p>If the red, green, and blue channels have the same sample
-depth, and for each pixel the values of the red, green, and blue
+depth, and, for each pixel, the values of the red, green, and blue
 samples are equal, then these three channels may be merged into a
 single greyscale channel.</p>
+
 </section>
 
 <section>

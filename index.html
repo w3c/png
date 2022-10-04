@@ -510,7 +510,7 @@ compression methods. It is defined in [[RFC1951]].</dd>
 
 <dd>the final digital storage area for the image shown by most
 types of computer display. Software causes an image to appear on
-screen by loading the image into the frame buffer.</dd>
+screen by loading the image into the <a>frame buffer</a>.</dd>
 
 <dt><dfn>fully transparent black</dfn></dt>
 
@@ -6776,7 +6776,7 @@ table, as is illustrated in <a href=
 "#13Decoder-gamma-handling"></a>.)</p>
 
 <p>If the decoder needs to scale samples up (for example, if the
-frame buffer has a greater sample depth than the PNG image), it
+<a>frame buffer</a> has a greater sample depth than the PNG image), it
 should use linear scaling or left-bit-replication as described in
 <a href="#12Sample-depth-scaling"></a>.</p>
 
@@ -6832,13 +6832,13 @@ MAX_FRAMEBUF_SAMPLE)+0.5)</tt></p>
 
 <p>where <tt>integer_sample</tt> is the sample value from the
 datastream, <tt>framebuf_sample</tt> is the value to write into
-the frame buffer, and <tt>MAX_FRAMEBUF_SAMPLE</tt> is the maximum
-value of a frame buffer sample (255 for 8-bit, 31 for 5-bit,
+the <a>frame buffer</a>, and <tt>MAX_FRAMEBUF_SAMPLE</tt> is the maximum
+value of a <a>frame buffer</a> sample (255 for 8-bit, 31 for 5-bit,
 etc). The first line converts an integer sample into a normalized
 floating point value (in the range 0.0 to 1.0), the second
 converts to a value proportional to the desired display output
 intensity, the third accounts for the display system's transfer
-function, and the fourth converts to an integer frame buffer
+function, and the fourth converts to an integer <a>frame buffer</a>
 sample. Zero raised to any positive power is zero.</p>
 
 <p>A step could be inserted between the second and third to
@@ -6920,7 +6920,7 @@ the <a>CRT</a>. A display exponent of 2.2 should be used unless detailed
 calibration measurements are available for the particular <a>CRT</a>
 used.</p>
 
-<p>Many modern frame buffers have lookup tables that are used to
+<p>Many modern <a>frame buffers</a> have lookup tables that are used to
 perform gamma correction, and on these systems the display
 exponent value should be the exponent of the lookup table and <a>CRT</a>
 combined. It may not be possible to find out what the lookup
@@ -6936,7 +6936,7 @@ can be described by a single number (the display exponent). If
 actual measurements of the monitor's light output as a function
 of voltage input are available, the third and fourth lines of the
 computation above can be replaced by a lookup in these
-measurements, to find the actual frame buffer value that most
+measurements, to find the actual <a>frame buffer</a> value that most
 nearly gives the desired brightness.</p>
 </section>
 
@@ -7088,7 +7088,7 @@ for R, G, and B samples.</p>
 <p>The following code illustrates the general case of compositing
 a foreground image against a background image. It assumes that
 the original pixel data are available for the background image,
-and that output is to a frame buffer for display. Other variants
+and that output is to a <a>frame buffer</a> for display. Other variants
 are possible; see the comments below the code. The code allows
 the sample depths and gamma values of foreground image and
 background image all to be different and not necessarily suited
@@ -7185,8 +7185,8 @@ reference in the comments below.</p>
 <p>Variations:</p>
 
 <!-- <ol start="1"> --><ol>
-<li>If output is to another PNG datastream instead of a frame
-buffer, lines 21, 22, 33, and 34 should be changed along the
+<li>If output is to another PNG datastream instead of a <a>frame 
+buffer</a>, lines 21, 22, 33, and 34 should be changed along the
 following lines
 
 <pre>
@@ -7221,9 +7221,9 @@ quality, the time savings are small if alpha values of zero and
 one are treated as special cases as recommended here.</li>
 
 <li>If the original pixel values of the background image are no
-longer available, only processed frame buffer pixels left by
+longer available, only processed <a>frame buffer</a> pixels left by
 display of the background image, then lines 30 and 31 need to
-extract intensity from the frame buffer pixel values using code
+extract intensity from the <a>frame buffer</a> pixel values using code
 such as
 
 <pre>
@@ -7294,7 +7294,7 @@ the dither.</p>
 
 <p>For viewers running on indexed-colour hardware attempting to
 display a truecolour image, or an indexed-colour image whose
-palette is too large for the frame buffer, the encoder may have
+palette is too large for the <a>frame buffer</a>, the encoder may have
 provided one or more suggested palettes in <a class="chunk" href=
 "#11sPLT">sPLT</a> chunks. If one of
 these is found to be suitable, based on size and perhaps name,
@@ -8122,7 +8122,7 @@ software reading the <a>image data</a>stream.</td>
 <tr>
 <td><tt>LUT_exponent</tt> </td>
 <td>the exponent of the transfer function applied between the
-frame buffer and the display device (typically this is applied by
+<a>frame buffer</a> and the display device (typically this is applied by
 a Look Up Table).</td>
 </tr>
 
@@ -8141,8 +8141,8 @@ stages.</p>
 "This table characterises additional entities that are used to describe transfer functions">
 <tr>
 <td><tt>display_exponent</tt> </td>
-<td>exponent of the transfer function applied between the frame
-buffer and the display surface of the display device.<br />
+<td>exponent of the transfer function applied between the <a>frame 
+buffer</a> and the display surface of the display device.<br />
 <tt>display_exponent = LUT_exponent * output_exponent</tt> </td>
 </tr>
 

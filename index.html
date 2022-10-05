@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <title>Portable Network Graphics (PNG) Specification (Third Edition)</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <!-- <link rel="stylesheet" href="./isostyle.css" type="text/css" /> -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!-- <link rel="stylesheet" href="./isostyle.css" type="text/css"> -->
     <style type="text/css">
     /* remove annoying green colour from definition terms */
     dt {color: black}
@@ -1912,7 +1912,7 @@ defined in
 
 <tr>
 <td>Ancillary bit: first byte</td>
-<td>0 (uppercase) = critical,<br />
+<td>0 (uppercase) = critical,<br>
  1 (lowercase) = ancillary.</td>
 <td>Critical chunks are necessary for successful display of the
 contents of the datastream, for example the image header chunk
@@ -1920,7 +1920,7 @@ contents of the datastream, for example the image header chunk
 decoder trying to extract the image, upon encountering an unknown
 chunk type in which the ancillary bit is 0, shall indicate to the
 user that the image contains information it cannot safely
-interpret.<br />
+interpret.<br>
  Ancillary chunks are not strictly necessary in order to
 meaningfully display the contents of the datastream, for example
 the time chunk (<a class="chunk" href="#11tIME">
@@ -1931,7 +1931,7 @@ and proceed to display the image.</td>
 
 <tr>
 <td>Private bit: second byte</td>
-<td>0 (uppercase) = public,<br />
+<td>0 (uppercase) = public,<br>
  1 (lowercase) = private.</td>
 <td>Public chunks are reserved for definition by the W3C. The
 definition of private chunks is specified at <a
@@ -1943,7 +1943,7 @@ letters.
 
 <tr>
 <td>Reserved bit: third byte</td>
-<td>0 (uppercase) in this version of PNG.<br />
+<td>0 (uppercase) in this version of PNG.<br>
  If the reserved bit is 1, the datastream does not conform to
 this version of PNG.</td>
 <td>The significance of the case of the third letter of the chunk
@@ -1954,7 +1954,7 @@ third letters.</td>
 
 <tr>
 <td>Safe-to-copy bit: fourth byte</td>
-<td>0 (uppercase) = unsafe to copy,<br />
+<td>0 (uppercase) = unsafe to copy,<br>
 1 (lowercase) = safe to copy.</td>
 <td>This property bit is not of interest to pure decoders, but it
 is needed by <a>PNG editors</a>. This bit defines the proper handling of
@@ -2049,7 +2049,7 @@ two chunk types indicates alternatives.</p>
 rules</caption>
 
 <tr>
-<th colspan="3">Critical chunks<br />
+<th colspan="3">Critical chunks<br>
  (shall appear in this order, except 
 PLTE is optional)</th>
 </tr>
@@ -2087,7 +2087,7 @@ IDAT</a> chunks shall be consecutive</td>
 </tr>
 
 <tr>
-<th colspan="3">Ancillary chunks<br />
+<th colspan="3">Ancillary chunks<br>
  (need not appear in this order)</th>
 </tr>
 
@@ -6762,7 +6762,7 @@ equation</p>
 
 <p>where</p>
 
-<p><tt>MAXINSAMPLE = (2<sup>sampledepth</sup>)-1</tt><br />
+<p><tt>MAXINSAMPLE = (2<sup>sampledepth</sup>)-1</tt><br>
  <tt>MAXOUTSAMPLE = (2<sup>desired_sampledepth</sup>)-1</tt></p>
 
 <p>A slightly less accurate conversion is achieved by simply
@@ -6824,9 +6824,9 @@ function of the display system. This can be done by
 calculating:</p>
 
 <p><tt>sample = integer_sample / (2<sup>sampledepth</sup> -
-1.0)<br />
- display_output = sample<sup>1.0/gamma</sup><br />
- display_input = inverse_display_transfer(display_output)<br />
+1.0)<br>
+ display_output = sample<sup>1.0/gamma</sup><br>
+ display_input = inverse_display_transfer(display_output)<br>
  framebuf_sample = floor((display_input *
 MAX_FRAMEBUF_SAMPLE)+0.5)</tt></p>
 
@@ -8142,14 +8142,14 @@ stages.</p>
 <tr>
 <td><tt>display_exponent</tt> </td>
 <td>exponent of the transfer function applied between the <a>frame 
-buffer</a> and the display surface of the display device.<br />
+buffer</a> and the display surface of the display device.<br>
 <tt>display_exponent = LUT_exponent * output_exponent</tt> </td>
 </tr>
 
 <tr>
 <td><tt>gamma</tt> </td>
 <td>exponent of the function mapping display output intensity to
-samples in the PNG datastream.<br />
+samples in the PNG datastream.<br>
 <tt>gamma = 1.0 / (decoding_exponent * display_exponent)</tt>
 </td>
 </tr>
@@ -8245,7 +8245,7 @@ Suffix <tt>L</tt> indicates a long value (at least 32 bits).</td>
 </tr>
 </table>
 
-<hr />
+<hr>
 <pre>
    /* Table of CRCs of all 8-bit messages. */
    unsigned long crc_table[256];

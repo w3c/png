@@ -610,7 +610,7 @@ integers).</dd>
 <dt><dfn>output buffer</dfn></dt>
 
 <dd>The output buffer is a pixel array
-with dimensions specified by the width and height parameters of the PNG <a class="chunk" href="11IHDR">IHDR</a> chunk. Conceptually, each frame is constructed in the output buffer before being <a>composited</a> onto the <a>canvas</a>. The contents of the output buffer are available to the decoder. The corners of the output buffer are mapped to the corners of the <a>canvas</a>. </dd>
+with dimensions specified by the width and height parameters of the PNG <a class="chunk" href="#11IHDR">IHDR</a> chunk. Conceptually, each frame is constructed in the output buffer before being <a>composited</a> onto the <a>canvas</a>. The contents of the output buffer are available to the decoder. The corners of the output buffer are mapped to the corners of the <a>canvas</a>. </dd>
 
 
 <!-- Maintain a fragment named "3palette" to preserve incoming links to it -->
@@ -3783,7 +3783,7 @@ full-fledged colour management should use the <a class="chunk" href=
 "#11cHRM">cHRM</a> chunks if
 present.</p>
 
-<p>Unless a <a class="chunk" href="cICP-chunk">cICP</a> chunk exists, a PNG datastream should contain at most one embedded profile,
+<p>Unless a <a class="chunk" href="#cICP-chunk">cICP</a> chunk exists, a PNG datastream should contain at most one embedded profile,
 whether specified explicitly with an <span class="chunk">iCCP</span>
 or implicitly with an
 <a class="chunk" href="#srgb-standard-colour-space">sRGB</a> chunk.</p>

@@ -1587,13 +1587,13 @@ tIME</a> (see <a href="#11timestampinfo"></a>).</li>
   by the presence of a single <a class="chunk" href="#fcTL-chunk">fcTL</a> chunk before <a class="chunk" href="#11IDAT">IDAT</a>.
   Otherwise, the static image is not part of the animation. </p>
 
-<p>Subsequent frames are encoded in <a class="chunk" href="#11fdAT">fdAT</a> chunks,
+<p>Subsequent frames are encoded in <a class="chunk" href="#fdAT-chunk">fdAT</a> chunks,
   which have the same structure as <a class="chunk" href="#11IDAT">IDAT</a> chunks,
   except preceded by a <a href="#4Concepts.APNGSequence">sequence number</a>.
   Information for each frame
   about placement and rendering
   is stored in <a class="chunk" href="#fcTL-chunk">fcTL</a> chunks.
-  The full layout of <a class="chunk" href="#11fdAT">fdAT</a> and <a class="chunk" href="#fcTL-chunk">fcTL</a> chunks is
+  The full layout of <a class="chunk" href="#fdAT-chunk">fdAT</a> and <a class="chunk" href="#fcTL-chunk">fcTL</a> chunks is
   <a href="#animation-information">described below</a>. </p>
 
 <p>The boundaries of the entire animation
@@ -1612,7 +1612,7 @@ tIME</a> (see <a href="#11timestampinfo"></a>).</li>
 <section id="4Concepts.APNGSequence">
 <h3>Sequence numbers</h3>
 
-<p>The <a class="chunk" href="#fcTL-chunk">fcTL</a> and <a class="chunk" href="#11fdAT">fdAT</a> chunks
+<p>The <a class="chunk" href="#fcTL-chunk">fcTL</a> and <a class="chunk" href="#fdAT-chunk">fdAT</a> chunks
   have a zero-based, 4 byte sequence number.
   Both chunk types share the sequence.
   The purpose of this number is to detect (and optionally correct)
@@ -1621,14 +1621,14 @@ tIME</a> (see <a href="#11timestampinfo"></a>).</li>
 
 <p>The first <a class="chunk" href="#fcTL-chunk">fcTL</a> chunk shall contain sequence number 0,
   and the sequence numbers in the remaining
-  <a class="chunk" href="#fcTL-chunk">fcTL</a> and <a class="chunk" href="#11fdAT">fdAT</a> chunks
+  <a class="chunk" href="#fcTL-chunk">fcTL</a> and <a class="chunk" href="#fdAT-chunk">fdAT</a> chunks
   shall be in ascending order,
   with no gaps or duplicates.
 </p>
 
 <p>The tables below illustrate the use of sequence numbers
   for images with more than one frame,
-  and more than one <a class="chunk" href="#11fdAT">fdAT</a> chunk
+  and more than one <a class="chunk" href="#fdAT-chunk">fdAT</a> chunk
   for the second frame.
   (<a class="chunk" href="#11IHDR">IHDR</a> and
   <a class="chunk" href="#11IEND">IEND</a> chunks
@@ -1660,11 +1660,11 @@ tIME</a> (see <a href="#11timestampinfo"></a>).</li>
 </tr>
 <tr>
   <td>2</td>
-  <td>first <a class="chunk" href="#11fdAT">fdAT</a> for second frame</td>
+  <td>first <a class="chunk" href="#fdAT-chunk">fdAT</a> for second frame</td>
 </tr>
 <tr>
   <td>3</td>
-  <td>second <a class="chunk" href="#11fdAT">fdAT</a> for second frame</td>
+  <td>second <a class="chunk" href="#fdAT-chunk">fdAT</a> for second frame</td>
 </tr>
 </table>
 
@@ -1689,11 +1689,11 @@ tIME</a> (see <a href="#11timestampinfo"></a>).</li>
 </tr>
 <tr>
   <td>1</td>
-  <td>first <a class="chunk" href="#11fdAT">fdAT</a> for first frame</td>
+  <td>first <a class="chunk" href="#fdAT-chunk">fdAT</a> for first frame</td>
 </tr>
 <tr>
   <td>2</td>
-  <td>second <a class="chunk" href="#11fdAT">fdAT</a> for first frame</td>
+  <td>second <a class="chunk" href="#fdAT-chunk">fdAT</a> for first frame</td>
 </tr>
 <tr>
   <td>3</td>
@@ -1701,11 +1701,11 @@ tIME</a> (see <a href="#11timestampinfo"></a>).</li>
 </tr>
 <tr>
   <td>4</td>
-  <td>first <a class="chunk" href="#11fdAT">fdAT</a> for second frame</td>
+  <td>first <a class="chunk" href="#fdAT-chunk">fdAT</a> for second frame</td>
 </tr>
 <tr>
   <td>5</td>
-  <td>second <a class="chunk" href="#11fdAT">fdAT</a> for second frame</td>
+  <td>second <a class="chunk" href="#fdAT-chunk">fdAT</a> for second frame</td>
 </tr>
 </table>
 
@@ -2204,7 +2204,7 @@ before <a class="chunk" href="#11IDAT">IDAT</a>
 </tr>
 
 <tr>
-  <td><a class="chunk" href="#11fdAT">fdAT</a> </td>
+  <td><a class="chunk" href="#fdAT-chunk">fdAT</a> </td>
   <td>Yes</td>
   <td>After <a class="chunk" href="#11IDAT">IDAT</a> </td>
 </tr>

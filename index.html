@@ -384,7 +384,7 @@ same number of entries as the <a>palette</a>.</dd>
 <!-- Maintain a fragment named "3ancillaryChunk" to preserve incoming links to it -->
 <dt id="3ancillaryChunk"><dfn>ancillary chunk</dfn></dt>
 
-<dd>class of <a>chunk</a></a> that provides additional
+<dd>class of <a>chunk</a> that provides additional
 information. A <a>PNG decoder</a>, without processing an
 ancillary chunk, can still produce a meaningful image, though not
 necessarily the best possible image.
@@ -538,7 +538,7 @@ are scaled to the range 0 to 1.
 <!-- Maintain a fragment named "3greyscale" to preserve incoming links to it -->
 <dt id="3greyscale"><dfn>greyscale</dfn></dt>
 
-<dd>image representation in which each <a>pixel</a></a> is defined by a single
+<dd>image representation in which each <a>pixel</a> is defined by a single
 <a>sample</a> of
 colour information, representing overall
 <a>luminance</a> (on a
@@ -642,7 +642,7 @@ complete image is a rectangular array of pixels.</dd>
 
 <dd>result of encoding a <a>PNG image</a>. A PNG
 <a>datastream</a>
-consists of a <a>PNG signature</a></a> followed by a sequence of
+consists of a <a>PNG signature</a> followed by a sequence of
 <a>chunks</a>.</dd>
 
 <!-- Maintain a fragment named "3PNGdecoder" to preserve incoming links to it -->
@@ -710,7 +710,7 @@ datastream.</dd>
 
 <dd>sequence of <a>bytes</a> appearing at the start of every
 <a>PNG datastream</a>. It differentiates a PNG datastream from
-other types of <a>datastream</a></a> and allows early detection of
+other types of <a>datastream</a> and allows early detection of
 some transmission errors.</dd>
 
 <!-- Maintain a fragment named "3reducedImage" to preserve incoming links to it -->
@@ -2330,7 +2330,7 @@ PLTE</a>, static image not part of animation</figcaption>
 <section id="sec-defining-new-chunks">
 <h2>Defining chunks</h2>
 
-<section id="sec-defining-public-chunks">
+<section id="sec-defining-public-chunks-general">
   <h3>General</h3>
 
   <p>All chunks, private and public, SHOULD be listed at [[PNG-EXTENSIONS]].</p>
@@ -2472,8 +2472,8 @@ and colour types</caption>
 </table>
 
 <p>The allowed bit depths and sample depths for each PNG image
-type are listed in <a href="#11IHDR"></span> Image
-header</span></a>.</p>
+type are listed in <a href="#11IHDR">Image
+header</a>.</p>
 
 <p>Greyscale samples represent luminance if the transfer curve is
 indicated (by <a class="chunk" href="#11gAMA">
@@ -4288,7 +4288,7 @@ chunk.</p>
 
 <!-- Maintain a fragment named "11tEXt" to preserve incoming links to it -->
 <section id="11tEXt">
-<h2 id="11tEXt"><span class="chunk">tEXt</span>
+<h2><span class="chunk">tEXt</span>
 Textual data</h2>
 
 <p>The four-byte chunk type field contains the decimal values</p>
@@ -7556,6 +7556,7 @@ to assume that the chunk will remain somewhere between <a class="chunk" href=
 <!-- Maintain a fragment named "15Conformance" to preserve incoming links to it -->
 <div id="15Conformance"></div>
 <section id="conformance">
+<h2>Conformance</h2>
 
 <!-- Maintain a fragment named "15ConfIntro" to preserve incoming links to it -->
 <section id="15ConfIntro">

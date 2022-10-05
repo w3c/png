@@ -384,7 +384,7 @@ same number of entries as the <a>palette</a>.</dd>
 <!-- Maintain a fragment named "3ancillaryChunk" to preserve incoming links to it -->
 <dt id="3ancillaryChunk"><dfn>ancillary chunk</dfn></dt>
 
-<dd>class of <a>chunk</a></a> that provides additional
+<dd>class of <a>chunk</a> that provides additional
 information. A <a>PNG decoder</a>, without processing an
 ancillary chunk, can still produce a meaningful image, though not
 necessarily the best possible image.
@@ -522,12 +522,12 @@ screen by loading the image into the <a>frame buffer</a>.</dd>
 <dd>exponent that describes approximations to certain non-linear
 transfer functions encountered in image capture and reproduction.
 Within this specification, gamma is the exponent in the
-transfer function from <tt>display_output</tt> to
-<tt>image_sample</tt>
-<pre>
-<tt>image_sample = display_output<sup>gamma</sup></tt>
-</pre>
-where both <tt>display_output</tt> and <tt>image_sample</tt>
+transfer function from <var>display_output</var> to
+<var>image_sample</var>
+<p>
+<code>image_sample = display_output<sup>gamma</sup></code>
+</p>
+where both <var>display_output</var> and <var>image_sample</var>
 are scaled to the range 0 to 1.
 </dd>
 
@@ -538,7 +538,7 @@ are scaled to the range 0 to 1.
 <!-- Maintain a fragment named "3greyscale" to preserve incoming links to it -->
 <dt id="3greyscale"><dfn>greyscale</dfn></dt>
 
-<dd>image representation in which each <a>pixel</a></a> is defined by a single
+<dd>image representation in which each <a>pixel</a> is defined by a single
 <a>sample</a> of
 colour information, representing overall
 <a>luminance</a> (on a
@@ -603,7 +603,7 @@ integers).</dd>
 <dt><dfn>output buffer</dfn></dt>
 
 <dd>The output buffer is a pixel array
-  with dimensions specified by the width and height parameters of the PNG `IHDR` chunk. Conceptually, each frame is constructed in the output buffer before being <a>composited</a> onto the <a>canvas</a>. The contents of the output buffer are available to the decoder. The corners of the output buffer are mapped to the corners of the <a>canvas</a>. </dd>
+with dimensions specified by the width and height parameters of the PNG <a class="chunk" href="#11IHDR">IHDR</a> chunk. Conceptually, each frame is constructed in the output buffer before being <a>composited</a> onto the <a>canvas</a>. The contents of the output buffer are available to the decoder. The corners of the output buffer are mapped to the corners of the <a>canvas</a>. </dd>
 
 
 <!-- Maintain a fragment named "3palette" to preserve incoming links to it -->
@@ -642,7 +642,7 @@ complete image is a rectangular array of pixels.</dd>
 
 <dd>result of encoding a <a>PNG image</a>. A PNG
 <a>datastream</a>
-consists of a <a>PNG signature</a></a> followed by a sequence of
+consists of a <a>PNG signature</a> followed by a sequence of
 <a>chunks</a>.</dd>
 
 <!-- Maintain a fragment named "3PNGdecoder" to preserve incoming links to it -->
@@ -710,7 +710,7 @@ datastream.</dd>
 
 <dd>sequence of <a>bytes</a> appearing at the start of every
 <a>PNG datastream</a>. It differentiates a PNG datastream from
-other types of <a>datastream</a></a> and allows early detection of
+other types of <a>datastream</a> and allows early detection of
 some transmission errors.</dd>
 
 <!-- Maintain a fragment named "3reducedImage" to preserve incoming links to it -->
@@ -1507,7 +1507,7 @@ image.</td>
 
   <!-- <ol start="5"> --><ol>
   <li>Transparency information: <a class="chunk" href="#11tRNS">
-tRNS</a> (see <a href="#11transinfo"></a></li>
+tRNS</a> (see <a href="#11transinfo"></a>).</li>
 
   <li>Colour space information: <a class="chunk" href="#11cHRM">
 cHRM</a>, <a class="chunk" href="#11gAMA">
@@ -1515,12 +1515,12 @@ gAMA</a>, <a class="chunk" href="#11iCCP">
 iCCP</a>, <a class="chunk" href="#11sBIT">
 sBIT</a>, <a class="chunk" href="#11sRGB">
 sRGB</a>, <a class="chunk" href="#cICP-chunk">
-cICP</a> (see <a href="#11addnlcolinfo"></a></li>
+cICP</a> (see <a href="#11addnlcolinfo"></a>).</li>
 
   <li>Textual information: <a class="chunk" href="#11iTXt">
 iTXt</a>, <a class="chunk" href="#11tEXt">
 tEXt</a>, <a class="chunk" href="#11zTXt">
-zTXt</a> (see <a href="#11textinfo"></a).</li>
+zTXt</a> (see <a href="#11textinfo"></a>).</li>
 
   <li>Miscellaneous information: <a class="chunk" href="#11bKGD">
 bKGD</a>, <a class="chunk" href="#11hIST">
@@ -1587,18 +1587,18 @@ tIME</a> (see <a href="#11timestampinfo"></a>).</li>
   by the presence of a single <a class="chunk" href="#fcTL-chunk">fcTL</a> chunk before <a class="chunk" href="#11IDAT">IDAT</a>.
   Otherwise, the static image is not part of the animation. </p>
 
-<p>Subsequent frames are encoded in <a class="chunk" href="#11fdAT">fdAT</a> chunks,
+<p>Subsequent frames are encoded in <a class="chunk" href="#fdAT-chunk">fdAT</a> chunks,
   which have the same structure as <a class="chunk" href="#11IDAT">IDAT</a> chunks,
   except preceded by a <a href="#4Concepts.APNGSequence">sequence number</a>.
   Information for each frame
   about placement and rendering
   is stored in <a class="chunk" href="#fcTL-chunk">fcTL</a> chunks.
-  The full layout of <a class="chunk" href="#11fdAT">fdAT</a> and <a class="chunk" href="#fcTL-chunk">fcTL</a> chunks is
+  The full layout of <a class="chunk" href="#fdAT-chunk">fdAT</a> and <a class="chunk" href="#fcTL-chunk">fcTL</a> chunks is
   <a href="#animation-information">described below</a>. </p>
 
 <p>The boundaries of the entire animation
   are specified by the width and height parameters
-  of the `IHDR` chunk,
+  of the <a class="chunk" href="#11IHDR">IHDR</a> chunk,
   regardless of whether the default image is part of the animation.
   The default image should be appropriately padded
   with <a>fully transparent black</a> pixels
@@ -1612,7 +1612,7 @@ tIME</a> (see <a href="#11timestampinfo"></a>).</li>
 <section id="4Concepts.APNGSequence">
 <h3>Sequence numbers</h3>
 
-<p>The <a class="chunk" href="#fcTL-chunk">fcTL</a> and <a class="chunk" href="#11fdAT">fdAT</a> chunks
+<p>The <a class="chunk" href="#fcTL-chunk">fcTL</a> and <a class="chunk" href="#fdAT-chunk">fdAT</a> chunks
   have a zero-based, 4 byte sequence number.
   Both chunk types share the sequence.
   The purpose of this number is to detect (and optionally correct)
@@ -1621,14 +1621,14 @@ tIME</a> (see <a href="#11timestampinfo"></a>).</li>
 
 <p>The first <a class="chunk" href="#fcTL-chunk">fcTL</a> chunk shall contain sequence number 0,
   and the sequence numbers in the remaining
-  <a class="chunk" href="#fcTL-chunk">fcTL</a> and <a class="chunk" href="#11fdAT">fdAT</a> chunks
+  <a class="chunk" href="#fcTL-chunk">fcTL</a> and <a class="chunk" href="#fdAT-chunk">fdAT</a> chunks
   shall be in ascending order,
   with no gaps or duplicates.
 </p>
 
 <p>The tables below illustrate the use of sequence numbers
   for images with more than one frame,
-  and more than one <a class="chunk" href="#11fdAT">fdAT</a> chunk
+  and more than one <a class="chunk" href="#fdAT-chunk">fdAT</a> chunk
   for the second frame.
   (<a class="chunk" href="#11IHDR">IHDR</a> and
   <a class="chunk" href="#11IEND">IEND</a> chunks
@@ -1660,11 +1660,11 @@ tIME</a> (see <a href="#11timestampinfo"></a>).</li>
 </tr>
 <tr>
   <td>2</td>
-  <td>first <a class="chunk" href="#11fdAT">fdAT</a> for second frame</td>
+  <td>first <a class="chunk" href="#fdAT-chunk">fdAT</a> for second frame</td>
 </tr>
 <tr>
   <td>3</td>
-  <td>second <a class="chunk" href="#11fdAT">fdAT</a> for second frame</td>
+  <td>second <a class="chunk" href="#fdAT-chunk">fdAT</a> for second frame</td>
 </tr>
 </table>
 
@@ -1689,11 +1689,11 @@ tIME</a> (see <a href="#11timestampinfo"></a>).</li>
 </tr>
 <tr>
   <td>1</td>
-  <td>first <a class="chunk" href="#11fdAT">fdAT</a> for first frame</td>
+  <td>first <a class="chunk" href="#fdAT-chunk">fdAT</a> for first frame</td>
 </tr>
 <tr>
   <td>2</td>
-  <td>second <a class="chunk" href="#11fdAT">fdAT</a> for first frame</td>
+  <td>second <a class="chunk" href="#fdAT-chunk">fdAT</a> for first frame</td>
 </tr>
 <tr>
   <td>3</td>
@@ -1701,11 +1701,11 @@ tIME</a> (see <a href="#11timestampinfo"></a>).</li>
 </tr>
 <tr>
   <td>4</td>
-  <td>first <a class="chunk" href="#11fdAT">fdAT</a> for second frame</td>
+  <td>first <a class="chunk" href="#fdAT-chunk">fdAT</a> for second frame</td>
 </tr>
 <tr>
   <td>5</td>
-  <td>second <a class="chunk" href="#11fdAT">fdAT</a> for second frame</td>
+  <td>second <a class="chunk" href="#fdAT-chunk">fdAT</a> for second frame</td>
 </tr>
 </table>
 
@@ -1833,7 +1833,7 @@ should treat the length as unsigned, its value shall not exceed
 <td>A sequence of four bytes defining the chunk type. Each byte
 of a chunk type is restricted to the decimal values 65 to 90 and
 97 to 122. These correspond to the uppercase and lowercase ISO
-646 [[ISO646]] letters (<tt>A</tt>-<tt>Z</tt> and <tt>a</tt>-<tt>z</tt>)
+646 [[ISO646]] letters (<code>A</code>-<code>Z</code> and <code>a</code>-<code>z</code>)
 respectively for convenience in description and examination of
 PNG datastreams. Encoders and decoders shall treat the chunk
 types as fixed binary values, not character strings. For example,
@@ -2004,7 +2004,7 @@ are processed, the CRC is inverted (its ones complement is
 taken). This value is transmitted (stored in the datastream) MSB
 first. For the purpose of separating into bytes and ordering, the
 least significant bit of the 32-bit CRC is defined to be the
-coefficient of the <tt>x<sup>31</sup></tt> term.</p>
+coefficient of the <code>x<sup>31</sup></code> term.</p>
 
 <p>Practical calculation of the CRC often employs a precalculated
 table to accelerate the computation. See <a href=
@@ -2204,7 +2204,7 @@ before <a class="chunk" href="#11IDAT">IDAT</a>
 </tr>
 
 <tr>
-  <td><a class="chunk" href="#11fdAT">fdAT</a> </td>
+  <td><a class="chunk" href="#fdAT-chunk">fdAT</a> </td>
   <td>Yes</td>
   <td>After <a class="chunk" href="#11IDAT">IDAT</a> </td>
 </tr>
@@ -2330,7 +2330,7 @@ PLTE</a>, static image not part of animation</figcaption>
 <section id="sec-defining-new-chunks">
 <h2>Defining chunks</h2>
 
-<section id="sec-defining-public-chunks">
+<section id="sec-defining-public-chunks-general">
   <h3>General</h3>
 
   <p>All chunks, private and public, SHOULD be listed at [[PNG-EXTENSIONS]].</p>
@@ -2472,8 +2472,8 @@ and colour types</caption>
 </table>
 
 <p>The allowed bit depths and sample depths for each PNG image
-type are listed in <a href="#11IHDR"></span> Image
-header</span></a>.</p>
+type are listed in <a href="#11IHDR">Image
+header</a>.</p>
 
 <p>Greyscale samples represent luminance if the transfer curve is
 indicated (by <a class="chunk" href="#11gAMA">
@@ -2797,22 +2797,22 @@ generate the new byte value:</p>
   <th>Definition</th>
 </tr>
 <tr>
-<td>x </td>
+<td><var>x</var></td>
 <td>the byte being filtered;</td>
 </tr>
 
 <tr>
-<td>a </td>
+<td><var>a</var></td>
 <td>the byte corresponding to x in the pixel immediately before the pixel containing x (or the byte immediately before x, when the bit depth is less than 8);</td>
 </tr>
 
 <tr>
-<td>b </td>
+<td><var>b</var></td>
 <td>the byte corresponding to x in the previous scanline;</td>
 </tr>
 
 <tr>
-<td>c </td>
+<td><var>c</var></td>
 <td>the byte corresponding to b in the pixel immediately before the pixel containing b (or the byte immediately before b, when the bit depth is less than 8).</td>
 </tr>
 </table>
@@ -2823,18 +2823,18 @@ generate the new byte value:</p>
   <figcaption>Positions of filter bytes a, b and c relative to x</figcaption>
   </figure>
 
-<p><a href="#filter-byte-positions"></a> shows the relative positions of the bytes <tt>x</tt>,
-<tt>a</tt>, <tt>b</tt>,
-and <tt>c</tt>.</p>
+<p><a href="#filter-byte-positions"></a> shows the relative positions of the bytes <var>x</var>,
+<var>a</var>, <var>b</var>,
+and <var>c</var>.</p>
 
 <p><a>Filter method</a> 0 defines five basic filter types as listed
 in <a href="#9-table91">
-</a>. <tt>Orig(y)</tt> denotes the original (unfiltered)
-value of byte <tt>y</tt>. <tt>Filt(y)</tt> denotes the value
-after a filter type has been applied. <tt>Recon(y)</tt> denotes the
+</a>. <code>Orig(y)</code> denotes the original (unfiltered)
+value of byte <var>y</var>. <code>Filt(y)</code> denotes the value
+after a filter type has been applied. <code>Recon(y)</code> denotes the
 value after the corresponding reconstruction function has been
 applied. The Paeth filter type
-<tt>PaethPredictor</tt> [[?Paeth]] is defined below.</p>
+<var>PaethPredictor</var> [[?Paeth]] is defined below.</p>
 
 <p><a>Filter method</a> 0 specifies exactly this set of five filter
 types and this shall not be extended.
@@ -2860,40 +2860,40 @@ types</caption>
 <tr>
 <td align="center">0</td>
 <td>None</td>
-<td><tt>Filt(x) = Orig(x)</tt> </td>
-<td><tt>Recon(x) = Filt(x)</tt> </td>
+<td><code>Filt(x) = Orig(x)</code> </td>
+<td><code>Recon(x) = Filt(x)</code> </td>
 </tr>
 
 <tr>
 <td align="center">1</td>
 <td>Sub</td>
-<td><tt>Filt(x) = Orig(x) - Orig(a)</tt> </td>
-<td><tt>Recon(x) = Filt(x) + Recon(a)</tt> </td>
+<td><code>Filt(x) = Orig(x) - Orig(a)</code> </td>
+<td><code>Recon(x) = Filt(x) + Recon(a)</code> </td>
 </tr>
 
 <tr>
 <td align="center">2</td>
 <td>Up</td>
-<td><tt>Filt(x) = Orig(x) - Orig(b)</tt> </td>
-<td><tt>Recon(x) = Filt(x) + Recon(b)</tt> </td>
+<td><code>Filt(x) = Orig(x) - Orig(b)</code> </td>
+<td><code>Recon(x) = Filt(x) + Recon(b)</code> </td>
 </tr>
 
 <tr>
 <td align="center">3</td>
 <td>Average</td>
-<td><tt>Filt(x) = Orig(x) - floor((Orig(a) + Orig(b)) /
-2)</tt> </td>
-<td><tt>Recon(x) = Filt(x) + floor((Recon(a) + Recon(b)) /
-2)</tt> </td>
+<td><code>Filt(x) = Orig(x) - floor((Orig(a) + Orig(b)) /
+2)</code> </td>
+<td><code>Recon(x) = Filt(x) + floor((Recon(a) + Recon(b)) /
+2)</code> </td>
 </tr>
 
 <tr>
 <td align="center">4</td>
 <td>Paeth</td>
-<td><tt>Filt(x) = Orig(x) - PaethPredictor(Orig(a),
-Orig(b), Orig(c))</tt> </td>
-<td><tt>Recon(x) = Filt(x) + PaethPredictor(Recon(a), Recon(b),
-Recon(c))</tt> </td>
+<td><code>Filt(x) = Orig(x) - PaethPredictor(Orig(a),
+Orig(b), Orig(c))</code> </td>
+<td><code>Recon(x) = Filt(x) + PaethPredictor(Recon(a), Recon(b),
+Recon(c))</code> </td>
 </tr>
 </table>
 
@@ -2911,7 +2911,7 @@ to the left of the pixel above.</p>
 
 <p>Unsigned arithmetic modulo 256 is used, so that both the
 inputs and outputs fit into bytes. Filters are applied to each
-byte regardless of bit depth. The sequence of <tt>Filt</tt>
+byte regardless of bit depth. The sequence of <code>Filt</code>
 values is transmitted as the filtered scanline.</p>
 </section>
 
@@ -2920,8 +2920,8 @@ values is transmitted as the filtered scanline.</p>
 <h2>Filter type 3:
 Average</h2>
 
-<p>The sum <tt>Orig(a) + Orig(b)</tt> shall be performed without
-overflow (using at least nine-bit arithmetic). <tt>floor()</tt>
+<p>The sum <code>Orig(a) + Orig(b)</code> shall be performed without
+overflow (using at least nine-bit arithmetic). <code>floor()</code>
 indicates that the result of the division is rounded to the next
 lower integer if fractional; in other words, it is an integer
 division or right shift operation.</p>
@@ -2940,10 +2940,10 @@ is an adaptation of the technique due to Alan W. Paeth
 [[Paeth]].</p>
 
 <p>The PaethPredictor function is defined in the code below. The
-logic of the function and the locations of the bytes <tt>a</tt>,
-<tt>b</tt>, <tt>c</tt>, and <tt>x</tt> are shown in <a href=
+logic of the function and the locations of the bytes <var>a</var>,
+<var>b</var>, <var>c</var>, and <var>x</var> are shown in <a href=
 "#paethpredictor-function"></a>.
-<tt>Pr</tt> is the predictor for byte <tt>x</tt>.</p>
+<var>Pr</var> is the predictor for byte <var>x</var>.</p>
 
 <pre>
     p = a + b - c
@@ -3154,7 +3154,7 @@ header</h2>
 73 72 68 82
 </pre>
 
-<p>The <span class="chunk">IHDR</span> chunk shall be the first
+<p>The <a class="chunk" href="#11IHDR">IHDR</a> chunk shall be the first
 chunk in the PNG datastream. It contains:</p>
 
 <table summary=
@@ -3751,7 +3751,7 @@ full-fledged colour management should use the <a class="chunk" href=
 "#11cHRM">cHRM</a> chunks if
 present.</p>
 
-<p>Unless a cICP chunk exists, a PNG datastream should contain at most one embedded profile,
+<p>Unless a <a class="chunk" href="#cICP-chunk">cICP</a> chunk exists, a PNG datastream should contain at most one embedded profile,
 whether specified explicitly with an <span class="chunk">iCCP</span>
 or implicitly with an
 <a class="chunk" href="#srgb-standard-colour-space">sRGB</a> chunk.</p>
@@ -3772,8 +3772,8 @@ Significant bits</h2>
 <p>To simplify decoders, PNG specifies that only certain sample
 depths may be used, and further specifies that sample values
 should be scaled to the full range of possible values at the
-sample depth. The <a class="chunk" href="#11sBIT">
-sBIT</a> chunk defines the original number of
+sample depth. The <span class="chunk">
+sBIT</span> chunk defines the original number of
 significant bits (which can be less than or equal to the sample
 depth). This allows PNG decoders to recover the original data
 losslessly even if the data had a sample depth not directly
@@ -4029,7 +4029,7 @@ values given above as if they had appeared in <a class="chunk" href=
 "#11gAMA">gAMA</a> and <a class="chunk" href=
 "#11cHRM">cHRM</a> chunks.</p>
 
-<p>It is recommended that the <span class="chunk">sRGB</span> and
+<p>It is recommended that the <a class="chunk" href="#11sRGB">sRGB</a> and
 <a class="chunk" href="#11iCCP">iCCP</a>
 chunks do not appear simultaneously in a PNG datastream.</p>
 </section>
@@ -4101,15 +4101,15 @@ when rendering the image.</p>
   application. [[SMPTE RP 2077]] specifies mapping between <a>full-range
   images</a> and <a>narrow-range images</a>.</aside>
 
-<p>The <span class="chunk">cICP</span> chunk MUST come before the IDAT chunk.</p>
+<p>The <span class="chunk">cICP</span> chunk MUST come before the <a class="chunk" href="#11IDAT">IDAT</a> chunk.</p>
 
 <p>When the <span class="chunk">cICP</span> chunk is present, decoders that
 recognize it SHALL ignore the following chunks:</p>
 <ul>
-  <li>iCCP</li>
-  <li>gAMA </li>
-  <li>cHRM </li>
-  <li>sRGB </li>
+  <li><a class="chunk" href="#11iCCP">iCCP</a></li>
+  <li><a class="chunk" href="#11gAMA">gAMA</a></li>
+  <li><a class="chunk" href="#11cHRM">cHRM</a></li>
+  <li><a class="chunk" href="#11sRGB">sRGB</a></li>
 </ul>
 
 <aside class="example"><span class="chunk">cICP</span> chunk field values for
@@ -4288,7 +4288,7 @@ chunk.</p>
 
 <!-- Maintain a fragment named "11tEXt" to preserve incoming links to it -->
 <section id="11tEXt">
-<h2 id="11tEXt"><span class="chunk">tEXt</span>
+<h2><span class="chunk">tEXt</span>
 Textual data</h2>
 
 <p>The four-byte chunk type field contains the decimal values</p>
@@ -5442,9 +5442,9 @@ while retaining the same visual quality. An intensity level
 expressed as a floating-point value in the range 0 to 1 can be
 converted to a datastream image sample by:</p>
 
-<p><tt>integer_sample =
+<p><code>integer_sample =
 floor((2<sup>sampledepth</sup>-1) * intensity<sup>encoding_exponent</sup>
-+ 0.5)</tt></p>
++ 0.5)</code></p>
 
 <p>If the intensity in the equation is the desired output
 intensity, the encoding exponent is the gamma value to be used in
@@ -5562,7 +5562,7 @@ PNG gamma value.</p>
 <p>If a PNG encoder or datastream converter knows that the image
 has been displayed satisfactorily using a display system whose
 transfer function can be approximated by a power function with
-exponent <tt>display_exponent</tt>, the image can be marked as
+exponent <var>display_exponent</var>, the image can be marked as
 having the gamma value:</p>
 
 <pre>
@@ -5810,8 +5810,8 @@ accurate scaling method is the linear equation:</p>
 output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
 </pre>
 
-<p>where the input samples range from 0 to <tt>MAXINSAMPLE</tt>
-and the outputs range from 0 to <tt>MAXOUTSAMPLE</tt> (which is
+<p>where the input samples range from 0 to <var>MAXINSAMPLE</var>
+and the outputs range from 0 to <var>MAXOUTSAMPLE</var> (which is
 2<sup>sampledepth</sup>-1).</p>
 
 <p>A close approximation to the linear scaling method is achieved
@@ -6496,8 +6496,8 @@ pHYs</a> chunk has a unit specifier of 0
 ratio of the two pixels-per-unit values, but should not depend on
 their magnitudes. For example, a <a class="chunk" href="#11pHYs">
 pHYs</a> chunk
-containing <tt>(ppuX, ppuY, unit) = (2, 1, 0)</tt> is equivalent
-to one containing <tt>(1000, 500, 0)</tt>; both are equally valid
+containing <code>(ppuX, ppuY, unit) = (2, 1, 0)</code> is equivalent
+to one containing <code>(1000, 500, 0)</code>; both are equally valid
 indications that the image pixels are twice as tall as they are
 wide.</p>
 
@@ -6508,10 +6508,10 @@ scale factors could be obtained using the following
 floating-point calculations:</p>
 
 <pre>
-<tt>image_ratio = pHYs_ppuY / pHYs_ppuX
+<code>image_ratio = pHYs_ppuY / pHYs_ppuX
 display_ratio = display_ppuY / display_ppuX
 scale_factor_X = max(1.0, image_ratio/display_ratio)
-scale_factor_Y = max(1.0, display_ratio/image_ratio)</tt>
+scale_factor_Y = max(1.0, display_ratio/image_ratio)</code>
 </pre>
 
 <p>Because other methods such as maintaining the image area are
@@ -6554,7 +6554,7 @@ for newline and perhaps TAB, FF, CR) encountered in a <a class="chunk" href=
 "#11tEXt">tEXt</a> or <a class="chunk" href=
 "#11zTXt">zTXt</a> chunk. Instead,
 they should be ignored or displayed in a visible notation such as
-"<tt>\</tt>nnn". See <a href="#13Security-considerations"></a>.</p>
+"<code>\nnn</code>". See <a href="#13Security-considerations"></a>.</p>
 
 <p>Even though encoders are recommended to represent newlines as
 linefeed (decimal 10), it is recommended that decoders not rely
@@ -6567,7 +6567,7 @@ needed to arrive at a column multiple of 8.</p>
 encoding should provide character code remapping so that Latin-1
 characters are displayed correctly. Some systems may not provide
 all the characters defined in Latin-1. Mapping unavailable
-characters to a visible notation such as "<tt>\</tt>nnn" is a
+characters to a visible notation such as "<code>\nnn</code>" is a
 good fallback. Character codes 127-255 should be displayed only
 if they are printable characters on the decoding system. Some
 systems may interpret such codes as control characters; for
@@ -6683,7 +6683,7 @@ while (pass &lt; 7)
 }
 </pre>
 
-<p>The function <tt>visit(row,column,height,width)</tt> obtains
+<p>The function <code>visit(row,column,height,width)</code> obtains
 the next transmitted pixel and paints a rectangle of the
 specified height and width, whose upper-left corner is at the
 specified row and column, using the colour indicated by the
@@ -6692,7 +6692,7 @@ upper left corner.</p>
 
 <p>If the viewer is merging the received image with a background
 image, it may be more convenient just to paint the received pixel
-positions (the <tt>visit()</tt> function sets only the pixel at the
+positions (the <code>visit()</code> function sets only the pixel at the
 specified row and column, not the whole rectangle). This produces
 a "fade-in" effect as the new image gradually replaces the old.
 An advantage of this approach is that proper alpha or
@@ -6757,16 +6757,16 @@ common.</p>
 <p>The most accurate scaling is achieved by the linear
 equation</p>
 
-<p><tt>output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) +
-0.5)</tt></p>
+<p><code>output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) +
+0.5)</code></p>
 
 <p>where</p>
 
-<p><tt>MAXINSAMPLE = (2<sup>sampledepth</sup>)-1</tt><br>
- <tt>MAXOUTSAMPLE = (2<sup>desired_sampledepth</sup>)-1</tt></p>
+<p><code>MAXINSAMPLE = (2<sup>sampledepth</sup>)-1</code><br>
+ <code>MAXOUTSAMPLE = (2<sup>desired_sampledepth</sup>)-1</code></p>
 
 <p>A slightly less accurate conversion is achieved by simply
-shifting right by <tt>(sampledepth - desired_sampledepth)</tt>
+shifting right by <code>(sampledepth - desired_sampledepth)</code>
 places. For example, to reduce 16-bit samples to 8-bit, the
 low-order byte can be discarded. In many situations the shift
 method is sufficiently accurate for display purposes, and it is
@@ -6823,16 +6823,17 @@ relationship between samples and display output, and the transfer
 function of the display system. This can be done by
 calculating:</p>
 
-<p><tt>sample = integer_sample / (2<sup>sampledepth</sup> -
+<p><code>sample = integer_sample / (2<sup>sampledepth</sup> -
 1.0)<br>
  display_output = sample<sup>1.0/gamma</sup><br>
  display_input = inverse_display_transfer(display_output)<br>
- framebuf_sample = floor((display_input *
-MAX_FRAMEBUF_SAMPLE)+0.5)</tt></p>
 
-<p>where <tt>integer_sample</tt> is the sample value from the
-datastream, <tt>framebuf_sample</tt> is the value to write into
-the <a>frame buffer</a>, and <tt>MAX_FRAMEBUF_SAMPLE</tt> is the maximum
+ framebuf_sample = floor((display_input *
+MAX_FRAMEBUF_SAMPLE)+0.5)</code></p>
+
+<p>where <var>integer_sample</var> is the sample value from the
+datastream, <var>framebuf_sample</var> is the value to write into
+the <a>frame buffer</a>, and <var>MAX_FRAMEBUF_SAMPLE</var> is the maximum
 value of a <a>frame buffer</a> sample (255 for 8-bit, 31 for 5-bit,
 etc). The first line converts an integer sample into a normalized
 floating point value (in the range 0.0 to 1.0), the second
@@ -6842,7 +6843,7 @@ function, and the fourth converts to an integer <a>frame buffer</a>
 sample. Zero raised to any positive power is zero.</p>
 
 <p>A step could be inserted between the second and third to
-adjust <tt>display_output</tt> to account for the difference
+adjust <var>display_output</var> to account for the difference
 between the actual viewing conditions and the reference viewing
 conditions. However, this adjustment requires accounting for
 veiling glare, black mapping, and colour appearance models, none
@@ -6851,12 +6852,12 @@ calculations are not described here. If viewing conditions are
 ignored, the error will usually be small.</p>
 
 <p>The display transfer function can typically be approximated by
-a power function with exponent <tt>display_exponent</tt>, in
+a power function with exponent <var>display_exponent</var>, in
 which case the second and third lines can be merged into:</p>
 
-<p><tt>display_input = sample<sup>1.0/(gamma *
+<p><code>display_input = sample<sup>1.0/(gamma *
 display_exponent)</sup> =
-sample<sup>decoding_exponent</sup></tt></p>
+sample<sup>decoding_exponent</sup></code></p>
 
 <p>so as to perform only one power calculation. For colour
 images, the entire calculation is performed separately for R, G,
@@ -6867,16 +6868,16 @@ and B values.</p>
 Alternatively, an application may wish to allow the user to
 adjust the appearance of the displayed image by influencing the
 value of gamma. For example, the user could manually set a
-parameter <tt>user_exponent</tt> which defaults to 1.0, and the
+parameter <var>user_exponent</var> which defaults to 1.0, and the
 application could set:</p>
 
 <pre>
-<tt>gamma = gamma_from_file / user_exponent
+<code>gamma = gamma_from_file / user_exponent
 decoding_exponent = 1.0 / (gamma * display_exponent)
-   = user_exponent / (gamma_from_file * display_exponent)</tt>
+   = user_exponent / (gamma_from_file * display_exponent)</code>
 </pre>
 
-<p>The user would set <tt>user_exponent</tt> greater than 1 to
+<p>The user would set <var>user_exponent</var> greater than 1 to
 darken the mid-level tones, or less than 1 to lighten them.</p>
 
 <p>A <a class="chunk" href=
@@ -7556,6 +7557,7 @@ to assume that the chunk will remain somewhere between <a class="chunk" href=
 <!-- Maintain a fragment named "15Conformance" to preserve incoming links to it -->
 <div id="15Conformance"></div>
 <section id="conformance">
+<h2>Conformance</h2>
 
 <!-- Maintain a fragment named "15ConfIntro" to preserve incoming links to it -->
 <section id="15ConfIntro">
@@ -7954,9 +7956,9 @@ losslessly represents the same reference image.</li>
           chunks.  However, it is the intention of the PNG Working Group to disallow
           chunks containing "executable" data to become registered chunks.</p>
         <p>The text chunks,
-          <span class="chunk">tEXt</span>,
-          <span class="chunk">iTXT</span> and
-          <span class="chunk">zTXt</span>,
+          <a class="chunk" href="#11tEXt">tEXt</a>,
+          <a class="chunk" href="#11iTXt">iTXt</a> and
+          <a class="chunk" href="#11zTXt">zTXt</a>,
           contain data that can be displayed in
           the form of comments, etc.  Some operating systems or terminals might
           allow the display of textual data with embedded control characters to
@@ -8088,8 +8090,8 @@ to certain non-linear transfer functions encountered in image
 capture and reproduction. Gamma is the exponent in a power law
 function. For example the function:</p>
 
-<p><tt>intensity = (voltage +
-constant)<sup>exponent</sup></tt></p>
+<p><code>intensity = (voltage +
+constant)<sup>exponent</sup></code></p>
 
 <p>which is used to model the non-linearity of <a>CRT</a> displays. It is often assumed, as in this International
 Standard, that the constant is zero.</p>
@@ -8103,31 +8105,31 @@ with each is given a specific name.</p>
 <table summary=
 "This table describes characteristic exponents">
 <tr>
-<td><tt>input_exponent</tt> </td>
+<td><var>input_exponent</var> </td>
 <td>the exponent of the image sensor.</td>
 </tr>
 
 <tr>
-<td><tt>encoding_exponent</tt> </td>
+<td><var>encoding_exponent</var> </td>
 <td>the exponent of any transfer function performed by the
 process or device writing the datastream.</td>
 </tr>
 
 <tr>
-<td><tt>decoding_exponent</tt> </td>
+<td><var>decoding_exponent</var> </td>
 <td>the exponent of any transfer function performed by the
 software reading the <a>image data</a>stream.</td>
 </tr>
 
 <tr>
-<td><tt>LUT_exponent</tt> </td>
+<td><var>LUT_exponent</var> </td>
 <td>the exponent of the transfer function applied between the
 <a>frame buffer</a> and the display device (typically this is applied by
 a Look Up Table).</td>
 </tr>
 
 <tr>
-<td><tt>output_exponent</tt> </td>
+<td><var>output_exponent</var> </td>
 <td>the exponent of the display device. For a <a>CRT</a>, this is
 typically a value close to 2.2.</td>
 </tr>
@@ -8140,22 +8142,26 @@ stages.</p>
 <table summary=
 "This table characterises additional entities that are used to describe transfer functions">
 <tr>
-<td><tt>display_exponent</tt> </td>
+<td><var>display_exponent</var> </td>
 <td>exponent of the transfer function applied between the <a>frame 
+
 buffer</a> and the display surface of the display device.<br>
-<tt>display_exponent = LUT_exponent * output_exponent</tt> </td>
+<code>display_exponent = LUT_exponent * output_exponent</code> </td>
+
 </tr>
 
 <tr>
-<td><tt>gamma</tt> </td>
+<td><var>gamma</var> </td>
 <td>exponent of the function mapping display output intensity to
+
 samples in the PNG datastream.<br>
-<tt>gamma = 1.0 / (decoding_exponent * display_exponent)</tt>
+<code>gamma = 1.0 / (decoding_exponent * display_exponent)</code>
+
 </td>
 </tr>
 
 <tr>
-<td><tt>end_to_end_exponent</tt> </td>
+<td><var>end_to_end_exponent</var> </td>
 <td>the exponent of the function mapping image sensor input
 intensity to display output intensity. This is generally a value
 in the range 1.0 to 1.5.</td>
@@ -8212,36 +8218,36 @@ reading ISO C code</caption>
 </tr>
 
 <tr>
-<td><tt>&amp;</tt> </td>
+<td><code>&amp;</code> </td>
 <td>Bitwise AND operator.</td>
 </tr>
 
 <tr>
-<td><tt>^</tt> </td>
+<td><code>^</code> </td>
 <td>Bitwise exclusive-OR operator.</td>
 </tr>
 
 <tr>
-<td><tt>&gt;&gt;</tt> </td>
+<td><code>&gt;&gt;</code> </td>
 <td>Bitwise right shift operator. When applied to an unsigned
 quantity, as here, right shift inserts zeroes at the left.</td>
 </tr>
 
 <tr>
-<td><tt>!</tt> </td>
+<td><code>!</code> </td>
 <td>Logical NOT operator.</td>
 </tr>
 
 <tr>
-<td><tt>++</tt> </td>
-<td>"<tt>n++</tt>" increments the variable <tt>n</tt>. In "for"
+<td><code>++</code> </td>
+<td>"<code>n++</code>" increments the variable <var>n</var>. In "for"
 loops, it is applied after the variable is tested.</td>
 </tr>
 
 <tr>
-<td><tt>0xNNN</tt> </td>
-<td><tt>0x</tt> introduces a hexadecimal (base 16) constant.
-Suffix <tt>L</tt> indicates a long value (at least 32 bits).</td>
+<td><code>0xNNN</code> </td>
+<td><code>0x</code> introduces a hexadecimal (base 16) constant.
+Suffix <code>L</code> indicates a long value (at least 32 bits).</td>
 </tr>
 </table>
 
@@ -8391,7 +8397,7 @@ accessed from the PNG web site.</p>
     This brings the PNG specification into alignment
     with widely deployed industry practice.
   </li>
-  <li>Added the <a class="chunk" href="#11cICP">cICP</a> chunk,
+  <li>Added the <a class="chunk" href="#cICP-chunk">cICP</a> chunk,
     Coding-independent code points for video signal type identification,
     to contain image color space metadata
     defined in [[ITU-T H.273]]

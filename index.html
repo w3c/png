@@ -675,26 +675,30 @@ rules, even for unknown chunk types.</dd>
 
 <!-- Maintain a fragment named "3PNGfourByteSignedInteger" to preserve incoming links to it -->
 <dt id="3PNGfourByteSignedInteger"><dfn>PNG four-byte signed integer</dfn></dt>
+<dd>
+  <p>a four-byte signed integer limited to the range -(2<sup>31</sup>-1) to
+  2<sup>31</sup>-1</p>
 
-<dd>a four-byte signed integer limited to the range
--(2<sup>31</sup>-1) to 2<sup>31</sup>-1. The restriction is
-imposed in order to accommodate languages that have difficulty
-with the value -2<sup>31</sup>.</dd>
+  <p class="note">The restriction is imposed in order to accommodate languages
+  that have difficulty with the value -2<sup>31</sup>.</p>
+</dd>
 
 <!-- Maintain a fragment named "3PNGfourByteUnSignedInteger" to preserve incoming links to it -->
 <dt id="3PNGfourByteUnSignedInteger"><dfn>PNG four-byte unsigned integer</dfn></dt>
+<dd>
+  <p>a four-byte unsigned integer limited to the range 0 to 2<sup>31</sup>-1.</p>
 
-<dd>a four-byte unsigned integer limited to the range 0 to
-2<sup>31</sup>-1. The restriction is imposed in order to
-accommodate languages that have difficulty with unsigned
-four-byte values.</dd>
+  <p class="note">The restriction is imposed in order to accommodate languages
+  that have difficulty with unsigned four-byte values.</p>
+</dd>
 
 <dt><dfn>PNG two-byte unsigned integer</dfn></dt>
+<dd>
+  <p>a two-byte unsigned integer limited to the range 0 to 2<sup>16</sup>-1.</p>
 
-  <dd>a two-byte unsigned integer limited to the range 0 to
-  2<sup>16</sup>-1. The restriction is imposed in order to
-  accommodate languages that have difficulty with unsigned
-  two-byte values.</dd>
+  <p class="note">The restriction is imposed in order to accommodate languages
+  that have difficulty with unsigned two-byte values.</p>
+</dd>
 
 <!-- Maintain a fragment named "3PNGimage" to preserve incoming links to it -->
 <dt id="3PNGimage"><dfn>PNG image</dfn></dt>
@@ -1820,7 +1824,7 @@ The chunk data field may be empty.</p>
 
 <tr>
 <td>Length</td>
-<td>A four-byte unsigned integer giving the number of bytes in
+<td>A <a>PNG four-byte unsigned integer</a> giving the number of bytes in
 the chunk's data field. The length counts <strong>only</strong>
 the data field, <strong>not</strong> itself, the chunk type, or
 the CRC. Zero is a valid length. Although encoders and decoders
@@ -2570,10 +2574,10 @@ numbered bit 7; the lowest bit (value 1) is numbered bit 0.
 Values are unsigned unless otherwise noted. Values explicitly
 noted as signed are represented in two's complement notation.</p>
 
-<p>PNG four-byte unsigned integers are limited to the range 0 to
+<p><a>PNG four-byte unsigned integers</a> are limited to the range 0 to
 2<sup>31</sup>-1 to accommodate languages that have difficulty
-with unsigned four-byte values. Similarly PNG four-byte signed
-integers are limited to the range -(2<sup>31</sup>-1) to
+with unsigned four-byte values. Similarly <a>PNG four-byte signed
+integers</a> are limited to the range -(2<sup>31</sup>-1) to
 2<sup>31</sup>-1 to accommodate languages that have difficulty
 with the value -2<sup>31</sup>.</p>
 
@@ -3196,7 +3200,7 @@ chunk in the PNG datastream. It contains:</p>
 </table>
 
 <p>Width and height give the image dimensions in pixels. They are
-PNG four-byte unsigned integers. Zero is an invalid
+<a>PNG four-byte unsigned integers</a>. Zero is an invalid
 value.</p>
 
 <p>Bit depth is a single-byte integer giving the number of bits
@@ -3606,7 +3610,7 @@ more sophisticated support for colour management and control.</p>
 </tr>
 </table>
 
-<p>Each value is encoded as a four-byte PNG unsigned integer,
+<p>Each value is encoded as a <a>PNG four-byte unsigned integer</a>,
 representing the <i>x</i> or <i>y</i> value times 100000.</p>
 
 <p>EXAMPLE A value of 0.3127 would be stored as the integer
@@ -3661,7 +3665,7 @@ iCCP</a> chunk.</p>
 </tr>
 </table>
 
-<p>The value is encoded as a four-byte PNG unsigned integer,
+<p>The value is encoded as a <a>PNG four-byte unsigned integer</a>,
 representing gamma times 100000.</p>
 
 <p>EXAMPLE A gamma of 1/2.2 would be stored as the integer
@@ -4659,12 +4663,12 @@ contains:</p>
 
 <tr>
 <td>Pixels per unit, X axis</td>
-<td>4 bytes (PNG unsigned integer)</td>
+<td>4 bytes (<a>PNG four-byte unsigned integer</a>)</td>
 </tr>
 
 <tr>
 <td>Pixels per unit, Y axis</td>
-<td>4 bytes (PNG unsigned integer)</td>
+<td>4 bytes (<a>PNG four-byte unsigned integer</a>)</td>
 </tr>
 
 <tr>
@@ -5025,7 +5029,7 @@ the <a>image data</a> are changed.</p>
     </tr>
     </table>
 
-    <p>Each value is encoded as a four-byte PNG unsigned integer.</p>
+    <p>Each value is encoded as a <a>PNG four-byte unsigned integer</a>.</p>
 
     <p>`num_frames` indicates the total number of frames in the animation.
       This must equal the number of <a class="chunk" href="#fcTL-chunk">fcTL</a> chunks.
@@ -5124,16 +5128,16 @@ the <a>image data</a> are changed.</p>
     </table>
 
 <p>`sequence_number` defines the sequence number of the animation chunk,
-  starting from 0. It is encoded as a four-byte PNG unsigned integer.
+  starting from 0. It is encoded as a <a>PNG four-byte unsigned integer</a>.
 </p>
 
 <p>`width` and `height` define the width and height of the following frame.
-  They are encoded as four-byte PNG unsigned integers.
+  They are encoded as <a>PNG four-byte unsigned integers</a>.
   They must be greater than zero.
 </p>
 
 <p>`x_offset` and `y_offset` define the x and y position of the following frame.
-  They are encoded as four-byte PNG unsigned integers.
+  They are encoded as <a>PNG four-byte unsigned integers</a>.
   They must be greater than or equal to zero.</p>
 
 <p>The frame must be rendered within the region defined by
@@ -5154,7 +5158,7 @@ the <a>image data</a> are changed.</p>
   If the the value of the numerator is 0
   the decoder should render the next frame as quickly as possible,
   though viewers may impose a reasonable lower bound.
-  They are encoded as two-byte PNG unsigned integers.
+  They are encoded as <a>PNG two-byte unsigned integers</a>.
 </p>
 
 <p>Frame timings should be independent of the time required

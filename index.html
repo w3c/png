@@ -324,7 +324,7 @@ to 16 bits. PNG is fully streamable with a progressive display
 option. It is robust, providing both full file integrity checking
 and simple detection of common transmission errors. PNG can store
 gamma and chromaticity data as well as a full ICC colour profile
-or CICP metadata,
+or CICP image format signaling metadata,
 for accurate colour matching on heterogenous platforms. This
 Standard defines the Internet Media types "image/png"
 and "image/apng". The
@@ -981,7 +981,7 @@ be specified in one of four ways:</p>
 
 <!-- <ol start="1"> --><ol>
 
-<li>by CICP metadata;</li>
+<li>by CICP image format signaling metadata;</li>
 
 <li>by an ICC profile;</li>
 
@@ -4050,9 +4050,9 @@ Coding-independent code points for video signal type identification</h2>
 </pre>
 
 <p>If present, the <span class="chunk">cICP</span> chunk specifies the colour
-space of the image using the code points specified in [[ITU-T H.273]]. This
-colour space SHOULD be used when processing the image, including by a decoder
-when rendering the image.</p>
+space, transfer function, matrix coeficcients of the image using the code points
+specified in [[ITU-T H.273]]. The video format signaling SHOULD be used when
+processing the image, including by a decoder or when rendering the image.</p>
 
 <p>The following specifies the syntax of the <span class="chunk">cICP</span> chunk:</p>
 
@@ -8406,9 +8406,9 @@ accessed from the PNG web site.</p>
   </li>
   <li>Added the <a class="chunk" href="#cICP-chunk">cICP</a> chunk,
     Coding-independent code points for video signal type identification,
-    to contain image color space metadata
-    defined in [[ITU-T H.273]]
-    which enables PNG to contain High Dynamic Range (HDR) images.
+    to contain image format metadata defined in [[ITU-T H.273]]
+    which enables PNG to contain High Dynamic Range (HDR) and Wide Colour Gamut (WCG)
+    images.
   </li>
   <li>The previously defined <a class="chunk" href="#eXIf">eXIf</a> chunk
     has been moved from the PNG-Extensions document [[PNG-EXTENSIONS]]

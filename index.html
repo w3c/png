@@ -673,16 +673,6 @@ rules, even for unknown chunk types.</dd>
 
 <dd><a>PNG datastream</a> stored as a file.</dd>
 
-<!-- Maintain a fragment named "3PNGfourByteSignedInteger" to preserve incoming links to it -->
-<dt id="3PNGfourByteSignedInteger"><dfn>PNG four-byte signed integer</dfn></dt>
-<dd>
-  <p>a four-byte signed integer limited to the range -(2<sup>31</sup>-1) to
-  2<sup>31</sup>-1</p>
-
-  <p class="note">The restriction is imposed in order to accommodate languages
-  that have difficulty with the value -2<sup>31</sup>.</p>
-</dd>
-
 <!-- Maintain a fragment named "3PNGfourByteUnSignedInteger" to preserve incoming links to it -->
 <dt id="3PNGfourByteUnSignedInteger"><dfn>PNG four-byte unsigned integer</dfn></dt>
 <dd>
@@ -2576,10 +2566,7 @@ noted as signed are represented in two's complement notation.</p>
 
 <p><a>PNG four-byte unsigned integers</a> are limited to the range 0 to
 2<sup>31</sup>-1 to accommodate languages that have difficulty
-with unsigned four-byte values. Similarly <a>PNG four-byte signed
-integers</a> are limited to the range -(2<sup>31</sup>-1) to
-2<sup>31</sup>-1 to accommodate languages that have difficulty
-with the value -2<sup>31</sup>.</p>
+with unsigned four-byte values.</p>
 
 <figure id="integer-representation-in-png">
 <!-- Maintain a fragment named "figure71" to preserve incoming links to it -->

@@ -796,16 +796,16 @@ The format is defined in [[rfc1950]].</dd>
   </dd>
 
 
+<dt>Cyclic Redundancy Code</dt>
 <!-- Maintain a fragment named "3CRC" to preserve incoming links to it -->
 <dt id="3CRC"><dfn>CRC</dfn></dt>
 
-<dd>Cyclic Redundancy Code. A CRC is a type of check value
-designed to detect most transmission errors. A decoder calculates
-the CRC for the received data and checks by comparing it to the
-CRC calculated by the encoder and appended to the data.
-A mismatch
-indicates that the data or the CRC were corrupted in
-transit.</dd>
+<dd>
+  <p>type of check value designed to detect most transmission errors.</p>
+  <p class="note">A decoder calculates the CRC for the received data and checks
+  by comparing it to the CRC calculated by the encoder and appended to the data.
+  A mismatch indicates that the data or the CRC were corrupted in transit.</p>
+</dd>
 
 <!-- Maintain a fragment named "3CRT" to preserve incoming links to it -->
 <dt>Cathode Ray Tube</dt>
@@ -1809,7 +1809,7 @@ The chunk data field may be empty.</p>
 <td>A <a>PNG four-byte unsigned integer</a> giving the number of bytes in
 the chunk's data field. The length counts <strong>only</strong>
 the data field, <strong>not</strong> itself, the chunk type, or
-the CRC. Zero is a valid length. Although encoders and decoders
+the <a>CRC</a>. Zero is a valid length. Although encoders and decoders
 should treat the length as unsigned, its value shall not exceed
 2<sup>31</sup>-1 bytes.</td>
 </tr>
@@ -1837,11 +1837,11 @@ field can be of zero length.</td>
 
 <tr>
 <td>CRC</td>
-<td>A four-byte CRC (Cyclic Redundancy Code) calculated on the
+<td>A four-byte <a>CRC</a> calculated on the
 preceding bytes in the chunk, including the chunk type field and
 chunk data fields, but <strong>not</strong> including the length
-field. The CRC can be used to check for corruption of the data.
-The CRC is always present, even for chunks containing no data.
+field. The <a>CRC</a> can be used to check for corruption of the data.
+The <a>CRC</a> is always present, even for chunks containing no data.
 See <a href="#5CRC-algorithm"></a>.</td>
 </tr>
 </table>
@@ -1967,13 +1967,12 @@ safe-to-copy chunk.</p>
 
 <!-- Maintain a fragment named "5CRC-algorithm" to preserve incoming links to it -->
 <section id="5CRC-algorithm">
-<h2>Cyclic Redundancy Code
-algorithm</h2>
+<h2>CRC algorithm</h2>
 
-<p>CRC fields are calculated using standardized CRC methods with
+<p><a>CRC</a> fields are calculated using standardized <a>CRC</a> methods with
 pre and post conditioning, as defined by [[ISO 3309]]
 and [[ITU-T V.42]].
-The CRC polynomial employed—
+The <a>CRC</a> polynomial employed—
 which is identical to that used in the
 GZIP file format specification [[RFC1952]]—
 is</p>
@@ -1983,16 +1982,16 @@ x<sup>22</sup> + x<sup>16</sup> + x<sup>12</sup> + x<sup>11</sup>
 + x<sup>10</sup> + x<sup>8</sup> + x<sup>7</sup> + x<sup>5</sup>
 + x<sup>4</sup> + x<sup>2</sup> + x + 1</p>
 
-<p>In PNG, the 32-bit CRC is initialized to all 1's, and then the
+<p>In PNG, the 32-bit <a>CRC</a> is initialized to all 1's, and then the
 data from each byte is processed from the least significant bit
 (1) to the most significant bit (128). After all the data bytes
-are processed, the CRC is inverted (its ones complement is
+are processed, the <a>CRC</a> is inverted (its ones complement is
 taken). This value is transmitted (stored in the datastream) MSB
 first. For the purpose of separating into bytes and ordering, the
-least significant bit of the 32-bit CRC is defined to be the
+least significant bit of the 32-bit <a>CRC</a> is defined to be the
 coefficient of the <code>x<sup>31</sup></code> term.</p>
 
-<p>Practical calculation of the CRC often employs a precalculated
+<p>Practical calculation of the <a>CRC</a> often employs a precalculated
 table to accelerate the computation. See <a href=
 "#D-CRCAppendix"></a>.</p>
 </section>
@@ -3035,10 +3034,10 @@ given in the <a>deflate</a> specification [[rfc1951]].</p>
 <p>The check value stored at the end of the zlib datastream is
 calculated on the uncompressed data represented by the
 datastream. The algorithm used to calculate this is not the same
-as the CRC calculation used for PNG chunk CRC field values. The
+as the <a>CRC</a> calculation used for PNG chunk <a>CRC</a> field values. The
 zlib check value is useful mainly as a cross-check that the
 <a>deflate</a> algorithms are implemented correctly.
-Verifying the individual PNG chunk CRCs provides confidence that
+Verifying the individual PNG chunk <a>CRCs</a> provides confidence that
 the PNG datastream has been transmitted undamaged.</p>
 </section>
 
@@ -5250,7 +5249,7 @@ the <a>image data</a> are changed.</p>
 <!-- Not clear this para is needed, but the original specification had it -->
 <p>
   Note, at the end of the <span class="chunk">fcTL</span> chunk
-  is a 32-bit CRC checksum.
+  is a 32-bit <a>CRC</a> checksum.
   The checksum is calculated using the <span class="chunk">fcTL</span> chunk
   and includes the 'fcTL' chunk type field.
 </p>
@@ -6175,15 +6174,15 @@ errors as follows:</p>
 
 <!-- <ol start="1"> --><ol>
 <li>Detect errors as early as possible using the PNG signature
-bytes and CRCs on each chunk. Decoders should verify that all
+bytes and <a>CRCs</a> on each chunk. Decoders should verify that all
 eight bytes of the PNG signature are correct. A decoder can
 have additional confidence in the datastream's integrity if the
 next eight bytes begin an <a class="chunk" href="#11IHDR">
 IHDR</a> chunk with the correct chunk length. A
-CRC should be checked before processing the chunk data. Sometimes
+<a>CRC</a> should be checked before processing the chunk data. Sometimes
 this is impractical, for example when a streaming PNG decoder is
 processing a large <a class="chunk" href="#11IDAT">
-IDAT</a> chunk. In this case the CRC should be
+IDAT</a> chunk. In this case the <a>CRC</a> should be
 checked when the end of the chunk is reached.</li>
 
 <li>Recover from an error, if possible; otherwise fail
@@ -6268,7 +6267,7 @@ for any decoder trying to extract the image from the datastream.
 A decoder that ignored a critical chunk could not know whether
 the image it extracted was the one intended by the encoder.</li>
 
-<li>A PNG signature mismatch, a CRC mismatch, or an unexpected
+<li>A PNG signature mismatch, a <a>CRC</a> mismatch, or an unexpected
 end-of-stream indicates a corrupted datastream, and may be
 regarded as a fatal error. A decoder could try to salvage
 something from the datastream, but the extent of the damage will
@@ -6292,7 +6291,7 @@ continue processing normally.</p>
   and must not be relied on by encoders.
 </p>
 
-<p>Decoders that do not compute CRCs should interpret apparent
+<p>Decoders that do not compute <a>CRCs</a> should interpret apparent
 syntax errors as indications of corruption (see also <a href="#13Error-checking"></a>).</p>
 
 <p>Errors in compressed chunks (<a class="chunk" href="#11IDAT">
@@ -6340,7 +6339,7 @@ whether all four bytes are in the range codes 65-90 and 97-122
 (decimal); note that this need be done only for unrecognized
 chunk types. If the total datastream size is known (from file
 system information, HTTP protocol, etc), the chunk length can be
-checked for plausibility as well. If CRCs are not checked,
+checked for plausibility as well. If <a>CRCs</a> are not checked,
 dropped/added data bytes or an erroneous chunk length can cause
 the decoder to get out of step and misinterpret subsequent data
 as a chunk header.</p>
@@ -6359,8 +6358,8 @@ treated as errors. However, it is recommended that unexpected
 field values be treated as fatal errors only in <strong>critical</strong>
 chunks. An unexpected value in an ancillary chunk can be handled
 by ignoring the whole chunk as though it were an unknown chunk
-type. (This recommendation assumes that the chunk's CRC has been
-verified. In decoders that do not check CRCs, it is safer to
+type. (This recommendation assumes that the chunk's <a>CRC</a> has been
+verified. In decoders that do not check <a>CRCs</a>, it is safer to
 treat any unexpected value as indicating a corrupted
 datastream.)</p>
 
@@ -6407,15 +6406,15 @@ characters to avoid this risk; see <a href="#13Text-chunk-processing"></a>.</p>
 
 <p>Every chunk begins with a length field, which makes it easier
 to write decoders that are invulnerable to fraudulent chunks that
-attempt to overflow buffers. The CRC at the end of every chunk
+attempt to overflow buffers. The <a>CRC</a> at the end of every chunk
 provides a robust defence against accidentally corrupted data.
 The PNG signature bytes provide early detection of common file
 transmission errors.</p>
 
-<p>A decoder that fails to check CRCs could be subject to data
+<p>A decoder that fails to check <a>CRCs</a> could be subject to data
 corruption. The only likely consequence of such corruption is
 incorrectly displayed pixels within the image. Worse things might
-happen if the CRC of the <a class="chunk" href="#11IHDR">
+happen if the <a>CRC</a> of the <a class="chunk" href="#11IHDR">
 IHDR</a> chunk is not checked and the width or
 height fields are corrupted. See <a href="#13Error-checking"></a>.</p>
 
@@ -8181,13 +8180,13 @@ may be found in [[?Luminance-Chromaticity]] and [[?COLOR FAQ]].</p>
 <!-- Maintain a fragment named "D-CRCAppendix" to preserve incoming links to it -->
 <section class="appendix" id="D-CRCAppendix">
 <!-- Maintain a fragment named "samplecrc" to preserve incoming links to it -->
-<h2 class="Annex" id="samplecrc">Sample Cyclic Redundancy Code
+<h2 class="Annex" id="samplecrc">Sample CRC
 implementation</h2>
 
 <p>The following sample code
   — which is informative —
 represents a practical
-implementation of the CRC (Cyclic Redundancy Check) employed in
+implementation of the <a>CRC</a> (Cyclic Redundancy Check) employed in
 PNG chunks. (See also ISO 3309 [[ISO 3309]] or ITU-T V.42 [[ITU-T V.42]] for a
 formal specification.)</p>
 
@@ -8343,7 +8342,7 @@ This page is a central location for current information about PNG
 and PNG-related tools.</p>
 
 <p>Additional documentation and portable C code for <a>deflate</a>,
-and an optimized implementation of the CRC algorithm are
+and an optimized implementation of the <a>CRC</a> algorithm are
 available from the zlib web site,
 <a href=
 "http://www.zlib.org/"><code>http://www.zlib.org/</code></a>.</p>

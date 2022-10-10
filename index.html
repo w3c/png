@@ -4105,8 +4105,10 @@ processing the image, including by a decoder or when rendering the image.</p>
   of computer graphics and web images, including those used in traditional PNG
   workflows, are <a>full-range images</a>.  If <code>Video Full Range
   Flag</code> value is <code>0</code>, then the image is a <a>narrow-range
-  image</a>. Narrow range images are found in video workflows where the interpretation of
-  sample values below 0% signal level or above 100% signal level exist to avoid clipping of
+  image</a>. Narrow range images are found in video workflows where negative 
+  values below 0% signal level, known as "undershoot", and positive values above 
+  100% signal level, known as overshoot, exist. The interpretation of
+  sample values below 0% signal level or above 100% signal range exist to avoid clipping of
   processing/compression artifacts which can improve image quality during additional stages of
   compression. Narrow Range can also preserve additional color volume (both light and color)
   as described in [[EBU R 103]]. [[SMPTE RP 2077]] specifies mapping between <a>full-range

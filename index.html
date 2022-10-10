@@ -692,14 +692,6 @@ rules, even for unknown chunk types.</dd>
   that have difficulty with unsigned four-byte values.</p>
 </dd>
 
-<dt><dfn>PNG two-byte unsigned integer</dfn></dt>
-<dd>
-  <p>a two-byte unsigned integer limited to the range 0 to 2<sup>16</sup>-1.</p>
-
-  <p class="note">The restriction is imposed in order to accommodate languages
-  that have difficulty with unsigned two-byte values.</p>
-</dd>
-
 <!-- Maintain a fragment named "3PNGimage" to preserve incoming links to it -->
 <dt id="3PNGimage"><dfn>PNG image</dfn></dt>
 
@@ -4597,7 +4589,7 @@ Image histogram</h2>
 </pre>
 
 <p>The <span class="chunk">hIST</span> chunk contains a series of
-two-byte (16-bit) unsigned integers:</p>
+two-byte unsigned integers:</p>
 
 <table summary=
 "This table defines the hIST chunk">
@@ -5158,7 +5150,7 @@ the <a>image data</a> are changed.</p>
   If the the value of the numerator is 0
   the decoder should render the next frame as quickly as possible,
   though viewers may impose a reasonable lower bound.
-  They are encoded as <a>PNG two-byte unsigned integers</a>.
+  They are encoded as two-byte unsigned integers.
 </p>
 
 <p>Frame timings should be independent of the time required

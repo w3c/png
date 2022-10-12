@@ -216,7 +216,12 @@
         date: "1977-05",
         publisher: "IEEE",
         href: "https://ieeexplore.ieee.org/document/1055714",
-      }
+      },
+      "EBU R 103": {
+        title: "Video Signal Tolerance in Digital Television Systems",
+        publisher: "EBU",
+        date: "2020-05",
+        href: "https://tech.ebu.ch/docs/r/r103.pdf"
     },
   };
   </script>
@@ -4076,12 +4081,24 @@ processing the image, including by a decoder or when rendering the image.</p>
   <aside class="note">If <code>Video Full Range Flag</code> value is
   <code>1</code>, then the image is a <a>full-range image</a>. The vast majority
   of computer graphics and web images, including those used in traditional PNG
-  workflows, are <a>full-range images</a>.  If <code>Video Full Range
-  Flag</code> value is <code>0</code>, then the image is a <a>narrow-range
-  image</a>. Such images are found in video workflows and the interpretation of
-  sample values smaller (larger) than reference black (white) depend on the
-  application. [[SMPTE RP 2077]] specifies mapping between <a>full-range
-  images</a> and <a>narrow-range images</a>.</aside>
+  workflows, are <a>full-range images</a>.
+  
+  If <code>Video Full Range Flag</code> value is <code>0</code>, then the image 
+  is a <a>narrow-range image</a>. Narrow range images are found in video workflows 
+  where the interpretation of sample values below reference black (0% signal level) 
+  or above reference white (100% signal level). For example, [[ITU-R BT.709]] 
+  specifies that, for 10-bit coding, reference black (called black level) corresponds 
+  to code value 64 and nominal peak to code value 940.
+  
+  In narrow range, momentary excursions defined as overshoots and undershoots exist below 
+  reference black and above nominal peak in uncontrolled lighting conditions, preserve 
+  processing artifacts caused by video filtering/compression without clipping which can 
+  improve image quality during additional stages of processing and compression. 
+  
+  The use of undershoot/overshoot has also been used to preserve additional color volume 
+  (both light and color) as described in [[EBU R 103]]. [[SMPTE RP 2077]] describes full range 
+  in more detail and includes the mapping from <a>full-range images</a> to <a>narrow-range images</a>
+  and describes protected code values for SDI (baseband) carriage.</aside>
 
 <p>The <span class="chunk">cICP</span> chunk MUST come before the <a class="chunk" href="#11IDAT">IDAT</a> chunk.</p>
 

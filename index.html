@@ -328,7 +328,7 @@ supported, with optional transparency. Sample depths range from 1
 to 16 bits. PNG is fully streamable with a progressive display
 option. It is robust, providing both full file integrity checking
 and simple detection of common transmission errors. PNG can store
-gamma and chromaticity data as well as a full ICC colour profile
+<a>gamma value</a> and chromaticity data as well as a full ICC colour profile
 or CICP image format signaling metadata,
 for accurate colour matching on heterogenous platforms. This
 Standard defines the Internet Media types "image/png"
@@ -521,20 +521,12 @@ screen by loading the image into the <a>frame buffer</a>.</dd>
 
 <dd>the red, green, blue and alpha components are all set to zero.</dd>
 
+<dt><dfn>gamma value</dfn></dt>
+<dd>value of the exponent of a <a>gamma</a> <a>transfer function</a></dd>
+
 <!-- Maintain a fragment named "3gamma" to preserve incoming links to it -->
 <dt id="3gamma"><dfn>gamma</dfn></dt>
-
-<dd>exponent that describes approximations to certain non-linear
-transfer functions encountered in image capture and reproduction.
-Within this specification, gamma is the exponent in the
-transfer function from <var>display_output</var> to
-<var>image_sample</var>
-<p>
-<code>image_sample = display_output<sup>gamma</sup></code>
-</p>
-where both <var>display_output</var> and <var>image_sample</var>
-are scaled to the range 0 to 1.
-</dd>
+<dd>power-law <a>transfer function</a></dd>
 
 <dt><dfn>full-range image</dfn></dt>
 <dd>Image where reference black and white correspond to sample values
@@ -758,6 +750,9 @@ image it is the same as the <a>bit depth</a>.</dd>
     will display this rather than the animation.
   </dd>
 
+<dt><dfn>transfer function</dfn></dt>
+<dd>function relating image luminance with image samples</dd>
+
 <!-- Maintain a fragment named "3truecolour" to preserve incoming links to it -->
 <dt id="3truecolour"><dfn>truecolour</dfn></dt>
 
@@ -975,7 +970,7 @@ be specified in one of four ways:</p>
 <li>by specifying explicitly that the colour space is sRGB when
 the samples conform to this colour space;</li>
 
-<li>by specifying the value of gamma and the 1931 CIE <i>x,y</i>
+<li>by specifying a <a>gamma value</a> and the 1931 CIE <i>x,y</i>
 chromaticities of the red, green, and blue primaries used in the
 image and the reference <a>white point</a>.</li>
 </ol>
@@ -987,14 +982,13 @@ colour space to be indicated. The fourth method,
 which was standardized before ICC profiles were widely adopted,
 enables the exact
 chromaticities of the RGB data to be specified, along with the
-gamma correction (the power function relating the desired display
-output with the image samples) to be applied (see <a
+<a>gamma</a> correction to be applied (see <a
 href="#C-GammaAppendix"></a>).
 However, colour-aware applications will prefer one of the first three methods,
 while colour-unaware applications will typically ignore all four methods.
 </p>
 
-<p>Gamma correction is not applied to the alpha channel, if
+<p><a>Gamma</a> correction is not applied to the alpha channel, if
 present. Alpha samples always represent a linear fraction of full
 opacity.</p>
 </section>
@@ -1379,7 +1373,7 @@ if no better option is available.</td>
 <tr>
   <td>Coding-independent code points</td>
   <td>Identifies the colour space by enumerating metadata
-    such as the transfer function and colour primaries.
+    such as the <a>transfer function</a> and colour primaries.
     Originally for SDR and HDR video, also used for
     still and animated images.
   </td>
@@ -1392,7 +1386,7 @@ if no better option is available.</td>
 
 <tr>
 <td>Gamma and chromaticity</td>
-<td>Gamma characteristic of the image with respect to the desired
+<td><a>Gamma value</a> of the image with respect to the desired
 output intensity, and <a>chromaticity</a> characteristics of the RGB
 values used in the image.</td>
 </tr>
@@ -3621,10 +3615,7 @@ Image gamma</h2>
 103 65 77 65
 </pre>
 
-<p>The <span class="chunk">gAMA</span> chunk specifies the
-relationship between the image samples and the desired display
-output intensity. Gamma is defined in <a href=
-"#3gamma">gamma</a>.</p>
+<p>The <a class="chunk" href="#11gAMA">gAMA</a> chunk specifies a <a>gamma value</a>.</p>
 
 <p>In fact specifying the desired display output intensity is
 insufficient. It is also necessary to specify the viewing
@@ -3649,9 +3640,9 @@ iCCP</a> chunk.</p>
 </table>
 
 <p>The value is encoded as a <a>PNG four-byte unsigned integer</a>,
-representing gamma times 100000.</p>
+representing the <a>gamma value</a> times 100000.</p>
 
-<p>EXAMPLE A gamma of 1/2.2 would be stored as the integer
+<p>EXAMPLE A <a>gamma value</a> of 1/2.2 would be stored as the integer
 45455.</p>
 
 <p>See <a href="#12Encoder-gamma-handling"></a> and <a href=
@@ -4119,24 +4110,24 @@ recognize it SHALL ignore the following chunks:</p>
   </aside>
 
 <aside class="example"><span class="chunk">cICP</span> chunk field values for a
-<a>full-range image</a> that uses the colour primaries and the PQ transfer
-function specified at [[ITU-R BT.2100]]:
+<a>full-range image</a> that uses the colour primaries and the PQ <a>transfer
+function</a> specified at [[ITU-R BT.2100]]:
 <pre>
 9 16 0 1
 </pre>
 </aside>
 
 <aside class="example"><span class="chunk">cICP</span> chunk field values for a
-<a>full-range image</a> that uses the colour primaries and the HLG transfer
-function specified at [[ITU-R BT.2100]]:
+<a>full-range image</a> that uses the colour primaries and the HLG <a>transfer
+function</a> specified at [[ITU-R BT.2100]]:
 <pre>
 9 18 0 1
 </pre>
 </aside>
 
 <aside class="example"><span class="chunk">cICP</span> chunk field values for a
-<a>narrow-range image</a> that uses the colour primaries and the transfer
-function defined at [[ITU-R BT.709]]:
+<a>narrow-range image</a> that uses the colour primaries and the <a>transfer
+function</a> defined at [[ITU-R BT.709]]:
 <pre>
 1 1 0 0
 </pre>
@@ -4810,7 +4801,7 @@ fully transparent. An alpha value of 255 (when the <span class=
 class="chunk">sPLT</span> sample depth is 16) means fully opaque.
 The <span class="chunk">sPLT</span> chunk may appear for any
 <a>colour type</a>. Entries in <span class="chunk">sPLT</span> use the
-same gamma and <a>chromaticity</a> values as the PNG image, but may fall
+same <a>gamma value</a> and <a>chromaticity</a> values as the PNG image, but may fall
 outside the range of values used in the colour space of the PNG
 image; for example, in a greyscale PNG image, each <span class=
 "chunk">sPLT</span> entry would typically have equal red, green,
@@ -5399,7 +5390,7 @@ additional recommendations given here.</p>
 handling</h2>
 
 <p>See <a href="#C-GammaAppendix"></a> for a brief introduction
-to gamma issues.</p>
+to <a>gamma</a> issues.</p>
 
 <p>PNG encoders capable of full colour management will perform more
 sophisticated calculations than those described here and may
@@ -5407,7 +5398,7 @@ choose to use the <a class="chunk" href="#11iCCP">
 iCCP</a> chunk. If it is known that the image
 samples conform to the sRGB specification [[SRGB]], encoders are strongly encouraged to write
 the <a class="chunk" href="#srgb-standard-colour-space">sRGB</a> chunk
-without performing additional gamma handling. In both cases it is
+without performing additional <a>gamma</a> handling. In both cases it is
 recommended that an appropriate <a class="chunk" href="#11gAMA">
 gAMA</a> chunk be generated for use by PNG
 decoders that do not recognize the <a class="chunk" href="#11iCCP">
@@ -5433,7 +5424,7 @@ href='#13Decoder-gamma-handling'></a>.</p>
 samples and their precision. If the samples represent light
 intensity in floating-point or high precision integer form
 (perhaps from a computer graphics renderer), the encoder may
-perform "gamma encoding" (applying a power function with exponent
+perform <dfn>gamma encoding</dfn> (applying a power function with exponent
 less than 1) before quantizing the data to integer values for
 inclusion in the PNG datastream. This results in fewer banding
 artifacts at a given sample depth, or allows smaller samples
@@ -5446,7 +5437,7 @@ floor((2<sup>sampledepth</sup>-1) * intensity<sup>encoding_exponent</sup>
 + 0.5)</code></p>
 
 <p>If the intensity in the equation is the desired output
-intensity, the encoding exponent is the gamma value to be used in
+intensity, the encoding exponent is the <a>gamma value</a> to be used in
 the <a class="chunk" href="#11gAMA">gAMA</a>
 chunk.</p>
 
@@ -5454,7 +5445,7 @@ chunk.</p>
 scene intensity, another transformation may be needed. There is
 sometimes a requirement for the displayed image to have higher
 contrast than the original source image. This corresponds to an
-end-to-end transfer function from original scene to display
+end-to-end <a>transfer function</a> from original scene to display
 output with an exponent greater than 1. In this case:</p>
 
 <pre>
@@ -5475,21 +5466,21 @@ gamma = encoding_exponent
 <!-- ************Page Break******************* -->
 <p>If the image is being written to a datastream only, the
 encoder is free to choose the encoding exponent. Choosing a value
-that causes the gamma value in the <a class="chunk" href="#11gAMA">
+that causes the <a>gamma value</a> in the <a class="chunk" href="#11gAMA">
 gAMA</a> chunk to be 1/2.2 is often a reasonable
 choice because it minimizes the work for a PNG decoder displaying
 on a typical video monitor.</p>
 
 <p>Some image renderers may simultaneously write the image to a
 PNG datastream and display it on-screen. The displayed pixels
-should be gamma corrected for the display system and viewing
+should be <a>gamma</a> corrected for the display system and viewing
 conditions in use, so that the user sees a proper representation
 of the intended scene.</p>
 
 <p>If the renderer wants to write the displayed sample values to
-the PNG datastream, avoiding a separate gamma encoding step for
-the datastream, the renderer should approximate the transfer
-function of the display system by a power function, and write the
+the PNG datastream, avoiding a separate <a>gamma encoding</a> step for
+the datastream, the renderer should approximate the <a>transfer
+function</a> of the display system by a power function, and write the
 reciprocal of the exponent into the <a class="chunk" href="#11gAMA">
 gAMA</a> chunk. This will allow a PNG
 decoder to reproduce what was displayed on screen for the
@@ -5497,29 +5488,29 @@ originator during rendering.</p>
 
 <p>However, it is equally reasonable for a renderer to compute
 displayed pixels appropriate for the display device, and to
-perform separate gamma encoding for data storage and
+perform separate <a>gamma encoding</a> for data storage and
 transmission, arranging to have a value in the <a class="chunk" href=
 "#11gAMA">gAMA</a> chunk more
 appropriate to the future use of the image.</p>
 
-<p>Computer graphics renderers often do not perform gamma
-encoding, instead making sample values directly proportional to
+<p>Computer graphics renderers often do not perform <a>gamma
+encoding</a>, instead making sample values directly proportional to
 scene light intensity. If the PNG encoder receives sample values
 that have already been quantized into integer values, there is no
-point in doing gamma encoding on them; that would just result in
+point in doing <a>gamma encoding</a> on them; that would just result in
 further loss of information. The encoder should just write the
 sample values to the PNG datastream. This does not imply that the
 <a class="chunk" href="#11gAMA">gAMA</a> chunk
-should contain a gamma value of 1.0 because the desired
-end-to-end transfer function from scene intensity to display
+should contain a <a>gamma value</a> of 1.0 because the desired
+end-to-end <a>transfer function</a> from scene intensity to display
 output intensity is not necessarily linear. However, the desired
-gamma value is probably not far from 1.0. It may depend on
+<a>gamma value</a> is probably not far from 1.0. It may depend on
 whether the scene being rendered is a daylight scene or an indoor
 scene, etc.</p>
 
 <p>When the sample values come directly from a piece of hardware,
 the correct <a class="chunk" href="#11gAMA">gAMA</a>
-value can, in principle, be inferred from the transfer function
+value can, in principle, be inferred from the <a>transfer function</a>
 of the hardware and lighting conditions of the scene. In the case
 of video digitizers ("frame grabbers"), the samples are probably
 in the sRGB colour space, because the sRGB specification was
@@ -5532,37 +5523,37 @@ subsequent printing (an exponent of about 0.57), or the scanner
 may have corrected the samples for display on a monitor. It may
 be necessary to refer to the scanner's manual or to scan a
 calibrated target in order to determine the characteristics of a
-particular scanner. It should be remembered that gamma relates
+particular scanner. It should be remembered that <a>gamma</a> relates
 samples to desired display output, not to scanner input.</p>
 
 <p>Datastream format converters generally should not attempt to
-convert supplied images to a different gamma. The data should be
-stored in the PNG datastream without conversion, and the gamma
-value should be deduced from information in the source datastream
-if possible. Gamma alteration at datastream conversion time
+convert supplied images to a different <a>gamma</a>. The data should be
+stored in the PNG datastream without conversion, and the <a>gamma
+value</a> should be deduced from information in the source datastream
+if possible. <a>Gamma</a> alteration at datastream conversion time
 causes re-quantization of the set of intensity levels that are
 represented, introducing further roundoff error with little
 benefit. It is almost always better to just copy the sample
 values intact from the input to the output file.</p>
 
-<p>If the source datastream describes the gamma characteristics
+<p>If the source datastream describes the <a>gamma</a> characteristics
 of the image, a datastream converter is strongly encouraged to
 write a <a class="chunk" href="#11gAMA">gAMA</a>
 chunk. Some datastream formats specify the display exponent (the
 exponent of the function which maps image samples to display
 output rather than the other direction). If the source file's
-gamma value is greater than 1.0, it is probably a display
+<a>gamma value</a> is greater than 1.0, it is probably a display
 exponent, and the reciprocal of this value should be used for the
-PNG gamma value. If the source file format records the
+PNG <a>gamma value</a>. If the source file format records the
 relationship between image samples and a quantity other than
 display output, it will be more complex than this to deduce the
-PNG gamma value.</p>
+PNG <a>gamma value</a>.</p>
 
 <p>If a PNG encoder or datastream converter knows that the image
 has been displayed satisfactorily using a display system whose
-transfer function can be approximated by a power function with
+<a>transfer function</a> can be approximated by a power function with
 exponent <var>display_exponent</var>, the image can be marked as
-having the gamma value:</p>
+having the <a>gamma value</a>:</p>
 
 <pre>
 gamma = 1/display_exponent
@@ -5573,12 +5564,12 @@ gamma = 1/display_exponent
 <p>It is better to write a <a class="chunk" href="#11gAMA">
 gAMA</a> chunk with a value that is approximately
 correct than to omit the chunk and force PNG decoders to guess an
-approximate gamma. If a PNG encoder is unable to infer the gamma
-value, it is preferable to omit the <a class="chunk" href="#11gAMA">
+approximate <a>gamma value</a>. If a PNG encoder is unable to infer the <a>gamma
+value</a>, it is preferable to omit the <a class="chunk" href="#11gAMA">
 gAMA</a> chunk. If a guess has to be made
 this should be left to the PNG decoder.</p>
 
-<p>Gamma does not apply to alpha samples; alpha is always
+<p><a>gamma</a> does not apply to alpha samples; alpha is always
 represented linearly.</p>
 
 <p>See also <a href="#13Decoder-gamma-handling"></a>.</p>
@@ -5744,7 +5735,7 @@ colour space. The data should be stored in the PNG datastream
 without conversion, and the source primary chromaticities should
 be recorded if they are known. Colour space transformation at
 datastream conversion time is a bad idea because of gamut
-mismatches and rounding errors. As with gamma conversions, it is
+mismatches and rounding errors. As with <a>gamma</a> conversions, it is
 better to store the data losslessly and incur at most one
 conversion when the image is finally displayed.</p>
 
@@ -6776,8 +6767,8 @@ shifting right by <code>(sampledepth - desired_sampledepth)</code>
 places. For example, to reduce 16-bit samples to 8-bit, the
 low-order byte can be discarded. In many situations the shift
 method is sufficiently accurate for display purposes, and it is
-certainly much faster. (But if gamma correction is being done,
-sample rescaling can be merged into the gamma correction lookup
+certainly much faster. (But if <a>gamma</a> correction is being done,
+sample rescaling can be merged into the <a>gamma</a> correction lookup
 table, as is illustrated in <a href=
 "#13Decoder-gamma-handling"></a>.)</p>
 
@@ -6818,15 +6809,15 @@ precision.</p>
 handling</h2>
 
 <p>See <a href="#C-GammaAppendix"></a> for a brief introduction
-to gamma issues.</p>
+to <a>gamma</a> issues.</p>
 
 <p>Viewers capable of full colour management  will perform more
 sophisticated calculations than those described here.</p>
 
 <p>For an image display program to produce correct tone
 reproduction, it is necessary to take into account the
-relationship between samples and display output, and the transfer
-function of the display system. This can be done by
+relationship between samples and display output, and the <a>transfer
+function</a> of the display system. This can be done by
 calculating:</p>
 
 <p><code>sample = integer_sample / (2<sup>sampledepth</sup> -
@@ -6844,8 +6835,8 @@ value of a <a>frame buffer</a> sample (255 for 8-bit, 31 for 5-bit,
 etc). The first line converts an integer sample into a normalized
 floating point value (in the range 0.0 to 1.0), the second
 converts to a value proportional to the desired display output
-intensity, the third accounts for the display system's transfer
-function, and the fourth converts to an integer <a>frame buffer</a>
+intensity, the third accounts for the display system's <a>transfer
+function</a>, and the fourth converts to an integer <a>frame buffer</a>
 sample. Zero raised to any positive power is zero.</p>
 
 <p>A step could be inserted between the second and third to
@@ -6857,7 +6848,7 @@ of which can be well approximated by power functions. Such
 calculations are not described here. If viewing conditions are
 ignored, the error will usually be small.</p>
 
-<p>The display transfer function can typically be approximated by
+<p>The display <a>transfer function</a> can typically be approximated by
 a power function with exponent <var>display_exponent</var>, in
 which case the second and third lines can be merged into:</p>
 
@@ -6869,11 +6860,11 @@ sample<sup>decoding_exponent</sup></code></p>
 images, the entire calculation is performed separately for R, G,
 and B values.</p>
 
-<p>The value of gamma can be taken directly from the <a class="chunk" href=
+<p>The <a>gamma value</a> can be taken directly from the <a class="chunk" href=
 "#11gAMA">gAMA</a> chunk.
 Alternatively, an application may wish to allow the user to
 adjust the appearance of the displayed image by influencing the
-value of gamma. For example, the user could manually set a
+<a>gamma value</a>. For example, the user could manually set a
 parameter <var>user_exponent</var> which defaults to 1.0, and the
 application could set:</p>
 
@@ -6901,41 +6892,41 @@ pixel. For an indexed-colour image, a one-time correction of the
 palette is sufficient, unless the image uses transparency and is
 being displayed against a nonuniform background.</p>
 
-<p>If floating-point calculations are not possible, gamma
+<p>If floating-point calculations are not possible, <a>gamma</a>
 correction tables can be computed using integer arithmetic and a
 precomputed table of logarithms. Example code appears in [[PNG-EXTENSIONS]].</p>
 
-<p>When the incoming image has unknown gamma (<a class="chunk" href=
+<p>When the incoming image has unknown <a>gamma value</a> (<a class="chunk" href=
 "#11gAMA">gAMA</a>, <a class="chunk" href=
 "#srgb-standard-colour-space">sRGB</a>, and <a class="chunk" href=
 "#11iCCP">iCCP</a>
 all absent), standalone image viewers should choose
-a likely default gamma value, but allow the user to select a new
-one if the result proves too dark or too light. The default gamma
+a likely default <a>gamma value</a>, but allow the user to select a new
+one if the result proves too dark or too light. The default <a>gamma value</a>
 may depend on other knowledge about the image, for example
 whether it came from the Internet or from the local system.
 For consistency, viewers for document formats such as HTML,
 or vector graphics such as SVG, should treat embedded or
-linked PNG images with unknown gamma in the same way
+linked PNG images with unknown <a>gamma value</a> in the same way
 that they treat other untagged images.
 </p>
 
 <p>In practice, it is often difficult to determine what value of
 display exponent should be used. In systems with no built-in
-gamma correction, the display exponent is determined entirely by
+<a>gamma</a> correction, the display exponent is determined entirely by
 the <a>CRT</a>. A display exponent of 2.2 should be used unless detailed
 calibration measurements are available for the particular <a>CRT</a>
 used.</p>
 
 <p>Many modern <a>frame buffers</a> have lookup tables that are used to
-perform gamma correction, and on these systems the display
+perform <a>gamma</a> correction, and on these systems the display
 exponent value should be the exponent of the lookup table and <a>CRT</a>
 combined. It may not be possible to find out what the lookup
 table contains from within the viewer application, in which case
 it may be necessary to ask the user to supply the display
 system's exponent value. Unfortunately, different manufacturers
 use different ways of specifying what should go into the lookup
-table, so interpretation of the system "gamma" value is
+table, so interpretation of the system <a>gamma value</a> is
 system-dependent.</p>
 
 <p>The response of real displays is actually more complex than
@@ -6957,14 +6948,14 @@ issues.</p>
 
 <p>In many cases, the <a>image data</a> in PNG datastreams will be
 treated as device-dependent RGB values and displayed without
-modification (except for appropriate gamma correction). This
+modification (except for appropriate <a>gamma</a> correction). This
 provides the fastest display of PNG images. But unless the viewer
 uses exactly the same display hardware as that used by the author
 of the original image, the colours will not be exactly the same
 as those seen by the original author, particularly for darker or
 near-neutral colours. The <a class="chunk" href="#11cHRM">
 cHRM</a> chunk provides information that allows
-closer colour matching than that provided by gamma correction
+closer colour matching than that provided by <a>gamma</a> correction
 alone.</p>
 
 <p>The <a class="chunk" href="#11cHRM">cHRM</a> data
@@ -7088,7 +7079,7 @@ output = alpha * foreground + (1-alpha) * background
 
 <p>where alpha and the input and output sample values are
 expressed as fractions in the range 0 to 1. This computation
-should be performed with intensity samples (not gamma-encoded
+should be performed with intensity samples (not <a>gamma</a>-encoded
 samples). For colour images, the computation is done separately
 for R, G, and B samples.</p>
 
@@ -7097,7 +7088,7 @@ a foreground image against a background image. It assumes that
 the original pixel data are available for the background image,
 and that output is to a <a>frame buffer</a> for display. Other variants
 are possible; see the comments below the code. The code allows
-the sample depths and gamma values of foreground image and
+the sample depths and <a>gamma values</a> of foreground image and
 background image all to be different and not necessarily suited
 to the display system. In practice no assumptions about equality
 should be made without first checking.</p>
@@ -7211,18 +7202,18 @@ will need to be replaced by copies of lines 17-23, but processing
 background instead of foreground pixel values.</li>
 
 <li>If the sample depths of the output file, foreground file, and
-background file are all the same, and the three gamma values also
+background file are all the same, and the three <a>gamma values</a> also
 match, then the no-compositing code in lines 14-23 reduces to
 copying pixel values from the input file to the output file if
 alpha is one, or copying pixel values from background to output
 file if alpha is zero. Since alpha is typically either zero or
 one for the vast majority of pixels in an image, this is a
-significant saving. No gamma computations are needed for most
+significant saving. No <a>gamma</a> computations are needed for most
 pixels.</li>
 
-<li>When the sample depths and gamma values all match, it may
-appear attractive to skip the gamma decoding and encoding (lines
-28-31, 33-34) and just perform line 32 using gamma-encoded sample
+<li>When the sample depths and <a>gamma values</a> all match, it may
+appear attractive to skip the <a>gamma</a> decoding and encoding (lines
+28-31, 33-34) and just perform line 32 using <a>gamma</a>-encoded sample
 values. Although this does not have too bad an effect on image
 quality, the time savings are small if alpha values of zero and
 one are treated as special cases as recommended here.</li>
@@ -7244,7 +7235,7 @@ such as
 However, some roundoff error can result, so it is better to have
 the original background pixels available if at all possible.</li>
 
-<li>Note that lines 18-22 are performing exactly the same gamma
+<li>Note that lines 18-22 are performing exactly the same <a>gamma</a>
 computation that is done when no alpha channel is present. If the
 no-alpha case is handled with a lookup table, the same lookup
 table can be used here. Lines 28-31 and 33-34 can also be done
@@ -8091,9 +8082,9 @@ relationships.</li>
 <!-- Maintain a fragment named "gammachromaticity" to preserve incoming links to it -->
 <h2 class="Annex" id="gammachromaticity">Gamma and chromaticity</h2>
 
-<p>Gamma is a numerical parameter used to describe approximations
-to certain non-linear transfer functions encountered in image
-capture and reproduction. Gamma is the exponent in a power law
+<p>A <a>gamma value</a> is a numerical parameter used to describe approximations
+to certain non-linear <a>transfer functions</a> encountered in image
+capture and reproduction. The <a>gamma value</a> is the exponent in a power law
 function. For example the function:</p>
 
 <p><code>intensity = (voltage +
@@ -8104,7 +8095,7 @@ Standard, that the constant is zero.</p>
 
 <p>For the purposes of this specification, it is
 convenient to consider five places in a general image pipeline at
-which non-linear transfer functions may occur and which may be
+which non-linear <a>transfer functions</a> may occur and which may be
 modelled by power laws. The characteristic exponent associated
 with each is given a specific name.</p>
 
@@ -8117,19 +8108,19 @@ with each is given a specific name.</p>
 
 <tr>
 <td><var>encoding_exponent</var> </td>
-<td>the exponent of any transfer function performed by the
+<td>the exponent of any <a>transfer function</a> performed by the
 process or device writing the datastream.</td>
 </tr>
 
 <tr>
 <td><var>decoding_exponent</var> </td>
-<td>the exponent of any transfer function performed by the
+<td>the exponent of any <a>transfer function</a> performed by the
 software reading the <a>image data</a>stream.</td>
 </tr>
 
 <tr>
 <td><var>LUT_exponent</var> </td>
-<td>the exponent of the transfer function applied between the
+<td>the exponent of the <a>transfer function</a> applied between the
 <a>frame buffer</a> and the display device (typically this is applied by
 a Look Up Table).</td>
 </tr>
@@ -8142,18 +8133,16 @@ typically a value close to 2.2.</td>
 </table>
 
 <p>It is convenient to define some additional entities that
-describe some composite transfer functions, or combinations of
+describe some composite <a>transfer functions</a>, or combinations of
 stages.</p>
 
 <table summary=
 "This table characterises additional entities that are used to describe transfer functions">
 <tr>
 <td><var>display_exponent</var> </td>
-<td>exponent of the transfer function applied between the <a>frame 
-
-buffer</a> and the display surface of the display device.<br>
+<td>exponent of the <a>transfer function</a> applied between the <a>frame 
+buffer</a> and the display surface of the display device.<br />
 <code>display_exponent = LUT_exponent * output_exponent</code> </td>
-
 </tr>
 
 <tr>
@@ -8175,7 +8164,7 @@ in the range 1.0 to 1.5.</td>
 </table>
 
 <p>The PNG <a class="chunk" href="#11gAMA">gAMA</a>
-chunk is used to record the gamma value. This information may be
+chunk is used to record the <a>gamma value</a>. This information may be
 used by decoders together with additional information about the
 display environment in order to achieve, or approximate, the
 desired display output.</p>

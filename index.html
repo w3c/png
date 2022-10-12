@@ -763,10 +763,12 @@ nominal white value.</dd>
 <!-- Maintain a fragment named "3zlib" to preserve incoming links to it -->
 <dt id="3zlib"><dfn>zlib</dfn></dt>
 
-<dd>particular format for data that have been compressed using
-<a>deflate</a>-style compression. Also the name
-of a library containing a sample implementation of this method.
-The format is defined in [[rfc1950]].</dd>
+<dd><p><a>deflate</a>-style compression method.</p>
+<p class="note">The format is defined in [[rfc1950]].</p>
+<p class="note">Also refers to the name of a library containing a sample
+implementation of this method.</p>
+</dd>
+
 </dl>
 </section>
 
@@ -2972,7 +2974,7 @@ future standardization. PNG compression method 0 is
 32768 bytes. <a>Deflate</a> compression is derived from <a>LZ77</a>.</p>
 
 <p><a>Deflate</a>-compressed datastreams within PNG are stored in the
-"zlib" format, which has the structure:</p>
+<a>zlib</a> format, which has the structure:</p>
 
 <table summary=
 "This table gives the structure of the zlib format">
@@ -2997,13 +2999,12 @@ future standardization. PNG compression method 0 is
 </tr>
 </table>
 
-<p>Further details on this format are given in the zlib
-specification [[rfc1950]].</p>
+<p><a>zlib</a> is specified at [[rfc1950]].</p>
 
-<p>For PNG compression method 0, the zlib compression
+<p>For PNG compression method 0, the <a>zlib</a> compression
 method/flags code shall specify method code 8 (<a>deflate</a>
 compression) and an <a>LZ77</a> window size of not more than 32768
-bytes. The zlib compression method number is not the same as the
+bytes. The <a>zlib</a> compression method number is not the same as the
 PNG compression method number in the <a class="chunk" href=
 "#11IHDR">IHDR</a> chunk. The additional
 flags shall not specify a preset dictionary.</p>
@@ -3014,7 +3015,7 @@ PNG encoder may set the window size by rounding up to a power of
 encoding and decoding, without adversely affecting the
 compression ratio.</p>
 
-<p>The compressed data within the zlib datastream are stored as a
+<p>The compressed data within the <a>zlib</a> datastream are stored as a
 series of blocks, each of which can represent raw (uncompressed)
 data, <a>LZ77</a>-compressed data encoded with fixed Huffman codes, or
 <a>LZ77</a>-compressed data encoded with custom Huffman codes. A marker
@@ -3023,11 +3024,11 @@ the decoder to recognize the end of the compressed datastream.
 Further details on the compression algorithm and the encoding are
 given in the <a>deflate</a> specification [[rfc1951]].</p>
 
-<p>The check value stored at the end of the zlib datastream is
+<p>The check value stored at the end of the <a>zlib</a> datastream is
 calculated on the uncompressed data represented by the
 datastream. The algorithm used to calculate this is not the same
 as the <a>CRC</a> calculation used for PNG chunk <a>CRC</a> field values. The
-zlib check value is useful mainly as a cross-check that the
+<a>zlib</a> check value is useful mainly as a cross-check that the
 <a>deflate</a> algorithms are implemented correctly.
 Verifying the individual PNG chunk <a>CRCs</a> provides confidence that
 the PNG datastream has been transmitted undamaged.</p>
@@ -3042,16 +3043,16 @@ of filtered scanlines</h2>
 resulting data stream is split into <a class="chunk" href="#11IDAT">
 IDAT</a> chunks. The concatenation of the
 contents of all the <a class="chunk" href="#11IDAT">
-IDAT</a> chunks makes up a zlib datastream. This
+IDAT</a> chunks makes up a <a>zlib</a> datastream. This
 datastream decompresses to filtered <a>image data</a>.</p>
 
 <p>It is important to emphasize that the boundaries between <a
 class="chunk" href="#11IDAT">IDAT</a> chunks are
-arbitrary and can fall anywhere in the zlib datastream. There is
+arbitrary and can fall anywhere in the <a>zlib</a> datastream. There is
 not necessarily any correlation between <a class="chunk" href="#11IDAT">
 IDAT</a> chunk boundaries and <a>deflate</a> block
-boundaries or any other feature of the zlib data. For example, it
-is entirely possible for the terminating zlib check value to be
+boundaries or any other feature of the <a>zlib</a> data. For example, it
+is entirely possible for the terminating <a>zlib</a> check value to be
 split across <a class="chunk" href="#11IDAT">
 IDAT</a> chunks.</p>
 
@@ -3059,7 +3060,7 @@ IDAT</a> chunks.</p>
 structure of the <a>image data</a> (i.e., scanline boundaries) and
 <a>deflate</a> block boundaries or <a class="chunk" href="#11IDAT">
 IDAT</a> chunk boundaries. The complete filtered
-PNG image is represented by a single zlib datastream that is
+PNG image is represented by a single <a>zlib</a> datastream that is
 stored in a number of <a class="chunk" href="#11IDAT">
 IDAT</a> chunks.</p>
 </section>
@@ -3077,7 +3078,7 @@ iCCP</a>,
 and <a class="chunk" href="#11zTXt">
 zTXt</a> chunks. Unlike the <a>image data</a>, such
 datastreams are not split across chunks; each such chunk contains
-an independent zlib datastream (see <a href="#10CompressionCM0"></a>).</p>
+an independent <a>zlib</a> datastream (see <a href="#10CompressionCM0"></a>).</p>
 </section>
 </section>
 
@@ -3688,7 +3689,7 @@ the profile. It is case-sensitive. Profile names shall contain
 only printable Latin-1 characters and spaces (only character
 codes 32-126 and 161-255 decimal are allowed). Leading, trailing,
 and consecutive spaces are not permitted. The only compression
-method defined in this specification is method 0 (zlib
+method defined in this specification is method 0 (<a>zlib</a>
 datastream with <a>deflate</a> compression, see <a href=
 '#10CompressionOtherUses'></a>). The compression method entry is followed
 by a compressed profile that makes up the remainder of the chunk.
@@ -4260,7 +4261,7 @@ and <a class="chunk" href="#11zTXt">zTXt</a> chunks,
 the text string associated with a keyword is restricted to the
 Latin-1 character set plus the linefeed character. Text strings
 in <a class="chunk" href="#11zTXt">zTXt</a> are
-compressed into zlib datastreams using <a>deflate</a> compression (see
+compressed into <a>zlib</a> datastreams using <a>deflate</a> compression (see
 <a href='#10CompressionOtherUses'></a>). The <a class="chunk" href="#11iTXt">
 iTXt</a> chunk can be used to convey
 characters outside the Latin-1 set. It uses the UTF-8 encoding [[rfc3629]].
@@ -4374,7 +4375,7 @@ Standard is 0 (<a>deflate</a> compression). Other values are
 reserved for future standardization. The compression method entry is
 followed by the compressed text datastream that makes up the
 remainder of the chunk. For compression method 0, this datastream
-is a zlib datastream with deflate compression (see <a href=
+is a <a>zlib</a> datastream with deflate compression (see <a href=
 "#10CompressionOtherUses"></a>). Decompression of this datastream yields
 Latin-1 text that is identical to the text that would be stored
 in an equivalent <a class="chunk" href="#11tEXt">
@@ -4448,7 +4449,7 @@ International textual data</h2>
 compressed text. Only the text field may be compressed. The
 compression method entry defines the compression method used. The
 only compression method defined in this specification is
-0 (zlib datastream with <a>deflate</a> compression, see <a href=
+0 (<a>zlib</a> datastream with <a>deflate</a> compression, see <a href=
 '#10CompressionOtherUses'></a>). For uncompressed text, encoders shall
 set the compression method to 0, and decoders shall ignore
 it.</p>
@@ -6589,7 +6590,7 @@ datastream. There is no required correlation between the
 structure of the <a>image data</a> (for example, scanline boundaries) and
 <a>deflate</a> block boundaries or <a class="chunk" href="#11IDAT">
 IDAT</a> chunk boundaries. The complete <a>image data</a>
-is represented by a single zlib datastream that is stored in some
+is represented by a single <a>zlib</a> datastream that is stored in some
 number of <a class="chunk" href="#11IDAT">IDAT</a>
 chunks; a decoder that assumes any more than this is incorrect.
 Some encoder implementations may emit datastreams in which some

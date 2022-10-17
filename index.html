@@ -7,7 +7,7 @@
     <style type="text/css">
     /* remove annoying green colour from definition terms */
     dt {color: black}
-    span.chunk { color: #622;}
+    span.chunk, a.chunk { color: #622;}
     </style>
     <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
     <script class="remove">
@@ -1342,7 +1342,7 @@ types of ancillary information provided are described in <a href="#table41"></a>
 
 <!-- Maintain a fragment named "table41" to preserve incoming links to it -->
 <table id="table41" class="simple numbered">
-<caption>Types ofancillary information</caption>
+<caption>Types of ancillary information</caption>
 
 <tr>
 <th>Type of information</th>
@@ -2825,28 +2825,28 @@ types</caption>
 </tr>
 
 <tr>
-<td align="center">0</td>
+<td >0</td>
 <td>None</td>
 <td><code>Filt(x) = Orig(x)</code> </td>
 <td><code>Recon(x) = Filt(x)</code> </td>
 </tr>
 
 <tr>
-<td align="center">1</td>
+<td >1</td>
 <td>Sub</td>
 <td><code>Filt(x) = Orig(x) - Orig(a)</code> </td>
 <td><code>Recon(x) = Filt(x) + Recon(a)</code> </td>
 </tr>
 
 <tr>
-<td align="center">2</td>
+<td >2</td>
 <td>Up</td>
 <td><code>Filt(x) = Orig(x) - Orig(b)</code> </td>
 <td><code>Recon(x) = Filt(x) + Recon(b)</code> </td>
 </tr>
 
 <tr>
-<td align="center">3</td>
+<td >3</td>
 <td>Average</td>
 <td><code>Filt(x) = Orig(x) - floor((Orig(a) + Orig(b)) /
 2)</code> </td>
@@ -2855,7 +2855,7 @@ types</caption>
 </tr>
 
 <tr>
-<td align="center">4</td>
+<td >4</td>
 <td>Paeth</td>
 <td><code>Filt(x) = Orig(x) - PaethPredictor(Orig(a),
 Orig(b), Orig(c))</code> </td>
@@ -2967,7 +2967,12 @@ future standardization. PNG compression method 0 is
 <p><a>Deflate</a>-compressed datastreams within PNG are stored in the
 <a>zlib</a> format, which has the structure:</p>
 
-<table>
+<table  class="numbered simple">
+<caption><a>zlib</a> structure</caption>
+  <tr>
+    <th>Name</th>
+    <th>Size</th>
+  </tr>
 <tr>
 <td>zlib compression method/flags code</td>
 <td>1 byte</td>
@@ -3122,8 +3127,13 @@ header</h2>
 <p>The <a class="chunk" href="#11IHDR">IHDR</a> chunk shall be the first
 chunk in the PNG datastream. It contains:</p>
 
-<table>
-  <caption>The IHDR chunk"</caption>
+<table  class="numbered simple">
+  <caption>The IHDR chunk</caption>
+
+  <tr>
+    <th>Name</th>
+    <th>Size</th>
+  </tr>
 <tr>
 <td>Width</td>
 <td>4 bytes</td>
@@ -3190,21 +3200,21 @@ combinations of <a>colour type</a> and bit depth</caption>
 
 <tr>
 <td>Greyscale</td>
-<td align="center">0</td>
+<td >0</td>
 <td>1, 2, 4, 8, 16</td>
 <td>Each pixel is a greyscale sample</td>
 </tr>
 
 <tr>
 <td>Truecolour</td>
-<td align="center">2</td>
+<td >2</td>
 <td>8, 16</td>
 <td>Each pixel is an R,G,B triple</td>
 </tr>
 
 <tr>
 <td>Indexed-colour</td>
-<td align="center">3</td>
+<td >3</td>
 <td>1, 2, 4, 8</td>
 <td>Each pixel is a palette index; a <a class="chunk" href="#11PLTE">
 PLTE</a> chunk shall appear.</td>
@@ -3212,7 +3222,7 @@ PLTE</a> chunk shall appear.</td>
 
 <tr>
 <td>Greyscale with alpha</td>
-<td align="center">4</td>
+<td >4</td>
 <td>8, 16</td>
 <td>Each pixel is a greyscale sample followed by an alpha
 sample.</td>
@@ -3220,7 +3230,7 @@ sample.</td>
 
 <tr>
 <td>Truecolour with alpha</td>
-<td align="center">6</td>
+<td >6</td>
 <td>8, 16</td>
 <td>Each pixel is an R,G,B triple followed by an alpha
 sample.</td>
@@ -3265,9 +3275,13 @@ Palette</h2>
 <p>The <span class="chunk">PLTE</span> chunk contains from 1 to
 256 palette entries, each a three-byte series of the form:</p>
 
-<table>
+<table  class="numbered simple">
   <caption>PLTE palette table entries</caption>
 <tr>
+  <tr>
+    <th>Name</th>
+    <th>Size</th>
+  </tr>
 <td>Red</td>
 <td>1 byte</td>
 </tr>
@@ -3402,8 +3416,12 @@ greyscale and <a>truecolour</a> images). The <span class=
 </p>
 
 <!-- ************Page Break******************* -->
-<table>
+<table  class="numbered simple">
   <caption>the tRNS chunk</caption>
+  <tr>
+    <th>Name</th>
+    <th>Size</th>
+  </tr>
 <tr>
 <th colspan="2"><a>Colour type</a> 0</th>
 </tr>
@@ -3613,8 +3631,13 @@ iCCP</a> chunk.</p>
 
 <p>The <span class="chunk">gAMA</span> chunk contains:</p>
 
-<table>
-  <caption>the gAMA chunk</caption>
+<table  class="numbered simple">
+  <caption>gAMA chunk contents</caption>
+
+  <tr>
+    <th>Name</th>
+    <th>Size</th>
+  </tr>
 <tr>
 <td>Image gamma</td>
 <td>4 bytes</td>
@@ -3649,8 +3672,13 @@ Embedded ICC profile</h2>
 
 <p>The <span class="chunk">iCCP</span> chunk contains:</p>
 
-<table>
-  <caption>the iCCP chunk</caption>
+<table  class="numbered simple">
+  <caption>iCCP chunk contents</caption>
+
+  <tr>
+    <th>Name</th>
+    <th>Size</th>
+  </tr>
 <tr>
 <td>Profile name</td>
 <td>1-79 bytes (character string)</td>
@@ -4267,8 +4295,13 @@ Textual data</h2>
 <p>Each <span class="chunk">tEXt</span> chunk contains a keyword
 and a text string, in the format:</p>
 
-<table>
-  <caption>the tEXt chunk</caption>
+<table  class="numbered simple">
+  <caption>tEXt chunk contents</caption>
+
+<tr>
+  <th>Name</th>
+  <th>Size</th>
+</tr>
 <tr>
 <td>Keyword</td>
 <td>1-79 bytes (character string)</td>
@@ -4326,8 +4359,13 @@ chunk is recommended for storing large blocks of text.</p>
 
 <p>A <span class="chunk">zTXt</span> chunk contains:</p>
 
-<table>
-  <caption>the zTXt chunk</caption>
+<table  class="numbered simple">
+  <caption>zTXt chunk contents</caption>
+
+  <tr>
+    <th>Name</th>
+    <th>Size</th>
+  </tr>
 <tr>
 <td>Keyword</td>
 <td>1-79 bytes (character string)</td>
@@ -4378,8 +4416,13 @@ International textual data</h2>
 
 <p>An <span class="chunk">iTXt</span> chunk contains:</p>
 
-<table>
-  <caption>the iTXt chunk</caption>
+<table  class="numbered simple">
+  <caption>iTXt chunk contents</caption>
+
+  <tr>
+    <th>Name</th>
+    <th>Size</th>
+  </tr>
 <tr>
 <td>Keyword</td>
 <td>1-79 bytes (character string)</td>
@@ -4496,6 +4539,10 @@ larger page (as in a browser), the <span class=
 <caption>bKGD chunk contents</caption>
 
 <tr>
+  <th>Name</th>
+  <th>Size</th>
+</tr>
+<tr>
 <th colspan="2">Colour types 0 and 4</th>
 </tr>
 
@@ -4561,8 +4608,13 @@ Image histogram</h2>
 <p>The <span class="chunk">hIST</span> chunk contains a series of
 two-byte unsigned integers:</p>
 
-<table>
-  <caption>the hIST chunk</caption>
+<table  class="numbered simple">
+  <caption>hIST chunk contents</caption>
+
+  <tr>
+    <th>Name</th>
+    <th>Size</th>
+  </tr>
 <tr>
 <td>Frequency</td>
 <td>2 bytes (unsigned integer)</td>
@@ -4974,8 +5026,13 @@ the <a>image data</a> are changed.</p>
     animated PNG image, gives the number of frames, and the number of times to loop.
     It contains:</p>
 
-    <table>
+    <table  class="numbered simple">
       <caption>acTL chunk contents</caption>
+
+      <tr>
+        <th>Name</th>
+        <th>Size</th>
+      </tr>
     <tr>
     <td>`num_frames`</td>
     <td>4 bytes</td>
@@ -5133,7 +5190,7 @@ the <a>image data</a> are changed.</p>
 
 <p>Valid values for `dispose_op` are: </p>
 
-<table>
+<table  class="numbered simple">
   <caption>Disposal operators</caption>
     <tr>
     <td>0</td>
@@ -5169,7 +5226,7 @@ the <a>image data</a> are changed.</p>
 
   <p>Valid values for `blend_op` are:</p>
 
-  <table>
+  <table  class="numbered simple">
     <caption>Blend operators</caption>
     <tr>
     <td>0</td>
@@ -8067,7 +8124,7 @@ which non-linear <a>transfer functions</a> may occur and which may be
 modelled by power laws. The characteristic exponent associated
 with each is given a specific name.</p>
 
-<table>
+<table  class="numbered simple">
   <caption>Characteristic exponents</caption>
 <tr>
 <td><var>input_exponent</var> </td>
@@ -8104,7 +8161,7 @@ typically a value close to 2.2.</td>
 describe some composite <a>transfer functions</a>, or combinations of
 stages.</p>
 
-<table>
+<table  class="numbered simple">
   <caption>Additional entities used to describe transfer functions</caption>
 <tr>
 <td><var>display_exponent</var> </td>
@@ -8364,7 +8421,7 @@ accessed from the PNG web site.</p>
   <li>The previously defined <a class="chunk" href="#eXIf">eXIf</a> chunk
     has been moved from the PNG-Extensions document [[PNG-EXTENSIONS]]
     into the main body of this specification,
-    to reflect it's widespready use.
+    to reflect it's widespread use.
   </li>
   <li>Incorporation of all
     <a href="https://www.w3.org/2003/11/REC-PNG-20031110-errata">PNG Second Edition Errata</a>

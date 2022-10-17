@@ -21,4 +21,4 @@ jobs:
       run: sudo apt install tidy
 
     - name: Run HTML Tidy
-      run: tidy -config tidy.cfg index.html
+      run: tidy -config tidy.cfg -e index.html

@@ -104,50 +104,50 @@
         date: "1997-04",
         href: "https://dl.acm.org/doi/10.1145/248210.248212"
       },
-      "ISO 3309": {
+      "ISO_3309": {
         title: "ISO/IEC 3309:1993, Information Technology — Telecommunications and information exchange between systems — High-level data link control (HDLC) procedures — Frame structure.",
         date: "1993",
         publisher: "ISO"
       },
-      "ISO 8859-1": {
+      "ISO_8859-1": {
         title: "ISO/IEC 8859-1:1998, Information technology — 8-bit single-byte coded graphic character sets — Part 1: Latin alphabet No. 1.",
         date: "1998",
         publisher: "ISO"
       },
-      "ISO 9899": {
+      "ISO_9899": {
         title: "ISO/IEC 9899:2018 Information technology — Programming languages — C",
         href: "https://www.iso.org/standard/74528.html",
         date: "2018-6",
         publisher: "ISO"
       },
-      "ISO 15076-1": {
-        title: "ISO 15076-1:2010 Image technology colour management — Architecture, profile format and data structure — Part 1: Based on ICC.1:2010",
+      "ISO_15076-1": {
+        title: "ISO_15076-1:2010 Image technology colour management — Architecture, profile format and data structure — Part 1: Based on ICC.1:2010",
         href: "https://www.iso.org/standard/54754.html",
         date: "2010-12",
         publisher: "ISO"
       },
-      "ISO 20677-1": {
+      "ISO_20677-1": {
         title: "ISO 20677:2019 Image technology colour management — Extensions to architecture, profile format and data structure",
         href: "https://www.iso.org/standard/68806.html",
         date: "2019-02",
         publisher: "ISO"
       },
-      "ITU-R BT.709": {
-        title: "ITU-R BT.709, SERIES H: AUDIOVISUAL AND MULTIMEDIA SYSTEMS Infrastructure of audiovisual services – Coding of moving video Coding-independent code points for video signal type identification",
+      "ITU-R_BT.709": {
+        title: "ITU-R_BT.709, SERIES H: AUDIOVISUAL AND MULTIMEDIA SYSTEMS Infrastructure of audiovisual services – Coding of moving video Coding-independent code points for video signal type identification",
         publisher: "ITU",
         href: "https://www.itu.int/rec/R-REC-BT.709"
       },
-      "ITU-R BT.2100": {
-        title: "ITU-R BT.2100, SERIES H: AUDIOVISUAL AND MULTIMEDIA SYSTEMS Infrastructure of audiovisual services – Coding of moving video Coding-independent code points for video signal type identification",
+      "ITU-R_BT.2100": {
+        title: "ITU-R_BT.2100, SERIES H: AUDIOVISUAL AND MULTIMEDIA SYSTEMS Infrastructure of audiovisual services – Coding of moving video Coding-independent code points for video signal type identification",
         publisher: "ITU",
         href: "https://www.itu.int/rec/R-REC-BT.2100"
       },
-      "ITU-T H.273": {
-        title: "ITU-T H.273, SERIES H: AUDIOVISUAL AND MULTIMEDIA SYSTEMS Infrastructure of audiovisual services – Coding of moving video Coding-independent code points for video signal type identification",
+      "ITU-T_H.273": {
+        title: "ITU-T_H.273, SERIES H: AUDIOVISUAL AND MULTIMEDIA SYSTEMS Infrastructure of audiovisual services – Coding of moving video Coding-independent code points for video signal type identification",
         publisher: "ITU",
         href: "https://www.itu.int/rec/T-REC-H.273"
       },
-      "ITU-T V.42": {
+      "ITU-T_V.42": {
         title: "ITU Recommendation V.42 : Error-correcting procedures for DCEs using asynchronous-to-synchronous conversion",
         href: "https://www.itu.int/rec/T-REC-V.42-200203-I/en",
         date: "2002-03-29",
@@ -1960,8 +1960,8 @@ safe-to-copy chunk.</p>
 <h2>CRC algorithm</h2>
 
 <p><a>CRC</a> fields are calculated using standardized <a>CRC</a> methods with
-pre and post conditioning, as defined by [[ISO 3309]]
-and [[ITU-T V.42]].
+pre and post conditioning, as defined by [[ISO_3309]]
+and [[ITU-T_V.42]].
 The <a>CRC</a> polynomial employed—
 which is identical to that used in the
 GZIP file format specification [[RFC1952]]—
@@ -3687,7 +3687,7 @@ profile.</p>
 <p>If the <span class="chunk">iCCP</span> chunk is present, the
 image samples conform to the colour space represented by the
 embedded ICC profile as defined by the International Color
-Consortium [[ICC]][[ISO 15076-1]].
+Consortium [[ICC]][[ISO_15076-1]].
 The colour space of the ICC profile
 shall be an RGB colour space for colour images (<a>colour types</a>
 2, 3, and 6), or a greyscale colour space for greyscale images
@@ -4003,7 +4003,7 @@ Coding-independent code points for video signal type identification</h2>
 
 <p>If present, the <span class="chunk">cICP</span> chunk specifies the colour
 space, transfer function, matrix coeficcients of the image using the code points
-specified in [[ITU-T H.273]]. The video format signaling SHOULD be used when
+specified in [[ITU-T_H.273]]. The video format signaling SHOULD be used when
 processing the image, including by a decoder or when rendering the image.</p>
 
 <p>The following specifies the syntax of the <span class="chunk">cICP</span> chunk:</p>
@@ -4035,7 +4035,7 @@ processing the image, including by a decoder or when rendering the image.</p>
 </table>
 
   <p>Each of the fields of the <span class="chunk">cICP</span> chunk corresponds
-  to the parameter of the same name in [[ITU-T H.273]].</p>
+  to the parameter of the same name in [[ITU-T_H.273]].</p>
 
   <p>The <code>Matrix Coefficients</code> value is equal to <code>0</code>.</p>
 
@@ -4055,7 +4055,7 @@ processing the image, including by a decoder or when rendering the image.</p>
   If <code>Video Full Range Flag</code> value is <code>0</code>, then the image 
   is a <a>narrow-range image</a>. Narrow range images are found in video workflows 
   where the interpretation of sample values below reference black (0% signal level) 
-  or above nominal peak (100% signal level). For example, [[ITU-R BT.709]] 
+  or above nominal peak (100% signal level). For example, [[ITU-R_BT.709]] 
   specifies that, for 10-bit coding, reference black (called black level) corresponds 
   to code value 64 and nominal peak to code value 940.
   
@@ -4089,7 +4089,7 @@ recognize it SHALL ignore the following chunks:</p>
 
 <aside class="example"><span class="chunk">cICP</span> chunk field values for a
 <a>full-range image</a> that uses the colour primaries and the PQ <a>transfer
-function</a> specified at [[ITU-R BT.2100]]:
+function</a> specified at [[ITU-R_BT.2100]]:
 <pre>
 9 16 0 1
 </pre>
@@ -4097,7 +4097,7 @@ function</a> specified at [[ITU-R BT.2100]]:
 
 <aside class="example"><span class="chunk">cICP</span> chunk field values for a
 <a>full-range image</a> that uses the colour primaries and the HLG <a>transfer
-function</a> specified at [[ITU-R BT.2100]]:
+function</a> specified at [[ITU-R_BT.2100]]:
 <pre>
 9 18 0 1
 </pre>
@@ -4105,7 +4105,7 @@ function</a> specified at [[ITU-R BT.2100]]:
 
 <aside class="example"><span class="chunk">cICP</span> chunk field values for a
 <a>narrow-range image</a> that uses the colour primaries and the <a>transfer
-function</a> defined at [[ITU-R BT.709]]:
+function</a> defined at [[ITU-R_BT.709]]:
 <pre>
 1 1 0 0
 </pre>
@@ -4222,7 +4222,7 @@ interest.</p>
 
 <p>Keywords of general interest SHOULD be listed in [[PNG-EXTENSIONS]].</p>
 
-<p>Keywords shall contain only printable Latin-1 [[ISO 8859-1]]
+<p>Keywords shall contain only printable Latin-1 [[ISO_8859-1]]
 characters and spaces; that is, only character codes 32-126 and
 161-255 decimal are allowed. To reduce the chances for human
 misreading of a keyword, leading spaces, trailing spaces,
@@ -4297,7 +4297,7 @@ less the length of the keyword and null character separator.</p>
 <p>The keyword indicates the type of information represented by
 the text string as described in <a href="#11keywords"></a>.</p>
 
-<p>Text is interpreted according to the Latin-1 character set [[ISO 8859-1]].
+<p>Text is interpreted according to the Latin-1 character set [[ISO_8859-1]].
 The text string may contain
 any Latin-1 character. Newlines in the text string should be
 represented by a single linefeed character (decimal 10).
@@ -5574,7 +5574,7 @@ gAMA</a> chunk is missing.</p>
 
 <p>There are a number of recommendations and standards for
 primaries and <a>white points</a>, some of which are linked to
-particular technologies, for example the CCIR 709 standard [[ITU-R BT.709]]
+particular technologies, for example the CCIR 709 standard [[ITU-R_BT.709]]
 and the SMPTE-C standard [[SMPTE 170M]].</p>
 
 <p>There are three cases that need to be considered:</p>
@@ -5627,7 +5627,7 @@ be used to construct the <a class="chunk" href="#11cHRM">
 cHRM</a> chunk.</p>
 
 <p>Video created with recent video equipment probably uses the
-CCIR 709 primaries and D65 <a>white point</a> [[ITU-R BT.709]],
+CCIR 709 primaries and D65 <a>white point</a> [[ITU-R_BT.709]],
 which are given in <a href="#12-table121">
 </a>.</p>
 
@@ -6608,7 +6608,7 @@ data received so far. One simple yet pleasing effect can be
 obtained by expanding each received pixel to fill a rectangle
 covering the yet-to-be-transmitted pixel positions below and to
 the right of the received pixel. This process can be described by
-the following ISO C code [[ISO 9899]]:</p>
+the following ISO C code [[ISO_9899]]:</p>
 
 <pre>
 /*
@@ -6976,7 +6976,7 @@ upon the monitor type, i.e. the values in the <a class="chunk" href=
 "#11cHRM">cHRM</a> chunk. PNG decoders
 may wish to do this for PNG datastreams with no <a class="chunk" href=
 "#11cHRM">cHRM</a> chunk. In this
-case, a reasonable default would be the CCIR 709 primaries [[ITU-R BT.709]]. The original NTSC primaries
+case, a reasonable default would be the CCIR 709 primaries [[ITU-R_BT.709]]. The original NTSC primaries
 should <strong>not</strong> be used unless the PNG image really
 was colour-balanced for such a monitor.</p>
 </section>
@@ -7063,7 +7063,7 @@ should be made without first checking.</p>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<p>This code is ISO C [[ISO 9899]], with line numbers added for
+<p>This code is ISO C [[ISO_9899]], with line numbers added for
 reference in the comments below.</p>
 
 <pre>
@@ -8161,10 +8161,10 @@ implementation</h2>
   — which is informative —
 represents a practical
 implementation of the <a>CRC</a> (Cyclic Redundancy Check) employed in
-PNG chunks. (See also ISO 3309 [[ISO 3309]] or ITU-T V.42 [[ITU-T V.42]] for a
+PNG chunks. (See also ISO_3309 [[ISO_3309]] or ITU-T_V.42 [[ITU-T_V.42]] for a
 formal specification.)</p>
 
-<p>The sample code is in the ISO C [[ISO 9899]] programming language. The
+<p>The sample code is in the ISO C [[ISO_9899]] programming language. The
 hints in <a href="#D-tabled1">
 </a> may help non-C users to read the code more
 easily.</p>
@@ -8357,7 +8357,7 @@ accessed from the PNG web site.</p>
   </li>
   <li>Added the <a class="chunk" href="#cICP-chunk">cICP</a> chunk,
     Coding-independent code points for video signal type identification,
-    to contain image format metadata defined in [[ITU-T H.273]]
+    to contain image format metadata defined in [[ITU-T_H.273]]
     which enables PNG to contain High Dynamic Range (HDR) and Wide Colour Gamut (WCG)
     images.
   </li>

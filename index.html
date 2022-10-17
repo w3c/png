@@ -1341,10 +1341,8 @@ Decoders may ignore all or some of the ancillary information. The
 types of ancillary information provided are described in <a href="#table41"></a>.</p>
 
 <!-- Maintain a fragment named "table41" to preserve incoming links to it -->
-<table id="table41" class="simple numbered" summary=
-"This table lists the types of ancillary information that may be associated with an image">
-<caption>Types of
-ancillary information</caption>
+<table id="table41" class="simple numbered">
+<caption>Types ofancillary information</caption>
 
 <tr>
 <th>Type of information</th>
@@ -1617,9 +1615,8 @@ tIME</a> (see <a href="#11timestampinfo"></a>).</li>
   omitted in these tables, for clarity).
 </p>
 
-<table class="numbered simple" summary=
-"sequence numbers, if the static image is also the first frame">
-<caption>If the static image is also the first frame</caption>
+<table class="numbered simple">
+<caption>Summary numbers, if the static image is also the first frame</caption>
 <tr>
   <th>Sequence number</th>
   <th>Chunk</th>
@@ -1650,9 +1647,8 @@ tIME</a> (see <a href="#11timestampinfo"></a>).</li>
 </tr>
 </table>
 
-<table class="numbered simple" summary=
-"sequence numbers, if the static image is not part of the animation">
-<caption>If the static image is not part of the animation</caption>
+<table class="numbered simple">
+<caption>Sequence numbers, if the static image is not part of the animation</caption>
 <tr>
   <th>Sequence number</th>
   <th>Chunk</th>
@@ -1791,8 +1787,7 @@ The chunk data field may be empty.</p>
 </figure>
 
 <!-- Maintain a fragment named "table51" to preserve incoming links to it -->
-<table id="table51" class="numbered simple" summary=
-"This table defines the chunk fields">
+<table id="table51" class="numbered simple">
 <caption>Chunk fields</caption>
 
 <tr>
@@ -1882,8 +1877,7 @@ defined in
 </p>
 
 <!-- Maintain a fragment named "table52" to preserve incoming links to it -->
-<table id="table52" class="numbered simple" summary=
-"This table defines the semantics of the property bits">
+<table id="table52" class="numbered simple">
 <caption>Semantics of property bits</caption>
 
 <tr>
@@ -2024,8 +2018,7 @@ two chunk types indicates alternatives.</p>
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <!-- Maintain a fragment named "table53" to preserve incoming links to it -->
-<table id="table53" class="numbered simple" summary=
-"This table lists the chunk ordering rules">
+<table id="table53" class="numbered simple">
 <caption>Chunk ordering
 rules</caption>
 
@@ -2216,8 +2209,7 @@ before <a class="chunk" href="#11IDAT">IDAT</a>
 </table>
 
 <!-- Maintain a fragment named "table54" to preserve incoming links to it -->
-<table id="table54" class="numbered simple"  summary=
-"This table lists the symbols used in lattice diagrams">
+<table id="table54" class="numbered simple">
 <caption>Meaning of
 symbols used in lattice diagrams</caption>
 
@@ -2416,8 +2408,7 @@ corresponding <a>colour types</a> are listed in <a href=
 "#table6.1"></a>.</p>
 
 <!-- Maintain a fragment named "table6.1" to preserve incoming links to it -->
-<table id="table6.1" class="numbered simple"  summary=
-"This table lists the PNG image and colour types">
+<table id="table6.1" class="numbered simple">
 <caption>PNG image types
 and colour types</caption>
 
@@ -2767,8 +2758,7 @@ way as the <a>image data</a>.</p>
 <p>Filters may use the original values of the following bytes to
 generate the new byte value:</p>
 
-<table class="numbered simple" summary=
-"This table defines the variables used in the filter types table">
+<table class="numbered simple">
 <caption>Named filter bytes</caption>
 <tr>
   <th>Name</th>
@@ -2823,8 +2813,7 @@ it is sufficient to check the <a>filter method</a> in <a href="#11IHDR"></a>.</p
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <!-- Maintain a fragment named "9-table91" to preserve incoming links to it -->
-<table id="9-table91" class="numbered simple" summary=
-"This table lists the filter types">
+<table id="9-table91" class="numbered simple">
 <caption>Filter
 types</caption>
 
@@ -2978,8 +2967,7 @@ future standardization. PNG compression method 0 is
 <p><a>Deflate</a>-compressed datastreams within PNG are stored in the
 <a>zlib</a> format, which has the structure:</p>
 
-<table summary=
-"This table gives the structure of the zlib format">
+<table>
 <tr>
 <td>zlib compression method/flags code</td>
 <td>1 byte</td>
@@ -3134,8 +3122,8 @@ header</h2>
 <p>The <a class="chunk" href="#11IHDR">IHDR</a> chunk shall be the first
 chunk in the PNG datastream. It contains:</p>
 
-<table summary=
-"This table defines the IHDR chunk">
+<table>
+  <caption>The IHDR chunk"</caption>
 <tr>
 <td>Width</td>
 <td>4 bytes</td>
@@ -3189,8 +3177,7 @@ compress well. The allowed combinations are defined in <a href=
 "#table111"></a>.</p>
 
 <!-- Maintain a fragment named "table111" to preserve incoming links to it -->
-<table id="table111" class="numbered simple" summary=
-"This table defines the colour types">
+<table id="table111" class="numbered simple">
 <caption>Allowed
 combinations of <a>colour type</a> and bit depth</caption>
 
@@ -3278,8 +3265,8 @@ Palette</h2>
 <p>The <span class="chunk">PLTE</span> chunk contains from 1 to
 256 palette entries, each a three-byte series of the form:</p>
 
-<table summary=
-"This table defines the PLTE palette table entries">
+<table>
+  <caption>PLTE palette table entries</caption>
 <tr>
 <td>Red</td>
 <td>1 byte</td>
@@ -3415,8 +3402,8 @@ greyscale and <a>truecolour</a> images). The <span class=
 </p>
 
 <!-- ************Page Break******************* -->
-<table summary=
-"This table defines the tRNS chunk">
+<table>
+  <caption>the tRNS chunk</caption>
 <tr>
 <th colspan="2"><a>Colour type</a> 0</th>
 </tr>
@@ -3533,8 +3520,7 @@ more sophisticated support for colour management and control.</p>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<table class="numbered simple" summary=
-"This table defines the cHRM chunk">
+<table class="numbered simple">
 <caption>cHRM chunk components</caption>
 
 <tr>
@@ -3627,8 +3613,8 @@ iCCP</a> chunk.</p>
 
 <p>The <span class="chunk">gAMA</span> chunk contains:</p>
 
-<table summary=
-"This table defines the gAMA chunk">
+<table>
+  <caption>the gAMA chunk</caption>
 <tr>
 <td>Image gamma</td>
 <td>4 bytes</td>
@@ -3663,8 +3649,8 @@ Embedded ICC profile</h2>
 
 <p>The <span class="chunk">iCCP</span> chunk contains:</p>
 
-<table summary=
-"This table defines the iCCP chunk">
+<table>
+  <caption>the iCCP chunk</caption>
 <tr>
 <td>Profile name</td>
 <td>1-79 bytes (character string)</td>
@@ -3757,8 +3743,7 @@ supported by PNG.</p>
 
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
-<table class="numbered simple" summary=
-"This table defines the sBIT chunk">
+<table class="numbered simple">
 <caption>sBIT chunk contents</caption>
 
 <tr>
@@ -3861,8 +3846,7 @@ rendering intent defined by the International Color Consortium
 
 <p>The <span class="chunk">sRGB</span> chunk contains:</p>
 
-<table class="numbered simple" summary=
-"This table defines the sRGB chunk">
+<table class="numbered simple">
 <caption>sRGB chunk contents</caption>
 
 <tr>
@@ -3878,8 +3862,7 @@ rendering intent defined by the International Color Consortium
 
 <p>The following values are defined for rendering intent:</p>
 
-<table class="numbered simple" summary=
-"This table defines the values of rendering intent in the sRGB chunk">
+<table class="numbered simple">
 <caption>Rendering intent values</caption>
 
 <tr>
@@ -3927,8 +3910,7 @@ cHRM</a> chunk) for compatibility with decoders
 that do not use the <span class="chunk">sRGB</span> chunk. Only
 the following values shall be used.</p>
 
-<table class="numbered simple" summary=
-"This table defines the gAMA and cHRM values for sRGB">
+<table class="numbered simple">
 <caption>gAMA and cHRM values for sRGB</caption>
 
 <tr>
@@ -4156,9 +4138,8 @@ more than one with the same keyword is permitted.</p>
 <p>The following keywords are predefined and should be used where
 appropriate.</p>
 
-<table class="numbered simple" summary=
-"This table defines the keywords defined for tEXt, iTXt and zTXt chunks">
-<caption>Predefined keywords</caption>
+<table class="numbered simple">
+<caption>Predefined keywords for tEXt, iTXt and zTXt chunks</caption>
 
 <tr>
 <th>Keyword value</th>
@@ -4286,8 +4267,8 @@ Textual data</h2>
 <p>Each <span class="chunk">tEXt</span> chunk contains a keyword
 and a text string, in the format:</p>
 
-<table summary=
-"This table defines the tEXt chunk">
+<table>
+  <caption>the tEXt chunk</caption>
 <tr>
 <td>Keyword</td>
 <td>1-79 bytes (character string)</td>
@@ -4345,8 +4326,8 @@ chunk is recommended for storing large blocks of text.</p>
 
 <p>A <span class="chunk">zTXt</span> chunk contains:</p>
 
-<table summary=
-"This table defines the zTXt chunk">
+<table>
+  <caption>the zTXt chunk</caption>
 <tr>
 <td>Keyword</td>
 <td>1-79 bytes (character string)</td>
@@ -4397,8 +4378,8 @@ International textual data</h2>
 
 <p>An <span class="chunk">iTXt</span> chunk contains:</p>
 
-<table summary=
-"This table defines the iTXt chunk">
+<table>
+  <caption>the iTXt chunk</caption>
 <tr>
 <td>Keyword</td>
 <td>1-79 bytes (character string)</td>
@@ -4511,8 +4492,7 @@ larger page (as in a browser), the <span class=
 "chunk">bKGD</span> chunk should be ignored. The <span class=
 "chunk">bKGD</span> chunk contains:</p>
 
-<table class="numbered simple" summary=
-"This table defines the bKGD chunk">
+<table class="numbered simple">
 <caption>bKGD chunk contents</caption>
 
 <tr>
@@ -4581,8 +4561,8 @@ Image histogram</h2>
 <p>The <span class="chunk">hIST</span> chunk contains a series of
 two-byte unsigned integers:</p>
 
-<table summary=
-"This table defines the hIST chunk">
+<table>
+  <caption>the hIST chunk</caption>
 <tr>
 <td>Frequency</td>
 <td>2 bytes (unsigned integer)</td>
@@ -4634,8 +4614,7 @@ Physical pixel dimensions</h2>
 intended pixel size or aspect ratio for display of the image. It
 contains:</p>
 
-<table class="numbered simple" summary=
-"This table defines the pHYs chunk">
+<table class="numbered simple"></table>
 <caption>pHYs chunk contents</caption>
 
 <tr>
@@ -4661,9 +4640,8 @@ contains:</p>
 
 <p>The following values are defined for the unit specifier:</p>
 
-<table class="numbered simple" summary=
-"This table defines the allowed values for the unit specifier in the pHYs chunk">
-<caption>Unit specifier values</caption>
+<table class="numbered simple">
+<caption>Unit specifier values for pHYs chunk</caption>
 
 <tr>
 <th>Value</th>
@@ -4703,8 +4681,7 @@ Suggested palette</h2>
 
 <p>The <span class="chunk">sPLT</span> chunk contains:</p>
 
-<table class="numbered simple" summary=
-"This table defines the sPLT chunk">
+<table class="numbered simple">
 <caption>sPLT chunk contents</caption>
 
 <tr>
@@ -4932,8 +4909,7 @@ Image last-modification time</h2>
 the last image modification (<strong>not</strong> the time of initial
 image creation). It contains:</p>
 
-<table class="numbered simple" summary=
-"This table defines the tIME chunk">
+<table class="numbered simple">
 <caption>tIME chunk contents</caption>
 
 <tr>
@@ -4998,8 +4974,8 @@ the <a>image data</a> are changed.</p>
     animated PNG image, gives the number of frames, and the number of times to loop.
     It contains:</p>
 
-    <table summary=
-    "This table defines the acTL chunk">
+    <table>
+      <caption>acTL chunk contents</caption>
     <tr>
     <td>`num_frames`</td>
     <td>4 bytes</td>
@@ -5054,8 +5030,7 @@ the <a>image data</a> are changed.</p>
       is required for each frame.
       It contains:</p>
 
-    <table class="numbered simple" summary=
-    "This table defines the fcTL chunk">
+    <table class="numbered simple">
     <caption>fcTL chunk contents</caption>
 
     <tr>
@@ -5158,8 +5133,8 @@ the <a>image data</a> are changed.</p>
 
 <p>Valid values for `dispose_op` are: </p>
 
-<table summary=
-    "This table defines the disposal operators">
+<table>
+  <caption>Disposal operators</caption>
     <tr>
     <td>0</td>
     <td>`APNG_DISPOSE_OP_NONE`</td>
@@ -5194,8 +5169,8 @@ the <a>image data</a> are changed.</p>
 
   <p>Valid values for `blend_op` are:</p>
 
-  <table summary=
-    "This table defines the blend operators">
+  <table>
+    <caption>Blend operators</caption>
     <tr>
     <td>0</td>
     <td>`APNG_BLEND_OP_SOURCE`</td>
@@ -5291,8 +5266,7 @@ the <a>image data</a> are changed.</p>
       for all frames after the first one).
     It contains:</p>
 
-    <table class="numbered simple" summary=
-    "This table defines the fdAT chunk">
+    <table class="numbered simple">
     <caption>fdAT chunk contents</caption>
 
     <tr>
@@ -5660,8 +5634,7 @@ which are given in <a href="#12-table121">
 <!-- ************Page Break******************* -->
 <!-- ************Page Break******************* -->
 <!-- Maintain a fragment named "12-table121" to preserve incoming links to it -->
-<table id="12-table121" class="numbered simple" summary=
-"CCIR 709 primaries and D65 whitepoint">
+<table id="12-table121" class="numbered simple">
 <caption>CCIR 709
 primaries and D65 whitepoint</caption>
 
@@ -5695,8 +5668,7 @@ given in <a href="#12-table122">
 </a>.</p>
 
 <!-- Maintain a fragment named "12-table122" to preserve incoming links to it -->
-<table id="12-table122" class="numbered simple" summary=
-"CSMPTE-C video standard">
+<table id="12-table122" class="numbered simple">
 <caption>SMPTE-C
 video standard</caption>
 
@@ -8095,8 +8067,8 @@ which non-linear <a>transfer functions</a> may occur and which may be
 modelled by power laws. The characteristic exponent associated
 with each is given a specific name.</p>
 
-<table summary=
-"This table describes characteristic exponents">
+<table>
+  <caption>Characteristic exponents</caption>
 <tr>
 <td><var>input_exponent</var> </td>
 <td>the exponent of the image sensor.</td>
@@ -8132,8 +8104,8 @@ typically a value close to 2.2.</td>
 describe some composite <a>transfer functions</a>, or combinations of
 stages.</p>
 
-<table summary=
-"This table characterises additional entities that are used to describe transfer functions">
+<table>
+  <caption>Additional entities used to describe transfer functions</caption>
 <tr>
 <td><var>display_exponent</var> </td>
 <td>exponent of the <a>transfer function</a> applied between the <a>frame 
@@ -8198,8 +8170,7 @@ hints in <a href="#D-tabled1">
 easily.</p>
 
 <!-- Maintain a fragment named "D-tabled1" to preserve incoming links to it -->
-<table id="D-tabled1" class="numbered simple" summary=
-"This table gives hints for reading the CRC code">
+<table id="D-tabled1" class="numbered simple">
 <caption>Hints for
 reading ISO C code</caption>
 

@@ -73,13 +73,13 @@
 	  wgPublicList: "public-png",
 	  wgPatentURI: "https://www.w3.org/groups/wg/png/ipr",
     localBiblio: {
-      "CIPA DC-008": {
+      "CIPA_DC-008": {
         title: "Exchangeable image file format for digital still cameras: Exif Version 2.32",
         href: "https://www.cipa.jp/std/documents/download_e.html?DC-008-Translation-2019-E",
         date: "2019-05-17",
         publisher: "Camera & Imaging Products Association"
       },
-      "COLOR FAQ": {
+      "COLOR_FAQ": {
         title: "Color FAQ",
         authors: ["Poynton, C."],
         href: "http://poynton.ca/ColorFAQ.html",
@@ -91,7 +91,7 @@
         href: "https://www.color.org/specification/ICC.2-2019.pdf",
         publisher: "International Color Consortium"
       },
-      "GAMMA FAQ": {
+      "GAMMA_FAQ": {
         title: "Gamma FAQ",
         authors: ["Poynton, C."],
         href: "http://poynton.ca/GammaFAQ.html",
@@ -195,19 +195,19 @@
         href: "http://www.libpng.org/pub/png/pngbook.html",
         date: "1999-06-11"
       },
-      "SMPTE 170M": {
+      "SMPTE_170M": {
         title: "Television — Composite Analog Video Signal — NTSC for Studio Applications",
         publisher: "Society of Motion Picture and Television Engineers",
         date: "2004-11-30",
         href: "https://standards.globalspec.com/std/892300/SMPTE%20ST%20170M"
       },
-      "SMPTE RP 2077": {
+      "SMPTE_RP_2077": {
         title: "Full-Range Image Mapping",
         publisher: "Society of Motion Picture and Television Engineers",
         date: "2013-01-01",
         href: "https://doi.org/10.5594/SMPTE.RP2077.2013"
       },
-      "TIFF 6.0": {
+      "TIFF_6.0": {
         href: "https://www.loc.gov/preservation/digital/formats/fdd/fdd000022.shtml",
         title: "TIFF Revision 6.0",
         date: "3 June 1992"
@@ -219,7 +219,7 @@
         publisher: "IEEE",
         href: "https://ieeexplore.ieee.org/document/1055714",
       },
-      "EBU R 103": {
+      "EBU_R_103": {
         title: "Video Signal Tolerance in Digital Television Systems",
         publisher: "EBU",
         date: "2020-05",
@@ -4093,7 +4093,7 @@ processing the image, including by a decoder or when rendering the image.</p>
   improve image quality during additional stages of processing and compression. 
   
   The use of undershoot/overshoot has also been used to preserve additional color volume 
-  (both light and color) as described in [[EBU R 103]]. [[SMPTE RP 2077]] describes full range 
+  (both light and color) as described in [[EBU_R_103]]. [[SMPTE_RP_2077]] describes full range 
   in more detail and includes the mapping from <a>full-range images</a> to <a>narrow-range images</a>
   and describes protected code values for SDI (baseband) carriage.</aside>
 
@@ -4866,7 +4866,7 @@ but each shall have a different palette name.</p>
   <p>The data segment of the <span class="chunk">eXIf</span> chunk
     contains an Exif profile in the format specified in
     "4.7.2 Interoperability Structure of APP1 in Compressed Data"
-    of [[CIPA DC-008]]
+    of [[CIPA_DC-008]]
     except that the JPEG APP1 marker, length, and the "Exif ID code"
     described in 4.7.2(C), i.e., "Exif", NULL, and padding byte,
     are not included.</p>
@@ -4921,7 +4921,7 @@ but each shall have a different palette name.</p>
       <h3><span class="chunk">eXIf</span> Recommendations for Encoders</h3>
 
       <p>Image editing applications should consider
-        Paragraph E.3 of the Exif Specification [[CIPA DC-008]],
+        Paragraph E.3 of the Exif Specification [[CIPA_DC-008]],
         which discusses requirements for updating Exif data
         when the image is changed.
         Encoders should follow those requirements,
@@ -5632,7 +5632,7 @@ gAMA</a> chunk is missing.</p>
 <p>There are a number of recommendations and standards for
 primaries and <a>white points</a>, some of which are linked to
 particular technologies, for example the CCIR 709 standard [[ITU-R_BT.709]]
-and the SMPTE-C standard [[SMPTE 170M]].</p>
+and the SMPTE-C standard [[SMPTE_170M]].</p>
 
 <p>There are three cases that need to be considered:</p>
 
@@ -5678,7 +5678,7 @@ cHRM</a> chunk.</p>
 
 <p>A few image formats store calibration information, which can
 be used to fill in the <a class="chunk" href="#11cHRM">
-cHRM</a> chunk. For example, TIFF 6.0 files [[?TIFF 6.0]] can
+cHRM</a> chunk. For example, TIFF_6.0 files [[?TIFF_6.0]] can
 optionally store calibration information, which if present should
 be used to construct the <a class="chunk" href="#11cHRM">
 cHRM</a> chunk.</p>
@@ -5720,7 +5720,7 @@ primaries and D65 whitepoint</caption>
 </tr>
 </table>
 
-<p>An older but still very popular video standard is SMPTE-C [[SMPTE 170M]]
+<p>An older but still very popular video standard is SMPTE-C [[SMPTE_170M]]
 given in <a href="#12-table122">
 </a>.</p>
 
@@ -8194,7 +8194,7 @@ used by decoders together with additional information about the
 display environment in order to achieve, or approximate, the
 desired display output.</p>
 
-<p>Additional information about this subject may be found [[?GAMMA FAQ]].</p>
+<p>Additional information about this subject may be found [[?GAMMA_FAQ]].</p>
 
 <p>Additional information on the impact of color space
   on image encoding may be found in
@@ -8202,7 +8202,7 @@ desired display output.</p>
 </p>
 
 <p>Background information about <a>chromaticity</a> and colour spaces
-may be found in [[?Luminance-Chromaticity]] and [[?COLOR FAQ]].</p>
+may be found in [[?Luminance-Chromaticity]] and [[?COLOR_FAQ]].</p>
 
 </section>
 

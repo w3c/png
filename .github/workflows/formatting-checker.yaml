@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 jobs:
-  HTML Tidy:
+  HTML-Tidy:
     runs-on: [ubuntu-latest]
 
     steps:

@@ -12,30 +12,30 @@
   </style>
   <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
   <script class="remove">
-      var respecConfig = {
-          group: "png",
-          specStatus: "ED",
-    shortName: "PNG",
-    copyrightStart: "1996",
-    previousPublishDate: "2003-11-10",
-    previousMaturity: "REC",
-    edDraftURI: "https://w3c.github.io/PNG-spec",
-    extraCSS: ["http://dev.w3.org/2009/dap/ReSpec.js/css/respec.css"],
-    editors: [
+    var respecConfig = {
+      group: "png",
+      specStatus: "ED",
+      shortName: "PNG",
+      copyrightStart: "1996",
+      previousPublishDate: "2003-11-10",
+      previousMaturity: "REC",
+      edDraftURI: "https://w3c.github.io/PNG-spec",
+      extraCSS: ["http://dev.w3.org/2009/dap/ReSpec.js/css/respec.css"],
+      editors: [
         { name: "Chris Blume", url: "https://www.programmax.net", w3cid: 127631 },
         { name: "Pierre-Anthony Lemieux", company: "MovieLabs", companyURL: "https://movielabs.com/", url: "mailto:pal@palemieux.com", w3cid: 57073 },
         { name: "Chris Lilley", url: "https://svgees.us", company: "W3C", companyURL: "https://www.w3.org", w3cid: 1438 },
         { name: "Leonard Rosenthol", company: "Adobe Inc.", companyURL: "https://www.adobe.com", w3cid: 42485 },
         { name: "Chris Seeger", company: "NBCUniversal, LLC a subsidiary of Comcast Corporation", companyURL: "https://www.comcast.com", w3cid: 125833 }
-    ],
-    formerEditors: [
+      ],
+      formerEditors: [
         { name: "Thomas Boutell" },
         { name: "Adam M. Costello" },
         { name: "David Duce" },
         { name: "Tom Lane" },
         { name: "Glenn Randers-Pehrson" },
-    ],
-    authors: [
+      ],
+      authors: [
         { name: "Mark Adler", url: "http://www.alumni.caltech.edu/~madler/" },
         { name: "Thomas Boutell", url: "http://www.boutell.com/boutell/" },
         { name: "John Bowler" },
@@ -53,7 +53,7 @@
         { name: "Chris Lilley", url: "https://svgees.us", company: "W3C", companyURL: "https://www.w3.org" },
         { name: "Dave Martindale" },
         { name: "Owen Mortensen" },
-              { name: "Stuart Parmenter"},
+        { name: "Stuart Parmenter"},
         { name: "Keith S. Pickens" },
         { name: "Robert P. Poole", url: "http://www.users.qwest.net/~lionlad/" },
         { name: "Glenn Randers-Pehrson" },
@@ -61,171 +61,171 @@
         { name: "Willem van Schaik", url: "http://www.schaik.com/" },
         { name: "Guy Schalnat" },
         { name: "Paul Schmidt" },
-              { name: "Andrew Smith" },
+        { name: "Andrew Smith" },
         { name: "Michael Stokes" },
-              { name: "Vladimir Vukicevic" },
+        { name: "Vladimir Vukicevic" },
         { name: "Tim Wegner" },
         { name: "Jeremy Wohl" }
-    ],
-    wg: "Portable Network Graphics (PNG) Working Group",
-    wgURI: "https://www.w3.org/groups/wg/png",
-    wgPublicList: "public-png",
-    wgPatentURI: "https://www.w3.org/groups/wg/png/ipr",
-    localBiblio: {
-      "CIPA DC-008": {
-        title: "Exchangeable image file format for digital still cameras: Exif Version 2.32",
-        href: "https://www.cipa.jp/std/documents/download_e.html?DC-008-Translation-2019-E",
-        date: "2019-05-17",
-        publisher: "Camera & Imaging Products Association"
-      },
-      "COLOR FAQ": {
-        title: "Color FAQ",
-        authors: ["Poynton, C."],
-        href: "http://poynton.ca/ColorFAQ.html",
-        date: "2009-10-19"
-      },
-      "ICC-2": {
-        title: "Specification ICC.2:2019 (Profile version 5.0.0 - iccMAX)",
-        date: "2019",
-        href: "https://www.color.org/specification/ICC.2-2019.pdf",
-        publisher: "International Color Consortium"
-      },
-      "GAMMA FAQ": {
-        title: "Gamma FAQ",
-        authors: ["Poynton, C."],
-        href: "http://poynton.ca/GammaFAQ.html",
-        date: "1998-08-04"
-      },
-      "Hill": {
-        title: "Comparative analysis of the quantization of color spaces on the basis of the CIELAB color-difference formula",
-        authors: ["Hill, B.", "Roger, Th.", "Vorhagen, F.W."],
-        journal: "ACM Transactions on Graphics, Volume 16, Issue 2, pp. 109–154",
-        date: "1997-04",
-        href: "https://dl.acm.org/doi/10.1145/248210.248212"
-      },
-      "ISO 3309": {
-        title: "ISO/IEC 3309:1993, Information Technology — Telecommunications and information exchange between systems — High-level data link control (HDLC) procedures — Frame structure.",
-        date: "1993",
-        publisher: "ISO"
-      },
-      "ISO 8859-1": {
-        title: "ISO/IEC 8859-1:1998, Information technology — 8-bit single-byte coded graphic character sets — Part 1: Latin alphabet No. 1.",
-        date: "1998",
-        publisher: "ISO"
-      },
-      "ISO 9899": {
-        title: "ISO/IEC 9899:2018 Information technology — Programming languages — C",
-        href: "https://www.iso.org/standard/74528.html",
-        date: "2018-6",
-        publisher: "ISO"
-      },
-      "ISO 15076-1": {
-        title: "ISO 15076-1:2010 Image technology colour management — Architecture, profile format and data structure — Part 1: Based on ICC.1:2010",
-        href: "https://www.iso.org/standard/54754.html",
-        date: "2010-12",
-        publisher: "ISO"
-      },
-      "ISO 20677-1": {
-        title: "ISO 20677:2019 Image technology colour management — Extensions to architecture, profile format and data structure",
-        href: "https://www.iso.org/standard/68806.html",
-        date: "2019-02",
-        publisher: "ISO"
-      },
-      "ITU-R BT.709": {
-        title: "ITU-R BT.709, SERIES H: AUDIOVISUAL AND MULTIMEDIA SYSTEMS Infrastructure of audiovisual services – Coding of moving video Coding-independent code points for video signal type identification",
-        publisher: "ITU",
-        href: "https://www.itu.int/rec/R-REC-BT.709"
-      },
-      "ITU-R BT.2100": {
-        title: "ITU-R BT.2100, SERIES H: AUDIOVISUAL AND MULTIMEDIA SYSTEMS Infrastructure of audiovisual services – Coding of moving video Coding-independent code points for video signal type identification",
-        publisher: "ITU",
-        href: "https://www.itu.int/rec/R-REC-BT.2100"
-      },
-      "ITU-T H.273": {
-        title: "ITU-T H.273, SERIES H: AUDIOVISUAL AND MULTIMEDIA SYSTEMS Infrastructure of audiovisual services – Coding of moving video Coding-independent code points for video signal type identification",
-        publisher: "ITU",
-        href: "https://www.itu.int/rec/T-REC-H.273"
-      },
-      "ITU-T V.42": {
-        title: "ITU Recommendation V.42 : Error-correcting procedures for DCEs using asynchronous-to-synchronous conversion",
-        href: "https://www.itu.int/rec/T-REC-V.42-200203-I/en",
-        date: "2002-03-29",
-        publisher: "ITU"
-      },
-      "Kasson": {
-        title: "An Analysis of Selected Computer Interchange Color Spaces",
-        authors: ["Kasson, J.", "W. Plouffe"],
-        journal: "ACM Transactions on Graphics, vol. 11, no. 4, pp. 373-405",
-        date: "1992",
-        href: "https://dl.acm.org/doi/abs/10.1145/146443.146479"
-      },
-      "Luminance-Chromaticity": {
-        title: "Luminance and Chromaticity",
-        href: "https://colorusage.arc.nasa.gov/lum_and_chrom.php",
-        publisher: "Color Usage Research Lab, NASA Ames Research Center"
-      },
-      "Paeth": {
-        authors: ["Paeth, A.W"],
-        title: "Image File Compression Made Easy, in Graphics Gems II, pp. 93-100",
-        publisher: "Academic Press",
-        date: "1991",
-        isbn: "0-12-064481-9",
-        href: "https://www.sciencedirect.com/science/article/pii/B9780080507545500293"
-      },
-      "PNG-EXTENSIONS": {
-        title: "Extensions to the PNG Third Edition Specification, Version 1.6.0",
-        publisher: "W3C",
-        date: "2021",
-        href: "https://w3c.github.io/PNG-spec/extensions/Overview.html"
-      },
-      "PostScript": {
-        title: "PostScript Language Reference Manual",
-        authors: ["Adobe Systems Incorporated"],
-        publisher: "Addison-Wesley",
-        date: "1990",
-        edition: "2",
-        isbn: "0-201-18127-4"
-      },
-      "ROELOFS": {
-        title: "PNG: The Definitive Guide",
-        authors: ["Roelofs, G."],
-        publisher: "O'Reilly &amp; Associates Inc",
-        isbn: "1-56592-542-4",
-        href: "http://www.libpng.org/pub/png/pngbook.html",
-        date: "1999-06-11"
-      },
-      "SMPTE 170M": {
-        title: "Television — Composite Analog Video Signal — NTSC for Studio Applications",
-        publisher: "Society of Motion Picture and Television Engineers",
-        date: "2004-11-30",
-        href: "https://standards.globalspec.com/std/892300/SMPTE%20ST%20170M"
-      },
-      "SMPTE RP 2077": {
-        title: "Full-Range Image Mapping",
-        publisher: "Society of Motion Picture and Television Engineers",
-        date: "2013-01-01",
-        href: "https://doi.org/10.5594/SMPTE.RP2077.2013"
-      },
-      "TIFF 6.0": {
-        href: "https://www.loc.gov/preservation/digital/formats/fdd/fdd000022.shtml",
-        title: "TIFF Revision 6.0",
-        date: "3 June 1992"
-      },
-      "Ziv-Lempel": {
-        authors: ["J. Ziv", "A. Lempel"],
-        title: "A Universal Algorithm for Sequential Data Compression, IEEE Transactions on Information Theory, vol. IT-23, no. 3, pp. 337 - 343",
-        date: "1977-05",
-        publisher: "IEEE",
-        href: "https://ieeexplore.ieee.org/document/1055714",
-      },
-      "EBU R 103": {
-        title: "Video Signal Tolerance in Digital Television Systems",
-        publisher: "EBU",
-        date: "2020-05",
-        href: "https://tech.ebu.ch/docs/r/r103.pdf"
-      },
-    }
-  };
+      ],
+      wg: "Portable Network Graphics (PNG) Working Group",
+      wgURI: "https://www.w3.org/groups/wg/png",
+      wgPublicList: "public-png",
+      wgPatentURI: "https://www.w3.org/groups/wg/png/ipr",
+      localBiblio: {
+        "CIPA DC-008": {
+          title: "Exchangeable image file format for digital still cameras: Exif Version 2.32",
+          href: "https://www.cipa.jp/std/documents/download_e.html?DC-008-Translation-2019-E",
+          date: "2019-05-17",
+          publisher: "Camera & Imaging Products Association"
+        },
+        "COLOR FAQ": {
+          title: "Color FAQ",
+          authors: ["Poynton, C."],
+          href: "http://poynton.ca/ColorFAQ.html",
+          date: "2009-10-19"
+        },
+        "ICC-2": {
+          title: "Specification ICC.2:2019 (Profile version 5.0.0 - iccMAX)",
+          date: "2019",
+          href: "https://www.color.org/specification/ICC.2-2019.pdf",
+          publisher: "International Color Consortium"
+        },
+        "GAMMA FAQ": {
+          title: "Gamma FAQ",
+          authors: ["Poynton, C."],
+          href: "http://poynton.ca/GammaFAQ.html",
+          date: "1998-08-04"
+        },
+        "Hill": {
+          title: "Comparative analysis of the quantization of color spaces on the basis of the CIELAB color-difference formula",
+          authors: ["Hill, B.", "Roger, Th.", "Vorhagen, F.W."],
+          journal: "ACM Transactions on Graphics, Volume 16, Issue 2, pp. 109–154",
+          date: "1997-04",
+          href: "https://dl.acm.org/doi/10.1145/248210.248212"
+        },
+        "ISO 3309": {
+          title: "ISO/IEC 3309:1993, Information Technology — Telecommunications and information exchange between systems — High-level data link control (HDLC) procedures — Frame structure.",
+          date: "1993",
+          publisher: "ISO"
+        },
+        "ISO 8859-1": {
+          title: "ISO/IEC 8859-1:1998, Information technology — 8-bit single-byte coded graphic character sets — Part 1: Latin alphabet No. 1.",
+          date: "1998",
+          publisher: "ISO"
+        },
+        "ISO 9899": {
+          title: "ISO/IEC 9899:2018 Information technology — Programming languages — C",
+          href: "https://www.iso.org/standard/74528.html",
+          date: "2018-6",
+          publisher: "ISO"
+        },
+        "ISO 15076-1": {
+          title: "ISO 15076-1:2010 Image technology colour management — Architecture, profile format and data structure — Part 1: Based on ICC.1:2010",
+          href: "https://www.iso.org/standard/54754.html",
+          date: "2010-12",
+          publisher: "ISO"
+        },
+        "ISO 20677-1": {
+          title: "ISO 20677:2019 Image technology colour management — Extensions to architecture, profile format and data structure",
+          href: "https://www.iso.org/standard/68806.html",
+          date: "2019-02",
+          publisher: "ISO"
+        },
+        "ITU-R BT.709": {
+          title: "ITU-R BT.709, SERIES H: AUDIOVISUAL AND MULTIMEDIA SYSTEMS Infrastructure of audiovisual services – Coding of moving video Coding-independent code points for video signal type identification",
+          publisher: "ITU",
+          href: "https://www.itu.int/rec/R-REC-BT.709"
+        },
+        "ITU-R BT.2100": {
+          title: "ITU-R BT.2100, SERIES H: AUDIOVISUAL AND MULTIMEDIA SYSTEMS Infrastructure of audiovisual services – Coding of moving video Coding-independent code points for video signal type identification",
+          publisher: "ITU",
+          href: "https://www.itu.int/rec/R-REC-BT.2100"
+        },
+        "ITU-T H.273": {
+          title: "ITU-T H.273, SERIES H: AUDIOVISUAL AND MULTIMEDIA SYSTEMS Infrastructure of audiovisual services – Coding of moving video Coding-independent code points for video signal type identification",
+          publisher: "ITU",
+          href: "https://www.itu.int/rec/T-REC-H.273"
+        },
+        "ITU-T V.42": {
+          title: "ITU Recommendation V.42 : Error-correcting procedures for DCEs using asynchronous-to-synchronous conversion",
+          href: "https://www.itu.int/rec/T-REC-V.42-200203-I/en",
+          date: "2002-03-29",
+          publisher: "ITU"
+        },
+        "Kasson": {
+          title: "An Analysis of Selected Computer Interchange Color Spaces",
+          authors: ["Kasson, J.", "W. Plouffe"],
+          journal: "ACM Transactions on Graphics, vol. 11, no. 4, pp. 373-405",
+          date: "1992",
+          href: "https://dl.acm.org/doi/abs/10.1145/146443.146479"
+        },
+        "Luminance-Chromaticity": {
+          title: "Luminance and Chromaticity",
+          href: "https://colorusage.arc.nasa.gov/lum_and_chrom.php",
+          publisher: "Color Usage Research Lab, NASA Ames Research Center"
+        },
+        "Paeth": {
+          authors: ["Paeth, A.W"],
+          title: "Image File Compression Made Easy, in Graphics Gems II, pp. 93-100",
+          publisher: "Academic Press",
+          date: "1991",
+          isbn: "0-12-064481-9",
+          href: "https://www.sciencedirect.com/science/article/pii/B9780080507545500293"
+        },
+        "PNG-EXTENSIONS": {
+          title: "Extensions to the PNG Third Edition Specification, Version 1.6.0",
+          publisher: "W3C",
+          date: "2021",
+          href: "https://w3c.github.io/PNG-spec/extensions/Overview.html"
+        },
+        "PostScript": {
+          title: "PostScript Language Reference Manual",
+          authors: ["Adobe Systems Incorporated"],
+          publisher: "Addison-Wesley",
+          date: "1990",
+          edition: "2",
+          isbn: "0-201-18127-4"
+        },
+        "ROELOFS": {
+          title: "PNG: The Definitive Guide",
+          authors: ["Roelofs, G."],
+          publisher: "O'Reilly &amp; Associates Inc",
+          isbn: "1-56592-542-4",
+          href: "http://www.libpng.org/pub/png/pngbook.html",
+          date: "1999-06-11"
+        },
+        "SMPTE 170M": {
+          title: "Television — Composite Analog Video Signal — NTSC for Studio Applications",
+          publisher: "Society of Motion Picture and Television Engineers",
+          date: "2004-11-30",
+          href: "https://standards.globalspec.com/std/892300/SMPTE%20ST%20170M"
+        },
+        "SMPTE RP 2077": {
+          title: "Full-Range Image Mapping",
+          publisher: "Society of Motion Picture and Television Engineers",
+          date: "2013-01-01",
+          href: "https://doi.org/10.5594/SMPTE.RP2077.2013"
+        },
+        "TIFF 6.0": {
+          href: "https://www.loc.gov/preservation/digital/formats/fdd/fdd000022.shtml",
+          title: "TIFF Revision 6.0",
+          date: "3 June 1992"
+        },
+        "Ziv-Lempel": {
+          authors: ["J. Ziv", "A. Lempel"],
+          title: "A Universal Algorithm for Sequential Data Compression, IEEE Transactions on Information Theory, vol. IT-23, no. 3, pp. 337 - 343",
+          date: "1977-05",
+          publisher: "IEEE",
+          href: "https://ieeexplore.ieee.org/document/1055714",
+        },
+        "EBU R 103": {
+          title: "Video Signal Tolerance in Digital Television Systems",
+          publisher: "EBU",
+          date: "2020-05",
+          href: "https://tech.ebu.ch/docs/r/r103.pdf"
+        },
+      }
+    };
   </script>
 </head>
 <body>

@@ -6,9 +6,9 @@
   <meta content="DNOTE" name="w3c-status">
   <link href="https://www.w3.org/StyleSheets/TR/2021/W3C-DNOTE" rel="stylesheet">
   <link href="https://www.w3.org/2008/site/images/favicon.ico" rel="icon">
-  <meta content="Bikeshed version cace53f8c, updated Tue Dec 7 12:12:54 2021 -0800" name="generator">
-  <link href="https://w3.org/TR/Overview.html" rel="canonical">
-
+  <meta content="Bikeshed version 82b9fec95, updated Fri Oct 14 15:43:55 2022 -0700" name="generator">
+  <link href="https://w3.org/TR/png-extensions/" rel="canonical">
+  <meta content="538bec41d1ff1e781d7c68afc9454d8efb609987" name="document-revision">
 <style>
     span.chunk {
         font-family: Courier, monospace;
@@ -242,17 +242,17 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72"> </a> </p>
    <h1 class="p-name no-ref" id="title">Extensions to the PNG Third Edition Specification, Version 1.6.0</h1>
-   <p id="w3c-state"><a href="https://www.w3.org/standards/types#DNOTE">W3C Group Draft Note</a>, <time class="dt-updated" datetime="2022-01-24">24 January 2022</time></p>
+   <p id="w3c-state"><a href="https://www.w3.org/standards/types#DNOTE">W3C Group Draft Note</a>, <time class="dt-updated" datetime="2022-10-24">24 October 2022</time></p>
    <details open>
     <summary>More details about this document</summary>
     <div data-fill-with="spec-metadata">
      <dl>
       <dt>This version:
-      <dd><a class="u-url" href="https://www.w3.org/TR/2022/DNOTE-pngext-20220124/">https://www.w3.org/TR/2022/DNOTE-pngext-20220124/</a>
+      <dd><a class="u-url" href="https://www.w3.org/TR/2022/DNOTE-pngext-20221024/">https://www.w3.org/TR/2022/DNOTE-pngext-20221024/</a>
       <dt>Latest published version:
-      <dd><a href="https://w3.org/TR/Overview.html">https://w3.org/TR/Overview.html</a>
+      <dd><a href="https://w3.org/TR/png-extensions/">https://w3.org/TR/png-extensions/</a>
       <dt>Editor's Draft:
-      <dd><a href="https://w3c.github.io/PNG-spec/extensions/pngext">https://w3c.github.io/PNG-spec/extensions/pngext</a>
+      <dd><a href="https://w3c.github.io/PNG-spec/extensions/Overview.html">https://w3c.github.io/PNG-spec/extensions/Overview.html</a>
       <dt>History:
       <dd><a class="u-url" href="https://www.w3.org/standards/history/pngext">https://www.w3.org/standards/history/pngext</a>
       <dt>Feedback:
@@ -1303,7 +1303,7 @@ Therefore, transparency information can be lost.</p>
 
      <c- n>These</c-> <c- n>are</c-> true <c- n>no</c-> <c- n>matter</c-> <c- n>which</c-> <c- n>way</c-> <c- n>the</c-> <c- n>division</c-> <c- n>rounds</c-><c- p>.</c->  <c- n>If</c->
      <c- p>(</c-><c- n>a</c-><c- o>*</c-><c- n>b</c-><c- p>)</c-><c- o>/</c-><c- n>c</c-> <c- n>is</c-> <c- n>in</c-><c- o>-</c-><c- n>range</c-><c- p>,</c-> <c- n>a</c-><c- o>*</c-><c- p>(</c-><c- n>b</c-><c- o>/</c-><c- n>c</c-><c- p>)</c-> <c- n>is</c-> <c- n>guaranteed</c-> <c- n>to</c-> <c- n>be</c-> <c- n>in</c-><c- o>-</c-><c- n>range</c-> <c- k>if</c->
-     <c- n>b</c-><c- o>/</c-><c- n>c</c-> <c- n>rounds</c-> <c- n>toward</c-> <c- n>zero</c-><c- p>.</c->  <c- n>Here</c-> <c- n>is</c-> <c- n>another</c-> <c- nl>observation</c-><c- p>:</c->
+     <c- n>b</c-><c- o>/</c-><c- n>c</c-> <c- n>rounds</c-> <c- n>toward</c-> <c- n>zero</c-><c- p>.</c->  <c- n>Here</c-> <c- n>is</c-> <c- n>another</c-> <c- n>observation</c-><c- o>:</c->
 
          <c- n>sum</c-><c- p>{</c-><c- n>x_i</c-><c- p>}</c-> <c- o>/</c-> <c- n>c</c-> <c- o>=</c-> <c- n>sum</c-><c- p>{</c-><c- n>x_i</c-> <c- o>/</c-> <c- n>c</c-><c- p>}</c-> <c- o>+</c-> <c- n>sum</c-><c- p>{</c-><c- n>x_i</c-> <c- o>%</c-> <c- n>c</c-><c- p>}</c-> <c- o>/</c-> <c- n>c</c->         <c- p>[</c-><c- mi>4</c-><c- p>]</c->
 
@@ -1314,7 +1314,7 @@ Therefore, transparency information can be lost.</p>
      <c- n>which</c-> <c- k>case</c-> <c- n>it</c-> <c- n>rounds</c-> <c- n>downward</c-><c- p>.</c->  <c- n>So</c-> <c- k>if</c-> <c- n>we</c-> <c- n>arrange</c-> <c- k>for</c-> <c- n>all</c->
      <c- n>numerators</c-> <c- n>and</c-> <c- n>denominators</c-> <c- n>to</c-> <c- n>be</c-> <c- n>nonnegative</c-><c- p>,</c-> <c- n>everything</c->
      <c- n>works</c-><c- p>.</c->  <c- n>Starting</c-> <c- n>with</c-> <c- n>equation</c-> <c- mi>2</c-> <c- n>and</c-> <c- n>applying</c-> <c- n>identity</c-> <c- mi>4</c-><c- p>,</c-> <c- n>then</c->
-     <c- mi>3</c-><c- p>,</c-> <c- n>we</c-> <c- n>obtain</c-> <c- n>the</c-> <c- n>final</c-> <c- nl>formula</c-><c- p>:</c->
+     <c- mi>3</c-><c- p>,</c-> <c- n>we</c-> <c- n>obtain</c-> <c- n>the</c-> <c- n>final</c-> <c- n>formula</c-><c- o>:</c->
 
                <c- n>d</c-> <c- o>=</c-> <c- n>offset</c-> <c- o>*</c-> <c- p>(</c-><c- n>xspan</c-> <c- o>%</c-> <c- n>max</c-><c- p>)</c->
          <c- n>xoffset</c-> <c- o>=</c-> <c- n>offset</c-> <c- o>*</c-> <c- p>(</c-><c- n>xspan</c-> <c- o>/</c-> <c- n>max</c-><c- p>)</c-> <c- o>+</c-> <c- n>d</c-><c- o>/</c-><c- n>max</c->
@@ -1643,7 +1643,7 @@ Therefore, transparency information can be lost.</p>
 
      <c- n>These</c-> <c- n>are</c-> true <c- n>no</c-> <c- n>matter</c-> <c- n>which</c-> <c- n>way</c-> <c- n>the</c-> <c- n>division</c-> <c- n>rounds</c-><c- p>.</c->  <c- n>If</c->
      <c- p>(</c-><c- n>a</c-><c- o>*</c-><c- n>b</c-><c- p>)</c-><c- o>/</c-><c- n>c</c-> <c- n>is</c-> <c- n>in</c-><c- o>-</c-><c- n>range</c-><c- p>,</c-> <c- n>a</c-><c- o>*</c-><c- p>(</c-><c- n>b</c-><c- o>/</c-><c- n>c</c-><c- p>)</c-> <c- n>is</c-> <c- n>guaranteed</c-> <c- n>to</c-> <c- n>be</c-> <c- n>in</c-><c- o>-</c-><c- n>range</c-> <c- k>if</c->
-     <c- n>b</c-><c- o>/</c-><c- n>c</c-> <c- n>rounds</c-> <c- n>toward</c-> <c- n>zero</c-><c- p>.</c->  <c- n>Here</c-> <c- n>is</c-> <c- n>another</c-> <c- nl>observation</c-><c- p>:</c->
+     <c- n>b</c-><c- o>/</c-><c- n>c</c-> <c- n>rounds</c-> <c- n>toward</c-> <c- n>zero</c-><c- p>.</c->  <c- n>Here</c-> <c- n>is</c-> <c- n>another</c-> <c- n>observation</c-><c- o>:</c->
 
          <c- n>sum</c-><c- p>{</c-><c- n>x_i</c-><c- p>}</c-> <c- o>/</c-> <c- n>c</c-> <c- o>=</c-> <c- n>sum</c-><c- p>{</c-><c- n>x_i</c-> <c- o>/</c-> <c- n>c</c-><c- p>}</c-> <c- o>+</c-> <c- n>sum</c-><c- p>{</c-><c- n>x_i</c-> <c- o>%</c-> <c- n>c</c-><c- p>}</c-> <c- o>/</c-> <c- n>c</c->         <c- p>[</c-><c- mi>4</c-><c- p>]</c->
 
@@ -1654,7 +1654,7 @@ Therefore, transparency information can be lost.</p>
      <c- n>which</c-> <c- k>case</c-> <c- n>it</c-> <c- n>rounds</c-> <c- n>downward</c-><c- p>.</c->  <c- n>So</c-> <c- k>if</c-> <c- n>we</c-> <c- n>arrange</c-> <c- k>for</c-> <c- n>all</c->
      <c- n>numerators</c-> <c- n>and</c-> <c- n>denominators</c-> <c- n>to</c-> <c- n>be</c-> <c- n>nonnegative</c-><c- p>,</c-> <c- n>everything</c->
      <c- n>works</c-><c- p>.</c->  <c- n>Starting</c-> <c- n>with</c-> <c- n>equation</c-> <c- mi>2</c-> <c- n>and</c-> <c- n>applying</c-> <c- n>identity</c-> <c- mi>4</c-><c- p>,</c-> <c- n>then</c->
-     <c- mi>3</c-><c- p>,</c-> <c- n>we</c-> <c- n>obtain</c-> <c- n>the</c-> <c- n>final</c-> <c- nl>formula</c-><c- p>:</c->
+     <c- mi>3</c-><c- p>,</c-> <c- n>we</c-> <c- n>obtain</c-> <c- n>the</c-> <c- n>final</c-> <c- n>formula</c-><c- o>:</c->
 
                <c- n>d</c-> <c- o>=</c-> <c- n>offset</c-> <c- o>*</c-> <c- p>(</c-><c- n>xspan</c-> <c- o>%</c-> <c- n>max</c-><c- p>)</c->
          <c- n>xoffset</c-> <c- o>=</c-> <c- n>offset</c-> <c- o>*</c-> <c- p>(</c-><c- n>xspan</c-> <c- o>/</c-> <c- n>max</c-><c- p>)</c-> <c- o>+</c-> <c- n>d</c-><c- o>/</c-><c- n>max</c->
@@ -2026,7 +2026,7 @@ Therefore, transparency information can be lost.</p>
     and are set apart from the normative text
     with <code>class="note"</code>,
     like this: </p>
-   <p class="note" role="note">Note, this is an informative note. </p>
+   <p class="note" role="note">Note, this is an informative note.</p>
    <h3 class="no-ref no-num heading settled" id="w3c-conformant-algorithms"><span class="content">Conformant Algorithms</span><a class="self-link" href="#w3c-conformant-algorithms"></a></h3>
    <p>Requirements phrased in the imperative as part of algorithms
     (such as "strip any leading space characters"
@@ -2047,7 +2047,7 @@ Therefore, transparency information can be lost.</p>
   <h3 class="no-num no-ref heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
   <dl>
    <dt id="biblio-dsig-spec">[dSIG-spec]
-   <dd>Thomas Kopp. <a href="http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.spec.pdf"><cite>PNG Digital Signatures: Extension Specification</cite></a>. 17 Nov 2008. URL: <a href="http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.spec.pdf">http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.spec.pdf</a>
+   <dd>T; et al. <a href="http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.spec.pdf"><cite>PNG Digital Signatures: Extension Specification</cite></a>. 17 Nov 2008. URL: <a href="http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.spec.pdf">http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.spec.pdf</a>
    <dt id="biblio-png">[PNG]
    <dd>Tom Lane. <a href="https://www.w3.org/TR/PNG/"><cite>Portable Network Graphics (PNG) Specification (Second Edition)</cite></a>. 10 November 2003. REC. URL: <a href="https://www.w3.org/TR/PNG/">https://www.w3.org/TR/PNG/</a>
    <dt id="biblio-rfc2119">[RFC2119]
@@ -2056,7 +2056,7 @@ Therefore, transparency information can be lost.</p>
   <h3 class="no-num no-ref heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
   <dl>
    <dt id="biblio-dsig-example">[dSIG-example]
-   <dd>Martin Boßlet, Thomas Kopp. <a href="http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.sample.html"><cite>PNG Digital Signatures: Commented Example</cite></a>. 18 May 2008. URL: <a href="http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.sample.html">http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.sample.html</a>
+   <dd>M; et al. <a href="http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.sample.html"><cite>PNG Digital Signatures: Commented Example</cite></a>. 18 May 2008. URL: <a href="http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.sample.html">http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.sample.html</a>
    <dt id="biblio-gif">[GIF]
    <dd><a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt"><cite>Graphics Interchange Format</cite></a>. 31 July 1990. URL: <a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt">https://www.w3.org/Graphics/GIF/spec-gif89a.txt</a>
   </dl>

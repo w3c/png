@@ -1941,14 +1941,11 @@ for <a>PNG editors</a> are discussed further in <a href="#14Ordering"></a>.</td>
 <p>EXAMPLE The hypothetical chunk type "<span class=
 "chunk">cHNk</span>" has the property bits:</p>
 
-<pre>
-   cHNk  &lt;-- 32 bit chunk type represented in text form
-   ||||
-   |||+- Safe-to-copy bit is 1 (lower case letter; bit 5 is 1)
-   ||+-- Reserved bit is 0     (upper case letter; bit 5 is 0)
-   |+--- Private bit is 0      (upper case letter; bit 5 is 0)
-   +---- Ancillary bit is 1    (lower case letter; bit 5 is 1)
-</pre>
+<figure id="chunk-bits-cHNk">
+  <object data="figures/chunk-bits.svg" type="image/svg+xml">
+  </object>
+  <figcaption>Property bits in a theoretical 'cHNk' chunk</figcaption>
+</figure>
 
 <p>Therefore, this name represents an ancillary, public,
 safe-to-copy chunk.</p>
@@ -5839,23 +5836,19 @@ to compute than linear scaling.</p>
 bits. If the source sample value is 27 (in the range from 0-31),
 then the original bits are:</p>
 
-<pre>
-   4 3 2 1 0
-   ---------
-   1 1 0 1 1
-</pre>
+<figure id="depth-original-bits">
+  <object data="figures/depth-original.svg" type="image/svg+xml">
+  </object>
+  <figcaption>Original five-bit sample</figcaption>
+</figure>
 
 <p>Left bit replication gives a value of 222:</p>
 
-<pre>
-   7 6 5 4 3  2 1 0
-   ----------------
-   1 1 0 1 1  1 1 0
-   |=======|  |===|
-       |      Leftmost Bits Repeated to Fill Open Bits
-       |
-   Original Bits
-</pre>
+<figure id="depth-scaled-bits">
+  <object data="figures/depth-scale.svg" type="image/svg+xml">
+  </object>
+  <figcaption>Scaled eight-bit sample with replication</figcaption>
+</figure>
 
 <p>which matches the value computed by the linear equation. Left
 bit replication usually gives the same value as linear scaling,

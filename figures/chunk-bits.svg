@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+
+<svg viewBox="0 0 436 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<style type="text/css">
+    @font-face {
+        font-family: OS_Cond_Med;
+        src: url(./fonts/OS_Cond_Med.woff2);
+    }
+    rect {
+        stroke:#777;
+        stroke-width:1;
+        fill: none;
+        }
+    text {
+        font-family: OS_Cond_Med;
+        font-size:36px;
+        text-anchor:start;
+        fill: #000;
+        }
+    text.anno {
+        font-size: 16px;
+        fill: #555;
+    }
+    line, polyline {
+        stroke:#999;
+        stroke-width:2
+        }
+    polyline {
+        fill: none;
+    }
+</style>
+<!-- <rect x="0" y="0" width="436" height="200" style="fill:red" />  -->
+
+<text x="7" y="36">c</text>
+<text x="29" y="36">H</text>
+<text x="53" y="36">N</text>
+<text x="78" y="36">k</text>
+<rect x="4" y="3" width="22" height="36" rx="2"/>
+<rect x="28" y="3" width="22" height="36" rx="2"/>
+<rect x="52" y="3" width="22" height="36" rx="2"/>
+<rect x="76" y="3" width="22" height="36" rx="2"/>
+
+<line x1="105" y1="24" x2="145" y2="24"/>
+
+<text x="150" y="30" class="anno">32 bit chunk type, represented in text form</text>
+
+<polyline points="87,44 87,95 140,95"/>
+<polyline points="63,44 63,125 140,125"/>
+<polyline points="40,44 40,155 140,155"/>
+<polyline points="15,44 15,185 140,185"/>
+
+<text x="150" y="100" class="anno">Safe-to-copy bit is 1<tspan x="270">(lower case letter; bit 5 is 1)</tspan></text>
+<text x="150" y="130" class="anno">Reserved bit is 0<tspan x="270">(upper case letter; bit 5 is 0)</tspan></text>
+<text x="150" y="160" class="anno">Private bit is 0<tspan x="270">(upper case letter; bit 5 is 0)</tspan></text>
+<text x="150" y="190" class="anno">Ancillary bit is 1<tspan x="270">(lower case letter; bit 5 is 1)</tspan></text>
+
+
+
+</svg>
+

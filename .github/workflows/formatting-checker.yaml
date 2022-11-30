@@ -33,4 +33,4 @@ jobs:
       run: tidy -f old-tidy-results -config tidy.cfg -e main/index.html || true
 
     - name: Diff HTML Tidy results
-      run: diff -u old-tidy-results new-tidy-results
+      run: diff -u old-tidy-results new-tidy-results | not grep -E "^\+"

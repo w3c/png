@@ -21,4 +21,13 @@ jobs:
       run: sudo apt install tidy
 
     - name: Run HTML Tidy
-      run: tidy -config tidy.cfg -e index.html
+      run: tidy -f new-tidy-results -config tidy.cfg -e index.html
+
+    - name: Checkout main
+      run: git checkout main
+
+    - name: Run HTML Tidy
+      run: tidy -f old-tidy-results -config tidy.cfg -e index.html
+
+    - name: Diff HTML Tidy results
+      run: diff -u old-tidy-results new-tidy-results | grep -E "^\+"

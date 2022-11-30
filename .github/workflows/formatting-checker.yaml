@@ -24,7 +24,9 @@ jobs:
       run: tidy -f new-tidy-results -config tidy.cfg -e index.html || true
 
     - name: Checkout main
-      run: git checkout main
+      uses: actions/checkout@v3
+      with:
+        ref: main
 
     - name: Run HTML Tidy
       run: tidy -f old-tidy-results -config tidy.cfg -e index.html || true

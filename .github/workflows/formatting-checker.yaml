@@ -33,6 +33,4 @@ jobs:
       run: tidy -f old-tidy-results -config tidy.cfg -e main/index.html || true
 
     - name: Diff HTML Tidy results
-      run: diff -u old-tidy-results new-tidy-results | grep -E "^\+"
-      register: log_errors
-      failed_when: "log_errors.rc == 0"
+      run: diff -u old-tidy-results new-tidy-results | (! grep -E "^\+")

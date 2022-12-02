@@ -206,6 +206,12 @@
           date: "2013-01-01",
           href: "https://doi.org/10.5594/SMPTE.RP2077.2013"
         },
+        "SMPTE ST 2086": {
+          title: "Mastering Display Color Volume Metadata Supporting High Luminance and Wide Color Gamut Images",
+          publisher: "Society of Motion Picture and Television Engineers",
+          date: "27 April 2018",
+          href: "https://ieeexplore.ieee.org/document/8353899"
+        },
         "TIFF 6.0": {
           href: "https://www.loc.gov/preservation/digital/formats/fdd/fdd000022.shtml",
           title: "TIFF Revision 6.0",
@@ -310,9 +316,9 @@ with these exceptions:
     Internet. Indexed-colour, greyscale, and <a>truecolour</a> images are supported, with optional transparency. Sample depths
     range from 1 to 16 bits. PNG is fully streamable with a progressive display option. It is robust, providing both full file
     integrity checking and simple detection of common transmission errors. PNG can store <a>gamma value</a> and chromaticity data
-    as well as a full ICC colour profile or CICP image format signaling metadata, for accurate colour matching on heterogenous
-    platforms. This Standard defines the Internet Media types "image/png" and "image/apng". The datastream and associated file
-    format have value outside of the main design goal.</p>
+    as well as a full ICC colour profile, CICP image format signaling metadata, and mastering metadata for accurate colour matching
+    on heterogeneous platforms. This Standard defines the Internet Media types "image/png" and "image/apng". The datastream and
+    associated file format have value outside of the main design goal.</p>
   </section>
 
   <section>
@@ -977,6 +983,8 @@ with these exceptions:
 
       <p><a>Gamma</a> correction is not applied to the alpha channel, if present. Alpha samples always represent a linear fraction
       of full opacity.</p>
+
+      <p>Mastering metadata may also be provided</p>
     </section>
     <!-- Maintain a fragment named "4Concepts.PNGImageTransformation" to preserve incoming links to it -->
 
@@ -1402,7 +1410,7 @@ with these exceptions:
       <section id="4Concepts.FormatTypes">
         <h2>Chunk types</h2>
 
-        <p>There are 19 chunk types defined in this International Standard. Chunk types are four-byte sequences chosen so that they
+        <p>There are 24 chunk types defined in this International Standard. Chunk types are four-byte sequences chosen so that they
         correspond to readable labels when interpreted in the ISO 646.IRV:1991 [[ISO646]] character set. The first four are termed
         critical chunks, which shall be understood and correctly interpreted according to the provisions of this specification.
         These are:</p>
@@ -1426,7 +1434,7 @@ with these exceptions:
           </li>
         </ol>
 
-        <p>The remaining 18 chunk types are termed ancillary chunk types, which encoders may generate and decoders may
+        <p>The remaining 20 chunk types are termed ancillary chunk types, which encoders may generate and decoders may
         interpret.</p>
         <!-- <ol start="5"> -->
 
@@ -1436,7 +1444,8 @@ with these exceptions:
 
           <li>Colour space information: <a class="chunk" href="#11cHRM">cHRM</a>, <a class="chunk" href="#11gAMA">gAMA</a>,
           <a class="chunk" href="#11iCCP">iCCP</a>, <a class="chunk" href="#11sBIT">sBIT</a>, <a class="chunk" href=
-          "#11sRGB">sRGB</a>, <a class="chunk" href="#cICP-chunk">cICP</a> (see <a href="#11addnlcolinfo"></a>).
+          "#11sRGB">sRGB</a>, <a class="chunk" href="#cICP-chunk">cICP</a>, <a class="chunk" href="#mASt-chunk">mASt</a> (see
+          <a href="#11addnlcolinfo"></a>).
           </li>
 
           <li>Textual information: <a class="chunk" href="#11iTXt">iTXt</a>, <a class="chunk" href="#11tEXt">tEXt</a>, <a class=
@@ -2030,6 +2039,16 @@ with these exceptions:
           <td>
             Before <a class="chunk" href="#11PLTE">PLTE</a> and <a class="chunk" href="#11IDAT">IDAT</a>. If the <a class="chunk"
             href="#11iCCP">iCCP</a> chunk is present, the <a class="chunk" href="#11sRGB">sRGB</a> chunk should not be present.
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <a class="chunk" href="#mASt-chunk">mASt</a>
+          </td>
+          <td>No</td>
+          <td>
+            Before <a class="chunk" href="#11PLTE">PLTE</a> and <a class="chunk" href="#11IDAT">IDAT</a>.
           </td>
         </tr>
 
@@ -3758,7 +3777,8 @@ with these exceptions:
             carriage.
           </aside>
 
-          <p>The <span class="chunk">cICP</span> chunk MUST come before the <a class="chunk" href="#11IDAT">IDAT</a> chunk.</p>
+          <p>The <span class="chunk">cICP</span> chunk MUST come before the <a class="chunk" href="#11PLTE">PLTE</a> and <a class=
+          "chunk" href="#11IDAT">IDAT</a> chunks.</p>
 
           <p>When the <span class="chunk">cICP</span> chunk is present, decoders that recognize it SHALL ignore the following
           chunks:</p>
@@ -3815,6 +3835,56 @@ with these exceptions:
 1 1 0 0
 </pre>
           </aside>
+        </section>
+        <!-- Maintain a fragment named "mASt-chunk" to preserve incoming links to it -->
+
+        <section id="mASt-chunk">
+          <h2><span class="chunk">mASt</span> mastering metadata</h2>
+
+          <p>The four decimal values below correspond to the four-byte mASt chunk type field:</p>
+
+          <pre>
+109 65 83 116
+</pre>
+          <p>If present, the <span class="chunk">mASt</span> chunk specifies the mastering display's metadata which includes
+          primaries, white point, maximum luminance, and minimum luminance as specified in [[SMPTE ST 2086]].</p>
+
+          <p>The following specifies the syntax of the <span class="chunk">mASt</span> chunk:</p>
+
+          <table id="mASt-chunk-syntax" class="numbered simple">
+            <caption>
+              mASt chunk components
+            </caption>
+
+            <tr>
+              <th>Name</th>
+              <th>Size</th>
+            </tr>
+
+            <tr>
+              <td>Mastering display colour primaries</td>
+              <td>12 bytes</td>
+            </tr>
+
+            <tr>
+              <td>Mastering display white point chromaticity</td>
+              <td>4 bytes</td>
+            </tr>
+
+            <tr>
+              <td>Mastering display maximum luminance</td>
+              <td>4 bytes</td>
+            </tr>
+          </table>
+
+          <aside class="note">
+            The three colour primaries are 4 bytes each, totalling 12 bytes. They are ordered starting with the primary with the
+            largest x chromaticity, followed by the primary with the largest y chromaticity, followed by the remaining primary.
+            This corresponds to RGB order.
+          </aside>
+
+          <p>The <span class="chunk">mASt</span> chunk MUST come before the <a class="chunk" href="#11PLTE">PLTE</a> and <a class=
+          "chunk" href="#11IDAT">IDAT</a> chunks.</p>
         </section>
       </section>
       <!-- Maintain a fragment named "11textinfo" to preserve incoming links to it -->
@@ -7154,6 +7224,10 @@ will need to be replaced by copies of lines 17-23, but processing background ins
 
       <li>The previously defined <a class="chunk" href="#eXIf">eXIf</a> chunk has been moved from the PNG-Extensions document
       [[PNG-EXTENSIONS]] into the main body of this specification, to reflect it's widespready use.
+      </li>
+
+      <li>Added the <a class="chunk" href="#mASt-chunk">mASt</a> chunk, which contains metadata about the display used in
+      mastering. This enabled more accurate colour matching on heterogeneous platforms
       </li>
 
       <li>Incorporation of all <a href="https://www.w3.org/2003/11/REC-PNG-20031110-errata">PNG Second Edition Errata</a>

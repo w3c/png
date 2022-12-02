@@ -4094,11 +4094,11 @@ with these exceptions:
           is 0 (<a>zlib</a> datastream with <a>deflate</a> compression, see <a href='#10CompressionOtherUses'></a>). For
           uncompressed text, encoders shall set the compression method to 0, and decoders shall ignore it.</p>
 
-          <p>The language tag defined in [[BCP47]] indicates the human language used by the translated keyword and the text. Unlike
-          the keyword, the language tag is case-insensitive. It is an ISO 646.IRV:1991 [[ISO646]] string consisting of
-          hyphen-separated words of 1-8 alphanumeric characters each (for example cn, en-uk, no-bok, x-klingon, x-KlInGoN). If the
-          first word is two or three letters long, it is an ISO language code [[BCP47]]. If the language tag is empty, the language
-          is unspecified.</p>
+          <p>The language tag is a well-formed language tag defined by [[BCP47]]. Unlike the keyword, the language tag is
+          case-insensitive. Subtags must appear in the IANA language subtag registry. If the language tag is empty, the language is
+          unspecified. Examples of language tags include: <code>en</code>, <code>en-GB</code>, <code>es-419</code>,
+          <code>zh-Hans</code>, <code>zh-Hans-CN</code>, <code>tlh-Cyrl-AQ</code>, <code>ar-AE-u-nu-latn</code>, and
+          <code>x-private</code>.</p>
 
           <p>The translated keyword and text both use the UTF-8 encoding [[rfc3629]], and neither shall contain a zero byte (null
           character). The text, unlike other textual data in this chunk, is not null-terminated; its length is derived from the

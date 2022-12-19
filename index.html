@@ -3417,7 +3417,7 @@ with these exceptions:
           </table>
 
           <p>The profile name may be any convenient name for referring to the profile. It is case-sensitive. Profile names shall
-          contain only printable Latin-1 characters and spaces (only character codes 32-126 and 161-255 decimal are allowed).
+          contain only printable Latin-1 characters and spaces (only character codes 0x20-7E and 0xA1-FF are allowed).
           Leading, trailing, and consecutive spaces are not permitted. The only compression method defined in this specification is
           method 0 (<a>zlib</a> datastream with <a>deflate</a> compression, see <a href='#10CompressionOtherUses'></a>). The
           compression method entry is followed by a compressed profile that makes up the remainder of the chunk. Decompression of
@@ -3924,9 +3924,9 @@ with these exceptions:
 
           <p>Keywords of general interest SHOULD be listed in [[PNG-EXTENSIONS]].</p>
 
-          <p>Keywords shall contain only printable Latin-1 [[ISO 8859-1]] characters and spaces; that is, only character codes
-          32-126 and 161-255 decimal are allowed. To reduce the chances for human misreading of a keyword, leading spaces, trailing
-          spaces, and consecutive spaces are not permitted in keywords, nor is the non-breaking space (code 160) since it is
+          <p>Keywords shall contain only printable Latin-1 [[ISO 8859-1]] characters and spaces; that is, only character codes 0x20-7E and 0xA1-FF are allowed. To reduce the chances for human misreading of a keyword, leading spaces, trailing
+          spaces, and consecutive spaces are not permitted in keywords, nor is 
+          U+00A0 NON-BREAKING SPACE since it is
           visually indistinguishable from an ordinary space.</p>
 
           <p>Keywords shall be spelled exactly as registered, so that decoders can use simple literal comparisons when looking for
@@ -4381,7 +4381,7 @@ with these exceptions:
 
           <p>The palette name is case-sensitive, and subject to the same restrictions as the keyword parameter for the <a class=
           "chunk" href="#11tEXt">tEXt</a> chunk. Palette names shall contain only printable Latin-1 characters and spaces (only
-          character codes 32-126 and 161-255 decimal are allowed). Leading, trailing, and consecutive spaces are not permitted.</p>
+          character codes 0x20-7E and 0xA1-FF are allowed). Leading, trailing, and consecutive spaces are not permitted.</p>
 
           <p>The <span class="chunk">sPLT</span> sample depth shall be 8 or 16.</p>
 
@@ -5632,7 +5632,7 @@ scale_factor_Y = max(1.0, display_ratio/image_ratio)</code>
 
       <p>Decoders running on systems with non-Latin-1 character set encoding should provide character code remapping so that
       Latin-1 characters are displayed correctly. Some systems may not provide all the characters defined in Latin-1. Mapping
-      unavailable characters to a visible notation such as "<code>\nnn</code>" is a good fallback. Character codes 127-255 should
+      unavailable characters to a visible notation such as "<code>\nnn</code>" is a good fallback. Character codes 0x7F-FF should
       be displayed only if they are printable characters on the decoding system. Some systems may interpret such codes as control
       characters; for security, decoders running on such systems should not display such characters literally.</p>
 

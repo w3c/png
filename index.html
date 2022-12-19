@@ -283,8 +283,6 @@ with these exceptions:
 
   <h2 id="Introduction">Introduction</h2>
 
-  <p>
-  </p>
 
   <p>The design goals for this specification were:</p>
 
@@ -2543,8 +2541,6 @@ with these exceptions:
       <p>A <dfn id="3filter">filter method</dfn> is a transformation applied to an array of <a>scanlines</a> with the aim of
       improving their compressibility.</p>
 
-      <p>
-      </p>
 
       <p>PNG standardizes one <a>filter method</a> and several filter types that may be used to prepare <a>image data</a> for
       compression. It transforms the byte sequence into an equal length sequence of bytes preceded by a filter type byte (see
@@ -2735,7 +2731,7 @@ with these exceptions:
         </tr>
 
         <tr>
-          <td align="center">0</td>
+          <td>0</td>
           <td>None</td>
           <td><code>Filt(x) = Orig(x)</code>
           </td>
@@ -2744,7 +2740,7 @@ with these exceptions:
         </tr>
 
         <tr>
-          <td align="center">1</td>
+          <td>1</td>
           <td>Sub</td>
           <td><code>Filt(x) = Orig(x) - Orig(a)</code>
           </td>
@@ -2753,7 +2749,7 @@ with these exceptions:
         </tr>
 
         <tr>
-          <td align="center">2</td>
+          <td>2</td>
           <td>Up</td>
           <td><code>Filt(x) = Orig(x) - Orig(b)</code>
           </td>
@@ -2762,7 +2758,7 @@ with these exceptions:
         </tr>
 
         <tr>
-          <td align="center">3</td>
+          <td>3</td>
           <td>Average</td>
           <td><code>Filt(x) = Orig(x) - floor((Orig(a) + Orig(b)) / 2)</code>
           </td>
@@ -2771,7 +2767,7 @@ with these exceptions:
         </tr>
 
         <tr>
-          <td align="center">4</td>
+          <td>4</td>
           <td>Paeth</td>
           <td><code>Filt(x) = Orig(x) - PaethPredictor(Orig(a), Orig(b), Orig(c))</code>
           </td>
@@ -3043,21 +3039,21 @@ with these exceptions:
 
           <tr>
             <td>Greyscale</td>
-            <td align="center">0</td>
+            <td>0</td>
             <td>1, 2, 4, 8, 16</td>
             <td>Each pixel is a greyscale sample</td>
           </tr>
 
           <tr>
             <td>Truecolour</td>
-            <td align="center">2</td>
+            <td>2</td>
             <td>8, 16</td>
             <td>Each pixel is an R,G,B triple</td>
           </tr>
 
           <tr>
             <td>Indexed-colour</td>
-            <td align="center">3</td>
+            <td>3</td>
             <td>1, 2, 4, 8</td>
             <td>
               Each pixel is a palette index; a <a class="chunk" href="#11PLTE">PLTE</a> chunk shall appear.
@@ -3066,14 +3062,14 @@ with these exceptions:
 
           <tr>
             <td>Greyscale with alpha</td>
-            <td align="center">4</td>
+            <td>4</td>
             <td>8, 16</td>
             <td>Each pixel is a greyscale sample followed by an alpha sample.</td>
           </tr>
 
           <tr>
             <td>Truecolour with alpha</td>
-            <td align="center">6</td>
+            <td>6</td>
             <td>8, 16</td>
             <td>Each pixel is an R,G,B triple followed by an alpha sample.</td>
           </tr>

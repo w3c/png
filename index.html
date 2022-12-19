@@ -4101,12 +4101,16 @@ with these exceptions:
           <p>For the Creation Time keyword, the date format defined in section&#160;5.2.14 of RFC 1123 is suggested, but not
           required [[rfc1123]].</p>
 
-          <p>In the <a class="chunk" href="#11tEXt">tEXt</a> and <a class="chunk" href="#11zTXt">zTXt</a> chunks, the text string
-          associated with a keyword is restricted to the Latin-1 character set plus the linefeed character. Text strings in
-          <a class="chunk" href="#11zTXt">zTXt</a> are compressed into <a>zlib</a> datastreams using <a>deflate</a> compression
-          (see <a href='#10CompressionOtherUses'></a>). The <a class="chunk" href="#11iTXt">iTXt</a> chunk can be used to convey
-          characters outside the Latin-1 set. It uses the UTF-8 encoding [[rfc3629]]. There is an option to compress text strings
-          in the <a class="chunk" href="#11iTXt">iTXt</a> chunk.</p>
+          <p>The <a class="chunk" href="#11iTXt">iTXt</a> chunk uses the UTF-8 encoding [[rfc3629]] and 
+            can be used to convey characters in any language. 
+            There is an option to compress text strings
+            in the <a class="chunk" href="#11iTXt">iTXt</a> chunk.
+            <a class="chunk" href="#11iTXt">iTXt</a> is recommended for all text strings, as it supports Unicode.
+            There are also <a class="chunk" href="#11tEXt">tEXt</a> and <a class="chunk" href="#11zTXt">zTXt</a> chunks,
+            whose content is restricted to the printable Latin-1 character set plus U+000A LINE FEED (LF).
+            Text strings in <a class="chunk" href="#11zTXt">zTXt</a> are compressed into <a>zlib</a> datastreams 
+            using <a>deflate</a> compression (see <a href='#10CompressionOtherUses'></a>).  </p>
+
         </section>
         <!-- Maintain a fragment named "11tEXt" to preserve incoming links to it -->
 

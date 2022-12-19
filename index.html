@@ -71,6 +71,7 @@
       wgURI: "https://www.w3.org/groups/wg/png",
       wgPublicList: "public-png",
       wgPatentURI: "https://www.w3.org/groups/wg/png/ipr",
+      xref: ["i18n-glossary"],
       localBiblio: {
         "CIPA DC-008": {
           title: "Exchangeable image file format for digital still cameras: Exif Version 2.32",
@@ -5476,16 +5477,22 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
       description of the text is available. If a user-supplied keyword is used, encoders should check that it meets the
       restrictions on keywords.</p>
 
-      <p>For the <a class="chunk" href="#11tEXt">tEXt</a> and <a class="chunk" href="#11zTXt">zTXt</a> chunks, PNG text strings are
-      expected to use the Latin-1 character set. Encoders should avoid storing characters that are not defined in Latin-1, and
-      should provide character code remapping if the local system's character set is not Latin-1. The <a class="chunk" href=
-      "#11iTXt">iTXt</a> chunk provides support for international text, represented using the UTF-8 encoding of UCS. Encoders
-      should discourage the creation of single lines of text longer than 79 characters, in order to facilitate easy reading. It is
-      recommended that text items less than 1024 bytes in size should be output using uncompressed text chunks. It is recommended
-      that the basic title and author keywords be output using uncompressed text chunks. Placing large text chunks after the
-      <a>image data</a> (after the <a class="chunk" href="#11IDAT">IDAT</a> chunks) can speed up image display in some situations,
+      <p>The <a class="chunk" href="#11iTXt">iTXt</a> chunk uses the UTF-8 encoding of Unicode 
+      and thus can store text in any language. The <a class="chunk" href="#11tEXt">tEXt</a> and <a class="chunk" href="#11zTXt">zTXt</a> chunks use the Latin-1 (ISO 8859-1) character encoding, 
+      which limits the range of characters that can be used in these chunks. 
+      Encoders should prefer <a class="chunk" href="#11iTXt">iTXt</a> to 
+      <a class="chunk" href="#11tEXt">tEXt</a> and <a class="chunk" href="#11zTXt">zTXt</a> chunks.
+      in order to allow a wide range of characters without data loss. 
+      Encoders must convert characters that use local <a>legacy character encodings</a>
+      to the appropriate encoding when storing text.
+      Encoders should discourage the creation of single lines of text longer than 79 Unicode <a>code points</a>, 
+      in order to facilitate easy reading. 
+      It is recommended that text items less than 1024 bytes in size should be output using uncompressed text chunks. 
+      It is recommended that the basic title and author keywords be output using uncompressed text chunks. 
+      Placing large text chunks after the <a>image data</a> (after the <a class="chunk" href="#11IDAT">IDAT</a> chunks) can speed up image display in some situations,
       as the decoder will decode the <a>image data</a> first. It is recommended that small text chunks, such as the image title,
       appear before the <a class="chunk" href="#11IDAT">IDAT</a> chunks.</p>
+
     </section>
     <!-- ************Page Break******************* -->
     <!-- ************Page Break******************* -->

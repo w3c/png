@@ -3417,7 +3417,7 @@ with these exceptions:
           </table>
 
           <p>The profile name may be any convenient name for referring to the profile. It is case-sensitive. Profile names shall
-          contain only printable Latin-1 characters and spaces (only character codes 0x20-7E and 0xA1-FF are allowed).
+          contain only printable Latin-1 characters and spaces (only code points 0x20-7E and 0xA1-FF are allowed).
           Leading, trailing, and consecutive spaces are not permitted. The only compression method defined in this specification is
           method 0 (<a>zlib</a> datastream with <a>deflate</a> compression, see <a href='#10CompressionOtherUses'></a>). The
           compression method entry is followed by a compressed profile that makes up the remainder of the chunk. Decompression of
@@ -3924,7 +3924,7 @@ with these exceptions:
 
           <p>Keywords of general interest SHOULD be listed in [[PNG-EXTENSIONS]].</p>
 
-          <p>Keywords shall contain only printable Latin-1 [[ISO 8859-1]] characters and spaces; that is, only character codes 0x20-7E and 0xA1-FF are allowed. To reduce the chances for human misreading of a keyword, leading spaces, trailing
+          <p>Keywords shall contain only printable Latin-1 [[ISO 8859-1]] characters and spaces; that is, only code points 0x20-7E and 0xA1-FF are allowed. To reduce the chances for human misreading of a keyword, leading spaces, trailing
           spaces, and consecutive spaces are not permitted in keywords, nor is 
           U+00A0 NON-BREAKING SPACE since it is
           visually indistinguishable from an ordinary space.</p>
@@ -5630,11 +5630,17 @@ scale_factor_Y = max(1.0, display_ratio/image_ratio)</code>
       rely on this; it is best to recognize all the common newline combinations (CR, LF, and CR-LF) and display each as a single
       newline. TAB can be expanded to the proper number of spaces needed to arrive at a column multiple of 8.</p>
 
-      <p>Decoders running on systems with non-Latin-1 character set encoding should provide character code remapping so that
-      Latin-1 characters are displayed correctly. Some systems may not provide all the characters defined in Latin-1. Mapping
-      unavailable characters to a visible notation such as "<code>\nnn</code>" is a good fallback. Character codes 0x7F-FF should
-      be displayed only if they are printable characters on the decoding system. Some systems may interpret such codes as control
-      characters; for security, decoders running on such systems should not display such characters literally.</p>
+      <p>Decoders running on systems with non-Latin-1 <a>legacy character encoding</a> should remap character codes so that
+      Latin-1 characters are displayed correctly. 
+      Unsupported characters should be replaced with a system-appropriate 
+      replacement character (such as U+FFFD REPLACEMENT CHARACTER,
+      U+003F QUESTION MARK, or U+001A SUB) 
+      or mapped to a visible notation such as "<code>\nnn</code>". 
+      Characters should be only displayed if they are printable characters 
+      on the decoding system. 
+      Some byte values may be interpreted by the decoding system 
+      as control characters; 
+      for security, decoders running on such systems should not display these control characters.</p>
 
       <p>Decoders should be prepared to display text chunks that contain any number of printing characters between newline
       characters, even though it is recommended that encoders avoid creating lines in excess of 79 characters.</p>

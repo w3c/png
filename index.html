@@ -4381,7 +4381,7 @@ with these exceptions:
 
           <p>The palette name is case-sensitive, and subject to the same restrictions as the keyword parameter for the <a class=
           "chunk" href="#11tEXt">tEXt</a> chunk. Palette names shall contain only printable Latin-1 characters and spaces (only
-          character codes 0x20-7E and 0xA1-FF are allowed). Leading, trailing, and consecutive spaces are not permitted.</p>
+          code points 0x20-7E and 0xA1-FF are allowed). Leading, trailing, and consecutive spaces are not permitted.</p>
 
           <p>The <span class="chunk">sPLT</span> sample depth shall be 8 or 16.</p>
 
@@ -5630,7 +5630,7 @@ scale_factor_Y = max(1.0, display_ratio/image_ratio)</code>
       rely on this; it is best to recognize all the common newline combinations (CR, LF, and CR-LF) and display each as a single
       newline. TAB can be expanded to the proper number of spaces needed to arrive at a column multiple of 8.</p>
 
-      <p>Decoders running on systems with non-Latin-1 <a>legacy character encoding</a> should remap character codes so that
+      <p>Decoders running on systems with a non-Latin-1 <a>legacy character encoding</a> should remap character codes so that
       Latin-1 characters are displayed correctly. 
       Unsupported characters should be replaced with a system-appropriate 
       replacement character (such as U+FFFD REPLACEMENT CHARACTER,

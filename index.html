@@ -3867,33 +3867,44 @@ with these exceptions:
             <tr>
               <th>Name</th>
               <th>Size</th>
+              <th>Physical units</th>
             </tr>
 
             <tr>
               <td>Mastering display colour primaries</td>
               <td>12 bytes</td>
+              <td>0.00002</td>
             </tr>
 
             <tr>
               <td>Mastering display white point chromaticity</td>
               <td>4 bytes</td>
+              <td>0.00002</td>
             </tr>
 
             <tr>
               <td>Mastering display maximum luminance</td>
               <td>4 bytes</td>
+              <td>0.0001 cd/m<sup>2</sup></td>
             </tr>
 
             <tr>
               <td>Mastering display minimum luminance</td>
               <td>4 bytes</td>
+              <td>0.0001 cd/m<sup>2</sup></td>
             </tr>
           </table>
 
           <aside class="note">
-            The three colour primaries are 4 bytes each, totalling 12 bytes. They are ordered starting with the primary with the
-            largest x chromaticity, followed by the primary with the largest y chromaticity, followed by the remaining primary.
-            This corresponds to RGB order.
+            The three colour primaries are 4 bytes each, totalling 12 bytes. Each primary and the white point is comprised of a
+            2-byte unsigned integer x and 2-byte unsigned integer y. They are ordered starting with the primary with the largest x
+            chromaticity, followed by the primary with the largest y chromaticity, followed by the remaining primary. This
+            corresponds to RGB order.
+          </aside>
+
+          <aside class="note">
+            The physical units act as a multiplier. For example, the unitless value of 0.00002 for the primaries and white point
+            would store the chromaticity (0.6800, 0.3200) as {34000, 16000}.
           </aside>
 
           <p>The <span class="chunk">mASt</span> chunk MUST come before the <a class="chunk" href="#11PLTE">PLTE</a> and <a class=

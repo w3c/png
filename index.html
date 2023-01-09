@@ -3903,8 +3903,8 @@ with these exceptions:
           </aside>
 
           <aside class="note">
-            The physical units act as a multiplier. For example, the unitless value of 0.00002 for the primaries and white point
-            would store the chromaticity (0.6800, 0.3200) as {34000, 16000}.
+            The physical units act as a divisor. For example, the unitless value of 0.00002 for the primaries and white point would
+            store the chromaticity (0.6800, 0.3200) as {34000, 16000}.
           </aside>
 
           <p>The <span class="chunk">mASt</span> chunk MUST come before the <a class="chunk" href="#11PLTE">PLTE</a> and <a class=
@@ -3915,32 +3915,39 @@ with these exceptions:
             <table id="mASt-chunk-primaries-example" class="numbered simple">
               <tr>
                 <th>Name</th>
-                <th>Values</th>
+                <th>Physical units</th>
+                <th>Stored values</th>
               </tr>
 
               <tr>
                 <td rowspan="3">Colour primaries specified in [[ITU-R BT.709]]</td>
+                <td>(0.640, 0.330)</td>
                 <td>{ 32000, 16500 }</td>
               </tr>
 
               <tr>
+                <td>(0.300, 0.600)</td>
                 <td>{ 15000, 30000 }</td>
               </tr>
 
               <tr>
+                <td>(0.150, 0.060)</td>
                 <td>{ 7500, 3000 }</td>
               </tr>
 
               <tr>
                 <td rowspan="3">Colour primaries specified in [[ITU-R BT.2020]]</td>
+                <td>(0.708, 0.292)</td>
                 <td>{ 35400, 14600 }</td>
               </tr>
 
               <tr>
+                <td>(0.170, 0.797)</td>
                 <td>{ 8500, 39850 }</td>
               </tr>
 
               <tr>
+                <td>(0.131, 0.046)</td>
                 <td>{ 6550, 2300 }</td>
               </tr>
             </table>
@@ -3951,11 +3958,13 @@ with these exceptions:
             <table id="mASt-chunk-white-point-example" class="numbered simple">
               <tr>
                 <th>Name</th>
-                <th>Values</th>
+                <th>Physical units</th>
+                <th>Stored values</th>
               </tr>
 
               <tr>
                 <td>Illuminant D65 specified in [[SMPTE RP 177]]</td>
+                <td>(0.3127, 0.3290)</td>
                 <td>{ 15635, 16450 }</td>
               </tr>
             </table>
@@ -3965,8 +3974,8 @@ with these exceptions:
             Example <span class="chunk">mASt</span> chunk mastering display maximum luminance:
             <table id="mASt-chunk-max-luminance-example" class="numbered simple">
               <tr>
-                <th>Name</th>
-                <th>Value</th>
+                <th>Physical units</th>
+                <th>Stored value</th>
               </tr>
 
               <tr>
@@ -3980,8 +3989,8 @@ with these exceptions:
             Example <span class="chunk">mASt</span> chunk mastering display minimum luminance:
             <table id="mASt-chunk-min-luminance-example" class="numbered simple">
               <tr>
-                <th>Name</th>
-                <th>Value</th>
+                <th>Physical units</th>
+                <th>Stored value</th>
               </tr>
 
               <tr>

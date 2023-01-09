@@ -3867,7 +3867,7 @@ with these exceptions:
             <tr>
               <th>Name</th>
               <th>Size</th>
-              <th>Physical units</th>
+              <th>Divisor value</th>
             </tr>
 
             <tr>
@@ -3902,10 +3902,8 @@ with these exceptions:
             corresponds to RGB order.
           </aside>
 
-          <aside class="note">
-            The physical units act as a divisor. For example, the unitless value of 0.00002 for the primaries and white point would
-            store the chromaticity (0.6800, 0.3200) as {34000, 16000}.
-          </aside>
+          <p>The divisor maps from actual value to stored value. For example, the unitless divisor of 0.00002 for the primaries and
+          white point would store the chromaticity (0.6800, 0.3200) as {34000, 16000}.</p>
 
           <p>The <span class="chunk">mASt</span> chunk MUST come before the <a class="chunk" href="#11PLTE">PLTE</a> and <a class=
           "chunk" href="#11IDAT">IDAT</a> chunks.</p>
@@ -3915,7 +3913,7 @@ with these exceptions:
             <table id="mASt-chunk-primaries-example" class="numbered simple">
               <tr>
                 <th>Name</th>
-                <th>Physical units</th>
+                <th>Actual values</th>
                 <th>Stored values</th>
               </tr>
 
@@ -3958,7 +3956,7 @@ with these exceptions:
             <table id="mASt-chunk-white-point-example" class="numbered simple">
               <tr>
                 <th>Name</th>
-                <th>Physical units</th>
+                <th>Actual values</th>
                 <th>Stored values</th>
               </tr>
 
@@ -3974,7 +3972,7 @@ with these exceptions:
             Example <span class="chunk">mASt</span> chunk mastering display maximum luminance:
             <table id="mASt-chunk-max-luminance-example" class="numbered simple">
               <tr>
-                <th>Physical units</th>
+                <th>Actual value</th>
                 <th>Stored value</th>
               </tr>
 
@@ -3989,7 +3987,7 @@ with these exceptions:
             Example <span class="chunk">mASt</span> chunk mastering display minimum luminance:
             <table id="mASt-chunk-min-luminance-example" class="numbered simple">
               <tr>
-                <th>Physical units</th>
+                <th>Actual value</th>
                 <th>Stored value</th>
               </tr>
 

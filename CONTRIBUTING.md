@@ -5,6 +5,8 @@ Contributions to this repository are intended to become part of Recommendation-t
 [Software and Document License](https://www.w3.org/Consortium/Legal/copyright-software). To make substantive contributions to specifications, you must either participate
 in the relevant W3C Working Group or make a non-member patent licensing commitment.
 
+## Multiple contributors
+
 If you are not the sole contributor to a contribution (pull request), please identify all 
 contributors in the pull request comment.
 
@@ -22,3 +24,13 @@ If you added a contributor by mistake, you can remove them in a comment with:
 
 If you are making a pull request on behalf of someone else but you had no part in designing the 
 feature, you can remove yourself with the above syntax.
+
+## HTML Tidy
+
+This repository uses HTML tidy for consistent formatting of HTML source. To tidy a file called `index.html` one could do:
+
+```
+cp index.html tmp.html
+tidy -config tidy.cfg -o index.html tmp.html
+rm tmp.html
+```

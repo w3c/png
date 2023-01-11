@@ -283,7 +283,6 @@ with these exceptions:
 
   <h2 id="Introduction">Introduction</h2>
 
-
   <p>The design goals for this specification were:</p>
 
   <ol>
@@ -1718,14 +1717,10 @@ with these exceptions:
     <section id="5PNG-file-signature">
       <h2>PNG signature</h2>
 
-      <p>The first eight bytes of a PNG datastream always contain the following (decimal) values:</p>
+      <p>The first eight bytes of a PNG datastream always contain the following hexadecimal values:</p>
 
       <pre>
-   137 80 78 71 13 10 26 10
-</pre>
-      <p>which are (in hexadecimal):</p>
-
-      <pre>
+  <!-- 137 80 78 71 13 10 26 10 -->
   89 50 4E 47 0D 0A 1A 0A
 </pre>
       <p>This signature indicates that the remainder of the datastream contains a single PNG image, consisting of a series of
@@ -1773,8 +1768,8 @@ with these exceptions:
         <tr>
           <td>Chunk Type</td>
           <td>
-            A sequence of four bytes defining the chunk type. Each byte of a chunk type is restricted to the decimal values 65 to
-            90 and 97 to 122. These correspond to the uppercase and lowercase ISO 646 [[ISO646]] letters
+            A sequence of four bytes defining the chunk type. Each byte of a chunk type is restricted to the hexadecimal values 41
+            to 5A and 61 to 7A. These correspond to the uppercase and lowercase ISO 646 [[ISO646]] letters
             (<code>A</code>-<code>Z</code> and <code>a</code>-<code>z</code>) respectively for convenience in description and
             examination of PNG datastreams. Encoders and decoders shall treat the chunk types as fixed binary values, not character
             strings. For example, it would not be correct to represent the chunk type <a class="chunk" href="#11IDAT">IDAT</a> by
@@ -2541,7 +2536,6 @@ with these exceptions:
       <p>A <dfn id="3filter">filter method</dfn> is a transformation applied to an array of <a>scanlines</a> with the aim of
       improving their compressibility.</p>
 
-
       <p>PNG standardizes one <a>filter method</a> and several filter types that may be used to prepare <a>image data</a> for
       compression. It transforms the byte sequence into an equal length sequence of bytes preceded by a filter type byte (see
       <a href="#serializing-and-filtering-scanline"></a> for an example).</p>
@@ -2968,10 +2962,10 @@ with these exceptions:
       <section id="11IHDR">
         <h2><span class="chunk">IHDR</span> Image header</h2>
 
-        <p>The four-byte chunk type field contains the decimal values</p>
+        <p>The four-byte chunk type field contains the hexadecimal values</p>
 
         <pre>
-73 72 68 82
+<!-- 73 72 68 82 -->49 48 44 52
 </pre>
         <p>The <a class="chunk" href="#11IHDR">IHDR</a> chunk shall be the first chunk in the PNG datastream. It contains:</p>
 
@@ -3094,10 +3088,10 @@ with these exceptions:
       <section id="11PLTE">
         <h2><span class="chunk">PLTE</span> Palette</h2>
 
-        <p>The four-byte chunk type field contains the decimal values</p>
+        <p>The four-byte chunk type field contains the hexadecimal values</p>
 
         <pre>
-80 76 84 69
+<!-- 80 76 84 69 -->50 4C 54 45
 </pre>
         <p>The <span class="chunk">PLTE</span> chunk contains from 1 to 256 palette entries, each a three-byte series of the
         form:</p>
@@ -3148,10 +3142,10 @@ with these exceptions:
       <section id="11IDAT">
         <h2><span class="chunk">IDAT</span> Image data</h2>
 
-        <p>The four-byte chunk type field contains the decimal values</p>
+        <p>The four-byte chunk type field contains the hexadecimal values</p>
 
         <pre>
-73 68 65 84
+<!-- 73 68 65 84 -->49 44 41 54
 </pre>
         <p>The <span class="chunk">IDAT</span> chunk contains the actual <a>image data</a> which is the output stream of the
         compression algorithm. See <a href="#9Filters"></a> and <a href="#10Compression"></a> for details.</p>
@@ -3165,10 +3159,10 @@ with these exceptions:
       <section id="11IEND">
         <h2><span class="chunk">IEND</span> Image trailer</h2>
 
-        <p>The four-byte chunk type field contains the decimal values</p>
+        <p>The four-byte chunk type field contains the hexadecimal values</p>
 
         <pre>
-73 69 78 68
+<!-- 73 69 78 68 -->49 45 4E 44
 </pre>
         <p>The <span class="chunk">IEND</span> chunk marks the end of the PNG datastream. The chunk's data field is empty.</p>
       </section>
@@ -3195,10 +3189,10 @@ with these exceptions:
         <section id="11tRNS">
           <h2><span class="chunk">tRNS</span> Transparency</h2>
 
-          <p>The four-byte chunk type field contains the decimal values</p>
+          <p>The four-byte chunk type field contains the hexadecimal values</p>
 
           <pre>
-116 82 78 83
+<!-- 116 82 78 83 -->74 52 4E 53
 </pre>
           <p>The <span class="chunk">tRNS</span> chunk specifies either alpha values that are associated with palette entries (for
           indexed-colour images) or a single transparent colour (for greyscale and <a>truecolour</a> images). The <span class=
@@ -3292,11 +3286,12 @@ with these exceptions:
 
         <section id="11cHRM">
           <h2><span class="chunk">cHRM</span> Primary chromaticities and white point</h2>
+          <!-- <p>The four decimal values below correspond to the four-byte cHRM chunk type field:</p> -->
 
-          <p>The four decimal values below correspond to the four-byte cHRM chunk type field:</p>
+          <p>The four-byte chunk type field contains the hexadecimal values</p>
 
           <pre>
-99 72 82 77
+<!-- 99 72 82 77 -->63 48 52 4D
 </pre>
           <p>The <span class="chunk">cHRM</span> chunk may be used to specify the 1931 CIE <i>x,y</i> chromaticities of the red,
           green, and blue display primaries used in the image, and the referenced <a>white point</a>. See <a href=
@@ -3373,11 +3368,12 @@ with these exceptions:
 
         <section id="11gAMA">
           <h2><span class="chunk">gAMA</span> Image gamma</h2>
+          <!-- <p>The four decimal values below correspond to the four-byte gAMA chunk type field:</p> -->
 
-          <p>The four decimal values below correspond to the four-byte gAMA chunk type field:</p>
+          <p>The four-byte chunk type field contains the hexadecimal values</p>
 
           <pre>
-103 65 77 65
+<!-- 103 65 77 65 -->67 41 4D 41
 </pre>
           <p>The <a class="chunk" href="#11gAMA">gAMA</a> chunk specifies a <a>gamma value</a>.</p>
 
@@ -3410,11 +3406,12 @@ with these exceptions:
 
         <section id="11iCCP">
           <h2><span class="chunk">iCCP</span> Embedded ICC profile</h2>
+          <!-- <p>The four decimal values below correspond to the four-byte iCCP chunk type field:</p> -->
 
-          <p>The four decimal values below correspond to the four-byte iCCP chunk type field:</p>
+          <p>The four-byte chunk type field contains the hexadecimal values</p>
 
           <pre>
-105 67 67 80
+<!-- 105 67 67 80 -->69 43 43 50
 </pre>
           <p>The <span class="chunk">iCCP</span> chunk contains:</p>
 
@@ -3441,11 +3438,11 @@ with these exceptions:
           </table>
 
           <p>The profile name may be any convenient name for referring to the profile. It is case-sensitive. Profile names shall
-          contain only printable Latin-1 characters and spaces (only code points 0x20-7E and 0xA1-FF are allowed).
-          Leading, trailing, and consecutive spaces are not permitted. The only compression method defined in this specification is
-          method 0 (<a>zlib</a> datastream with <a>deflate</a> compression, see <a href='#10CompressionOtherUses'></a>). The
-          compression method entry is followed by a compressed profile that makes up the remainder of the chunk. Decompression of
-          this datastream yields the embedded ICC profile.</p>
+          contain only printable Latin-1 characters and spaces (only code points 0x20-7E and 0xA1-FF are allowed). Leading,
+          trailing, and consecutive spaces are not permitted. The only compression method defined in this specification is method 0
+          (<a>zlib</a> datastream with <a>deflate</a> compression, see <a href='#10CompressionOtherUses'></a>). The compression
+          method entry is followed by a compressed profile that makes up the remainder of the chunk. Decompression of this
+          datastream yields the embedded ICC profile.</p>
 
           <p>If the <span class="chunk">iCCP</span> chunk is present, the image samples conform to the colour space represented by
           the embedded ICC profile as defined by the International Color Consortium [[ICC]][[ISO 15076-1]]. The colour space of the
@@ -3467,11 +3464,12 @@ with these exceptions:
 
         <section id="11sBIT">
           <h2><span class="chunk">sBIT</span> Significant bits</h2>
+          <!-- <p>The four decimal values below correspond to the four-byte sBIT chunk type field:</p> -->
 
-          <p>The four decimal values below correspond to the four-byte sBIT chunk type field:</p>
+          <p>The four-byte chunk type field contains the hexadecimal values</p>
 
           <pre>
-115 66 73 84
+<!-- 115 66 73 84 -->73 42 49 54
 </pre>
           <p>To simplify decoders, PNG specifies that only certain sample depths may be used, and further specifies that sample
           values should be scaled to the full range of possible values at the sample depth. The <span class="chunk">sBIT</span>
@@ -3566,11 +3564,12 @@ with these exceptions:
 
         <section id="11sRGB">
           <h2 id="srgb-standard-colour-space"><span class="chunk">sRGB</span> Standard RGB colour space</h2>
+          <!-- <p>The four decimal values below correspond to the four-byte sRGB chunk type field:</p> -->
 
-          <p>The four decimal values below correspond to the four-byte sRGB chunk type field:</p>
+          <p>The four-byte chunk type field contains the hexadecimal values</p>
 
           <pre>
-115 82 71 66
+<!-- 115 82 71 66 -->73 52 47 42
 </pre>
           <p>If the <span class="chunk">sRGB</span> chunk is present, the image samples conform to the sRGB colour space [[SRGB]]
           and should be displayed using the specified rendering intent defined by the International Color Consortium [[ICC]] or
@@ -3714,11 +3713,12 @@ with these exceptions:
 
         <section id="cICP-chunk">
           <h2><span class="chunk">cICP</span> Coding-independent code points for video signal type identification</h2>
+          <!-- <p>The four decimal values below correspond to the four-byte cICP chunk type field:</p> -->
 
-          <p>The four decimal values below correspond to the four-byte cICP chunk type field:</p>
+          <p>The four-byte chunk type field contains the hexadecimal values</p>
 
           <pre>
-99 73 67 80
+<!-- 99 73 67 80 -->63 49 43 50
 </pre>
           <p>If present, the <span class="chunk">cICP</span> chunk specifies the colour space, transfer function, matrix
           coefficients of the image using the code points specified in [[ITU-T H.273]]. The video format signaling SHOULD be used
@@ -3848,11 +3848,12 @@ with these exceptions:
 
         <section id="mASt-chunk">
           <h2><span class="chunk">mASt</span> mastering metadata</h2>
+          <!-- <p>The four decimal values below correspond to the four-byte mASt chunk type field:</p> -->
 
-          <p>The four decimal values below correspond to the four-byte mASt chunk type field:</p>
+          <p>The four-byte chunk type field contains the hexadecimal values</p>
 
           <pre>
-109 65 83 116
+<!-- 109 65 83 116 -->6D 41 53 74
 </pre>
           <p>If present, the <span class="chunk">mASt</span> chunk characterizes the display used at mastering, as specified in
           [[SMPTE ST 2086]].</p>
@@ -4103,10 +4104,10 @@ with these exceptions:
 
           <p>Keywords of general interest SHOULD be listed in [[PNG-EXTENSIONS]].</p>
 
-          <p>Keywords shall contain only printable Latin-1 [[ISO 8859-1]] characters and spaces; that is, only code points 0x20-7E and 0xA1-FF are allowed. To reduce the chances for human misreading of a keyword, leading spaces, trailing
-          spaces, and consecutive spaces are not permitted in keywords, nor is 
-          U+00A0 NON-BREAKING SPACE since it is
-          visually indistinguishable from an ordinary space.</p>
+          <p>Keywords shall contain only printable Latin-1 [[ISO 8859-1]] characters and spaces; that is, only code points 0x20-7E
+          and 0xA1-FF are allowed. To reduce the chances for human misreading of a keyword, leading spaces, trailing spaces, and
+          consecutive spaces are not permitted in keywords, nor is U+00A0 NON-BREAKING SPACE since it is visually indistinguishable
+          from an ordinary space.</p>
 
           <p>Keywords shall be spelled exactly as registered, so that decoders can use simple literal comparisons when looking for
           particular keywords. In particular, keywords are considered case-sensitive. Keywords are restricted to 1 to 79 bytes in
@@ -4115,26 +4116,23 @@ with these exceptions:
           <p>For the Creation Time keyword, the date format defined in section&#160;5.2.14 of RFC 1123 is suggested, but not
           required [[rfc1123]].</p>
 
-          <p>The <a class="chunk" href="#11iTXt">iTXt</a> chunk uses the UTF-8 encoding [[rfc3629]] and 
-            can be used to convey characters in any language. 
-            There is an option to compress text strings
-            in the <a class="chunk" href="#11iTXt">iTXt</a> chunk.
-            <a class="chunk" href="#11iTXt">iTXt</a> is recommended for all text strings, as it supports Unicode.
-            There are also <a class="chunk" href="#11tEXt">tEXt</a> and <a class="chunk" href="#11zTXt">zTXt</a> chunks,
-            whose content is restricted to the printable Latin-1 character set plus U+000A LINE FEED (LF).
-            Text strings in <a class="chunk" href="#11zTXt">zTXt</a> are compressed into <a>zlib</a> datastreams 
-            using <a>deflate</a> compression (see <a href='#10CompressionOtherUses'></a>).  </p>
-
+          <p>The <a class="chunk" href="#11iTXt">iTXt</a> chunk uses the UTF-8 encoding [[rfc3629]] and can be used to convey
+          characters in any language. There is an option to compress text strings in the <a class="chunk" href="#11iTXt">iTXt</a>
+          chunk. <a class="chunk" href="#11iTXt">iTXt</a> is recommended for all text strings, as it supports Unicode. There are
+          also <a class="chunk" href="#11tEXt">tEXt</a> and <a class="chunk" href="#11zTXt">zTXt</a> chunks, whose content is
+          restricted to the printable Latin-1 character set plus U+000A LINE FEED (LF). Text strings in <a class="chunk" href=
+          "#11zTXt">zTXt</a> are compressed into <a>zlib</a> datastreams using <a>deflate</a> compression (see <a href=
+          '#10CompressionOtherUses'></a>).</p>
         </section>
         <!-- Maintain a fragment named "11tEXt" to preserve incoming links to it -->
 
         <section id="11tEXt">
           <h2><span class="chunk">tEXt</span> Textual data</h2>
 
-          <p>The four-byte chunk type field contains the decimal values</p>
+          <p>The four-byte chunk type field contains the hexadecimal values</p>
 
           <pre>
-116 69 88 116
+<!-- 116 69 88 116 -->74 45 58 74
 </pre>
           <p>Each <span class="chunk">tEXt</span> chunk contains a keyword and a text string, in the format:</p>
 
@@ -4174,10 +4172,10 @@ with these exceptions:
         <section id="11zTXt">
           <h2><span class="chunk">zTXt</span> Compressed textual data</h2>
 
-          <p>The four-byte chunk type field contains the decimal values</p>
+          <p>The four-byte chunk type field contains the hexadecimal values</p>
 
           <pre>
-122 84 88 116
+<!-- 122 84 88 116 -->7A 54 58 74
 </pre>
           <p>The <span class="chunk">zTXt</span> and <a class="chunk" href="#11tEXt">tEXt</a> chunks are semantically equivalent,
           but the <span class="chunk">zTXt</span> chunk is recommended for storing large blocks of text.</p>
@@ -4219,10 +4217,10 @@ with these exceptions:
         <section id="11iTXt">
           <h2><span class="chunk">iTXt</span> International textual data</h2>
 
-          <p>The four-byte chunk type field contains the decimal values</p>
+          <p>The four-byte chunk type field contains the hexadecimal values</p>
 
           <pre>
-105 84 88 116
+<!-- 105 84 88 116 -->69 54 58 74
 </pre>
           <p>An <span class="chunk">iTXt</span> chunk contains:</p>
 
@@ -4291,9 +4289,9 @@ with these exceptions:
           chunk length.</p>
 
           <p>Line breaks should not appear in the translated keyword. In the text, a newline should be represented by a single
-          linefeed character (decimal 10). The remaining control characters (1-9, 11-31, 127-159) are discouraged in both the
-          translated keyword and text. In UTF-8 there is a difference between the characters 128-159 (which are discouraged) and
-          the bytes 128-159 (which are often necessary).</p>
+          linefeed character (hexadecimal 0A). The remaining control characters (01-09, 0B-1F, 7F-9F) are discouraged in both the
+          translated keyword and text. In UTF-8 there is a difference between the characters 80-9F (which are discouraged) and the
+          bytes 80-9F (which are often necessary).</p>
 
           <p>The translated keyword, if not empty, should contain a translation of the keyword into the language indicated by the
           language tag, and applications displaying the keyword should display the translated keyword in addition.</p>
@@ -4310,10 +4308,10 @@ with these exceptions:
         <section id="11bKGD">
           <h2><span class="chunk">bKGD</span> Background colour</h2>
 
-          <p>The four-byte chunk type field contains the decimal values</p>
+          <p>The four-byte chunk type field contains the hexadecimal values</p>
 
           <pre>
-98 75 71 68
+<!-- 98 75 71 68 -->62 4B 47 44
 </pre>
           <p>The <span class="chunk">bKGD</span> chunk specifies a default background colour to present the image against. If there
           is any other preferred background, either user-specified or part of a larger page (as in a browser), the <span class=
@@ -4375,10 +4373,10 @@ with these exceptions:
         <section id="11hIST">
           <h2><span class="chunk">hIST</span> Image histogram</h2>
 
-          <p>The four-byte chunk type field contains the decimal values</p>
+          <p>The four-byte chunk type field contains the hexadecimal values</p>
 
           <pre>
-104 73 83 84
+<!-- 104 73 83 84 -->68 49 53 54
 </pre>
           <p>The <span class="chunk">hIST</span> chunk contains a series of two-byte unsigned integers:</p>
 
@@ -4415,10 +4413,10 @@ with these exceptions:
         <section id="11pHYs">
           <h2><span class="chunk">pHYs</span> Physical pixel dimensions</h2>
 
-          <p>The four-byte chunk type field contains the decimal values</p>
+          <p>The four-byte chunk type field contains the hexadecimal values</p>
 
           <pre>
-112 72 89 115
+<!-- 112 72 89 115 -->70 48 59 73
 </pre>
           <p>The <span class="chunk">pHYs</span> chunk specifies the intended pixel size or aspect ratio for display of the image.
           It contains:</p>
@@ -4487,10 +4485,10 @@ with these exceptions:
         <section id="11sPLT">
           <h2><span class="chunk">sPLT</span> Suggested palette</h2>
 
-          <p>The four-byte chunk type field contains the decimal values</p>
+          <p>The four-byte chunk type field contains the hexadecimal values</p>
 
           <pre>
-115 80 76 84
+<!-- 115 80 76 84 -->73 50 4C 54
 </pre>
           <p>The <span class="chunk">sPLT</span> chunk contains:</p>
 
@@ -4594,10 +4592,10 @@ with these exceptions:
         <section id="eXIf">
           <h2><span class="chunk">eXIf</span> Exchangeable Image File (Exif) Profile</h2>
 
-          <p>The four-byte chunk type field contains the decimal values</p>
+          <p>The four-byte chunk type field contains the hexadecimal values</p>
 
           <pre>
-  101 88 73 102
+  <!-- 101 88 73 102 -->65 58 49 66
   </pre>
           <p>The data segment of the <span class="chunk">eXIf</span> chunk contains an Exif profile in the format specified in
           "4.7.2 Interoperability Structure of APP1 in Compressed Data" of [[CIPA DC-008]] except that the JPEG APP1 marker,
@@ -4627,12 +4625,12 @@ with these exceptions:
             <h3><span class="chunk">eXIf</span> Recommendations for Decoders</h3>
 
             <p>The first two bytes of data are either "II" for little-endian (Intel) or "MM" for big-endian (Motorola) byte order.
-            Decoders should check the first four bytes to ensure that they have the following decimal values:</p>
+            Decoders should check the first four bytes to ensure that they have the following hexadecimal values:</p>
 
-            <pre>73 73 42 0 (ASCII "II", 16-bit little-endian integer 42)</pre>
+            <pre><!-- 73 73 42 0  -->49 49 2A 00 (ASCII "II", 16-bit little-endian integer 42)</pre>
             <p>or</p>
 
-            <pre>77 77 0 42 (ASCII "MM", 16-bit big-endian integer 42)</pre>
+            <pre><!-- 77 77 0 42 -->4D 4D 00 2A (ASCII "MM", 16-bit big-endian integer 42)</pre>
             <p>All other values are reserved for possible future definition.</p>
           </section>
 
@@ -4657,10 +4655,10 @@ with these exceptions:
         <section id="11tIME">
           <h2><span class="chunk">tIME</span> Image last-modification time</h2>
 
-          <p>The four-byte chunk type field contains the decimal values</p>
+          <p>The four-byte chunk type field contains the hexadecimal values</p>
 
           <pre>
-116 73 77 69
+<!-- 116 73 77 69 -->74 49 4D 45
 </pre>
           <p>The <span class="chunk">tIME</span> chunk gives the time of the last image modification (<strong>not</strong> the time
           of initial image creation). It contains:</p>
@@ -4719,10 +4717,10 @@ with these exceptions:
         <section id="acTL-chunk">
           <h2><span class="chunk">acTL</span> Animation Control Chunk</h2>
 
-          <p>The four-byte chunk type field contains the decimal values</p>
+          <p>The four-byte chunk type field contains the hexadecimal values</p>
 
           <pre>
-    97 99 84 76
+<!-- 97 99 84 76 -->61 63 54 4C
     </pre>
           <p>The <span class="chunk">acTL</span> chunk declares that this is an animated PNG image, gives the number of frames, and
           the number of times to loop. It contains:</p>
@@ -4758,10 +4756,10 @@ with these exceptions:
         <section id="fcTL-chunk">
           <h2><span class="chunk">fcTL</span> Frame Control Chunk</h2>
 
-          <p>The four-byte chunk type field contains the decimal values</p>
+          <p>The four-byte chunk type field contains the hexadecimal values</p>
 
           <pre>
-    102 99 84 76
+    <!-- 102 99 84 76 -->66 63 54 4C
     </pre>
           <p>The <span class="chunk">fcTL</span> chunk defines the dimensions, position, delay and disposal of an individual frame.
           Exactly one <span class="chunk">fcTL</span> chunk chunk is required for each frame. It contains:</p>
@@ -4945,10 +4943,10 @@ with these exceptions:
         <section id="fdAT-chunk">
           <h2><span class="chunk">fdAT</span> Frame Data Chunk</h2>
 
-          <p>The four-byte chunk type field contains the decimal values</p>
+          <p>The four-byte chunk type field contains the hexadecimal values</p>
 
           <pre>
-    102 100 65 84
+    <!-- 102 100 65 84 -->66 64 41 54
     </pre>
           <p>The <span class="chunk">fdAT</span> chunk serves the same purpose for animations as the <a class="chunk" href=
           "#11IDAT">IDAT</a> chunk does for static images; it contains the <a>image data</a> for all frames (or, for animations
@@ -5490,22 +5488,18 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
       description of the text is available. If a user-supplied keyword is used, encoders should check that it meets the
       restrictions on keywords.</p>
 
-      <p>The <a class="chunk" href="#11iTXt">iTXt</a> chunk uses the UTF-8 encoding of Unicode 
-      and thus can store text in any language. The <a class="chunk" href="#11tEXt">tEXt</a> and <a class="chunk" href="#11zTXt">zTXt</a> chunks use the Latin-1 (ISO 8859-1) character encoding, 
-      which limits the range of characters that can be used in these chunks. 
-      Encoders should prefer <a class="chunk" href="#11iTXt">iTXt</a> to 
-      <a class="chunk" href="#11tEXt">tEXt</a> and <a class="chunk" href="#11zTXt">zTXt</a> chunks.
-      in order to allow a wide range of characters without data loss. 
-      Encoders must convert characters that use local <a>legacy character encodings</a>
-      to the appropriate encoding when storing text.
-      Encoders should discourage the creation of single lines of text longer than 79 Unicode <a>code points</a>, 
-      in order to facilitate easy reading. 
-      It is recommended that text items less than 1024 bytes in size should be output using uncompressed text chunks. 
-      It is recommended that the basic title and author keywords be output using uncompressed text chunks. 
-      Placing large text chunks after the <a>image data</a> (after the <a class="chunk" href="#11IDAT">IDAT</a> chunks) can speed up image display in some situations,
+      <p>The <a class="chunk" href="#11iTXt">iTXt</a> chunk uses the UTF-8 encoding of Unicode and thus can store text in any
+      language. The <a class="chunk" href="#11tEXt">tEXt</a> and <a class="chunk" href="#11zTXt">zTXt</a> chunks use the Latin-1
+      (ISO 8859-1) character encoding, which limits the range of characters that can be used in these chunks. Encoders should
+      prefer <a class="chunk" href="#11iTXt">iTXt</a> to <a class="chunk" href="#11tEXt">tEXt</a> and <a class="chunk" href=
+      "#11zTXt">zTXt</a> chunks. in order to allow a wide range of characters without data loss. Encoders must convert characters
+      that use local <a>legacy character encodings</a> to the appropriate encoding when storing text. Encoders should discourage
+      the creation of single lines of text longer than 79 Unicode <a>code points</a>, in order to facilitate easy reading. It is
+      recommended that text items less than 1024 bytes in size should be output using uncompressed text chunks. It is recommended
+      that the basic title and author keywords be output using uncompressed text chunks. Placing large text chunks after the
+      <a>image data</a> (after the <a class="chunk" href="#11IDAT">IDAT</a> chunks) can speed up image display in some situations,
       as the decoder will decode the <a>image data</a> first. It is recommended that small text chunks, such as the image title,
       appear before the <a class="chunk" href="#11IDAT">IDAT</a> chunks.</p>
-
     </section>
     <!-- ************Page Break******************* -->
     <!-- ************Page Break******************* -->
@@ -5679,10 +5673,10 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
 
       <p>An unknown chunk type is <strong>not</strong> to be treated as an error unless it is a critical chunk.</p>
 
-      <p>The chunk type can be checked for plausibility by seeing whether all four bytes are in the range codes 65-90 and 97-122
-      (decimal); note that this need be done only for unrecognized chunk types. If the total datastream size is known (from file
-      system information, HTTP protocol, etc), the chunk length can be checked for plausibility as well. If <a>CRCs</a> are not
-      checked, dropped/added data bytes or an erroneous chunk length can cause the decoder to get out of step and misinterpret
+      <p>The chunk type can be checked for plausibility by seeing whether all four bytes are in the range codes 41-5A and 61-7A
+      (hexadecimal); note that this need be done only for unrecognized chunk types. If the total datastream size is known (from
+      file system information, HTTP protocol, etc), the chunk length can be checked for plausibility as well. If <a>CRCs</a> are
+      not checked, dropped/added data bytes or an erroneous chunk length can cause the decoder to get out of step and misinterpret
       subsequent data as a chunk header.</p>
 
       <p>For known-length chunks, such as <a class="chunk" href="#11IHDR">IHDR</a>, decoders should treat an unexpected chunk
@@ -5808,28 +5802,23 @@ scale_factor_Y = max(1.0, display_ratio/image_ratio)</code>
       if the decoder does not recognize a particular text keyword, the user might be able to understand it.</p>
 
       <p>When processing <a class="chunk" href="#11tEXt">tEXt</a> and <a class="chunk" href="#11zTXt">zTXt</a> chunks, decoders
-      could encounter characters other than those permitted. Some can be safely displayed (e.g., TAB, FF, and CR, decimal 9, 12,
-      and 13, respectively), but others, especially the ESC character (decimal 27), could pose a security hazard (because
+      could encounter characters other than those permitted. Some can be safely displayed (e.g., TAB, FF, and CR, hexadecimal 09,
+      0C, and 0D, respectively), but others, especially the ESC character (hexadecimal 1B), could pose a security hazard (because
       unexpected actions may be taken by display hardware or software). Decoders should not attempt to directly display any
       non-Latin-1 characters (except for newline and perhaps TAB, FF, CR) encountered in a <a class="chunk" href="#11tEXt">tEXt</a>
       or <a class="chunk" href="#11zTXt">zTXt</a> chunk. Instead, they should be ignored or displayed in a visible notation such as
       "<code>\nnn</code>". See <a href="#13Security-considerations"></a>.</p>
 
-      <p>Even though encoders are recommended to represent newlines as linefeed (decimal 10), it is recommended that decoders not
-      rely on this; it is best to recognize all the common newline combinations (CR, LF, and CR-LF) and display each as a single
-      newline. TAB can be expanded to the proper number of spaces needed to arrive at a column multiple of 8.</p>
+      <p>Even though encoders are recommended to represent newlines as linefeed (hexadecimal 0A), it is recommended that decoders
+      not rely on this; it is best to recognize all the common newline combinations (CR, LF, and CR-LF) and display each as a
+      single newline. TAB can be expanded to the proper number of spaces needed to arrive at a column multiple of 8.</p>
 
       <p>Decoders running on systems with a non-Latin-1 <a>legacy character encoding</a> should remap character codes so that
-      Latin-1 characters are displayed correctly. 
-      Unsupported characters should be replaced with a system-appropriate 
-      replacement character (such as U+FFFD REPLACEMENT CHARACTER,
-      U+003F QUESTION MARK, or U+001A SUB) 
-      or mapped to a visible notation such as "<code>\nnn</code>". 
-      Characters should be only displayed if they are printable characters 
-      on the decoding system. 
-      Some byte values may be interpreted by the decoding system 
-      as control characters; 
-      for security, decoders running on such systems should not display these control characters.</p>
+      Latin-1 characters are displayed correctly. Unsupported characters should be replaced with a system-appropriate replacement
+      character (such as U+FFFD REPLACEMENT CHARACTER, U+003F QUESTION MARK, or U+001A SUB) or mapped to a visible notation such as
+      "<code>\nnn</code>". Characters should be only displayed if they are printable characters on the decoding system. Some byte
+      values may be interpreted by the decoding system as control characters; for security, decoders running on such systems should
+      not display these control characters.</p>
 
       <p>Decoders should be prepared to display text chunks that contain any number of printing characters between newline
       characters, even though it is recommended that encoders avoid creating lines in excess of 79 characters.</p>
@@ -6885,131 +6874,140 @@ will need to be replaced by copies of lines 17-23, but processing background ins
 
     <section>
       <h3>image/apng</h3>
-    
-      <p>
-        This appendix is in conformance with
-          <a href="https://www.rfc-editor.org/info/bcp13">BCP 13</a> and
-          <a href="https://www.w3.org/2020/01/registering-mediatypes.html">W3CRegMedia</a>.
-        </p>
-    
-        <dl>
-          <dt>Media type name:</dt>
-          <dd>image</dd>
-    
-          <dt>Media subtype name:</dt>
-          <dd>apng</dd>
-    
-          <dt>Required parameters:</dt>
-          <dd>N/A</dd>
-    
-          <dt>Optional parameters:</dt>
-          <dd>N/A</dd>
-    
-          <dt>Encoding considerations:</dt>
-          <dd>binary</dd>
-    
-          <dt>Security considerations:</dt>
-          <dd>
-            <p>An APNG document is composed of a collection of explicitly typed "chunks".
-              For each of the chunk types defined in the PNG specification (except
-              for <span class="chunk">gIFx</span>), the only effect associated with those chunks is to cause
-              an animated image to be rendered on the recipient's display.</p>
-            <p>The <span class="chunk">gIFx</span> chunk type is used
-              to encapsulate Application Extension
-              data, and some use of that data might present security risks, though
-              no risks are known.  Likewise, the security risks associated with
-              future chunk types cannot be evaluated, particularly unregistered
-              chunks.  However, it is the intention of the PNG Working Group to disallow
-              chunks containing "executable" data to become registered chunks.</p>
-            <p>The text chunks,
-              <a class="chunk" href="#11tEXt">tEXt</a>,
-              <a class="chunk" href="#11iTXt">iTXt</a> and
-              <a class="chunk" href="#11zTXt">zTXt</a>,
-              contain data that can be displayed in
-              the form of comments, etc.  Some operating systems or terminals might
-              allow the display of textual data with embedded control characters to
-              perform operations such as re-mapping of keys, creation of files, etc.
-              For this reason, the specification recommends that the text chunks be
-              filtered for control characters before direct display.</p>
-            <p>The PNG format is specifically designed to facilitate early detection
-              of file transmission errors, and makes use of cyclical redundancy
-              checks to ensure the integrity of the data contained in its chunks.</p>
-            <p>If one creates an APNG file with unrelated static image and 
-              animated image chunks, somebody using a tool not supporting the 
-              APNG format would only see the static image and be unaware of
-              the additional content. This could be used e.g. to bypass 
-              moderation. </p>
-          </dd>
-    
-          <dt>Interoperability considerations:</dt>
-          <dd>None</dd>
-    
-          <dt>Published specification:</dt>
-          <dd><a href="https://www.w3.org/TR/png/">Portable Network Graphics (PNG) Specification</a>,
-            <a href="https://www.w3.org/TR/png/">https://www.w3.org/TR/png/</a>
-          </dd>
-    
-          <dt>Applications which use this media:</dt>
-          <dd>Animated PNG (APNG) is widely 
-            implemented in all Web browsers, and is increasingly available in 
-            image viewers, and animation and image creation tools
-          </dd>
-    
-          <dt>Fragment identifier considerations:
-          </dt>
-          <dd>N/A</dd>
-    
-          <dt>Restrictions on usage:
-          </dt>
-          <dd>N/A</dd>
-    
-          <dt>Provisional registration? (standards tree only):</dt>
-          <dd>No</dd>
-    
-          <dt>Additional information:
-          </dt>
-          <dd>
-            <dl>
-              <dt>Deprecated alias names for this type:</dt>
-              <dd>image/vnd.mozilla.apng</dd>
-              <dt>Magic number(s):</dt>
-              <dd>89 50 4E 47 0D 0A 1A 0A</dd>
-              <dt>File extension(s):</dt>
-              <dd>.apng</dd>
-              <dt>Object Identifiers:</dt>
-              <dd>N/A</dd>
-            </dl>
-          </dd>
-    
-          <dt>General Comments:</dt>
-          <dd>
-            <p>
-              image/apng has been in widespread, unregistered use since 2015.
-              Animated PNG was not part of the official PNG specification until 2022.
-              This registration, plus the PNG specification (3rd Edition) 
-              brings official documentation into alignment with already 
-              widely-deployed reality. 
-          </p>
-          </dd>
-    
-          <dt>Person to contact for further information:</dt>
-          <dd>
-            <dl>
-              <dt>Name:</dt>
-              <dd>PNG Working Group</dd>
-              <dt>Email:</dt>
-              <dd><a href="mailto:public-png@w3.org">public-png@w3.org</a></dd>
-            </dl>
-          </dd>
-    
-          <dt>Intended usage:</dt>
-          <dd>Common</dd>
-    
-          <dt>Author/Change controller:</dt>
-          <dd>W3C</dd>
-    
-        </dl>
-      </section>
+
+      <p>This appendix is in conformance with <a href="https://www.rfc-editor.org/info/bcp13">BCP 13</a> and <a href=
+      "https://www.w3.org/2020/01/registering-mediatypes.html">W3CRegMedia</a>.</p>
+
+      <dl>
+        <dt>Media type name:</dt>
+
+        <dd>image</dd>
+
+        <dt>Media subtype name:</dt>
+
+        <dd>apng</dd>
+
+        <dt>Required parameters:</dt>
+
+        <dd>N/A</dd>
+
+        <dt>Optional parameters:</dt>
+
+        <dd>N/A</dd>
+
+        <dt>Encoding considerations:</dt>
+
+        <dd>binary</dd>
+
+        <dt>Security considerations:</dt>
+
+        <dd>
+          <p>An APNG document is composed of a collection of explicitly typed "chunks". For each of the chunk types defined in the
+          PNG specification (except for <span class="chunk">gIFx</span>), the only effect associated with those chunks is to cause
+          an animated image to be rendered on the recipient's display.</p>
+
+          <p>The <span class="chunk">gIFx</span> chunk type is used to encapsulate Application Extension data, and some use of that
+          data might present security risks, though no risks are known. Likewise, the security risks associated with future chunk
+          types cannot be evaluated, particularly unregistered chunks. However, it is the intention of the PNG Working Group to
+          disallow chunks containing "executable" data to become registered chunks.</p>
+
+          <p>The text chunks, <a class="chunk" href="#11tEXt">tEXt</a>, <a class="chunk" href="#11iTXt">iTXt</a> and <a class=
+          "chunk" href="#11zTXt">zTXt</a>, contain data that can be displayed in the form of comments, etc. Some operating systems
+          or terminals might allow the display of textual data with embedded control characters to perform operations such as
+          re-mapping of keys, creation of files, etc. For this reason, the specification recommends that the text chunks be
+          filtered for control characters before direct display.</p>
+
+          <p>The PNG format is specifically designed to facilitate early detection of file transmission errors, and makes use of
+          cyclical redundancy checks to ensure the integrity of the data contained in its chunks.</p>
+
+          <p>If one creates an APNG file with unrelated static image and animated image chunks, somebody using a tool not
+          supporting the APNG format would only see the static image and be unaware of the additional content. This could be used
+          e.g. to bypass moderation.</p>
+        </dd>
+
+        <dt>Interoperability considerations:</dt>
+
+        <dd>None</dd>
+
+        <dt>Published specification:</dt>
+
+        <dd>
+          <a href="https://www.w3.org/TR/png/">Portable Network Graphics (PNG) Specification</a>, <a href=
+          "https://www.w3.org/TR/png/">https://www.w3.org/TR/png/</a>
+        </dd>
+
+        <dt>Applications which use this media:</dt>
+
+        <dd>Animated PNG (APNG) is widely implemented in all Web browsers, and is increasingly available in image viewers, and
+        animation and image creation tools</dd>
+
+        <dt>Fragment identifier considerations:</dt>
+
+        <dd>N/A</dd>
+
+        <dt>Restrictions on usage:</dt>
+
+        <dd>N/A</dd>
+
+        <dt>Provisional registration? (standards tree only):</dt>
+
+        <dd>No</dd>
+
+        <dt>Additional information:</dt>
+
+        <dd>
+          <dl>
+            <dt>Deprecated alias names for this type:</dt>
+
+            <dd>image/vnd.mozilla.apng</dd>
+
+            <dt>Magic number(s):</dt>
+
+            <dd>89 50 4E 47 0D 0A 1A 0A</dd>
+
+            <dt>File extension(s):</dt>
+
+            <dd>.apng</dd>
+
+            <dt>Object Identifiers:</dt>
+
+            <dd>N/A</dd>
+          </dl>
+        </dd>
+
+        <dt>General Comments:</dt>
+
+        <dd>
+          <p>image/apng has been in widespread, unregistered use since 2015. Animated PNG was not part of the official PNG
+          specification until 2022. This registration, plus the PNG specification (3rd Edition) brings official documentation into
+          alignment with already widely-deployed reality.</p>
+        </dd>
+
+        <dt>Person to contact for further information:</dt>
+
+        <dd>
+          <dl>
+            <dt>Name:</dt>
+
+            <dd>PNG Working Group</dd>
+
+            <dt>Email:</dt>
+
+            <dd>
+              <a href="mailto:public-png@w3.org">public-png@w3.org</a>
+            </dd>
+          </dl>
+        </dd>
+
+        <dt>Intended usage:</dt>
+
+        <dd>Common</dd>
+
+        <dt>Author/Change controller:</dt>
+
+        <dd>W3C</dd>
+      </dl>
+    </section>
   </section>
   <!-- ************Page Break******************* -->
   <!-- ************Page Break******************* -->

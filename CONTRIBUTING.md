@@ -27,7 +27,7 @@ feature, you can remove yourself with the above syntax.
 
 ## HTML Tidy
 
-This repository uses HTML tidy for consistent formatting of HTML source. To tidy a file called `index.html` one could do:
+This repository uses [HTML tidy](https://www.html-tidy.org/) for consistent formatting of HTML source. To tidy a file called `index.html` one could do:
 
 ```
 cp index.html tmp.html

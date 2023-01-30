@@ -4004,8 +4004,92 @@ with these exceptions:
           </aside>
         </section>
       </section>
-      <!-- Maintain a fragment named "11textinfo" to preserve incoming links to it -->
+      
 
+
+      <section id="mLUM-chunk">
+        <h2><span class="chunk">mASt</span> mastering metadata</h2>
+        <!-- <p>The four decimal values below correspond to the four-byte mASt chunk type field:</p> -->
+
+        <p>The four-byte chunk type field contains the hexadecimal values</p>
+
+        <pre>
+<!-- 109 76 85 109 -->6D 4C 55 6D
+        </pre>
+        
+        <p>If present, the <span class="chunk">mLum</span> chunk identifies 
+           the brightest single pixel or "Maximum Content Light Level" (MaxCLL) for the entire 
+           length of content (every frame) and is typically clipped based on the mastering displays 
+           peak luminance specification. The "Maximum Frame Average Light Level" (MaxFALL) value 
+           is determined by measuring each frames average light level. The frame 
+           with the highest avarage light level becomes the MaxFALL value.</p>
+
+  <p>The following specifies the syntax of the <span class="chunk">mLum</span> chunk:</p>
+
+  <table id="mLum-chunk-syntax" class="numbered simple">
+    <caption>
+      mLum chunk components
+    </caption>
+
+    <tr>
+      <th>Name</th>
+      <th>Size</th>
+      <th>Divisor value</th>
+    </tr>
+
+    <tr>
+      <td>Maximum Content Light Level (MaxCLL)</td>
+      <td>4 bytes</td>
+      <td>0.0001 cd/m<sup>2</sup></td>
+    </tr>
+
+    <tr>
+      <td>Maximum Frame-Average Light Level (MaxFALL)</td>
+      <td>4 bytes</td>
+      <td>0.0001 cd/m<sup>2</sup></td>
+    </tr>
+  </table>
+
+
+  <aside class="note">
+    Below are examples of mLum use to identify MaxCLL and MaxFALL values.</sup>
+  </aside>
+
+<aside class="example">
+            Example <span class="chunk">mLum</span> chunk mastering display maximum luminance:
+            <table id="mLum-chunk-max-luminance-example" class="numbered simple">
+              <tr>
+                <th>Actual value</th>
+                <th>Stored value</th>
+              </tr>
+
+              <tr>
+                <td>1000 cd/m<sup>2</sup></td>
+                <td>10000000</td>
+              </tr>
+            </table>
+          </aside>
+
+          <aside class="example">
+            Example <span class="chunk">mLum</span> chunk mastering display minimum luminance:
+            <table id="mLum-chunk-min-luminance-example" class="numbered simple">
+              <tr>
+                <th>Actual value</th>
+                <th>Stored value</th>
+              </tr>
+
+              <tr>
+                <td>250 cd/m<sup>2</sup></td>
+                <td>250</td>
+              </tr>
+            </table>
+          </aside>
+        </section>
+      </section>
+
+
+m
+<!-- Maintain a fragment named "11textinfo" to preserve incoming links to it -->
       <section id="11textinfo">
         <h2>Textual information</h2>
         <!-- Maintain a fragment named "11textIntro" to preserve incoming links to it -->

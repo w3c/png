@@ -3914,28 +3914,12 @@ with these exceptions:
           "chunk" href="#11IDAT">IDAT</a> chunks.</p>
 
           <aside class="example">
-            Example <span class="chunk">mASt</span> chunk mastering display colour primaries:
-            <table id="mASt-chunk-primaries-example" class="numbered simple">
+            Example <span class="chunk">mASt</span> chunk mastering display colour primaries for HDR:
+            <table id="mASt-chunk-hdr-primaries-example" class="numbered simple">
               <tr>
                 <th>Name</th>
                 <th>Actual values</th>
                 <th>Stored values</th>
-              </tr>
-
-              <tr>
-                <td rowspan="3">Colour primaries specified in [[ITU-R BT.709]]</td>
-                <td>(0.640, 0.330)</td>
-                <td>{ 32000, 16500 }</td>
-              </tr>
-
-              <tr>
-                <td>(0.300, 0.600)</td>
-                <td>{ 15000, 30000 }</td>
-              </tr>
-
-              <tr>
-                <td>(0.150, 0.060)</td>
-                <td>{ 7500, 3000 }</td>
               </tr>
 
               <tr>
@@ -3957,8 +3941,8 @@ with these exceptions:
           </aside>
 
           <aside class="example">
-            Example <span class="chunk">mASt</span> chunk mastering display white point:
-            <table id="mASt-chunk-white-point-example" class="numbered simple">
+            Example <span class="chunk">mASt</span> chunk mastering display white point for HDR:
+            <table id="mASt-chunk-hdr-white-point-example" class="numbered simple">
               <tr>
                 <th>Name</th>
                 <th>Actual values</th>
@@ -3974,7 +3958,7 @@ with these exceptions:
           </aside>
 
           <aside class="example">
-            Example <span class="chunk">mASt</span> chunk mastering display maximum luminance:
+            Example <span class="chunk">mASt</span> chunk mastering display maximum luminance for HDR:
             <table id="mASt-chunk-max-luminance-example" class="numbered simple">
               <tr>
                 <th>Actual value</th>
@@ -4002,14 +3986,105 @@ with these exceptions:
               </tr>
             </table>
           </aside>
+
+
+          <aside class="note">
+            Below are mASt examples for ST 2086 with SDR content that may be native or 
+            containerized in HDR content (as described in the MovieLabs recommendation for 
+            SDR-to-HDR conversion).
+          </aside>
+
+
+          <aside class="example">
+            Example <span class="chunk">mASt</span> chunk mastering display colour primaries for SDR:
+            <table id="mASt-chunk-sdr-primaries-example" class="numbered simple">
+              <tr>
+                <th>Name</th>
+                <th>Actual values</th>
+                <th>Stored values</th>
+              </tr>
+
+              <tr>
+                <td rowspan="3">Colour primaries specified in [[ITU-R BT.709]]</td>
+                <td>(0.640, 0.330)</td>
+                <td>{ 32000, 16500 }</td>
+              </tr>
+
+              <tr>
+                <td>(0.300, 0.600)</td>
+                <td>{ 15000, 30000 }</td>
+              </tr>
+
+              <tr>
+                <td>(0.150, 0.060)</td>
+                <td>{ 7500, 3000 }</td>
+              </tr>
+
+            </table>
+          </aside>
+
+          <aside class="example">
+            Example <span class="chunk">mASt</span> chunk mastering display white point for SDR:
+            <table id="mASt-chunk-sdr-white-point-example" class="numbered simple">
+              <tr>
+                <th>Name</th>
+                <th>Actual values</th>
+                <th>Stored values</th>
+              </tr>
+
+              <tr>
+                <td>Illuminant D65 specified in [[SMPTE RP 177]]</td>
+                <td>(0.3127, 0.3290)</td>
+                <td>{ 15635, 16450 }</td>
+              </tr>
+            </table>
+          </aside>
+
+          <aside class="example">
+            Example <span class="chunk">mASt</span> chunk mastering display maximum 
+            luminance using traditional SDR shading techniques at 100 cd/m<sup>2</sup> 
+            (described in ITU-R BT.2035):
+            <table id="mASt-chunk-max-luminance-example" class="numbered simple">
+              <tr>
+                <th>Actual value</th>
+                <th>Stored value</th>
+              </tr>
+
+              <tr>
+                <td>100 cd/m<sup>2</sup></td>
+                <td>100</td>
+              </tr>
+            </table>
+          </aside>
+
+          <aside class="example">
+            Example <span class="chunk">mASt</span> chunk mastering display maximum 
+            luminance using "single-master" SDR shading techniques at 200 cd/m<sup>2</sup> 
+            (described in ITU-R BT.2408 Annex Y):
+            <table id="mASt-chunk-max-luminance-example" class="numbered simple">
+              <tr>
+                <th>Actual value</th>
+                <th>Stored value</th>
+              </tr>
+
+              <tr>
+                <td>200 cd/m<sup>2</sup></td>
+                <td>200</td>
+              </tr>
+            </table>
+          </aside>
+
+
+
+
         </section>
       </section>
       
 
 
       <section id="mLUM-chunk">
-        <h2><span class="chunk">mASt</span> mastering metadata</h2>
-        <!-- <p>The four decimal values below correspond to the four-byte mASt chunk type field:</p> -->
+        <h2><span class="chunk">mLum</span> mastering metadata</h2>
+        <!-- <p>The four decimal values below correspond to the four-byte mLum chunk type field:</p> -->
 
         <p>The four-byte chunk type field contains the hexadecimal values</p>
 
@@ -4088,7 +4163,7 @@ with these exceptions:
       </section>
 
 
-m
+
 <!-- Maintain a fragment named "11textinfo" to preserve incoming links to it -->
       <section id="11textinfo">
         <h2>Textual information</h2>

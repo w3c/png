@@ -245,7 +245,24 @@
           date: "2020-05",
           href: "https://tech.ebu.ch/docs/r/r103.pdf"
         },
-      }
+        "ITU-T Series H Supplement 19": {
+          title: "Series H: Audio Visual and Multimedia Systems - Usage of video signal type code points",
+          publisher: "ITU",
+          date: "2021-04",
+          href: "https://www.itu.int/ITU-T/recommendations/rec.aspx?rec=13895"
+      },
+      "MovieLabs Recommended Best Practice for SDR to HDR Conversion": {
+          title: "MovieLabs Best Practices for Mapping BT.709 Content to HDR10 for Consumer Distribution",
+          publisher: "Motion Picture Laboratories(MovieLabs)",
+          date: "2018",
+          href: "https://www.movielabs.com/ngvideo/MovieLabs_Mapping_BT.709_to_HDR10_v1.0.pdf"
+      },
+      "ITU-R BT.2035": {
+          title: "A reference viewing environment for evaluation of HDTV program material or completed programmes",
+          publisher: "ITU",
+          date: "2013-07",
+          href: "https://www.itu.int/rec/R-REC-BT.2035-0-201307-I"
+      },
     };
   </script>
 </head>
@@ -328,9 +345,9 @@ with these exceptions:
     Internet. Indexed-colour, greyscale, and <a>truecolour</a> images are supported, with optional transparency. Sample depths
     range from 1 to 16 bits. PNG is fully streamable with a progressive display option. It is robust, providing both full file
     integrity checking and simple detection of common transmission errors. PNG can store <a>gamma value</a> and chromaticity data
-    as well as a full ICC colour profile, CICP image format signaling metadata, and mastering metadata for accurate colour matching
-    on heterogeneous platforms. This Standard defines the Internet Media types "image/png" and "image/apng". The datastream and
-    associated file format have value outside of the main design goal.</p>
+    as well as a full ICC colour profile, CICP image format signaling metadata, and mastering metadata (mDCv and mLUm) for 
+    accurate colour matching on heterogeneous platforms. This Standard defines the Internet Media types "image/png" and "image/apng". 
+    The datastream and associated file format have value outside of the main design goal.</p>
   </section>
 
   <section>
@@ -1453,7 +1470,7 @@ with these exceptions:
 
           <li>Colour space information: <a class="chunk" href="#11cHRM">cHRM</a>, <a class="chunk" href="#11gAMA">gAMA</a>,
           <a class="chunk" href="#11iCCP">iCCP</a>, <a class="chunk" href="#11sBIT">sBIT</a>, <a class="chunk" href=
-          "#11sRGB">sRGB</a>, <a class="chunk" href="#cICP-chunk">cICP</a>, <a class="chunk" href="#mASt-chunk">mASt</a> (see
+          "#11sRGB">sRGB</a>, <a class="chunk" href="#cICP-chunk">cICP</a>, <a class="chunk" href="#mDCv-chunk">mDCv</a> (see
           <a href="#11addnlcolinfo"></a>).
           </li>
 
@@ -2049,7 +2066,7 @@ with these exceptions:
 
         <tr>
           <td>
-            <a class="chunk" href="#mASt-chunk">mASt</a>
+            <a class="chunk" href="#mDCv-chunk">mDCv</a>
           </td>
           <td>No</td>
           <td>
@@ -3844,29 +3861,29 @@ with these exceptions:
 </pre>
           </aside>
         </section>
-        <!-- Maintain a fragment named "mASt-chunk" to preserve incoming links to it -->
+        <!-- Maintain a fragment named "mDCv-chunk" to preserve incoming links to it -->
 
-        <section id="mASt-chunk">
-          <h2><span class="chunk">mASt</span> mastering metadata</h2>
-          <!-- <p>The four decimal values below correspond to the four-byte mASt chunk type field:</p> -->
+        <section id="mDCv-chunk">
+          <h2><span class="chunk">mDCv</span>Mastering Display Color Volume</h2>
+          <!-- <p>The four decimal values below correspond to the four-byte mDCv chunk type field:</p> -->
 
           <p>The four-byte chunk type field contains the hexadecimal values</p>
 
           <pre>
 <!-- 109 65 83 116 -->6D 41 53 74
 </pre>
-          <p>If present, the <span class="chunk">mASt</span> chunk characterizes 
-          the "Mastering Display Color Volume"(MDCV) used at the point of content creation, 
-          as specified in [[SMPTE ST 2086]]. The MDCV provides informative static metadata to 
+          <p>If present, the <span class="chunk">mDCv</span> chunk characterizes 
+          the Mastering Display Color Volume (mDCv) used at the point of content creation, 
+          as specified in [[SMPTE ST 2086]]. The mDCv provides informative static metadata to 
           allow a destination (consumer) display to optimize it's tone and color mappings based 
           on its inherent capabilities. Additional examples of its most common use-cases are available 
-          in ITU-T Series H Supplement 19.</p>
+          in [[ITU-T Series H Supplement 19]].</p>
 
-          <p>The following specifies the syntax of the <span class="chunk">mASt</span> chunk:</p>
+          <p>The following specifies the syntax of the <span class="chunk">mDCv</span> chunk:</p>
 
-          <table id="mASt-chunk-syntax" class="numbered simple">
+          <table id="mDCv-chunk-syntax" class="numbered simple">
             <caption>
-              mASt chunk components
+              mDCv chunk components
             </caption>
 
             <tr>
@@ -3910,12 +3927,12 @@ with these exceptions:
           <p>The divisor maps from actual value to stored value. For example, the unitless divisor of 0.00002 for the primaries and
           white point would store the chromaticity (0.6800, 0.3200) as {34000, 16000}.</p>
 
-          <p>The <span class="chunk">mASt</span> chunk MUST come before the <a class="chunk" href="#11PLTE">PLTE</a> and <a class=
+          <p>The <span class="chunk">mDCv</span> chunk MUST come before the <a class="chunk" href="#11PLTE">PLTE</a> and <a class=
           "chunk" href="#11IDAT">IDAT</a> chunks.</p>
 
           <aside class="example">
-            Example <span class="chunk">mASt</span> chunk mastering display colour primaries for HDR:
-            <table id="mASt-chunk-hdr-primaries-example" class="numbered simple">
+            Example <span class="chunk">mDCv</span> chunk mastering display colour primaries for HDR:
+            <table id="mDCv-chunk-hdr-primaries-example" class="numbered simple">
               <tr>
                 <th>Name</th>
                 <th>Actual values</th>
@@ -3941,8 +3958,8 @@ with these exceptions:
           </aside>
 
           <aside class="example">
-            Example <span class="chunk">mASt</span> chunk mastering display white point for HDR:
-            <table id="mASt-chunk-hdr-white-point-example" class="numbered simple">
+            Example <span class="chunk">mDCv</span> chunk mastering display white point for HDR:
+            <table id="mDCv-chunk-hdr-white-point-example" class="numbered simple">
               <tr>
                 <th>Name</th>
                 <th>Actual values</th>
@@ -3958,8 +3975,8 @@ with these exceptions:
           </aside>
 
           <aside class="example">
-            Example <span class="chunk">mASt</span> chunk mastering display maximum luminance for HDR:
-            <table id="mASt-chunk-max-luminance-example" class="numbered simple">
+            Example <span class="chunk">mDCv</span> chunk mastering display maximum luminance for HDR:
+            <table id="mDCv-chunk-max-luminance-example" class="numbered simple">
               <tr>
                 <th>Actual value</th>
                 <th>Stored value</th>
@@ -3973,8 +3990,8 @@ with these exceptions:
           </aside>
 
           <aside class="example">
-            Example <span class="chunk">mASt</span> chunk mastering display minimum luminance:
-            <table id="mASt-chunk-min-luminance-example" class="numbered simple">
+            Example <span class="chunk">mDCv</span> chunk mastering display minimum luminance:
+            <table id="mDCv-chunk-min-luminance-example" class="numbered simple">
               <tr>
                 <th>Actual value</th>
                 <th>Stored value</th>
@@ -3989,15 +4006,15 @@ with these exceptions:
 
 
           <aside class="note">
-            Below are mASt examples for ST 2086 with SDR content that may be native or 
-            containerized in HDR content (as described in the MovieLabs recommendation for 
-            SDR-to-HDR conversion).
+            Below are mDCv examples for [[SMPTE ST 2086]] with SDR content that may be native or 
+            containerized in HDR content (as described in the [[MovieLabs Recommended Best Practice 
+            for SDR to HDR Conversion]]).
           </aside>
 
 
           <aside class="example">
-            Example <span class="chunk">mASt</span> chunk mastering display colour primaries for SDR:
-            <table id="mASt-chunk-sdr-primaries-example" class="numbered simple">
+            Example <span class="chunk">mDCv</span> chunk mastering display colour primaries for SDR:
+            <table id="mDCv-chunk-sdr-primaries-example" class="numbered simple">
               <tr>
                 <th>Name</th>
                 <th>Actual values</th>
@@ -4024,8 +4041,8 @@ with these exceptions:
           </aside>
 
           <aside class="example">
-            Example <span class="chunk">mASt</span> chunk mastering display white point for SDR:
-            <table id="mASt-chunk-sdr-white-point-example" class="numbered simple">
+            Example <span class="chunk">mDCv</span> chunk mastering display white point for SDR:
+            <table id="mDCv-chunk-sdr-white-point-example" class="numbered simple">
               <tr>
                 <th>Name</th>
                 <th>Actual values</th>
@@ -4041,10 +4058,10 @@ with these exceptions:
           </aside>
 
           <aside class="example">
-            Example <span class="chunk">mASt</span> chunk mastering display maximum 
+            Example <span class="chunk">mDCv</span> chunk mastering display maximum 
             luminance using traditional SDR shading techniques at 100 cd/m<sup>2</sup> 
-            (described in ITU-R BT.2035):
-            <table id="mASt-chunk-max-luminance-example" class="numbered simple">
+            (described in [[ITU-R BT.2035]]):
+            <table id="mDCv-chunk-max-luminance-example" class="numbered simple">
               <tr>
                 <th>Actual value</th>
                 <th>Stored value</th>
@@ -4052,16 +4069,16 @@ with these exceptions:
 
               <tr>
                 <td>100 cd/m<sup>2</sup></td>
-                <td>100</td>
+                <td>1000000</td>
               </tr>
             </table>
           </aside>
 
           <aside class="example">
-            Example <span class="chunk">mASt</span> chunk mastering display maximum 
+            Example <span class="chunk">mDCv</span> chunk mastering display maximum 
             luminance using "single-master" SDR shading techniques at 200 cd/m<sup>2</sup> 
             (described in ITU-R BT.2408 Annex Y):
-            <table id="mASt-chunk-max-luminance-example" class="numbered simple">
+            <table id="mDCv-chunk-max-luminance-example" class="numbered simple">
               <tr>
                 <th>Actual value</th>
                 <th>Stored value</th>
@@ -4069,7 +4086,7 @@ with these exceptions:
 
               <tr>
                 <td>200 cd/m<sup>2</sup></td>
-                <td>200</td>
+                <td>2000000</td>
               </tr>
             </table>
           </aside>
@@ -4082,9 +4099,9 @@ with these exceptions:
       
 
 
-      <section id="mLUM-chunk">
-        <h2><span class="chunk">mLum</span> mastering metadata</h2>
-        <!-- <p>The four decimal values below correspond to the four-byte mLum chunk type field:</p> -->
+      <section id="mLUm-chunk">
+        <h2><span class="chunk">mLUm</span> Metadata for Maximum Single-Pixel and Frame-Average Luminance Levels</h2>
+        <!-- <p>The four decimal values below correspond to the four-byte mLUm chunk type field:</p> -->
 
         <p>The four-byte chunk type field contains the hexadecimal values</p>
 
@@ -4092,18 +4109,22 @@ with these exceptions:
 <!-- 109 76 85 109 -->6D 4C 55 6D
         </pre>
         
-        <p>If present, the <span class="chunk">mLum</span> chunk identifies 
+        <p>If present, the <span class="chunk">mLUm</span> chunk identifies 
            the brightest single pixel or "Maximum Content Light Level" (MaxCLL) for the entire 
-           length of content (every frame) and is typically clipped based on the mastering displays 
-           peak luminance specification. The "Maximum Frame Average Light Level" (MaxFALL) value 
+           length of content (in every frame) and is typically clipped based on the mastering displays 
+           peak luminance specification. (MaxCLL) is often 
+           algorithmically analyzed to avoid false values generated by processing or noise from 
+           a single pixel values luminance level. The "Maximum Frame Average Light Level" (MaxFALL) value 
            is determined by measuring each frames average light level. The frame 
-           with the highest avarage light level becomes the MaxFALL value.</p>
+           with the highest average light level becomes the MaxFALL value.  MaxCLL/MaxFall are 
+           representing the entire length of content, and since PNG is most often a single frame, 
+           the start and end are the same (with the exception of image sequences).</p>
 
-  <p>The following specifies the syntax of the <span class="chunk">mLum</span> chunk:</p>
+  <p>The following specifies the syntax of the <span class="chunk">mLUm</span> chunk:</p>
 
-  <table id="mLum-chunk-syntax" class="numbered simple">
+  <table id="mLUm-chunk-syntax" class="numbered simple">
     <caption>
-      mLum chunk components
+      mLUm chunk components
     </caption>
 
     <tr>
@@ -4126,13 +4147,13 @@ with these exceptions:
   </table>
 
 
-  <aside class="note">
-    Below are examples of mLum use to identify MaxCLL and MaxFALL values.</sup>
-  </aside>
+    <aside class="note">
+    Below are examples of mLUm use to identify MaxCLL and MaxFALL values.</sup>
+    </aside>
 
 <aside class="example">
-            Example <span class="chunk">mLum</span> chunk mastering display maximum luminance:
-            <table id="mLum-chunk-max-luminance-example" class="numbered simple">
+            Example <span class="chunk">mLUm</span> chunk mastering display maximum luminance:
+            <table id="mLUm-chunk-max-luminance-example" class="numbered simple">
               <tr>
                 <th>Actual value</th>
                 <th>Stored value</th>
@@ -4146,8 +4167,8 @@ with these exceptions:
           </aside>
 
           <aside class="example">
-            Example <span class="chunk">mLum</span> chunk mastering display minimum luminance:
-            <table id="mLum-chunk-min-luminance-example" class="numbered simple">
+            Example <span class="chunk">mLUm</span> chunk mastering display minimum luminance:
+            <table id="mLUm-chunk-min-luminance-example" class="numbered simple">
               <tr>
                 <th>Actual value</th>
                 <th>Stored value</th>
@@ -7514,7 +7535,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
       [[PNG-EXTENSIONS]] into the main body of this specification, to reflect it's widespready use.
       </li>
 
-      <li>Added the <a class="chunk" href="#mASt-chunk">mASt</a> chunk, which contains metadata about the display used in
+      <li>Added the <a class="chunk" href="#mDCv-chunk">mDCv</a> chunk, which contains metadata about the display used in
       mastering. This enabled more accurate colour matching on heterogeneous platforms
       </li>
 

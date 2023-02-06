@@ -4118,7 +4118,10 @@ with these exceptions:
            is determined by measuring each frames average light level. The frame 
            with the highest average light level becomes the MaxFALL value.  MaxCLL/MaxFall are 
            representing the entire length of content, and since PNG is most often a single frame, 
-           the start and end are the same (with the exception of image sequences).</p>
+           the start and end are the same. There are exceptions:
+                • APNG: "Animated PNG" - defined elsewhere in this document
+                • Image Sequences: A Simple set of numerically sequential frames that together represent 
+                  a single piece of content with motion video
 
   <p>The following specifies the syntax of the <span class="chunk">mLUm</span> chunk:</p>
 

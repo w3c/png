@@ -3285,8 +3285,9 @@ with these exceptions:
           <p>For <a>colour types</a> 0 or 2, two bytes per sample are used regardless of the image bit depth (see <a href=
           "#7Integers-and-byte-order"></a>). Pixels of the specified grey sample value or RGB sample values are treated as
           transparent (equivalent to alpha value 0); all other pixels are to be treated as fully opaque (alpha value
-          2<sup>bitdepth</sup>-1). If the image bit depth is less than 16, the least significant bits are used and the others are
-          0.</p>
+          2<sup>bitdepth</sup>-1). 
+          If the image bit depth is less than 16, the least significant bits are used.
+          Encoders should set the other bits to 0, and decoders must mask the other bits to 0 before the value is used.</p>
 
           <p>A <span class="chunk">tRNS</span> chunk shall not appear for <a>colour types</a> 4 and 6, since a full alpha channel
           is already present in those cases.</p>
@@ -4539,7 +4540,8 @@ with these exceptions:
           background in the range 0 to (2<sup>bitdepth</sup>)-1. For <a>colour types</a> 2 and 6 (<a>truecolour</a>, <a>truecolour
           with alpha</a>), the values are the colour to be used as background, given as RGB samples in the range 0 to
           (2<sup>bitdepth</sup>)-1. In each case, for consistency, two bytes per sample are used regardless of the image bit depth.
-          If the image bit depth is less than 16, the least significant bits are used and the others are 0.</p>
+          If the image bit depth is less than 16, the least significant bits are used.
+          Encoders should set the other bits to 0, and decoders must mask the other bits to 0 before the value is used.</p>
         </section>
         <!-- Maintain a fragment named "11hIST" to preserve incoming links to it -->
 

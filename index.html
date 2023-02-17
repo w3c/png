@@ -20,13 +20,13 @@
       previousPublishDate: "2003-11-10",
       previousMaturity: "REC",
       edDraftURI: "https://w3c.github.io/PNG-spec",
-      extraCSS: ["http://dev.w3.org/2009/dap/ReSpec.js/css/respec.css"],
+      extraCSS: ["https://dev.w3.org/2009/dap/ReSpec.js/css/respec.css"],
       editors: [
         { name: "Chris Blume", url: "https://www.programmax.net", w3cid: 127631 },
         { name: "Pierre-Anthony Lemieux", company: "MovieLabs", companyURL: "https://movielabs.com/", url: "mailto:pal@palemieux.com", w3cid: 57073 },
         { name: "Chris Lilley", url: "https://svgees.us", company: "W3C", companyURL: "https://www.w3.org", w3cid: 1438 },
         { name: "Leonard Rosenthol", company: "Adobe Inc.", companyURL: "https://www.adobe.com", w3cid: 42485 },
-        { name: "Chris Seeger", company: "NBCUniversal, LLC a subsidiary of Comcast Corporation", companyURL: "https://www.comcast.com", w3cid: 125833 }
+        { name: "Chris Seeger", company: "NBCUniversal, LLC a subsidiary of Comcast Corporation", companyURL: "https://www.comcast.com", w3cid: 125844 }
       ],
       formerEditors: [
         { name: "Thomas Boutell" },
@@ -36,15 +36,15 @@
         { name: "Glenn Randers-Pehrson" },
       ],
       authors: [
-        { name: "Mark Adler", url: "http://www.alumni.caltech.edu/~madler/" },
-        { name: "Thomas Boutell", url: "http://www.boutell.com/boutell/" },
+        { name: "Mark Adler", url: "https://en.wikipedia.org/wiki/Mark_Adler" },
+        { name: "Thomas Boutell", url: "https://boutell.dev/" },
         { name: "John Bowler" },
-        { name: "Christian Brunschen", url: "http://www.df.lth.se/~cb/" },
+        { name: "Christian Brunschen", url: "https://www.brunschen.com/christian/" },
         { name: "Adam M. Costello", url: "http://www.nicemice.net/amc/" },
-        { name: "Lee Daniel Crocker", url: "http://www.piclab.com/" },
+        { name: "Lee Daniel Crocker" },
         { name: "Andreas Dilger", url: "http://www-mddsp.enel.ucalgary.ca/People/adilger/" },
-        { name: "Oliver Fromme", url: "http://www.fromme.com/" },
-        { name: "Jean-loup Gailly", url: "http://www.teaser.fr/~jlgailly/" },
+        { name: "Oliver Fromme", url: "https://www.fromme.com/" },
+        { name: "Jean-loup Gailly", url: "http://gailly.net/" },
         { name: "Chris Herborth" },
         { name: "Alex Jakulin" },
         { name: "Neal Kettler" },
@@ -55,7 +55,7 @@
         { name: "Owen Mortensen" },
         { name: "Stuart Parmenter"},
         { name: "Keith S. Pickens" },
-        { name: "Robert P. Poole", url: "http://www.users.qwest.net/~lionlad/" },
+        { name: "Robert P. Poole" },
         { name: "Glenn Randers-Pehrson" },
         { name: "Greg Roelofs", url: "http://pobox.com/~newt/" },
         { name: "Willem van Schaik", url: "http://www.schaik.com/" },
@@ -250,20 +250,21 @@
           publisher: "ITU",
           date: "2021-04",
           href: "https://www.itu.int/ITU-T/recommendations/rec.aspx?rec=13895"
-      },
-      "MovieLabs Recommended Best Practice for SDR to HDR Conversion": {
-          title: "MovieLabs Best Practices for Mapping BT.709 Content to HDR10 for Consumer Distribution",
-          publisher: "Motion Picture Laboratories(MovieLabs)",
-          date: "2018",
-          href: "https://www.movielabs.com/ngvideo/MovieLabs_Mapping_BT.709_to_HDR10_v1.0.pdf"
-      },
-      "ITU-R BT.2035": {
-          title: "A reference viewing environment for evaluation of HDTV program material or completed programmes",
-          publisher: "ITU",
-          date: "2013-07",
-          href: "https://www.itu.int/rec/R-REC-BT.2035-0-201307-I"
-      },
-    };
+        },
+        "MovieLabs Recommended Best Practice for SDR to HDR Conversion": {
+            title: "MovieLabs Best Practices for Mapping BT.709 Content to HDR10 for Consumer Distribution",
+            publisher: "Motion Picture Laboratories(MovieLabs)",
+            date: "2018",
+            href: "https://www.movielabs.com/ngvideo/MovieLabs_Mapping_BT.709_to_HDR10_v1.0.pdf"
+        },
+        "ITU-R BT.2035": {
+            title: "A reference viewing environment for evaluation of HDTV program material or completed programmes",
+            publisher: "ITU",
+            date: "2013-07",
+            href: "https://www.itu.int/rec/R-REC-BT.2035-0-201307-I"
+        }
+      }
+    }
   </script>
 </head>
 <body>
@@ -3284,8 +3285,9 @@ with these exceptions:
           <p>For <a>colour types</a> 0 or 2, two bytes per sample are used regardless of the image bit depth (see <a href=
           "#7Integers-and-byte-order"></a>). Pixels of the specified grey sample value or RGB sample values are treated as
           transparent (equivalent to alpha value 0); all other pixels are to be treated as fully opaque (alpha value
-          2<sup>bitdepth</sup>-1). If the image bit depth is less than 16, the least significant bits are used and the others are
-          0.</p>
+          2<sup>bitdepth</sup>-1). 
+          If the image bit depth is less than 16, the least significant bits are used.
+          Encoders should set the other bits to 0, and decoders must mask the other bits to 0 before the value is used.</p>
 
           <p>A <span class="chunk">tRNS</span> chunk shall not appear for <a>colour types</a> 4 and 6, since a full alpha channel
           is already present in those cases.</p>
@@ -3864,13 +3866,13 @@ with these exceptions:
         <!-- Maintain a fragment named "mDCv-chunk" to preserve incoming links to it -->
 
         <section id="mDCv-chunk">
-          <h2><span class="chunk">mDCv</span>Mastering Display Color Volume</h2>
+          <h2><span class="chunk">mDCv</span> Mastering Display Color Volume</h2>
           <!-- <p>The four decimal values below correspond to the four-byte mDCv chunk type field:</p> -->
 
           <p>The four-byte chunk type field contains the hexadecimal values</p>
 
           <pre>
-<!-- 109 65 83 116 -->6D 41 53 74
+<!-- 109 68 67 118 -->6D 44 43 76
 </pre>
           <p>If present, the <span class="chunk">mDCv</span> chunk characterizes 
           the Mastering Display Color Volume (mDCv) used at the point of content creation, 
@@ -4005,11 +4007,9 @@ with these exceptions:
           </aside>
 
 
-          <aside class="note">
-            Below are mDCv examples for [[SMPTE ST 2086]] with SDR content that may be native or 
+          <p>Below are mDCv examples for [[SMPTE ST 2086]] with SDR content that may be native or 
             containerized in HDR content (as described in the [[MovieLabs Recommended Best Practice 
-            for SDR to HDR Conversion]]).
-          </aside>
+	    for SDR to HDR Conversion]]).</p>
 
 
           <aside class="example">
@@ -4091,101 +4091,88 @@ with these exceptions:
             </table>
           </aside>
 
-
-
-
         </section>
-      </section>
-      
 
+        <section id="mLUm-chunk">
+          <h2><span class="chunk">mLUm</span> Metadata for Maximum Single-Pixel and Frame-Average Luminance Levels</h2>
+          <p>The four-byte chunk type field contains the hexadecimal values</p>
 
-      <section id="mLUm-chunk">
-        <h2><span class="chunk">mLUm</span> Metadata for Maximum Single-Pixel and Frame-Average Luminance Levels</h2>
-        <!-- <p>The four decimal values below correspond to the four-byte mLUm chunk type field:</p> -->
-
-        <p>The four-byte chunk type field contains the hexadecimal values</p>
-
-        <pre>
+          <pre>
 <!-- 109 76 85 109 -->6D 4C 55 6D
-        </pre>
+</pre>
         
-        <p>If present, the <span class="chunk">mLUm</span> chunk identifies 
-           the brightest single pixel or "Maximum Content Light Level" (MaxCLL) for the entire 
-           length of content (in every frame) and is typically clipped based on the mastering displays 
-           peak luminance specification. (MaxCLL) is often 
-           algorithmically analyzed to avoid false values generated by processing or noise from 
-           a single pixel values luminance level. The "Maximum Frame Average Light Level" (MaxFALL) value 
-           is determined by measuring each frames average light level. The frame 
-           with the highest average light level becomes the MaxFALL value.  MaxCLL/MaxFall are 
-           representing the entire length of content, and since PNG is most often a single frame, 
-           the start and end are the same. There are exceptions:
-                • APNG: "Animated PNG" - defined elsewhere in this document
-                • Image Sequences: A Simple set of numerically sequential frames that together represent 
-                  a single piece of content with motion video
+          <p>If present, the <span class="chunk">mLUm</span> chunk identifies 
+             the brightest single pixel or "Maximum Content Light Level" (MaxCLL) for the entire 
+             length of content (in every frame) and is typically clipped based on the mastering displays 
+             peak luminance specification. (MaxCLL) is often 
+             algorithmically analyzed to avoid false values generated by processing or noise from 
+             a single pixel values luminance level. The "Maximum Frame Average Light Level" (MaxFALL) value 
+             is determined by measuring each frame's average light level. The frame 
+             with the highest average light level becomes the MaxFALL value.  MaxCLL/MaxFall are 
+             representing the entire length of content, and since PNG is most often a single frame, 
+	     the start and end are the same. There are exceptions:</p>
+           <ul>
+             <li>APNG: "Animated PNG" - defined elsewhere in this document</li>
+             <li>Image Sequences: A Simple set of numerically sequential frames that together represent 
+                 a single piece of content with motion video</li>
 
-  <p>The following specifies the syntax of the <span class="chunk">mLUm</span> chunk:</p>
+           <p>The following specifies the syntax of the <span class="chunk">mLUm</span> chunk:</p>
 
-  <table id="mLUm-chunk-syntax" class="numbered simple">
-    <caption>
-      mLUm chunk components
-    </caption>
+           <table id="mLUm-chunk-syntax" class="numbered simple">
+             <caption>mLUm chunk components</caption>
 
-    <tr>
-      <th>Name</th>
-      <th>Size</th>
-      <th>Divisor value</th>
-    </tr>
+             <tr>
+               <th>Name</th>
+               <th>Size</th>
+               <th>Divisor value</th>
+             </tr>
 
-    <tr>
-      <td>Maximum Content Light Level (MaxCLL)</td>
-      <td>4 bytes</td>
-      <td>0.0001 cd/m<sup>2</sup></td>
-    </tr>
+             <tr>
+               <td>Maximum Content Light Level (MaxCLL)</td>
+               <td>4 bytes</td>
+               <td>0.0001 cd/m<sup>2</sup></td>
+             </tr>
 
-    <tr>
-      <td>Maximum Frame-Average Light Level (MaxFALL)</td>
-      <td>4 bytes</td>
-      <td>0.0001 cd/m<sup>2</sup></td>
-    </tr>
-  </table>
+             <tr>
+               <td>Maximum Frame-Average Light Level (MaxFALL)</td>
+               <td>4 bytes</td>
+               <td>0.0001 cd/m<sup>2</sup></td>
+             </tr>
+           </table>
 
+           <aside class="example">
+             Example <span class="chunk">mLUm</span> chunk Maximum Content Light Level:
 
-    <aside class="note">
-    Below are examples of mLUm use to identify MaxCLL and MaxFALL values.</sup>
-    </aside>
+             <table id="mLUm-chunk-max-content-light-level-example" class="numbered simple">
+               <tr>
+                 <th>Actual value</th>
+                 <th>Stored value</th>
+               </tr>
 
-<aside class="example">
-            Example <span class="chunk">mLUm</span> chunk Maximum Content Light Level:
-            <table id="mLUm-chunk-max-content-light-level-example" class="numbered simple">
-              <tr>
-                <th>Actual value</th>
-                <th>Stored value</th>
-              </tr>
+               <tr>
+                 <td>1000 cd/m<sup>2</sup></td>
+                 <td>10000000</td>
+               </tr>
+             </table>
+           </aside>
 
-              <tr>
-                <td>1000 cd/m<sup>2</sup></td>
-                <td>10000000</td>
-              </tr>
-            </table>
-          </aside>
+           <aside class="example">
+             Example <span class="chunk">mLUm</span> chunk Maximum Frame-Average Light Level:
 
-          <aside class="example">
-            Example <span class="chunk">mLUm</span> chunk Maximum Frame-Average Light Level:
-            <table id="mLUm-max-frame-avg-luminance-example" class="numbered simple">
-              <tr>
-                <th>Actual value</th>
-                <th>Stored value</th>
-              </tr>
+             <table id="mLUm-chunk-max-frame-avg-luminance-example" class="numbered simple">
+               <tr>
+                 <th>Actual value</th>
+                 <th>Stored value</th>
+               </tr>
 
-              <tr>
-                <td>250 cd/m<sup>2</sup></td>
-                <td>2500000</td>
+               <tr>
+                 <td>250 cd/m<sup>2</sup></td>
+                 <td>2500000</td>
               </tr>
             </table>
           </aside>
         </section>
       </section>
-
 
 
 <!-- Maintain a fragment named "11textinfo" to preserve incoming links to it -->
@@ -4553,7 +4540,8 @@ with these exceptions:
           background in the range 0 to (2<sup>bitdepth</sup>)-1. For <a>colour types</a> 2 and 6 (<a>truecolour</a>, <a>truecolour
           with alpha</a>), the values are the colour to be used as background, given as RGB samples in the range 0 to
           (2<sup>bitdepth</sup>)-1. In each case, for consistency, two bytes per sample are used regardless of the image bit depth.
-          If the image bit depth is less than 16, the least significant bits are used and the others are 0.</p>
+          If the image bit depth is less than 16, the least significant bits are used.
+          Encoders should set the other bits to 0, and decoders must mask the other bits to 0 before the value is used.</p>
         </section>
         <!-- Maintain a fragment named "11hIST" to preserve incoming links to it -->
 
@@ -7478,16 +7466,13 @@ will need to be replaced by copies of lines 17-23, but processing background ins
 
     <section id="E-Archive-sites">
       <h2>Archive sites</h2>
-
-      <p>This specification can be found at <a href=
-      "http://www.w3.org/TR/2003/REC-PNG-20031110/index.html"><code>http://www.w3.org/TR/2003/REC-PNG-20031110/index.html</code></a>.</p>
     </section>
     <!-- Maintain a fragment named "E-icc-profile-specs" to preserve incoming links to it -->
 
     <section id="E-icc-profile-specs">
       <h2>ICC profile specifications</h2>
 
-      <p>ICC profile specifications are available at: <a href="http://www.color.org/"><code>http://www.color.org/</code></a></p>
+      <p>ICC profile specifications are available at: <a href="https://www.color.org/"><code>https://www.color.org/</code></a></p>
     </section>
     <!-- Maintain a fragment named "E-PNG-home-page" to preserve incoming links to it -->
 
@@ -7499,7 +7484,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
       information about PNG and PNG-related tools.</p>
 
       <p>Additional documentation and portable C code for <a>deflate</a>, and an optimized implementation of the <a>CRC</a>
-      algorithm are available from the zlib web site, <a href="http://www.zlib.org/"><code>http://www.zlib.org/</code></a>.</p>
+      algorithm are available from the zlib web site, <a href="https://www.zlib.net/"><code>https://www.zlib.net/</code></a>.</p>
     </section>
     <!-- Maintain a fragment named "E-Sample-implementation" to preserve incoming links to it -->
 

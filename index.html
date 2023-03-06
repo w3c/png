@@ -7502,10 +7502,39 @@ will need to be replaced by copies of lines 17-23, but processing background ins
   </section>
   <!-- Maintain a fragment named "F-ChangeList" to preserve incoming links to it -->
 
-  <section id="F-ChageList" class="appendix informative">
+  <section id="F-ChangeList" class="appendix informative">
     <h2 class="Annex">Changes</h2>
 
-    <h3>Changes since the <a href="https://www.w3.org/TR/2003/REC-PNG-20031110/">W3C Recommendation of 10 November 2003</a> (PNG
+    <h3 id="changes-20221025">Changes since the <a href="https://www.w3.org/TR/2022/WD-png-3-20221025/">
+      First Public Working Draft of 25 October 2022 (Third Edition)</a></h3>
+
+    <ul>
+      <!-- to 6 March 2023 -->
+      <li>Corrected error in <a href="#eXIf" class="chunk">eXIf</a> chunk, 
+        which conflicted with the <a href="#5ChunkOrdering">chunk ordering</a> section.</li>
+      <li>Simplified <a href="l#1Scope">Scope</a> section to remove redundant detail described elsewhere.</li>
+      <li>Redrew chunk-ordering lattice diagrams to be clearer and more consistent.</li>
+      <li>Added new chunk, <a href="#mLUm-chunk" class="chunk">mLUm</a>, 
+      to describe the Maximum Single-Pixel and Frame-Average Luminance Levels
+      for both static and animated HDR PNG images.
+      </li>
+      <li>Updated external links to latest versions, preferring https over http.</li>
+      <li>Specified interoperable handling of extra sample bits, beyond the specified bit depth,
+        in <a href="#11tRNS" class="chunk">tRNS</a> and <a href="#11bKGD" class="chunk">bKGD</a> chunks.
+      </li>
+      <li>Added a new chunk, <a href="#mDCv-chunk" class="chunk">mDCv</a> 
+        to describe the color volume of the mastering display used to grade HDR content.</li>
+      <li>Used correct Unicode character names.</li>
+      <li>Changed chunk type codes to use hexadecimal, rather than decimal.</li>
+      <li>Described textual chunk processing more clearly.</li>
+      <li>Recommended <a href="#11iTXt" class="chunk">iTXt</a> for new content.</li>
+      <li>Clarifications on the language tag field of the <a href="#11iTXt" class="chunk">iTXt</a> chunk, 
+        corrected examples to conform to BCP47.</li>
+      <li>Updated image/apng registration appendix. APNG MIME type registered with IANA.</li>
+      <li>Converted ACII-art figures to more accessible diagrams.</li>
+    </ul>
+
+    <h3 id="changes-20031110">Changes since the <a href="https://www.w3.org/TR/2003/REC-PNG-20031110/">W3C Recommendation of 10 November 2003</a> (PNG
     Second Edition)</h3>
 
     <ul>
@@ -7521,7 +7550,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
       </li>
 
       <li>The previously defined <a class="chunk" href="#eXIf">eXIf</a> chunk has been moved from the PNG-Extensions document
-      [[PNG-EXTENSIONS]] into the main body of this specification, to reflect it's widespready use.
+      [[PNG-EXTENSIONS]] into the main body of this specification, to reflect it's widespread use.
       </li>
 
       <li>Added the <a class="chunk" href="#mDCv-chunk">mDCv</a> chunk, which contains metadata about the display used in

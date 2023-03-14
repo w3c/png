@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<svg viewBox="0 0 925 535" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg viewBox="0 0 1040 535" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <style>
     @font-face {
         font-family: OS_Cond_Med;
@@ -20,6 +20,7 @@
         }
 </style>
 
+
 <g transform="translate(400,10)">
 <rect width="80" height="40" />
 <text x="15" y="25">IHDR</text>
@@ -35,12 +36,14 @@
 <line x1="439" y1="50" x2="425" y2="120"/>
 <line x1="445" y1="50" x2="515" y2="120"/>
 <line x1="451" y1="50" x2="575" y2="120"/>
-<line x1="457" y1="50" x2="635" y2="120"/>
-<line x1="463" y1="50" x2="695" y2="120"/>
-<line x1="465" y1="50" x2="755" y2="120"/>
-<line x1="467" y1="50" x2="815" y2="120"/>
-<line x1="469" y1="50" x2="875" y2="120"/>
-<!-- <line x1="469" y1="50" x2="935" y2="120"/> -->
+<line x1="454" y1="50" x2="635" y2="120"/>
+<line x1="457" y1="50" x2="695" y2="120"/>
+<line x1="459" y1="50" x2="755" y2="120"/>
+<line x1="461" y1="50" x2="815" y2="120"/>
+<line x1="463" y1="50" x2="875" y2="120"/>
+<line x1="465" y1="50" x2="935" y2="120"/>
+<line x1="467" y1="50" x2="995" y2="120"/>
+<!-- <line x1="469" y1="50" x2="1055" y2="120"/> -->
 
 <g transform="translate(0,120)">
 
@@ -98,49 +101,62 @@
 
 <g transform="translate(680,0)">
 <rect width="50" height="40" />
-<text x="5" y="25">tRNS</text>
+<text x="5" y="25">mDVc</text>
 <text x="40" y="12" style="font-size:8pt">?</text>
 </g>
 
 <g transform="translate(740,0)">
 <rect width="50" height="40" />
-<text x="5" y="25">bKGD</text>
+<text x="5" y="25">mLUm</text>
 <text x="40" y="12" style="font-size:8pt">?</text>
 </g>
 
 <g transform="translate(800,0)">
 <rect width="50" height="40" />
-<text x="5" y="25">eXIf</text>
+<text x="5" y="25">tRNS</text>
 <text x="40" y="12" style="font-size:8pt">?</text>
 </g>
 
 <g transform="translate(860,0)">
 <rect width="50" height="40" />
+<text x="5" y="25">bKGD</text>
+<text x="40" y="12" style="font-size:8pt">?</text>
+</g>
+
+<g transform="translate(920,0)">
+<rect width="50" height="40" />
+<text x="5" y="25">eXIf</text>
+<text x="40" y="12" style="font-size:8pt">?</text>
+</g>
+
+<g transform="translate(980,0)">
+<rect width="50" height="40" />
 <text x="5" y="25">acTL</text>
 <text x="40" y="12" style="font-size:8pt">1</text>
 </g>
 
-<!-- <g transform="translate(920,0)">
+<!-- <g transform="translate(1040,0)">
 <rect width="50" height="40" />
 <text x="5" y="25">fcTL</text>
 <text x="40" y="12" style="font-size:8pt">1</text>
 </g> -->
 
-
 </g>
 
 
 <line x1="275" y1="160" x2="524" y2="300"/>
-<line x1="335" y1="160" x2="532" y2="300"/>
-<line x1="425" y1="160" x2="540" y2="300"/>
-<line x1="515" y1="160" x2="548" y2="300"/>
-<line x1="575" y1="160" x2="556" y2="300"/>
-<line x1="635" y1="160" x2="564" y2="300"/>
-<line x1="695" y1="160" x2="572" y2="300"/>
-<line x1="755" y1="160" x2="580" y2="300"/>
-<line x1="815" y1="160" x2="580" y2="300"/>
-<line x1="875" y1="160" x2="580" y2="300"/>
-<!-- <line x1="935" y1="160" x2="580" y2="300"/> -->
+<line x1="335" y1="160" x2="530" y2="300"/>
+<line x1="425" y1="160" x2="536" y2="300"/>
+<line x1="515" y1="160" x2="542" y2="300"/>
+<line x1="575" y1="160" x2="548" y2="300"/>
+<line x1="635" y1="160" x2="554" y2="300"/>
+<line x1="695" y1="160" x2="560" y2="300"/>
+<line x1="755" y1="160" x2="562" y2="300"/>
+<line x1="815" y1="160" x2="568" y2="300"/>
+<line x1="875" y1="160" x2="572" y2="300"/>
+<line x1="935" y1="160" x2="576" y2="300"/>
+<line x1="995" y1="160" x2="578" y2="300"/>
+<!-- <line x1="1055" y1="160" x2="580" y2="300"/> -->
 
 
 <g transform="translate(520,300)">

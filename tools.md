@@ -28,7 +28,8 @@ Depends on libpng so currently no APNG support. Older versions bundled with some
 
 ### PNG file chunk inspector
 
-[Homepage](https://www.nayuki.io/page/png-file-chunk-inspector)
+[Homepage](https://www.nayuki.io/page/png-file-chunk-inspector) and source at [nayuki/
+Nayuki-web-published-code/png-file-chunk-inspector/](https://github.com/nayuki/Nayuki-web-published-code/tree/master/png-file-chunk-inspector)
 
 Browser-based checker written in Javascript. No libpng dependency.
 

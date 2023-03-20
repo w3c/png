@@ -34,6 +34,12 @@ Browser-based checker written in Javascript. No libpng dependency.
 
 Chris Lilley has experimentally extended it to add cICP, APNG support (easy since it is all JavaScript).
 
+### fotoforensics
+
+[Homepage](https://fotoforensics.com/)
+
+Browser-based tool which displays hidden (by alpha channel, or by incorrect `IHDR` height) data in PNG (and other) images.
+
 ## Libraries
 
 ### libpng

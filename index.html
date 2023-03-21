@@ -685,15 +685,6 @@ with these exceptions:
           image which is presented to a <a>PNG encoder</a>.
         </dd>
 
-        <dt><dfn>static image</dfn>
-        </dt>
-
-        <dd>
-          non-animated image corresponding to the <a>reference image</a> encoded in the <a class="chunk" href="#11IDAT">IDAT</a>
-          chunk. All PNG and APNG images contain a static image, and non animation-capable displays (such as printers) will display
-          this rather than the animation.
-        </dd>
-
         <dt><dfn>transfer function</dfn>
         </dt>
 
@@ -787,12 +778,15 @@ with these exceptions:
     <section>
       <h2>Static and Animated images</h2>
 
-      <p>All PNG images contain a single <a>static image</a>. Some PNG images — called <a>APNG</a> for Animated PNG — also contain
-      a frame-based animation sequence, the <a>animated image</a>. The first frame of this may be — but need not be — the <a>static
-      image</a>.</p>
+      <p>All PNG images contain a single <dfn>static image</dfn>.</p>
+
+      <p>Some PNG images — called <a>APNG</a> for Animated PNG — also contain a frame-based animation sequence, the <a>animated
+      image</a>. The first frame of this may be — but need not be — the <a>static image</a>. Mon animation-capable displays (such as
+      printers) will display the <a>static image</a> rather than the animation sequence.</p>
 
       <p>The <a>static image</a>, and each individual frame of an <a>animated image</a>, corresponds to a <em>reference image</em>
       and is stored as a <em>PNG image</em>.</p>
+
     </section>
 
     <section>

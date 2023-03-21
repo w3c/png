@@ -401,8 +401,7 @@ with these exceptions:
         </dt>
 
         <dd>
-          ordering of <a>bytes</a> for multi-byte data values within a <a>PNG file</a> or <a>PNG datastream</a>. PNG uses
-          <a>network byte order</a>.
+          ordering of <a>bytes</a> for multi-byte data values
         </dd>
 
         <dt><dfn>canvas</dfn>
@@ -430,16 +429,7 @@ with these exceptions:
 
         <dd>pair of CIE <i>x,y</i> values [[COLORIMETRY]] that precisely specify a colour, except for the brightness
         information.</dd>
-        <!-- Maintain a fragment named "3chunk" to preserve incoming links to it -->
 
-        <dt id="3chunk"><dfn>chunk</dfn>
-        </dt>
-
-        <dd>
-          section of a <a>PNG datastream</a>. Each chunk has a chunk type. Most chunks also include data. The format and meaning of
-          the data within the chunk are determined by the chunk type. Each chunk is either a <a>critical chunk</a> or an
-          <a>ancillary chunk</a>.
-        </dd>
         <!-- Maintain a fragment named "3composite" to preserve incoming links to it -->
 
         <dt id="3composite"><dfn data-lt="composited|composite">composite (verb)</dfn>
@@ -448,15 +438,7 @@ with these exceptions:
         <dd>to form an image by merging a foreground image and a background image, using transparency information to determine
         where and to what extent the background should be visible. The foreground image is said to be "composited against" the
         background.</dd>
-        <!-- Maintain a fragment named "3criticalChunk" to preserve incoming links to it -->
 
-        <dt id="3criticalChunk"><dfn>critical chunk</dfn>
-        </dt>
-
-        <dd>
-          <a>chunk</a> that <!--must be understood and processed by the decoder-->
-           shall be understood and processed by the decoder in order to produce a meaningful image from a <a>PNG datastream</a>.
-        </dd>
         <!-- Maintain a fragment named "3datastream" to preserve incoming links to it -->
 
         <dt id="3datastream"><dfn>datastream</dfn>
@@ -661,7 +643,7 @@ with these exceptions:
         </dd>
         <!-- Maintain a fragment named "3PNGfile" to preserve incoming links to it -->
 
-        <dt id="3PNGfile"><dfn>PNG file</dfn>
+        <dt id="3PNGfile">PNG file
         </dt>
 
         <dd>
@@ -1389,7 +1371,7 @@ with these exceptions:
         </ol>
 
         <!-- Maintain a fragment named "3ancillaryChunk" to preserve incoming links to it -->
-        <p>The remaining chunk types are termed <dfn id="3ancillaryChunk">ancillary chunk</dfn> types, which encoders may generate and decoders may interpret.</p>
+        <p>The remaining chunk types are termed <dfn class="lint-ignore" id="3ancillaryChunk">ancillary chunk</dfn> types, which encoders may generate and decoders may interpret.</p>
         <!-- <ol start="5"> -->
 
         <ol>
@@ -1687,7 +1669,8 @@ with these exceptions:
     <section id="5Chunk-layout">
       <h2>Chunk layout</h2>
 
-      <p>Each chunk consists of three or four fields (see <a href="#figure411"></a>). The meaning of the fields is described in
+      <!-- Maintain a fragment named "3chunk" to preserve incoming links to it -->
+      <p>Each <dfn id="3chunk">chunk</dfn> consists of three or four fields (see <a href="#figure411"></a>). The meaning of the fields is described in
       <a href="#table51"></a>. The chunk data field may be empty.</p>
 
       <figure id="figure411">
@@ -2445,7 +2428,7 @@ with these exceptions:
     <section id="7Integers-and-byte-order">
       <h2>Integers and byte order</h2>
 
-      <p>All integers that require more than one byte shall be in network byte order (as illustrated in <a href=
+      <p>All integers that require more than one byte shall be in <a>network byte order</a> (as illustrated in <a href=
       "#integer-representation-in-png"></a> ): the most significant byte comes first, then the less significant bytes in descending
       order of significance (MSB LSB for two-byte integers, MSB B2 B1 LSB for four-byte integers). The highest bit (value 128) of a
       byte is numbered bit 7; the lowest bit (value 1) is numbered bit 0. Values are unsigned unless otherwise noted. Values
@@ -2487,7 +2470,7 @@ with these exceptions:
       these unused bits are not specified.</p>
 
       <p>PNG images that are not indexed-colour images may have sample values with a bit depth of 16. Such sample values are in
-      network byte order (MSB first, LSB second). PNG permits multi-sample pixels only with 8 and 16-bit samples, so multiple
+      <a>network byte order</a> (MSB first, LSB second). PNG permits multi-sample pixels only with 8 and 16-bit samples, so multiple
       samples of a single pixel are never packed into one byte.</p>
     </section>
     <!-- ************Page Break******************* -->
@@ -2913,7 +2896,8 @@ with these exceptions:
       <section class="introductory" id="11CcGen">
         <h3>Introduction</h3>
 
-        <p>Critical chunks are those chunks that are absolutely required in order to successfully decode a PNG image from a PNG
+        <!-- Maintain a fragment named "3criticalChunk" to preserve incoming links to it -->
+        <p>A <dfn id="3criticalChunk" class="lint-ignore">critical chunk</dfn> is a chunk that is absolutely required in order to successfully decode a PNG image from a PNG
         datastream. Extension chunks may be defined as critical chunks (see <a href="#14EditorsExt"></a>), though this practice is
         strongly discouraged.</p>
 

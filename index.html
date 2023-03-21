@@ -387,10 +387,6 @@ with these exceptions:
         <dd>
           Optional animation, consisting of a series of frames. The first frame may be, but need not be, the <a>static image</a>.
         </dd>
-        <!-- Maintain a fragment named "3bitDepth" to preserve incoming links to it -->
-
-        <dt id="3bitDepth"><dfn>bit depth</dfn>
-        </dt>
 
         <dd>
           for <a>indexed-colour</a> images, the number of bits per <a>palette</a> index. For other images, the number of bits per
@@ -704,18 +700,7 @@ with these exceptions:
         <dd>
           pass of the <a>interlaced PNG image</a> extracted from the <a>PNG image</a> by <a>pass extraction</a>.
         </dd>
-        <!-- Maintain a fragment named "3referenceImage" to preserve incoming links to it -->
 
-        <dt id="3referenceImage"><dfn>reference image</dfn>
-        </dt>
-
-        <dd>
-          rectangular array of rectangular <a>pixels</a>, each having the same number of <a>samples</a>, either three (red, green,
-          blue) or four (red, green, blue, <a>alpha</a>). Every reference image can be represented exactly by a <a>PNG
-          datastream</a> and every PNG datastream can be converted into a reference image. Each <a>channel</a> has a <a>sample
-          depth</a> in the range 1 to 16. All samples in the same channel have the same sample depth. Different channels may have
-          different sample depths.
-        </dd>
         <!-- Maintain a fragment named "3sample" to preserve incoming links to it -->
 
         <dt id="3sample"><dfn>sample</dfn>
@@ -726,13 +711,10 @@ with these exceptions:
         </dd>
         <!-- Maintain a fragment named "3sampleDepth" to preserve incoming links to it -->
 
-        <dt id="3sampleDepth"><dfn>sample depth</dfn>
-        </dt>
+        <dt id="3sampleDepth">sample depth</dt>
 
         <dd>
-          number of bits used to represent a <a>sample</a> value. In an <a>indexed-colour</a> <a>PNG image</a>, samples are stored
-          in the <a>palette</a> and thus the sample depth is always 8 by definition of the palette. In other types of PNG image it
-          is the same as the <a>bit depth</a>.
+          number of bits used to represent a <a>sample</a> value
         </dd>
         <!-- Maintain a fragment named "3scanline" to preserve incoming links to it -->
 
@@ -875,7 +857,8 @@ with these exceptions:
       <ol>
         <li>The <i>source image</i> is the image presented to a PNG encoder.</li>
 
-        <li>The <i>reference image</i>, which only exists conceptually, is a rectangular array of rectangular pixels, all having
+        <!-- Maintain a fragment named "3referenceImage" to preserve incoming links to it -->
+        <li>The <dfn id="3referenceImage">reference image</dfn>, which only exists conceptually, is a rectangular array of rectangular pixels, all having
         the same width and height, and all containing the same number of unsigned integer samples, either three (red, green, blue)
         or four (red, green, blue, alpha). The array of all samples of a particular kind (red, green, blue, or alpha) is called a
         channel. Each channel has a sample depth in the range 1 to 16, which is the number of bits used by every sample in the
@@ -886,7 +869,7 @@ with these exceptions:
         all pixels are fully opaque. (It is also possible for a four-channel reference image to have all pixels fully opaque; the
         difference is that the latter has a specific alpha sample depth, whereas the former does not.) Each horizontal row of
         pixels is called a scanline. Pixels are ordered from left to right within each scanline, and scanlines are ordered from top
-        to bottom. A PNG encoder may transform the source image directly into a PNG image, but conceptually it first transforms the
+        to bottom. Every reference image can be represented exactly by a <a>PNG datastream</a> and every <a>PNG datastream</a> can be converted into a reference image. A PNG encoder may transform the source image directly into a PNG image, but conceptually it first transforms the
         source image into a reference image, then transforms the reference image into a PNG image. Depending on the type of source
         image, the transformation from the source image to a reference image may require the loss of information. That
         transformation is beyond the scope of this International Standard. The reference image, however, can always be recovered
@@ -2995,7 +2978,8 @@ with these exceptions:
         <p>Width and height give the image dimensions in pixels. They are <a>PNG four-byte unsigned integers</a>. Zero is an
         invalid value.</p>
 
-        <p>Bit depth is a single-byte integer giving the number of bits per sample or per palette index (not per pixel). Valid
+        <!-- Maintain a fragment named "3bitDepth" to preserve incoming links to it -->
+        <p id="3bitDepth">Bit depth is a single-byte integer giving the number of bits per sample or per palette index (not per pixel). Valid
         values are 1, 2, 4, 8, and 16, although not all values are allowed for all <a>colour types</a>. See <a href=
         "#6Colour-values"></a>.</p>
 

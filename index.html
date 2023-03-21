@@ -370,25 +370,7 @@ with these exceptions:
           which the image is presented. Zero alpha represents a completely transparent pixel, maximum alpha represents a completely
           opaque pixel.
         </dd>
-        <!-- Maintain a fragment named "3alphaCompaction" to preserve incoming links to it -->
 
-        <dt><dfn id="3alphaCompaction">alpha compaction</dfn>
-        </dt>
-
-        <dd>
-          an implicit representation of transparent <a>pixels</a>. If every pixel with a specific colour or <a>greyscale</a> value
-          is fully transparent and all other pixels are fully opaque, the <a>alpha</a> <a>channel</a> may be represented
-          implicitly.
-        </dd>
-        <!-- Maintain a fragment named "3alphaSeparation" to preserve incoming links to it -->
-
-        <dt><dfn id="3alphaSeparation">alpha separation</dfn>
-        </dt>
-
-        <dd>
-          separating an <a>alpha</a> <a>channel</a> in which every <a>pixel</a> is fully opaque; all alpha values are the maximum
-          value. The fact that all pixels are fully opaque is represented implicitly.
-        </dd>
         <!-- Maintain a fragment named "3alphaTable" to preserve incoming links to it -->
 
         <dt id="3alphaTable"><dfn>alpha table</dfn>
@@ -397,16 +379,6 @@ with these exceptions:
         <dd>
           indexed table of <a>alpha</a> <a>sample</a> values, which in an <a>indexed-colour</a> image defines the alpha sample
           values of the <a>reference image</a>. The alpha table has the same number of entries as the <a>palette</a>.
-        </dd>
-        <!-- Maintain a fragment named "3ancillaryChunk" to preserve incoming links to it -->
-
-        <dt id="3ancillaryChunk"><dfn>ancillary chunk</dfn>
-        </dt>
-
-        <dd>
-          class of <a>chunk</a> that provides additional information. A <a>PNG decoder</a>, without processing an ancillary chunk,
-          can still produce a meaningful image, though not necessarily the best possible image. 
-          <!-- agreed: don't need to define a bit -->
         </dd>
 
         <dt><dfn>animated image</dfn>
@@ -499,9 +471,7 @@ with these exceptions:
         </dt>
 
         <dd>
-          sequence of <a>bytes</a>. This term is used rather than "file" to describe a byte sequence that may be only a portion of
-          a file. It is also used to emphasize that the sequence of bytes might be generated and consumed "on the fly", never
-          appearing in a stored file at all.
+          sequence of <a>bytes</a>
         </dd>
         <!-- Maintain a fragment named "3deflate" to preserve incoming links to it -->
 
@@ -671,19 +641,9 @@ with these exceptions:
         </dd>
         <!-- ************Page Break******************* -->
         <!-- ************Page Break******************* -->
-        <!-- Maintain a fragment named "3PNGdatastream" to preserve incoming links to it -->
-
-        <dt id="3PNGdatastream"><dfn>PNG datastream</dfn>
-        </dt>
-
-        <dd>
-          result of encoding a <a>PNG image</a>. A PNG <a>datastream</a> consists of a <a>PNG signature</a> followed by a sequence
-          of <a>chunks</a>.
-        </dd>
         <!-- Maintain a fragment named "3PNGdecoder" to preserve incoming links to it -->
 
-        <dt id="3PNGdecoder"><dfn>PNG decoder</dfn>
-        </dt>
+        <dt id="3PNGdecoder">PNG decoder</dt>
 
         <dd>
           process or device which reconstructs the <a>reference image</a> from a <a>PNG datastream</a> and generates a
@@ -735,15 +695,7 @@ with these exceptions:
           result of transformations applied by a <a>PNG encoder</a> to a <a>reference image</a>, in preparation for encoding as a
           <a>PNG datastream</a>, and the result of decoding a PNG datastream.
         </dd>
-        <!-- Maintain a fragment named "3PNGsignature" to preserve incoming links to it -->
 
-        <dt id="3PNGsignature"><dfn>PNG signature</dfn>
-        </dt>
-
-        <dd>
-          sequence of <a>bytes</a> appearing at the start of every <a>PNG datastream</a>. It differentiates a PNG datastream from
-          other types of <a>datastream</a> and allows early detection of some transmission errors.
-        </dd>
         <!-- Maintain a fragment named "3reducedImage" to preserve incoming links to it -->
 
         <dt id="3reducedImage"><dfn>reduced image</dfn>
@@ -1049,9 +1001,9 @@ with these exceptions:
         </figure>
       </section>
       <!-- Maintain a fragment named "4Concepts.Implied-alpha" to preserve incoming links to it -->
-
+      <!-- Maintain a fragment named "3alphaSeparation" to preserve incoming links to it -->
       <section id="4Concepts.Implied-alpha">
-        <h2>Alpha separation</h2>
+        <h2><dfn id="3alphaSeparation">Alpha separation</dfn></h2>
 
         <p>If all alpha samples in a reference image have the maximum value, then the alpha channel may be omitted, resulting in an
         equivalent image that can be encoded more compactly.</p>
@@ -1103,8 +1055,7 @@ with these exceptions:
 
       <section>
         <!-- Maintain a fragment named "4Concepts.Alpha-indexing" to preserve incoming links to it -->
-
-        <h2 id="4Concepts.Alpha-indexing">Alpha compaction</h2>
+        <h2 id="4Concepts.Alpha-indexing"><dfn id="3alphaCompaction">Alpha compaction</dfn></h2>
 
         <p>For non-indexed images, if there exists an RGB (or greyscale) value such that all pixels with that value are fully
         transparent while all other pixels are fully opaque, then the alpha channel can be represented more compactly by merely
@@ -1458,7 +1409,8 @@ with these exceptions:
           </li>
         </ol>
 
-        <p>The remaining chunk types are termed ancillary chunk types, which encoders may generate and decoders may interpret.</p>
+        <!-- Maintain a fragment named "3ancillaryChunk" to preserve incoming links to it -->
+        <p>The remaining chunk types are termed <dfn id="3ancillaryChunk">ancillary chunk</dfn> types, which encoders may generate and decoders may interpret.</p>
         <!-- <ol start="5"> -->
 
         <ol>
@@ -1722,14 +1674,21 @@ with these exceptions:
     <!-- Maintain a fragment named "5Introduction" to preserve incoming links to it -->
 
     <section id="5Introduction">
-      <h2>Introduction</h2>
+      <h2>PNG datastream</h2>
 
-      <p>The PNG datastream consists of a PNG signature followed by a sequence of chunks.</p>
+      <!-- Maintain a fragment named "3PNGdatastream" to preserve incoming links to it -->
+      <p>The <dfn id="3PNGdatastream">PNG datastream</dfn> consists of a PNG signature followed by a sequence of chunks. It
+      is the result of encoding a <a>PNG image</a>.</p>
+
+      <p class="note">The term datastream is used rather than "file" to describe a byte sequence that may be only a portion of a
+      file. It is also used to emphasize that the sequence of bytes might be generated and consumed "on the fly", never appearing in
+      a stored file at all.</p>
     </section>
     <!-- Maintain a fragment named "5PNG-file-signature" to preserve incoming links to it -->
 
     <section id="5PNG-file-signature">
-      <h2>PNG signature</h2>
+      <!-- Maintain a fragment named "3PNGsignature" to preserve incoming links to it -->
+      <h2 id="3PNGsignature">PNG signature</h2>
 
       <p>The first eight bytes of a PNG datastream always contain the following hexadecimal values:</p>
 
@@ -1740,6 +1699,9 @@ with these exceptions:
       <p>This signature indicates that the remainder of the datastream contains a single PNG image, consisting of a series of
       chunks beginning with an <a class="chunk" href="#11IHDR">IHDR</a> chunk and ending with an <a class="chunk" href=
       "#11IEND">IEND</a> chunk.</p>
+
+      <p>This signature differentiates a PNG datastream from other types of <a>datastream</a> and allows early detection of some
+      transmission errors.</p>
     </section>
     <!-- Maintain a fragment named "5Chunk-layout" to preserve incoming links to it -->
 

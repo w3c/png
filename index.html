@@ -371,16 +371,6 @@ with these exceptions:
           opaque pixel.
         </dd>
 
-        <!-- Maintain a fragment named "3alphaTable" to preserve incoming links to it -->
-
-        <dt id="3alphaTable"><dfn>alpha table</dfn>
-        </dt>
-
-        <dd>
-          indexed table of <a>alpha</a> <a>sample</a> values, which in an <a>indexed-colour</a> image defines the alpha sample
-          values of the <a>reference image</a>. The alpha table has the same number of entries as the <a>palette</a>.
-        </dd>
-
         <dt><dfn>animated image</dfn>
         </dt>
 
@@ -436,8 +426,9 @@ with these exceptions:
         </dt>
 
         <dd>to form an image by merging a foreground image and a background image, using transparency information to determine
-        where and to what extent the background should be visible. The foreground image is said to be "composited against" the
-        background.</dd>
+        where and to what extent the background should be visible.
+        <div class="note">The foreground image is said to be <i>composited</i> against the background.</div>
+        </dd>
 
         <!-- Maintain a fragment named "3datastream" to preserve incoming links to it -->
 
@@ -453,8 +444,9 @@ with these exceptions:
         </dt>
 
         <dd>
-          name of a particular compression algorithm. This algorithm is used, in compression mode 0, in conforming <a>PNG
-          datastreams</a>. Deflate is a member of the <a>LZ77</a> family of compression methods. It is defined in [[RFC1951]].
+          member of the <a>LZ77</a> family of compression methods
+
+          <p>SOURCE: [[RFC1951]]</p>
         </dd>
         <!-- ************Page Break******************* -->
         <!-- ************Page Break******************* -->
@@ -464,7 +456,7 @@ with these exceptions:
         </dt>
 
         <dd>
-          image constructed from a decoded <a>PNG datastream</a>.
+          image constructed from a decoded <a>PNG datastream</a>
         </dd>
         <!-- need a definition of frame -->
         <!-- Maintain a fragment named "3frameBuffer" to preserve incoming links to it -->
@@ -473,14 +465,15 @@ with these exceptions:
         </dt>
 
         <dd>
-          the final digital storage area for the image shown by most types of computer display. Software causes an image to appear
-          on screen by loading the image into the <a>frame buffer</a>.
+          the final digital storage area for the image shown by most types of computer display
+
+          <p class="note">Software causes an image to appear on screen by loading the image into the <a>frame buffer</a>.</p>
         </dd>
 
         <dt><dfn>fully transparent black</dfn>
         </dt>
 
-        <dd>the red, green, blue and alpha components are all set to zero.</dd>
+        <dd>when the red, green, blue and alpha components are all set to zero</dd>
 
         <dt><dfn>gamma value</dfn>
         </dt>
@@ -510,7 +503,7 @@ with these exceptions:
         <dd>
           image representation in which each <a>pixel</a> is defined by a single <a>sample</a> of colour information, representing
           overall <a>luminance</a> (on a scale from black to white), and optionally an <a>alpha</a> sample (in which case it is
-          called greyscale with alpha).
+          called greyscale with alpha)
         </dd>
         <!-- Maintain a fragment named "3imageData" to preserve incoming links to it -->
 
@@ -518,17 +511,9 @@ with these exceptions:
         </dt>
 
         <dd>
-          1-dimensional array of <a>scanlines</a> within an image.
+          1-dimensional array of <a>scanlines</a> within an image
         </dd>
-        <!-- Maintain a fragment named "3indexedColour" to preserve incoming links to it -->
 
-        <dt id="3indexedColour"><dfn>indexed-colour</dfn>
-        </dt>
-
-        <dd>
-          image representation in which each <a>pixel</a> of the original image is represented by a single index into a
-          <a>palette</a>. The selected palette entry defines the actual colour of the pixel.
-        </dd>
         <!-- Maintain a fragment named "3interlacedPNGimage" to preserve incoming links to it -->
 
         <dt id="3interlacedPNGimage"><dfn>interlaced PNG image</dfn>
@@ -583,18 +568,7 @@ with these exceptions:
           <a>composited</a> onto the <a>canvas</a>. The contents of the output buffer are available to the decoder. The corners of
           the output buffer are mapped to the corners of the <a>canvas</a>.
         </dd>
-        <!-- Maintain a fragment named "3palette" to preserve incoming links to it -->
 
-        <dt id="3palette"><dfn>palette</dfn>
-        </dt>
-
-        <dd>
-          indexed table of three 8-bit <a>sample</a> values, red, green, and blue, which with an <a>indexed-colour</a> image
-          defines the red, green, and blue sample values of the <a>reference image</a>. In other cases, the palette may be a
-          suggested palette that viewers may use to present the image on indexed-colour display hardware. <a>Alpha</a> samples may
-          be defined for palette entries via the <a>alpha table</a> and may be used to reconstruct the alpha sample values of the
-          reference image.
-        </dd>
         <!-- Maintain a fragment named "3passExtraction" to preserve incoming links to it -->
 
         <dt id="3passExtraction"><dfn>pass extraction</dfn>
@@ -740,7 +714,7 @@ with these exceptions:
         <dd>
           <p><a>deflate</a>-style compression method.</p>
 
-          <p class="note">The format is defined in [[rfc1950]].</p>
+          <p>SOURCE: [[rfc1950]]</p>
 
           <p class="note">Also refers to the name of a library containing a sample implementation of this method.</p>
         </dd>
@@ -975,12 +949,15 @@ with these exceptions:
         <h2>Indexing</h2>
 
         <p>If the number of distinct pixel values is 256 or less, and the RGB sample depths are not greater than 8, and the alpha
-        channel is absent or exactly 8 bits deep or every pixel is either fully transparent or fully opaque, then an alternative
-        representation called indexed-colour may be more efficient for encoding. 
+        channel is absent or exactly 8 bits deep or every pixel is either fully transparent or fully opaque, then the alternative
+        <a>indexed-colour</a> representation, achieved through an <dfn id="3indexing">indexing</dfn> transformation, may be more efficient for encoding.
         <!-- Maintain a fragment named "3indexing" to preserve incoming links to it -->
-         In the <dfn id="3indexing">indexing</dfn> transformation, each pixel is replaced by an index into a palette. The palette
+        <!-- Maintain a fragment named "3palette" to preserve incoming links to it -->
+        <!-- Maintain a fragment named "3alphaTable" to preserve incoming links to it -->
+        <!-- Maintain a fragment named "3indexedColour" to preserve incoming links to it -->
+        In the <dfn id="3indexedColour">indexed-colour</dfn> representation, each pixel is replaced by an index into a palette. The <dfn id="3palette">palette</dfn>
         is a list of entries each containing three 8-bit samples (red, green, blue). If an alpha channel is present, there is also
-        a parallel table of 8-bit alpha samples.</p>
+        a parallel table of 8-bit alpha samples, called the <dfn id="3alphaTable">alpha table</dfn>.</p>
         <!-- ************Page Break******************* -->
         <!-- ************Page Break******************* -->
 
@@ -1124,7 +1101,7 @@ with these exceptions:
         <h3>Introduction</h3>
 
         <p>A conceptual model of the process of encoding a PNG image is given in <a href="#encoding-png-image"></a>. The steps
-        refer to the operations on the array of pixels or indices in the PNG image. The palette and alpha table are not encoded in
+        refer to the operations on the array of pixels or indices in the PNG image. The <a>palette</a> and <a>alpha table</a> are not encoded in
         this way.</p>
         <!-- <ol start="1"> -->
 

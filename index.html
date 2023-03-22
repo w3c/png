@@ -352,318 +352,295 @@ with these exceptions:
 
     <h2 id="3Defsandabbrevs">Terms, definitions, and abbreviated terms</h2>
 
-    <section>
-      <!-- Maintain a fragment named "3Definitions" to preserve incoming links to it -->
+    <p>For the purposes of this specification the following definitions apply.</p>
 
-      <h2 id="3Definitions">Definitions</h2>
+    <dl>
 
-      <p>For the purposes of this specification the following definitions apply.</p>
+      <!-- Maintain a fragment named "3byte" to preserve incoming links to it -->
 
-      <dl>
+      <dt id="3byte"><dfn>byte</dfn>
+      </dt>
+      <dt>octet</dt>
 
-        <!-- Maintain a fragment named "3byte" to preserve incoming links to it -->
+      <dd>8-bit binary integer in the range [0, 255] where the most significant bit is bit 7 and the least significant
+      bit is bit 0</dd>
+      <!-- Maintain a fragment named "3byteOrder" to preserve incoming links to it -->
 
-        <dt id="3byte"><dfn>byte</dfn>
-        </dt>
-        <dt>octet</dt>
+      <dt id="3byteOrder"><dfn>byte order</dfn>
+      </dt>
 
-        <dd>8-bit binary integer in the range [0, 255] where the most significant bit is bit 7 and the least significant
-        bit is bit 0</dd>
-        <!-- Maintain a fragment named "3byteOrder" to preserve incoming links to it -->
+      <dd>
+        ordering of <a>bytes</a> for multi-byte data values
+      </dd>
 
-        <dt id="3byteOrder"><dfn>byte order</dfn>
-        </dt>
+      <!-- Maintain a fragment named "3chromaticity" to preserve incoming links to it -->
 
-        <dd>
-          ordering of <a>bytes</a> for multi-byte data values
-        </dd>
+      <dt id="3chromaticity"><dfn>chromaticity</dfn>
+      </dt>
 
-        <!-- Maintain a fragment named "3chromaticity" to preserve incoming links to it -->
+      <dd>pair of <i>x</i> and <i>y</i> values in the <i>xyY</i> space specified at [[COLORIMETRY]]
 
-        <dt id="3chromaticity"><dfn>chromaticity</dfn>
-        </dt>
+      <p class="note">Chromaticity is a measure of the quality of a color regardless of its luminance.</p></dd>
 
-        <dd>pair of <i>x</i> and <i>y</i> values in the <i>xyY</i> space specified at [[COLORIMETRY]]
+      <!-- Maintain a fragment named "3composite" to preserve incoming links to it -->
 
-        <p class="note">Chromaticity is a measure of the quality of a color regardless of its luminance.</p></dd>
+      <dt id="3composite"><dfn data-lt="composited|composite">composite (verb)</dfn>
+      </dt>
 
-        <!-- Maintain a fragment named "3composite" to preserve incoming links to it -->
+      <dd>form an image by merging a foreground image and a background image, using transparency information to determine
+      where and to what extent the background should be visible
+      <div class="note">The foreground image is said to be <a>composited</a> against the background.</div>
+      </dd>
 
-        <dt id="3composite"><dfn data-lt="composited|composite">composite (verb)</dfn>
-        </dt>
+      <!-- Maintain a fragment named "3datastream" to preserve incoming links to it -->
 
-        <dd>form an image by merging a foreground image and a background image, using transparency information to determine
-        where and to what extent the background should be visible.
-        <div class="note">The foreground image is said to be <a>composited</a> against the background.</div>
-        </dd>
+      <dt id="3datastream"><dfn>datastream</dfn>
+      </dt>
 
-        <!-- Maintain a fragment named "3datastream" to preserve incoming links to it -->
+      <dd>
+        sequence of <a>bytes</a>
+      </dd>
+      <!-- Maintain a fragment named "3deflate" to preserve incoming links to it -->
 
-        <dt id="3datastream"><dfn>datastream</dfn>
-        </dt>
+      <dt id="3deflate"><dfn>deflate</dfn>
+      </dt>
 
-        <dd>
-          sequence of <a>bytes</a>
-        </dd>
-        <!-- Maintain a fragment named "3deflate" to preserve incoming links to it -->
+      <dd>
+        member of the <a>LZ77</a> family of compression methods
 
-        <dt id="3deflate"><dfn>deflate</dfn>
-        </dt>
+        <p>SOURCE: [[RFC1951]]</p>
+      </dd>
+      <!-- ************Page Break******************* -->
+      <!-- ************Page Break******************* -->
 
-        <dd>
-          member of the <a>LZ77</a> family of compression methods
+      <!-- need a definition of frame -->
+      <!-- Maintain a fragment named "3frameBuffer" to preserve incoming links to it -->
 
-          <p>SOURCE: [[RFC1951]]</p>
-        </dd>
-        <!-- ************Page Break******************* -->
-        <!-- ************Page Break******************* -->
+      <dt id="3frameBuffer"><dfn>frame buffer</dfn>
+      </dt>
 
-        <!-- need a definition of frame -->
-        <!-- Maintain a fragment named "3frameBuffer" to preserve incoming links to it -->
+      <dd>
+        the final digital storage area for the image shown by most types of computer display
 
-        <dt id="3frameBuffer"><dfn>frame buffer</dfn>
-        </dt>
+        <p class="note">Software causes an image to appear on screen by loading the image into the <a>frame buffer</a>.</p>
+      </dd>
 
-        <dd>
-          the final digital storage area for the image shown by most types of computer display
+      <dt><dfn>fully transparent black</dfn>
+      </dt>
 
-          <p class="note">Software causes an image to appear on screen by loading the image into the <a>frame buffer</a>.</p>
-        </dd>
+      <dd>pixel where the red, green, blue and alpha components are all equal to zero</dd>
 
-        <dt><dfn>fully transparent black</dfn>
-        </dt>
+      <dt><dfn>gamma value</dfn>
+      </dt>
 
-        <dd>pixel where the red, green, blue and alpha components are all equal to zero</dd>
+      <dd>
+        value of the exponent of a <a>gamma</a> <a>transfer function</a>
+      </dd>
+      <!-- Maintain a fragment named "3gamma" to preserve incoming links to it -->
 
-        <dt><dfn>gamma value</dfn>
-        </dt>
+      <dt id="3gamma"><dfn>gamma</dfn>
+      </dt>
 
-        <dd>
-          value of the exponent of a <a>gamma</a> <a>transfer function</a>
-        </dd>
-        <!-- Maintain a fragment named "3gamma" to preserve incoming links to it -->
+      <dd>
+        power-law <a>transfer function</a>
+      </dd>
 
-        <dt id="3gamma"><dfn>gamma</dfn>
-        </dt>
+      <dt><dfn>full-range image</dfn>
+      </dt>
 
-        <dd>
-          power-law <a>transfer function</a>
-        </dd>
+      <dd>image where reference black and white correspond, respectively. to sample values <code>0</code> and <code>2<sup>bit depth</sup> -
+      1</code></dd>
 
-        <dt><dfn>full-range image</dfn>
-        </dt>
+      <!-- Maintain a fragment named "3imageData" to preserve incoming links to it -->
 
-        <dd>image where reference black and white correspond, respectively. to sample values <code>0</code> and <code>2<sup>bit depth</sup> -
-        1</code></dd>
+      <dt id="3imageData"><dfn>image data</dfn>
+      </dt>
 
-        <!-- Maintain a fragment named "3imageData" to preserve incoming links to it -->
+      <dd>
+        1-dimensional array of <a>scanlines</a> within an image
+      </dd>
 
-        <dt id="3imageData"><dfn>image data</dfn>
-        </dt>
+      <!-- Maintain a fragment named "3interlacedPNGimage" to preserve incoming links to it -->
 
-        <dd>
-          1-dimensional array of <a>scanlines</a> within an image
-        </dd>
+      <dt id="3interlacedPNGimage"><dfn>interlaced PNG image</dfn>
+      </dt>
 
-        <!-- Maintain a fragment named "3interlacedPNGimage" to preserve incoming links to it -->
+      <dd>
+        sequence of <a>reduced images</a> generated from the <a>PNG image</a> by <a>pass extraction</a>
+      </dd>
+      <!-- Maintain a fragment named "3losslessCompression" to preserve incoming links to it -->
 
-        <dt id="3interlacedPNGimage"><dfn>interlaced PNG image</dfn>
-        </dt>
+      <dt id="3losslessCompression"><dfn>lossless</dfn>
+      </dt>
 
-        <dd>
-          sequence of <a>reduced images</a> generated from the <a>PNG image</a> by <a>pass extraction</a>
-        </dd>
-        <!-- Maintain a fragment named "3losslessCompression" to preserve incoming links to it -->
+      <dd>method of data compression that permits reconstruction of the original data exactly, bit-for-bit</dd>
+      <!-- Maintain a fragment named "3luminance" to preserve incoming links to it -->
 
-        <dt id="3losslessCompression"><dfn>lossless</dfn>
-        </dt>
+      <dt id="3luminance"><dfn>luminance</dfn>
+      </dt>
 
-        <dd>method of data compression that permits reconstruction of the original data exactly, bit-for-bit</dd>
-        <!-- Maintain a fragment named "3luminance" to preserve incoming links to it -->
+      <dd>
+        perceived brightness of a colour
 
-        <dt id="3luminance"><dfn>luminance</dfn>
-        </dt>
+        <p class="note">Luminance and <a>chromaticity</a> together fully define a perceived colour. A formal definition of
+        luminance is found at [[COLORIMETRY]].</p>
+      </dd>
+      <!-- Maintain a fragment named "3LZ77" to preserve incoming links to it -->
 
-        <dd>
-          perceived brightness of a colour
+      <dt><dfn id="3LZ77">LZ77</dfn>
+      </dt>
 
-          <p class="note">Luminance and <a>chromaticity</a> together fully define a perceived colour. A formal definition of
-          luminance is found at [[COLORIMETRY]].</p>
-        </dd>
-        <!-- Maintain a fragment named "3LZ77" to preserve incoming links to it -->
+      <dd>data compression algorithm described in [[Ziv-Lempel]].</dd>
 
-        <dt><dfn id="3LZ77">LZ77</dfn>
-        </dt>
+      <dt><dfn>narrow-range image</dfn>
+      </dt>
 
-        <dd>data compression algorithm described in [[Ziv-Lempel]].</dd>
+      <dd>Image where reference black and white do not correspond, respectively, to sample values <code>0</code> and
+      <code>2<sup>bit depth</sup> - 1</code></dd>
+      <!-- Maintain a fragment named "3networkByteOrder" to preserve incoming links to it -->
 
-        <dt><dfn>narrow-range image</dfn>
-        </dt>
+      <dt id="3networkByteOrder"><dfn>network byte order</dfn>
+      </dt>
 
-        <dd>Image where reference black and white do not correspond, respectively, to sample values <code>0</code> and
-        <code>2<sup>bit depth</sup> - 1</code></dd>
-        <!-- Maintain a fragment named "3networkByteOrder" to preserve incoming links to it -->
+      <dd>
+        <a>byte order</a> in which the most significant byte comes first, then the less significant bytes in descending order of
+        significance (<a>MSB</a> <a>LSB</a> for two-byte integers, <a>MSB</a> B2 B1 <a>LSB</a> for four-byte integers)
+      </dd>
 
-        <dt id="3networkByteOrder"><dfn>network byte order</dfn>
-        </dt>
+      <!-- ************Page Break******************* -->
+      <!-- ************Page Break******************* -->
+      <!-- Maintain a fragment named "3PNGdecoder" to preserve incoming links to it -->
 
-        <dd>
-          <a>byte order</a> in which the most significant byte comes first, then the less significant bytes in descending order of
-          significance (<a>MSB</a> <a>LSB</a> for two-byte integers, <a>MSB</a> B2 B1 <a>LSB</a> for four-byte integers)
-        </dd>
+      <dt id="3PNGdecoder">PNG decoder</dt>
 
-        <!-- ************Page Break******************* -->
-        <!-- ************Page Break******************* -->
-        <!-- Maintain a fragment named "3PNGdecoder" to preserve incoming links to it -->
+      <dd>
+        process or device that reconstructs the <a>reference image</a> from a <a>PNG datastream</a> and generates a
+        corresponding <a>delivered image</a>
+      </dd>
+      <!-- Maintain a fragment named "3PNGeditor" to preserve incoming links to it -->
 
-        <dt id="3PNGdecoder">PNG decoder</dt>
+      <dt id="3PNGeditor"><dfn>PNG editor</dfn>
+      </dt>
 
-        <dd>
-          process or device that reconstructs the <a>reference image</a> from a <a>PNG datastream</a> and generates a
-          corresponding <a>delivered image</a>
-        </dd>
-        <!-- Maintain a fragment named "3PNGeditor" to preserve incoming links to it -->
+      <dd>
+        process or device that creates a modification of an existing <a>PNG datastream</a>, preserving unmodified ancillary
+        information wherever possible, and obeying the <a>chunk</a> ordering rules, even for unknown chunk types
+      </dd>
+      <!-- Maintain a fragment named "3PNGencoder" to preserve incoming links to it -->
 
-        <dt id="3PNGeditor"><dfn>PNG editor</dfn>
-        </dt>
+      <dt id="3PNGencoder">PNG encoder
+      </dt>
 
-        <dd>
-          process or device that creates a modification of an existing <a>PNG datastream</a>, preserving unmodified ancillary
-          information wherever possible, and obeying the <a>chunk</a> ordering rules, even for unknown chunk types
-        </dd>
-        <!-- Maintain a fragment named "3PNGencoder" to preserve incoming links to it -->
+      <dd>
+        process or device which constructs a <a>reference image</a> from a <a>source image</a>, and generates a <a>PNG
+        datastream</a> representing the reference image
+      </dd>
+      <!-- Maintain a fragment named "3PNGfile" to preserve incoming links to it -->
 
-        <dt id="3PNGencoder">PNG encoder
-        </dt>
+      <dt id="3PNGfile">PNG file
+      </dt>
 
-        <dd>
-          process or device which constructs a <a>reference image</a> from a <a>source image</a>, and generates a <a>PNG
-          datastream</a> representing the reference image
-        </dd>
-        <!-- Maintain a fragment named "3PNGfile" to preserve incoming links to it -->
+      <dd>
+        <a>PNG datastream</a> stored as a file
+      </dd>
+      <!-- Maintain a fragment named "3PNGfourByteUnSignedInteger" to preserve incoming links to it -->
 
-        <dt id="3PNGfile">PNG file
-        </dt>
+      <dt id="3PNGfourByteUnSignedInteger"><dfn>PNG four-byte unsigned integer</dfn>
+      </dt>
 
-        <dd>
-          <a>PNG datastream</a> stored as a file
-        </dd>
-        <!-- Maintain a fragment named "3PNGfourByteUnSignedInteger" to preserve incoming links to it -->
+      <dd>
+        <p>a four-byte unsigned integer limited to the range 0 to 2<sup>31</sup>-1.</p>
 
-        <dt id="3PNGfourByteUnSignedInteger"><dfn>PNG four-byte unsigned integer</dfn>
-        </dt>
+        <p class="note">The restriction is imposed in order to accommodate languages that have difficulty with unsigned four-byte
+        values.</p>
+      </dd>
+      <!-- Maintain a fragment named "3sample" to preserve incoming links to it -->
 
-        <dd>
-          <p>a four-byte unsigned integer limited to the range 0 to 2<sup>31</sup>-1.</p>
+      <dt id="3sample"><dfn>sample</dfn>
+      </dt>
 
-          <p class="note">The restriction is imposed in order to accommodate languages that have difficulty with unsigned four-byte
-          values.</p>
-        </dd>
-        <!-- Maintain a fragment named "3sample" to preserve incoming links to it -->
+      <dd>
+        intersection of a <a>channel</a> and a <a>pixel</a> in an image
+      </dd>
+      <!-- Maintain a fragment named "3sampleDepth" to preserve incoming links to it -->
 
-        <dt id="3sample"><dfn>sample</dfn>
-        </dt>
+      <dt id="3sampleDepth">sample depth</dt>
 
-        <dd>
-          intersection of a <a>channel</a> and a <a>pixel</a> in an image
-        </dd>
-        <!-- Maintain a fragment named "3sampleDepth" to preserve incoming links to it -->
+      <dd>
+        number of bits used to represent a <a>sample</a> value
+      </dd>
+      <!-- Maintain a fragment named "3scanline" to preserve incoming links to it -->
 
-        <dt id="3sampleDepth">sample depth</dt>
+      <dt id="3scanline"><dfn>scanline</dfn>
+      </dt>
 
-        <dd>
-          number of bits used to represent a <a>sample</a> value
-        </dd>
-        <!-- Maintain a fragment named "3scanline" to preserve incoming links to it -->
+      <dd>
+        row of <a>pixels</a> within an image or <a>interlaced PNG image</a>.
+      </dd>
 
-        <dt id="3scanline"><dfn>scanline</dfn>
-        </dt>
+      <dt><dfn>transfer function</dfn>
+      </dt>
 
-        <dd>
-          row of <a>pixels</a> within an image or <a>interlaced PNG image</a>.
-        </dd>
+      <dd>function relating image luminance with image samples</dd>
+      <!-- Maintain a fragment named "3whitePoint" to preserve incoming links to it -->
 
-        <dt><dfn>transfer function</dfn>
-        </dt>
+      <dt id="3whitePoint"><dfn>white point</dfn>
+      </dt>
 
-        <dd>function relating image luminance with image samples</dd>
-        <!-- Maintain a fragment named "3whitePoint" to preserve incoming links to it -->
+      <dd>
+        <a>chromaticity</a> of a computer display's nominal white value.
+      </dd>
+      <!-- Maintain a fragment named "3zlib" to preserve incoming links to it -->
 
-        <dt id="3whitePoint"><dfn>white point</dfn>
-        </dt>
+      <dt id="3zlib"><dfn>zlib</dfn>
+      </dt>
 
-        <dd>
-          <a>chromaticity</a> of a computer display's nominal white value.
-        </dd>
-        <!-- Maintain a fragment named "3zlib" to preserve incoming links to it -->
+      <dd>
+        <p><a>deflate</a>-style compression method.</p>
 
-        <dt id="3zlib"><dfn>zlib</dfn>
-        </dt>
+        <p>SOURCE: [[rfc1950]]</p>
 
-        <dd>
-          <p><a>deflate</a>-style compression method.</p>
+        <p class="note">Also refers to the name of a library containing a sample implementation of this method.</p>
+      </dd>
 
-          <p>SOURCE: [[rfc1950]]</p>
 
-          <p class="note">Also refers to the name of a library containing a sample implementation of this method.</p>
-        </dd>
-      </dl>
-    </section>
-    <!-- ************Page Break******************* -->
-    <!-- ************Page Break******************* -->
+      <dt>Cyclic Redundancy Code</dt>
+      <!-- Maintain a fragment named "3CRC" to preserve incoming links to it -->
+      <dt id="3CRC"><dfn>CRC</dfn>
+      </dt>
 
-    <section>
-      <!-- Maintain a fragment named "3Abbreviations" to preserve incoming links to it -->
+      <dd>
+        <p>type of check value designed to detect most transmission errors.</p>
 
-      <h2 id="3Abbreviations">Abbreviated terms</h2>
+        <p class="note">A decoder calculates the CRC for the received data and checks by comparing it to the CRC calculated by
+        the encoder and appended to the data. A mismatch indicates that the data or the CRC were corrupted in transit.</p>
+      </dd>
+      <!-- Maintain a fragment named "3CRT" to preserve incoming links to it -->
 
-      <dl>
-        <dt><dfn>APNG</dfn>
-        </dt>
+      <dt>Cathode Ray Tube</dt>
+      <dt id="3CRT"><dfn>CRT</dfn>
+      </dt>
 
-        <dd>
-          Animated PNG, a type of PNG which — in addition to a <a>static image</a> — also contains an <a>animated image</a>.
-        </dd>
+      <dd>vacuum tube containing one or more electron guns, which emit electron beams that are manipulated to display images on a
+      phosphorescent screen.</dd>
+      <!-- Maintain a fragment named "3LSB" to preserve incoming links to it -->
 
-        <dt>Cyclic Redundancy Code</dt>
-        <!-- Maintain a fragment named "3CRC" to preserve incoming links to it -->
+      <dt>Least Significant Byte</dt>
+      <dt id="3LSB"><dfn>LSB</dfn>
+      </dt>
 
-        <dt id="3CRC"><dfn>CRC</dfn>
-        </dt>
+      <dd>
+        Least significant byte of a multi-<a>byte</a> value.
+      </dd>
+      <!-- Maintain a fragment named "3MSB" to preserve incoming links to it -->
+      <dt>Most Significant Byte</dt>
+      <dt id="3MSB"><dfn>MSB</dfn>
+      </dt>
 
-        <dd>
-          <p>type of check value designed to detect most transmission errors.</p>
-
-          <p class="note">A decoder calculates the CRC for the received data and checks by comparing it to the CRC calculated by
-          the encoder and appended to the data. A mismatch indicates that the data or the CRC were corrupted in transit.</p>
-        </dd>
-        <!-- Maintain a fragment named "3CRT" to preserve incoming links to it -->
-
-        <dt>Cathode Ray Tube</dt>
-
-        <dt id="3CRT"><dfn>CRT</dfn>
-        </dt>
-
-        <dd>vacuum tube containing one or more electron guns, which emit electron beams that are manipulated to display images on a
-        phosphorescent screen.</dd>
-        <!-- Maintain a fragment named "3LSB" to preserve incoming links to it -->
-
-        <dt id="3LSB"><dfn>LSB</dfn>
-        </dt>
-
-        <dd>
-          Least Significant Byte of a multi-<a>byte</a> value.
-        </dd>
-        <!-- Maintain a fragment named "3MSB" to preserve incoming links to it -->
-
-        <dt id="3MSB"><dfn>MSB</dfn>
-        </dt>
-
-        <dd>
-          Most Significant Byte of a multi-<a>byte</a> value.
-        </dd>
-      </dl>
-    </section>
+      <dd>
+        Most significant byte of a multi-<a>byte</a> value
+      </dd>
+    </dl>
   </section>
   <!-- ************Page Break******************* -->
   <!-- ************Page Break******************* -->
@@ -678,9 +655,10 @@ with these exceptions:
 
       <p>All PNG images contain a single <dfn>static image</dfn>.</p>
 
-      <p>Some PNG images — called <a>APNG</a> for Animated PNG — also contain a frame-based animation sequence, the <dfn>animated
-      image</dfn>. The first frame of this may be — but need not be — the <a>static image</a>. Mon animation-capable displays (such as
-      printers) will display the <a>static image</a> rather than the animation sequence.</p>
+      <p>Some PNG images — called <dfn class="lint-ignore">Animated PNG</dfn> (<abbr title="Animated PNG">APNG</abbr>) — also
+      contain a frame-based animation sequence, the <dfn>animated image</dfn>. The first frame of this may be — but need not be —
+      the <a>static image</a>. Mon animation-capable displays (such as printers) will display the <a>static image</a> rather than
+      the animation sequence.</p>
 
       <p>The <a>static image</a>, and each individual frame of an <a>animated image</a>, corresponds to a <em>reference image</em>
       and is stored as a <em>PNG image</em>.</p>
@@ -7367,7 +7345,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
     <ul>
       <!-- to 5 Apr 2022 -->
 
-      <li>The three previously defined, but unofficial, chunks for <a>APNG</a> have been added. This brings the PNG specification
+      <li>The three previously defined, but unofficial, chunks for APNG have been added. This brings the PNG specification
       into alignment with widely deployed industry practice.
       </li>
 

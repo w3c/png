@@ -377,14 +377,6 @@ with these exceptions:
           ordering of <a>bytes</a> for multi-byte data values
         </dd>
 
-        <dt><dfn>canvas</dfn>
-        </dt>
-        <dd>
-          the area on the output device on which the frames are to be displayed. The contents of the canvas are not necessarily
-          available to the decoder. If a <a class="chunk" href="#11bKGD">bKGD</a> chunk exists, it may be used to fill the canvas
-          if there is no preferable background
-        </dd>
-
         <!-- Maintain a fragment named "3chromaticity" to preserve incoming links to it -->
 
         <dt id="3chromaticity"><dfn>chromaticity</dfn>
@@ -1523,6 +1515,14 @@ with these exceptions:
         class= "chunk" href="#11IHDR">IHDR</a> chunk. Conceptually, each frame is constructed in the output buffer before being
         <a>composited</a> onto the <a>canvas</a>. The contents of the output buffer are available to the decoder. The corners of
         the output buffer are mapped to the corners of the <a>canvas</a>.</p>
+      </section>
+
+      <section id="apng-canvas">
+        <h3>Canvas</dfn>
+
+        <p>The <dfn>canvas</dfn> is the area on the output device on which the frames are to be displayed. The contents of the
+        canvas are not necessarily available to the decoder. If a <a class="chunk" href="#11bKGD">bKGD</a> chunk exists, it may be
+        used to fill the canvas if there is no preferable background.</p>
       </section>
 
     </section>

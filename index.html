@@ -514,7 +514,7 @@ with these exceptions:
         </dt>
 
         <dd>Image where reference black and white do not correspond to sample values <code>0</code> and <code>2<sup>bit depth</sup>
-        - 1</code>, respectively.</dd>
+        - 1</code>, respectively</dd>
         <!-- Maintain a fragment named "3networkByteOrder" to preserve incoming links to it -->
 
         <dt id="3networkByteOrder"><dfn>network byte order</dfn>
@@ -522,17 +522,7 @@ with these exceptions:
 
         <dd>
           <a>byte order</a> in which the most significant byte comes first, then the less significant bytes in descending order of
-          significance (<a>MSB</a> <a>LSB</a> for two-byte integers, <a>MSB</a> B2 B1 <a>LSB</a> for four-byte integers).
-        </dd>
-
-        <dt><dfn>output buffer</dfn>
-        </dt>
-
-        <dd>
-          The output buffer is a pixel array with dimensions specified by the width and height parameters of the PNG <a class=
-          "chunk" href="#11IHDR">IHDR</a> chunk. Conceptually, each frame is constructed in the output buffer before being
-          <a>composited</a> onto the <a>canvas</a>. The contents of the output buffer are available to the decoder. The corners of
-          the output buffer are mapped to the corners of the <a>canvas</a>.
+          significance (<a>MSB</a> <a>LSB</a> for two-byte integers, <a>MSB</a> B2 B1 <a>LSB</a> for four-byte integers)
         </dd>
 
         <!-- Maintain a fragment named "3passExtraction" to preserve incoming links to it -->
@@ -1525,6 +1515,16 @@ with these exceptions:
           </tr>
         </table>
       </section>
+
+      <section id="apng-output-buffer">
+        <h3>Output buffer</dfn>
+
+        <p>The <dfn>output buffer</dfn> is a pixel array with dimensions specified by the width and height parameters of the PNG <a
+        class= "chunk" href="#11IHDR">IHDR</a> chunk. Conceptually, each frame is constructed in the output buffer before being
+        <a>composited</a> onto the <a>canvas</a>. The contents of the output buffer are available to the decoder. The corners of
+        the output buffer are mapped to the corners of the <a>canvas</a>.</p>
+      </section>
+
     </section>
     <!-- Maintain a fragment named "4Concepts.Errors" to preserve incoming links to it -->
 

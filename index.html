@@ -519,16 +519,6 @@ with these exceptions:
           significance (<a>MSB</a> <a>LSB</a> for two-byte integers, <a>MSB</a> B2 B1 <a>LSB</a> for four-byte integers)
         </dd>
 
-        <!-- Maintain a fragment named "3passExtraction" to preserve incoming links to it -->
-
-        <dt id="3passExtraction"><dfn>pass extraction</dfn>
-        </dt>
-
-        <dd>
-          organizing a <a>PNG image</a> as a sequence of <a>reduced images</a> to change the order of transmission and enable
-          progressive display
-        </dd>
-
         <!-- ************Page Break******************* -->
         <!-- ************Page Break******************* -->
         <!-- Maintain a fragment named "3PNGdecoder" to preserve incoming links to it -->
@@ -1060,7 +1050,8 @@ with these exceptions:
       <section id="4Concepts.EncodingPassAbs">
         <h2>Pass extraction</h2>
         <!-- Maintain a fragment named "3reducedImage" to preserve incoming links to it -->
-        <p>Pass extraction (see <a href="#encoding-png-image"></a>) splits a PNG image into a sequence of <dfn id="3reducedImage">reduced images</dfn> where the
+        <!-- Maintain a fragment named "3passExtraction" to preserve incoming links to it -->
+        <p><dfn id="3passExtraction">Pass extraction</dfn> (see <a href="#encoding-png-image"></a>) splits a PNG image into a sequence of <dfn id="3reducedImage">reduced images</dfn> where the
         first image defines a coarse view and subsequent images enhance this coarse view until the last image completes the PNG
         image. The set of reduced images is also called an interlaced PNG image. Two interlace methods are defined in this
         specification. The first method is a null method; pixels are stored sequentially from left to right and scanlines from top

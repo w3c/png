@@ -417,14 +417,7 @@ with these exceptions:
         </dd>
         <!-- ************Page Break******************* -->
         <!-- ************Page Break******************* -->
-        <!-- Maintain a fragment named "3deliveredImage" to preserve incoming links to it -->
 
-        <dt id="3deliveredImage"><dfn>delivered image</dfn>
-        </dt>
-
-        <dd>
-          image constructed from a decoded <a>PNG datastream</a>
-        </dd>
         <!-- need a definition of frame -->
         <!-- Maintain a fragment named "3frameBuffer" to preserve incoming links to it -->
 
@@ -566,16 +559,6 @@ with these exceptions:
           <p class="note">The restriction is imposed in order to accommodate languages that have difficulty with unsigned four-byte
           values.</p>
         </dd>
-        <!-- Maintain a fragment named "3PNGimage" to preserve incoming links to it -->
-
-        <dt id="3PNGimage"><dfn>PNG image</dfn>
-        </dt>
-
-        <dd>
-          result of transformations applied by a <a>PNG encoder</a> to a <a>reference image</a>, in preparation for encoding as a
-          <a>PNG datastream</a>, and the result of decoding a PNG datastream
-        </dd>
-
         <!-- Maintain a fragment named "3sample" to preserve incoming links to it -->
 
         <dt id="3sample"><dfn>sample</dfn>
@@ -598,14 +581,6 @@ with these exceptions:
 
         <dd>
           row of <a>pixels</a> within an image or <a>interlaced PNG image</a>.
-        </dd>
-        <!-- Maintain a fragment named "3sourceImage" to preserve incoming links to it -->
-
-        <dt id="3sourceImage"><dfn>source image</dfn>
-        </dt>
-
-        <dd>
-          image which is presented to a <a>PNG encoder</a>.
         </dd>
 
         <dt><dfn>transfer function</dfn>
@@ -723,12 +698,15 @@ with these exceptions:
       form in which an image is presented to an encoder or delivered by a decoder is not specified. Four kinds of image are
       distinguished.</p>
 
-      <ol>
-        <li>The <i>source image</i> is the image presented to a PNG encoder.</li>
+      <dl>
+        <!-- Maintain a fragment named "3sourceImage" to preserve incoming links to it -->
+        <dt><dfn id="3sourceImage">Source image</dfn></dt>
+        <dd>The <i>source image</i> is the image presented to a PNG encoder.</dd>
 
         <!-- Maintain a fragment named "3referenceImage" to preserve incoming links to it -->
         <!-- Maintain a fragment named "3pixel" to preserve incoming links to it -->
-        <li>The <dfn id="3referenceImage">reference image</dfn>, which only exists conceptually, is a rectangular array of rectangular <dfn id="3pixel">pixels</dfn>, all having
+        <dt><dfn id="3referenceImage">Reference image</dfn></dt>
+        <dd>The <a>reference image</a>, which only exists conceptually, is a rectangular array of rectangular <dfn id="3pixel">pixels</dfn>, all having
         the same width and height, and all containing the same number of unsigned integer samples, either three (red, green, blue)
         or four (red, green, blue, alpha). The array of all samples of a particular kind (red, green, blue, or alpha) is called a
         <!-- Maintain a fragment named "3channel" to preserve incoming links to it -->
@@ -745,9 +723,11 @@ with these exceptions:
         source image into a reference image, then transforms the reference image into a PNG image. Depending on the type of source
         image, the transformation from the source image to a reference image may require the loss of information. That
         transformation is beyond the scope of this International Standard. The reference image, however, can always be recovered
-        exactly from a PNG datastream.</li>
+        exactly from a PNG datastream.</dd>
 
-        <li>The <i>PNG image</i> is obtained from the reference image by a series of transformations: alpha separation,
+        <!-- Maintain a fragment named "3PNGimage" to preserve incoming links to it -->
+        <dt><dfn id="3PNGimage">PNG image</dfn></dt>
+        <dd>The <i>PNG image</i> is obtained from the reference image by a series of transformations: alpha separation,
         <a>indexing</a>, <a>RGB merging</a>, alpha compaction, and <a>sample depth scaling</a>. Five types of PNG image are defined
         (see <a href="#6Colour-values"></a>). (If the PNG encoder actually transforms the source image directly into the PNG image,
         and the source image format is already similar to the PNG image format, the encoder may be able to avoid doing some of
@@ -755,13 +735,15 @@ with these exceptions:
         the number of significant bits in each channel of the reference image may be recorded. All channels in the PNG image have
         the same sample depth. A PNG encoder generates a PNG datastream from the PNG image. A PNG decoder takes the PNG datastream
         and recreates the PNG image.
-        </li>
+        </dd>
 
-        <li>The <a>delivered image</a> is constructed from the PNG image obtained by decoding a PNG datastream. No specific format
+        <!-- Maintain a fragment named "3deliveredImage" to preserve incoming links to it -->
+        <dt><dfn id="3deliveredImage">Delivered image</dfn></dt>
+        <dd>The <a>delivered image</a> is constructed from the PNG image obtained by decoding a PNG datastream. No specific format
         is specified for the <a>delivered image</a>. A viewer presents an image to the user as close to the appearance of the
         original source image as it can achieve.
-        </li>
-      </ol>
+        </dd>
+      </df>
 
       <p>The relationships between the four kinds of image are illustrated in <a href="#image-relationship"></a>.</p>
 
@@ -1486,7 +1468,7 @@ with these exceptions:
       </section>
 
       <section id="apng-output-buffer">
-        <h3>Output buffer</dfn>
+        <h3>Output buffer</h3>
 
         <p>The <dfn>output buffer</dfn> is a pixel array with dimensions specified by the width and height parameters of the PNG <a
         class= "chunk" href="#11IHDR">IHDR</a> chunk. Conceptually, each frame is constructed in the output buffer before being
@@ -1495,7 +1477,7 @@ with these exceptions:
       </section>
 
       <section id="apng-canvas">
-        <h3>Canvas</dfn>
+        <h3>Canvas</h3>
 
         <p>The <dfn>canvas</dfn> is the area on the output device on which the frames are to be displayed. The contents of the
         canvas are not necessarily available to the decoder. If a <a class="chunk" href="#11bKGD">bKGD</a> chunk exists, it may be

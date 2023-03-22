@@ -460,8 +460,8 @@ with these exceptions:
         <dt><dfn>full-range image</dfn>
         </dt>
 
-        <dd>Image where reference black and white correspond to sample values <code>0</code> and <code>2<sup>bit depth</sup> -
-        1</code>, respectively</dd>
+        <dd>image where reference black and white correspond, respectively. to sample values <code>0</code> and <code>2<sup>bit depth</sup> -
+        1</code></dd>
 
         <!-- Maintain a fragment named "3imageData" to preserve incoming links to it -->
 
@@ -507,8 +507,8 @@ with these exceptions:
         <dt><dfn>narrow-range image</dfn>
         </dt>
 
-        <dd>Image where reference black and white do not correspond to sample values <code>0</code> and <code>2<sup>bit depth</sup>
-        - 1</code>, respectively</dd>
+        <dd>Image where reference black and white do not correspond, respectively, to sample values <code>0</code> and
+        <code>2<sup>bit depth</sup> - 1</code></dd>
         <!-- Maintain a fragment named "3networkByteOrder" to preserve incoming links to it -->
 
         <dt id="3networkByteOrder"><dfn>network byte order</dfn>
@@ -526,17 +526,9 @@ with these exceptions:
 
         <dd>
           organizing a <a>PNG image</a> as a sequence of <a>reduced images</a> to change the order of transmission and enable
-          progressive display.
+          progressive display
         </dd>
-        <!-- Maintain a fragment named "3pixel" to preserve incoming links to it -->
 
-        <dt id="3pixel"><dfn>pixel</dfn>
-        </dt>
-
-        <dd>
-          information stored for a single grid point in an image. A pixel consists of (or points to) a sequence of <a>samples</a>
-          from all <a>channels</a>. The complete image is a rectangular array of pixels.
-        </dd>
         <!-- ************Page Break******************* -->
         <!-- ************Page Break******************* -->
         <!-- Maintain a fragment named "3PNGdecoder" to preserve incoming links to it -->
@@ -754,7 +746,8 @@ with these exceptions:
         <li>The <i>source image</i> is the image presented to a PNG encoder.</li>
 
         <!-- Maintain a fragment named "3referenceImage" to preserve incoming links to it -->
-        <li>The <dfn id="3referenceImage">reference image</dfn>, which only exists conceptually, is a rectangular array of rectangular pixels, all having
+        <!-- Maintain a fragment named "3pixel" to preserve incoming links to it -->
+        <li>The <dfn id="3referenceImage">reference image</dfn>, which only exists conceptually, is a rectangular array of rectangular <dfn id="3pixel">pixels</dfn>, all having
         the same width and height, and all containing the same number of unsigned integer samples, either three (red, green, blue)
         or four (red, green, blue, alpha). The array of all samples of a particular kind (red, green, blue, or alpha) is called a
         <!-- Maintain a fragment named "3channel" to preserve incoming links to it -->

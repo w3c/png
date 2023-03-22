@@ -536,8 +536,8 @@ with these exceptions:
         <dt id="3PNGdecoder">PNG decoder</dt>
 
         <dd>
-          process or device which reconstructs the <a>reference image</a> from a <a>PNG datastream</a> and generates a
-          corresponding <a>delivered image</a>.
+          process or device that reconstructs the <a>reference image</a> from a <a>PNG datastream</a> and generates a
+          corresponding <a>delivered image</a>
         </dd>
         <!-- Maintain a fragment named "3PNGeditor" to preserve incoming links to it -->
 
@@ -545,8 +545,8 @@ with these exceptions:
         </dt>
 
         <dd>
-          process or device which creates a modification of an existing <a>PNG datastream</a>, preserving unmodified ancillary
-          information wherever possible, and obeying the <a>chunk</a> ordering rules, even for unknown chunk types.
+          process or device that creates a modification of an existing <a>PNG datastream</a>, preserving unmodified ancillary
+          information wherever possible, and obeying the <a>chunk</a> ordering rules, even for unknown chunk types
         </dd>
         <!-- Maintain a fragment named "3PNGencoder" to preserve incoming links to it -->
 
@@ -555,7 +555,7 @@ with these exceptions:
 
         <dd>
           process or device which constructs a <a>reference image</a> from a <a>source image</a>, and generates a <a>PNG
-          datastream</a> representing the reference image.
+          datastream</a> representing the reference image
         </dd>
         <!-- Maintain a fragment named "3PNGfile" to preserve incoming links to it -->
 
@@ -563,7 +563,7 @@ with these exceptions:
         </dt>
 
         <dd>
-          <a>PNG datastream</a> stored as a file.
+          <a>PNG datastream</a> stored as a file
         </dd>
         <!-- Maintain a fragment named "3PNGfourByteUnSignedInteger" to preserve incoming links to it -->
 
@@ -583,16 +583,7 @@ with these exceptions:
 
         <dd>
           result of transformations applied by a <a>PNG encoder</a> to a <a>reference image</a>, in preparation for encoding as a
-          <a>PNG datastream</a>, and the result of decoding a PNG datastream.
-        </dd>
-
-        <!-- Maintain a fragment named "3reducedImage" to preserve incoming links to it -->
-
-        <dt id="3reducedImage"><dfn>reduced image</dfn>
-        </dt>
-
-        <dd>
-          pass of the <a>interlaced PNG image</a> extracted from the <a>PNG image</a> by <a>pass extraction</a>.
+          <a>PNG datastream</a>, and the result of decoding a PNG datastream
         </dd>
 
         <!-- Maintain a fragment named "3sample" to preserve incoming links to it -->
@@ -601,7 +592,7 @@ with these exceptions:
         </dt>
 
         <dd>
-          intersection of a <a>channel</a> and a <a>pixel</a> in an image.
+          intersection of a <a>channel</a> and a <a>pixel</a> in an image
         </dd>
         <!-- Maintain a fragment named "3sampleDepth" to preserve incoming links to it -->
 
@@ -1068,8 +1059,8 @@ with these exceptions:
 
       <section id="4Concepts.EncodingPassAbs">
         <h2>Pass extraction</h2>
-
-        <p>Pass extraction (see <a href="#encoding-png-image"></a>) splits a PNG image into a sequence of reduced images where the
+        <!-- Maintain a fragment named "3reducedImage" to preserve incoming links to it -->
+        <p>Pass extraction (see <a href="#encoding-png-image"></a>) splits a PNG image into a sequence of <dfn id="3reducedImage">reduced images</dfn> where the
         first image defines a coarse view and subsequent images enhance this coarse view until the last image completes the PNG
         image. The set of reduced images is also called an interlaced PNG image. Two interlace methods are defined in this
         specification. The first method is a null method; pixels are stored sequentially from left to right and scanlines from top

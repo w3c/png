@@ -360,23 +360,6 @@ with these exceptions:
       <p>For the purposes of this specification the following definitions apply.</p>
 
       <dl>
-        <!-- Maintain a fragment named "3alpha" to preserve incoming links to it -->
-
-        <dt><dfn id="3alpha">alpha</dfn>
-        </dt>
-
-        <dd>
-          a value representing a <a>pixel</a> degree of opacity. The more opaque a pixel, the more it hides the background against
-          which the image is presented. Zero alpha represents a completely transparent pixel, maximum alpha represents a completely
-          opaque pixel.
-        </dd>
-
-        <dt><dfn>animated image</dfn>
-        </dt>
-
-        <dd>
-          Optional animation, consisting of a series of frames. The first frame may be, but need not be, the <a>static image</a>.
-        </dd>
 
         <!-- Maintain a fragment named "3byte" to preserve incoming links to it -->
 
@@ -396,38 +379,28 @@ with these exceptions:
 
         <dt><dfn>canvas</dfn>
         </dt>
-
         <dd>
           the area on the output device on which the frames are to be displayed. The contents of the canvas are not necessarily
           available to the decoder. If a <a class="chunk" href="#11bKGD">bKGD</a> chunk exists, it may be used to fill the canvas
           if there is no preferable background
         </dd>
-        <!-- Maintain a fragment named "3channel" to preserve incoming links to it -->
 
-        <dt id="3channel"><dfn>channel</dfn>
-        </dt>
-
-        <dd>
-          array of all per-<a>pixel</a> information of a particular kind within a <a>reference image</a>. There are five kinds of
-          information: red, green, blue, <a>greyscale</a>, and <a>alpha</a>. For example the alpha channel is the array of alpha
-          values within a reference image.
-        </dd>
         <!-- Maintain a fragment named "3chromaticity" to preserve incoming links to it -->
 
         <dt id="3chromaticity"><dfn>chromaticity</dfn>
         </dt>
 
         <dd>pair of CIE <i>x,y</i> values [[COLORIMETRY]] that precisely specify a colour, except for the brightness
-        information.</dd>
+        information</dd>
 
         <!-- Maintain a fragment named "3composite" to preserve incoming links to it -->
 
         <dt id="3composite"><dfn data-lt="composited|composite">composite (verb)</dfn>
         </dt>
 
-        <dd>to form an image by merging a foreground image and a background image, using transparency information to determine
+        <dd>form an image by merging a foreground image and a background image, using transparency information to determine
         where and to what extent the background should be visible.
-        <div class="note">The foreground image is said to be <i>composited</i> against the background.</div>
+        <div class="note">The foreground image is said to be <a>composited</a> against the background.</div>
         </dd>
 
         <!-- Maintain a fragment named "3datastream" to preserve incoming links to it -->
@@ -494,17 +467,8 @@ with these exceptions:
         </dt>
 
         <dd>Image where reference black and white correspond to sample values <code>0</code> and <code>2<sup>bit depth</sup> -
-        1</code>, respectively.</dd>
-        <!-- Maintain a fragment named "3greyscale" to preserve incoming links to it -->
+        1</code>, respectively</dd>
 
-        <dt id="3greyscale"><dfn>greyscale</dfn>
-        </dt>
-
-        <dd>
-          image representation in which each <a>pixel</a> is defined by a single <a>sample</a> of colour information, representing
-          overall <a>luminance</a> (on a scale from black to white), and optionally an <a>alpha</a> sample (in which case it is
-          called greyscale with alpha)
-        </dd>
         <!-- Maintain a fragment named "3imageData" to preserve incoming links to it -->
 
         <dt id="3imageData"><dfn>image data</dfn>
@@ -520,22 +484,24 @@ with these exceptions:
         </dt>
 
         <dd>
-          sequence of <a>reduced images</a> generated from the <a>PNG image</a> by <a>pass extraction</a>.
+          sequence of <a>reduced images</a> generated from the <a>PNG image</a> by <a>pass extraction</a>
         </dd>
         <!-- Maintain a fragment named "3losslessCompression" to preserve incoming links to it -->
 
         <dt id="3losslessCompression"><dfn>lossless</dfn>
         </dt>
 
-        <dd>method of data compression that permits reconstruction of the original data exactly, bit-for-bit.</dd>
+        <dd>method of data compression that permits reconstruction of the original data exactly, bit-for-bit</dd>
         <!-- Maintain a fragment named "3luminance" to preserve incoming links to it -->
 
         <dt id="3luminance"><dfn>luminance</dfn>
         </dt>
 
         <dd>
-          formal definition of luminance is in [[COLORIMETRY]]. Informally it is the perceived brightness, or <a>greyscale</a>
-          level, of a colour. Luminance and <a>chromaticity</a> together fully define a perceived colour.
+          perceived brightness of a colour
+
+          <p class="note">Luminance and <a>chromaticity</a> together fully define a perceived colour. A formal definition of
+          luminance is found at [[COLORIMETRY]].</p>
         </dd>
         <!-- Maintain a fragment named "3LZ77" to preserve incoming links to it -->
 
@@ -780,8 +746,8 @@ with these exceptions:
 
       <p>All PNG images contain a single <dfn>static image</dfn>.</p>
 
-      <p>Some PNG images — called <a>APNG</a> for Animated PNG — also contain a frame-based animation sequence, the <a>animated
-      image</a>. The first frame of this may be — but need not be — the <a>static image</a>. Mon animation-capable displays (such as
+      <p>Some PNG images — called <a>APNG</a> for Animated PNG — also contain a frame-based animation sequence, the <dfn>animated
+      image</dfn>. The first frame of this may be — but need not be — the <a>static image</a>. Mon animation-capable displays (such as
       printers) will display the <a>static image</a> rather than the animation sequence.</p>
 
       <p>The <a>static image</a>, and each individual frame of an <a>animated image</a>, corresponds to a <em>reference image</em>
@@ -807,10 +773,12 @@ with these exceptions:
         <li>The <dfn id="3referenceImage">reference image</dfn>, which only exists conceptually, is a rectangular array of rectangular pixels, all having
         the same width and height, and all containing the same number of unsigned integer samples, either three (red, green, blue)
         or four (red, green, blue, alpha). The array of all samples of a particular kind (red, green, blue, or alpha) is called a
-        channel. Each channel has a sample depth in the range 1 to 16, which is the number of bits used by every sample in the
+        <!-- Maintain a fragment named "3channel" to preserve incoming links to it -->
+        <dfn id="3channel">channel</dfn>. Each channel has a sample depth in the range 1 to 16, which is the number of bits used by every sample in the
         channel. Different channels may have different sample depths. The red, green, and blue samples determine the intensities of
         the red, green, and blue components of the pixel's colour; if they are all zero, the pixel is black, and if they all have
-        their maximum values (2<sup>sampledepth</sup>-1), the pixel is white. The alpha sample determines a pixel's degree of
+        <!-- Maintain a fragment named "3alpha" to preserve incoming links to it -->
+        their maximum values (2<sup>sampledepth</sup>-1), the pixel is white. The <dfn id="3alpha">alpha</dfn> sample determines a pixel's degree of
         opacity, where zero means fully transparent and the maximum value means fully opaque. In a three-channel reference image
         all pixels are fully opaque. (It is also possible for a four-channel reference image to have all pixels fully opaque; the
         difference is that the latter has a specific alpha sample depth, whereas the former does not.) Each horizontal row of
@@ -1050,7 +1018,7 @@ with these exceptions:
           intensities, and an <a>alpha</a> sample.
         </li>
 
-        <li>Greyscale with alpha: each pixel consists of two samples: grey and alpha.</li>
+        <li>Greyscale with alpha: each pixel consists of two samples: a <a>grey sample</a> and an alpha sample.</li>
         <!-- Maintain a fragment named "3truecolour" to preserve incoming links to it -->
 
         <li>
@@ -1059,8 +1027,10 @@ with these exceptions:
           all others are fully opaque. If the alpha channel is not represented in this way, all pixels are fully opaque.
         </li>
 
-        <li>Greyscale: each pixel consists of a single sample: grey. The alpha channel may be represented by a single greyscale
-        pixel value, similar to the previous case. If the alpha channel is not represented in this way, all pixels are fully
+        <!-- Maintain a fragment named "3greyscale" to preserve incoming links to it -->
+        <li>Greyscale: each pixel consists of a single <dfn  id="3greyscale">grey sample</dfn>, which represents overall <a>luminance</a> (on a scale
+        from black to white). The alpha channel may be represented by a single <a>grey sample</a> value: matching pixels are fully
+        transparent, and all others are fully opaque. If the alpha channel is not represented in this way, all pixels are fully
         opaque.</li>
 
         <li>Indexed-colour: each pixel consists of an index into a palette (and into an associated table of alpha values, if

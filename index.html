@@ -504,7 +504,7 @@ with these exceptions:
 
       <dd>
         <a>byte order</a> in which the most significant byte comes first, then the less significant bytes in descending order of
-        significance (<a>MSB</a> <a>LSB</a> for two-byte integers, <a>MSB</a> B2 B1 <a>LSB</a> for four-byte integers)
+        significance (MSB LSB for two-byte integers, MSB B2 B1 LSB for four-byte integers)
       </dd>
 
       <!-- ************Page Break******************* -->
@@ -603,39 +603,32 @@ with these exceptions:
         <p class="note">Also refers to the name of a library containing a sample implementation of this method.</p>
       </dd>
 
-
-      <dt>Cyclic Redundancy Code</dt>
       <!-- Maintain a fragment named "3CRC" to preserve incoming links to it -->
-      <dt id="3CRC"><dfn>CRC</dfn>
-      </dt>
-
+      <dt id="3CRC">Cyclic Redundancy Code</dt>
+      <dt><abbr title="Cyclic Redundancy Code">CRC</abbr></dt>
       <dd>
         <p>type of check value designed to detect most transmission errors.</p>
 
         <p class="note">A decoder calculates the CRC for the received data and checks by comparing it to the CRC calculated by
         the encoder and appended to the data. A mismatch indicates that the data or the CRC were corrupted in transit.</p>
       </dd>
+  
       <!-- Maintain a fragment named "3CRT" to preserve incoming links to it -->
-
-      <dt>Cathode Ray Tube</dt>
-      <dt id="3CRT"><dfn>CRT</dfn>
-      </dt>
+      <dt id="3CRT">Cathode Ray Tube</dt>
+      <dt><abbr title="Cathode Ray Tube">CRT</abbr></dt>
 
       <dd>vacuum tube containing one or more electron guns, which emit electron beams that are manipulated to display images on a
       phosphorescent screen.</dd>
+  
       <!-- Maintain a fragment named "3LSB" to preserve incoming links to it -->
-
-      <dt>Least Significant Byte</dt>
-      <dt id="3LSB"><dfn>LSB</dfn>
-      </dt>
-
+      <dt id="3LSB">Least Significant Byte</dt>
+      <dt><abbr title="Least Significant Byte">LSB</abbr></dt>
       <dd>
         Least significant byte of a multi-<a>byte</a> value.
       </dd>
       <!-- Maintain a fragment named "3MSB" to preserve incoming links to it -->
-      <dt>Most Significant Byte</dt>
-      <dt id="3MSB"><dfn>MSB</dfn>
-      </dt>
+      <dt id="3MSB">Most Significant Byte</dt>
+      <dt><abbr title="Most Significant Byte">MSB</abbr></dt>
 
       <dd>
         Most significant byte of a multi-<a>byte</a> value
@@ -1575,7 +1568,7 @@ with these exceptions:
           <td>Length</td>
           <td>
             A <a>PNG four-byte unsigned integer</a> giving the number of bytes in the chunk's data field. The length counts
-            <strong>only</strong> the data field, <strong>not</strong> itself, the chunk type, or the <a>CRC</a>. Zero is a valid
+            <strong>only</strong> the data field, <strong>not</strong> itself, the chunk type, or the CRC. Zero is a valid
             length. Although encoders and decoders should treat the length as unsigned, its value shall not exceed 2<sup>31</sup>-1
             bytes.
           </td>
@@ -1602,9 +1595,9 @@ with these exceptions:
         <tr>
           <td>CRC</td>
           <td>
-            A four-byte <a>CRC</a> calculated on the preceding bytes in the chunk, including the chunk type field and chunk data
-            fields, but <strong>not</strong> including the length field. The <a>CRC</a> can be used to check for corruption of the
-            data. The <a>CRC</a> is always present, even for chunks containing no data. See <a href="#5CRC-algorithm"></a>.
+            A four-byte CRC calculated on the preceding bytes in the chunk, including the chunk type field and chunk data
+            fields, but <strong>not</strong> including the length field. The CRC can be used to check for corruption of the
+            data. The CRC is always present, even for chunks containing no data. See <a href="#5CRC-algorithm"></a>.
           </td>
         </tr>
       </table>
@@ -1712,20 +1705,20 @@ with these exceptions:
     <section id="5CRC-algorithm">
       <h2>CRC algorithm</h2>
 
-      <p><a>CRC</a> fields are calculated using standardized <a>CRC</a> methods with pre and post conditioning, as defined by [[ISO
-      3309]] and [[ITU-T V.42]]. The <a>CRC</a> polynomial employed— which is identical to that used in the GZIP file format
+      <p>CRC fields are calculated using standardized CRC methods with pre and post conditioning, as defined by [[ISO
+      3309]] and [[ITU-T V.42]]. The CRC polynomial employed— which is identical to that used in the GZIP file format
       specification [[RFC1952]]— is</p>
 
       <p>x<sup>32</sup> + x<sup>26</sup> + x<sup>23</sup> + x<sup>22</sup> + x<sup>16</sup> + x<sup>12</sup> + x<sup>11</sup> +
       x<sup>10</sup> + x<sup>8</sup> + x<sup>7</sup> + x<sup>5</sup> + x<sup>4</sup> + x<sup>2</sup> + x + 1</p>
 
-      <p>In PNG, the 32-bit <a>CRC</a> is initialized to all 1's, and then the data from each byte is processed from the least
-      significant bit (1) to the most significant bit (128). After all the data bytes are processed, the <a>CRC</a> is inverted
+      <p>In PNG, the 32-bit CRC is initialized to all 1's, and then the data from each byte is processed from the least
+      significant bit (1) to the most significant bit (128). After all the data bytes are processed, the CRC is inverted
       (its ones complement is taken). This value is transmitted (stored in the datastream) MSB first. For the purpose of separating
-      into bytes and ordering, the least significant bit of the 32-bit <a>CRC</a> is defined to be the coefficient of the
+      into bytes and ordering, the least significant bit of the 32-bit CRC is defined to be the coefficient of the
       <code>x<sup>31</sup></code> term.</p>
 
-      <p>Practical calculation of the <a>CRC</a> often employs a precalculated table to accelerate the computation. See <a href=
+      <p>Practical calculation of the CRC often employs a precalculated table to accelerate the computation. See <a href=
       "#D-CRCAppendix"></a>.</p>
     </section>
     <!-- Maintain a fragment 5ChunkOrderingg" to preserve incoming links to it -->
@@ -2715,9 +2708,9 @@ with these exceptions:
       <a>deflate</a> specification [[rfc1951]].</p>
 
       <p>The check value stored at the end of the <a>zlib</a> datastream is calculated on the uncompressed data represented by the
-      datastream. The algorithm used to calculate this is not the same as the <a>CRC</a> calculation used for PNG chunk <a>CRC</a>
+      datastream. The algorithm used to calculate this is not the same as the CRC calculation used for PNG chunk CRC
       field values. The <a>zlib</a> check value is useful mainly as a cross-check that the <a>deflate</a> algorithms are
-      implemented correctly. Verifying the individual PNG chunk <a>CRCs</a> provides confidence that the PNG datastream has been
+      implemented correctly. Verifying the individual PNG chunk CRCs provides confidence that the PNG datastream has been
       transmitted undamaged.</p>
     </section>
     <!-- Maintain a fragment named "10CompressionFSL" to preserve incoming links to it -->
@@ -4914,7 +4907,7 @@ with these exceptions:
           overwritten.</p>
           <!-- Not clear this para is needed, but the original specification had it -->
 
-          <p>Note, at the end of the <span class="chunk">fcTL</span> chunk is a 32-bit <a>CRC</a> checksum. The checksum is
+          <p>Note, at the end of the <span class="chunk">fcTL</span> chunk is a 32-bit CRC checksum. The checksum is
           calculated using the <span class="chunk">fcTL</span> chunk and includes the 'fcTL' chunk type field.</p>
           <!--
   8.1 Integers and byte order only covers multibyte integers. So add:
@@ -5555,11 +5548,11 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
       <!-- <ol start="1"> -->
 
       <ol>
-        <li>Detect errors as early as possible using the PNG signature bytes and <a>CRCs</a> on each chunk. Decoders should verify
+        <li>Detect errors as early as possible using the PNG signature bytes and CRCs on each chunk. Decoders should verify
         that all eight bytes of the PNG signature are correct. A decoder can have additional confidence in the datastream's
         integrity if the next eight bytes begin an <a class="chunk" href="#11IHDR">IHDR</a> chunk with the correct chunk length. A
-        <a>CRC</a> should be checked before processing the chunk data. Sometimes this is impractical, for example when a streaming
-        PNG decoder is processing a large <a class="chunk" href="#11IDAT">IDAT</a> chunk. In this case the <a>CRC</a> should be
+        CRC should be checked before processing the chunk data. Sometimes this is impractical, for example when a streaming
+        PNG decoder is processing a large <a class="chunk" href="#11IDAT">IDAT</a> chunk. In this case the CRC should be
         checked when the end of the chunk is reached.
         </li>
 
@@ -5616,7 +5609,7 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
         datastream. A decoder that ignored a critical chunk could not know whether the image it extracted was the one intended by
         the encoder.</li>
 
-        <li>A PNG signature mismatch, a <a>CRC</a> mismatch, or an unexpected end-of-stream indicates a corrupted datastream, and
+        <li>A PNG signature mismatch, a CRC mismatch, or an unexpected end-of-stream indicates a corrupted datastream, and
         may be regarded as a fatal error. A decoder could try to salvage something from the datastream, but the extent of the
         damage will not be known.
         </li>
@@ -5633,7 +5626,7 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
       handling of this error. Displaying the pixel as opaque black is one common error recovery tactic, although such behaviour is
       not required by this specification and must not be relied on by encoders.</p>
 
-      <p>Decoders that do not compute <a>CRCs</a> should interpret apparent syntax errors as indications of corruption (see also
+      <p>Decoders that do not compute CRCs should interpret apparent syntax errors as indications of corruption (see also
       <a href="#13Error-checking"></a>).</p>
 
       <p>Errors in compressed chunks ( <a class="chunk" href="#11IDAT">IDAT</a>, <a class="chunk" href="#11zTXt">zTXt</a>,
@@ -5660,7 +5653,7 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
 
       <p>The chunk type can be checked for plausibility by seeing whether all four bytes are in the range codes 41-5A and 61-7A
       (hexadecimal); note that this need be done only for unrecognized chunk types. If the total datastream size is known (from
-      file system information, HTTP protocol, etc), the chunk length can be checked for plausibility as well. If <a>CRCs</a> are
+      file system information, HTTP protocol, etc), the chunk length can be checked for plausibility as well. If CRCs are
       not checked, dropped/added data bytes or an erroneous chunk length can cause the decoder to get out of step and misinterpret
       subsequent data as a chunk header.</p>
 
@@ -5671,8 +5664,8 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
       <p>Unexpected values in fields of known chunks (for example, an unexpected compression method in the <a class="chunk" href=
       "#11IHDR">IHDR</a> chunk) shall be checked for and treated as errors. However, it is recommended that unexpected field values
       be treated as fatal errors only in <strong>critical</strong> chunks. An unexpected value in an ancillary chunk can be handled
-      by ignoring the whole chunk as though it were an unknown chunk type. (This recommendation assumes that the chunk's <a>CRC</a>
-      has been verified. In decoders that do not check <a>CRCs</a>, it is safer to treat any unexpected value as indicating a
+      by ignoring the whole chunk as though it were an unknown chunk type. (This recommendation assumes that the chunk's CRC
+      has been verified. In decoders that do not check CRCs, it is safer to treat any unexpected value as indicating a
       corrupted datastream.)</p>
 
       <p>Standard PNG images shall be compressed with compression method 0. The compression method field of the <a class="chunk"
@@ -5700,11 +5693,11 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
       decoders filter out control characters to avoid this risk; see <a href="#13Text-chunk-processing"></a>.</p>
 
       <p>Every chunk begins with a length field, which makes it easier to write decoders that are invulnerable to fraudulent chunks
-      that attempt to overflow buffers. The <a>CRC</a> at the end of every chunk provides a robust defence against accidentally
+      that attempt to overflow buffers. The CRC at the end of every chunk provides a robust defence against accidentally
       corrupted data. The PNG signature bytes provide early detection of common file transmission errors.</p>
 
-      <p>A decoder that fails to check <a>CRCs</a> could be subject to data corruption. The only likely consequence of such
-      corruption is incorrectly displayed pixels within the image. Worse things might happen if the <a>CRC</a> of the <a class=
+      <p>A decoder that fails to check CRCs could be subject to data corruption. The only likely consequence of such
+      corruption is incorrectly displayed pixels within the image. Worse things might happen if the CRC of the <a class=
       "chunk" href="#11IHDR">IHDR</a> chunk is not checked and the width or height fields are corrupted. See <a href=
       "#13Error-checking"></a>.</p>
 
@@ -6044,11 +6037,11 @@ decoding_exponent = 1.0 / (gamma * display_exponent)
       untagged images.</p>
 
       <p>In practice, it is often difficult to determine what value of display exponent should be used. In systems with no built-in
-      <a>gamma</a> correction, the display exponent is determined entirely by the <a>CRT</a>. A display exponent of 2.2 should be
-      used unless detailed calibration measurements are available for the particular <a>CRT</a> used.</p>
+      <a>gamma</a> correction, the display exponent is determined entirely by the CRT. A display exponent of 2.2 should be
+      used unless detailed calibration measurements are available for the particular CRT used.</p>
 
       <p>Many modern <a>frame buffers</a> have lookup tables that are used to perform <a>gamma</a> correction, and on these systems
-      the display exponent value should be the exponent of the lookup table and <a>CRT</a> combined. It may not be possible to find
+      the display exponent value should be the exponent of the lookup table and CRT combined. It may not be possible to find
       out what the lookup table contains from within the viewer application, in which case it may be necessary to ask the user to
       supply the display system's exponent value. Unfortunately, different manufacturers use different ways of specifying what
       should go into the lookup table, so interpretation of the system <a>gamma value</a> is system-dependent.</p>
@@ -7043,7 +7036,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
     <p><code>intensity = (voltage + constant)<sup>exponent</sup></code>
     </p>
 
-    <p>which is used to model the non-linearity of <a>CRT</a> displays. It is often assumed, as in this International Standard,
+    <p>which is used to model the non-linearity of CRT displays. It is often assumed, as in this International Standard,
     that the constant is zero.</p>
 
     <p>For the purposes of this specification, it is convenient to consider five places in a general image pipeline at which
@@ -7086,7 +7079,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
         <td><var>output_exponent</var>
         </td>
         <td>
-          the exponent of the display device. For a <a>CRT</a>, this is typically a value close to 2.2.
+          the exponent of the display device. For a CRT, this is typically a value close to 2.2.
         </td>
       </tr>
     </table>
@@ -7140,7 +7133,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
 
     <h2 class="Annex" id="samplecrc">Sample CRC implementation</h2>
 
-    <p>The following sample code — which is informative — represents a practical implementation of the <a>CRC</a> (Cyclic
+    <p>The following sample code — which is informative — represents a practical implementation of the CRC (Cyclic
     Redundancy Check) employed in PNG chunks. (See also ISO 3309 [[ISO 3309]] or ITU-T V.42 [[ITU-T V.42]] for a formal
     specification.)</p>
 
@@ -7289,7 +7282,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
       "http://www.libpng.org/pub/png/"><code>http://www.libpng.org/pub/png/</code></a>. This page is a central location for current
       information about PNG and PNG-related tools.</p>
 
-      <p>Additional documentation and portable C code for <a>deflate</a>, and an optimized implementation of the <a>CRC</a>
+      <p>Additional documentation and portable C code for <a>deflate</a>, and an optimized implementation of the CRC
       algorithm are available from the zlib web site, <a href="https://www.zlib.net/"><code>https://www.zlib.net/</code></a>.</p>
     </section>
     <!-- Maintain a fragment named "E-Sample-implementation" to preserve incoming links to it -->

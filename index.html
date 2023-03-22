@@ -2073,7 +2073,7 @@ with these exceptions:
 
         <tr>
           <td>
-            <a class="chunk" href="#mLUm-chunk">mLUm</a>
+            <a class="chunk" href="#cLLi-chunk">cLLi</a>
           </td>
           <td>No</td>
           <td>
@@ -4099,15 +4099,15 @@ with these exceptions:
 
         </section>
 
-        <section id="mLUm-chunk">
-          <h2><span class="chunk">mLUm</span> Metadata for Maximum Single-Pixel and Frame-Average Luminance Levels</h2>
+        <section id="cLLi-chunk">
+          <h2><span class="chunk">cLLi</span> Metadata for Maximum Single-Pixel and Frame-Average Luminance Levels</h2>
           <p>The four-byte chunk type field contains the hexadecimal values</p>
 
           <pre>
 <!-- 109 76 85 109 -->6D 4C 55 6D
 </pre>
         
-          <p>If present, the <span class="chunk">mLUm</span> chunk identifies 
+          <p>If present, the <span class="chunk">cLLi</span> chunk identifies 
              the brightest single pixel or "Maximum Content Light Level" (MaxCLL) for the entire 
              length of content (in every frame) and is typically clipped based on the mastering displays 
              peak luminance specification. (MaxCLL) is often 
@@ -4123,10 +4123,10 @@ with these exceptions:
              <a href="#apng-frame-based-animation">frame-based animation</a> sequence is analyzed.
           </p>
 
-           <p>The following specifies the syntax of the <span class="chunk">mLUm</span> chunk:</p>
+           <p>The following specifies the syntax of the <span class="chunk">cLLi</span> chunk:</p>
 
-           <table id="mLUm-chunk-syntax" class="numbered simple">
-             <caption>mLUm chunk components</caption>
+           <table id="cLLi-chunk-syntax" class="numbered simple">
+             <caption>cLLi chunk components</caption>
 
              <tr>
                <th>Name</th>
@@ -4148,9 +4148,9 @@ with these exceptions:
            </table>
 
            <aside class="example">
-             Example <span class="chunk">mLUm</span> chunk Maximum Content Light Level:
+             Example <span class="chunk">cLLi</span> chunk Maximum Content Light Level:
 
-             <table id="mLUm-chunk-max-content-light-level-example" class="numbered simple">
+             <table id="cLLi-chunk-max-content-light-level-example" class="numbered simple">
                <tr>
                  <th>Actual value</th>
                  <th>Stored value</th>
@@ -4164,9 +4164,9 @@ with these exceptions:
            </aside>
 
            <aside class="example">
-             Example <span class="chunk">mLUm</span> chunk Maximum Frame-Average Light Level:
+             Example <span class="chunk">cLLi</span> chunk Maximum Frame-Average Light Level:
 
-             <table id="mLUm-chunk-max-frame-avg-luminance-example" class="numbered simple">
+             <table id="cLLi-chunk-max-frame-avg-luminance-example" class="numbered simple">
                <tr>
                  <th>Actual value</th>
                  <th>Stored value</th>
@@ -7515,7 +7515,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
         which conflicted with the <a href="#5ChunkOrdering">chunk ordering</a> section.</li>
       <li>Simplified <a href="#1Scope">Scope</a> section to remove redundant detail described elsewhere.</li>
       <li>Redrew chunk-ordering lattice diagrams to be clearer and more consistent.</li>
-      <li>Added new chunk, <a href="#mLUm-chunk" class="chunk">mLUm</a>, 
+      <li>Added new chunk, <a href="#cLLi-chunk" class="chunk">cLLi</a>, 
       to describe the Maximum Single-Pixel and Frame-Average Luminance Levels
       for both static and animated HDR PNG images.
       </li>

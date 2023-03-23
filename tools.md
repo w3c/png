@@ -62,6 +62,14 @@ A faster C library for reading and writing PNG. Does not depend on zlib.
 Does not support APNG (although that is [planned](https://github.com/randy408/libspng/issues/4)), or any of the Third Edition chunks,
 although there is an open issue on [cICP support](https://github.com/randy408/libspng/issues/218).
 
+### pnger
+
+[Readme](https://github.com/masq/pnger#readme) and maintained at [masq/pnger](https://github.com/masq/pnger#readme)
+
+Python library for parsing PNG, mainly for forensic purposes.
+
+Now supports APNG and Third Edition chunks.
+
 ### PNG-library
 
 [Homepage](https://www.nayuki.io/page/png-library) and maintained at [nayuki/PNG-library](https://github.com/nayuki/PNG-library)

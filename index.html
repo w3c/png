@@ -389,7 +389,7 @@ with these exceptions:
 
       <dd>form an image by merging a foreground image and a background image, using transparency information to determine
       where and to what extent the background should be visible
-      <div class="note">The foreground image is said to be <a>composited</a> against the background.</div>
+      <p class="note">The foreground image is said to be <a>composited</a> against the background.</p>
       </dd>
 
       <!-- Maintain a fragment named "3datastream" to preserve incoming links to it -->
@@ -448,7 +448,7 @@ with these exceptions:
       <dt><dfn>full-range image</dfn>
       </dt>
 
-      <dd>image where reference black and white correspond, respectively. to sample values <code>0</code> and <code>2<sup>bit depth</sup> -
+      <dd>image where reference black and white correspond, respectively, to sample values <code>0</code> and <code>2<sup>bit depth</sup> -
       1</code></dd>
 
       <!-- Maintain a fragment named "3imageData" to preserve incoming links to it -->
@@ -650,7 +650,7 @@ with these exceptions:
 
       <p>Some PNG images — called <dfn class="lint-ignore">Animated PNG</dfn> (<abbr title="Animated PNG">APNG</abbr>) — also
       contain a frame-based animation sequence, the <dfn>animated image</dfn>. The first frame of this may be — but need not be —
-      the <a>static image</a>. Mon animation-capable displays (such as printers) will display the <a>static image</a> rather than
+      the <a>static image</a>. Non-animation-capable displays (such as printers) will display the <a>static image</a> rather than
       the animation sequence.</p>
 
       <p>The <a>static image</a>, and each individual frame of an <a>animated image</a>, corresponds to a <em>reference image</em>
@@ -939,10 +939,10 @@ with these exceptions:
         </li>
 
         <!-- Maintain a fragment named "3greyscale" to preserve incoming links to it -->
-        <li>Greyscale: each pixel consists of a single <dfn  id="3greyscale">grey sample</dfn>, which represents overall <a>luminance</a> (on a scale
-        from black to white). The alpha channel may be represented by a single <a>grey sample</a> value: matching pixels are fully
-        transparent, and all others are fully opaque. If the alpha channel is not represented in this way, all pixels are fully
-        opaque.</li>
+        <li>Greyscale: each pixel consists of a single <dfn  id="3greyscale">grey sample</dfn>, which represents overall
+        <a>luminance</a> (on a scale from black to white). Instead of an array of samples, the alpha channel of a greyscale image
+        can consist of a single <a>grey sample</a> value such that grey samples that match that value are fully transparent, while
+        others are fully opaque. If the alpha channel is not represented in this way, all pixels are fully opaque.</li>
 
         <li>Indexed-colour: each pixel consists of an index into a palette (and into an associated table of alpha values, if
         present).</li>
@@ -1442,7 +1442,7 @@ with these exceptions:
         <h3>Output buffer</h3>
 
         <p>The <dfn>output buffer</dfn> is a pixel array with dimensions specified by the width and height parameters of the PNG <a
-        class= "chunk" href="#11IHDR">IHDR</a> chunk. Conceptually, each frame is constructed in the output buffer before being
+        class="chunk" href="#11IHDR">IHDR</a> chunk. Conceptually, each frame is constructed in the output buffer before being
         <a>composited</a> onto the <a>canvas</a>. The contents of the output buffer are available to the decoder. The corners of
         the output buffer are mapped to the corners of the <a>canvas</a>.</p>
       </section>

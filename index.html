@@ -352,543 +352,288 @@ with these exceptions:
 
     <h2 id="3Defsandabbrevs">Terms, definitions, and abbreviated terms</h2>
 
-    <section>
-      <!-- Maintain a fragment named "3Definitions" to preserve incoming links to it -->
-
-      <h2 id="3Definitions">Definitions</h2>
-
-      <p>For the purposes of this specification the following definitions apply.</p>
-
-      <dl>
-        <!-- Maintain a fragment named "3alpha" to preserve incoming links to it -->
-
-        <dt><dfn id="3alpha">alpha</dfn>
-        </dt>
-
-        <dd>
-          a value representing a <a>pixel</a> degree of opacity. The more opaque a pixel, the more it hides the background against
-          which the image is presented. Zero alpha represents a completely transparent pixel, maximum alpha represents a completely
-          opaque pixel.
-        </dd>
-        <!-- Maintain a fragment named "3alphaCompaction" to preserve incoming links to it -->
-
-        <dt><dfn id="3alphaCompaction">alpha compaction</dfn>
-        </dt>
-
-        <dd>
-          an implicit representation of transparent <a>pixels</a>. If every pixel with a specific colour or <a>greyscale</a> value
-          is fully transparent and all other pixels are fully opaque, the <a>alpha</a> <a>channel</a> may be represented
-          implicitly.
-        </dd>
-        <!-- Maintain a fragment named "3alphaSeparation" to preserve incoming links to it -->
-
-        <dt><dfn id="3alphaSeparation">alpha separation</dfn>
-        </dt>
-
-        <dd>
-          separating an <a>alpha</a> <a>channel</a> in which every <a>pixel</a> is fully opaque; all alpha values are the maximum
-          value. The fact that all pixels are fully opaque is represented implicitly.
-        </dd>
-        <!-- Maintain a fragment named "3alphaTable" to preserve incoming links to it -->
-
-        <dt id="3alphaTable"><dfn>alpha table</dfn>
-        </dt>
-
-        <dd>
-          indexed table of <a>alpha</a> <a>sample</a> values, which in an <a>indexed-colour</a> image defines the alpha sample
-          values of the <a>reference image</a>. The alpha table has the same number of entries as the <a>palette</a>.
-        </dd>
-        <!-- Maintain a fragment named "3ancillaryChunk" to preserve incoming links to it -->
-
-        <dt id="3ancillaryChunk"><dfn>ancillary chunk</dfn>
-        </dt>
-
-        <dd>
-          class of <a>chunk</a> that provides additional information. A <a>PNG decoder</a>, without processing an ancillary chunk,
-          can still produce a meaningful image, though not necessarily the best possible image. 
-          <!-- agreed: don't need to define a bit -->
-        </dd>
-
-        <dt><dfn>animated image</dfn>
-        </dt>
-
-        <dd>
-          Optional animation, consisting of a series of frames. The first frame may be, but need not be, the <a>static image</a>.
-        </dd>
-        <!-- Maintain a fragment named "3bitDepth" to preserve incoming links to it -->
-
-        <dt id="3bitDepth"><dfn>bit depth</dfn>
-        </dt>
-
-        <dd>
-          for <a>indexed-colour</a> images, the number of bits per <a>palette</a> index. For other images, the number of bits per
-          <a>sample</a> in the image. This is the value that appears in the <a class="chunk" href="#11IHDR"></a> <a>chunk</a>.
-        </dd>
-        <!-- Maintain a fragment named "3byte" to preserve incoming links to it -->
-
-        <dt id="3byte"><dfn>byte</dfn>
-        </dt>
-
-        <dd>8 bits; also called an octet. The highest bit (value 128) of a byte is numbered bit 7; the lowest bit (value 1) is
-        numbered bit 0. It represents an unsigned integer limited to the range 0 to 2<sup>8</sup>-1.</dd>
-        <!-- Maintain a fragment named "3byteOrder" to preserve incoming links to it -->
-
-        <dt id="3byteOrder"><dfn>byte order</dfn>
-        </dt>
-
-        <dd>
-          ordering of <a>bytes</a> for multi-byte data values within a <a>PNG file</a> or <a>PNG datastream</a>. PNG uses
-          <a>network byte order</a>.
-        </dd>
-
-        <dt><dfn>canvas</dfn>
-        </dt>
-
-        <dd>
-          the area on the output device on which the frames are to be displayed. The contents of the canvas are not necessarily
-          available to the decoder. If a <a class="chunk" href="#11bKGD">bKGD</a> chunk exists, it may be used to fill the canvas
-          if there is no preferable background
-        </dd>
-        <!-- Maintain a fragment named "3channel" to preserve incoming links to it -->
-
-        <dt id="3channel"><dfn>channel</dfn>
-        </dt>
-
-        <dd>
-          array of all per-<a>pixel</a> information of a particular kind within a <a>reference image</a>. There are five kinds of
-          information: red, green, blue, <a>greyscale</a>, and <a>alpha</a>. For example the alpha channel is the array of alpha
-          values within a reference image.
-        </dd>
-        <!-- Maintain a fragment named "3chromaticity" to preserve incoming links to it -->
-
-        <dt id="3chromaticity"><dfn>chromaticity</dfn>
-        </dt>
-
-        <dd>pair of CIE <i>x,y</i> values [[COLORIMETRY]] that precisely specify a colour, except for the brightness
-        information.</dd>
-        <!-- Maintain a fragment named "3chunk" to preserve incoming links to it -->
-
-        <dt id="3chunk"><dfn>chunk</dfn>
-        </dt>
-
-        <dd>
-          section of a <a>PNG datastream</a>. Each chunk has a chunk type. Most chunks also include data. The format and meaning of
-          the data within the chunk are determined by the chunk type. Each chunk is either a <a>critical chunk</a> or an
-          <a>ancillary chunk</a>.
-        </dd>
-        <!-- Maintain a fragment named "3composite" to preserve incoming links to it -->
-
-        <dt id="3composite"><dfn data-lt="composited|composite">composite (verb)</dfn>
-        </dt>
-
-        <dd>to form an image by merging a foreground image and a background image, using transparency information to determine
-        where and to what extent the background should be visible. The foreground image is said to be "composited against" the
-        background.</dd>
-        <!-- Maintain a fragment named "3criticalChunk" to preserve incoming links to it -->
-
-        <dt id="3criticalChunk"><dfn>critical chunk</dfn>
-        </dt>
-
-        <dd>
-          <a>chunk</a> that <!--must be understood and processed by the decoder-->
-           shall be understood and processed by the decoder in order to produce a meaningful image from a <a>PNG datastream</a>.
-        </dd>
-        <!-- Maintain a fragment named "3datastream" to preserve incoming links to it -->
-
-        <dt id="3datastream"><dfn>datastream</dfn>
-        </dt>
-
-        <dd>
-          sequence of <a>bytes</a>. This term is used rather than "file" to describe a byte sequence that may be only a portion of
-          a file. It is also used to emphasize that the sequence of bytes might be generated and consumed "on the fly", never
-          appearing in a stored file at all.
-        </dd>
-        <!-- Maintain a fragment named "3deflate" to preserve incoming links to it -->
-
-        <dt id="3deflate"><dfn>deflate</dfn>
-        </dt>
-
-        <dd>
-          name of a particular compression algorithm. This algorithm is used, in compression mode 0, in conforming <a>PNG
-          datastreams</a>. Deflate is a member of the <a>LZ77</a> family of compression methods. It is defined in [[RFC1951]].
-        </dd>
-        <!-- ************Page Break******************* -->
-        <!-- ************Page Break******************* -->
-        <!-- Maintain a fragment named "3deliveredImage" to preserve incoming links to it -->
-
-        <dt id="3deliveredImage"><dfn>delivered image</dfn>
-        </dt>
-
-        <dd>
-          image constructed from a decoded <a>PNG datastream</a>.
-        </dd>
-        <!-- need a definition of frame -->
-        <!-- Maintain a fragment named "3frameBuffer" to preserve incoming links to it -->
-
-        <dt id="3frameBuffer"><dfn>frame buffer</dfn>
-        </dt>
-
-        <dd>
-          the final digital storage area for the image shown by most types of computer display. Software causes an image to appear
-          on screen by loading the image into the <a>frame buffer</a>.
-        </dd>
-
-        <dt><dfn>fully transparent black</dfn>
-        </dt>
-
-        <dd>the red, green, blue and alpha components are all set to zero.</dd>
-
-        <dt><dfn>gamma value</dfn>
-        </dt>
-
-        <dd>
-          value of the exponent of a <a>gamma</a> <a>transfer function</a>
-        </dd>
-        <!-- Maintain a fragment named "3gamma" to preserve incoming links to it -->
-
-        <dt id="3gamma"><dfn>gamma</dfn>
-        </dt>
-
-        <dd>
-          power-law <a>transfer function</a>
-        </dd>
-
-        <dt><dfn>full-range image</dfn>
-        </dt>
-
-        <dd>Image where reference black and white correspond to sample values <code>0</code> and <code>2<sup>bit depth</sup> -
-        1</code>, respectively.</dd>
-        <!-- Maintain a fragment named "3greyscale" to preserve incoming links to it -->
-
-        <dt id="3greyscale"><dfn>greyscale</dfn>
-        </dt>
-
-        <dd>
-          image representation in which each <a>pixel</a> is defined by a single <a>sample</a> of colour information, representing
-          overall <a>luminance</a> (on a scale from black to white), and optionally an <a>alpha</a> sample (in which case it is
-          called greyscale with alpha).
-        </dd>
-        <!-- Maintain a fragment named "3imageData" to preserve incoming links to it -->
-
-        <dt id="3imageData"><dfn>image data</dfn>
-        </dt>
-
-        <dd>
-          1-dimensional array of <a>scanlines</a> within an image.
-        </dd>
-        <!-- Maintain a fragment named "3indexedColour" to preserve incoming links to it -->
-
-        <dt id="3indexedColour"><dfn>indexed-colour</dfn>
-        </dt>
-
-        <dd>
-          image representation in which each <a>pixel</a> of the original image is represented by a single index into a
-          <a>palette</a>. The selected palette entry defines the actual colour of the pixel.
-        </dd>
-        <!-- Maintain a fragment named "3interlacedPNGimage" to preserve incoming links to it -->
-
-        <dt id="3interlacedPNGimage"><dfn>interlaced PNG image</dfn>
-        </dt>
-
-        <dd>
-          sequence of <a>reduced images</a> generated from the <a>PNG image</a> by <a>pass extraction</a>.
-        </dd>
-        <!-- Maintain a fragment named "3losslessCompression" to preserve incoming links to it -->
-
-        <dt id="3losslessCompression"><dfn>lossless</dfn>
-        </dt>
-
-        <dd>method of data compression that permits reconstruction of the original data exactly, bit-for-bit.</dd>
-        <!-- Maintain a fragment named "3luminance" to preserve incoming links to it -->
-
-        <dt id="3luminance"><dfn>luminance</dfn>
-        </dt>
-
-        <dd>
-          formal definition of luminance is in [[COLORIMETRY]]. Informally it is the perceived brightness, or <a>greyscale</a>
-          level, of a colour. Luminance and <a>chromaticity</a> together fully define a perceived colour.
-        </dd>
-        <!-- Maintain a fragment named "3LZ77" to preserve incoming links to it -->
-
-        <dt><dfn id="3LZ77">LZ77</dfn>
-        </dt>
-
-        <dd>data compression algorithm described in [[Ziv-Lempel]].</dd>
-
-        <dt><dfn>narrow-range image</dfn>
-        </dt>
-
-        <dd>Image where reference black and white do not correspond to sample values <code>0</code> and <code>2<sup>bit depth</sup>
-        - 1</code>, respectively.</dd>
-        <!-- Maintain a fragment named "3networkByteOrder" to preserve incoming links to it -->
-
-        <dt id="3networkByteOrder"><dfn>network byte order</dfn>
-        </dt>
-
-        <dd>
-          <a>byte order</a> in which the most significant byte comes first, then the less significant bytes in descending order of
-          significance (<a>MSB</a> <a>LSB</a> for two-byte integers, <a>MSB</a> B2 B1 <a>LSB</a> for four-byte integers).
-        </dd>
-
-        <dt><dfn>output buffer</dfn>
-        </dt>
-
-        <dd>
-          The output buffer is a pixel array with dimensions specified by the width and height parameters of the PNG <a class=
-          "chunk" href="#11IHDR">IHDR</a> chunk. Conceptually, each frame is constructed in the output buffer before being
-          <a>composited</a> onto the <a>canvas</a>. The contents of the output buffer are available to the decoder. The corners of
-          the output buffer are mapped to the corners of the <a>canvas</a>.
-        </dd>
-        <!-- Maintain a fragment named "3palette" to preserve incoming links to it -->
-
-        <dt id="3palette"><dfn>palette</dfn>
-        </dt>
-
-        <dd>
-          indexed table of three 8-bit <a>sample</a> values, red, green, and blue, which with an <a>indexed-colour</a> image
-          defines the red, green, and blue sample values of the <a>reference image</a>. In other cases, the palette may be a
-          suggested palette that viewers may use to present the image on indexed-colour display hardware. <a>Alpha</a> samples may
-          be defined for palette entries via the <a>alpha table</a> and may be used to reconstruct the alpha sample values of the
-          reference image.
-        </dd>
-        <!-- Maintain a fragment named "3passExtraction" to preserve incoming links to it -->
-
-        <dt id="3passExtraction"><dfn>pass extraction</dfn>
-        </dt>
-
-        <dd>
-          organizing a <a>PNG image</a> as a sequence of <a>reduced images</a> to change the order of transmission and enable
-          progressive display.
-        </dd>
-        <!-- Maintain a fragment named "3pixel" to preserve incoming links to it -->
-
-        <dt id="3pixel"><dfn>pixel</dfn>
-        </dt>
-
-        <dd>
-          information stored for a single grid point in an image. A pixel consists of (or points to) a sequence of <a>samples</a>
-          from all <a>channels</a>. The complete image is a rectangular array of pixels.
-        </dd>
-        <!-- ************Page Break******************* -->
-        <!-- ************Page Break******************* -->
-        <!-- Maintain a fragment named "3PNGdatastream" to preserve incoming links to it -->
-
-        <dt id="3PNGdatastream"><dfn>PNG datastream</dfn>
-        </dt>
-
-        <dd>
-          result of encoding a <a>PNG image</a>. A PNG <a>datastream</a> consists of a <a>PNG signature</a> followed by a sequence
-          of <a>chunks</a>.
-        </dd>
-        <!-- Maintain a fragment named "3PNGdecoder" to preserve incoming links to it -->
-
-        <dt id="3PNGdecoder"><dfn>PNG decoder</dfn>
-        </dt>
-
-        <dd>
-          process or device which reconstructs the <a>reference image</a> from a <a>PNG datastream</a> and generates a
-          corresponding <a>delivered image</a>.
-        </dd>
-        <!-- Maintain a fragment named "3PNGeditor" to preserve incoming links to it -->
-
-        <dt id="3PNGeditor"><dfn>PNG editor</dfn>
-        </dt>
-
-        <dd>
-          process or device which creates a modification of an existing <a>PNG datastream</a>, preserving unmodified ancillary
-          information wherever possible, and obeying the <a>chunk</a> ordering rules, even for unknown chunk types.
-        </dd>
-        <!-- Maintain a fragment named "3PNGencoder" to preserve incoming links to it -->
-
-        <dt id="3PNGencoder"><dfn>PNG encoder</dfn>
-        </dt>
-
-        <dd>
-          process or device which constructs a <a>reference image</a> from a <a>source image</a>, and generates a <a>PNG
-          datastream</a> representing the reference image.
-        </dd>
-        <!-- Maintain a fragment named "3PNGfile" to preserve incoming links to it -->
-
-        <dt id="3PNGfile"><dfn>PNG file</dfn>
-        </dt>
-
-        <dd>
-          <a>PNG datastream</a> stored as a file.
-        </dd>
-        <!-- Maintain a fragment named "3PNGfourByteUnSignedInteger" to preserve incoming links to it -->
-
-        <dt id="3PNGfourByteUnSignedInteger"><dfn>PNG four-byte unsigned integer</dfn>
-        </dt>
-
-        <dd>
-          <p>a four-byte unsigned integer limited to the range 0 to 2<sup>31</sup>-1.</p>
-
-          <p class="note">The restriction is imposed in order to accommodate languages that have difficulty with unsigned four-byte
-          values.</p>
-        </dd>
-        <!-- Maintain a fragment named "3PNGimage" to preserve incoming links to it -->
-
-        <dt id="3PNGimage"><dfn>PNG image</dfn>
-        </dt>
-
-        <dd>
-          result of transformations applied by a <a>PNG encoder</a> to a <a>reference image</a>, in preparation for encoding as a
-          <a>PNG datastream</a>, and the result of decoding a PNG datastream.
-        </dd>
-        <!-- Maintain a fragment named "3PNGsignature" to preserve incoming links to it -->
-
-        <dt id="3PNGsignature"><dfn>PNG signature</dfn>
-        </dt>
-
-        <dd>
-          sequence of <a>bytes</a> appearing at the start of every <a>PNG datastream</a>. It differentiates a PNG datastream from
-          other types of <a>datastream</a> and allows early detection of some transmission errors.
-        </dd>
-        <!-- Maintain a fragment named "3reducedImage" to preserve incoming links to it -->
-
-        <dt id="3reducedImage"><dfn>reduced image</dfn>
-        </dt>
-
-        <dd>
-          pass of the <a>interlaced PNG image</a> extracted from the <a>PNG image</a> by <a>pass extraction</a>.
-        </dd>
-        <!-- Maintain a fragment named "3referenceImage" to preserve incoming links to it -->
-
-        <dt id="3referenceImage"><dfn>reference image</dfn>
-        </dt>
-
-        <dd>
-          rectangular array of rectangular <a>pixels</a>, each having the same number of <a>samples</a>, either three (red, green,
-          blue) or four (red, green, blue, <a>alpha</a>). Every reference image can be represented exactly by a <a>PNG
-          datastream</a> and every PNG datastream can be converted into a reference image. Each <a>channel</a> has a <a>sample
-          depth</a> in the range 1 to 16. All samples in the same channel have the same sample depth. Different channels may have
-          different sample depths.
-        </dd>
-        <!-- Maintain a fragment named "3sample" to preserve incoming links to it -->
-
-        <dt id="3sample"><dfn>sample</dfn>
-        </dt>
-
-        <dd>
-          intersection of a <a>channel</a> and a <a>pixel</a> in an image.
-        </dd>
-        <!-- Maintain a fragment named "3sampleDepth" to preserve incoming links to it -->
-
-        <dt id="3sampleDepth"><dfn>sample depth</dfn>
-        </dt>
-
-        <dd>
-          number of bits used to represent a <a>sample</a> value. In an <a>indexed-colour</a> <a>PNG image</a>, samples are stored
-          in the <a>palette</a> and thus the sample depth is always 8 by definition of the palette. In other types of PNG image it
-          is the same as the <a>bit depth</a>.
-        </dd>
-        <!-- Maintain a fragment named "3scanline" to preserve incoming links to it -->
-
-        <dt id="3scanline"><dfn>scanline</dfn>
-        </dt>
-
-        <dd>
-          row of <a>pixels</a> within an image or <a>interlaced PNG image</a>.
-        </dd>
-        <!-- Maintain a fragment named "3sourceImage" to preserve incoming links to it -->
-
-        <dt id="3sourceImage"><dfn>source image</dfn>
-        </dt>
-
-        <dd>
-          image which is presented to a <a>PNG encoder</a>.
-        </dd>
-
-        <dt><dfn>static image</dfn>
-        </dt>
-
-        <dd>
-          non-animated image corresponding to the <a>reference image</a> encoded in the <a class="chunk" href="#11IDAT">IDAT</a>
-          chunk. All PNG and APNG images contain a static image, and non animation-capable displays (such as printers) will display
-          this rather than the animation.
-        </dd>
-
-        <dt><dfn>transfer function</dfn>
-        </dt>
-
-        <dd>function relating image luminance with image samples</dd>
-        <!-- Maintain a fragment named "3whitePoint" to preserve incoming links to it -->
-
-        <dt id="3whitePoint"><dfn>white point</dfn>
-        </dt>
-
-        <dd>
-          <a>chromaticity</a> of a computer display's nominal white value.
-        </dd>
-        <!-- Maintain a fragment named "3zlib" to preserve incoming links to it -->
-
-        <dt id="3zlib"><dfn>zlib</dfn>
-        </dt>
-
-        <dd>
-          <p><a>deflate</a>-style compression method.</p>
-
-          <p class="note">The format is defined in [[rfc1950]].</p>
-
-          <p class="note">Also refers to the name of a library containing a sample implementation of this method.</p>
-        </dd>
-      </dl>
-    </section>
-    <!-- ************Page Break******************* -->
-    <!-- ************Page Break******************* -->
-
-    <section>
-      <!-- Maintain a fragment named "3Abbreviations" to preserve incoming links to it -->
-
-      <h2 id="3Abbreviations">Abbreviated terms</h2>
-
-      <dl>
-        <dt><dfn>APNG</dfn>
-        </dt>
-
-        <dd>
-          Animated PNG, a type of PNG which — in addition to a <a>static image</a> — also contains an <a>animated image</a>.
-        </dd>
-
-        <dt>Cyclic Redundancy Code</dt>
-        <!-- Maintain a fragment named "3CRC" to preserve incoming links to it -->
-
-        <dt id="3CRC"><dfn>CRC</dfn>
-        </dt>
-
-        <dd>
-          <p>type of check value designed to detect most transmission errors.</p>
-
-          <p class="note">A decoder calculates the CRC for the received data and checks by comparing it to the CRC calculated by
-          the encoder and appended to the data. A mismatch indicates that the data or the CRC were corrupted in transit.</p>
-        </dd>
-        <!-- Maintain a fragment named "3CRT" to preserve incoming links to it -->
-
-        <dt>Cathode Ray Tube</dt>
-
-        <dt id="3CRT"><dfn>CRT</dfn>
-        </dt>
-
-        <dd>vacuum tube containing one or more electron guns, which emit electron beams that are manipulated to display images on a
-        phosphorescent screen.</dd>
-        <!-- Maintain a fragment named "3LSB" to preserve incoming links to it -->
-
-        <dt id="3LSB"><dfn>LSB</dfn>
-        </dt>
-
-        <dd>
-          Least Significant Byte of a multi-<a>byte</a> value.
-        </dd>
-        <!-- Maintain a fragment named "3MSB" to preserve incoming links to it -->
-
-        <dt id="3MSB"><dfn>MSB</dfn>
-        </dt>
-
-        <dd>
-          Most Significant Byte of a multi-<a>byte</a> value.
-        </dd>
-      </dl>
-    </section>
+    <p>For the purposes of this specification the following definitions apply.</p>
+
+    <dl>
+
+      <!-- Maintain a fragment named "3byte" to preserve incoming links to it -->
+
+      <dt id="3byte"><dfn>byte</dfn>
+      </dt>
+      <dt>octet</dt>
+
+      <dd>8-bit binary integer in the range [0, 255] where the most significant bit is bit 7 and the least significant
+      bit is bit 0</dd>
+      <!-- Maintain a fragment named "3byteOrder" to preserve incoming links to it -->
+
+      <dt id="3byteOrder"><dfn>byte order</dfn>
+      </dt>
+
+      <dd>
+        ordering of <a>bytes</a> for multi-byte data values
+      </dd>
+
+      <!-- Maintain a fragment named "3chromaticity" to preserve incoming links to it -->
+
+      <dt id="3chromaticity"><dfn>chromaticity</dfn>
+      </dt>
+
+      <dd>pair of <i>x</i> and <i>y</i> values in the <i>xyY</i> space specified at [[COLORIMETRY]]
+
+      <p class="note">Chromaticity is a measure of the quality of a color regardless of its luminance.</p></dd>
+
+      <!-- Maintain a fragment named "3composite" to preserve incoming links to it -->
+
+      <dt id="3composite"><dfn data-lt="composited|composite">composite (verb)</dfn>
+      </dt>
+
+      <dd>form an image by merging a foreground image and a background image, using transparency information to determine
+      where and to what extent the background should be visible
+      <p class="note">The foreground image is said to be <a>composited</a> against the background.</p>
+      </dd>
+
+      <!-- Maintain a fragment named "3datastream" to preserve incoming links to it -->
+
+      <dt id="3datastream"><dfn>datastream</dfn>
+      </dt>
+
+      <dd>
+        sequence of <a>bytes</a>
+      </dd>
+      <!-- Maintain a fragment named "3deflate" to preserve incoming links to it -->
+
+      <dt id="3deflate"><dfn>deflate</dfn>
+      </dt>
+
+      <dd>
+        member of the <a>LZ77</a> family of compression methods
+
+        <p>SOURCE: [[RFC1951]]</p>
+      </dd>
+      <!-- ************Page Break******************* -->
+      <!-- ************Page Break******************* -->
+
+      <!-- need a definition of frame -->
+      <!-- Maintain a fragment named "3frameBuffer" to preserve incoming links to it -->
+
+      <dt id="3frameBuffer"><dfn>frame buffer</dfn>
+      </dt>
+
+      <dd>
+        the final digital storage area for the image shown by most types of computer display
+
+        <p class="note">Software causes an image to appear on screen by loading the image into the <a>frame buffer</a>.</p>
+      </dd>
+
+      <dt><dfn>fully transparent black</dfn>
+      </dt>
+
+      <dd>pixel where the red, green, blue and alpha components are all equal to zero</dd>
+
+      <dt><dfn>gamma value</dfn>
+      </dt>
+
+      <dd>
+        value of the exponent of a <a>gamma</a> <a>transfer function</a>
+      </dd>
+      <!-- Maintain a fragment named "3gamma" to preserve incoming links to it -->
+
+      <dt id="3gamma"><dfn>gamma</dfn>
+      </dt>
+
+      <dd>
+        power-law <a>transfer function</a>
+      </dd>
+
+      <dt><dfn>full-range image</dfn>
+      </dt>
+
+      <dd>image where reference black and white correspond, respectively, to sample values <code>0</code> and <code>2<sup>bit depth</sup> -
+      1</code></dd>
+
+      <!-- Maintain a fragment named "3imageData" to preserve incoming links to it -->
+
+      <dt id="3imageData"><dfn>image data</dfn>
+      </dt>
+
+      <dd>
+        1-dimensional array of <a>scanlines</a> within an image
+      </dd>
+
+      <!-- Maintain a fragment named "3interlacedPNGimage" to preserve incoming links to it -->
+
+      <dt id="3interlacedPNGimage"><dfn>interlaced PNG image</dfn>
+      </dt>
+
+      <dd>
+        sequence of <a>reduced images</a> generated from the <a>PNG image</a> by <a>pass extraction</a>
+      </dd>
+      <!-- Maintain a fragment named "3losslessCompression" to preserve incoming links to it -->
+
+      <dt id="3losslessCompression"><dfn>lossless</dfn>
+      </dt>
+
+      <dd>method of data compression that permits reconstruction of the original data exactly, bit-for-bit</dd>
+      <!-- Maintain a fragment named "3luminance" to preserve incoming links to it -->
+
+      <dt id="3luminance"><dfn>luminance</dfn>
+      </dt>
+
+      <dd>
+        perceived brightness of a colour
+
+        <p class="note">Luminance and <a>chromaticity</a> together fully define a perceived colour. A formal definition of
+        luminance is found at [[COLORIMETRY]].</p>
+      </dd>
+      <!-- Maintain a fragment named "3LZ77" to preserve incoming links to it -->
+
+      <dt><dfn id="3LZ77">LZ77</dfn>
+      </dt>
+
+      <dd>data compression algorithm described in [[Ziv-Lempel]].</dd>
+
+      <dt><dfn>narrow-range image</dfn>
+      </dt>
+
+      <dd>Image where reference black and white do not correspond, respectively, to sample values <code>0</code> and
+      <code>2<sup>bit depth</sup> - 1</code></dd>
+      <!-- Maintain a fragment named "3networkByteOrder" to preserve incoming links to it -->
+
+      <dt id="3networkByteOrder"><dfn>network byte order</dfn>
+      </dt>
+
+      <dd>
+        <a>byte order</a> in which the most significant byte comes first, then the less significant bytes in descending order of
+        significance (MSB LSB for two-byte integers, MSB B2 B1 LSB for four-byte integers)
+      </dd>
+
+      <!-- ************Page Break******************* -->
+      <!-- ************Page Break******************* -->
+      <!-- Maintain a fragment named "3PNGdecoder" to preserve incoming links to it -->
+
+      <dt id="3PNGdecoder">PNG decoder</dt>
+
+      <dd>
+        process or device that reconstructs the <a>reference image</a> from a <a>PNG datastream</a> and generates a
+        corresponding <a>delivered image</a>
+      </dd>
+      <!-- Maintain a fragment named "3PNGeditor" to preserve incoming links to it -->
+
+      <dt id="3PNGeditor"><dfn>PNG editor</dfn>
+      </dt>
+
+      <dd>
+        process or device that creates a modification of an existing <a>PNG datastream</a>, preserving unmodified ancillary
+        information wherever possible, and obeying the <a>chunk</a> ordering rules, even for unknown chunk types
+      </dd>
+      <!-- Maintain a fragment named "3PNGencoder" to preserve incoming links to it -->
+
+      <dt id="3PNGencoder">PNG encoder
+      </dt>
+
+      <dd>
+        process or device which constructs a <a>reference image</a> from a <a>source image</a>, and generates a <a>PNG
+        datastream</a> representing the reference image
+      </dd>
+      <!-- Maintain a fragment named "3PNGfile" to preserve incoming links to it -->
+
+      <dt id="3PNGfile">PNG file
+      </dt>
+
+      <dd>
+        <a>PNG datastream</a> stored as a file
+      </dd>
+      <!-- Maintain a fragment named "3PNGfourByteUnSignedInteger" to preserve incoming links to it -->
+
+      <dt id="3PNGfourByteUnSignedInteger"><dfn>PNG four-byte unsigned integer</dfn>
+      </dt>
+
+      <dd>
+        <p>a four-byte unsigned integer limited to the range 0 to 2<sup>31</sup>-1.</p>
+
+        <p class="note">The restriction is imposed in order to accommodate languages that have difficulty with unsigned four-byte
+        values.</p>
+      </dd>
+      <!-- Maintain a fragment named "3sample" to preserve incoming links to it -->
+
+      <dt id="3sample"><dfn>sample</dfn>
+      </dt>
+
+      <dd>
+        intersection of a <a>channel</a> and a <a>pixel</a> in an image
+      </dd>
+      <!-- Maintain a fragment named "3sampleDepth" to preserve incoming links to it -->
+
+      <dt id="3sampleDepth">sample depth</dt>
+
+      <dd>
+        number of bits used to represent a <a>sample</a> value
+      </dd>
+      <!-- Maintain a fragment named "3scanline" to preserve incoming links to it -->
+
+      <dt id="3scanline"><dfn>scanline</dfn>
+      </dt>
+
+      <dd>
+        row of <a>pixels</a> within an image or <a>interlaced PNG image</a>.
+      </dd>
+
+      <dt><dfn>transfer function</dfn>
+      </dt>
+
+      <dd>function relating image luminance with image samples</dd>
+      <!-- Maintain a fragment named "3whitePoint" to preserve incoming links to it -->
+
+      <dt id="3whitePoint"><dfn>white point</dfn>
+      </dt>
+
+      <dd>
+        <a>chromaticity</a> of a computer display's nominal white value.
+      </dd>
+      <!-- Maintain a fragment named "3zlib" to preserve incoming links to it -->
+
+      <dt id="3zlib"><dfn>zlib</dfn>
+      </dt>
+
+      <dd>
+        <p><a>deflate</a>-style compression method.</p>
+
+        <p>SOURCE: [[rfc1950]]</p>
+
+        <p class="note">Also refers to the name of a library containing a sample implementation of this method</p>
+      </dd>
+
+      <!-- Maintain a fragment named "3CRC" to preserve incoming links to it -->
+      <dt id="3CRC">Cyclic Redundancy Code</dt>
+      <dt><abbr title="Cyclic Redundancy Code">CRC</abbr></dt>
+      <dd>
+        <p>type of check value designed to detect most transmission errors.</p>
+
+        <p class="note">A decoder calculates the CRC for the received data and checks by comparing it to the CRC calculated by
+        the encoder and appended to the data. A mismatch indicates that the data or the CRC were corrupted in transit</p>
+      </dd>
+  
+      <!-- Maintain a fragment named "3CRT" to preserve incoming links to it -->
+      <dt id="3CRT">Cathode Ray Tube</dt>
+      <dt><abbr title="Cathode Ray Tube">CRT</abbr></dt>
+
+      <dd>vacuum tube containing one or more electron guns, which emit electron beams that are manipulated to display images on a
+      phosphorescent screen</dd>
+  
+      <!-- Maintain a fragment named "3LSB" to preserve incoming links to it -->
+      <dt id="3LSB">Least Significant Byte</dt>
+      <dt><abbr title="Least Significant Byte">LSB</abbr></dt>
+      <dd>
+        Least significant byte of a multi-<a>byte</a> value
+      </dd>
+      <!-- Maintain a fragment named "3MSB" to preserve incoming links to it -->
+      <dt id="3MSB">Most Significant Byte</dt>
+      <dt><abbr title="Most Significant Byte">MSB</abbr></dt>
+
+      <dd>
+        Most significant byte of a multi-<a>byte</a> value
+      </dd>
+    </dl>
   </section>
   <!-- ************Page Break******************* -->
   <!-- ************Page Break******************* -->
@@ -901,12 +646,16 @@ with these exceptions:
     <section>
       <h2>Static and Animated images</h2>
 
-      <p>All PNG images contain a single <a>static image</a>. Some PNG images — called <a>APNG</a> for Animated PNG — also contain
-      a frame-based animation sequence, the <a>animated image</a>. The first frame of this may be — but need not be — the <a>static
-      image</a>.</p>
+      <p>All PNG images contain a single <dfn>static image</dfn>.</p>
+
+      <p>Some PNG images — called <dfn class="lint-ignore">Animated PNG</dfn> (<abbr title="Animated PNG">APNG</abbr>) — also
+      contain a frame-based animation sequence, the <dfn>animated image</dfn>. The first frame of this may be — but need not be —
+      the <a>static image</a>. Non-animation-capable displays (such as printers) will display the <a>static image</a> rather than
+      the animation sequence.</p>
 
       <p>The <a>static image</a>, and each individual frame of an <a>animated image</a>, corresponds to a <em>reference image</em>
       and is stored as a <em>PNG image</em>.</p>
+
     </section>
 
     <section>
@@ -920,27 +669,36 @@ with these exceptions:
       form in which an image is presented to an encoder or delivered by a decoder is not specified. Four kinds of image are
       distinguished.</p>
 
-      <ol>
-        <li>The <i>source image</i> is the image presented to a PNG encoder.</li>
+      <dl>
+        <!-- Maintain a fragment named "3sourceImage" to preserve incoming links to it -->
+        <dt><dfn id="3sourceImage">Source image</dfn></dt>
+        <dd>The <i>source image</i> is the image presented to a PNG encoder.</dd>
 
-        <li>The <i>reference image</i>, which only exists conceptually, is a rectangular array of rectangular pixels, all having
+        <!-- Maintain a fragment named "3referenceImage" to preserve incoming links to it -->
+        <!-- Maintain a fragment named "3pixel" to preserve incoming links to it -->
+        <dt><dfn id="3referenceImage">Reference image</dfn></dt>
+        <dd>The <a>reference image</a>, which only exists conceptually, is a rectangular array of rectangular <dfn id="3pixel">pixels</dfn>, all having
         the same width and height, and all containing the same number of unsigned integer samples, either three (red, green, blue)
         or four (red, green, blue, alpha). The array of all samples of a particular kind (red, green, blue, or alpha) is called a
-        channel. Each channel has a sample depth in the range 1 to 16, which is the number of bits used by every sample in the
+        <!-- Maintain a fragment named "3channel" to preserve incoming links to it -->
+        <dfn id="3channel">channel</dfn>. Each channel has a sample depth in the range 1 to 16, which is the number of bits used by every sample in the
         channel. Different channels may have different sample depths. The red, green, and blue samples determine the intensities of
         the red, green, and blue components of the pixel's colour; if they are all zero, the pixel is black, and if they all have
-        their maximum values (2<sup>sampledepth</sup>-1), the pixel is white. The alpha sample determines a pixel's degree of
+        <!-- Maintain a fragment named "3alpha" to preserve incoming links to it -->
+        their maximum values (2<sup>sampledepth</sup>-1), the pixel is white. The <dfn id="3alpha">alpha</dfn> sample determines a pixel's degree of
         opacity, where zero means fully transparent and the maximum value means fully opaque. In a three-channel reference image
         all pixels are fully opaque. (It is also possible for a four-channel reference image to have all pixels fully opaque; the
         difference is that the latter has a specific alpha sample depth, whereas the former does not.) Each horizontal row of
         pixels is called a scanline. Pixels are ordered from left to right within each scanline, and scanlines are ordered from top
-        to bottom. A PNG encoder may transform the source image directly into a PNG image, but conceptually it first transforms the
+        to bottom. Every reference image can be represented exactly by a <a>PNG datastream</a> and every <a>PNG datastream</a> can be converted into a reference image. A PNG encoder may transform the source image directly into a PNG image, but conceptually it first transforms the
         source image into a reference image, then transforms the reference image into a PNG image. Depending on the type of source
         image, the transformation from the source image to a reference image may require the loss of information. That
         transformation is beyond the scope of this International Standard. The reference image, however, can always be recovered
-        exactly from a PNG datastream.</li>
+        exactly from a PNG datastream.</dd>
 
-        <li>The <i>PNG image</i> is obtained from the reference image by a series of transformations: alpha separation,
+        <!-- Maintain a fragment named "3PNGimage" to preserve incoming links to it -->
+        <dt><dfn id="3PNGimage">PNG image</dfn></dt>
+        <dd>The <i>PNG image</i> is obtained from the reference image by a series of transformations: alpha separation,
         <a>indexing</a>, <a>RGB merging</a>, alpha compaction, and <a>sample depth scaling</a>. Five types of PNG image are defined
         (see <a href="#6Colour-values"></a>). (If the PNG encoder actually transforms the source image directly into the PNG image,
         and the source image format is already similar to the PNG image format, the encoder may be able to avoid doing some of
@@ -948,13 +706,15 @@ with these exceptions:
         the number of significant bits in each channel of the reference image may be recorded. All channels in the PNG image have
         the same sample depth. A PNG encoder generates a PNG datastream from the PNG image. A PNG decoder takes the PNG datastream
         and recreates the PNG image.
-        </li>
+        </dd>
 
-        <li>The <a>delivered image</a> is constructed from the PNG image obtained by decoding a PNG datastream. No specific format
+        <!-- Maintain a fragment named "3deliveredImage" to preserve incoming links to it -->
+        <dt><dfn id="3deliveredImage">Delivered image</dfn></dt>
+        <dd>The <a>delivered image</a> is constructed from the PNG image obtained by decoding a PNG datastream. No specific format
         is specified for the <a>delivered image</a>. A viewer presents an image to the user as close to the appearance of the
         original source image as it can achieve.
-        </li>
-      </ol>
+        </dd>
+      </df>
 
       <p>The relationships between the four kinds of image are illustrated in <a href="#image-relationship"></a>.</p>
 
@@ -1049,9 +809,9 @@ with these exceptions:
         </figure>
       </section>
       <!-- Maintain a fragment named "4Concepts.Implied-alpha" to preserve incoming links to it -->
-
+      <!-- Maintain a fragment named "3alphaSeparation" to preserve incoming links to it -->
       <section id="4Concepts.Implied-alpha">
-        <h2>Alpha separation</h2>
+        <h2><dfn id="3alphaSeparation">Alpha separation</dfn></h2>
 
         <p>If all alpha samples in a reference image have the maximum value, then the alpha channel may be omitted, resulting in an
         equivalent image that can be encoded more compactly.</p>
@@ -1062,12 +822,15 @@ with these exceptions:
         <h2>Indexing</h2>
 
         <p>If the number of distinct pixel values is 256 or less, and the RGB sample depths are not greater than 8, and the alpha
-        channel is absent or exactly 8 bits deep or every pixel is either fully transparent or fully opaque, then an alternative
-        representation called indexed-colour may be more efficient for encoding. 
+        channel is absent or exactly 8 bits deep or every pixel is either fully transparent or fully opaque, then the alternative
+        <a>indexed-colour</a> representation, achieved through an <dfn id="3indexing">indexing</dfn> transformation, may be more efficient for encoding.
         <!-- Maintain a fragment named "3indexing" to preserve incoming links to it -->
-         In the <dfn id="3indexing">indexing</dfn> transformation, each pixel is replaced by an index into a palette. The palette
+        <!-- Maintain a fragment named "3palette" to preserve incoming links to it -->
+        <!-- Maintain a fragment named "3alphaTable" to preserve incoming links to it -->
+        <!-- Maintain a fragment named "3indexedColour" to preserve incoming links to it -->
+        In the <dfn id="3indexedColour">indexed-colour</dfn> representation, each pixel is replaced by an index into a palette. The <dfn id="3palette">palette</dfn>
         is a list of entries each containing three 8-bit samples (red, green, blue). If an alpha channel is present, there is also
-        a parallel table of 8-bit alpha samples.</p>
+        a parallel table of 8-bit alpha samples, called the <dfn id="3alphaTable">alpha table</dfn>.</p>
         <!-- ************Page Break******************* -->
         <!-- ************Page Break******************* -->
 
@@ -1103,8 +866,7 @@ with these exceptions:
 
       <section>
         <!-- Maintain a fragment named "4Concepts.Alpha-indexing" to preserve incoming links to it -->
-
-        <h2 id="4Concepts.Alpha-indexing">Alpha compaction</h2>
+        <h2 id="4Concepts.Alpha-indexing"><dfn id="3alphaCompaction">Alpha compaction</dfn></h2>
 
         <p>For non-indexed images, if there exists an RGB (or greyscale) value such that all pixels with that value are fully
         transparent while all other pixels are fully opaque, then the alpha channel can be represented more compactly by merely
@@ -1167,7 +929,7 @@ with these exceptions:
           intensities, and an <a>alpha</a> sample.
         </li>
 
-        <li>Greyscale with alpha: each pixel consists of two samples: grey and alpha.</li>
+        <li>Greyscale with alpha: each pixel consists of two samples: a <a>grey sample</a> and an alpha sample.</li>
         <!-- Maintain a fragment named "3truecolour" to preserve incoming links to it -->
 
         <li>
@@ -1176,9 +938,11 @@ with these exceptions:
           all others are fully opaque. If the alpha channel is not represented in this way, all pixels are fully opaque.
         </li>
 
-        <li>Greyscale: each pixel consists of a single sample: grey. The alpha channel may be represented by a single greyscale
-        pixel value, similar to the previous case. If the alpha channel is not represented in this way, all pixels are fully
-        opaque.</li>
+        <!-- Maintain a fragment named "3greyscale" to preserve incoming links to it -->
+        <li>Greyscale: each pixel consists of a single <dfn  id="3greyscale">grey sample</dfn>, which represents overall
+        <a>luminance</a> (on a scale from black to white). Instead of an array of samples, the alpha channel of a greyscale image
+        can consist of a single <a>grey sample</a> value such that grey samples that match that value are fully transparent, while
+        others are fully opaque. If the alpha channel is not represented in this way, all pixels are fully opaque.</li>
 
         <li>Indexed-colour: each pixel consists of an index into a palette (and into an associated table of alpha values, if
         present).</li>
@@ -1212,7 +976,7 @@ with these exceptions:
         <h3>Introduction</h3>
 
         <p>A conceptual model of the process of encoding a PNG image is given in <a href="#encoding-png-image"></a>. The steps
-        refer to the operations on the array of pixels or indices in the PNG image. The palette and alpha table are not encoded in
+        refer to the operations on the array of pixels or indices in the PNG image. The <a>palette</a> and <a>alpha table</a> are not encoded in
         this way.</p>
         <!-- <ol start="1"> -->
 
@@ -1238,8 +1002,9 @@ with these exceptions:
 
       <section id="4Concepts.EncodingPassAbs">
         <h2>Pass extraction</h2>
-
-        <p>Pass extraction (see <a href="#encoding-png-image"></a>) splits a PNG image into a sequence of reduced images where the
+        <!-- Maintain a fragment named "3reducedImage" to preserve incoming links to it -->
+        <!-- Maintain a fragment named "3passExtraction" to preserve incoming links to it -->
+        <p><dfn id="3passExtraction">Pass extraction</dfn> (see <a href="#encoding-png-image"></a>) splits a PNG image into a sequence of <dfn id="3reducedImage">reduced images</dfn> where the
         first image defines a coarse view and subsequent images enhance this coarse view until the last image completes the PNG
         image. The set of reduced images is also called an interlaced PNG image. Two interlace methods are defined in this
         specification. The first method is a null method; pixels are stored sequentially from left to right and scanlines from top
@@ -1458,7 +1223,8 @@ with these exceptions:
           </li>
         </ol>
 
-        <p>The remaining chunk types are termed ancillary chunk types, which encoders may generate and decoders may interpret.</p>
+        <!-- Maintain a fragment named "3ancillaryChunk" to preserve incoming links to it -->
+        <p>The remaining chunk types are termed <dfn class="lint-ignore" id="3ancillaryChunk">ancillary chunk</dfn> types, which encoders may generate and decoders may interpret.</p>
         <!-- <ol start="5"> -->
 
         <ol>
@@ -1671,6 +1437,24 @@ with these exceptions:
           </tr>
         </table>
       </section>
+
+      <section id="apng-output-buffer">
+        <h3>Output buffer</h3>
+
+        <p>The <dfn>output buffer</dfn> is a pixel array with dimensions specified by the width and height parameters of the PNG <a
+        class="chunk" href="#11IHDR">IHDR</a> chunk. Conceptually, each frame is constructed in the output buffer before being
+        <a>composited</a> onto the <a>canvas</a>. The contents of the output buffer are available to the decoder. The corners of
+        the output buffer are mapped to the corners of the <a>canvas</a>.</p>
+      </section>
+
+      <section id="apng-canvas">
+        <h3>Canvas</h3>
+
+        <p>The <dfn>canvas</dfn> is the area on the output device on which the frames are to be displayed. The contents of the
+        canvas are not necessarily available to the decoder. If a <a class="chunk" href="#11bKGD">bKGD</a> chunk exists, it may be
+        used to fill the canvas if there is no preferable background.</p>
+      </section>
+
     </section>
     <!-- Maintain a fragment named "4Concepts.Errors" to preserve incoming links to it -->
 
@@ -1722,14 +1506,21 @@ with these exceptions:
     <!-- Maintain a fragment named "5Introduction" to preserve incoming links to it -->
 
     <section id="5Introduction">
-      <h2>Introduction</h2>
+      <h2>PNG datastream</h2>
 
-      <p>The PNG datastream consists of a PNG signature followed by a sequence of chunks.</p>
+      <!-- Maintain a fragment named "3PNGdatastream" to preserve incoming links to it -->
+      <p>The <dfn id="3PNGdatastream">PNG datastream</dfn> consists of a PNG signature followed by a sequence of chunks. It
+      is the result of encoding a <a>PNG image</a>.</p>
+
+      <p class="note">The term datastream is used rather than "file" to describe a byte sequence that may be only a portion of a
+      file. It is also used to emphasize that the sequence of bytes might be generated and consumed "on the fly", never appearing in
+      a stored file at all.</p>
     </section>
     <!-- Maintain a fragment named "5PNG-file-signature" to preserve incoming links to it -->
 
     <section id="5PNG-file-signature">
-      <h2>PNG signature</h2>
+      <!-- Maintain a fragment named "3PNGsignature" to preserve incoming links to it -->
+      <h2 id="3PNGsignature">PNG signature</h2>
 
       <p>The first eight bytes of a PNG datastream always contain the following hexadecimal values:</p>
 
@@ -1740,13 +1531,17 @@ with these exceptions:
       <p>This signature indicates that the remainder of the datastream contains a single PNG image, consisting of a series of
       chunks beginning with an <a class="chunk" href="#11IHDR">IHDR</a> chunk and ending with an <a class="chunk" href=
       "#11IEND">IEND</a> chunk.</p>
+
+      <p>This signature differentiates a PNG datastream from other types of <a>datastream</a> and allows early detection of some
+      transmission errors.</p>
     </section>
     <!-- Maintain a fragment named "5Chunk-layout" to preserve incoming links to it -->
 
     <section id="5Chunk-layout">
       <h2>Chunk layout</h2>
 
-      <p>Each chunk consists of three or four fields (see <a href="#figure411"></a>). The meaning of the fields is described in
+      <!-- Maintain a fragment named "3chunk" to preserve incoming links to it -->
+      <p>Each <dfn id="3chunk">chunk</dfn> consists of three or four fields (see <a href="#figure411"></a>). The meaning of the fields is described in
       <a href="#table51"></a>. The chunk data field may be empty.</p>
 
       <figure id="figure411">
@@ -1773,7 +1568,7 @@ with these exceptions:
           <td>Length</td>
           <td>
             A <a>PNG four-byte unsigned integer</a> giving the number of bytes in the chunk's data field. The length counts
-            <strong>only</strong> the data field, <strong>not</strong> itself, the chunk type, or the <a>CRC</a>. Zero is a valid
+            <strong>only</strong> the data field, <strong>not</strong> itself, the chunk type, or the CRC. Zero is a valid
             length. Although encoders and decoders should treat the length as unsigned, its value shall not exceed 2<sup>31</sup>-1
             bytes.
           </td>
@@ -1800,9 +1595,9 @@ with these exceptions:
         <tr>
           <td>CRC</td>
           <td>
-            A four-byte <a>CRC</a> calculated on the preceding bytes in the chunk, including the chunk type field and chunk data
-            fields, but <strong>not</strong> including the length field. The <a>CRC</a> can be used to check for corruption of the
-            data. The <a>CRC</a> is always present, even for chunks containing no data. See <a href="#5CRC-algorithm"></a>.
+            A four-byte CRC calculated on the preceding bytes in the chunk, including the chunk type field and chunk data
+            fields, but <strong>not</strong> including the length field. The CRC can be used to check for corruption of the
+            data. The CRC is always present, even for chunks containing no data. See <a href="#5CRC-algorithm"></a>.
           </td>
         </tr>
       </table>
@@ -1910,20 +1705,20 @@ with these exceptions:
     <section id="5CRC-algorithm">
       <h2>CRC algorithm</h2>
 
-      <p><a>CRC</a> fields are calculated using standardized <a>CRC</a> methods with pre and post conditioning, as defined by [[ISO
-      3309]] and [[ITU-T V.42]]. The <a>CRC</a> polynomial employed— which is identical to that used in the GZIP file format
+      <p>CRC fields are calculated using standardized CRC methods with pre and post conditioning, as defined by [[ISO
+      3309]] and [[ITU-T V.42]]. The CRC polynomial employed— which is identical to that used in the GZIP file format
       specification [[RFC1952]]— is</p>
 
       <p>x<sup>32</sup> + x<sup>26</sup> + x<sup>23</sup> + x<sup>22</sup> + x<sup>16</sup> + x<sup>12</sup> + x<sup>11</sup> +
       x<sup>10</sup> + x<sup>8</sup> + x<sup>7</sup> + x<sup>5</sup> + x<sup>4</sup> + x<sup>2</sup> + x + 1</p>
 
-      <p>In PNG, the 32-bit <a>CRC</a> is initialized to all 1's, and then the data from each byte is processed from the least
-      significant bit (1) to the most significant bit (128). After all the data bytes are processed, the <a>CRC</a> is inverted
+      <p>In PNG, the 32-bit CRC is initialized to all 1's, and then the data from each byte is processed from the least
+      significant bit (1) to the most significant bit (128). After all the data bytes are processed, the CRC is inverted
       (its ones complement is taken). This value is transmitted (stored in the datastream) MSB first. For the purpose of separating
-      into bytes and ordering, the least significant bit of the 32-bit <a>CRC</a> is defined to be the coefficient of the
+      into bytes and ordering, the least significant bit of the 32-bit CRC is defined to be the coefficient of the
       <code>x<sup>31</sup></code> term.</p>
 
-      <p>Practical calculation of the <a>CRC</a> often employs a precalculated table to accelerate the computation. See <a href=
+      <p>Practical calculation of the CRC often employs a precalculated table to accelerate the computation. See <a href=
       "#D-CRCAppendix"></a>.</p>
     </section>
     <!-- Maintain a fragment 5ChunkOrderingg" to preserve incoming links to it -->
@@ -2504,7 +2299,7 @@ with these exceptions:
     <section id="7Integers-and-byte-order">
       <h2>Integers and byte order</h2>
 
-      <p>All integers that require more than one byte shall be in network byte order (as illustrated in <a href=
+      <p>All integers that require more than one byte shall be in <a>network byte order</a> (as illustrated in <a href=
       "#integer-representation-in-png"></a> ): the most significant byte comes first, then the less significant bytes in descending
       order of significance (MSB LSB for two-byte integers, MSB B2 B1 LSB for four-byte integers). The highest bit (value 128) of a
       byte is numbered bit 7; the lowest bit (value 1) is numbered bit 0. Values are unsigned unless otherwise noted. Values
@@ -2546,7 +2341,7 @@ with these exceptions:
       these unused bits are not specified.</p>
 
       <p>PNG images that are not indexed-colour images may have sample values with a bit depth of 16. Such sample values are in
-      network byte order (MSB first, LSB second). PNG permits multi-sample pixels only with 8 and 16-bit samples, so multiple
+      <a>network byte order</a> (MSB first, LSB second). PNG permits multi-sample pixels only with 8 and 16-bit samples, so multiple
       samples of a single pixel are never packed into one byte.</p>
     </section>
     <!-- ************Page Break******************* -->
@@ -2913,9 +2708,9 @@ with these exceptions:
       <a>deflate</a> specification [[rfc1951]].</p>
 
       <p>The check value stored at the end of the <a>zlib</a> datastream is calculated on the uncompressed data represented by the
-      datastream. The algorithm used to calculate this is not the same as the <a>CRC</a> calculation used for PNG chunk <a>CRC</a>
+      datastream. The algorithm used to calculate this is not the same as the CRC calculation used for PNG chunk CRC
       field values. The <a>zlib</a> check value is useful mainly as a cross-check that the <a>deflate</a> algorithms are
-      implemented correctly. Verifying the individual PNG chunk <a>CRCs</a> provides confidence that the PNG datastream has been
+      implemented correctly. Verifying the individual PNG chunk CRCs provides confidence that the PNG datastream has been
       transmitted undamaged.</p>
     </section>
     <!-- Maintain a fragment named "10CompressionFSL" to preserve incoming links to it -->
@@ -2972,7 +2767,8 @@ with these exceptions:
       <section class="introductory" id="11CcGen">
         <h3>Introduction</h3>
 
-        <p>Critical chunks are those chunks that are absolutely required in order to successfully decode a PNG image from a PNG
+        <!-- Maintain a fragment named "3criticalChunk" to preserve incoming links to it -->
+        <p>A <dfn id="3criticalChunk" class="lint-ignore">critical chunk</dfn> is a chunk that is absolutely required in order to successfully decode a PNG image from a PNG
         datastream. Extension chunks may be defined as critical chunks (see <a href="#14EditorsExt"></a>), though this practice is
         strongly discouraged.</p>
 
@@ -3033,7 +2829,8 @@ with these exceptions:
         <p>Width and height give the image dimensions in pixels. They are <a>PNG four-byte unsigned integers</a>. Zero is an
         invalid value.</p>
 
-        <p>Bit depth is a single-byte integer giving the number of bits per sample or per palette index (not per pixel). Valid
+        <!-- Maintain a fragment named "3bitDepth" to preserve incoming links to it -->
+        <p id="3bitDepth">Bit depth is a single-byte integer giving the number of bits per sample or per palette index (not per pixel). Valid
         values are 1, 2, 4, 8, and 16, although not all values are allowed for all <a>colour types</a>. See <a href=
         "#6Colour-values"></a>.</p>
 
@@ -5112,7 +4909,7 @@ with these exceptions:
           overwritten.</p>
           <!-- Not clear this para is needed, but the original specification had it -->
 
-          <p>Note, at the end of the <span class="chunk">fcTL</span> chunk is a 32-bit <a>CRC</a> checksum. The checksum is
+          <p>Note, at the end of the <span class="chunk">fcTL</span> chunk is a 32-bit CRC checksum. The checksum is
           calculated using the <span class="chunk">fcTL</span> chunk and includes the 'fcTL' chunk type field.</p>
           <!--
   8.1 Integers and byte order only covers multibyte integers. So add:
@@ -5753,11 +5550,11 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
       <!-- <ol start="1"> -->
 
       <ol>
-        <li>Detect errors as early as possible using the PNG signature bytes and <a>CRCs</a> on each chunk. Decoders should verify
+        <li>Detect errors as early as possible using the PNG signature bytes and CRCs on each chunk. Decoders should verify
         that all eight bytes of the PNG signature are correct. A decoder can have additional confidence in the datastream's
         integrity if the next eight bytes begin an <a class="chunk" href="#11IHDR">IHDR</a> chunk with the correct chunk length. A
-        <a>CRC</a> should be checked before processing the chunk data. Sometimes this is impractical, for example when a streaming
-        PNG decoder is processing a large <a class="chunk" href="#11IDAT">IDAT</a> chunk. In this case the <a>CRC</a> should be
+        CRC should be checked before processing the chunk data. Sometimes this is impractical, for example when a streaming
+        PNG decoder is processing a large <a class="chunk" href="#11IDAT">IDAT</a> chunk. In this case the CRC should be
         checked when the end of the chunk is reached.
         </li>
 
@@ -5814,7 +5611,7 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
         datastream. A decoder that ignored a critical chunk could not know whether the image it extracted was the one intended by
         the encoder.</li>
 
-        <li>A PNG signature mismatch, a <a>CRC</a> mismatch, or an unexpected end-of-stream indicates a corrupted datastream, and
+        <li>A PNG signature mismatch, a CRC mismatch, or an unexpected end-of-stream indicates a corrupted datastream, and
         may be regarded as a fatal error. A decoder could try to salvage something from the datastream, but the extent of the
         damage will not be known.
         </li>
@@ -5831,7 +5628,7 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
       handling of this error. Displaying the pixel as opaque black is one common error recovery tactic, although such behaviour is
       not required by this specification and must not be relied on by encoders.</p>
 
-      <p>Decoders that do not compute <a>CRCs</a> should interpret apparent syntax errors as indications of corruption (see also
+      <p>Decoders that do not compute CRCs should interpret apparent syntax errors as indications of corruption (see also
       <a href="#13Error-checking"></a>).</p>
 
       <p>Errors in compressed chunks ( <a class="chunk" href="#11IDAT">IDAT</a>, <a class="chunk" href="#11zTXt">zTXt</a>,
@@ -5858,7 +5655,7 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
 
       <p>The chunk type can be checked for plausibility by seeing whether all four bytes are in the range codes 41-5A and 61-7A
       (hexadecimal); note that this need be done only for unrecognized chunk types. If the total datastream size is known (from
-      file system information, HTTP protocol, etc), the chunk length can be checked for plausibility as well. If <a>CRCs</a> are
+      file system information, HTTP protocol, etc), the chunk length can be checked for plausibility as well. If CRCs are
       not checked, dropped/added data bytes or an erroneous chunk length can cause the decoder to get out of step and misinterpret
       subsequent data as a chunk header.</p>
 
@@ -5869,8 +5666,8 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
       <p>Unexpected values in fields of known chunks (for example, an unexpected compression method in the <a class="chunk" href=
       "#11IHDR">IHDR</a> chunk) shall be checked for and treated as errors. However, it is recommended that unexpected field values
       be treated as fatal errors only in <strong>critical</strong> chunks. An unexpected value in an ancillary chunk can be handled
-      by ignoring the whole chunk as though it were an unknown chunk type. (This recommendation assumes that the chunk's <a>CRC</a>
-      has been verified. In decoders that do not check <a>CRCs</a>, it is safer to treat any unexpected value as indicating a
+      by ignoring the whole chunk as though it were an unknown chunk type. (This recommendation assumes that the chunk's CRC
+      has been verified. In decoders that do not check CRCs, it is safer to treat any unexpected value as indicating a
       corrupted datastream.)</p>
 
       <p>Standard PNG images shall be compressed with compression method 0. The compression method field of the <a class="chunk"
@@ -5898,11 +5695,11 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
       decoders filter out control characters to avoid this risk; see <a href="#13Text-chunk-processing"></a>.</p>
 
       <p>Every chunk begins with a length field, which makes it easier to write decoders that are invulnerable to fraudulent chunks
-      that attempt to overflow buffers. The <a>CRC</a> at the end of every chunk provides a robust defence against accidentally
+      that attempt to overflow buffers. The CRC at the end of every chunk provides a robust defence against accidentally
       corrupted data. The PNG signature bytes provide early detection of common file transmission errors.</p>
 
-      <p>A decoder that fails to check <a>CRCs</a> could be subject to data corruption. The only likely consequence of such
-      corruption is incorrectly displayed pixels within the image. Worse things might happen if the <a>CRC</a> of the <a class=
+      <p>A decoder that fails to check CRCs could be subject to data corruption. The only likely consequence of such
+      corruption is incorrectly displayed pixels within the image. Worse things might happen if the CRC of the <a class=
       "chunk" href="#11IHDR">IHDR</a> chunk is not checked and the width or height fields are corrupted. See <a href=
       "#13Error-checking"></a>.</p>
 
@@ -6242,11 +6039,11 @@ decoding_exponent = 1.0 / (gamma * display_exponent)
       untagged images.</p>
 
       <p>In practice, it is often difficult to determine what value of display exponent should be used. In systems with no built-in
-      <a>gamma</a> correction, the display exponent is determined entirely by the <a>CRT</a>. A display exponent of 2.2 should be
-      used unless detailed calibration measurements are available for the particular <a>CRT</a> used.</p>
+      <a>gamma</a> correction, the display exponent is determined entirely by the CRT. A display exponent of 2.2 should be
+      used unless detailed calibration measurements are available for the particular CRT used.</p>
 
       <p>Many modern <a>frame buffers</a> have lookup tables that are used to perform <a>gamma</a> correction, and on these systems
-      the display exponent value should be the exponent of the lookup table and <a>CRT</a> combined. It may not be possible to find
+      the display exponent value should be the exponent of the lookup table and CRT combined. It may not be possible to find
       out what the lookup table contains from within the viewer application, in which case it may be necessary to ask the user to
       supply the display system's exponent value. Unfortunately, different manufacturers use different ways of specifying what
       should go into the lookup table, so interpretation of the system <a>gamma value</a> is system-dependent.</p>
@@ -7241,7 +7038,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
     <p><code>intensity = (voltage + constant)<sup>exponent</sup></code>
     </p>
 
-    <p>which is used to model the non-linearity of <a>CRT</a> displays. It is often assumed, as in this International Standard,
+    <p>which is used to model the non-linearity of CRT displays. It is often assumed, as in this International Standard,
     that the constant is zero.</p>
 
     <p>For the purposes of this specification, it is convenient to consider five places in a general image pipeline at which
@@ -7284,7 +7081,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
         <td><var>output_exponent</var>
         </td>
         <td>
-          the exponent of the display device. For a <a>CRT</a>, this is typically a value close to 2.2.
+          the exponent of the display device. For a CRT, this is typically a value close to 2.2.
         </td>
       </tr>
     </table>
@@ -7338,7 +7135,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
 
     <h2 class="Annex" id="samplecrc">Sample CRC implementation</h2>
 
-    <p>The following sample code — which is informative — represents a practical implementation of the <a>CRC</a> (Cyclic
+    <p>The following sample code — which is informative — represents a practical implementation of the CRC (Cyclic
     Redundancy Check) employed in PNG chunks. (See also ISO 3309 [[ISO 3309]] or ITU-T V.42 [[ITU-T V.42]] for a formal
     specification.)</p>
 
@@ -7487,7 +7284,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
       "http://www.libpng.org/pub/png/"><code>http://www.libpng.org/pub/png/</code></a>. This page is a central location for current
       information about PNG and PNG-related tools.</p>
 
-      <p>Additional documentation and portable C code for <a>deflate</a>, and an optimized implementation of the <a>CRC</a>
+      <p>Additional documentation and portable C code for <a>deflate</a>, and an optimized implementation of the CRC
       algorithm are available from the zlib web site, <a href="https://www.zlib.net/"><code>https://www.zlib.net/</code></a>.</p>
     </section>
     <!-- Maintain a fragment named "E-Sample-implementation" to preserve incoming links to it -->
@@ -7543,7 +7340,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
     <ul>
       <!-- to 5 Apr 2022 -->
 
-      <li>The three previously defined, but unofficial, chunks for <a>APNG</a> have been added. This brings the PNG specification
+      <li>The three previously defined, but unofficial, chunks for APNG have been added. This brings the PNG specification
       into alignment with widely deployed industry practice.
       </li>
 

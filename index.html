@@ -3681,8 +3681,13 @@ with these exceptions:
           the Mastering Display Color Volume (mDCv) used at the point of content creation, 
           as specified in [[SMPTE ST 2086]]. The mDCv provides informative static metadata to 
           allow a destination (consumer) display to optimize it's tone and color mappings based 
-          on its inherent capabilities. Additional examples of its most common use-cases are available 
-          in [[ITU-T Series H Supplement 19]].</p>
+          on its inherent capabilities. The MDCV chunk should be included for both PQ and SDR 
+          images. It is less common for HLG images. Color Primaries and White Point characteristics 
+          can be derived from CICP chunk formats. Specific examples of its most common use-cases 
+          for both HDR and SDR are available in [[ITU-T Series H Supplement 19]].</p>
+
+          <p> For SDR images, if MDCV display min/max luminance are unknown, the default 
+          characteristics can be derived from the values in ITU_T Series H Supplemental 19 Table 11 .”</p>
 
           <p>The following specifies the syntax of the <span class="chunk">mDCv</span> chunk:</p>
 

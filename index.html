@@ -4098,8 +4098,7 @@ with these exceptions:
           particular keywords. In particular, keywords are considered case-sensitive. Keywords are restricted to 1 to 79 bytes in
           length.</p>
 
-          <p>For the Creation Time keyword, the date format defined in section&#160;5.2.14 of RFC 1123 is suggested, but not
-          required [[rfc1123]].</p>
+          <p>For the Creation Time keyword, the date format SHOULD be in the RFC 3339 [[rfc3339]] date-time format or in the date format defined in section&#160;5.2.14 of RFC 1123 [[rfc1123]]. The RFC3339 date-time format is preferred. The actual format of this field is undefined.</p>
 
           <p>The <a class="chunk" href="#11iTXt">iTXt</a> chunk uses the UTF-8 encoding [[rfc3629]] and can be used to convey
           characters in any language. There is an option to compress text strings in the <a class="chunk" href="#11iTXt">iTXt</a>

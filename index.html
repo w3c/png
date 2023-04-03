@@ -3914,12 +3914,13 @@ with these exceptions:
              
           <p>MaxFALL (Maximum Frame Average Light Level) indicates the maximum value of the frame 
              average light level (in cd/m<sup>2</sup>, also known as nits) of the entire playback sequence. MaxFALL is 
-             calculated by averaging the decoded luminance values of all the pixels within a frame.</p>
+             calculated by first averaging the decoded luminance values of all the pixels in each frame,
+             and then using the value for the frame with the highest value.</p>
              
           <p>MaxCLL (Maximum Content Light Level) indicates the maximum light level of any single 
              pixel (in cd/m<sup>2</sup>, also known as nits) of the entire playback sequence.  There is often an algorithmic 
              filter to eliminate false values occurring from processing or noise that could adversely 
-             affect intended downstream tone mapping</p>
+             affect intended downstream tone mapping.</p>
   
           <p>For static PNG, the <a>static image</a> is analyzed and is considered to be the first 
              (and only) frame. For animated PNG, each frame of the <a href="#apng-frame-based-animation">

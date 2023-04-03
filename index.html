@@ -923,29 +923,30 @@ with these exceptions:
       "#possible-pixel-types"></a>) :</p>
       <!-- <ol start="1"> -->
 
-      <ol>
-        <li>
-          <dfn>Truecolour with alpha</dfn>: each <a>pixel</a> is defined by <a>samples</a>, representing red, green, and blue
-          intensities, and an <a>alpha</a> sample.
-        </li>
+      <dl>
+        <dt><dfn>Truecolour with alpha</dfn></dt>
+        <dd>Each <a>pixel</a> consists of four <a>samples</a>: red, green, blue and <a>alpha</a>.</dd>
 
-        <li>Greyscale with alpha: each pixel consists of two samples: a <a>grey sample</a> and an alpha sample.</li>
+        <dt><dfn>Greyscale with alpha</dfn></dt>
+        <dd>Each <a>pixel</a> consists of two <a>samples</a>: a <a>grey sample</a> and an <a>alpha</a> sample.</dd>
+
         <!-- Maintain a fragment named "3truecolour" to preserve incoming links to it -->
+        <dt><dfn id="3truecolour">Truecolour</dfn></dt>
+        <dd>Each <a>pixel</a> consists of a triplet of <a>samples</a>: red, green, blue. An optional alpha channel can be specified
+        as a single triplet of red, green, blue <a>samples</a>: <a>pixels</a> of the image whose red, green, blue <a>samples</a>
+        are identical to the red, green, blue <a>samples</a> of the alpha channel are fully transparent; others are fully opaque. If
+        the alpha channel is not present, all <a>pixels</a> are fully opaque.</dd>
 
-        <li>
-          <dfn id="3truecolour">Truecolour</dfn>: each <a>pixel</a> is defined by <a>samples</a>, representing red, green, and blue
-          intensities. The alpha channel may be represented by a single RGB pixel value. Matching pixels are fully transparent, and
-          all others are fully opaque. If the alpha channel is not represented in this way, all pixels are fully opaque.
-        </li>
-
+        <dt>Greyscale</dt>
         <!-- Maintain a fragment named "3greyscale" to preserve incoming links to it -->
-        <li>Greyscale: each pixel consists of a single <dfn  id="3greyscale">grey sample</dfn>, which represents overall
-        <a>luminance</a> (on a scale from black to white). Instead of an array of samples, the alpha channel of a greyscale image
-        can consist of a single <a>grey sample</a> value such that grey samples that match that value are fully transparent, while
-        others are fully opaque. If the alpha channel is not represented in this way, all pixels are fully opaque.</li>
+        <dd>Each pixel consists of a single <dfn  id="3greyscale">grey sample</dfn>, which represents overall
+        <a>luminance</a> (on a scale from black to white). An optional alpha channel can be specified as a single <a>grey
+        sample</a>: <a>pixels</a> of the image whose <a>grey sample</a> is identical to the <a>grey sample</a> of the alpha channel
+        are fully transparent; others are fully opaque. If the alpha channel is not present, all <a>pixels</a> are fully
+        opaque.</dd>
 
-        <li>Indexed-colour: each pixel consists of an index into a palette (and into an associated table of alpha values, if
-        present).</li>
+        <dt>Indexed-colour</dt>
+        <dd>Each pixel consists of an index into a palette (and into an associated table of alpha values, if present).</dd>
       </ol>
 
       <p>The format of each pixel depends on the PNG image type and the bit depth. For PNG image types other than indexed-colour,

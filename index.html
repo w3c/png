@@ -3681,13 +3681,13 @@ with these exceptions:
           the Mastering Display Color Volume (mDCv) used at the point of content creation, 
           as specified in [[SMPTE ST 2086]]. The mDCv provides informative static metadata to 
           allow a destination (consumer) display to optimize it's tone and color mappings based 
-          on its inherent capabilities. The MDCV chunk should be included for both PQ and SDR 
+          on its inherent capabilities. The mDCv chunk should be included for both PQ and SDR 
           images. It is less common for HLG images. Color Primaries and White Point characteristics 
-          can be derived from CICP chunk formats. Specific examples of its most common use-cases 
+          can be derived from cICP chunk formats. Specific examples of its most common use-cases 
           for both HDR and SDR are available in [[ITU-T Series H Supplement 19]].</p>
 
-          <p> For SDR images, if MDCV display min/max luminance are unknown, the default 
-          characteristics can be derived from the values in ITU_T Series H Supplemental 19 Table 11 .”</p>
+          <p> For SDR images, if mDCv display min/max luminance are unknown, the default 
+          characteristics can be derived from the values in [[ITU-T Series H Supplemental 19]] Table 11 .”</p>
 
           <p>The following specifies the syntax of the <span class="chunk">mDCv</span> chunk:</p>
 
@@ -3906,18 +3906,18 @@ with these exceptions:
           <p>The four-byte chunk type field contains the hexadecimal values</p>
 
           <pre>
-<!-- 109 76 85 109 -->6D 4C 55 6D
+<!-- 99 76 76 105 -->63 4C 4C 69
 </pre>
         
           <p>If present, the <span class="chunk">cLLi</span> chunk identifies two characteristics:</p>
              
           <p>MaxFALL (Maximum Frame Average Light Level) indicates the maximum value of the frame 
-             average light level (in cd/m2 or nits) of the entire playback sequence. MaxFALL is 
-	     calculated by first averaging the decoded luminance values of all the pixels in each frame,
+             average light level (in cd/m<sup>2</sup>, also known as nits) of the entire playback sequence. MaxFALL is 
+             calculated by first averaging the decoded luminance values of all the pixels in each frame,
              and then using the value for the frame with the highest value.</p>
              
           <p>MaxCLL (Maximum Content Light Level) indicates the maximum light level of any single 
-             pixel (in cd/m2 or nits) of the entire playback sequence.  There is often an algorithmic 
+             pixel (in cd/m<sup>2</sup>, also known as nits) of the entire playback sequence.  There is often an algorithmic 
              filter to eliminate false values occurring from processing or noise that could adversely 
              affect intended downstream tone mapping.</p>
   

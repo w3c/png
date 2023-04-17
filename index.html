@@ -5445,11 +5445,18 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
       <p>For <a>truecolour</a> and greyscale images, any of the five filters may prove the most effective. If an encoder uses a
       fixed filter, the Paeth filter type is most likely to be the best.</p>
 
-      <p>For best compression of <a>truecolour</a> and greyscale images, the recommended approach is adaptive filtering in which a
-      filter type is chosen for each scanline. The following simple heuristic has performed well in early tests: compute the output
+      <p>For best compression of <a>truecolour</a> and greyscale images, 
+      and if compression efficiency is valued over speed of compression,
+      the recommended approach is adaptive filtering in which a
+      filter type is chosen for each scanline. 
+      Each unique image will have a different set of filters which perform best for it. 
+      An encoder could try every combination of filters to find what compresses best 
+      for a given image. However, when an exhaustive search is unacceptable, 
+      here are some general heuristics which may perform well enough:
+      compute the output
       scanline using all five filters, and select the filter that gives the smallest sum of absolute values of outputs. (Consider
-      the output bytes as signed differences for this test.) This method usually outperforms any single fixed filter type choice.
-      However, it is likely that better heuristics will be found as more experience is gained with PNG.</p>
+      the output bytes as signed differences for this test.) 
+      This method usually outperforms any single fixed filter type choice.</p>
 
       <p>Filtering according to these recommendations is effective in conjunction with either of the two interlace methods defined
       in this specification.</p>

@@ -272,7 +272,7 @@
   <section id="abstract">
     <p>This document describes PNG (Portable Network Graphics), an extensible file format for the <a>lossless</a>, portable,
     well-compressed storage of static and animated raster images. PNG provides a patent-free replacement for GIF and can also
-    replace many common uses of TIFF. Indexed-colour, greyscale, and <a>truecolour</a> images are supported, plus an optional alpha
+    replace many common uses of TIFF. <a>Indexed-colour</a>, <a>greyscale</a>, and <a>truecolour</a> images are supported, plus an optional alpha
     channel. Sample depths range from 1 to 16 bits.</p>
 
     <p>PNG is designed to work well in online viewing applications, such as the World Wide Web, so it is fully streamable with a
@@ -307,7 +307,7 @@ with these exceptions:
   <ol>
     <li>Portability: encoding, decoding, and transmission should be software and hardware platform independent.</li>
 
-    <li>Completeness: it should be possible to represent <a>truecolour</a>, indexed-colour, and greyscale images, in each case with
+    <li>Completeness: it should be possible to represent <a>truecolour</a>, <a>indexed-colour</a>, and <a>greyscale</a> images, in each case with
     the option of transparency, colour space information, and ancillary information such as textual comments.
     </li>
 
@@ -843,10 +843,10 @@ with these exceptions:
           </figcaption>
         </figure>
 
-        <p>A suggested palette or palettes may be constructed even when the PNG image is not indexed-colour in order to assist
+        <p>A suggested palette or palettes may be constructed even when the PNG image is not <a>indexed-colour</a> in order to assist
         viewers that are capable of displaying only a limited number of colours.</p>
 
-        <p>For indexed-colour images, encoders can rearrange the palette so that the table entries with the maximum alpha value are
+        <p>For <a>indexed-colour</a> images, encoders can rearrange the palette so that the table entries with the maximum alpha value are
         grouped at the end. In this case the table can be encoded in a shortened form that does not include these entries.</p>
 
         <p>Encoders creating indexed-color PNG must not insert index values greater than the actual length of the palette table; to
@@ -937,7 +937,7 @@ with these exceptions:
         are identical to the red, green, blue <a>samples</a> of the alpha channel are fully transparent; others are fully opaque. If
         the alpha channel is not present, all <a>pixels</a> are fully opaque.</dd>
 
-        <dt>Greyscale</dt>
+        <dt><dfn>Greyscale</dfn></dt>
         <!-- Maintain a fragment named "3greyscale" to preserve incoming links to it -->
         <dd>Each pixel consists of a single <dfn  id="3greyscale">grey sample</dfn>, which represents overall
         <a>luminance</a> (on a scale from black to white). An optional alpha channel can be specified as a single <a>grey
@@ -945,26 +945,26 @@ with these exceptions:
         are fully transparent; others are fully opaque. If the alpha channel is not present, all <a>pixels</a> are fully
         opaque.</dd>
 
-        <dt>Indexed-colour</dt>
+        <dt><a>Indexed-colour</a></dt>
         <dd>Each pixel consists of an index into a palette (and into an associated table of alpha values, if present).</dd>
       </ol>
 
       <p>The format of each pixel depends on the PNG image type and the bit depth. For PNG image types other than indexed-colour,
-      the bit depth specifies the number of bits per sample, not the total number of bits per pixel. For indexed-colour images, the
+      the bit depth specifies the number of bits per sample, not the total number of bits per pixel. For <a>indexed-colour</a> images, the
       bit depth specifies the number of bits in each palette index, not the sample depth of the colours in the palette or alpha
       table. Within the pixel the samples appear in the following order, depending on the PNG image type.</p>
       <!-- <ol start="6"> -->
 
       <ol>
-        <li>Truecolour with alpha: red, green, blue, alpha.</li>
+        <li><a>Truecolour with alpha</a>: red, green, blue, alpha.</li>
 
-        <li>Greyscale with alpha: grey, alpha.</li>
+        <li><a>Greyscale with alpha</a>: grey, alpha.</li>
 
-        <li>Truecolour: red, green, blue.</li>
+        <li><a>Truecolour</a>: red, green, blue.</li>
 
-        <li>Greyscale: grey.</li>
+        <li><a>Greyscale</a>: grey.</li>
 
-        <li>Indexed-colour: palette index.</li>
+        <li><a>Indexed-colour</a>: palette index.</li>
       </ol>
     </section>
     <!-- Maintain a fragment named "4Concepts.Encoding" to preserve incoming links to it -->
@@ -2194,7 +2194,7 @@ with these exceptions:
       <p>As explained in <a href="#4Concepts.PNGImage"></a> there are five types of PNG 
       <!-- Maintain "3colourType" to preserve incoming links to it -->
        image. Corresponding to each type is a <dfn id="3colourType">colour type</dfn>, which is the sum of the following values: 1
-      (palette used), 2 (<a>truecolour</a> used) and 4 (alpha used). Greyscale and <a>truecolour</a> images may have an explicit
+      (palette used), 2 (<a>truecolour</a> used) and 4 (alpha used). <a>greyscale</a> and <a>truecolour</a> images may have an explicit
       alpha channel. The PNG image types and corresponding <a>colour types</a> are listed in <a href="#table6.1"></a>.</p>
       <!-- Maintain a fragment named "table6.1" to preserve incoming links to it -->
 
@@ -2258,20 +2258,20 @@ with these exceptions:
 
       <ol>
         <li>
-          <a>Truecolour with alpha</a>, greyscale with alpha: an alpha channel is part of the image array.
+          <a>Truecolour with alpha</a>, <a>greyscale with alpha</a>: an alpha channel is part of the image array.
         </li>
 
         <li>
-          <a>truecolour</a>, greyscale: A <a class="chunk" href="#11tRNS">tRNS</a> chunk contains a single pixel value
+          <a>truecolour</a>, <a>greyscale</a>: A <a class="chunk" href="#11tRNS">tRNS</a> chunk contains a single pixel value
           distinguishing the fully transparent pixels from the fully opaque pixels.
         </li>
 
-        <li>Indexed-colour: A <a class="chunk" href="#11tRNS">tRNS</a> chunk contains the alpha table that associates an alpha
+        <li><a>Indexed-colour</a>: A <a class="chunk" href="#11tRNS">tRNS</a> chunk contains the alpha table that associates an alpha
         sample with each palette entry.
         </li>
 
         <li>
-          <a>truecolour</a>, greyscale, indexed-colour: there is no <a class="chunk" href="#11tRNS">tRNS</a> chunk present and all
+          <a>truecolour</a>, <a>greyscale</a>, <a>indexed-colour</a>: there is no <a class="chunk" href="#11tRNS">tRNS</a> chunk present and all
           pixels are fully opaque.
         </li>
       </ol>
@@ -2341,7 +2341,7 @@ with these exceptions:
       <p>When there are multiple pixels per byte, some low-order bits of the last byte of a scanline may go unused. The contents of
       these unused bits are not specified.</p>
 
-      <p>PNG images that are not indexed-colour images may have sample values with a bit depth of 16. Such sample values are in
+      <p>PNG images that are not <a>indexed-colour</a> images may have sample values with a bit depth of 16. Such sample values are in
       <a>network byte order</a> (MSB first, LSB second). PNG permits multi-sample pixels only with 8 and 16-bit samples, so multiple
       samples of a single pixel are never packed into one byte.</p>
     </section>
@@ -2891,7 +2891,7 @@ with these exceptions:
           </tr>
         </table>
 
-        <p>The sample depth is the same as the bit depth except in the case of indexed-colour PNG images (<a>colour type</a> 3), in
+        <p>The sample depth is the same as the bit depth except in the case of <a>indexed-colour</a> PNG images (<a>colour type</a> 3), in
         which the sample depth is always 8 bits (see <a href="#4Concepts.PNGImage"></a>).</p>
 
         <p>Compression method is a single-byte integer that indicates the method used to compress the <a>image data</a>. Only
@@ -2946,7 +2946,7 @@ with these exceptions:
         bit depth of 4). It is permissible to have fewer entries than the bit depth would allow. In that case, any out-of-range
         pixel value found in the <a>image data</a> is an error.</p>
 
-        <p>For <a>colour types</a> 2 and 6 (<a>truecolour</a> and truecolour with alpha), the <span class="chunk">PLTE</span> chunk
+        <p>For <a>colour types</a> 2 and 6 (<a>truecolour</a> and <a>truecolour with alpha</a>), the <span class="chunk">PLTE</span> chunk
         is optional. If present, it provides a suggested set of colours (from 1 to 256) to which the <a>truecolour</a> image can be
         quantized if it cannot be displayed directly. It is, however, recommended that the <a class="chunk" href="#11sPLT">sPLT</a>
         chunk be used for this purpose, rather than the <span class="chunk">PLTE</span> chunk. If neither <span class=
@@ -3017,7 +3017,7 @@ with these exceptions:
 <!-- 116 82 78 83 -->74 52 4E 53
 </pre>
           <p>The <span class="chunk">tRNS</span> chunk specifies either alpha values that are associated with palette entries (for
-          indexed-colour images) or a single transparent colour (for greyscale and <a>truecolour</a> images). The <span class=
+          <a>indexed-colour</a> images) or a single transparent colour (for <a>greyscale</a> and <a>truecolour</a> images). The <span class=
           "chunk">tRNS</span> chunk contains: <!-- ************Page Break******************* --></p>
           <!-- ************Page Break******************* -->
 
@@ -3096,7 +3096,7 @@ with these exceptions:
           <p>A <span class="chunk">tRNS</span> chunk shall not appear for <a>colour types</a> 4 and 6, since a full alpha channel
           is already present in those cases.</p>
 
-          <p class="Note">NOTE For 16-bit greyscale or <a>truecolour</a> data, only pixels matching the entire 16-bit values in
+          <p class="Note">NOTE For 16-bit <a>greyscale</a> or <a>truecolour</a> data, only pixels matching the entire 16-bit values in
           <span class="chunk">tRNS</span> chunks are transparent. Decoders have to postpone any sample depth rescaling until after
           the pixels have been tested for transparency.</p>
         </section>
@@ -3182,7 +3182,7 @@ with these exceptions:
           <p>EXAMPLE A value of 0.3127 would be stored as the integer 31270.</p>
 
           <p>The <span class="chunk">cHRM</span> chunk is allowed in all PNG datastreams, although it is of little value for
-          greyscale images.</p>
+          <a>greyscale</a> images.</p>
 
           <p>An <a class="chunk" href="#11sRGB">sRGB</a> or <a class="chunk" href="#11iCCP">iCCP</a> chunk when present and
           recognized, overrides the <span class="chunk">cHRM</span> chunk.</p>
@@ -3270,7 +3270,7 @@ with these exceptions:
           <p>If the <span class="chunk">iCCP</span> chunk is present, the image samples conform to the colour space represented by
           the embedded ICC profile as defined by the International Color Consortium [[ICC]][[ISO 15076-1]]. The colour space of the
           ICC profile shall be an RGB colour space for colour images (<a>colour types</a> 2, 3, and 6), or a greyscale colour space
-          for greyscale images (<a>colour types</a> 0 and 4). A PNG encoder that writes the <span class="chunk">iCCP</span> chunk
+          for <a>greyscale</a> images (<a>colour types</a> 0 and 4). A PNG encoder that writes the <span class="chunk">iCCP</span> chunk
           is encouraged to also write <a class="chunk" href="#11gAMA">gAMA</a> and <a class="chunk" href="#11cHRM">cHRM</a> chunks
           that approximate the ICC profile, to provide compatibility with applications that do not use the <span class=
           "chunk">iCCP</span> chunk. When the <span class="chunk">iCCP</span> chunk is present, PNG decoders that recognize it and
@@ -3377,7 +3377,7 @@ with these exceptions:
           </table>
 
           <p>Each depth specified in <span class="chunk">sBIT</span> shall be greater than zero and less than or equal to the
-          sample depth (which is 8 for indexed-colour images, and the bit depth given in <a class="chunk" href="#11IHDR">IHDR</a>
+          sample depth (which is 8 for <a>indexed-colour</a> images, and the bit depth given in <a class="chunk" href="#11IHDR">IHDR</a>
           for other <a>colour types</a>). Note that <span class="chunk">sBIT</span> does not provide a sample depth for the alpha
           channel that is implied by a <a class="chunk" href="#11tRNS">tRNS</a> chunk; in that case, all of the sample bits of the
           alpha channel are to be treated as significant. If the <span class="chunk">sBIT</span> chunk is not present, then all of
@@ -4346,9 +4346,9 @@ with these exceptions:
             </tr>
           </table>
 
-          <p>For <a>colour type</a> 3 (indexed-colour), the value is the palette index of the colour to be used as background.</p>
+          <p>For <a>colour type</a> 3 (<a>indexed-colour</a>), the value is the palette index of the colour to be used as background.</p>
 
-          <p>For <a>colour types</a> 0 and 4 (greyscale, greyscale with alpha), the value is the grey level to be used as
+          <p>For <a>colour types</a> 0 and 4 (<a>greyscale</a>, <a>greyscale with alpha</a>), the value is the grey level to be used as
           background in the range 0 to (2<sup>bitdepth</sup>)-1. For <a>colour types</a> 2 and 6 (<a>truecolour</a>, <a>truecolour
           with alpha</a>), the values are the colour to be used as background, given as RGB samples in the range 0 to
           (2<sup>bitdepth</sup>)-1. In each case, for consistency, two bytes per sample are used regardless of the image bit depth.
@@ -4559,7 +4559,7 @@ with these exceptions:
           (when the <span class="chunk">sPLT</span> sample depth is 8) or 65535 (when the <span class="chunk">sPLT</span> sample
           depth is 16) means fully opaque. The <span class="chunk">sPLT</span> chunk may appear for any <a>colour type</a>. Entries
           in <span class="chunk">sPLT</span> use the same <a>gamma value</a> and <a>chromaticity</a> values as the PNG image, but
-          may fall outside the range of values used in the colour space of the PNG image; for example, in a greyscale PNG image,
+          may fall outside the range of values used in the colour space of the PNG image; for example, in a <a>greyscale</a> PNG image,
           each <span class="chunk">sPLT</span> entry would typically have equal red, green, and blue values, but this is not
           required. Similarly, <span class="chunk">sPLT</span> entries can have non-opaque alpha values even when the PNG image
           does not use transparency.</p>
@@ -5408,7 +5408,7 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
         </li>
 
         <li>Whereas the <a class="chunk" href="#11sPLT">sPLT</a> chunk is allowed in PNG datastreams for <a>colour types</a> 0, 3,
-        and 4 (greyscale and indexed), the <a class="chunk" href="#11PLTE">PLTE</a> chunk cannot be used to provide reduced
+        and 4 (<a>greyscale</a> and <a>indexed-colour</a>), the <a class="chunk" href="#11PLTE">PLTE</a> chunk cannot be used to provide reduced
         palettes in these cases.
         </li>
 
@@ -5436,16 +5436,16 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
       <h2>Filter selection</h2>
 
       <p>For images of <a>colour type</a> 3 (indexed-colour), filter type 0 (None) is usually the most effective. Colour images
-      with 256 or fewer colours should almost always be stored in indexed-colour format; <a>truecolour</a> format is likely to be
+      with 256 or fewer colours should almost always be stored in <a>indexed-colour</a> format; <a>truecolour</a> format is likely to be
       much larger.</p>
 
       <p>Filter type 0 is also recommended for images of bit depths less than 8. For low-bit-depth greyscale images, in rare cases,
       better compression may be obtained by first expanding the image to 8-bit representation and then applying filtering.</p>
 
-      <p>For <a>truecolour</a> and greyscale images, any of the five filters may prove the most effective. If an encoder uses a
+      <p>For <a>truecolour</a> and <a>greyscale</a> images, any of the five filters may prove the most effective. If an encoder uses a
       fixed filter, the Paeth filter type is most likely to be the best.</p>
 
-      <p>For best compression of <a>truecolour</a> and greyscale images, the recommended approach is adaptive filtering in which a
+      <p>For best compression of <a>truecolour</a> and <a>greyscale</a> images, the recommended approach is adaptive filtering in which a
       filter type is chosen for each scanline. The following simple heuristic has performed well in early tests: compute the output
       scanline using all five filters, and select the filter that gives the smallest sum of absolute values of outputs. (Consider
       the output bytes as signed differences for this test.) This method usually outperforms any single fixed filter type choice.
@@ -5908,8 +5908,8 @@ while (pass &lt; 7)
     <section id="13Truecolour-image-handling">
       <h2>Truecolour image handling</h2>
 
-      <p>To achieve PNG's goal of universal interchangeability, decoders shall accept all types of PNG image: indexed-colour,
-      <a>truecolour</a>, and greyscale. Viewers running on indexed-colour display hardware need to be able to reduce
+      <p>To achieve PNG's goal of universal interchangeability, decoders shall accept all types of PNG image: <a>indexed-colour</a>,
+      <a>truecolour</a>, and <a>greyscale</a>. Viewers running on indexed-colour display hardware need to be able to reduce
       <a>truecolour</a> images to indexed-colour for viewing. This process is called "colour quantization".</p>
 
       <p>A simple, fast method for colour quantization is to reduce the image to a fixed palette. Palettes with uniform colour
@@ -6124,7 +6124,7 @@ decoding_exponent = 1.0 / (gamma * display_exponent)
 
       <p>The background colour given by the <a class="chunk" href="#11bKGD">bKGD</a> chunk is not to be considered transparent,
       even if it happens to match the colour given by the <a class="chunk" href="#11tRNS">tRNS</a> chunk (or, in the case of an
-      indexed-colour image, refers to a palette index that is marked as transparent by the <a class="chunk" href="#11tRNS">tRNS</a>
+      <a>indexed-colour</a> image, refers to a palette index that is marked as transparent by the <a class="chunk" href="#11tRNS">tRNS</a>
       chunk). Otherwise one would have to imagine something "behind the background" to <a>composite</a> against. The background
       colour is either used as background or ignored; it is not an intermediate layer between the PNG image and some other
       background.</p>
@@ -6307,8 +6307,8 @@ will need to be replaced by copies of lines 17-23, but processing background ins
       ignoring alpha is a useful option: it allows the hidden parts of the image to be recovered.)</p>
 
       <p>Even if the decoder does not implement true compositing logic, it is simple to deal with images that contain only zero and
-      one alpha values. (This is implicitly true for greyscale and <a>truecolour</a> PNG datastreams that use a <a class="chunk"
-      href="#11tRNS">tRNS</a> chunk; for indexed-colour PNG datastreams it is easy to check whether the <a class="chunk" href=
+      one alpha values. (This is implicitly true for <a>greyscale</a> and <a>truecolour</a> PNG datastreams that use a <a class="chunk"
+      href="#11tRNS">tRNS</a> chunk; for <a>indexed-colour</a> PNG datastreams it is easy to check whether the <a class="chunk" href=
       "#11tRNS">tRNS</a> chunk contains any values other than 0 and 255.) In this simple case, transparent pixels are replaced by
       the background colour, while others are unchanged.</p>
 
@@ -6643,8 +6643,8 @@ will need to be replaced by copies of lines 17-23, but processing background ins
           href="#11IHDR">IHDR</a> chunk) are treated as errors.
           </li>
 
-          <li>All types of PNG images (indexed-colour, <a>truecolour</a>, greyscale, <a>truecolour with alpha</a>, and greyscale
-          with alpha) are processed. For example, decoders which are part of viewers running on indexed-colour display hardware
+          <li>All types of PNG images (indexed-colour, <a>truecolour</a>, <a>greyscale</a>, <a>truecolour with alpha</a>, and <a>greyscale
+          with alpha</a>) are processed. For example, decoders which are part of viewers running on indexed-colour display hardware
           shall reduce <a>truecolour</a> images to indexed format for viewing.
           </li>
 
@@ -6661,7 +6661,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
           method, <a>filter method</a>, or interlace method bytes of the <a class="chunk" href="#11IHDR">IHDR</a> chunk.
           </li>
 
-          <li>When processing 16-bit greyscale or <a>truecolour</a> data in the <a class="chunk" href="#11tRNS">tRNS</a> chunk,
+          <li>When processing 16-bit <a>greyscale</a> or <a>truecolour</a> data in the <a class="chunk" href="#11tRNS">tRNS</a> chunk,
           both bytes of the sample values are evaluated to determine whether a pixel is transparent.
           </li>
 
@@ -6697,7 +6697,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
           <li>Unless the user specifically permits lossy operations or the editor issues a warning, it preserves all information
           required to reconstruct the reference image exactly, except that the sample depth of the alpha channel need not be
           preserved if it contains only zero and maximum values. Operations such as changing the <a>colour type</a> or rearranging
-          the palette in an indexed-colour datastream are permitted provided that the new datastream losslessly represents the same
+          the palette in an <a>indexed-colour</a> datastream are permitted provided that the new datastream losslessly represents the same
           reference image.
           </li>
         </ol>

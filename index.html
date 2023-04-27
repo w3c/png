@@ -414,6 +414,19 @@ with these exceptions:
       <!-- ************Page Break******************* -->
 
       <!-- need a definition of frame -->
+
+      <dt><dfn>frame</dfn></dt>
+
+      <dd>For static PNG, the <a>static image</a> 
+        is considered to be the first (and only) frame. 
+        For animated PNG, each image that forms part  
+        of the <a href="#apng-frame-based-animation">frame-based animation</a> sequence 
+        is a frame.
+        Thus, for animated PNG, when the static image is not the first frame,
+        the static image is not considered to be a frame.
+      </dd>
+
+
       <!-- Maintain a fragment named "3frameBuffer" to preserve incoming links to it -->
 
       <dt id="3frameBuffer"><dfn>frame buffer</dfn>
@@ -3912,7 +3925,7 @@ with these exceptions:
         
           <p>If present, the <span class="chunk">cLLi</span> chunk identifies two characteristics:</p>
              
-          <p>MaxFALL (Maximum Frame Average Light Level) indicates the maximum value of the frame 
+          <p>MaxFALL (Maximum Frame Average Light Level) indicates the maximum value of the <a>frame</a> 
              average light level (in cd/m<sup>2</sup>, also known as nits) of the entire playback sequence. MaxFALL is 
              calculated by first averaging the decoded luminance values of all the pixels in each frame,
              and then using the value for the frame with the highest value.</p>
@@ -3922,11 +3935,9 @@ with these exceptions:
              filter to eliminate false values occurring from processing or noise that could adversely 
              affect intended downstream tone mapping.</p>
   
-          <p>For static PNG, the <a>static image</a> is analyzed and is considered to be the first 
-             (and only) frame. For animated PNG, each frame of the <a href="#apng-frame-based-animation">
-            frame-based animation</a> sequence is analyzed.</p>
+          <p>Each <a>frame</a> is analyzed.</p>
 
-            <p>A value of zero for either MaxCLL or MaxFALL means that the value is unknown.</p>
+          <p>A value of zero for either MaxCLL or MaxFALL means that the value is unknown.</p>
  
 
            <p>The following specifies the syntax of the <span class="chunk">cLLi</span> chunk:</p>

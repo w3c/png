@@ -5723,8 +5723,23 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
     <section id="Privacy-considerations">
       <h2>Privacy considerations</h2>
 
-      <p>No <a href="https://github.com/w3c/PNG-spec/labels/privacy-tracker">privacy considerations</a> have been raised on this
-      specification.</p>
+      <p>Some image editing tools have historically performed redaction 
+        by merely setting the alpha channel of the redacted area to zero, 
+        without also removing the actual image data. 
+        Users who rely solely on the visual appearance of such images 
+        run a privacy risk 
+        because the actual image data can be easily recovered.</p>
+
+      <p>Similarly, some image editing tools have historically performed clipping 
+        by rewriting the width and height in <span class="chunk">IHDR</span> 
+        without re-encoding the image data, 
+        which thus extends beyond the new width and height and may be recovered.</p>
+
+      <p>Images with <span class="chunk">eXIf</span> chunks 
+        may contain automatically-included data, 
+        such as photographic GPS coordinates, 
+        which could be a privacy risk if the user is unaware that the PNG image contains this data. 
+        (Other image formats that contain EXIF, such as JPEG/JFIF, have the same privacy risk).</p>
     </section>
     <!-- Maintain a fragment named "13Chunking" to preserve incoming links to it -->
 

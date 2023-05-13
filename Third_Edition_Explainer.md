@@ -26,10 +26,8 @@ in 2003.
 
 This explainer covers solely changes for the 
 [Third Edition](https://www.w3.org/TR/png-3/),
-currently under development.
-
-The Third Edition adds widely-requested features
-and folds in errate reported since the 
+currently under development. The Third Edition adds widely-requested features
+and folds in errata reported since the
 Second Edition.
 
 ## Motivating Use Cases

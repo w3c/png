@@ -30,11 +30,11 @@ currently under development.
 
 The Third Edition adds widely-requested features
 and folds in errate reported since the 
-[Second Edition (2003)](https://www.w3.org/TR/2003/REC-PNG-20031110/).
+Second Edition.
 
 ## Motivating Use Cases
 
-For **short animations** currently better handled by Animated GIF than video files,
+For **short animations** currently better handled by Animated GIF than by video files,
 there is a need for an animation format which avoids the **limitations of GIF**
 (256 colors, only on-off transparency)
 and draws on the **strengths of PNG**
@@ -87,7 +87,7 @@ was a feature.
 
 Firefox 3 added APNG support in 2007.
 
-The PNG develomnent group, after much discussion, **rejected APNG in 2007**,
+The PNG development group, after much discussion, **rejected APNG in 2007**,
 mostly on the grounds that it was not MNG and that PNG should remain a static format.
 Two attempts to restart the discussion in the following years failed.
 
@@ -95,33 +95,29 @@ APNG was documented [on the Mozilla wiki](https://wiki.mozilla.org/APNG_Specific
 and browsers and other tools added a variety of patches to their own versions of libpng,
 to support APNG.
 
-APNG started to be [added to other platforms](https://caniuse.com/apng):
+APNG started to be [**added to other platforms**](https://caniuse.com/apng):
 to Opera 9 in 2009,
+Safari 8 in 2014,
 to iOS in 2016,
-to Chrome 59 in 2017
+to [Chrome 59](https://chromestatus.com/feature/6691520493125632) in 2017
 and to Edge 79 in 2019.
 Authoring support also improved over time.
 
-## [API 1]
+## APNG
 
-[For each related element of the proposed solution - be it an additional JS method, a new object, a new element, a new concept etc., create a section which briefly describes it.]
+The PNG working group was chartered in 2021
+to maintain and extend the PNG specification;
+in particular, to add the widely adopted APNG extensions to the **core PNG specification**.
+This has now been done:
 
-```js
-// Provide example code - not IDL - demonstrating the design of the feature.
+ - [ APNG: frame-based animation](https://www.w3.org/TR/png-3/#apng-frame-based-animation)
+    - ['acTL' Animation Control Chunk](https://www.w3.org/TR/png-3/#acTL-chunk)
+    - ['fcTL' Frame Control Chunk](https://www.w3.org/TR/png-3/#fcTL-chunk)
+    - ['fdAT' Frame Data Chunk](https://www.w3.org/TR/png-3/#fdAT-chunk)
 
-// If this API can be used on its own to address a user need,
-// link it back to one of the scenarios in the goals section.
-
-// If you need to show how to get the feature set up
-// (initialized, or using permissions, etc.), include that too.
-```
-
-[Where necessary, provide links to longer explanations of the relevant pre-existing concepts and API.
-If there is no suitable external documentation, you might like to provide supplementary information as an appendix in this document, and provide an internal link where appropriate.]
-
-[If this is already specced, link to the relevant section of the spec.]
-
-[If spec work is in progress, link to the PR or draft of the spec.]
+These are precisely the same as the Mozilla documentation,
+bringing the PNG specification into line with a
+decade of deployed content and implementations.
 
 ## [API 2]
 

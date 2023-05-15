@@ -11,6 +11,21 @@
 ## Table of Contents [if the explainer is longer than one printed page]
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [Introduction](#introduction)
+- [Motivating Use Cases](#motivating-use-cases)
+- [Non-goals](#non-goals)
+- [User research](#user-research)
+  - [MNG and Animated PNG](#mng-and-animated-png)
+- [APNG](#apng)
+- [HDR support](#hdr-support)
+  - [Labelling HDR content](#labelling-hdr-content)
+  - [Mastering Color Volume](#mastering-color-volume)
+  - [Content Luminance Levels](#content-luminance-levels)
+- [Stakeholder Feedback / Opposition](#stakeholder-feedback--opposition)
+
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Introduction
@@ -20,9 +35,8 @@ for RGB and grayscale images,
 with or without an alpha channel.
 
 The [First Edition](https://www.w3.org/TR/REC-png-961001) was published as W3C Recommendation in 1996
-and the [Second Edition](https://www.w3.org/TR/2003/REC-PNG-20031110/),
-which is also published as ISO/IEC 15948:2003,
-in 2003.
+and the [Second Edition](https://www.w3.org/TR/2003/REC-PNG-20031110/) in 2003,
+also published as ISO/IEC 15948:2003.
 
 This explainer covers solely changes for the 
 [Third Edition](https://www.w3.org/TR/png-3/),
@@ -58,7 +72,7 @@ are [out of scope in the charter](https://www.w3.org/Graphics/PNG/png-2021.html#
 
 ## User research
 
-### Animated PNG
+### MNG and Animated PNG
 
 Between 1999 and 2001, a fully-featured animated format called
 Multiple-image Network Graphics ([MNG](http://www.libpng.org/pub/mng/spec/)) was developed.
@@ -94,19 +108,21 @@ and browsers and other tools added a variety of patches to their own versions of
 to support APNG.
 
 APNG started to be [**added to other platforms**](https://caniuse.com/apng):
-to Opera 9 in 2009,
-Safari 8 in 2014,
-to iOS in 2016,
-to [Chrome 59](https://chromestatus.com/feature/6691520493125632) in 2017
-and to Edge 79 in 2019.
-Authoring support also improved over time.
+
+- Opera 9 in 2009
+- Safari 8 in 2014
+- iOS in 2016
+- [Chrome 59](https://chromestatus.com/feature/6691520493125632) in 2017
+- Edge 79 in 2019
+
+Authoring support for APNG also improved over time.
 
 ## APNG
 
 The PNG working group was chartered in 2021
 to maintain and extend the PNG specification;
 in particular, to add the widely adopted APNG extensions to the **core PNG specification**.
-This has now been done:
+This has now been done; specification links:
 
  - [ APNG: frame-based animation](https://www.w3.org/TR/png-3/#apng-frame-based-animation)
     - ['acTL' Animation Control Chunk](https://www.w3.org/TR/png-3/#acTL-chunk)
@@ -117,56 +133,41 @@ These are precisely the same as the Mozilla documentation,
 bringing the PNG specification into line with a
 decade of deployed content and implementations.
 
-## [API 2]
+## HDR support
 
-[etc.]
+### Labelling HDR content
 
-## Key scenarios
+For SDR content, the color space is typically labelled
+using an **ICC profile** in the ['iCCP' chunk](https://w3c.github.io/PNG-spec/#11iCCP)
+or, for sRGB content, with the ['sRGB' chunk](https://w3c.github.io/PNG-spec/#srgb-standard-colour-space).
+An ICC profile for an RGB color space typically adds 1k to 10k to the filesize,
+while the content of sRGB chunk is 1 byte.
 
-[If there are a suite of interacting APIs, show how they work together to solve the key scenarios described.]
+ICC profiles are rarely used to label HDR content.
+Instead, an ITU specification called
+**Coding Independent Code Points (CICP)**
+is used in HDR video workflows
+and also for static image formats such as AVIF or JPEG-XL.
 
-### Scenario 1
+PNG has aligned with this growing industry usage,
+adding the ['cICP' chunk](https://w3c.github.io/PNG-spec/#cICP-chunk)
+which enables CICP labelling of the two most common HDR color spaces
+(**BT.2100 HLG** and **BT.2100 PQ**) whith only four bytes.
 
-[Description of the end-user scenario]
+As a bonus, it can also be used to compactly label
+some common Wide Gamut SDR color spaces,
+such as **Display P3** and **BT.2020**.
 
-```js
-// Sample code demonstrating how to use these APIs to address that scenario.
-```
+_Note:_ The third byte of 'cICP' always has the value '1',
+because PNG stores only RGB format images, not YCbCr or ICtCp.
+It was retained for compatibility with other video and image formats,
+and to allow for potential future expansion.
 
-### Scenario 2
+### Mastering Color Volume
 
-[etc.]
 
-## Detailed design discussion
+### Content Luminance Levels
 
-### [Tricky design choice #1]
-
-[Talk through the tradeoffs in coming to the specific design point you want to make.]
-
-```js
-// Illustrated with example code.
-```
-
-[This may be an open question,
-in which case you should link to any active discussion threads.]
-
-### [Tricky design choice 2]
-
-[etc.]
-
-## Considered alternatives
-
-[This should include as many alternatives as you can,
-from high level architectural decisions down to alternative naming choices.]
-
-### [Alternative 1]
-
-[Describe an alternative which was considered,
-and why you decided against it.]
-
-### [Alternative 2]
-
-[etc.]
 
 ## Stakeholder Feedback / Opposition
 
@@ -177,15 +178,3 @@ and why you decided against it.]
 - [Implementor C] : Negative
 
 [If appropriate, explain the reasons given by other implementors for their concerns.]
-
-## References & acknowledgements
-
-[Your design will change and be informed by many people; acknowledge them in an ongoing way! It helps build community and, as we only get by through the contributions of many, is only fair.]
-
-[Unless you have a specific reason not to, these should be in alphabetical order.]
-
-Many thanks for valuable feedback and advice from:
-
-- [Person 1]
-- [Person 2]
-- [etc.]

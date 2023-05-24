@@ -56,6 +56,8 @@ for halo-less display over any background).
 
 ![rotating GIF cube](./img/badcube.gif) ![rotating APNG cube](./img/APNG-cube.png)
 
+_Figure 1: Animated GIF (left) and animated truecolor PNG (right)_
+
 PNG Second Edition was limited to
 Standard Dynamic Range (SDR) imagery.
 With the growing use of **High Dynamic Range (HDR)**
@@ -184,11 +186,10 @@ whose color primaries are similar to Display P3,
 with a maximum peak luminance of 2,000 cd/m²
 and a minimum black luminance of 0.02 cd/m.
 
-The color volumes of BT.2100, Display P3 and sRGB
-are illustrated below,
-projected onto the _a,b_ plane of the Oklab colorspace.
-
 ![3 gamuts](./img/3gamuts-oklab.svg)
+
+_Figure 2: The color volumes of BT.2100, Display P3 and sRGB
+projected onto the _a,b_ plane of the Oklab colorspace._
 
 When displaying the content to the end user, on some other display,
 this mastering color volume information can be used for

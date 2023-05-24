@@ -25,6 +25,7 @@
   - [Mastering Color Volume](#mastering-color-volume)
   - [Content Luminance Levels](#content-luminance-levels)
 - [Stakeholder Feedback / Opposition](#stakeholder-feedback--opposition)
+- [References](#references)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -61,6 +62,9 @@ With the growing use of **High Dynamic Range (HDR)**
 there was a need to extend PNG to support HDR images
 during **content creation workflow**
 for **display** on HDR or SDR displays.
+
+This requirement was [incubated](https://github.com/w3c/ColorWeb-CG/blob/main/hdr-in-png-requirements.md)
+in the Color on the Web CG.
 
 ## Non-goals
 
@@ -267,6 +271,11 @@ Specification link:
 
 [**ITU-R BT.2100**]
     ITU-R BT.2100, SERIES BT: BROADCASTING SERVICE (TELEVISION). _Image parameter values for high dynamic range television for use in production and international programme exchange._ ITU. 2018-07. URL: https://www.itu.int/rec/R-REC-BT.2100
+
+[**PNG-HDR**]
+    _Adding support for HDR imagery to the PNG format_
+    W3C Color on the Web CG.
+    URL: https://github.com/w3c/ColorWeb-CG/blob/main/hdr-in-png-requirements.md
 
 [**SMPTE ST 2086**]
     _Mastering Display Color Volume Metadata Supporting High Luminance and Wide Color Gamut Images_. Society of Motion Picture and Television Engineers. 27 April 2018. URL: https://ieeexplore.ieee.org/document/8353899

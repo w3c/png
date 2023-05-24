@@ -8,7 +8,7 @@
 
 - [Issue tracker](https://github.com/w3c/PNG-spec/issues)
 
-## Table of Contents [if the explainer is longer than one printed page]
+## Table of Contents
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -169,8 +169,8 @@ and to allow for potential future expansion.
 Video and image content is typically finalized
 on some reference display, called the _mastering display_.
 The content will not contain color values
-that cannot be reproduced on the mastering display,
-which sets an upper bound on the range of colors
+that **cannot be reproduced** on the mastering display,
+which sets an **upper bound** on the range of colors
 in the image.
 
 For example, content transmitted in the BT.2100 PQ colorspace,
@@ -201,9 +201,8 @@ to present the entire sequence in a consistent way.
 
 PNG stores this optional information in the
 same order, and using the same encoding, as
-SMPTE ST 2086, a standard which is widely used
+**SMPTE ST 2086**, a standard which is widely used
 in the streaming, broadcast and TV industries.
-
 This is expected to ease deployment
 by fitting smoothly into existing industry workflows.
 
@@ -213,22 +212,61 @@ Specification link:
 
 - ['mDCv' Mastering Display Color Volume](https://w3c.github.io/PNG-spec/#mDCv-chunk)
 
-
 ### Content Luminance Levels
 
+Tone mapping 
+of an HDR image or animation
+onto some end-user display
+is made easier
+by knowing the **luminance levels** in the actual image data.
+
+Two items are of interest;
+firstly the average luminance level of the **brightest frame**,
+and secondly the luminance of the **brightest pixel**.
+
+The industry standard terms for these are
+**MaxFALL** (Maximum Frame Average Light Level)
+and
+**MaxCLL** (Maximum Content Light Level),
+and these are _required metatada_
+for HDR10 content.
+
+As with 'mDCv',
+it is more efficient to provide this information
+than to expect the final display system to compute it on the fly,
+especially for an image sequence,
+where analysis of all frames would be required
+to display the first frame,
+to present the entire sequence in a consistent way.
+
+The content of the 'cLLI' chunk is only 8 bytes.
+
+Specification link:
+
+- ['cLLi' Content Light Level Information](https://w3c.github.io/PNG-spec/#cLLi-chunk)
 
 ## Stakeholder Feedback / Opposition
 
-[Implementors and other stakeholders may already have publicly stated positions on this work. If you can, list them here with links to evidence as appropriate.]
-
-- [Implementor A] : Positive
-- [Stakeholder B] : No signals
-- [Implementor C] : Negative
+- [Mozilla] : Positive, implements APNG
+- [Chromium] : Positive, implements APNG and CICP
+- [WebKit] : Positive, implements APNG
+- [HDR content creators] : Positive, re-use of existing workflows
 
 ## References
 
-[ITU-R BT.2100]
+[**APNG**]
+    _APNG Specification_ version 1.0.
+    Mozilla Wiki.
+    URL: https://wiki.mozilla.org/APNG_Specification
+
+[**HDR10**]
+    _Best Practices: How to Calculate HDR10 Metadata (MaxFALL, MaxCLL)_
+    Dolby Vision Post Production knowledge base.
+    Dolby, 2020-10.
+    URL: https://professionalsupport.dolby.com/s/article/Calculation-of-MaxFALL-and-MaxCLL-metadata?language=en_US
+
+[**ITU-R BT.2100**]
     ITU-R BT.2100, SERIES BT: BROADCASTING SERVICE (TELEVISION). _Image parameter values for high dynamic range television for use in production and international programme exchange._ ITU. 2018-07. URL: https://www.itu.int/rec/R-REC-BT.2100
 
-[SMPTE ST 2086]
+[**SMPTE ST 2086**]
     _Mastering Display Color Volume Metadata Supporting High Luminance and Wide Color Gamut Images_. Society of Motion Picture and Television Engineers. 27 April 2018. URL: https://ieeexplore.ieee.org/document/8353899

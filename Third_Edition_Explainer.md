@@ -181,7 +181,7 @@ in the image.
 
 For example, content transmitted in the BT.2100 PQ colorspace,
 which has a theoretical peak luminance of 10,000 cd/m²,
-if often mastered on a display
+is often mastered on a display
 whose color primaries are similar to Display P3,
 with a maximum peak luminance of 2,000 cd/m²
 and a minimum black luminance of 0.02 cd/m.
@@ -198,11 +198,10 @@ and **tone mapping**
 (compression of luminance to the darkest and brightest values supported by a display).
 
 It is more efficient to provide this information
-than to expect the final display system to compute it on the fly,
-especially for an image sequence,
-where analysis of all frames would be required
-to display the first frame,
-to present the entire sequence in a consistent way.
+than to expect the final display system to compute it on the fly.
+Especially for an image sequence,
+where analysis of all frames must be completed
+prior to displaying the first frame.
 
 PNG stores this optional information in the
 same order, and using the same encoding, as
@@ -238,11 +237,10 @@ for HDR10 content.
 
 As with 'mDCv',
 it is more efficient to provide this information
-than to expect the final display system to compute it on the fly,
-especially for an image sequence,
-where analysis of all frames would be required
-to display the first frame,
-to present the entire sequence in a consistent way.
+than to expect the final display system to compute it on the fly.
+Especially for an image sequence,
+where analysis of all frames must be completed
+prior to displaying the first frame.
 
 The content of the 'cLLI' chunk is only 8 bytes.
 

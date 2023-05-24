@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-45 -45 90 90">
 <desc>
     Show a top-down view of the OKLab color space.
-    The rec2020 primaries and secondaries are shown,
+    The rec2020/2100 primaries and secondaries are shown,
     with an annotation indicating the L value.
     For comparison, the sRGB and display-p3 primaries and secondaries are also shown.
     Scaling is 100x -100x for a and b
@@ -314,7 +314,7 @@ y oklab(96.47641% -0.08473 0.229916) oklch(96.47641% 0.245031 110.2298)
 </g>
 
 <g font-family="sans-serif" font-size="1.8pt" fill="#444">
-  <text x="-36" y="-40">Rec BT.2020</text>
+  <text x="-36" y="-40">Rec BT.2100</text>
   <text x="-36" y="-37">Display P3</text>
   <text x="-36" y="-34">sRGB / BT.709</text>
   <polyline stroke="#DBB" stroke-width="0.4" fill="none" points="-44 -41 -38 -41"/>

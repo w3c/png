@@ -124,7 +124,7 @@ to maintain and extend the PNG specification;
 in particular, to add the widely adopted APNG extensions to the **core PNG specification**.
 This has now been done; specification links:
 
- - [ APNG: frame-based animation](https://www.w3.org/TR/png-3/#apng-frame-based-animation)
+ - General introduction [APNG: frame-based animation](https://www.w3.org/TR/png-3/#apng-frame-based-animation)
     - ['acTL' Animation Control Chunk](https://www.w3.org/TR/png-3/#acTL-chunk)
     - ['fcTL' Frame Control Chunk](https://www.w3.org/TR/png-3/#fcTL-chunk)
     - ['fdAT' Frame Data Chunk](https://www.w3.org/TR/png-3/#fdAT-chunk)
@@ -141,7 +141,7 @@ For SDR content, the color space is typically labelled
 using an **ICC profile** in the ['iCCP' chunk](https://w3c.github.io/PNG-spec/#11iCCP)
 or, for sRGB content, with the ['sRGB' chunk](https://w3c.github.io/PNG-spec/#srgb-standard-colour-space).
 An ICC profile for an RGB color space typically adds 1k to 10k to the filesize,
-while the content of sRGB chunk is 1 byte.
+while the content of the sRGB chunk is 1 byte.
 
 ICC profiles are rarely used to label HDR content.
 Instead, an ITU specification called
@@ -152,7 +152,7 @@ and also for static image formats such as AVIF or JPEG-XL.
 PNG has aligned with this growing industry usage,
 adding the ['cICP' chunk](https://w3c.github.io/PNG-spec/#cICP-chunk)
 which enables CICP labelling of the two most common HDR color spaces
-(**BT.2100 HLG** and **BT.2100 PQ**) whith only four bytes.
+(**BT.2100 HLG** and **BT.2100 PQ**) with only four bytes.
 
 As a bonus, it can also be used to compactly label
 some common Wide Gamut SDR color spaces,
@@ -160,10 +160,58 @@ such as **Display P3** and **BT.2020**.
 
 _Note:_ The third byte of 'cICP' always has the value '1',
 because PNG stores only RGB format images, not YCbCr or ICtCp.
-It was retained for compatibility with other video and image formats,
+Explicit storage of this value was retained 
+for compatibility with other video and image formats,
 and to allow for potential future expansion.
 
 ### Mastering Color Volume
+
+Video and image content is typically finalized
+on some reference display, called the _mastering display_.
+The content will not contain color values
+that cannot be reproduced on the mastering display,
+which sets an upper bound on the range of colors
+in the image.
+
+For example, content transmitted in the BT.2100 PQ colorspace,
+which has a theoretical peak luminance of 10,000 cd/m²,
+if often mastered on a display
+whose color primaries are similar to Display P3,
+with a maximum peak luminance of 2,000 cd/m²
+and a minimum black luminance of 0.02 cd/m.
+
+The color volumes of BT.2100, Display P3 and sRGB
+are illustrated below,
+projected onto the _a,b_ plane of the Oklab colorspace.
+
+![3 gamuts](./img/3gamuts-oklab.svg)
+
+When displaying the content to the end user, on some other display,
+this mastering color volume information can be used for
+**gamut mapping** (saturation reduction of un-displayable colors)
+and **tone mapping**
+(compression of luminance to the darkest and brightest values supported by a display).
+
+It is more efficient to provide this information
+than to expect the final display system to compute it on the fly,
+especially for an image sequence,
+where analysis of all frames would be required
+to display the first frame,
+to present the entire sequence in a consistent way.
+
+PNG stores this optional information in the
+same order, and using the same encoding, as
+SMPTE ST 2086, a standard which is widely used
+in the streaming, broadcast and TV industries.
+
+This is expected to ease deployment
+by fitting smoothly into existing industry workflows.
+
+The content of the 'mDCv' chunk is only 24 bytes.
+
+Specification link:
+
+- ['mDCv' Mastering Display Color Volume](https://w3c.github.io/PNG-spec/#mDCv-chunk)
 
 
 ### Content Luminance Levels
@@ -177,4 +225,10 @@ and to allow for potential future expansion.
 - [Stakeholder B] : No signals
 - [Implementor C] : Negative
 
-[If appropriate, explain the reasons given by other implementors for their concerns.]
+## References
+
+[ITU-R BT.2100]
+    ITU-R BT.2100, SERIES BT: BROADCASTING SERVICE (TELEVISION). _Image parameter values for high dynamic range television for use in production and international programme exchange._ ITU. 2018-07. URL: https://www.itu.int/rec/R-REC-BT.2100
+
+[SMPTE ST 2086]
+    _Mastering Display Color Volume Metadata Supporting High Luminance and Wide Color Gamut Images_. Society of Motion Picture and Television Engineers. 27 April 2018. URL: https://ieeexplore.ieee.org/document/8353899

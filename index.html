@@ -4922,10 +4922,7 @@ with these exceptions:
           step as long as the result is guaranteed to be identical. For example, if the default image is included in the animation,
           and uses a `blend_op` of `APNG_BLEND_OP_SOURCE`, clearing is not necessary because the entire output buffer will be
           overwritten.</p>
-          <!-- Not clear this para is needed, but the original specification had it -->
 
-          <p>Note, at the end of the <span class="chunk">fcTL</span> chunk is a 32-bit CRC checksum. The checksum is
-          calculated using the <span class="chunk">fcTL</span> chunk and includes the 'fcTL' chunk type field.</p>
           <!--
   8.1 Integers and byte order only covers multibyte integers. So add:
    a "byte" shall be an 8-bit unsigned integer with the range 0 to (2^8)-1

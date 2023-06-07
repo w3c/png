@@ -5494,8 +5494,15 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
       language. The <a class="chunk" href="#11tEXt">tEXt</a> and <a class="chunk" href="#11zTXt">zTXt</a> chunks use the Latin-1
       (ISO 8859-1) character encoding, which limits the range of characters that can be used in these chunks. Encoders should
       prefer <a class="chunk" href="#11iTXt">iTXt</a> to <a class="chunk" href="#11tEXt">tEXt</a> and <a class="chunk" href=
-      "#11zTXt">zTXt</a> chunks. in order to allow a wide range of characters without data loss. Encoders must convert characters
-      that use local <a>legacy character encodings</a> to the appropriate encoding when storing text. Encoders should discourage
+      "#11zTXt">zTXt</a> chunks, in order to allow a wide range of characters without data loss. Encoders must convert characters
+      that use local <a>legacy character encodings</a> to the appropriate encoding when storing text. 
+      </p>
+
+      <p>When creating <a href="#11iTXt" class="chunk">iTXt</a> chunks,
+        encoders should follow <a href="https://encoding.spec.whatwg.org/#utf-8-encode">UTF-8 encode</a> in the [[[ENCODING]]].
+      </p>
+      
+      <p>Encoders should discourage
       the creation of single lines of text longer than 79 Unicode <a>code points</a>, in order to facilitate easy reading. It is
       recommended that text items less than 1024 bytes in size should be output using uncompressed text chunks. It is recommended
       that the basic title and author keywords be output using uncompressed text chunks. Placing large text chunks after the
@@ -5825,6 +5832,10 @@ scale_factor_Y = max(1.0, display_ratio/image_ratio)</code>
       non-Latin-1 characters (except for newline and perhaps TAB, FF, CR) encountered in a <a class="chunk" href="#11tEXt">tEXt</a>
       or <a class="chunk" href="#11zTXt">zTXt</a> chunk. Instead, they should be ignored or displayed in a visible notation such as
       "<code>\nnn</code>". See <a href="#13Security-considerations"></a>.</p>
+
+      <p>When processing <a href="#11iTXt" class="chunk">iTXt</a> chunks,
+        decoders should follow <a href="https://encoding.spec.whatwg.org/#utf-8-decode">UTF-8 decode</a> in the [[[ENCODING]]].
+      </p>
 
       <p>Even though encoders are recommended to represent newlines as linefeed (hexadecimal 0A), it is recommended that decoders
       not rely on this; it is best to recognize all the common newline combinations (CR, LF, and CR-LF) and display each as a

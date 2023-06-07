@@ -5620,7 +5620,9 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
       <a class="chunk" href="#11IDAT">IDAT</a>) or critical to understanding the datastream structure (as with <a class="chunk"
       href="#11IEND">IEND</a>). This is a specific kind of criticality and one that is not necessarily relevant to every
       conceivable decoder. For example, a program whose sole purpose is to extract text annotations (for example, copyright
-      information) does not require a viewable image. Another decoder might consider the <a class="chunk" href="#11tRNS">tRNS</a>
+      information) does not require a viewable image
+      but should  <a href="https://encoding.spec.whatwg.org/#utf-8-decode">decode UTF-8 correctly</a>.
+      Another decoder might consider the <a class="chunk" href="#11tRNS">tRNS</a>
       and <a class="chunk" href="#11gAMA">gAMA</a> chunks essential to its proper execution.</p>
 
       <p>Syntax errors always involve known chunks because syntax errors in unknown chunks cannot be detected. The PNG decoder has

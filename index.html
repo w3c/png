@@ -20,6 +20,10 @@
       previousPublishDate: "2003-11-10",
       previousMaturity: "REC",
       edDraftURI: "https://w3c.github.io/PNG-spec",
+      github: {
+        repoURL : "https://github.com/w3c/PNG-spec",
+        branch : "main"
+      },
       extraCSS: ["https://dev.w3.org/2009/dap/ReSpec.js/css/respec.css"],
       editors: [
         { name: "Chris Blume", url: "https://www.programmax.net", w3cid: 127631 },
@@ -3698,6 +3702,9 @@ with these exceptions:
           can be derived from cICP chunk formats. Specific examples of its most common use-cases 
           for both HDR and SDR are available in [[ITU-T Series H Supplement 19]].</p>
 
+          <p class="note"><a href="https://github.com/w3c/PNG-spec/issues/319">Issue #319</a> discusses tone-mapping behavior when
+          the <span class="chunk">mDCv</span> chunk is present.</p>
+
           <p> For SDR images, if mDCv display min/max luminance are unknown, the default 
           characteristics can be derived from the values in [[ITU-T Series H Supplement 19]] Table 11 .”</p>
 
@@ -3932,7 +3939,10 @@ with these exceptions:
              pixel (in cd/m<sup>2</sup>, also known as nits) of the entire playback sequence.  There is often an algorithmic 
              filter to eliminate false values occurring from processing or noise that could adversely 
              affect intended downstream tone mapping.</p>
-  
+
+          <p class="note"><a href="https://github.com/w3c/PNG-spec/issues/319">Issue #319</a> discusses tone-mapping behavior when
+          the <span class="chunk">cLLi</span> chunk is present.</p>
+
           <p>Each <a>frame</a> is analyzed.</p>
 
           <p>A value of zero for either MaxCLL or MaxFALL means that the value is unknown.</p>

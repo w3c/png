@@ -2986,6 +2986,8 @@ with these exceptions:
         <p>There may be multiple <span class="chunk">IDAT</span> chunks; if so, they shall appear consecutively with no other
         intervening chunks. The compressed datastream is then the concatenation of the contents of the data fields of all the
         <span class="chunk">IDAT</span> chunks.</p>
+
+        <p class="Note">NOTE Some images have unused trailing bytes at the end of the final IDAT chunk. This could happen when an entire buffer is stored rather than just the portion of the buffer which is used. This is undesirable. Preferably, an encoder would not include these unused bytes. If it must, setting the bytes to zero might prevent accidental data sharing. A decoder should ignore these trailing bytes.</p>
       </section>
       <!-- Maintain a fragment named "11IEND" to preserve incoming links to it -->
 

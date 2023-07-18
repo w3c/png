@@ -7369,12 +7369,28 @@ will need to be replaced by copies of lines 17-23, but processing background ins
       First Public Working Draft of 25 October 2022 (Third Edition)</a></h3>
 
     <ul>
+      <!-- to 18 July 2023 -->
+      <li>Explained preferable handling of trailing bytes in the final <a href="#IDAT" class="chunk">IDAT</a> chunk for encoders and decoders.</li>
+      <li>Linked to open issue on tone-mapping HDR images in the presence of <a href="#mDCv" class="chunk">mDCv</a>.</li>
+      <li>Follow the Encoding Standard on UTF-8 encode and decode.</li>
+      <li>Added definition of a frame.</li>
+      <li>Required the Matrix Coefficients in <a href="#cICP" class="chunk">cICP</a> to be zero (RGB data).</li>
+      <li>Added known Privacy issue with recoverable data that only appears to have been redacted.</li>
+      <li>Improved advice on choosing filters.</li>
+      <li>Added links to colour image type definitions.</li>
+      <li>Clarified that MaxFALL uses the values of the frame with highest mean luminance.</li>
+      <li>Clarified luminance units.</li>
+      <li>Prefer RFC 3339 format for Creation Time.</li>
+      <li>Improved the definition of <a href="#mDCv" class="chunk">mDCv</a>, with better descriptions, default values, and reference to SMPTE standards.</li>
+      <li>Refactored the terms and definitions, for clarity.</li>
+      <li>Improved definitions of source, reference, and PNG images.</li>
+      <li>Moved concepts from the terms and definitions section to the main prose.</li>
       <!-- to 6 March 2023 -->
       <li>Corrected error in <a href="#eXIf" class="chunk">eXIf</a> chunk, 
         which conflicted with the <a href="#5ChunkOrdering">chunk ordering</a> section.</li>
       <li>Simplified <a href="#1Scope">Scope</a> section to remove redundant detail described elsewhere.</li>
       <li>Redrew chunk-ordering lattice diagrams to be clearer and more consistent.</li>
-      <li>Added new chunk, <a href="#cLLi-chunk" class="chunk">cLLi</a>, 
+      <li>Added a new chunk, <a href="#cLLi-chunk" class="chunk">cLLi</a>, 
       to describe the Maximum Single-Pixel and Frame-Average Luminance Levels
       for both static and animated HDR PNG images.
       </li>

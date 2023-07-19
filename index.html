@@ -14,19 +14,20 @@
   <script class="remove">
     var respecConfig = {
       group: "png",
-      specStatus: "ED",
-      shortName: "PNG",
+      specStatus: "WD",
+      shortName: "png-3",
+      publishDate: "2023-07-20",
       copyrightStart: "1996",
-      previousPublishDate: "2003-11-10",
-      previousMaturity: "REC",
-      edDraftURI: "https://w3c.github.io/PNG-spec",
+      previousPublishDate: "2022-10-25",
+      previousMaturity: "FPWD",
+      edDraftURI: "https://w3c.github.io/PNG-spec/",
       github: {
         repoURL : "https://github.com/w3c/PNG-spec",
         branch : "main"
       },
       extraCSS: ["https://dev.w3.org/2009/dap/ReSpec.js/css/respec.css"],
       editors: [
-        { name: "Chris Blume", url: "https://www.programmax.net", w3cid: 127631 },
+        { name: "Chris Blume", url: "https://www.programmax.net", company: "W3C Invited Experts", w3cid: 127631 },
         { name: "Pierre-Anthony Lemieux", company: "MovieLabs", companyURL: "https://movielabs.com/", url: "mailto:pal@palemieux.com", w3cid: 57073 },
         { name: "Chris Lilley", url: "https://svgees.us", company: "W3C", companyURL: "https://www.w3.org", w3cid: 1438 },
         { name: "Leonard Rosenthol", company: "Adobe Inc.", companyURL: "https://www.adobe.com", w3cid: 42485 },
@@ -61,7 +62,7 @@
         { name: "Keith S. Pickens" },
         { name: "Robert P. Poole" },
         { name: "Glenn Randers-Pehrson" },
-        { name: "Greg Roelofs", url: "http://pobox.com/~newt/" },
+        { name: "Greg Roelofs", url: "http://www.gregroelofs.com/" },
         { name: "Willem van Schaik", url: "http://www.schaik.com/" },
         { name: "Guy Schalnat" },
         { name: "Paul Schmidt" },
@@ -78,16 +79,16 @@
       lint: { "informative-dfn": false },
       xref: ["i18n-glossary"],
       localBiblio: {
-        "CIPA DC-008": {
+        "CIPA-DC-008": {
           title: "Exchangeable image file format for digital still cameras: Exif Version 2.32",
           href: "https://www.cipa.jp/std/documents/download_e.html?DC-008-Translation-2019-E",
           date: "2019-05-17",
           publisher: "Camera & Imaging Products Association"
         },
-        "COLOR FAQ": {
+        "COLOR-FAQ": {
           title: "Color FAQ",
           authors: ["Poynton, C."],
-          href: "http://poynton.ca/ColorFAQ.html",
+          href: "https://poynton.ca/ColorFAQ.html",
           date: "2009-10-19"
         },
         "ICC-2": {
@@ -96,10 +97,10 @@
           href: "https://www.color.org/specification/ICC.2-2019.pdf",
           publisher: "International Color Consortium"
         },
-        "GAMMA FAQ": {
+        "GAMMA-FAQ": {
           title: "Gamma FAQ",
           authors: ["Poynton, C."],
-          href: "http://poynton.ca/GammaFAQ.html",
+          href: "https://poynton.ca/GammaFAQ.html",
           date: "1998-08-04"
         },
         "Hill": {
@@ -109,58 +110,58 @@
           date: "1997-04",
           href: "https://dl.acm.org/doi/10.1145/248210.248212"
         },
-        "ISO 3309": {
+        "ISO-3309": {
           title: "ISO/IEC 3309:1993, Information Technology — Telecommunications and information exchange between systems — High-level data link control (HDLC) procedures — Frame structure.",
           date: "1993",
           publisher: "ISO"
         },
-        "ISO 8859-1": {
+        "ISO_8859-1": {
           title: "ISO/IEC 8859-1:1998, Information technology — 8-bit single-byte coded graphic character sets — Part 1: Latin alphabet No. 1.",
           date: "1998",
           publisher: "ISO"
         },
-        "ISO 9899": {
+        "ISO_9899": {
           title: "ISO/IEC 9899:2018 Information technology — Programming languages — C",
           href: "https://www.iso.org/standard/74528.html",
           date: "2018-6",
           publisher: "ISO"
         },
-        "ISO 15076-1": {
+        "ISO_15076-1": {
           title: "ISO 15076-1:2010 Image technology colour management — Architecture, profile format and data structure — Part 1: Based on ICC.1:2010",
           href: "https://www.iso.org/standard/54754.html",
           date: "2010-12",
           publisher: "ISO"
         },
-        "ISO 20677-1": {
+        "ISO_20677-1": {
           title: "ISO 20677:2019 Image technology colour management — Extensions to architecture, profile format and data structure",
           href: "https://www.iso.org/standard/68806.html",
           date: "2019-02",
           publisher: "ISO"
         },
-        "ITU-R BT.709": {
+        "ITU-R-BT.709": {
           title: "ITU-R BT.709, SERIES BT: BROADCASTING SERVICE (TELEVISION). Parameter values for the HDTV standards for production and international programme exchange",
           publisher: "ITU",
           date: "2015-06",
           href: "https://www.itu.int/rec/R-REC-BT.709"
         },
-        "ITU-R BT.2020": {
+        "ITU-R-BT.2020": {
           title: "Parameter values for ultra-high definition television systems for production and international programme exchange",
           publisher: "ITU",
           href: "https://www.itu.int/rec/R-REC-BT.2020"
         },
-        "ITU-R BT.2100": {
+        "ITU-R-BT.2100": {
           title: "ITU-R BT.2100, SERIES BT: BROADCASTING SERVICE (TELEVISION). Image parameter values for high dynamic range television for use in production and international programme exchange",
           publisher: "ITU",
           date: "2018-07",
           href: "https://www.itu.int/rec/R-REC-BT.2100"
         },
-        "ITU-T H.273": {
+        "ITU-T-H.273": {
           title: "ITU-T H.273, SERIES H: AUDIOVISUAL AND MULTIMEDIA SYSTEMS Infrastructure of audiovisual services – Coding of moving video. Coding-independent code points for video signal type identification",
           publisher: "ITU",
           date: "2021-07",
           href: "https://www.itu.int/rec/T-REC-H.273"
         },
-        "ITU-T V.42": {
+        "ITU-T-V.42": {
           title: "ITU-T V.42, SERIES V: DATA COMMUNICATION OVER THE TELEPHONE NETWORK. Error-correcting procedures for DCEs using asynchronous-to-synchronous conversion",
           href: "https://www.itu.int/rec/T-REC-V.42-200203-I/en",
           date: "2002-03-29",
@@ -208,31 +209,31 @@
           href: "http://www.libpng.org/pub/png/pngbook.html",
           date: "1999-06-11"
         },
-        "SMPTE 170M": {
+        "SMPTE-170M": {
           title: "Television — Composite Analog Video Signal — NTSC for Studio Applications",
           publisher: "Society of Motion Picture and Television Engineers",
           date: "2004-11-30",
           href: "https://standards.globalspec.com/std/892300/SMPTE%20ST%20170M"
         },
-        "SMPTE RP 177": {
+        "SMPTE-RP-177": {
           title: "Derivation of Basic Television Color Equations",
           publisher: "Society of Motion Picture and Television Engineers",
           date: "1 November 1993",
           href: "https://standards.globalspec.com/std/1284890/smpte-rp-177"
         },
-        "SMPTE RP 2077": {
+        "SMPTE-RP-2077": {
           title: "Full-Range Image Mapping",
           publisher: "Society of Motion Picture and Television Engineers",
           date: "2013-01-01",
           href: "https://doi.org/10.5594/SMPTE.RP2077.2013"
         },
-        "SMPTE ST 2086": {
+        "SMPTE-ST-2086": {
           title: "Mastering Display Color Volume Metadata Supporting High Luminance and Wide Color Gamut Images",
           publisher: "Society of Motion Picture and Television Engineers",
           date: "27 April 2018",
           href: "https://ieeexplore.ieee.org/document/8353899"
         },
-        "TIFF 6.0": {
+        "TIFF-6.0": {
           href: "https://www.loc.gov/preservation/digital/formats/fdd/fdd000022.shtml",
           title: "TIFF Revision 6.0",
           date: "3 June 1992"
@@ -244,25 +245,25 @@
           publisher: "IEEE",
           href: "https://ieeexplore.ieee.org/document/1055714",
         },
-        "EBU R 103": {
+        "EBU-R-103": {
           title: "Video Signal Tolerance in Digital Television Systems",
           publisher: "EBU",
           date: "2020-05",
           href: "https://tech.ebu.ch/docs/r/r103.pdf"
         },
-        "ITU-T Series H Supplement 19": {
+        "ITU-T-Series-H-Supplement-19": {
           title: "Series H: Audio Visual and Multimedia Systems - Usage of video signal type code points",
           publisher: "ITU",
           date: "2021-04",
           href: "https://www.itu.int/ITU-T/recommendations/rec.aspx?rec=13895"
         },
-        "MovieLabs Recommended Best Practice for SDR to HDR Conversion": {
+        "MovieLabs-Recommended-Best-Practice-for-SDR-to-HDR-Conversion": {
             title: "MovieLabs Best Practices for Mapping BT.709 Content to HDR10 for Consumer Distribution",
             publisher: "Motion Picture Laboratories(MovieLabs)",
             date: "2018",
             href: "https://www.movielabs.com/ngvideo/MovieLabs_Mapping_BT.709_to_HDR10_v1.0.pdf"
         },
-        "ITU-R BT.2035": {
+        "ITU-R-BT.2035": {
             title: "A reference viewing environment for evaluation of HDTV program material or completed programmes",
             publisher: "ITU",
             date: "2013-07",
@@ -729,7 +730,7 @@ with these exceptions:
         is specified for the <a>delivered image</a>. A viewer presents an image to the user as close to the appearance of the
         original source image as it can achieve.
         </dd>
-      </df>
+      </dl>
 
       <p>The relationships between the four kinds of image are illustrated in <a href="#image-relationship"></a>.</p>
 
@@ -962,7 +963,7 @@ with these exceptions:
 
         <dt><a>Indexed-colour</a></dt>
         <dd>Each pixel consists of an index into a palette (and into an associated table of alpha values, if present).</dd>
-      </ol>
+      </dl>
 
       <p>The format of each pixel depends on the PNG image type and the bit depth. For PNG image types other than indexed-colour,
       the bit depth specifies the number of bits per sample, not the total number of bits per pixel. For <a>indexed-colour</a> images, the
@@ -1722,8 +1723,7 @@ with these exceptions:
     <section id="5CRC-algorithm">
       <h2>CRC algorithm</h2>
 
-      <p>CRC fields are calculated using standardized CRC methods with pre and post conditioning, as defined by [[ISO
-      3309]] and [[ITU-T V.42]]. The CRC polynomial employed— which is identical to that used in the GZIP file format
+      <p>CRC fields are calculated using standardized CRC methods with pre and post conditioning, as defined by [[ISO-3309]] and [[ITU-T-V.42]]. The CRC polynomial employed— which is identical to that used in the GZIP file format
       specification [[RFC1952]]— is</p>
 
       <p>x<sup>32</sup> + x<sup>26</sup> + x<sup>23</sup> + x<sup>22</sup> + x<sup>16</sup> + x<sup>12</sup> + x<sup>11</sup> +
@@ -3286,7 +3286,7 @@ with these exceptions:
           datastream yields the embedded ICC profile.</p>
 
           <p>If the <span class="chunk">iCCP</span> chunk is present, the image samples conform to the colour space represented by
-          the embedded ICC profile as defined by the International Color Consortium [[ICC]][[ISO 15076-1]]. The colour space of the
+          the embedded ICC profile as defined by the International Color Consortium [[ICC]][[ISO_15076-1]]. The colour space of the
           ICC profile shall be an RGB colour space for colour images (<a>colour types</a> 2, 3, and 6), or a greyscale colour space
           for <a>greyscale</a> images (<a>colour types</a> 0 and 4). A PNG encoder that writes the <span class="chunk">iCCP</span> chunk
           is encouraged to also write <a class="chunk" href="#11gAMA">gAMA</a> and <a class="chunk" href="#11cHRM">cHRM</a> chunks
@@ -3562,7 +3562,7 @@ with these exceptions:
 <!-- 99 73 67 80 -->63 49 43 50
 </pre>
           <p>If present, the <span class="chunk">cICP</span> chunk specifies the colour space, transfer function, matrix
-          coefficients of the image using the code points specified in [[ITU-T H.273]]. The video format signaling SHOULD be used
+          coefficients of the image using the code points specified in [[ITU-T-H.273]]. The video format signaling SHOULD be used
           when processing the image, including by a decoder or when rendering the image.</p>
 
           <p>The following specifies the syntax of the <span class="chunk">cICP</span> chunk:</p>
@@ -3599,7 +3599,7 @@ with these exceptions:
           </table>
 
           <p>Each of the fields of the <span class="chunk">cICP</span> chunk corresponds to the parameter of the same name in
-          [[ITU-T H.273]].</p>
+          [[ITU-T-H.273]].</p>
 
           <p>Currently only RGB is the supported color model in PNG, and as such <code>Matrix Coefficients</code> shall be set to <code>0</code>.</p>
 
@@ -3615,13 +3615,13 @@ with these exceptions:
             majority of computer graphics and web images, including those used in traditional PNG workflows, are <a>full-range
             images</a>. If <code>Video Full Range Flag</code> value is <code>0</code>, then the image is a <a>narrow-range
             image</a>. Narrow range images are found in video workflows where the interpretation of sample values below reference
-            black (0% signal level) or above nominal peak (100% signal level). For example, [[ITU-R BT.709]] specifies that, for
+            black (0% signal level) or above nominal peak (100% signal level). For example, [[ITU-R-BT.709]] specifies that, for
             10-bit coding, reference black (called black level) corresponds to code value 64 and nominal peak to code value 940. In
             narrow range, momentary excursions defined as overshoots and undershoots exist below reference black and above nominal
             peak in uncontrolled lighting conditions, in order to preserve processing artifacts caused by video
             filtering/compression without clipping which can improve image quality during additional stages of processing and
             compression. The use of undershoot/overshoot has also been used to preserve additional color volume (both light and
-            color) as described in [[EBU R 103]]. [[SMPTE RP 2077]] describes full range in more detail and includes the mapping
+            color) as described in [[EBU-R-103]]. [[SMPTE-RP-2077]] describes full range in more detail and includes the mapping
             from <a>full-range images</a> to <a>narrow-range images</a> and describes protected code values for SDI (baseband)
             carriage.
           </aside>
@@ -3660,7 +3660,7 @@ with these exceptions:
 
           <aside class="example">
             <span class="chunk">cICP</span> chunk field values for a <a>full-range image</a> that uses the colour primaries and the
-            PQ <a>transfer function</a> specified at [[ITU-R BT.2100]]:
+            PQ <a>transfer function</a> specified at [[ITU-R-BT.2100]]:
 
             <pre>
 9 16 0 1
@@ -3669,7 +3669,7 @@ with these exceptions:
 
           <aside class="example">
             <span class="chunk">cICP</span> chunk field values for a <a>full-range image</a> that uses the colour primaries and the
-            HLG <a>transfer function</a> specified at [[ITU-R BT.2100]]:
+            HLG <a>transfer function</a> specified at [[ITU-R-BT.2100]]:
 
             <pre>
 9 18 0 1
@@ -3678,7 +3678,7 @@ with these exceptions:
 
           <aside class="example">
             <span class="chunk">cICP</span> chunk field values for a <a>narrow-range image</a> that uses the colour primaries and
-            the <a>transfer function</a> defined at [[ITU-R BT.709]]:
+            the <a>transfer function</a> defined at [[ITU-R-BT.709]]:
 
             <pre>
 1 1 0 0
@@ -3698,18 +3698,18 @@ with these exceptions:
 </pre>
           <p>If present, the <span class="chunk">mDCv</span> chunk characterizes 
           the Mastering Display Color Volume (mDCv) used at the point of content creation, 
-          as specified in [[SMPTE ST 2086]]. The mDCv provides informative static metadata to 
+          as specified in [[SMPTE-ST-2086]]. The mDCv provides informative static metadata to 
           allow a destination (consumer) display to optimize it's tone and color mappings based 
           on its inherent capabilities. The mDCv chunk should be included for both PQ and SDR 
           images. It is less common for HLG images. Color Primaries and White Point characteristics 
           can be derived from cICP chunk formats. Specific examples of its most common use-cases 
-          for both HDR and SDR are available in [[ITU-T Series H Supplement 19]].</p>
+          for both HDR and SDR are available in [[ITU-T-Series-H-Supplement-19]].</p>
 
           <p class="note"><a href="https://github.com/w3c/PNG-spec/issues/319">Issue #319</a> discusses tone-mapping behavior when
           the <span class="chunk">mDCv</span> chunk is present.</p>
 
           <p> For SDR images, if mDCv display min/max luminance are unknown, the default 
-          characteristics can be derived from the values in [[ITU-T Series H Supplement 19]] Table 11 .”</p>
+          characteristics can be derived from the values in [[ITU-T-Series-H-Supplement-19]] Table 11 .”</p>
 
           <p>The following specifies the syntax of the <span class="chunk">mDCv</span> chunk:</p>
 
@@ -3772,7 +3772,7 @@ with these exceptions:
               </tr>
 
               <tr>
-                <td rowspan="3">Colour primaries specified in [[ITU-R BT.2020]]</td>
+                <td rowspan="3">Colour primaries specified in [[ITU-R-BT.2020]]</td>
                 <td>(0.708, 0.292)</td>
                 <td>{ 35400, 14600 }</td>
               </tr>
@@ -3799,7 +3799,7 @@ with these exceptions:
               </tr>
 
               <tr>
-                <td>Illuminant D65 specified in [[SMPTE RP 177]]</td>
+                <td>Illuminant D65 specified in [[SMPTE-RP-177]]</td>
                 <td>(0.3127, 0.3290)</td>
                 <td>{ 15635, 16450 }</td>
               </tr>
@@ -3823,7 +3823,7 @@ with these exceptions:
 
           <aside class="example">
             Example <span class="chunk">mDCv</span> chunk mastering display minimum luminance:
-            <table id="mDCv-chunk-min-luminance-example" class="numbered simple">
+            <table id="mDCv-chunk-min-luminance-example2" class="numbered simple">
               <tr>
                 <th>Actual value</th>
                 <th>Stored value</th>
@@ -3837,9 +3837,8 @@ with these exceptions:
           </aside>
 
 
-          <p>Below are mDCv examples for [[SMPTE ST 2086]] with SDR content that may be native or 
-            containerized in HDR content (as described in the [[MovieLabs Recommended Best Practice 
-	    for SDR to HDR Conversion]]).</p>
+          <p>Below are mDCv examples for [[SMPTE-ST-2086]] with SDR content that may be native or 
+            containerized in HDR content (as described in the [[MovieLabs-Recommended-Best-Practice-for-SDR-to-HDR-Conversion]]).</p>
 
 
           <aside class="example">
@@ -3852,7 +3851,7 @@ with these exceptions:
               </tr>
 
               <tr>
-                <td rowspan="3">Colour primaries specified in [[ITU-R BT.709]]</td>
+                <td rowspan="3">Colour primaries specified in [[ITU-R-BT.709]]</td>
                 <td>(0.640, 0.330)</td>
                 <td>{ 32000, 16500 }</td>
               </tr>
@@ -3880,7 +3879,7 @@ with these exceptions:
               </tr>
 
               <tr>
-                <td>Illuminant D65 specified in [[SMPTE RP 177]]</td>
+                <td>Illuminant D65 specified in [[SMPTE-RP-177]]</td>
                 <td>(0.3127, 0.3290)</td>
                 <td>{ 15635, 16450 }</td>
               </tr>
@@ -3890,8 +3889,8 @@ with these exceptions:
           <aside class="example">
             Example <span class="chunk">mDCv</span> chunk mastering display maximum 
             luminance using traditional SDR shading techniques at 100 cd/m<sup>2</sup> 
-            (described in [[ITU-R BT.2035]]):
-            <table id="mDCv-chunk-max-luminance-example" class="numbered simple">
+            (described in [[ITU-R-BT.2035]]):
+            <table id="mDCv-chunk-max-luminance-example3" class="numbered simple">
               <tr>
                 <th>Actual value</th>
                 <th>Stored value</th>
@@ -3908,7 +3907,7 @@ with these exceptions:
             Example <span class="chunk">mDCv</span> chunk mastering display maximum 
             luminance using "single-master" SDR shading techniques at 203 cd/m<sup>2</sup> 
             (described in ITU-R BT.2408 Annex Y):
-            <table id="mDCv-chunk-max-luminance-example" class="numbered simple">
+            <table id="mDCv-chunk-max-luminance-example4" class="numbered simple">
               <tr>
                 <th>Actual value</th>
                 <th>Stored value</th>
@@ -4113,7 +4112,7 @@ with these exceptions:
 
           <p>Keywords of general interest SHOULD be listed in [[PNG-EXTENSIONS]].</p>
 
-          <p>Keywords shall contain only printable Latin-1 [[ISO 8859-1]] characters and spaces; that is, only code points 0x20-7E
+          <p>Keywords shall contain only printable Latin-1 [[ISO_8859-1]] characters and spaces; that is, only code points 0x20-7E
           and 0xA1-FF are allowed. To reduce the chances for human misreading of a keyword, leading spaces, trailing spaces, and
           consecutive spaces are not permitted in keywords, nor is U+00A0 NON-BREAKING SPACE since it is visually indistinguishable
           from an ordinary space.</p>
@@ -4169,7 +4168,7 @@ with these exceptions:
           <p>The keyword indicates the type of information represented by the text string as described in <a href=
           "#11keywords"></a>.</p>
 
-          <p>Text is interpreted according to the Latin-1 character set [[ISO 8859-1]]. The text string may contain any Latin-1
+          <p>Text is interpreted according to the Latin-1 character set [[ISO_8859-1]]. The text string may contain any Latin-1
           character. Newlines in the text string should be represented by a single linefeed character (decimal 10). Characters
           other than those defined in Latin-1 plus the linefeed character have no defined meaning in <span class=
           "chunk">tEXt</span> chunks. Text containing characters outside the repertoire of ISO/IEC 8859-1 should be encoded using
@@ -4607,7 +4606,7 @@ with these exceptions:
   <!-- 101 88 73 102 -->65 58 49 66
   </pre>
           <p>The data segment of the <span class="chunk">eXIf</span> chunk contains an Exif profile in the format specified in
-          "4.7.2 Interoperability Structure of APP1 in Compressed Data" of [[CIPA DC-008]] except that the JPEG APP1 marker,
+          "4.7.2 Interoperability Structure of APP1 in Compressed Data" of [[CIPA-DC-008]] except that the JPEG APP1 marker,
           length, and the "Exif ID code" described in 4.7.2(C), i.e., "Exif", NULL, and padding byte, are not included.</p>
 
           <p>The
@@ -4645,7 +4644,7 @@ with these exceptions:
           <section>
             <h3><span class="chunk">eXIf</span> Recommendations for Encoders</h3>
 
-            <p>Image editing applications should consider Paragraph E.3 of the Exif Specification [[CIPA DC-008]], which discusses
+            <p>Image editing applications should consider Paragraph E.3 of the Exif Specification [[CIPA-DC-008]], which discusses
             requirements for updating Exif data when the image is changed. Encoders should follow those requirements, but decoders
             should not assume that it has been accomplished.</p>
 
@@ -5159,7 +5158,7 @@ gamma = 1/display_exponent
       "#11gAMA">gAMA</a> chunk is missing.</p>
 
       <p>There are a number of recommendations and standards for primaries and <a>white points</a>, some of which are linked to
-      particular technologies, for example the CCIR 709 standard [[ITU-R BT.709]] and the SMPTE-C standard [[SMPTE 170M]].</p>
+      particular technologies, for example the CCIR 709 standard [[ITU-R-BT.709]] and the SMPTE-C standard [[SMPTE-170M]].</p>
 
       <p>There are three cases that need to be considered:</p>
 
@@ -5191,11 +5190,10 @@ cHRM</a> chunk.</p>-->
       "#11cHRM">cHRM</a> chunk.</p>
 
       <p>A few image formats store calibration information, which can be used to fill in the <a class="chunk" href=
-      "#11cHRM">cHRM</a> chunk. For example, TIFF 6.0 files [[?TIFF 6.0]] can optionally store calibration information, which if
+      "#11cHRM">cHRM</a> chunk. For example, TIFF 6.0 files [[?TIFF-6.0]] can optionally store calibration information, which if
       present should be used to construct the <a class="chunk" href="#11cHRM">cHRM</a> chunk.</p>
 
-      <p>Video created with recent video equipment probably uses the CCIR 709 primaries and D65 <a>white point</a> [[ITU-R
-      BT.709]], which are given in <a href="#12-table121"></a>.</p>
+      <p>Video created with recent video equipment probably uses the CCIR 709 primaries and D65 <a>white point</a> [[ITU-R-BT.709]], which are given in <a href="#12-table121"></a>.</p>
       <!-- ************Page Break******************* -->
       <!-- ************Page Break******************* -->
       <!-- Maintain a fragment named "12-table121" to preserve incoming links to it -->
@@ -5230,7 +5228,7 @@ cHRM</a> chunk.</p>-->
         </tr>
       </table>
 
-      <p>An older but still very popular video standard is SMPTE-C [[SMPTE 170M]] given in <a href="#12-table122"></a>.</p>
+      <p>An older but still very popular video standard is SMPTE-C [[SMPTE-170M]] given in <a href="#12-table122"></a>.</p>
       <!-- Maintain a fragment named "12-table122" to preserve incoming links to it -->
 
       <table id="12-table122" class="numbered simple">
@@ -5906,7 +5904,7 @@ scale_factor_Y = max(1.0, display_ratio/image_ratio)</code>
       images progressively. This means that as each reduced image is received, an approximation to the complete image is displayed
       based on the data received so far. One simple yet pleasing effect can be obtained by expanding each received pixel to fill a
       rectangle covering the yet-to-be-transmitted pixel positions below and to the right of the received pixel. This process can
-      be described by the following ISO C code [[ISO 9899]]:</p>
+      be described by the following ISO C code [[ISO_9899]]:</p>
 
       <pre>
 /*
@@ -6157,7 +6155,7 @@ decoding_exponent = 1.0 / (gamma * display_exponent)
       of a colour image. Conversion from RGB to grey is simply a case of calculating the Y (luminance) component of XYZ, which is a
       weighted sum of R, G, and B values. The weights depend upon the monitor type, i.e. the values in the <a class="chunk" href=
       "#11cHRM">cHRM</a> chunk. PNG decoders may wish to do this for PNG datastreams with no <a class="chunk" href=
-      "#11cHRM">cHRM</a> chunk. In this case, a reasonable default would be the CCIR 709 primaries [[ITU-R BT.709]]. The original
+      "#11cHRM">cHRM</a> chunk. In this case, a reasonable default would be the CCIR 709 primaries [[ITU-R-BT.709]]. The original
       NTSC primaries should <strong>not</strong> be used unless the PNG image really was colour-balanced for such a monitor.</p>
     </section>
     <!-- Maintain a fragment named "13Background-colour" to preserve incoming links to it -->
@@ -6214,7 +6212,7 @@ output = alpha * foreground + (1-alpha) * background
       <!-- ************Page Break******************* -->
       <!-- ************Page Break******************* -->
 
-      <p>This code is ISO C [[ISO 9899]], with line numbers added for reference in the comments below.</p>
+      <p>This code is ISO C [[ISO_9899]], with line numbers added for reference in the comments below.</p>
 
       <pre>
    01  int foreground[4];  /* image pixel: R, G, B, A */
@@ -7179,12 +7177,11 @@ will need to be replaced by copies of lines 17-23, but processing background ins
     used by decoders together with additional information about the display environment in order to achieve, or approximate, the
     desired display output.</p>
 
-    <p>Additional information about this subject may be found [[?GAMMA FAQ]].</p>
+    <p>Additional information about this subject may be found [[?GAMMA-FAQ]].</p>
 
     <p>Additional information on the impact of color space on image encoding may be found in [[?Kasson]] and [[?Hill]].</p>
 
-    <p>Background information about <a>chromaticity</a> and colour spaces may be found in [[?Luminance-Chromaticity]] and [[?COLOR
-    FAQ]].</p>
+    <p>Background information about <a>chromaticity</a> and colour spaces may be found in [[?Luminance-Chromaticity]] and [[?COLOR-FAQ]].</p>
   </section>
   <!-- ************Page Break******************* -->
   <!-- ************Page Break******************* -->
@@ -7196,10 +7193,10 @@ will need to be replaced by copies of lines 17-23, but processing background ins
     <h2 class="Annex" id="samplecrc">Sample CRC implementation</h2>
 
     <p>The following sample code — which is informative — represents a practical implementation of the CRC (Cyclic
-    Redundancy Check) employed in PNG chunks. (See also ISO 3309 [[ISO 3309]] or ITU-T V.42 [[ITU-T V.42]] for a formal
+    Redundancy Check) employed in PNG chunks. (See also ISO 3309 [[ISO-3309]] or ITU-T V.42 [[ITU-T-V.42]] for a formal
     specification.)</p>
 
-    <p>The sample code is in the ISO C [[ISO 9899]] programming language. The hints in <a href="#D-tabled1"></a> may help non-C
+    <p>The sample code is in the ISO C [[ISO_9899]] programming language. The hints in <a href="#D-tabled1"></a> may help non-C
     users to read the code more easily.</p>
     <!-- Maintain a fragment named "D-tabled1" to preserve incoming links to it -->
 
@@ -7370,18 +7367,18 @@ will need to be replaced by copies of lines 17-23, but processing background ins
 
     <ul>
       <!-- to 18 July 2023 -->
-      <li>Explained preferable handling of trailing bytes in the final <a href="#IDAT" class="chunk">IDAT</a> chunk for encoders and decoders.</li>
-      <li>Linked to open issue on tone-mapping HDR images in the presence of <a href="#mDCv" class="chunk">mDCv</a>.</li>
+      <li>Explained preferable handling of trailing bytes in the final <a href="#11IDAT" class="chunk">IDAT</a> chunk for encoders and decoders.</li>
+      <li>Linked to open issue on tone-mapping HDR images in the presence of <a href="#mDCv-chunk" class="chunk">mDCv</a>.</li>
       <li>Follow the Encoding Standard on UTF-8 encode and decode.</li>
       <li>Added definition of a frame.</li>
-      <li>Required the Matrix Coefficients in <a href="#cICP" class="chunk">cICP</a> to be zero (RGB data).</li>
+      <li>Required the Matrix Coefficients in <a href="#cICP-chunk" class="chunk">cICP</a> to be zero (RGB data).</li>
       <li>Added known Privacy issue with recoverable data that only appears to have been redacted.</li>
       <li>Improved advice on choosing filters.</li>
       <li>Added links to colour image type definitions.</li>
       <li>Clarified that MaxFALL uses the values of the frame with highest mean luminance.</li>
       <li>Clarified luminance units.</li>
       <li>Prefer RFC 3339 format for Creation Time.</li>
-      <li>Improved the definition of <a href="#mDCv" class="chunk">mDCv</a>, with better descriptions, default values, and reference to SMPTE standards.</li>
+      <li>Improved the definition of <a href="#mDCv-chunk" class="chunk">mDCv</a>, with better descriptions, default values, and reference to SMPTE standards.</li>
       <li>Refactored the terms and definitions, for clarity.</li>
       <li>Improved definitions of source, reference, and PNG images.</li>
       <li>Moved concepts from the terms and definitions section to the main prose.</li>
@@ -7421,7 +7418,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
       </li>
 
       <li>Added the <a class="chunk" href="#cICP-chunk">cICP</a> chunk, Coding-independent code points for video signal type
-      identification, to contain image format metadata defined in [[ITU-T H.273]] which enables PNG to contain High Dynamic Range
+      identification, to contain image format metadata defined in [[ITU-T-H.273]] which enables PNG to contain High Dynamic Range
       (HDR) and Wide Colour Gamut (WCG) images.
       </li>
 

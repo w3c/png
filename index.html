@@ -1706,7 +1706,7 @@ with these exceptions:
         </tr>
       </table>
 
-      <p>EXAMPLE The hypothetical chunk type "<span class="chunk">cHNk</span>" has the property bits:</p>
+      <p class="example">The hypothetical chunk type "<span class="chunk">cHNk</span>" has the property bits:</p>
 
       <pre>
    cHNk  &lt;-- 32 bit chunk type represented in text form
@@ -2445,7 +2445,7 @@ with these exceptions:
 
       <p>Scanlines that do not completely fill an integral number of bytes are padded as defined in <a href="#7Scanline"></a>.</p>
 
-      <p class="Note">NOTE If the reference image contains fewer than five columns or fewer than five rows, some passes will be
+      <p class="note">NOTE If the reference image contains fewer than five columns or fewer than five rows, some passes will be
       empty.</p>
     </section>
   </section>
@@ -3114,7 +3114,7 @@ with these exceptions:
           <p>A <span class="chunk">tRNS</span> chunk shall not appear for <a>colour types</a> 4 and 6, since a full alpha channel
           is already present in those cases.</p>
 
-          <p class="Note">NOTE For 16-bit <a>greyscale</a> or <a>truecolour</a> data, only pixels matching the entire 16-bit values in
+          <p class="note">NOTE For 16-bit <a>greyscale</a> or <a>truecolour</a> data, only pixels matching the entire 16-bit values in
           <span class="chunk">tRNS</span> chunks are transparent. Decoders have to postpone any sample depth rescaling until after
           the pixels have been tested for transparency.</p>
         </section>
@@ -3197,7 +3197,7 @@ with these exceptions:
           <p>Each value is encoded as a <a>PNG four-byte unsigned integer</a>, representing the <i>x</i> or <i>y</i> value times
           100000.</p>
 
-          <p>EXAMPLE A value of 0.3127 would be stored as the integer 31270.</p>
+          <p class="example">A value of 0.3127 would be stored as the integer 31270.</p>
 
           <p>The <span class="chunk">cHRM</span> chunk is allowed in all PNG datastreams, although it is of little value for
           <a>greyscale</a> images.</p>
@@ -3236,7 +3236,7 @@ with these exceptions:
 
           <p>The value is encoded as a <a>PNG four-byte unsigned integer</a>, representing the <a>gamma value</a> times 100000.</p>
 
-          <p>EXAMPLE A <a>gamma value</a> of 1/2.2 would be stored as the integer 45455.</p>
+          <p class="example">A <a>gamma value</a> of 1/2.2 would be stored as the integer 45455.</p>
 
           <p>See <a href="#12Encoder-gamma-handling"></a> and <a href="#13Decoder-gamma-handling"></a> for more information.</p>
 
@@ -4412,7 +4412,7 @@ with these exceptions:
           <p>Histogram entries are approximate, with the exception that a zero entry specifies that the corresponding palette entry
           is not used at all in the image. A histogram entry shall be nonzero if there are any pixels of that colour.</p>
 
-          <p class="Note">NOTE When the palette is a suggested quantization of a <a>truecolour</a> image, the histogram is
+          <p class="note">NOTE When the palette is a suggested quantization of a <a>truecolour</a> image, the histogram is
           necessarily approximate, since a decoder may map pixels to palette entries differently than the encoder did. In this
           situation, zero entries should not normally appear, because any entry might be used.</p>
         </section>
@@ -5317,7 +5317,7 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
       to begin in the most significant bit and repeating the most significant bits into the open bits. This method is often faster
       to compute than linear scaling.</p>
 
-      <p>EXAMPLE Assume that 5-bit samples are being scaled up to 8 bits. If the source sample value is 27 (in the range from
+      <p class="example">Assume that 5-bit samples are being scaled up to 8 bits. If the source sample value is 27 (in the range from
       0-31), then the original bits are:</p>
 
       <pre>
@@ -6347,7 +6347,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
         throughout.</li>
       </ol>
 
-      <p class="Note">NOTE In floating point, no overflow or underflow checks are needed, because the input sample values are
+      <p class="note">NOTE In floating point, no overflow or underflow checks are needed, because the input sample values are
       guaranteed to be between 0 and 1, and compositing always yields a result that is in between the input values (inclusive).
       With integer arithmetic, some roundoff-error analysis might be needed to guarantee no overflow or underflow.</p>
       <!-- ************Page Break******************* -->

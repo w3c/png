@@ -9,7 +9,102 @@
         </style>
         <link rel="stylesheet" type="text/css" href="http://www.w3.org/StyleSheets/TR/base" />
         </head>
+        <style>
+               :root {
+    --bg: rgb(137, 144, 158);
+    --bg-input: #141419;
+}
+
+
+:root{
+    --bg: linear-gradient(to left, #effafd 0%, #f3e8f9 100%);
+   
+    --bg-input: #0d0d14;
+}
+
+
+/* light mode edited */
+
+.light-mode {
+    --bg: linear-gradient(to left, #2a2d30, #080a0c);
+    --bg-input: #fcf9f9;
+}
+
+body {
+    background: var(--bg);
+    color: var(--bg-input)
+    /*font-weight: 500;
+    display: flex;*/
+}
+
+.switch {
+    position: absolute;
+    margin-left: -9999px;
+    visibility: hidden;
+}
+
+.switch+label {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+}
+
+.switch+label {
+    padding: 2px;
+    width: 52px;
+    height: 27px;
+    background-color: var(--color-border), rgba(23, 21, 21, 0.3);
+    border-radius: 100px;
+}
+
+.switch+label:before,
+.switch+label:after {
+    display: block;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    bottom: 1px;
+    content: "";
+}
+
+.switch+label:before {
+    right: 1px;
+    background-color: var(--bg-input);
+    border-radius: 60px;
+    transition: all 0.4s;
+}
+
+.switch+label:after {
+    width: 30px;
+    background-color: #fff;
+    border-radius: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s;
+}
+
+.switch:checked+label:before {
+    background-color: #f3eff5;
+}
+
+.switch:checked+label:after {
+    transform: translateX(30px);
+} 
+        </style>
 <body>
+    <h3 style="color: rgb(18, 133, 234); ">Enable Dark Mode</h3>
+    <label for="switch">
+     <input type="checkbox" id="switch" class="switch">
+     <label for="switch"></label>
+  </label>
+  <script>
+  const $html = document.querySelector("html");
+  const $checkbox = document.querySelector("#switch");
+  
+  $checkbox.addEventListener("change", function() {
+   $html.classList.toggle("light-mode");
+  });</script>  
 <div class="head">
 <a href="http://www.w3.org/">
 <img src= "http://www.w3.org/Icons/w3c_home" alt="W3C" height="48" width= "72" />

@@ -5674,8 +5674,10 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
       continue processing normally.</p>
 
       <p>When decoding an indexed-color PNG, if out-of-range indexes are encountered, decoders have historically varied in their
-      handling of this error. Displaying the pixel as opaque black is one common error recovery tactic, although such behaviour is
-      not required by this specification and must not be relied on by encoders.</p>
+      handling of this error. <span id="oor-inex-black">Displaying the pixel as opaque black</span> is one common error recovery tactic,
+      and is now required by this specification.
+      Older implementations will vary, and so the behavior
+      must not be relied on by encoders.</p>
 
       <p>Decoders that do not compute CRCs should interpret apparent syntax errors as indications of corruption (see also
       <a href="#13Error-checking"></a>).</p>

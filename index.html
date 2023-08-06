@@ -3942,15 +3942,22 @@ with these exceptions:
         
           <p>If present, the <span class="chunk">cLLi</span> chunk identifies two characteristics:</p>
              
-          <p>MaxFALL (Maximum Frame Average Light Level) indicates the maximum value of the <a>frame</a> 
-             average light level (in cd/m<sup>2</sup>, also known as nits) of the entire playback sequence. MaxFALL is 
-             calculated by first averaging the decoded luminance values of all the pixels in each frame,
-             and then using the value for the frame with the highest value.</p>
+          <p>MaxFALL (Maximum Frame Average Light Level) uses a static metadataa value to indicate the 
+            maximum value of the <a>frame</a> average light level (in cd/m<sup>2</sup>, also known as nits) 
+            of the entire playback sequence. MaxFALL is calculated by first averaging the decoded luminance 
+            values of all the pixels in each frame, and then using the value for the frame with the highest value.</p>
              
-          <p>MaxCLL (Maximum Content Light Level) indicates the maximum light level of any single 
-             pixel (in cd/m<sup>2</sup>, also known as nits) of the entire playback sequence.  There is often an algorithmic 
-             filter to eliminate false values occurring from processing or noise that could adversely 
-             affect intended downstream tone mapping.</p>
+          <p>MaxCLL (Maximum Content Light Level) uses a static metadata value to indicate the maximum light 
+            level of any single pixel (in cd/m<sup>2</sup>, also known as nits) of the entire playback sequence. 
+            There is often an algorithmic filter to eliminate false values occurring from processing or noise 
+            that could adversely affect intended downstream tone mapping.</p>
+
+          <p class="note"><a href="https://shop.cta.tech/products/hdr-static-metadata-extensions">CTA 861.G</a> is available 
+            as a free download and it describes content light level static metadata which assists in optimizing content 
+            tone-mapping on a target display in Annex P.</p>
+
+          <p class="note"><a href="https://github.com/SMPTE/st2067-21">SMPTE ST 2086-21</a> Section 7.5 adds additional
+            information in Section 7.5 in the case where the cLLi values are unknown and have not been calculated.</p> 
 
           <p class="note"><a href="https://github.com/w3c/PNG-spec/issues/319">Issue #319</a> discusses tone-mapping behavior when
           the <span class="chunk">cLLi</span> chunk is present.</p>

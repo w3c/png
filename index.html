@@ -3941,6 +3941,12 @@ with these exceptions:
 </pre>
         
           <p>If present, the <span class="chunk">cLLi</span> chunk identifies two characteristics:</p>
+
+          <p>The <span class="chunk">cLLi</span> chunk adds static metadata which provides an opportunity
+          to optimize tone mapping of the associated content to a specific target display. This is 
+          accomplished by tailoring the tone mapping of the content itself to the specific peak brightness 
+          capabilities of the target display to prevent clipping. The method of tone-mapping optimization 
+          is currently subjective.</p>
              
           <p>MaxFALL (Maximum Frame Average Light Level) uses a static metadataa value to indicate the 
             maximum value of the <a>frame</a> average light level (in cd/m<sup>2</sup>, also known as nits) 
@@ -3953,8 +3959,7 @@ with these exceptions:
             that could adversely affect intended downstream tone mapping.</p>
 
           <p class="note"><a href="https://shop.cta.tech/products/hdr-static-metadata-extensions">CTA 861.G</a> is available 
-            as a free download and it describes content light level static metadata which assists in optimizing content 
-            tone-mapping on a target display in Annex P.</p>
+            as a free download. It describes the method of calculation for generating the cLLi values</p>
 
           <p class="note"><a href="https://github.com/SMPTE/st2067-21">SMPTE ST 2086-21</a> Section 7.5 adds additional
             information in Section 7.5 in the case where the cLLi values are unknown and have not been calculated.</p> 

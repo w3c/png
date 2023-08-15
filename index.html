@@ -16,9 +16,9 @@
       group: "png",
       specStatus: "WD",
       shortName: "png-3",
-      publishDate: "2023-07-20",
+      publishDate: "2023-08-15",
       copyrightStart: "1996",
-      previousPublishDate: "2022-10-25",
+      previousPublishDate: "2022-07-20",
       previousMaturity: "FPWD",
       edDraftURI: "https://w3c.github.io/PNG-spec/",
       github: {
@@ -3627,12 +3627,12 @@ with these exceptions:
             images</a>. If <code>Video Full Range Flag</code> value is <code>0</code>, then the image is a <a>narrow-range
             image</a>. Narrow range images are found in video workflows where the interpretation of sample values below reference
             black (0% signal level) or above nominal peak (100% signal level). For example, [[ITU-R-BT.709]] specifies that, for
-            10-bit coding, reference black (called black level) corresponds to code value 64 and nominal peak to code value 940. In
-            narrow range, momentary excursions defined as overshoots and undershoots exist below reference black and above nominal
-            peak in uncontrolled lighting conditions, in order to preserve processing artifacts caused by video
-            filtering/compression without clipping which can improve image quality during additional stages of processing and
-            compression. The use of undershoot/overshoot has also been used to preserve additional color volume (both light and
-            color) as described in [[EBU-R-103]]. [[SMPTE-RP-2077]] describes full range in more detail and includes the mapping
+            10-bit coding, reference black (called black level) corresponds to code value 64 and nominal peak to code value 940. 
+            In narrow range, momentary excursions defined as overshoots and undershoots exist below reference black and above nominal 
+            peak in order to preserve processing artifacts caused by filtering/compression or by uncontrolled lighting without 
+            clipping.  This can improve image quality during additional stages of processing and compression. The use of 
+            undershoot/overshoot has also been used to preserve additional color volume (both light and color) as described in 
+            [[EBU-R-103]]. [[SMPTE-RP-2077]] describes full range in more detail and includes the mapping
             from <a>full-range images</a> to <a>narrow-range images</a> and describes protected code values for SDI (baseband)
             carriage.
           </aside>

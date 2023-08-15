@@ -461,6 +461,20 @@ with these exceptions:
       <dd>
         power-law <a>transfer function</a>
       </dd>
+        
+      <dt id="3pq"><dfn>high dynamic range (HDR)</dfn>
+      </dt>
+
+      <dd>
+        an image format capable of storing images with a relatively low dynamic range of 5-8 stops. Examples include sRGB, Display P3, ITU-R BT.709
+      </dd>
+        
+      <dt id="3hlg"><dfn>hybrid log-gamma (HLG)</dfn>
+      </dt>
+
+      <dd>
+        <a>transfer function</a> defined in ITU-R BT.2100 Table 5. (A relative scene-referred system)
+      </dd>
 
       <dt><dfn>full-range image</dfn>
       </dt>
@@ -524,6 +538,13 @@ with these exceptions:
         significance (MSB LSB for two-byte integers, MSB B2 B1 LSB for four-byte integers)
       </dd>
 
+      <dt id="3pq"><dfn>perceptual quantiser (PQ)</dfn>
+      </dt>
+
+      <dd>
+        <a>transfer function</a> defined in ITU-R BT.2100 Table 4. N.B. only RGB may be used in PNG, ICtCp is NOT supported. (An absolute display-referred system)
+      </dd>
+        
       <!-- ************Page Break******************* -->
       <!-- ************Page Break******************* -->
       <!-- Maintain a fragment named "3PNGdecoder" to preserve incoming links to it -->
@@ -593,6 +614,20 @@ with these exceptions:
 
       <dd>
         row of <a>pixels</a> within an image or <a>interlaced PNG image</a>.
+      </dd>
+        
+      <dt id="3sdr"><dfn>standard dynamic range (SDR)</dfn>
+      </dt>
+
+      <dd>
+        an image format capable of storing images with a relatively high dynamic range similar to or in excess of the human visual system's instantaneous dynamic range (~12-14 stops). PNG allows the use of 2 HDR formats, HLG and PQ.
+      </dd>
+      
+        <dt id="3stop"><dfn>stop</dfn>
+      </dt>
+
+      <dd>
+        a change in scene light luminance of a factor of 2.
       </dd>
 
       <dt><dfn>transfer function</dfn>

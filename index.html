@@ -3746,16 +3746,16 @@ with these exceptions:
           the Mastering Display Color Volume (mDCv) used at the point of content creation, 
           as specified in [[SMPTE-ST-2086]]. The mDCv provides informative static metadata to 
           allow a destination (consumer) display to optimize it's tone and color mappings based 
-          on its inherent capabilities. The mDCv chunk should be included for both PQ and SDR 
-          images. It is less common for HLG images. Color Primaries and White Point characteristics 
-          can be derived from cICP chunk formats. Specific examples of its most common use-cases 
-          for both HDR and SDR are available in [[ITU-T-Series-H-Supplement-19]].</p>
+          on its inherent capabilities. The mDCv chunk should be included for PQ 
+          images. It is less common for other image formats but may be included. Color Primaries and White Point characteristics 
+          can be derived from cICP chunk formats. Specific examples of common use-cases 
+          for ITU formats are available in [[ITU-T-Series-H-Supplement-19]].</p>
 
           <p class="note"><a href="https://github.com/w3c/PNG-spec/issues/319">Issue #319</a> discusses tone-mapping behavior when
           the <span class="chunk">mDCv</span> chunk is present.</p>
 
-          <p> For SDR images, if mDCv display min/max luminance are unknown, the default 
-          characteristics can be derived from the values in [[ITU-T-Series-H-Supplement-19]] Table 11 .”</p>
+          <p> If mDCv display min/max luminance are unknown, the default 
+          characteristics can be derived from the values given in the image format specification or, for ITU formats, from [[ITU-T-Series-H-Supplement-19]] Table 11 .”</p>
 
           <p>The following specifies the syntax of the <span class="chunk">mDCv</span> chunk:</p>
 
@@ -3934,7 +3934,7 @@ with these exceptions:
 
           <aside class="example">
             Example <span class="chunk">mDCv</span> chunk mastering display maximum 
-            luminance using traditional SDR shading techniques at 100 cd/m<sup>2</sup> 
+            luminance using traditional live television production techniques at 100 cd/m<sup>2</sup> 
             (described in [[ITU-R-BT.2035]]):
             <table id="mDCv-chunk-max-luminance-example3" class="numbered simple">
               <tr>
@@ -3951,7 +3951,7 @@ with these exceptions:
 
           <aside class="example">
             Example <span class="chunk">mDCv</span> chunk mastering display maximum 
-            luminance using "single-master" SDR shading techniques at 203 cd/m<sup>2</sup> 
+            luminance using "single-master" live television production techniques at 203 cd/m<sup>2</sup> 
             (described in ITU-R BT.2408 Annex Y):
             <table id="mDCv-chunk-max-luminance-example4" class="numbered simple">
               <tr>
@@ -3993,7 +3993,8 @@ with these exceptions:
 
           <p>Each <a>frame</a> is analyzed.</p>
 
-          <p>A value of zero for either MaxCLL or MaxFALL means that the value is unknown.</p>
+          <p>A value of zero for either MaxCLL or MaxFALL means that the value is unknown or not currently caclulable.</p>
+            
  
 
            <p>The following specifies the syntax of the <span class="chunk">cLLi</span> chunk:</p>

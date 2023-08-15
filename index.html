@@ -3993,9 +3993,9 @@ with these exceptions:
 
           <p>Each <a>frame</a> is analyzed.</p>
 
-          <p>A value of zero for either MaxCLL or MaxFALL means that the value is unknown or not currently caclulable.</p>
+          <p>A value of zero for either MaxCLL or MaxFALL means that the value is unknown or not currently calculable.</p>
             
- 
+          <p class="note">An example where this will not be calculable is when creating a live animated PNG stream, when not all frames will be available to compute the values until the stream ends.  The encoder may wish to use the value zero initially and replace this with the calculated value when the stream ends.</p>
 
            <p>The following specifies the syntax of the <span class="chunk">cLLi</span> chunk:</p>
 

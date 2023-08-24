@@ -1173,7 +1173,7 @@ with these exceptions:
           <td>Coding-independent code points</td>
           <td>
             Identifies the colour space by enumerating metadata such as the <a>transfer function</a> and colour primaries.
-            Originally for <a>SDR</a> and <a>HDR</a> video, also used for still and animated images.
+            Originally for <a>SDR</a> [[ITU-R-BT.709]] and <a>HDR</a> [[ITU-R BT.2100]] video, also used for still and animated images.
           </td>
         </tr>
 
@@ -3746,20 +3746,22 @@ with these exceptions:
           <pre>
 <!-- 109 68 67 118 -->6D 44 43 76
 </pre>
-          <p>If present, the <span class="chunk">mDCv</span> chunk characterizes
-          the Mastering Display Color Volume (mDCv) used at the point of content creation,
-          as specified in [[SMPTE-ST-2086]]. The mDCv provides informative static metadata to
-          allow a destination (consumer) display to optimize it's tone and color mappings based
-          on its inherent capabilities. The mDCv chunk should be included for <a>PQ</a>
-          images. It is less common for other image formats but may be included. Color Primaries and White Point characteristics
-          can be derived from cICP chunk formats. Specific examples of common use-cases
-          for ITU formats are available in [[ITU-T-Series-H-Supplement-19]].</p>
+
+          <p>If present, the <span class="chunk">mDCv</span> chunk characterizes 
+          the Mastering Display Color Volume (mDCv) used at the point of content creation, 
+          as specified in [[SMPTE-ST-2086]]. The mDCv provides informative static metadata to 
+          allow a destination (consumer) display to optimize it's tone and color mappings based 
+          on its inherent capabilities. The mDCv chunk should be included for both <a>PQ</a> [[ITU-R-BT.2100]] and <a>SDR</a> [[ITU-R-BT.709]]
+          images. It is less common for HLG images. Color Primaries and White Point characteristics 
+          can be derived from cICP chunk formats. Specific examples of its most common use-cases 
+          for images using both HDR[[ITU-R-BT.2100]] and SDR[[ITU-R-BT.709]] are available in [[ITU-T-Series-H-Supplement-19]].</p>
 
           <p class="note"><a href="https://github.com/w3c/PNG-spec/issues/319">Issue #319</a> discusses tone-mapping behavior when
           the <span class="chunk">mDCv</span> chunk is present.</p>
 
-          <p> If mDCv display min/max luminance are unknown, the default
-          characteristics can be derived from the values given in the image format specification or, for ITU formats, from [[ITU-T-Series-H-Supplement-19]] Table 11 .”</p>
+           <p> For <a>SDR</a> [[ITU-R-BT.709]] images, if mDCv display min/max luminance are unknown, the default 
+          characteristics can be derived from the values in [[ITU-T-Series-H-Supplement-19]] Table 11 .”</p>
+
 
           <p>The following specifies the syntax of the <span class="chunk">mDCv</span> chunk:</p>
 
@@ -3813,7 +3815,8 @@ with these exceptions:
           "chunk" href="#11IDAT">IDAT</a> chunks.</p>
 
           <aside class="example">
-            Example <span class="chunk">mDCv</span> chunk mastering display colour primaries for <a>HDR</a>:
+
+            Example <span class="chunk">mDCv</span> chunk mastering display colour primaries for <a>HDR</a> [[ITU-R-BT.2100]]:
             <table id="mDCv-chunk-hdr-primaries-example" class="numbered simple">
               <tr>
                 <th>Name</th>
@@ -3840,7 +3843,8 @@ with these exceptions:
           </aside>
 
           <aside class="example">
-            Example <span class="chunk">mDCv</span> chunk mastering display white point for <a>HDR</a>:
+            Example <span class="chunk">mDCv</span> chunk mastering display white point for <a>HDR</a> [[ITU-R-BT.2100]]:
+
             <table id="mDCv-chunk-hdr-white-point-example" class="numbered simple">
               <tr>
                 <th>Name</th>
@@ -3857,7 +3861,9 @@ with these exceptions:
           </aside>
 
           <aside class="example">
-            Example <span class="chunk">mDCv</span> chunk mastering display maximum luminance for <a>HDR</a>:
+
+            Example <span class="chunk">mDCv</span> chunk mastering display maximum luminance for <a>HDR</a> [[ITU-R-BT.2100]]:
+
             <table id="mDCv-chunk-max-luminance-example" class="numbered simple">
               <tr>
                 <th>Actual value</th>
@@ -3887,12 +3893,13 @@ with these exceptions:
           </aside>
 
 
-          <p>Below are mDCv examples for [[SMPTE-ST-2086]] with <a>HDR</a> content that may be native or
-            containerized in <a>HDR</a> content (as described in the [[MovieLabs-Recommended-Best-Practice-for-SDR-to-HDR-Conversion]]).</p>
+           <p>Below are mDCv examples for [[SMPTE-ST-2086]] with <a>SDR</a> [[ITU-R-BT.709]] content that may be native or 
+            containerized in <a>HDR</a> [[ITU-R-BT.2100]]content (as described in the [[MovieLabs-Recommended-Best-Practice-for-SDR-to-HDR-Conversion]]).</p>
 
 
           <aside class="example">
-            Example <span class="chunk">mDCv</span> chunk mastering display colour primaries for <a>SDR</a>:
+            Example <span class="chunk">mDCv</span> chunk mastering display colour primaries for SDR[[ITU-R-BT.709]]:
+
             <table id="mDCv-chunk-sdr-primaries-example" class="numbered simple">
               <tr>
                 <th>Name</th>
@@ -3920,7 +3927,9 @@ with these exceptions:
           </aside>
 
           <aside class="example">
-            Example <span class="chunk">mDCv</span> chunk mastering display white point for <a>SDR</a>:
+
+            Example <span class="chunk">mDCv</span> chunk mastering display white point for <a>SDR</a> [[ITU-R-BT.709]]:
+
             <table id="mDCv-chunk-sdr-white-point-example" class="numbered simple">
               <tr>
                 <th>Name</th>
@@ -3937,8 +3946,9 @@ with these exceptions:
           </aside>
 
           <aside class="example">
-            Example <span class="chunk">mDCv</span> chunk mastering display maximum
-            luminance using traditional live television production techniques at 100 cd/m<sup>2</sup>
+            Example <span class="chunk">mDCv</span> chunk mastering display maximum 
+          luminance using traditional <a>SDR</a> [[ITU-R-BT.709]]shading techniques at 100 cd/m<sup>2</sup> 
+
             (described in [[ITU-R-BT.2035]]):
             <table id="mDCv-chunk-max-luminance-example3" class="numbered simple">
               <tr>
@@ -3954,8 +3964,9 @@ with these exceptions:
           </aside>
 
           <aside class="example">
-            Example <span class="chunk">mDCv</span> chunk mastering display maximum
-            luminance using "single-master" live television production techniques at 203 cd/m<sup>2</sup>
+
+            Example <span class="chunk">mDCv</span> chunk mastering display maximum 
+          luminance using "single-master" <a>SDR</a> [[ITU-R-BT.709]]shading techniques at 203 cd/m<sup>2</sup> 
             (described in ITU-R BT.2408 Annex Y):
             <table id="mDCv-chunk-max-luminance-example4" class="numbered simple">
               <tr>
@@ -3982,15 +3993,28 @@ with these exceptions:
 
           <p>If present, the <span class="chunk">cLLi</span> chunk identifies two characteristics:</p>
 
-          <p>MaxFALL (Maximum Frame Average Light Level) indicates the maximum value of the <a>frame</a>
-             average light level (in cd/m<sup>2</sup>, also known as nits) of the entire playback sequence. MaxFALL is
-             calculated by first averaging the decoded luminance values of all the pixels in each frame,
-             and then using the value for the frame with the highest value.</p>
+          <p>The <span class="chunk">cLLi</span> chunk adds static metadata which provides an opportunity
+          to optimize tone mapping of the associated content to a specific target display. This is 
+          accomplished by tailoring the tone mapping of the content itself to the specific peak brightness 
+          capabilities of the target display to prevent clipping. The method of tone-mapping optimization 
+          is currently subjective.</p>
+             
+          <p>MaxFALL (Maximum Frame Average Light Level) uses a static metadataa value to indicate the 
+            maximum value of the <a>frame</a> average light level (in cd/m<sup>2</sup>, also known as nits) 
+            of the entire playback sequence. MaxFALL is calculated by first averaging the decoded luminance 
+            values of all the pixels in each frame, and then using the value for the frame with the highest value.</p>
+             
+          <p>MaxCLL (Maximum Content Light Level) uses a static metadata value to indicate the maximum light 
+            level of any single pixel (in cd/m<sup>2</sup>, also known as nits) of the entire playback sequence. 
+            There is often an algorithmic filter to eliminate false values occurring from processing or noise 
+            that could adversely affect intended downstream tone mapping.</p>
 
-          <p>MaxCLL (Maximum Content Light Level) indicates the maximum light level of any single
-             pixel (in cd/m<sup>2</sup>, also known as nits) of the entire playback sequence.  There is often an algorithmic
-             filter to eliminate false values occurring from processing or noise that could adversely
-             affect intended downstream tone mapping.</p>
+          <p class="note"><a href="https://shop.cta.tech/products/hdr-static-metadata-extensions">CTA 861.G</a> is available 
+            as a free download. It describes the method of calculation for generating the cLLi values</p>
+
+          <p class="note"><a href="https://github.com/SMPTE/st2067-21">SMPTE ST 2086-21</a> Section 7.5 adds additional
+            information in Section 7.5 in the case where the cLLi values are unknown and have not been calculated.</p> 
+
 
           <p class="note"><a href="https://github.com/w3c/PNG-spec/issues/319">Issue #319</a> discusses tone-mapping behavior when
           the <span class="chunk">cLLi</span> chunk is present.</p>
@@ -7421,7 +7445,8 @@ will need to be replaced by copies of lines 17-23, but processing background ins
     <ul>
       <!-- to 18 July 2023 -->
       <li>Explained preferable handling of trailing bytes in the final <a href="#11IDAT" class="chunk">IDAT</a> chunk for encoders and decoders.</li>
-      <li>Linked to open issue on tone-mapping <a>HDR</a> images in the presence of <a href="#mDCv-chunk" class="chunk">mDCv</a>.</li>
+      <li>Linked to open issue on tone-mapping <a>HDR</a> [[ITU-R-BT.2100]] images in the presence of <a href="#mDCv-chunk" class="chunk">mDCv</a>.</li>
+
       <li>Follow the Encoding Standard on UTF-8 encode and decode.</li>
       <li>Added definition of a frame.</li>
       <li>Required the Matrix Coefficients in <a href="#cICP-chunk" class="chunk">cICP</a> to be zero (RGB data).</li>
@@ -7442,14 +7467,14 @@ will need to be replaced by copies of lines 17-23, but processing background ins
       <li>Redrew chunk-ordering lattice diagrams to be clearer and more consistent.</li>
       <li>Added a new chunk, <a href="#cLLi-chunk" class="chunk">cLLi</a>,
       to describe the Maximum Single-Pixel and Frame-Average Luminance Levels
-      for both static and animated <a>HDR</a> PNG images.
+      for both static and animated <a>HDR</a> [[ITU-R-BT.2100]]PNG images.
       </li>
       <li>Updated external links to latest versions, preferring https over http.</li>
       <li>Specified interoperable handling of extra sample bits, beyond the specified bit depth,
         in <a href="#11tRNS" class="chunk">tRNS</a> and <a href="#11bKGD" class="chunk">bKGD</a> chunks.
       </li>
-      <li>Added a new chunk, <a href="#mDCv-chunk" class="chunk">mDCv</a>
-        to describe the color volume of the mastering display used to grade <a>HDR</a> content.</li>
+      <li>Added a new chunk, <a href="#mDCv-chunk" class="chunk">mDCv</a> 
+        to describe the color volume of the mastering display used to grade <a>HDR</a> [[ITU-R-BT.2100]]content.</li>
       <li>Used correct Unicode character names.</li>
       <li>Changed chunk type codes to use hexadecimal, rather than decimal.</li>
       <li>Described textual chunk processing more clearly.</li>
@@ -7471,8 +7496,9 @@ will need to be replaced by copies of lines 17-23, but processing background ins
       </li>
 
       <li>Added the <a class="chunk" href="#cICP-chunk">cICP</a> chunk, Coding-independent code points for video signal type
-      identification, to contain image format metadata defined in [[ITU-T-H.273]] which enables PNG to contain High Dynamic Range
+      identification, to contain image format metadata defined in [[ITU-T-H.273]] which enables PNG to contain [[ITU-R-BT.2100]]High Dynamic Range
       (<a>HDR</a>) and Wide Colour Gamut (WCG) images.
+
       </li>
 
       <li>The previously defined <a class="chunk" href="#eXIf">eXIf</a> chunk has been moved from the PNG-Extensions document

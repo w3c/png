@@ -16,9 +16,9 @@
       group: "png",
       specStatus: "WD",
       shortName: "png-3",
-      publishDate: "2023-07-20",
+      publishDate: "2023-08-17",
       copyrightStart: "1996",
-      previousPublishDate: "2022-10-25",
+      previousPublishDate: "2022-07-20",
       previousMaturity: "FPWD",
       edDraftURI: "https://w3c.github.io/PNG-spec/",
       github: {
@@ -68,6 +68,7 @@
         { name: "Paul Schmidt" },
         { name: "Andrew Smith" },
         { name: "Michael Stokes" },
+        { name: "Simon Thompson", company: "British Broadcasting Corporation", companyURL: "https://www.bbc.co.uk" },
         { name: "Vladimir Vukicevic" },
         { name: "Tim Wegner" },
         { name: "Jeremy Wohl" }
@@ -255,7 +256,7 @@
           title: "Series H: Audio Visual and Multimedia Systems - Usage of video signal type code points",
           publisher: "ITU",
           date: "2021-04",
-          href: "https://www.itu.int/ITU-T/recommendations/rec.aspx?rec=13895"
+          href: "https://www.itu.int/ITU-T/recommendations/rec.aspx?rec=14652"
         },
         "MovieLabs-Recommended-Best-Practice-for-SDR-to-HDR-Conversion": {
             title: "MovieLabs Best Practices for Mapping BT.709 Content to HDR10 for Consumer Distribution",
@@ -420,10 +421,10 @@ with these exceptions:
 
       <dt><dfn>frame</dfn></dt>
 
-      <dd>For static PNG, the <a>static image</a> 
-        is considered to be the first (and only) frame. 
-        For animated PNG, each image that forms part  
-        of the <a href="#apng-frame-based-animation">frame-based animation</a> sequence 
+      <dd>For static PNG, the <a>static image</a>
+        is considered to be the first (and only) frame.
+        For animated PNG, each image that forms part
+        of the <a href="#apng-frame-based-animation">frame-based animation</a> sequence
         is a frame.
         Thus, for animated PNG, when the static image is not the first frame,
         the static image is not considered to be a frame.
@@ -459,6 +460,20 @@ with these exceptions:
 
       <dd>
         power-law <a>transfer function</a>
+      </dd>
+
+      <dt>high dynamic range (<dfn>HDR</dfn>)
+      </dt>
+
+      <dd>
+        an image format capable of storing images with a relatively high dynamic range similar to or in excess of the human visual system's instantaneous dynamic range (~12-14 <a>stops</a>). PNG allows the use of two <a>HDR</a> formats, <a>HLG</a> and <a>PQ</a>.
+      </dd>
+
+      <dt>hybrid log-gamma (<dfn>HLG</dfn>)
+      </dt>
+
+      <dd>
+        <a>transfer function</a> defined in [[ITU-R-BT.2100]] Table 5. (A relative scene-referred system)
       </dd>
 
       <dt><dfn>full-range image</dfn>
@@ -522,6 +537,17 @@ with these exceptions:
         <a>byte order</a> in which the most significant byte comes first, then the less significant bytes in descending order of
         significance (MSB LSB for two-byte integers, MSB B2 B1 LSB for four-byte integers)
       </dd>
+
+      <dt>perceptual quantiser (<dfn>PQ</dfn>)
+      </dt>
+
+      <dd>
+        <a>transfer function</a> defined in ITU-R BT.2100 Table 4. (An absolute display-referred system)
+      </dd>
+
+      <p class="note">
+        Only RGB may be used in PNG, ICtCp is NOT supported.
+      </p>
 
       <!-- ************Page Break******************* -->
       <!-- ************Page Break******************* -->
@@ -594,6 +620,20 @@ with these exceptions:
         row of <a>pixels</a> within an image or <a>interlaced PNG image</a>.
       </dd>
 
+      <dt>standard dynamic range (<dfn>SDR</dfn>)
+      </dt>
+
+      <dd>
+        an image format capable of storing images with a relatively low dynamic range of 5-8 <a>stops</a>. Examples include sRGB, Display P3, ITU-R BT.709
+      <p class="note">Standard dynamic range is independent of the primaries and hence, gamut. Wide color gamut <a>SDR</a> formats are supported by PNG.</p></dd>
+
+      <dt><dfn>stop</dfn>
+      </dt>
+
+      <dd>
+        a change in scene light luminance of a factor of 2.
+      </dd>
+
       <dt><dfn>transfer function</dfn>
       </dt>
 
@@ -628,14 +668,14 @@ with these exceptions:
         <p class="note">A decoder calculates the CRC for the received data and checks by comparing it to the CRC calculated by
         the encoder and appended to the data. A mismatch indicates that the data or the CRC were corrupted in transit</p>
       </dd>
-  
+
       <!-- Maintain a fragment named "3CRT" to preserve incoming links to it -->
       <dt id="3CRT">Cathode Ray Tube</dt>
       <dt><abbr title="Cathode Ray Tube">CRT</abbr></dt>
 
       <dd>vacuum tube containing one or more electron guns, which emit electron beams that are manipulated to display images on a
       phosphorescent screen</dd>
-  
+
       <!-- Maintain a fragment named "3LSB" to preserve incoming links to it -->
       <dt id="3LSB">Least Significant Byte</dt>
       <dt><abbr title="Least Significant Byte">LSB</abbr></dt>
@@ -1133,7 +1173,7 @@ with these exceptions:
           <td>Coding-independent code points</td>
           <td>
             Identifies the colour space by enumerating metadata such as the <a>transfer function</a> and colour primaries.
-            Originally for SDR [[ITU-R-BT.709]] and HDR [[ITU-R BT.2100]] video, also used for still and animated images.
+            Originally for <a>SDR</a> [[ITU-R-BT.709]] and <a>HDR</a> [[ITU-R BT.2100]] video, also used for still and animated images.
           </td>
         </tr>
 
@@ -1289,7 +1329,7 @@ with these exceptions:
       <section class="introductory">
         <h3>Introduction</h3>
 
-        <p>Animated PNG (APNG) extends the original, static-only PNG format, 
+        <p>Animated PNG (APNG) extends the original, static-only PNG format,
         adding support for <a>frame</a>-based animated images. It is intended to
         be a replacement for simple animated images that have traditionally used the GIF format [[GIF]], while adding support for
         24-bit images and 8-bit transparency, which GIF lacks.</p>
@@ -2217,7 +2257,7 @@ with these exceptions:
     <section id="6Colour-values">
       <h2>Colour types and values</h2>
 
-      <p>As explained in <a href="#4Concepts.PNGImage"></a> there are five types of PNG 
+      <p>As explained in <a href="#4Concepts.PNGImage"></a> there are five types of PNG
       <!-- Maintain "3colourType" to preserve incoming links to it -->
        image. Corresponding to each type is a <dfn id="3colourType">colour type</dfn>, which is the sum of the following values: 1
       (palette used), 2 (<a>truecolour</a> used) and 4 (alpha used). <a>greyscale</a> and <a>truecolour</a> images may have an explicit
@@ -3117,7 +3157,7 @@ with these exceptions:
           <p>For <a>colour types</a> 0 or 2, two bytes per sample are used regardless of the image bit depth (see <a href=
           "#7Integers-and-byte-order"></a>). Pixels of the specified grey sample value or RGB sample values are treated as
           transparent (equivalent to alpha value 0); all other pixels are to be treated as fully opaque (alpha value
-          2<sup>bitdepth</sup>-1). 
+          2<sup>bitdepth</sup>-1).
           If the image bit depth is less than 16, the least significant bits are used.
           Encoders should set the other bits to 0, and decoders must mask the other bits to 0 before the value is used.</p>
 
@@ -3626,12 +3666,12 @@ with these exceptions:
             images</a>. If <code>Video Full Range Flag</code> value is <code>0</code>, then the image is a <a>narrow-range
             image</a>. Narrow range images are found in video workflows where the interpretation of sample values below reference
             black (0% signal level) or above nominal peak (100% signal level). For example, [[ITU-R-BT.709]] specifies that, for
-            10-bit coding, reference black (called black level) corresponds to code value 64 and nominal peak to code value 940. In
-            narrow range, momentary excursions defined as overshoots and undershoots exist below reference black and above nominal
-            peak in uncontrolled lighting conditions, in order to preserve processing artifacts caused by video
-            filtering/compression without clipping which can improve image quality during additional stages of processing and
-            compression. The use of undershoot/overshoot has also been used to preserve additional color volume (both light and
-            color) as described in [[EBU-R-103]]. [[SMPTE-RP-2077]] describes full range in more detail and includes the mapping
+            10-bit coding, reference black (called black level) corresponds to code value 64 and nominal peak to code value 940.
+            In narrow range, momentary excursions defined as overshoots and undershoots exist below reference black and above nominal
+            peak in order to preserve processing artifacts caused by filtering/compression or by uncontrolled lighting without
+            clipping.  This can improve image quality during additional stages of processing and compression. The use of
+            undershoot/overshoot has also been used to preserve additional color volume (both light and color) as described in
+            [[EBU-R-103]]. [[SMPTE-RP-2077]] describes full range in more detail and includes the mapping
             from <a>full-range images</a> to <a>narrow-range images</a> and describes protected code values for SDI (baseband)
             carriage.
           </aside>
@@ -3670,7 +3710,7 @@ with these exceptions:
 
           <aside class="example">
             <span class="chunk">cICP</span> chunk field values for a <a>full-range image</a> that uses the colour primaries and the
-            PQ <a>transfer function</a> specified at [[ITU-R-BT.2100]]:
+            <a>PQ</a> <a>transfer function</a> specified at [[ITU-R-BT.2100]]:
 
             <pre>
 9 16 0 1
@@ -3679,7 +3719,7 @@ with these exceptions:
 
           <aside class="example">
             <span class="chunk">cICP</span> chunk field values for a <a>full-range image</a> that uses the colour primaries and the
-            HLG <a>transfer function</a> specified at [[ITU-R-BT.2100]]:
+            <a>HLG</a> <a>transfer function</a> specified at [[ITU-R-BT.2100]]:
 
             <pre>
 9 18 0 1
@@ -3706,11 +3746,12 @@ with these exceptions:
           <pre>
 <!-- 109 68 67 118 -->6D 44 43 76
 </pre>
+
           <p>If present, the <span class="chunk">mDCv</span> chunk characterizes 
           the Mastering Display Color Volume (mDCv) used at the point of content creation, 
           as specified in [[SMPTE-ST-2086]]. The mDCv provides informative static metadata to 
           allow a destination (consumer) display to optimize it's tone and color mappings based 
-          on its inherent capabilities. The mDCv chunk should be included for both PQ [[ITU-R-BT.2100]] and SDR [[ITU-R-BT.709]]
+          on its inherent capabilities. The mDCv chunk should be included for both <a>PQ</a> [[ITU-R-BT.2100]] and <a>SDR</a> [[ITU-R-BT.709]]
           images. It is less common for HLG images. Color Primaries and White Point characteristics 
           can be derived from cICP chunk formats. Specific examples of its most common use-cases 
           for images using both HDR[[ITU-R-BT.2100]] and SDR[[ITU-R-BT.709]] are available in [[ITU-T-Series-H-Supplement-19]].</p>
@@ -3718,8 +3759,9 @@ with these exceptions:
           <p class="note"><a href="https://github.com/w3c/PNG-spec/issues/319">Issue #319</a> discusses tone-mapping behavior when
           the <span class="chunk">mDCv</span> chunk is present.</p>
 
-          <p> For SDR [[ITU-R-BT.709]] images, if mDCv display min/max luminance are unknown, the default 
+           <p> For <a>SDR</a> [[ITU-R-BT.709]] images, if mDCv display min/max luminance are unknown, the default 
           characteristics can be derived from the values in [[ITU-T-Series-H-Supplement-19]] Table 11 .”</p>
+
 
           <p>The following specifies the syntax of the <span class="chunk">mDCv</span> chunk:</p>
 
@@ -3773,7 +3815,8 @@ with these exceptions:
           "chunk" href="#11IDAT">IDAT</a> chunks.</p>
 
           <aside class="example">
-            Example <span class="chunk">mDCv</span> chunk mastering display colour primaries for HDR [[ITU-R-BT.2100]]:
+
+            Example <span class="chunk">mDCv</span> chunk mastering display colour primaries for <a>HDR</a> [[ITU-R-BT.2100]]:
             <table id="mDCv-chunk-hdr-primaries-example" class="numbered simple">
               <tr>
                 <th>Name</th>
@@ -3800,7 +3843,8 @@ with these exceptions:
           </aside>
 
           <aside class="example">
-            Example <span class="chunk">mDCv</span> chunk mastering display white point for HDR [[ITU-R-BT.2100]]:
+            Example <span class="chunk">mDCv</span> chunk mastering display white point for <a>HDR</a> [[ITU-R-BT.2100]]:
+
             <table id="mDCv-chunk-hdr-white-point-example" class="numbered simple">
               <tr>
                 <th>Name</th>
@@ -3817,7 +3861,9 @@ with these exceptions:
           </aside>
 
           <aside class="example">
-            Example <span class="chunk">mDCv</span> chunk mastering display maximum luminance for HDR [[ITU-R-BT.2100]]:
+
+            Example <span class="chunk">mDCv</span> chunk mastering display maximum luminance for <a>HDR</a> [[ITU-R-BT.2100]]:
+
             <table id="mDCv-chunk-max-luminance-example" class="numbered simple">
               <tr>
                 <th>Actual value</th>
@@ -3847,12 +3893,13 @@ with these exceptions:
           </aside>
 
 
-          <p>Below are mDCv examples for [[SMPTE-ST-2086]] with SDR[[ITU-R-BT.709]] content that may be native or 
-            containerized in HDR [[ITU-R-BT.2100]]content (as described in the [[MovieLabs-Recommended-Best-Practice-for-SDR-to-HDR-Conversion]]).</p>
+           <p>Below are mDCv examples for [[SMPTE-ST-2086]] with <a>SDR</a> [[ITU-R-BT.709]] content that may be native or 
+            containerized in <a>HDR</a> [[ITU-R-BT.2100]]content (as described in the [[MovieLabs-Recommended-Best-Practice-for-SDR-to-HDR-Conversion]]).</p>
 
 
           <aside class="example">
             Example <span class="chunk">mDCv</span> chunk mastering display colour primaries for SDR[[ITU-R-BT.709]]:
+
             <table id="mDCv-chunk-sdr-primaries-example" class="numbered simple">
               <tr>
                 <th>Name</th>
@@ -3880,7 +3927,9 @@ with these exceptions:
           </aside>
 
           <aside class="example">
-            Example <span class="chunk">mDCv</span> chunk mastering display white point for SDR[[ITU-R-BT.709]]:
+
+            Example <span class="chunk">mDCv</span> chunk mastering display white point for <a>SDR</a> [[ITU-R-BT.709]]:
+
             <table id="mDCv-chunk-sdr-white-point-example" class="numbered simple">
               <tr>
                 <th>Name</th>
@@ -3898,7 +3947,8 @@ with these exceptions:
 
           <aside class="example">
             Example <span class="chunk">mDCv</span> chunk mastering display maximum 
-            luminance using traditional SDR [[ITU-R-BT.709]]shading techniques at 100 cd/m<sup>2</sup> 
+          luminance using traditional <a>SDR</a> [[ITU-R-BT.709]]shading techniques at 100 cd/m<sup>2</sup> 
+
             (described in [[ITU-R-BT.2035]]):
             <table id="mDCv-chunk-max-luminance-example3" class="numbered simple">
               <tr>
@@ -3914,8 +3964,9 @@ with these exceptions:
           </aside>
 
           <aside class="example">
+
             Example <span class="chunk">mDCv</span> chunk mastering display maximum 
-            luminance using "single-master" SDR [[ITU-R-BT.709]]shading techniques at 203 cd/m<sup>2</sup> 
+          luminance using "single-master" <a>SDR</a> [[ITU-R-BT.709]]shading techniques at 203 cd/m<sup>2</sup> 
             (described in ITU-R BT.2408 Annex Y):
             <table id="mDCv-chunk-max-luminance-example4" class="numbered simple">
               <tr>
@@ -3939,7 +3990,7 @@ with these exceptions:
           <pre>
 <!-- 99 76 76 105 -->63 4C 4C 69
 </pre>
-        
+
           <p>If present, the <span class="chunk">cLLi</span> chunk identifies two characteristics:</p>
 
           <p>The <span class="chunk">cLLi</span> chunk adds static metadata which provides an opportunity
@@ -3964,13 +4015,15 @@ with these exceptions:
           <p class="note"><a href="https://github.com/SMPTE/st2067-21">SMPTE ST 2086-21</a> Section 7.5 adds additional
             information in Section 7.5 in the case where the cLLi values are unknown and have not been calculated.</p> 
 
+
           <p class="note"><a href="https://github.com/w3c/PNG-spec/issues/319">Issue #319</a> discusses tone-mapping behavior when
           the <span class="chunk">cLLi</span> chunk is present.</p>
 
           <p>Each <a>frame</a> is analyzed.</p>
 
-          <p>A value of zero for either MaxCLL or MaxFALL means that the value is unknown.</p>
- 
+          <p>A value of zero for either MaxCLL or MaxFALL means that the value is unknown or not currently calculable.</p>
+
+          <p class="note">An example where this will not be calculable is when creating a live animated PNG stream, when not all frames will be available to compute the values until the stream ends.  The encoder may wish to use the value zero initially and replace this with the calculated value when the stream ends.</p>
 
            <p>The following specifies the syntax of the <span class="chunk">cLLi</span> chunk:</p>
 
@@ -5484,17 +5537,17 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
       <p>For <a>truecolour</a> and <a>greyscale</a> images, any of the five filters may prove the most effective. If an encoder uses a
       fixed filter, the Paeth filter type is most likely to be the best.</p>
 
-      <p>For best compression of <a>truecolour</a> and <a>greyscale</a> images, 
+      <p>For best compression of <a>truecolour</a> and <a>greyscale</a> images,
       and if compression efficiency is valued over speed of compression,
       the recommended approach is adaptive filtering in which a
-      filter type is chosen for each scanline. 
-      Each unique image will have a different set of filters which perform best for it. 
-      An encoder could try every combination of filters to find what compresses best 
-      for a given image. However, when an exhaustive search is unacceptable, 
+      filter type is chosen for each scanline.
+      Each unique image will have a different set of filters which perform best for it.
+      An encoder could try every combination of filters to find what compresses best
+      for a given image. However, when an exhaustive search is unacceptable,
       here are some general heuristics which may perform well enough:
       compute the output
       scanline using all five filters, and select the filter that gives the smallest sum of absolute values of outputs. (Consider
-      the output bytes as signed differences for this test.) 
+      the output bytes as signed differences for this test.)
       This method usually outperforms any single fixed filter type choice.</p>
 
       <p>Filtering according to these recommendations is effective in conjunction with either of the two interlace methods defined
@@ -5525,13 +5578,13 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
       (ISO 8859-1) character encoding, which limits the range of characters that can be used in these chunks. Encoders should
       prefer <a class="chunk" href="#11iTXt">iTXt</a> to <a class="chunk" href="#11tEXt">tEXt</a> and <a class="chunk" href=
       "#11zTXt">zTXt</a> chunks, in order to allow a wide range of characters without data loss. Encoders must convert characters
-      that use local <a>legacy character encodings</a> to the appropriate encoding when storing text. 
+      that use local <a>legacy character encodings</a> to the appropriate encoding when storing text.
       </p>
 
       <p>When creating <a href="#11iTXt" class="chunk">iTXt</a> chunks,
         encoders should follow <a href="https://encoding.spec.whatwg.org/#utf-8-encode">UTF-8 encode</a> in [[[ENCODING]]].
       </p>
-      
+
       <p>Encoders should discourage
       the creation of single lines of text longer than 79 Unicode <a>code points</a>, in order to facilitate easy reading. It is
       recommended that text items less than 1024 bytes in size should be output using uncompressed text chunks. It is recommended
@@ -5773,22 +5826,22 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
     <section id="Privacy-considerations">
       <h2>Privacy considerations</h2>
 
-      <p>Some image editing tools have historically performed redaction 
-        by merely setting the alpha channel of the redacted area to zero, 
-        without also removing the actual image data. 
-        Users who rely solely on the visual appearance of such images 
-        run a privacy risk 
+      <p>Some image editing tools have historically performed redaction
+        by merely setting the alpha channel of the redacted area to zero,
+        without also removing the actual image data.
+        Users who rely solely on the visual appearance of such images
+        run a privacy risk
         because the actual image data can be easily recovered.</p>
 
-      <p>Similarly, some image editing tools have historically performed clipping 
-        by rewriting the width and height in <span class="chunk">IHDR</span> 
-        without re-encoding the image data, 
+      <p>Similarly, some image editing tools have historically performed clipping
+        by rewriting the width and height in <span class="chunk">IHDR</span>
+        without re-encoding the image data,
         which thus extends beyond the new width and height and may be recovered.</p>
 
-      <p>Images with <span class="chunk">eXIf</span> chunks 
-        may contain automatically-included data, 
-        such as photographic GPS coordinates, 
-        which could be a privacy risk if the user is unaware that the PNG image contains this data. 
+      <p>Images with <span class="chunk">eXIf</span> chunks
+        may contain automatically-included data,
+        such as photographic GPS coordinates,
+        which could be a privacy risk if the user is unaware that the PNG image contains this data.
         (Other image formats that contain EXIF, such as JPEG/JFIF, have the same privacy risk).</p>
     </section>
     <!-- Maintain a fragment named "13Chunking" to preserve incoming links to it -->
@@ -7392,7 +7445,8 @@ will need to be replaced by copies of lines 17-23, but processing background ins
     <ul>
       <!-- to 18 July 2023 -->
       <li>Explained preferable handling of trailing bytes in the final <a href="#11IDAT" class="chunk">IDAT</a> chunk for encoders and decoders.</li>
-      <li>Linked to open issue on tone-mapping HDR [[ITU-R-BT.2100]] images in the presence of <a href="#mDCv-chunk" class="chunk">mDCv</a>.</li>
+      <li>Linked to open issue on tone-mapping <a>HDR</a> [[ITU-R-BT.2100]] images in the presence of <a href="#mDCv-chunk" class="chunk">mDCv</a>.</li>
+
       <li>Follow the Encoding Standard on UTF-8 encode and decode.</li>
       <li>Added definition of a frame.</li>
       <li>Required the Matrix Coefficients in <a href="#cICP-chunk" class="chunk">cICP</a> to be zero (RGB data).</li>
@@ -7407,25 +7461,25 @@ will need to be replaced by copies of lines 17-23, but processing background ins
       <li>Improved definitions of source, reference, and PNG images.</li>
       <li>Moved concepts from the terms and definitions section to the main prose.</li>
       <!-- to 6 March 2023 -->
-      <li>Corrected error in <a href="#eXIf" class="chunk">eXIf</a> chunk, 
+      <li>Corrected error in <a href="#eXIf" class="chunk">eXIf</a> chunk,
         which conflicted with the <a href="#5ChunkOrdering">chunk ordering</a> section.</li>
       <li>Simplified <a href="#1Scope">Scope</a> section to remove redundant detail described elsewhere.</li>
       <li>Redrew chunk-ordering lattice diagrams to be clearer and more consistent.</li>
-      <li>Added a new chunk, <a href="#cLLi-chunk" class="chunk">cLLi</a>, 
+      <li>Added a new chunk, <a href="#cLLi-chunk" class="chunk">cLLi</a>,
       to describe the Maximum Single-Pixel and Frame-Average Luminance Levels
-      for both static and animated HDR [[ITU-R-BT.2100]]PNG images.
+      for both static and animated <a>HDR</a> [[ITU-R-BT.2100]]PNG images.
       </li>
       <li>Updated external links to latest versions, preferring https over http.</li>
       <li>Specified interoperable handling of extra sample bits, beyond the specified bit depth,
         in <a href="#11tRNS" class="chunk">tRNS</a> and <a href="#11bKGD" class="chunk">bKGD</a> chunks.
       </li>
       <li>Added a new chunk, <a href="#mDCv-chunk" class="chunk">mDCv</a> 
-        to describe the color volume of the mastering display used to grade HDR [[ITU-R-BT.2100]]content.</li>
+        to describe the color volume of the mastering display used to grade <a>HDR</a> [[ITU-R-BT.2100]]content.</li>
       <li>Used correct Unicode character names.</li>
       <li>Changed chunk type codes to use hexadecimal, rather than decimal.</li>
       <li>Described textual chunk processing more clearly.</li>
       <li>Recommended <a href="#11iTXt" class="chunk">iTXt</a> for new content.</li>
-      <li>Clarifications on the language tag field of the <a href="#11iTXt" class="chunk">iTXt</a> chunk, 
+      <li>Clarifications on the language tag field of the <a href="#11iTXt" class="chunk">iTXt</a> chunk,
         corrected examples to conform to BCP47.</li>
       <li>Updated image/apng registration appendix. APNG MIME type registered with IANA.</li>
       <li>Converted ACII-art figures to more accessible diagrams.</li>
@@ -7443,7 +7497,8 @@ will need to be replaced by copies of lines 17-23, but processing background ins
 
       <li>Added the <a class="chunk" href="#cICP-chunk">cICP</a> chunk, Coding-independent code points for video signal type
       identification, to contain image format metadata defined in [[ITU-T-H.273]] which enables PNG to contain [[ITU-R-BT.2100]]High Dynamic Range
-      (HDR) and Wide Colour Gamut (WCG) images.
+      (<a>HDR</a>) and Wide Colour Gamut (WCG) images.
+
       </li>
 
       <li>The previously defined <a class="chunk" href="#eXIf">eXIf</a> chunk has been moved from the PNG-Extensions document

@@ -110,6 +110,13 @@
           href: "https://poynton.ca/GammaFAQ.html",
           date: "1998-08-04"
         },
+        "HDR-Static-Meta": {
+          title: "On the Calculation and Usage of HDR Static Content Metadata",
+          authors: ["Smith, Michael D.", "Zink, Michael"],
+          publisher: "Society of Motion Picture and Television Engineers",
+          date: "2021-08-05",
+          href: "https://doi.org/10.5594/JMI.2021.3090176"
+        },
         "Hill": {
           title: "Comparative analysis of the quantization of color spaces on the basis of the CIELAB color-difference formula",
           authors: ["Hill, B.", "Roger, Th.", "Vorhagen, F.W."],
@@ -4021,7 +4028,12 @@ with these exceptions:
             There is often an algorithmic filter to eliminate false values occurring from processing or noise 
             that could adversely affect intended downstream tone mapping.</p>
 
-          <p class="note">[[CTA-861.3-A]] describes the method of calculation for generating the cLLi values.</p>
+          <p class="note">[[CTA-861.3-A]] describes the method of calculation for generating the cLLi values,
+            but does not specify any filtering.
+            [[HDR-Static-Meta]] describes an improved method which rejects extreme values from 
+            statistical outliers, noise or ringing from resampling filters, 
+            and is recommended for practical implementations.
+          </p>
 
           <p class="note">[[SMPTE-ST-2067-21]] Section 7.5 adds additional
             information in Section 7.5 in the case where the cLLi values are unknown and have not been calculated.</p> 

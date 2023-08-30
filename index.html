@@ -1173,7 +1173,7 @@ with these exceptions:
           <td>Coding-independent code points</td>
           <td>
             Identifies the colour space by enumerating metadata such as the <a>transfer function</a> and colour primaries.
-            Originally for <a>SDR</a> [[ITU-R-BT.709]] and <a>HDR</a> [[ITU-R BT.2100]] video, also used for still and animated images.
+            Originally for <a>SDR</a> (for example [[ITU-R-BT.709]]) and <a>HDR</a> [[ITU-R BT.2100]] video, also used for still and animated images.
           </td>
         </tr>
 
@@ -3751,7 +3751,7 @@ with these exceptions:
           the Mastering Display Color Volume (mDCv) used at the point of content creation, 
           as specified in [[SMPTE-ST-2086]]. The mDCv provides informative static metadata to 
           allow a destination (consumer) display to optimize it's tone and color mappings based 
-          on its inherent capabilities. The mDCv chunk should be included for both <a>PQ</a> [[ITU-R-BT.2100]] and <a>SDR</a> [[ITU-R-BT.709]]
+          on its inherent capabilities. The mDCv chunk should be included for both <a>PQ</a> [[ITU-R-BT.2100]] and <a>SDR</a> (for example [[ITU-R-BT.709]])
           images. It is less common for HLG images. Color Primaries and White Point characteristics 
           can be derived from cICP chunk formats. Specific examples of its most common use-cases 
           for images using both HDR [[ITU-R-BT.2100]] and SDR [[ITU-R-BT.709]] are available in [[ITU-T-Series-H-Supplement-19]].</p>
@@ -3759,7 +3759,7 @@ with these exceptions:
           <p class="note"><a href="https://github.com/w3c/PNG-spec/issues/319">Issue #319</a> discusses tone-mapping behavior when
           the <span class="chunk">mDCv</span> chunk is present.</p>
 
-           <p> For <a>SDR</a> [[ITU-R-BT.709]] images, if mDCv display min/max luminance are unknown, the default 
+           <p> For <a>SDR</a> (for example [[ITU-R-BT.709]]) images, if mDCv display min/max luminance are unknown, the default 
           characteristics can be derived from the values in [[ITU-T-Series-H-Supplement-19]] Table 11 .”</p>
 
 
@@ -3893,7 +3893,7 @@ with these exceptions:
           </aside>
 
 
-           <p>Below are mDCv examples for [[SMPTE-ST-2086]] with <a>SDR</a> [[ITU-R-BT.709]] content that may be native or 
+           <p>Below are mDCv examples for [[SMPTE-ST-2086]] with <a>SDR</a> (for example [[ITU-R-BT.709]]) content that may be native or 
             containerized in <a>HDR</a> [[ITU-R-BT.2100]]content (as described in the [[MovieLabs-Recommended-Best-Practice-for-SDR-to-HDR-Conversion]]).</p>
 
 
@@ -3928,7 +3928,7 @@ with these exceptions:
 
           <aside class="example">
 
-            Example <span class="chunk">mDCv</span> chunk mastering display white point for <a>SDR</a> [[ITU-R-BT.709]]:
+            Example <span class="chunk">mDCv</span> chunk mastering display white point for <a>SDR</a> (for example [[ITU-R-BT.709]]):
 
             <table id="mDCv-chunk-sdr-white-point-example" class="numbered simple">
               <tr>
@@ -3947,7 +3947,7 @@ with these exceptions:
 
           <aside class="example">
             Example <span class="chunk">mDCv</span> chunk mastering display maximum 
-          luminance using traditional <a>SDR</a> [[ITU-R-BT.709]]shading techniques at 100 cd/m<sup>2</sup> 
+          luminance using traditional <a>SDR</a> (for example [[ITU-R-BT.709]])shading techniques at 100 cd/m<sup>2</sup> 
 
             (described in [[ITU-R-BT.2035]]):
             <table id="mDCv-chunk-max-luminance-example3" class="numbered simple">
@@ -3966,7 +3966,7 @@ with these exceptions:
           <aside class="example">
 
             Example <span class="chunk">mDCv</span> chunk mastering display maximum 
-          luminance using "single-master" <a>SDR</a> [[ITU-R-BT.709]]shading techniques at 203 cd/m<sup>2</sup> 
+          luminance using "single-master" <a>SDR</a> (for example [[ITU-R-BT.709]])shading techniques at 203 cd/m<sup>2</sup> 
             (described in ITU-R BT.2408 Annex Y):
             <table id="mDCv-chunk-max-luminance-example4" class="numbered simple">
               <tr>
@@ -4010,7 +4010,7 @@ with these exceptions:
             that could adversely affect intended downstream tone mapping.</p>
 
           <p class="note"><a href="https://shop.cta.tech/products/hdr-static-metadata-extensions">CTA 861.G</a> is available 
-            as a free download. It describes the method of calculation for generating the cLLi values</p>
+            as a free download. It describes the method of calculation for generating the cLLi values.</p>
 
           <p class="note"><a href="https://github.com/SMPTE/st2067-21">SMPTE ST 2086-21</a> Section 7.5 adds additional
             information in Section 7.5 in the case where the cLLi values are unknown and have not been calculated.</p> 

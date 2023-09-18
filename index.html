@@ -3727,8 +3727,8 @@ with these exceptions:
           </aside>
 
           <aside class="example">
-            <span class="chunk">cICP</span> chunk field values for a <a>narrow-range image</a> that uses the colour primaries and
-            the <a>transfer function</a> defined at [[ITU-R-BT.709]]:
+            <span class="chunk">cICP</span> chunk field values for a <a>narrow-range image</a> 
+            that uses the colour primaries and the <a>transfer function</a> defined at [[ITU-R-BT.709]]:
 
             <pre>
 1 1 0 0
@@ -3749,12 +3749,18 @@ with these exceptions:
 
           <p>If present, the <span class="chunk">mDCv</span> chunk characterizes 
           the Mastering Display Color Volume (mDCv) used at the point of content creation, 
-          as specified in [[SMPTE-ST-2086]]. The mDCv provides informative static metadata to 
-          allow a destination (consumer) display to optimize it's tone and color mappings based 
-          on its inherent capabilities. The mDCv chunk should be included for both <a>PQ</a> [[ITU-R-BT.2100]] and <a>SDR</a> [[ITU-R-BT.709]]
-          images. It is less common for HLG images. Color Primaries and White Point characteristics 
-          can be derived from cICP chunk formats. Specific examples of its most common use-cases 
-          for images using both HDR[[ITU-R-BT.2100]] and SDR[[ITU-R-BT.709]] are available in [[ITU-T-Series-H-Supplement-19]].</p>
+          as specified in [[SMPTE-ST-2086]]. The mDCv chunk provides informative static metadata which 
+          allows a target (consumer) display to potentially optimize it's tone mapping decisions 
+          on a comparison of its inherent capabilities versus the original mastering displays capabilites.</p>
+          
+          <p>mDCv is typically used with the <a></a>PQ</a>[[ITU-R-BT.2100] transfer function
+          and is commonly then called HDR10 (PQ with ST 2086). The mDCv chunk may be 
+          included with <a>PQ</a> [[ITU-R-BT.2100]], <a>SDR</a> [[ITU-R-BT.709]] and <a>HLG</a> [[ITU-R-BT.2100]] 
+          and other image formats (even though mDCv use in some of them may be less common). 
+          
+          Color Primaries and White Point characteristics can be derived from cICP chunk formats. 
+          Specific examples of its most common use-cases for images using both HDR[[ITU-R-BT.2100]] 
+          and SDR[[ITU-R-BT.709]] are available in [[ITU-T-Series-H-Supplement-19]].</p>
 
           <p class="note"><a href="https://github.com/w3c/PNG-spec/issues/319">Issue #319</a> discusses tone-mapping behavior when
           the <span class="chunk">mDCv</span> chunk is present.</p>

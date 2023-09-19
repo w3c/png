@@ -92,6 +92,12 @@
           href: "https://poynton.ca/ColorFAQ.html",
           date: "2009-10-19"
         },
+        "CTA-861.3-A": {
+          title: "HDR Static Metadata Extensions (CTA-861.3-A)",
+          publisher: "Consumer Technology Association",
+          date: "2015-01",
+          href: "https://shop.cta.tech/products/hdr-static-metadata-extensions"
+        },
         "ICC-2": {
           title: "Specification ICC.2:2019 (Profile version 5.0.0 - iccMAX)",
           date: "2019",
@@ -103,6 +109,13 @@
           authors: ["Poynton, C."],
           href: "https://poynton.ca/GammaFAQ.html",
           date: "1998-08-04"
+        },
+        "HDR-Static-Meta": {
+          title: "On the Calculation and Usage of HDR Static Content Metadata",
+          authors: ["Smith, Michael D.", "Zink, Michael"],
+          publisher: "Society of Motion Picture and Television Engineers",
+          date: "2021-08-05",
+          href: "https://doi.org/10.5594/JMI.2021.3090176"
         },
         "Hill": {
           title: "Comparative analysis of the quantization of color spaces on the basis of the CIELAB color-difference formula",
@@ -221,6 +234,12 @@
           publisher: "Society of Motion Picture and Television Engineers",
           date: "1 November 1993",
           href: "https://standards.globalspec.com/std/1284890/smpte-rp-177"
+        },
+        "SMPTE-ST-2067-21": {
+          title: "Interoperable Master Format — Application #2E",
+          publisher: "Society of Motion Picture and Television Engineers",
+          date: "2023-02-20",
+          href: "https://doi.org/10.5594/SMPTE.ST2067-21.2023"
         },
         "SMPTE-RP-2077": {
           title: "Full-Range Image Mapping",
@@ -1173,7 +1192,9 @@ with these exceptions:
           <td>Coding-independent code points</td>
           <td>
             Identifies the colour space by enumerating metadata such as the <a>transfer function</a> and colour primaries.
-            Originally for <a>SDR</a> [[ITU-R-BT.709]] and <a>HDR</a> [[ITU-R BT.2100]] video, also used for still and animated images.
+
+            Originally for <a>SDR</a> (for example [[ITU-R-BT.709]]) and <a>HDR</a> [[ITU-R-BT.2100]] video, also used for still and animated images.
+
           </td>
         </tr>
 
@@ -3755,17 +3776,19 @@ with these exceptions:
           
           <p>mDCv is typically used with the <a></a>PQ</a>[[ITU-R-BT.2100] transfer function
           and is commonly then called HDR10 (PQ with ST 2086). The mDCv chunk may be 
-          included with <a>PQ</a> [[ITU-R-BT.2100]], <a>SDR</a> [[ITU-R-BT.709]] and <a>HLG</a> [[ITU-R-BT.2100]] 
+          included with <a>PQ</a> [[ITU-R-BT.2100]], <a>SDR</a> (for example [[ITU-R-BT.709]]) and <a>HLG</a> [[ITU-R-BT.2100]] 
           and other image formats (even though mDCv use in some of them may be less common). 
           
           Color Primaries and White Point characteristics can be derived from cICP chunk formats. 
           Specific examples of its most common use-cases for images using both HDR [[ITU-R-BT.2100]] 
           and SDR [[ITU-R-BT.709]] are available in [[ITU-T-Series-H-Supplement-19]].</p>
 
+
           <p class="note"><a href="https://github.com/w3c/PNG-spec/issues/319">Issue #319</a> discusses tone-mapping behavior when
           the <span class="chunk">mDCv</span> chunk is present.</p>
 
-           <p> For <a>SDR</a> [[ITU-R-BT.709]] images, if mDCv display min/max luminance are unknown, the default 
+
+           <p> For <a>SDR</a> (for example [[ITU-R-BT.709]]) images, if mDCv display min/max luminance are unknown, the default 
           characteristics can be derived from the values in [[ITU-T-Series-H-Supplement-19]] Table 11 .”</p>
 
 
@@ -3899,7 +3922,8 @@ with these exceptions:
           </aside>
 
 
-           <p>Below are mDCv examples for [[SMPTE-ST-2086]] with <a>SDR</a> [[ITU-R-BT.709]] content that may be native or 
+
+           <p>Below are mDCv examples for [[SMPTE-ST-2086]] with <a>SDR</a> (for example [[ITU-R-BT.709]])  content that may be native or 
             containerized in <a>HDR</a> [[ITU-R-BT.2100]]content (as described in the [[MovieLabs-Recommended-Best-Practice-for-SDR-to-HDR-Conversion]]).</p>
 
 
@@ -3934,7 +3958,7 @@ with these exceptions:
 
           <aside class="example">
 
-            Example <span class="chunk">mDCv</span> chunk mastering display white point for <a>SDR</a> [[ITU-R-BT.709]]:
+            Example <span class="chunk">mDCv</span> chunk mastering display white point for <a>SDR</a> (for example [[ITU-R-BT.709]]) 
 
             <table id="mDCv-chunk-sdr-white-point-example" class="numbered simple">
               <tr>
@@ -3953,7 +3977,7 @@ with these exceptions:
 
           <aside class="example">
             Example <span class="chunk">mDCv</span> chunk mastering display maximum 
-          luminance using traditional <a>SDR</a> [[ITU-R-BT.709]]shading techniques at 100 cd/m<sup>2</sup> 
+          luminance using traditional <a>SDR</a> (for example [[ITU-R-BT.709]]) shading techniques at 100 cd/m<sup>2</sup> 
 
             (described in [[ITU-R-BT.2035]]):
             <table id="mDCv-chunk-max-luminance-example3" class="numbered simple">
@@ -3972,7 +3996,8 @@ with these exceptions:
           <aside class="example">
 
             Example <span class="chunk">mDCv</span> chunk mastering display maximum 
-          luminance using "single-master" <a>SDR</a> [[ITU-R-BT.709]] shading techniques at 203 cd/m<sup>2</sup> 
+          luminance using "single-master" <a>SDR</a> (for example [[ITU-R-BT.709]]) shading techniques at 203 cd/m<sup>2</sup> 
+
             (described in ITU-R BT.2408 Annex Y):
             <table id="mDCv-chunk-max-luminance-example4" class="numbered simple">
               <tr>
@@ -3997,7 +4022,7 @@ with these exceptions:
 <!-- 99 76 76 105 -->63 4C 4C 69
 </pre>
 
-          <p>If present, the <span class="chunk">cLLi</span> chunk identifies two characteristics:</p>
+          <p>If present, the <span class="chunk">cLLi</span> chunk identifies two characteristics of <a>HDR</a> content:</p>
 
           <p>The <span class="chunk">cLLi</span> chunk adds static metadata which provides an opportunity
           to optimize tone mapping of the associated content to a specific target display. This is 
@@ -4015,12 +4040,16 @@ with these exceptions:
             There is often an algorithmic filter to eliminate false values occurring from processing or noise 
             that could adversely affect intended downstream tone mapping.</p>
 
-          <p class="note"><a href="https://shop.cta.tech/products/hdr-static-metadata-extensions">CTA 861.G</a> is available 
-            as a free download. It describes the method of calculation for generating the cLLi values</p>
+          <p class="note">[[CTA-861.3-A]] describes the method of calculation for generating the
+            <span class="chunk">cLLi</span> values,
+            but does not specify any filtering.
+            [[HDR-Static-Meta]] describes an improved method which rejects extreme values from 
+            statistical outliers, noise or ringing from resampling filters, 
+            and is recommended for practical implementations.
+          </p>
 
-          <p class="note"><a href="https://github.com/SMPTE/st2067-21">SMPTE ST 2086-21</a> Section 7.5 adds additional
-            information in Section 7.5 in the case where the cLLi values are unknown and have not been calculated.</p> 
-
+          <p class="note">[[SMPTE-ST-2067-21]] Section 7.5 adds additional
+            information in Section 7.5 in the case where the <span class="chunk">cLLi</span> values are unknown and have not been calculated.</p> 
 
           <p class="note"><a href="https://github.com/w3c/PNG-spec/issues/319">Issue #319</a> discusses tone-mapping behavior when
           the <span class="chunk">cLLi</span> chunk is present.</p>
@@ -5801,9 +5830,15 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
     <section id="13Security-considerations">
       <h2>Security considerations</h2>
 
-      <p>A PNG datastream is composed of a collection of explicitly typed chunks. Chunks whose contents are defined by the
-      specification could actually contain anything, including malicious code. But there is no known risk that such malicious code
-      could be executed on the recipient's computer as a result of decoding the PNG image.</p>
+      <p>A PNG datastream is composed of a collection of explicitly typed chunks. 
+      Chunks whose contents are defined by the
+      specification could actually contain anything, including malicious code. 
+      Similarly there could be data after the <a class="chunk" href="#11IEND">IEND</a> chunk
+      which could contain anything, including malicious code.
+      There is no known risk that such malicious code
+      could be executed on the recipient's computer <em>as a result of decoding the PNG image</em>.
+      However, a malicious application might hide such code inside an innocent-looking image file
+      and then execute it.</p>
 
       <p>The possible security risks associated with future chunk types cannot be specified at this time. Security issues will be
       considered when defining future public chunks. There is no additional security risk associated with unknown or unimplemented
@@ -7445,6 +7480,21 @@ will need to be replaced by copies of lines 17-23, but processing background ins
   <section id="F-ChangeList" class="appendix informative">
     <h2 class="Annex">Changes</h2>
 
+    <h3 id="changes-20230720">Changes since the <a href="https://www.w3.org/TR/2023/WD-png-3-20230720/">
+      Working Draft of 20 July 2023 (Third Edition)</a></h3>
+
+    <ul>
+      <!-- to 26 Aug 2023 -->
+      <li>Added guidance on calculating MaxCLL and MaxFALL values</li>
+      <li>Added example (live streaming) where <a href="#cLLi-chunk" class="chunk">cLLi</a> could not be pre-calculated</li>
+      <li>Added definitions for stop, SDR, HDR, HLG and PQ</li>
+      <li>Clarified definition of narrow-range</li>
+      <li>Updated ITU-T H Suppl. 19 reference to latest version</li>
+      <li>Added Simon Thompson as an author</li>
+      <li>Mandated current browser handling of out-of-range palette indices</li>
+      <li>Updated "Additional Information" table to add <a href="#mDCv-chunk" class="chunk">mDCv</a> and <a href="#cLLi-chunk" class="chunk">cLLi</a>.</li>
+    </ul>
+
     <h3 id="changes-20221025">Changes since the <a href="https://www.w3.org/TR/2022/WD-png-3-20221025/">
       First Public Working Draft of 25 October 2022 (Third Edition)</a></h3>
 
@@ -7474,6 +7524,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
       <li>Added a new chunk, <a href="#cLLi-chunk" class="chunk">cLLi</a>,
       to describe the Maximum Single-Pixel and Frame-Average Luminance Levels
       for both static and animated <a>HDR</a> [[ITU-R-BT.2100]] PNG images.
+
       </li>
       <li>Updated external links to latest versions, preferring https over http.</li>
       <li>Specified interoperable handling of extra sample bits, beyond the specified bit depth,
@@ -7481,6 +7532,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
       </li>
       <li>Added a new chunk, <a href="#mDCv-chunk" class="chunk">mDCv</a> 
         to describe the color volume of the mastering display used to grade <a>HDR</a> [[ITU-R-BT.2100]] content.</li>
+
       <li>Used correct Unicode character names.</li>
       <li>Changed chunk type codes to use hexadecimal, rather than decimal.</li>
       <li>Described textual chunk processing more clearly.</li>

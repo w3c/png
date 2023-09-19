@@ -5818,9 +5818,15 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
     <section id="13Security-considerations">
       <h2>Security considerations</h2>
 
-      <p>A PNG datastream is composed of a collection of explicitly typed chunks. Chunks whose contents are defined by the
-      specification could actually contain anything, including malicious code. But there is no known risk that such malicious code
-      could be executed on the recipient's computer as a result of decoding the PNG image.</p>
+      <p>A PNG datastream is composed of a collection of explicitly typed chunks. 
+      Chunks whose contents are defined by the
+      specification could actually contain anything, including malicious code. 
+      Similarly there could be data after the <a class="chunk" href="#11IEND">IEND</a> chunk
+      which could contain anything, including malicious code.
+      There is no known risk that such malicious code
+      could be executed on the recipient's computer <em>as a result of decoding the PNG image</em>.
+      However, a malicious application might hide such code inside an innocent-looking image file
+      and then execute it.</p>
 
       <p>The possible security risks associated with future chunk types cannot be specified at this time. Security issues will be
       considered when defining future public chunks. There is no additional security risk associated with unknown or unimplemented

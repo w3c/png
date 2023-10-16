@@ -59,7 +59,7 @@ Does not support APNG, or any of the Third Edition chunks
 
 A faster C library for reading and writing PNG. Does not depend on zlib.
 
-Does not support APNG (although that is [planned](https://github.com/randy408/libspng/issues/4)), or any of the Third Edition chunks,
+Does not support APNG (although that is [planned](https://github.com/randy408/libspng/issues/4)) and there is an [open PR](https://github.com/randy408/libspng/pull/252) which adds APNG support, or any of the Third Edition chunks,
 although there is an open issue on [cICP support](https://github.com/randy408/libspng/issues/218).
 
 ### pnger

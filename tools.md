@@ -5,6 +5,28 @@ This may be helpful for creating test images, or for analyzing files.
 
 ## PNG manipulation tools (read/write)
 
+### pngcrush
+
+[Homepage](https://pmt.sourceforge.io/pngcrush/) and maintained [on sourceforge](https://sourceforge.net/projects/pmt/files/pngcrush/).
+
+Used to recompress PNG, optionally remove chunks or add a few such as sRGB.
+
+Depends on libpng. Author, Glenn Randers-Pehrson, is deceased, last update was 2017.
+
+### optipng
+
+[Homepage](https://sourceforge.net/projects/optipng/) and maintained [on sourceforge](https://sourceforge.net/projects/optipng/files/)
+
+Used to recompress PNG, including optionally reducing bit depth, changing color type, and reducing the palette.
+
+Depends on libpng. Originally a fork of pngcrush by Cosmin Truta, now has a different feature set and has added GIF and BMP support.
+
+### node pngdefry
+
+[Homepage](https://www.npmjs.com/package/pngdefry)
+
+Repairs corruption in undisplayable Apple PNG icons which were extracted from iOS apps; removes CgBI chunk, converts premultiplied samples back to RGB, etc. Uses node.
+
 ### SNG
 
 [Readme](https://github.com/axot/SNG#readme) and maintained at [axot/SNG](https://github.com/axot/SNG)
@@ -16,7 +38,7 @@ Ancient code, depends on libpng so no support for APNG; and eXIf also is not sup
 
 [Readme](https://github.com/sandflow/hdr4png/blob/master/README.md) and maintained at [sandflow/hdr4png](https://github.com/sandflow/hdr4png)
 
-This is a Python script to add a specific `iCCP` chunk to PNG.
+This is a Python script by Pierre-Anthony Lemieux to add a specific `iCCP` chunk to PNG to signal BT.2100 PQ usage.
 
 ## Checkers (read)
 
@@ -55,12 +77,18 @@ Does not support APNG, or any of the Third Edition chunks
 
 ### libspng
 
-[Homepage](https://libspng.org/) and maintained at [randy408/libspng](https://github.com/randy408/libspng).
+[Homepage](https://libspng.org/) and maintained at [randy408/libspng](https://github.com/randy408/libspng). There is [documentation](https://libspng.org/docs/api/)
 
-A faster C library for reading and writing PNG. Does not depend on zlib.
+A faster C library for reading and writing PNG. Does not depend on zlib (or libpng).
 
 Does not support APNG (although that is [planned](https://github.com/randy408/libspng/issues/4)) and there is an [open PR](https://github.com/randy408/libspng/pull/252) which adds APNG support, or any of the Third Edition chunks,
 although there is an open issue on [cICP support](https://github.com/randy408/libspng/issues/218).
+
+### lodepng
+
+[Homepage](https://lodev.org/lodepng/) and [maintained on GitHub](https://github.com/lvandeve/lodepng)
+
+C library and C++ wrapper by Lode Vandevenne.
 
 ### pnger
 

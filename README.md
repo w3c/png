@@ -7,10 +7,13 @@ with identical contents.
 
 This repository is being used to work on an [Editors Draft](https://w3c.github.io/PNG-spec/),
 and also for discussion and update of technical changes or additions.
+
 A First Public Working Draft of the [Third Edition of PNG](https://www.w3.org/TR/2022/WD-png-3-20221025/) 
 was published in October 2022. ([Changes from Second Edition](https://www.w3.org/TR/png-3/#changes-since-the-w3c-recommendation-of-10-november-2003-png-second-edition))
 and [updated](https://www.w3.org/TR/2023/WD-png-3-20230720/) on 20 July 2023
 ([changes since FPWD](https://www.w3.org/TR/2023/WD-png-3-20230720/#changes-20221025). 
+
+PNG Third Edition became a [Candidate Recommendation](https://www.w3.org/TR/2023/CR-png-3-20230921/) on 21 September 2023 ([Changes since previous publication](https://www.w3.org/TR/2023/CR-png-3-20230921/#changes-20230720))
 
 There is an [Explainer](https://github.com/w3c/PNG-spec/blob/main/Third_Edition_Explainer.md) for features new in the Third Edition.
 

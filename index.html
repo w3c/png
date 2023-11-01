@@ -1680,7 +1680,8 @@ with these exceptions:
 
         <tr>
           <td>Chunk Data</td>
-          <td>The data bytes appropriate to the chunk type, if any. This field can be of zero length.</td>
+          <td>The data bytes appropriate to the chunk type, if any. 
+            <span id="zero-length-data">This field can be of zero length.</span></td>
         </tr>
 
         <tr>
@@ -3063,7 +3064,8 @@ with these exceptions:
 
         <p>There may be multiple <span class="chunk">IDAT</span> chunks; if so, they shall appear consecutively with no other
         intervening chunks. The compressed datastream is then the concatenation of the contents of the data fields of all the
-        <span class="chunk">IDAT</span> chunks.</p>
+        <span class="chunk">IDAT</span> chunks
+        (noting that data fields <a href="#zero-length-data">may be of zero length</a>).</p>
 
         <p>Some images have unused trailing bytes at the end of the final IDAT chunk. This could happen when an entire buffer is stored rather than just the portion of the buffer which is used. This is undesirable. Preferably, an encoder would not include these unused bytes. If it must, setting the bytes to zero will prevent accidental data sharing. A decoder should ignore these trailing bytes.</p>
       </section>
@@ -5093,7 +5095,9 @@ with these exceptions:
           frame is represented by an <a class="chunk" href="#11IDAT">IDAT</a> chunk.</p>
 
           <p>The compressed datastream is then the concatenation of the contents of the data fields of all the <span class=
-          "chunk">fdAT</span> chunks within a frame. When decompressed, the datastream is the complete pixel data of a PNG image,
+          "chunk">fdAT</span> chunks within a frame
+          (noting that data fields <a href="#zero-length-data">may be of zero length</a>).
+          When decompressed, the datastream is the complete pixel data of a PNG image,
           including the filter byte at the beginning of each scanline, similar to the uncompressed data of all the <a class="chunk"
           href="#11IDAT">IDAT</a> chunks. It utilizes the same bit depth, <a>colour type</a>, compression method, <a>filter
           method</a>, interlace method, and palette (if any) as the <a>static image</a>.</p>
@@ -5598,7 +5602,7 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
       <p>The encoder may divide the compressed datastream into <a class="chunk" href="#11IDAT">IDAT</a> chunks however it wishes.
       (Multiple <a class="chunk" href="#11IDAT">IDAT</a> chunks are allowed so that encoders may work in a fixed amount of memory;
       typically the chunk size will correspond to the encoder's buffer size.) A PNG datastream in which each <a class="chunk" href=
-      "#11IDAT">IDAT</a> chunk contains only one data byte is valid, though remarkably wasteful of space. (Zero-length <a class=
+      "#11IDAT">IDAT</a> chunk contains only one data byte is valid, though remarkably wasteful of space. (<a href="#zero-length-data">Zero-length</a> <a class=
       "chunk" href="#11IDAT">IDAT</a> chunks are also valid, though even more wasteful.)</p>
     </section>
     <!-- Maintain a fragment named "12Text-chunk-processing" to preserve incoming links to it -->

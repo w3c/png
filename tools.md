@@ -53,9 +53,9 @@ Depends on libpng so currently no APNG support. Older versions bundled with some
 [Homepage](https://www.nayuki.io/page/png-file-chunk-inspector) and source at [nayuki/
 Nayuki-web-published-code/png-file-chunk-inspector/](https://github.com/nayuki/Nayuki-web-published-code/tree/master/png-file-chunk-inspector)
 
-Browser-based checker written in Javascript. No libpng dependency.
+Browser-based checker written in Javascript. No libpng dependency. Now supports APNG. Does not support other Third Edition chunks.
 
-Chris Lilley has experimentally extended it to add cICP, APNG support (easy since it is all JavaScript).
+Chris Lilley had experimentally extended it to add cICP, APNG support (easy since it is all JavaScript).
 
 ### fotoforensics
 

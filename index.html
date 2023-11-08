@@ -2759,7 +2759,7 @@ with these exceptions:
 
       <p><a>Deflate</a>-compressed datastreams within PNG are stored in the <a>zlib</a> format, which has the structure:</p>
 
-      <table>
+      <table id="zlib-structure" class="simple numbered">
         <tr>
           <td>zlib compression method/flags code</td>
           <td>1 byte</td>
@@ -2880,7 +2880,7 @@ with these exceptions:
 </pre>
         <p>The <a class="chunk" href="#11IHDR">IHDR</a> chunk shall be the first chunk in the PNG datastream. It contains:</p>
 
-        <table>
+        <table id="IHDR-structure"  class="simple numbered">
           <tr>
             <td>Width</td>
             <td>4 bytes</td>
@@ -3008,7 +3008,7 @@ with these exceptions:
         <p>The <span class="chunk">PLTE</span> chunk contains from 1 to 256 palette entries, each a three-byte series of the
         form:</p>
 
-        <table>
+        <table id="PLTE-structure" class="simple numbered">
           <tr>
             <td>Red</td>
             <td>1 byte</td>
@@ -3114,7 +3114,7 @@ with these exceptions:
           "chunk">tRNS</span> chunk contains: <!-- ************Page Break******************* --></p>
           <!-- ************Page Break******************* -->
 
-          <table>
+          <table id="tRNS-structure" class="simple numbered">
             <tr>
               <th colspan="2">
                 <a>Colour type</a> 0
@@ -3218,7 +3218,7 @@ with these exceptions:
           <!-- ************Page Break******************* -->
           <!-- ************Page Break******************* -->
 
-          <table class="numbered simple">
+          <table id="cHRM-structure" class="numbered simple">
             <caption>
               cHRM chunk components
             </caption>
@@ -3302,7 +3302,7 @@ with these exceptions:
 
           <p>The <span class="chunk">gAMA</span> chunk contains:</p>
 
-          <table>
+          <table id="gAMA-structure" class="simple numbered">
             <tr>
               <td>Image gamma</td>
               <td>4 bytes</td>
@@ -3331,7 +3331,7 @@ with these exceptions:
 </pre>
           <p>The <span class="chunk">iCCP</span> chunk contains:</p>
 
-          <table>
+          <table id="iCCP-structure" class="simple numbered">
             <tr>
               <td>Profile name</td>
               <td>1-79 bytes (character string)</td>
@@ -3397,7 +3397,7 @@ with these exceptions:
           <!-- ************Page Break******************* -->
           <!-- ************Page Break******************* -->
 
-          <table class="numbered simple">
+          <table id="sBIT-structure" class="numbered simple">
             <caption>
               sBIT chunk contents
             </caption>
@@ -3493,7 +3493,7 @@ with these exceptions:
 
           <p>The <span class="chunk">sRGB</span> chunk contains:</p>
 
-          <table class="numbered simple">
+          <table id="sRGB-structure" class="numbered simple">
             <caption>
               sRGB chunk contents
             </caption>
@@ -3511,7 +3511,7 @@ with these exceptions:
 
           <p>The following values are defined for rendering intent:</p>
 
-          <table class="numbered simple">
+          <table id="rendering-intent-structure" class="numbered simple">
             <caption>
               Rendering intent values
             </caption>
@@ -3556,7 +3556,7 @@ with these exceptions:
           "chunk" href="#11gAMA">gAMA</a> chunk (and optionally a <a class="chunk" href="#11cHRM">cHRM</a> chunk) for compatibility
           with decoders that do not use the <span class="chunk">sRGB</span> chunk. Only the following values shall be used.</p>
 
-          <table class="numbered simple">
+          <table id="sRGB-gAMA-cHRM" class="numbered simple">
             <caption>
               gAMA and cHRM values for sRGB
             </caption>
@@ -4143,7 +4143,7 @@ with these exceptions:
 
           <p>The following keywords are predefined and should be used where appropriate.</p>
 
-          <table class="numbered simple">
+          <table id="keywords-predefined" class="numbered simple">
             <caption>
               Predefined keywords
             </caption>
@@ -4257,7 +4257,7 @@ with these exceptions:
 </pre>
           <p>Each <span class="chunk">tEXt</span> chunk contains a keyword and a text string, in the format:</p>
 
-          <table>
+          <table id="tEXt-structure" class="simple numbered">
             <tr>
               <td>Keyword</td>
               <td>1-79 bytes (character string)</td>
@@ -4303,7 +4303,7 @@ with these exceptions:
 
           <p>A <span class="chunk">zTXt</span> chunk contains:</p>
 
-          <table>
+          <table id="zTXt-structure" class="simple numbered">
             <tr>
               <td>Keyword</td>
               <td>1-79 bytes (character string)</td>
@@ -4345,7 +4345,7 @@ with these exceptions:
 </pre>
           <p>An <span class="chunk">iTXt</span> chunk contains:</p>
 
-          <table>
+          <table id="iTXt-structure" class="simple numbered">
             <tr>
               <td>Keyword</td>
               <td>1-79 bytes (character string)</td>
@@ -4438,7 +4438,7 @@ with these exceptions:
           is any other preferred background, either user-specified or part of a larger page (as in a browser), the <span class=
           "chunk">bKGD</span> chunk should be ignored. The <span class="chunk">bKGD</span> chunk contains:</p>
 
-          <table class="numbered simple">
+          <table id="bKGD-structure" class="numbered simple">
             <caption>
               bKGD chunk contents
             </caption>
@@ -4502,7 +4502,7 @@ with these exceptions:
 </pre>
           <p>The <span class="chunk">hIST</span> chunk contains a series of two-byte unsigned integers:</p>
 
-          <table>
+          <table id="hIST-structure" class="simple numbered">
             <tr>
               <td>Frequency</td>
               <td>2 bytes (unsigned integer)</td>
@@ -4543,7 +4543,7 @@ with these exceptions:
           <p>The <span class="chunk">pHYs</span> chunk specifies the intended pixel size or aspect ratio for display of the image.
           It contains:</p>
 
-          <table class="numbered simple">
+          <table id="pHYs-structure" class="numbered simple">
             <caption>
               pHYs chunk contents
             </caption>
@@ -4575,7 +4575,7 @@ with these exceptions:
 
           <p>The following values are defined for the unit specifier:</p>
 
-          <table class="numbered simple">
+          <table id="unit-specifiers" class="numbered simple">
             <caption>
               Unit specifier values
             </caption>
@@ -4614,7 +4614,7 @@ with these exceptions:
 </pre>
           <p>The <span class="chunk">sPLT</span> chunk contains:</p>
 
-          <table class="numbered simple">
+          <table id="sPLT-structure" class="numbered simple">
             <caption>
               sPLT chunk contents
             </caption>
@@ -4784,7 +4784,7 @@ with these exceptions:
           <p>The <span class="chunk">tIME</span> chunk gives the time of the last image modification (<strong>not</strong> the time
           of initial image creation). It contains:</p>
 
-          <table class="numbered simple">
+          <table id="tIME-structure" class="numbered simple">
             <caption>
               tIME chunk contents
             </caption>
@@ -4846,7 +4846,7 @@ with these exceptions:
           <p>The <span class="chunk">acTL</span> chunk declares that this is an animated PNG image, gives the number of frames, and
           the number of times to loop. It contains:</p>
 
-          <table>
+          <table id="acTL-structure" class="simple numbered">
             <tr>
               <td>`num_frames`</td>
               <td>4 bytes</td>
@@ -4885,7 +4885,7 @@ with these exceptions:
           <p>The <span class="chunk">fcTL</span> chunk defines the dimensions, position, delay and disposal of an individual frame.
           Exactly one <span class="chunk">fcTL</span> chunk chunk is required for each frame. It contains:</p>
 
-          <table class="numbered simple">
+          <table id="fcTL-structure" class="numbered simple">
             <caption>
               fcTL chunk contents
             </caption>
@@ -4970,7 +4970,7 @@ with these exceptions:
 
           <p>Valid values for `dispose_op` are:</p>
 
-          <table>
+          <table id="dispose-op-values" class="simple numbered">
             <tr>
               <td>0</td>
               <td>`APNG_DISPOSE_OP_NONE`</td>
@@ -5011,7 +5011,7 @@ with these exceptions:
 
           <p>Valid values for `blend_op` are:</p>
 
-          <table>
+          <table id="blend-op-values" class="simple numbered">
             <tr>
               <td>0</td>
               <td>`APNG_BLEND_OP_SOURCE`</td>
@@ -5070,7 +5070,7 @@ with these exceptions:
           "#11IDAT">IDAT</a> chunk does for static images; it contains the <a>image data</a> for all frames (or, for animations
           which include the <a>static image</a> as first frame, for all frames after the first one). It contains:</p>
 
-          <table class="numbered simple">
+          <table id="fdAT-structure" class="numbered simple">
             <caption>
               fdAT chunk contents
             </caption>
@@ -7227,7 +7227,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
     non-linear <a>transfer functions</a> may occur and which may be modelled by power laws. The characteristic exponent associated
     with each is given a specific name.</p>
 
-    <table>
+    <table id="gamma-pipeline"  class="simple numbered">
       <tr>
         <td><var>input_exponent</var>
         </td>
@@ -7271,7 +7271,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
     <p>It is convenient to define some additional entities that describe some composite <a>transfer functions</a>, or combinations
     of stages.</p>
 
-    <table>
+    <table id="gamma-composite" class="simple numbered">
       <tr>
         <td><var>display_exponent</var>
         </td>

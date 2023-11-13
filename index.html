@@ -3772,13 +3772,24 @@ with these exceptions:
           as specified in [[SMPTE-ST-2086]]. The mDCv chunk provides informative static metadata which
           allows a target (consumer) display to potentially optimize its tone mapping decisions
           on a comparison of its inherent capabilities versus the original mastering display's capabilites.</p>
+          
+           <p>mDCv is typically used with the <a>PQ</a>[ITU-R-BT.2100] transfer function
+          and is commonly then called <a>HDR10</a> (PQ with ST 2086 static metadata). 
+          The mDCv chunk is most useful when it is included with <a>PQ</a> [[ITU-R-BT.2100]], 
+          <a>SDR</a> (for example [[ITU-R-BT.709]]) and <a>HLG</a> [[ITU-R-BT.2100]] 
+          since this is how it's most commonly used today.</p>
+          
 
-          <p>mDCv is typically used with the <a>PQ</a> [[ITU-R-BT.2100]] transfer function
-          and is commonly then called HDR10 (PQ with [[SMPTE-ST-2086]]), and may be included with other image formats.
-          Color primaries and white point characteristics can be derived from cICP chunk formats.
-          Specific examples of its most common use cases for images using both <a>HDR</a>
-          and [[ITU-R-BT.709]] SDR are available in [[ITU-T-Series-H-Supplement-19]].</p>
-
+          <p>Since mDCv was originally created as supplemental static metadata meant to 
+          optimize the tone-mapping of images on a video display target, a cICp chunk 
+          must accompany the use of mDCv in order to establish the basic characteristics 
+          of the image content. Color Primaries and White Point characteristics can be derived from cICP 
+          chunk formats. Specific examples of its most common use-cases for images using 
+          both HDR [[ITU-R-BT.2100]] and SDR [[ITU-R-BT.709]] are available in 
+          [[ITU-T-Series-H-Supplement-19]]. The basic (cICp) characteristics plus the supplemental 
+          (mDCv) static metadata provide the valuable information to make more optimal, 
+          but still basic tone-mapping decisions.</p>
+ 
 
           <p class="note"><a href="https://github.com/w3c/PNG-spec/issues/319">Issue #319</a> discusses tone-mapping behavior when
           the <span class="chunk">mDCv</span> chunk is present.</p>
@@ -3800,13 +3811,13 @@ with these exceptions:
             </tr>
 
             <tr>
-              <td>Mastering display colour primaries</td>
+              <td>Mastering display colour primary chromaticities (CIE 1931 <i>x,y</i> of R,G,B )</td>
               <td>12 bytes</td>
               <td>0.00002</td>
             </tr>
 
             <tr>
-              <td>Mastering display white point chromaticity</td>
+              <td>Mastering display white point chromaticity (CIE 1931 <i>x,y</i>)</td>
               <td>4 bytes</td>
               <td>0.00002</td>
             </tr>
@@ -4023,8 +4034,7 @@ with these exceptions:
             that could adversely affect intended downstream tone mapping.</p>
 
           <p class="note">[[CTA-861.3-A]] describes the method of calculation for generating the
-            <span class="chunk">cLLi</span> values,
-            but does not specify any filtering.
+            <span class="chunk">cLLi</span> values, but does not specify any filtering.
             [[HDR-Static-Meta]] describes an improved method which rejects extreme values from 
             statistical outliers, noise or ringing from resampling filters, 
             and is recommended for practical implementations.

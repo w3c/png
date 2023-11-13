@@ -2322,10 +2322,10 @@ with these exceptions:
       <p>The allowed bit depths and sample depths for each PNG image type are listed in <a href="#11IHDR">Image header</a>.</p>
 
       <p>Greyscale samples represent luminance if the transfer curve is indicated (by <a class="chunk" href="#11gAMA">gAMA</a>,
-      <a class="chunk" href="#11sRGB">sRGB</a>, or <a class="chunk" href="#11iCCP">iCCP</a>) or device-dependent greyscale if not.
+      <a class="chunk" href="#11sRGB">sRGB</a>, <a class="chunk" href="#11iCCP">iCCP</a>) or <a href="#cICP-chunk" class="chunk">cICP</a>; or device-dependent greyscale if not.
       RGB samples represent calibrated colour information if the colour space is indicated (by <a class="chunk" href=
-      "#11gAMA">gAMA</a> and <a class="chunk" href="#11cHRM">cHRM</a>, or <a class="chunk" href="#11sRGB">sRGB</a>, or <a class=
-      "chunk" href="#11iCCP">iCCP</a>, or uncalibrated device-dependent colour if not.</p>
+      "#11gAMA">gAMA</a> and <a class="chunk" href="#11cHRM">cHRM</a>, <a class="chunk" href="#11sRGB">sRGB</a>,  <a class=
+      "chunk" href="#11iCCP">iCCP</a>,  or <a href="#cICP-chunk" class="chunk">cICP</a>; or uncalibrated device-dependent colour if not.</p>
 
       <p>Sample values are not necessarily proportional to light intensity; the <a class="chunk" href="#11gAMA">gAMA</a> chunk
       specifies the relationship between sample values and display output intensity. Viewers are strongly encouraged to compensate
@@ -3272,7 +3272,7 @@ with these exceptions:
           <p>The <span class="chunk">cHRM</span> chunk is allowed in all PNG datastreams, although it is of little value for
           <a>greyscale</a> images.</p>
 
-          <p>An <a class="chunk" href="#11sRGB">sRGB</a> or <a class="chunk" href="#11iCCP">iCCP</a> chunk when present and
+          <p>An <a class="chunk" href="#11sRGB">sRGB</a>, <a class="chunk" href="#11iCCP">iCCP</a> or <a href="#cICP-chunk" class="chunk">cICP</a> chunk, when present and
           recognized, overrides the <span class="chunk">cHRM</span> chunk.</p>
         </section>
         <!-- Maintain a fragment named "11gAMA" to preserve incoming links to it -->
@@ -3310,7 +3310,7 @@ with these exceptions:
 
           <p>See <a href="#12Encoder-gamma-handling"></a> and <a href="#13Decoder-gamma-handling"></a> for more information.</p>
 
-          <p>An <a class="chunk" href="#srgb-standard-colour-space">sRGB</a> or <a class="chunk" href="#11iCCP">iCCP</a> chunk,
+          <p>An <a class="chunk" href="#srgb-standard-colour-space">sRGB</a>, <a class="chunk" href="#11iCCP">iCCP</a> or <a href="#cICP-chunk" class="chunk">cICP</a> chunk,
           when present and recognized, overrides the <span class="chunk">gAMA</span> chunk.</p>
         </section>
         <!-- Maintain a fragment named "11iCCP" to preserve incoming links to it -->

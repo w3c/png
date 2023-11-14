@@ -613,6 +613,14 @@ with these exceptions:
         <p class="note">The restriction is imposed in order to accommodate languages that have difficulty with unsigned four-byte
         values.</p>
       </dd>
+
+      <dt id="3PNGtwoByteUnSignedInteger"><dfn>PNG two-byte unsigned integer</dfn>
+      </dt>
+
+      <dd>
+        <p>a two-byte unsigned integer in network byte order.</p>
+      </dd>
+
       <!-- Maintain a fragment named "3sample" to preserve incoming links to it -->
 
       <dt id="3sample"><dfn>sample</dfn>
@@ -3824,12 +3832,28 @@ with these exceptions:
             </tr>
           </table>
 
-          <aside class="note">
-            The three colour primaries are 4 bytes each, totalling 12 bytes. Each primary and the white point is comprised of a
-            2-byte unsigned integer x and 2-byte unsigned integer y. They are ordered starting with the primary with the largest x
-            chromaticity, followed by the primary with the largest y chromaticity, followed by the remaining primary. This
-            corresponds to RGB order.
-          </aside>
+          <p>The color primaries are encoded as 
+            three pairs of <a>PNG two-byte unsigned integer</a>s,
+            in the order <em>x</em> and then <em>y</em>,
+            each representing the x or y primary chromaticity value divided by the divisor value.
+            They are ordered starting with the primary with the largest x chromaticity, 
+            followed by the primary with the largest y chromaticity, 
+            followed by the remaining primary. 
+            For RGB color spaces, this corresponds to the order R, G, B.
+
+          <p>
+            The white point is encoded as 
+            a pair of <a>PNG two-byte unsigned integer</a>s,
+            in the order <em>x</em> and then <em>y</em>,
+            each representing the x or y whie chromaticity value divided by the divisor value.
+          </p>
+
+          <p>
+            The maximum and minimum luminance values are encoded as
+            <a>PNG four-byte unsigned integer</a>s,
+            representing the absolute luminance value in cd/m<sup>2</sup>
+            divided by the divisor value.
+          </p>
 
           <p>The divisor maps from actual value to stored value. For example, the unitless divisor of 0.00002 for the primaries and
           white point would store the chromaticity (0.6800, 0.3200) as {34000, 16000}.</p>

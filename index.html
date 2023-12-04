@@ -4943,7 +4943,7 @@ with these exceptions:
             </tr>
           </table>
 
-          <p>`sequence_number` defines the sequence number of the animation chunk, starting from 0. It is encoded as a <a>PNG
+          <p>`sequence_number` defines the <a href="#4Concepts.APNGSequence">sequence number</a> of the animation chunk, starting from 0. It is encoded as a <a>PNG
           four-byte unsigned integer</a>.</p>
 
           <p>`width` and `height` define the width and height of the following frame. They are encoded as <a>PNG four-byte unsigned
@@ -5069,7 +5069,9 @@ with these exceptions:
     <!-- 102 100 65 84 -->66 64 41 54
     </pre>
           <p>The <span class="chunk">fdAT</span> chunk serves the same purpose for animations as the <a class="chunk" href=
-          "#11IDAT">IDAT</a> chunk does for static images; it contains the <a>image data</a> for all frames (or, for animations
+          "#11IDAT">IDAT</a> chunks do for static images;
+          the set of <span class="chunk">fdAT</span> chunks 
+          contains the <a>image data</a> for all frames (or, for animations
           which include the <a>static image</a> as first frame, for all frames after the first one). It contains:</p>
 
           <table id="fdAT-structure" class="numbered simple">
@@ -5096,9 +5098,15 @@ with these exceptions:
           <p>At least one <span class="chunk">fdAT</span> chunk is required for each frame, except for the first frame, if that
           frame is represented by an <a class="chunk" href="#11IDAT">IDAT</a> chunk.</p>
 
-          <p>The compressed datastream is then the concatenation of the contents of the data fields of all the <span class=
-          "chunk">fdAT</span> chunks within a frame
-          (noting that data fields <a href="#zero-length-data">may be of zero length</a>).
+          <p>The compressed datastream for each frame is then the concatenation,
+          in ascending <a href="#4Concepts.APNGSequence">sequence number</a> order,
+          of the contents of the `frame_data` fields of all the <span class=
+          "chunk">fdAT</span> chunks within a frame.</p>
+
+          <p>Because of the sequence number, <span class="chunk">fdAT</span> chunks
+          <a href="#zero-length-data">may not be of zero length</a>);
+          however the `frame_data` fields may be of zero length.
+
           When decompressed, the datastream is the complete pixel data of a PNG image,
           including the filter byte at the beginning of each scanline, similar to the uncompressed data of all the <a class="chunk"
           href="#11IDAT">IDAT</a> chunks. It utilizes the same bit depth, <a>colour type</a>, compression method, <a>filter

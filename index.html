@@ -613,6 +613,14 @@ with these exceptions:
         <p class="note">The restriction is imposed in order to accommodate languages that have difficulty with unsigned four-byte
         values.</p>
       </dd>
+
+      <dt id="3PNGtwoByteUnSignedInteger"><dfn>PNG two-byte unsigned integer</dfn>
+      </dt>
+
+      <dd>
+        <p>a two-byte unsigned integer in network byte order.</p>
+      </dd>
+
       <!-- Maintain a fragment named "3sample" to preserve incoming links to it -->
 
       <dt id="3sample"><dfn>sample</dfn>
@@ -2322,10 +2330,10 @@ with these exceptions:
       <p>The allowed bit depths and sample depths for each PNG image type are listed in <a href="#11IHDR">Image header</a>.</p>
 
       <p>Greyscale samples represent luminance if the transfer curve is indicated (by <a class="chunk" href="#11gAMA">gAMA</a>,
-      <a class="chunk" href="#11sRGB">sRGB</a>, or <a class="chunk" href="#11iCCP">iCCP</a>) or device-dependent greyscale if not.
+      <a class="chunk" href="#11sRGB">sRGB</a>, <a class="chunk" href="#11iCCP">iCCP</a>) or <a href="#cICP-chunk" class="chunk">cICP</a>; or device-dependent greyscale if not.
       RGB samples represent calibrated colour information if the colour space is indicated (by <a class="chunk" href=
-      "#11gAMA">gAMA</a> and <a class="chunk" href="#11cHRM">cHRM</a>, or <a class="chunk" href="#11sRGB">sRGB</a>, or <a class=
-      "chunk" href="#11iCCP">iCCP</a>, or uncalibrated device-dependent colour if not.</p>
+      "#11gAMA">gAMA</a> and <a class="chunk" href="#11cHRM">cHRM</a>, <a class="chunk" href="#11sRGB">sRGB</a>,  <a class=
+      "chunk" href="#11iCCP">iCCP</a>,  or <a href="#cICP-chunk" class="chunk">cICP</a>; or uncalibrated device-dependent colour if not.</p>
 
       <p>Sample values are not necessarily proportional to light intensity; the <a class="chunk" href="#11gAMA">gAMA</a> chunk
       specifies the relationship between sample values and display output intensity. Viewers are strongly encouraged to compensate
@@ -3272,7 +3280,7 @@ with these exceptions:
           <p>The <span class="chunk">cHRM</span> chunk is allowed in all PNG datastreams, although it is of little value for
           <a>greyscale</a> images.</p>
 
-          <p>An <a class="chunk" href="#11sRGB">sRGB</a> or <a class="chunk" href="#11iCCP">iCCP</a> chunk when present and
+          <p>An <a class="chunk" href="#11sRGB">sRGB</a>, <a class="chunk" href="#11iCCP">iCCP</a> or <a href="#cICP-chunk" class="chunk">cICP</a> chunk, when present and
           recognized, overrides the <span class="chunk">cHRM</span> chunk.</p>
         </section>
         <!-- Maintain a fragment named "11gAMA" to preserve incoming links to it -->
@@ -3310,7 +3318,7 @@ with these exceptions:
 
           <p>See <a href="#12Encoder-gamma-handling"></a> and <a href="#13Decoder-gamma-handling"></a> for more information.</p>
 
-          <p>An <a class="chunk" href="#srgb-standard-colour-space">sRGB</a> or <a class="chunk" href="#11iCCP">iCCP</a> chunk,
+          <p>An <a class="chunk" href="#srgb-standard-colour-space">sRGB</a>, <a class="chunk" href="#11iCCP">iCCP</a> or <a href="#cICP-chunk" class="chunk">cICP</a> chunk,
           when present and recognized, overrides the <span class="chunk">gAMA</span> chunk.</p>
         </section>
         <!-- Maintain a fragment named "11iCCP" to preserve incoming links to it -->
@@ -3835,12 +3843,28 @@ with these exceptions:
             </tr>
           </table>
 
-          <aside class="note">
-            The three colour primaries are 4 bytes each, totalling 12 bytes. Each primary and the white point is comprised of a
-            2-byte unsigned integer x and 2-byte unsigned integer y. They are ordered starting with the primary with the largest x
-            chromaticity, followed by the primary with the largest y chromaticity, followed by the remaining primary. This
-            corresponds to RGB order.
-          </aside>
+          <p>The color primaries are encoded as 
+            three pairs of <a>PNG two-byte unsigned integer</a>s,
+            in the order <em>x</em> and then <em>y</em>,
+            each representing the x or y primary chromaticity value divided by the divisor value.
+            They are ordered starting with the primary with the largest x chromaticity, 
+            followed by the primary with the largest y chromaticity, 
+            followed by the remaining primary. 
+            For RGB color spaces, this corresponds to the order R, G, B.
+
+          <p>
+            The white point is encoded as 
+            a pair of <a>PNG two-byte unsigned integer</a>s,
+            in the order <em>x</em> and then <em>y</em>,
+            each representing the x or y whie chromaticity value divided by the divisor value.
+          </p>
+
+          <p>
+            The maximum and minimum luminance values are encoded as
+            <a>PNG four-byte unsigned integer</a>s,
+            representing the absolute luminance value in cd/m<sup>2</sup>
+            divided by the divisor value.
+          </p>
 
           <p>The divisor maps from actual value to stored value. For example, the unitless divisor of 0.00002 for the primaries and
           white point would store the chromaticity (0.6800, 0.3200) as {34000, 16000}.</p>
@@ -4929,7 +4953,7 @@ with these exceptions:
             </tr>
           </table>
 
-          <p>`sequence_number` defines the sequence number of the animation chunk, starting from 0. It is encoded as a <a>PNG
+          <p>`sequence_number` defines the <a href="#4Concepts.APNGSequence">sequence number</a> of the animation chunk, starting from 0. It is encoded as a <a>PNG
           four-byte unsigned integer</a>.</p>
 
           <p>`width` and `height` define the width and height of the following frame. They are encoded as <a>PNG four-byte unsigned
@@ -5055,7 +5079,9 @@ with these exceptions:
     <!-- 102 100 65 84 -->66 64 41 54
     </pre>
           <p>The <span class="chunk">fdAT</span> chunk serves the same purpose for animations as the <a class="chunk" href=
-          "#11IDAT">IDAT</a> chunk does for static images; it contains the <a>image data</a> for all frames (or, for animations
+          "#11IDAT">IDAT</a> chunks do for static images;
+          the set of <span class="chunk">fdAT</span> chunks 
+          contains the <a>image data</a> for all frames (or, for animations
           which include the <a>static image</a> as first frame, for all frames after the first one). It contains:</p>
 
           <table id="fdAT-structure" class="numbered simple">
@@ -5082,9 +5108,15 @@ with these exceptions:
           <p>At least one <span class="chunk">fdAT</span> chunk is required for each frame, except for the first frame, if that
           frame is represented by an <a class="chunk" href="#11IDAT">IDAT</a> chunk.</p>
 
-          <p>The compressed datastream is then the concatenation of the contents of the data fields of all the <span class=
-          "chunk">fdAT</span> chunks within a frame
-          (noting that data fields <a href="#zero-length-data">may be of zero length</a>).
+          <p>The compressed datastream for each frame is then the concatenation,
+          in ascending <a href="#4Concepts.APNGSequence">sequence number</a> order,
+          of the contents of the `frame_data` fields of all the <span class=
+          "chunk">fdAT</span> chunks within a frame.</p>
+
+          <p>Because of the sequence number, <span class="chunk">fdAT</span> chunks
+          <a href="#zero-length-data">may not be of zero length</a>);
+          however the `frame_data` fields may be of zero length.
+
           When decompressed, the datastream is the complete pixel data of a PNG image,
           including the filter byte at the beginning of each scanline, similar to the uncompressed data of all the <a class="chunk"
           href="#11IDAT">IDAT</a> chunks. It utilizes the same bit depth, <a>colour type</a>, compression method, <a>filter

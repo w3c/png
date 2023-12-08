@@ -3639,9 +3639,13 @@ with these exceptions:
           <pre>
 <!-- 99 73 67 80 -->63 49 43 50
 </pre>
-          <p>If present, the <span class="chunk">cICP</span> chunk specifies the colour space, transfer function, matrix
-          coefficients of the image using the code points specified in [[ITU-T-H.273]]. The video format signaling SHOULD be used
-          when processing the image, including by a decoder or when rendering the image.</p>
+          <p>If present, the <span class="chunk">cICP</span> chunk specifies the colour primaries, transfer function, matrix
+          coefficients of the image using the code points specified in [[ITU-T-H.273]] and finally a full-range flag which 
+          differentiates between full and limited signal quantizations.
+
+          The video format signaling SHOULD be used when processing the image, including by a decoder or when rendering the image.</p>
+
+          The cICp chunk consists of four 1-byte unsigned integers to identify the characterstics described above.
 
           <p>The following specifies the syntax of the <span class="chunk">cICP</span> chunk:</p>
 
@@ -3728,11 +3732,8 @@ with these exceptions:
             </li>
           </ul>
 
-          <aside class="example">
-            <span class="chunk">cICP</span> chunk field values for a common sRGB <a>full-range image</a>:
+ 
 
-            <pre>
-  1 13 0 1
   </pre>
           </aside>
 
@@ -3741,7 +3742,9 @@ with these exceptions:
             <a>PQ</a> <a>transfer function</a> specified at [[ITU-R-BT.2100]]:
 
             <pre>
-9 16 0 1
+9 16 0 1 (Decimal)
+09 10 00 01 (Four 1-byte unsigned integers)
+
 </pre>
           </aside>
 
@@ -3750,16 +3753,19 @@ with these exceptions:
             <a>HLG</a> <a>transfer function</a> specified at [[ITU-R-BT.2100]]:
 
             <pre>
-9 18 0 1
+9 18 0 1 (Decimal values)
+09 12 00 01 (Four 1-byte unsigned integers)
+
 </pre>
           </aside>
 
           <aside class="example">
-            <span class="chunk">cICP</span> chunk field values for a <a>narrow-range image</a> 
+            <span class="chunk">cICP</span> chunk field values for a <a>narrow-range image</a>
             that uses the colour primaries and the <a>transfer function</a> defined at [[ITU-R-BT.709]]:
 
             <pre>
-1 1 0 0
+1 1 0 0 (Decimal values)
+01 01 00 00 (Four 1-byte unsigned integers)
 </pre>
           </aside>
         </section>
@@ -3772,6 +3778,8 @@ with these exceptions:
           <p>The four-byte chunk type field contains the hexadecimal values</p>
 
           <pre>
+
+
 <!-- 109 68 67 118 -->6D 44 43 76
 </pre>
 

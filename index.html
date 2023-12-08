@@ -3639,8 +3639,8 @@ with these exceptions:
           <pre>
 <!-- 99 73 67 80 -->63 49 43 50
 </pre>
-          <p>If present, the <span class="chunk">cICP</span> chunk specifies the colour space, transfer function, matrix
-          coefficients of the image using the code points specified in [[ITU-T-H.273]]. The video format signaling SHOULD be used
+          <p>If present, the <span class="chunk">cICP</span> chunk specifies the colour space(primaries), transfer function, matrix
+          coefficients and scaling factor of the image using the code points specified in [[ITU-T-H.273]]. The video format signaling SHOULD be used
           when processing the image, including by a decoder or when rendering the image.</p>
 
           <p>The cICP chunk consists of four 1-byte unsigned integers to identify the characteristics described above.</p>
@@ -3688,7 +3688,9 @@ with these exceptions:
             and RGB representations, which is not used in this International Standard since PNG images are RGB images.
           </aside>
 
-          <p>The <code>Video Full Range Flag</code> value MUST be either <code>0</code> or <code>1</code>.</p>
+          <p>The <code>Video Full Range Flag</code> value MUST be either <code>0</code> or <code>1</code>. A value of 1 specifies
+            that the content has a full range scaling. This is the default value for RGB images. A value of 0 specifies that the 
+            content has a limited-range scaling factor</p>
 
           <aside class="note">
             If <code>Video Full Range Flag</code> value is <code>1</code>, then the image is a <a>full-range image</a>. Typically,

@@ -3683,10 +3683,17 @@ with these exceptions:
 
           <aside class="note">
             A <code>Matrix Coefficients</code> value other than <code>0</code> signals a transformation between colour difference
-            and RGB representations, which is not used in this International Standard since PNG images are RGB images.
+            and RGB representations, which is not used in this International Standard since PNG images are RGB images. These are decimal
+            values.  Examples below show the 1-byte unsigned equivalents.
           </aside>
 
+<<<<<<< Updated upstream
           <p>The <code>Video Full Range Flag</code> value MUST be either <code>0</code> or <code>1</code>.</p>
+=======
+          <p>The <code>Video Full Range Flag</code> value MUST be either <code>0</code> or <code>1</code>. A value of 1 specifies
+            that the content has a full range scaling. This is the default value for RGB images. A value of 0 specifies that the 
+            content has a limited-range scaling factor. Examples below show the 1-byte unsigned equivalents.</p>
+>>>>>>> Stashed changes
 
           <aside class="note">
             If <code>Video Full Range Flag</code> value is <code>1</code>, then the image is a <a>full-range image</a>. The vast
@@ -3694,12 +3701,12 @@ with these exceptions:
             images</a>. If <code>Video Full Range Flag</code> value is <code>0</code>, then the image is a <a>narrow-range
             image</a>. Narrow range images are found in video workflows where the interpretation of sample values below reference
             black (0% signal level) or above nominal peak (100% signal level). For example, [[ITU-R-BT.709]] specifies that, for
-            10-bit coding, reference black (called black level) corresponds to code value 64 and nominal peak to code value 940.
-            In narrow range, momentary excursions defined as overshoots and undershoots exist below reference black and above nominal
-            peak in order to preserve processing artifacts caused by filtering/compression or by uncontrolled lighting without
-            clipping.  This can improve image quality during additional stages of processing and compression. The use of
-            undershoot/overshoot has also been used to preserve additional color volume (both light and color) as described in
-            [[EBU-R-103]]. [[SMPTE-RP-2077]] describes full range in more detail and includes the mapping
+            10-bit coding, reference black (called black level) corresponds to a 10-bit code value of 64 and nominal peak to a 
+            10-bit code value of 940. In narrow range, momentary excursions defined as overshoots and undershoots exist below 
+            reference black and above nominal peak in order to preserve processing artifacts caused by filtering/compression 
+            or by uncontrolled lighting without clipping. This can improve image quality during additional stages of processing 
+            and compression. The use of undershoot/overshoot has also been used to preserve additional color volume (both light 
+            and color) as described in [[EBU-R-103]]. [[SMPTE-RP-2077]] describes full range in more detail and includes the mapping
             from <a>full-range images</a> to <a>narrow-range images</a> and describes protected code values for SDI (baseband)
             carriage.
           </aside>
@@ -3869,23 +3876,27 @@ with these exceptions:
               <tr>
                 <th>Name</th>
                 <th>Actual values</th>
-                <th>Stored values</th>
+                <th>Stored Decimal values</th>
+                <th>Stored 2-byte Hex unsigned values</th>
               </tr>
 
               <tr>
                 <td rowspan="3">Colour primaries specified in [[ITU-R-BT.2020]]</td>
                 <td>(0.708, 0.292)</td>
                 <td>{ 35400, 14600 }</td>
+                <td>{ 48 8A, 08 39 }</td>
               </tr>
 
               <tr>
                 <td>(0.170, 0.797)</td>
                 <td>{ 8500, 39850 }</td>
+                <td>{ 34 21, AA 9B }</td>
               </tr>
 
               <tr>
                 <td>(0.131, 0.046)</td>
                 <td>{ 6550, 2300 }</td>
+                <td>{ 96 19, FC 08 }</td>
               </tr>
             </table>
           </aside>
@@ -3897,13 +3908,16 @@ with these exceptions:
               <tr>
                 <th>Name</th>
                 <th>Actual values</th>
-                <th>Stored values</th>
+                <th>Stored Decimal values</th>
+                <th>Stored 2-byte Hex unsigned values</th>
+                
               </tr>
 
               <tr>
                 <td>Illuminant D65 specified in [[SMPTE-RP-177]]</td>
                 <td>(0.3127, 0.3290)</td>
                 <td>{ 15635, 16450 }</td>
+                <td>{ 05 3C, 42 40 }</td>
               </tr>
             </table>
           </aside>
@@ -3915,12 +3929,14 @@ with these exceptions:
             <table id="mDCv-chunk-hdr-max-luminance-example" class="numbered simple">
               <tr>
                 <th>Actual value</th>
-                <th>Stored value</th>
+                <th>Stored Decimal value</th>
+                <th>Stored 4-byte Hex unsigned value</th>
               </tr>
 
               <tr>
                 <td>4000 cd/m<sup>2</sup></td>
                 <td>40000000</td>
+                <td>00 5A 62 02 00 00 00 00</td>
               </tr>
             </table>
           </aside>
@@ -3930,12 +3946,14 @@ with these exceptions:
             <table id="mDCv-chunk-hdr-min-luminance-example" class="numbered simple">
               <tr>
                 <th>Actual value</th>
-                <th>Stored value</th>
+                <th>Stored Decimal value</th>
+                <th>Stored 4-byte Hex unsigned value</th>
               </tr>
 
               <tr>
                 <td>0.0005 cd/m<sup>2</sup></td>
                 <td>5</td>
+                <td>05 00 00 00 00 00 00 00</td>
               </tr>
             </table>
           </aside>
@@ -3949,23 +3967,27 @@ with these exceptions:
               <tr>
                 <th>Name</th>
                 <th>Actual values</th>
-                <th>Stored values</th>
+                <th>Stored Decimal values</th>
+                <th>Stored 2-byte Hex unsigned values</th>
               </tr>
 
               <tr>
                 <td rowspan="3">Colour primaries specified in [[Display-P3]]</td>
                 <td>(0.68, 0.32)</td>
                 <td>{ 34000, 16000 }</td>
+                <td>{ D0 84, 80 3E }</td>
               </tr>
 
               <tr>
                 <td>(0.265, 0.69)</td>
                 <td>{ 13520, 34500 }</td>
+                <td>{ D0 34, C4 86 }</td>
               </tr>
 
               <tr>
                 <td>(0.15, 0.06)</td>
                 <td>{ 7500, 3000 }</td>
+                <td>{ 4C 1D, B8 0B }</td>
               </tr>
             </table>
           </aside>
@@ -3977,13 +3999,15 @@ with these exceptions:
               <tr>
                 <th>Name</th>
                 <th>Actual values</th>
-                <th>Stored values</th>
+                <th>Stored Decimal values</th>
+                <th>Stored 2-byte Hex unsigned values</th>
               </tr>
 
               <tr>
                 <td>Illuminant D65 specified in [[SMPTE-RP-177]]</td>
                 <td>(0.3127, 0.3290)</td>
                 <td>{ 15635, 16450 }</td>
+                <td>{ 13 3D, 42 40 }</td>
               </tr>
             </table>
           </aside>
@@ -3994,12 +4018,14 @@ with these exceptions:
             <table id="mDCv-chunk-sdr-max-luminance-example" class="numbered simple">
               <tr>
                 <th>Actual value</th>
-                <th>Stored value</th>
+                <th>Stored Decimal values</th>
+                <th>Stored 2-byte Hex unsigned values</th>
               </tr>
 
               <tr>
                 <td>80 cd/m<sup>2</sup></td>
                 <td>800000</td>
+                <td>00 35 OC 00 00 00 00 00</td>
               </tr>
             </table>
           </aside>
@@ -4009,12 +4035,14 @@ with these exceptions:
             <table id="mDCv-chunk-sdr-min-luminance-example" class="numbered simple">
               <tr>
                 <th>Actual value</th>
-                <th>Stored value</th>
+                <th>Stored Decimal values</th>
+                <th>Stored 2-byte Hex unsigned values</th>
               </tr>
 
               <tr>
                 <td>0.05 cd/m<sup>2</sup></td>
                 <td>500</td>
+                <td>F4 01 00 00 00 00 00 00</td>
               </tr>
             </table>
           </aside>
@@ -4036,15 +4064,17 @@ with these exceptions:
           capabilities of the target display to prevent clipping. The method of tone-mapping optimization 
           is currently subjective.</p>
              
+          <p>MaxCLL (Maximum Content Light Level) uses a static metadata value to indicate the maximum light 
+            level of any single pixel (in cd/m<sup>2</sup>, also known as nits) of the entire playback sequence. 
+            There is often an algorithmic filter to eliminate false values occurring from processing or noise 
+            that could adversely affect intended downstream tone mapping.</p>
+          
           <p>MaxFALL (Maximum Frame Average Light Level) uses a static metadata value to indicate the 
             maximum value of the <a>frame</a> average light level (in cd/m<sup>2</sup>, also known as nits) 
             of the entire playback sequence. MaxFALL is calculated by first averaging the decoded luminance 
             values of all the pixels in each frame, and then using the value for the frame with the highest value.</p>
              
-          <p>MaxCLL (Maximum Content Light Level) uses a static metadata value to indicate the maximum light 
-            level of any single pixel (in cd/m<sup>2</sup>, also known as nits) of the entire playback sequence. 
-            There is often an algorithmic filter to eliminate false values occurring from processing or noise 
-            that could adversely affect intended downstream tone mapping.</p>
+            The MaxCLL and MaxFALL values are encoded as <a>PNG four-byte unsigned integers</a>s,
 
           <p class="note">[[CTA-861.3-A]] describes the method of calculation for generating the
             <span class="chunk">cLLi</span> values,
@@ -4096,12 +4126,14 @@ with these exceptions:
              <table id="cLLi-chunk-max-content-light-level-example" class="numbered simple">
                <tr>
                  <th>Actual value</th>
-                 <th>Stored value</th>
+                 <th>Stored Decimal values</th>
+                 <th>Stored 2-byte Hex unsigned values</th>
                </tr>
 
                <tr>
                  <td>1000 cd/m<sup>2</sup></td>
                  <td>10000000</td>
+                 <td>80 96 98 00 00 00 00 00</td>
                </tr>
              </table>
            </aside>
@@ -4112,12 +4144,14 @@ with these exceptions:
              <table id="cLLi-chunk-max-frame-avg-luminance-example" class="numbered simple">
                <tr>
                  <th>Actual value</th>
-                 <th>Stored value</th>
+                 <th>Stored Decimal values</th>
+                 <th>Stored 2-byte Hex unsigned values</th>
                </tr>
 
                <tr>
                  <td>250 cd/m<sup>2</sup></td>
                  <td>2500000</td>
+                 <td>A0 25 26 00 00 00 00 00</td>
               </tr>
             </table>
           </aside>

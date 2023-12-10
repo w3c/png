@@ -291,8 +291,19 @@
           publisher: "ITU",
           date: "2021-04",
           href: "https://www.itu.int/ITU-T/recommendations/rec.aspx?rec=14652"
-        }
-      }
+        },  
+        "ITU-R BT.2408": {
+          title: "Guidance for operational practices in HDR television production",
+          publisher: "ITU",
+          date: "09/2023",
+          href: "https://www.itu.int/pub/R-REP-BT.2408"
+        },  
+        "ISO/TS 22028-5": {
+          title: "Part 5: High dynamic range and wide colour gamut encoding for still images (HDR/WCG)",
+          publisher: "ISO",
+          date: "06/2023",
+          href: "https://www.iso.org/standard/81863.html"
+
     }
   </script>
 </head>
@@ -4232,6 +4243,60 @@ with these exceptions:
           </aside>
         </section>
       </section>
+
+      <section id="dWLm-chunk">
+        <h2><span class="chunk">dWLm</span> Diffuse white luminance metadata</h2>
+        <p>The two-byte chunk type field contains the hexadecimal values</p>
+
+        <pre>
+<!-- xx xx xx xx
+</pre>
+
+        <p>If present, the <span class="chunk">dWLm</span> chunk stores the luminance value 
+          of the images nominal diffuse white, in cd/m2 as defined in [ISO/TS 22028-5]:</p>
+
+        <p>If the luminance of the diffuse white differs from the nominal luminance for an HDR reference displays
+          diffuse white as defined in in [[ITU-R-BT.2408]], the contents diffuse white luminance level
+          should be indicated using this metadata.</p>
+           
+         <p>The following specifies the syntax of the <span class="chunk">dWLn</span> chunk:</p>
+
+         <table id="dWLn-chunk-syntax" class="numbered simple">
+           <caption>dWLn chunk components</caption>
+
+           <tr>
+             <th>Name</th>
+             <th>Size</th>
+             <th>Divisor value</th>
+           </tr>
+
+           <tr>
+             <td>Diffuse white luminance metadata</td>
+             <td>2 bytes</td>
+             <td>1 cd/m<sup>2</sup></td>
+           </tr>
+
+         </table>
+
+         <aside class="example">
+           Example <span class="chunk">dWLn</span> Diffuse white luminance metadata:
+
+           <table id="dWLn-diffuse-white-luminance-metadata-example" class="numbered simple">
+             <tr>
+               <th>Actual value</th>
+               <th>Stored Decimal value</th>
+               <th>Stored 2-byte unsigned value</th>
+             </tr>
+
+             <tr>
+               <td>203 cd/m<sup>2</sup></td>
+               <td>203</td>
+               <td>CB 00</td>
+             </tr>
+           </table>
+         </aside>
+      </section>
+    </section>
 
 
 <!-- Maintain a fragment named "11textinfo" to preserve incoming links to it -->

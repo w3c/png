@@ -5,6 +5,10 @@ This may be helpful for creating test images, or for analyzing files.
 
 ## PNG manipulation tools (read/write)
 
+### Photomator
+
+[Homepage](https://apps.apple.com/us/app/photomator-photo-editor/id1444636541) Mac application which can read and generate HDR PNG.
+
 ### pngcrush
 
 [Homepage](https://pmt.sourceforge.io/pngcrush/) and maintained [on sourceforge](https://sourceforge.net/projects/pmt/files/pngcrush/).

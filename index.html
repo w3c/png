@@ -3643,6 +3643,8 @@ with these exceptions:
           coefficients and scaling factor of the image using the code points specified in [[ITU-T-H.273]]. The video format signaling SHOULD be used
           when processing the image, including by a decoder or when rendering the image.</p>
 
+          <p>The cICP chunk consists of four 1-byte unsigned integers to identify the characteristics described above.</p>
+
           <p>The following specifies the syntax of the <span class="chunk">cICP</span> chunk:</p>
 
           <table id="cICP-chunk-syntax" class="numbered simple">
@@ -3691,7 +3693,8 @@ with these exceptions:
             content has a limited-range scaling factor</p>
 
           <aside class="note">
-            If <code>Video Full Range Flag</code> value is <code>1</code>, then the image is a <a>full-range image</a>. The vast
+            If <code>Video Full Range Flag</code> value is <code>1</code>, then the image is a <a>full-range image</a>. Typically,
+            images in the RGB color representation are stored in the full-range signal quantization, therefore the vast
             majority of computer graphics and web images, including those used in traditional PNG workflows, are <a>full-range
             images</a>. If <code>Video Full Range Flag</code> value is <code>0</code>, then the image is a <a>narrow-range
             image</a>. Narrow range images are found in video workflows where the interpretation of sample values below reference
@@ -3730,20 +3733,14 @@ with these exceptions:
             </li>
           </ul>
 
-          <aside class="example">
-            <span class="chunk">cICP</span> chunk field values for a common sRGB <a>full-range image</a>:
-
-            <pre>
-  1 13 0 1
-  </pre>
-          </aside>
 
           <aside class="example">
             <span class="chunk">cICP</span> chunk field values for a <a>full-range image</a> that uses the colour primaries and the
             <a>PQ</a> <a>transfer function</a> specified at [[ITU-R-BT.2100]]:
 
             <pre>
-9 16 0 1
+9 16 0 1 (Decimal)
+09 10 00 01 (Four 1-byte unsigned integers)
 </pre>
           </aside>
 
@@ -3752,7 +3749,8 @@ with these exceptions:
             <a>HLG</a> <a>transfer function</a> specified at [[ITU-R-BT.2100]]:
 
             <pre>
-9 18 0 1
+9 18 0 1 (Decimal values)
+09 12 00 01 (Four 1-byte unsigned integers)
 </pre>
           </aside>
 
@@ -3761,7 +3759,8 @@ with these exceptions:
             that uses the colour primaries and the <a>transfer function</a> defined at [[ITU-R-BT.709]]:
 
             <pre>
-1 1 0 0
+1 1 0 0 (Decimal values)
+01 01 00 00 (Four 1-byte unsigned integers)
 </pre>
           </aside>
         </section>

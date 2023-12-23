@@ -3638,9 +3638,11 @@ with these exceptions:
           <pre>
 <!-- 99 73 67 80 -->63 49 43 50
 </pre>
-          <p>If present, the <span class="chunk">cICP</span> chunk specifies the colour space, transfer function, matrix
-          coefficients of the image using the code points specified in [[ITU-T-H.273]]. The video format signaling SHOULD be used
+          <p>If present, the <span class="chunk">cICP</span> chunk specifies the colour space (primaries), transfer function, matrix
+          coefficients and scaling factor of the image using the code points specified in [[ITU-T-H.273]]. The video format signaling SHOULD be used
           when processing the image, including by a decoder or when rendering the image.</p>
+
+          <p>The cICP chunk consists of four 1-byte unsigned integers to identify the characteristics described above.</p>
 
           <p>The following specifies the syntax of the <span class="chunk">cICP</span> chunk:</p>
 
@@ -3685,10 +3687,13 @@ with these exceptions:
             and RGB representations, which is not used in this International Standard since PNG images are RGB images.
           </aside>
 
-          <p>The <code>Video Full Range Flag</code> value MUST be either <code>0</code> or <code>1</code>.</p>
+          <p>The <code>Video Full Range Flag</code> value MUST be either <code>0</code> or <code>1</code>. A value of 1 specifies
+            that the content has a full range scaling. This is the usual value for RGB images. A value of 0 specifies that the
+            content has a limited-range scaling factor.</p>
 
           <aside class="note">
-            If <code>Video Full Range Flag</code> value is <code>1</code>, then the image is a <a>full-range image</a>. The vast
+            If <code>Video Full Range Flag</code> value is <code>1</code>, then the image is a <a>full-range image</a>. Typically,
+            images in the RGB color representation are stored in the full-range signal quantization, therefore the vast
             majority of computer graphics and web images, including those used in traditional PNG workflows, are <a>full-range
             images</a>. If <code>Video Full Range Flag</code> value is <code>0</code>, then the image is a <a>narrow-range
             image</a>. Narrow range images are found in video workflows where the interpretation of sample values below reference
@@ -3727,21 +3732,15 @@ with these exceptions:
             </li>
           </ul>
 
-          <aside class="example">
-            <span class="chunk">cICP</span> chunk field values for a common sRGB <a>full-range image</a>:
-
-            <pre>
-  1 13 0 1
-  </pre>
-          </aside>
 
           <aside class="example">
             <span class="chunk">cICP</span> chunk field values for a <a>full-range image</a> that uses the colour primaries and the
             <a>PQ</a> <a>transfer function</a> specified at [[ITU-R-BT.2100]]:
 
             <pre>
-9 16 0 1
+<!-- 9 16 0 1  -->09 10 00 01
 </pre>
+            <p>(Four 1-byte unsigned integers, in hexadecimal)</p>
           </aside>
 
           <aside class="example">
@@ -3749,17 +3748,19 @@ with these exceptions:
             <a>HLG</a> <a>transfer function</a> specified at [[ITU-R-BT.2100]]:
 
             <pre>
-9 18 0 1
+<!-- 9 18 0 1 -->09 12 00 01
 </pre>
+            <p>(Four 1-byte unsigned integers, in hexadecimal)</p>
           </aside>
 
           <aside class="example">
-            <span class="chunk">cICP</span> chunk field values for a <a>narrow-range image</a> 
+            <span class="chunk">cICP</span> chunk field values for a <a>narrow-range image</a>
             that uses the colour primaries and the <a>transfer function</a> defined at [[ITU-R-BT.709]]:
 
             <pre>
-1 1 0 0
+<!-- 1 1 0 0 -->01 01 00 00
 </pre>
+            <p>(Four 1-byte unsigned integers, in hexadecimal)</p>
           </aside>
         </section>
         <!-- Maintain a fragment named "mDCv-chunk" to preserve incoming links to it -->
@@ -3831,17 +3832,17 @@ with these exceptions:
             </tr>
           </table>
 
-          <p>The color primaries are encoded as 
+          <p>The color primaries are encoded as
             three pairs of <a>PNG two-byte unsigned integer</a>s,
             in the order <em>x</em> and then <em>y</em>,
             each representing the x or y primary chromaticity value divided by the divisor value.
-            They are ordered starting with the primary with the largest x chromaticity, 
-            followed by the primary with the largest y chromaticity, 
-            followed by the remaining primary. 
+            They are ordered starting with the primary with the largest x chromaticity,
+            followed by the primary with the largest y chromaticity,
+            followed by the remaining primary.
             For RGB color spaces, this corresponds to the order R, G, B.
 
           <p>
-            The white point is encoded as 
+            The white point is encoded as
             a pair of <a>PNG two-byte unsigned integer</a>s,
             in the order <em>x</em> and then <em>y</em>,
             each representing the x or y whie chromaticity value divided by the divisor value.
@@ -4030,31 +4031,31 @@ with these exceptions:
           <p>If present, the <span class="chunk">cLLi</span> chunk identifies two characteristics of <a>HDR</a> content:</p>
 
           <p>The <span class="chunk">cLLi</span> chunk adds static metadata which provides an opportunity
-          to optimize tone mapping of the associated content to a specific target display. This is 
-          accomplished by tailoring the tone mapping of the content itself to the specific peak brightness 
-          capabilities of the target display to prevent clipping. The method of tone-mapping optimization 
+          to optimize tone mapping of the associated content to a specific target display. This is
+          accomplished by tailoring the tone mapping of the content itself to the specific peak brightness
+          capabilities of the target display to prevent clipping. The method of tone-mapping optimization
           is currently subjective.</p>
-             
-          <p>MaxFALL (Maximum Frame Average Light Level) uses a static metadata value to indicate the 
-            maximum value of the <a>frame</a> average light level (in cd/m<sup>2</sup>, also known as nits) 
-            of the entire playback sequence. MaxFALL is calculated by first averaging the decoded luminance 
+
+          <p>MaxFALL (Maximum Frame Average Light Level) uses a static metadata value to indicate the
+            maximum value of the <a>frame</a> average light level (in cd/m<sup>2</sup>, also known as nits)
+            of the entire playback sequence. MaxFALL is calculated by first averaging the decoded luminance
             values of all the pixels in each frame, and then using the value for the frame with the highest value.</p>
-             
-          <p>MaxCLL (Maximum Content Light Level) uses a static metadata value to indicate the maximum light 
-            level of any single pixel (in cd/m<sup>2</sup>, also known as nits) of the entire playback sequence. 
-            There is often an algorithmic filter to eliminate false values occurring from processing or noise 
+
+          <p>MaxCLL (Maximum Content Light Level) uses a static metadata value to indicate the maximum light
+            level of any single pixel (in cd/m<sup>2</sup>, also known as nits) of the entire playback sequence.
+            There is often an algorithmic filter to eliminate false values occurring from processing or noise
             that could adversely affect intended downstream tone mapping.</p>
 
           <p class="note">[[CTA-861.3-A]] describes the method of calculation for generating the
             <span class="chunk">cLLi</span> values,
             but does not specify any filtering.
-            [[HDR-Static-Meta]] describes an improved method which rejects extreme values from 
-            statistical outliers, noise or ringing from resampling filters, 
+            [[HDR-Static-Meta]] describes an improved method which rejects extreme values from
+            statistical outliers, noise or ringing from resampling filters,
             and is recommended for practical implementations.
           </p>
 
           <p class="note">[[SMPTE-ST-2067-21]] Section 7.5 adds additional
-            information in Section 7.5 in the case where the <span class="chunk">cLLi</span> values are unknown and have not been calculated.</p> 
+            information in Section 7.5 in the case where the <span class="chunk">cLLi</span> values are unknown and have not been calculated.</p>
 
           <p class="note"><a href="https://github.com/w3c/PNG-spec/issues/319">Issue #319</a> discusses tone-mapping behavior when
           the <span class="chunk">cLLi</span> chunk is present.</p>
@@ -4942,7 +4943,7 @@ with these exceptions:
             </tr>
           </table>
 
-          <p>`sequence_number` defines the sequence number of the animation chunk, starting from 0. It is encoded as a <a>PNG
+          <p>`sequence_number` defines the <a href="#4Concepts.APNGSequence">sequence number</a> of the animation chunk, starting from 0. It is encoded as a <a>PNG
           four-byte unsigned integer</a>.</p>
 
           <p>`width` and `height` define the width and height of the following frame. They are encoded as <a>PNG four-byte unsigned
@@ -5068,7 +5069,9 @@ with these exceptions:
     <!-- 102 100 65 84 -->66 64 41 54
     </pre>
           <p>The <span class="chunk">fdAT</span> chunk serves the same purpose for animations as the <a class="chunk" href=
-          "#11IDAT">IDAT</a> chunk does for static images; it contains the <a>image data</a> for all frames (or, for animations
+          "#11IDAT">IDAT</a> chunks do for static images;
+          the set of <span class="chunk">fdAT</span> chunks
+          contains the <a>image data</a> for all frames (or, for animations
           which include the <a>static image</a> as first frame, for all frames after the first one). It contains:</p>
 
           <table id="fdAT-structure" class="numbered simple">
@@ -5095,9 +5098,15 @@ with these exceptions:
           <p>At least one <span class="chunk">fdAT</span> chunk is required for each frame, except for the first frame, if that
           frame is represented by an <a class="chunk" href="#11IDAT">IDAT</a> chunk.</p>
 
-          <p>The compressed datastream is then the concatenation of the contents of the data fields of all the <span class=
-          "chunk">fdAT</span> chunks within a frame
-          (noting that data fields <a href="#zero-length-data">may be of zero length</a>).
+          <p>The compressed datastream for each frame is then the concatenation,
+          in ascending <a href="#4Concepts.APNGSequence">sequence number</a> order,
+          of the contents of the `frame_data` fields of all the <span class=
+          "chunk">fdAT</span> chunks within a frame.</p>
+
+          <p>Because of the sequence number, <span class="chunk">fdAT</span> chunks
+          <a href="#zero-length-data">may not be of zero length</a>);
+          however the `frame_data` fields may be of zero length.
+
           When decompressed, the datastream is the complete pixel data of a PNG image,
           including the filter byte at the beginning of each scanline, similar to the uncompressed data of all the <a class="chunk"
           href="#11IDAT">IDAT</a> chunks. It utilizes the same bit depth, <a>colour type</a>, compression method, <a>filter
@@ -5837,9 +5846,9 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
     <section id="13Security-considerations">
       <h2>Security considerations</h2>
 
-      <p>A PNG datastream is composed of a collection of explicitly typed chunks. 
+      <p>A PNG datastream is composed of a collection of explicitly typed chunks.
       Chunks whose contents are defined by the
-      specification could actually contain anything, including malicious code. 
+      specification could actually contain anything, including malicious code.
       Similarly there could be data after the <a class="chunk" href="#11IEND">IEND</a> chunk
       which could contain anything, including malicious code.
       There is no known risk that such malicious code
@@ -7537,7 +7546,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
       <li>Specified interoperable handling of extra sample bits, beyond the specified bit depth,
         in <a href="#11tRNS" class="chunk">tRNS</a> and <a href="#11bKGD" class="chunk">bKGD</a> chunks.
       </li>
-      <li>Added a new chunk, <a href="#mDCv-chunk" class="chunk">mDCv</a> 
+      <li>Added a new chunk, <a href="#mDCv-chunk" class="chunk">mDCv</a>
         to describe the color volume of the mastering display used to grade <a>HDR</a> [[ITU-R-BT.2100]] content.</li>
 
       <li>Used correct Unicode character names.</li>

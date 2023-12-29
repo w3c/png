@@ -25,6 +25,14 @@ Used to recompress PNG, including optionally reducing bit depth, changing color 
 
 Depends on libpng. Originally a fork of pngcrush by Cosmin Truta, now has a different feature set and has added GIF and BMP support.
 
+### Minimum viable PNG encoder, in Python
+
+[Homepage](https://www.da.vidbuchanan.co.uk/blog/hello-png.html) and maintained [on GitHub](https://github.com/DavidBuchanan314/hello_png).
+
+By @DavidBuchanan314  Easily extensible to spit out new chunks, so great for prototyping and creating test files.
+
+Depnds on zlib, only.
+
 ### node pngdefry
 
 [Homepage](https://www.npmjs.com/package/pngdefry)

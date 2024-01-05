@@ -3191,7 +3191,9 @@ with these exceptions:
           <p>A <span class="chunk">tRNS</span> chunk shall not appear for <a>colour types</a> 4 and 6, since a full alpha channel
           is already present in those cases.</p>
 
-          <p class="note">NOTE For 16-bit <a>greyscale</a> or <a>truecolour</a> data, only pixels matching the entire 16-bit values in
+          <p class="note">NOTE For 16-bit <a>greyscale</a> or <a>truecolour</a> data,
+          as described in <a href="13Sample-depth-rescaling"></a>,
+          only pixels matching the entire 16-bit values in
           <span class="chunk">tRNS</span> chunks are transparent. Decoders have to postpone any sample depth rescaling until after
           the pixels have been tested for transparency.</p>
         </section>
@@ -6165,7 +6167,7 @@ while (pass &lt; 7)
       original samples before scaling them to suit the display often yields a more accurate display than ignoring <a class="chunk"
       href="#11sBIT">sBIT</a>.</p>
 
-      <p>When comparing pixel values to <a class="chunk" href="#11tRNS">tRNS</a> chunk values to detect transparent pixels, the
+      <p id="tRNS-compare-exactly">When comparing pixel values to <a class="chunk" href="#11tRNS">tRNS</a> chunk values to detect transparent pixels, the
       comparison shall be done exactly. Therefore, transparent pixel detection shall be done before reducing sample precision.</p>
     </section>
     <!-- Maintain a fragment named "13Decoder-gamma-handling" to preserve incoming links to it -->

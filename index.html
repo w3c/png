@@ -178,6 +178,11 @@
           date: "2018-07",
           href: "https://www.itu.int/rec/R-REC-BT.2100"
         },
+          "ITU-R-BT.2390": {
+          title: "High dynamic range television for production and international programme exchange",
+          publisher: "ITU",
+          href: "https://www.itu.int/rec/R-REC-BT.2390"
+        },
         "ITU-T-H.273": {
           title: "ITU-T H.273, SERIES H: AUDIOVISUAL AND MULTIMEDIA SYSTEMS Infrastructure of audiovisual services – Coding of moving video. Coding-independent code points for video signal type identification",
           publisher: "ITU",
@@ -3699,15 +3704,19 @@ with these exceptions:
             majority of computer graphics and web images, including those used in traditional PNG workflows, are <a>full-range
             images</a>. If <code>Video Full Range Flag</code> value is <code>0</code>, then the image is a <a>narrow-range
             image</a>. Narrow range images are found in video workflows where the interpretation of sample values below reference
-            black (0% signal level) or above nominal peak (100% signal level). For example, [[ITU-R-BT.709]] specifies that, for
+            black (0% signal level) or above nominal peak (100% signal level) is used. For example, [[ITU-R-BT.709]] specifies that, for
             10-bit coding, reference black (called black level) corresponds to code value 64 and nominal peak to code value 940.
             In narrow range, momentary excursions defined as overshoots and undershoots exist below reference black and above nominal
             peak in order to preserve processing artifacts caused by filtering/compression or by uncontrolled lighting without
             clipping.  This can improve image quality during additional stages of processing and compression. The use of
             undershoot/overshoot has also been used to preserve additional color volume (both light and color) as described in
             [[EBU-R-103]]. [[SMPTE-RP-2077]] describes full range in more detail and includes the mapping
-            from <a>full-range images</a> to <a>narrow-range images</a> and describes protected code values for SDI (baseband)
-            carriage.
+            from <a>full-range images</a> to <a>narrow-range images</a>.  It also describes protected code values used for 
+            Serial Digital Interface (baseband video) carriage.
+          </aside>
+          <aside class="note">
+            Whilst common practice has seen the storage of full range images using [[ITU-R-BT.709]] transfer function and primaries in 
+              PNG format, it should be noted that this format is not part of the [[ITU-R-BT.709]] standard.
           </aside>
 
           <p>The <span class="chunk">cICP</span> chunk MUST come before the <a class="chunk" href="#11PLTE">PLTE</a> and <a class=
@@ -3785,9 +3794,8 @@ with these exceptions:
 
           <p>mDCv is typically used with the <a>PQ</a>[ITU-R-BT.2100] transfer function
           and is commonly then called <a>HDR10</a> (PQ with ST 2086 static metadata). 
-          The mDCv chunk is most useful when it is included with <a>PQ</a> [[ITU-R-BT.2100]], 
-          <a>SDR</a> (for example [[ITU-R-BT.709]]) and <a>HLG</a> [[ITU-R-BT.2100]] 
-          since this is how it's most commonly used today.</p>
+          The mDCv chunk may also be included with <a>SDR image formats</a> (for example 
+          [[ITU-R-BT.709]]) and <a>HLG</a> [[ITU-R-BT.2100]]. </p>
 
           <p>Since mDCv was originally created as supplemental static metadata meant to 
           optimize the tone-mapping of images on a video display target, a cICp chunk 
@@ -3797,15 +3805,22 @@ with these exceptions:
           Specific examples of its most common use-cases for images using 
           both HDR [[ITU-R-BT.2100]] and SDR [[ITU-R-BT.709]] are available in 
           [[ITU-T-Series-H-Supplement-19]]. The basic (cICp) characteristics plus the supplemental 
-          (mDCv) static metadata provide the valuable information to make more optimal, 
-          but still basic tone-mapping decisions.</p>
+          (mDCv) static metadata may provide valuable information to optimise 
+          tone-mapping decisions.</p>
 
 
           <p class="note"><a href="https://github.com/w3c/PNG-spec/issues/319">Issue #319</a> discusses tone-mapping behavior when
           the <span class="chunk">mDCv</span> chunk is present.</p>
 
           <p>For <a>SDR</a> images, if mDCv display min/max luminance are unknown, the default
-          characteristics can be derived from the values in [[ITU-T-Series-H-Supplement-19]] Table 11 or from the relevant <a>SDR</a> specification.</p>
+          characteristics can be derived from the values in [[ITU-T-Series-H-Supplement-19]] Table 11 or from the relevant <a>SDR</a> specification.  
+          At present, there is no published, standardised method for translating an SDR image signal from its default viewing 
+          condition (display luminance and ambient illumination) to that signalled in the mDCV chunk.</p>
+            
+          <aside class="note">
+            The <a>HLG</a> [[ITU-R-BT.2100]] image format does have published methods for translating the image for both changes in display luminance (within [[ITU-R-BT.2100]]) and 
+              ambient illumination (within the accompanying report [[ITU-R-BT.2390]]). This may be used with SDR images.
+          </aside>
 
           <p>The following specifies the syntax of the <span class="chunk">mDCv</span> chunk:</p>
 
@@ -4044,10 +4059,10 @@ with these exceptions:
           <p>If present, the <span class="chunk">cLLi</span> chunk identifies two characteristics of <a>HDR</a> content:</p>
 
           <p>The <span class="chunk">cLLi</span> chunk adds static metadata which provides an opportunity
-          to optimize tone mapping of the associated content to a specific target display. This is
+          to optimize tone mapping of the associated content for a target display. This is
           accomplished by tailoring the tone mapping of the content itself to the specific peak brightness
-          capabilities of the target display to prevent clipping. The method of tone-mapping optimization
-          is currently subjective.</p>
+          capabilities of the target display to prevent clipping. This is most important for HDR image formats that use absolute 
+          brightness values, such as <a>PQ</a>[ITU-R-BT.2100].  It may also be used with other image formats. </p>
 
           <p>MaxFALL (Maximum Frame Average Light Level) uses a static metadata value to indicate the
             maximum value of the <a>frame</a> average light level (in cd/m<sup>2</sup>, also known as nits)

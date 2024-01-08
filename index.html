@@ -3697,15 +3697,15 @@ with these exceptions:
             majority of computer graphics and web images, including those used in traditional PNG workflows, are <a>full-range
             images</a>. If <code>Video Full Range Flag</code> value is <code>0</code>, then the image is a <a>narrow-range
             image</a>. Narrow range images are found in video workflows where the interpretation of sample values below reference
-            black (0% signal level) or above nominal peak (100% signal level). For example, [[ITU-R-BT.709]] specifies that, for
+            black (0% signal level) or above nominal peak (100% signal level) is used. For example, [[ITU-R-BT.709]] specifies that, for
             10-bit coding, reference black (called black level) corresponds to code value 64 and nominal peak to code value 940.
             In narrow range, momentary excursions defined as overshoots and undershoots exist below reference black and above nominal
             peak in order to preserve processing artifacts caused by filtering/compression or by uncontrolled lighting without
             clipping.  This can improve image quality during additional stages of processing and compression. The use of
             undershoot/overshoot has also been used to preserve additional color volume (both light and color) as described in
             [[EBU-R-103]]. [[SMPTE-RP-2077]] describes full range in more detail and includes the mapping
-            from <a>full-range images</a> to <a>narrow-range images</a> and describes protected code values for SDI (baseband)
-            carriage.
+            from <a>full-range images</a> to <a>narrow-range images</a>.  It also describes protected code values used for 
+            Serial Digital Interface (baseband video) carriage.
           </aside>
 
           <p>The <span class="chunk">cICP</span> chunk MUST come before the <a class="chunk" href="#11PLTE">PLTE</a> and <a class=
@@ -3783,9 +3783,8 @@ with these exceptions:
 
           <p>mDCv is typically used with the <a>PQ</a>[ITU-R-BT.2100] transfer function
           and is commonly then called <a>HDR10</a> (PQ with ST 2086 static metadata). 
-          The mDCv chunk is most useful when it is included with <a>PQ</a> [[ITU-R-BT.2100]], 
-          <a>SDR</a> (for example [[ITU-R-BT.709]]) and <a>HLG</a> [[ITU-R-BT.2100]] 
-          since this is how it's most commonly used today.</p>
+          The mDCv chunk may also be included with <a>SDR image formats</a> (for example 
+          [[ITU-R-BT.709]]) and <a>HLG</a> [[ITU-R-BT.2100]] </p>
 
           <p>Since mDCv was originally created as supplemental static metadata meant to 
           optimize the tone-mapping of images on a video display target, a cICp chunk 

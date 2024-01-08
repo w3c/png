@@ -3788,7 +3788,7 @@ with these exceptions:
           <p>mDCv is typically used with the <a>PQ</a>[ITU-R-BT.2100] transfer function
           and is commonly then called <a>HDR10</a> (PQ with ST 2086 static metadata). 
           The mDCv chunk may also be included with <a>SDR image formats</a> (for example 
-          [[ITU-R-BT.709]]) and <a>HLG</a> [[ITU-R-BT.2100]] </p>
+          [[ITU-R-BT.709]]) and <a>HLG</a> [[ITU-R-BT.2100]]. </p>
 
           <p>Since mDCv was originally created as supplemental static metadata meant to 
           optimize the tone-mapping of images on a video display target, a cICp chunk 
@@ -3806,7 +3806,14 @@ with these exceptions:
           the <span class="chunk">mDCv</span> chunk is present.</p>
 
           <p>For <a>SDR</a> images, if mDCv display min/max luminance are unknown, the default
-          characteristics can be derived from the values in [[ITU-T-Series-H-Supplement-19]] Table 11 or from the relevant <a>SDR</a> specification.</p>
+          characteristics can be derived from the values in [[ITU-T-Series-H-Supplement-19]] Table 11 or from the relevant <a>SDR</a> specification.  
+          At present, there is no published, standardised method for translating an SDR image signal from its default viewing 
+          condition (display luminance and ambient illumination) to that signalled in the mDCV chunk.</p>
+            
+          <aside class="note">
+            The <a>HLG</a> [[ITU-R-BT.2100]] image format does have published methods for translating the image for both changes in display luminance (within [[ITU-R-BT.2100]] ) and 
+              ambient illumination (within the accompanying report [[ITU-R-BT.2390]].  This may be used with SDR images. )
+          </aside>
 
           <p>The following specifies the syntax of the <span class="chunk">mDCv</span> chunk:</p>
 

@@ -75,6 +75,12 @@ Chris Lilley had experimentally extended it to add cICP, APNG support (easy sinc
 
 Browser-based tool which displays hidden (by alpha channel, or by incorrect `IHDR` height) data in PNG (and other) images.
 
+###MediaInfo
+
+[Homepage](https://mediaarea.net/en/MediaInfo)
+
+Multi-platform GUI which displays metadata on many image and video formats including PNG. [Recent builds](https://mediaarea.net/download/snapshots/binary/mediainfo-gui/20240106-2/) support `cICP`, `mDCv` and `cLLI`.
+
 ## Libraries
 
 ### libpng

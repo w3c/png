@@ -316,17 +316,17 @@ needs update, comment out for now
   <section id="sotd">
     <p>This specification is intended to become an International Standard, but is not yet one. It is inappropriate to refer to this
     specification as an International Standard.</p>
-    <p>The following features are at-risk and may be removed from this specification 
+    <p>The following features are at-risk and may be removed from this specification
       if there is insufficient implementation support:</p>
     <ul>
       <li>The <a class="chunk" href="#eXIf">eXIf</a> chunk</li>
     </ul>
-    <p>“At-risk” is a W3C Process term-of-art, and does not necessarily imply 
-      that the feature is in danger of being dropped or delayed. 
-      It means that the WG believes the feature may have difficulty being 
-      interoperably implemented in a timely manner, and marking it as such 
-      allows the WG to drop the feature if necessary when transitioning to the 
-      Proposed Recommendation stage, without having to first publish a new 
+    <p>“At-risk” is a W3C Process term-of-art, and does not necessarily imply
+      that the feature is in danger of being dropped or delayed.
+      It means that the WG believes the feature may have difficulty being
+      interoperably implemented in a timely manner, and marking it as such
+      allows the WG to drop the feature if necessary when transitioning to the
+      Proposed Recommendation stage, without having to first publish a new
       Candidate Recommendation without the feature.</p>
   </section>
   <!-- *********************************************************************
@@ -571,7 +571,7 @@ with these exceptions:
         significance (MSB LSB for two-byte integers, MSB B2 B1 LSB for four-byte integers).
       </dd>
 
-      <dt>perceptual quantiser (<dfn>PQ</dfn>)
+      <dt>perceptual quantizer (<dfn>PQ</dfn>)
       </dt>
 
       <dd>
@@ -2723,8 +2723,8 @@ with these exceptions:
     <section id="9Filter-type-4-Paeth">
       <h2>Filter type 4: Paeth</h2>
 
-      <p>The Paeth filter type computes a simple linear function of the three neighbouring pixels (left, above, upper left), then
-      chooses as predictor the neighbouring pixel closest to the computed value. The algorithm used in this specification is an
+      <p>The Paeth filter type computes a simple linear function of the three neighboring pixels (left, above, upper left), then
+      chooses as predictor the neighboring pixel closest to the computed value. The algorithm used in this specification is an
       adaptation of the technique due to Alan W. Paeth [[Paeth]].</p>
 
       <p>The PaethPredictor function is defined in the code below. The logic of the function and the locations of the bytes
@@ -3723,11 +3723,11 @@ with these exceptions:
             clipping.  This can improve image quality during additional stages of processing and compression. The use of
             undershoot/overshoot has also been used to preserve additional color volume (both light and color) as described in
             [[EBU-R-103]]. [[SMPTE-RP-2077]] describes full range in more detail and includes the mapping
-            from <a>full-range images</a> to <a>narrow-range images</a>.  It also describes protected code values used for 
+            from <a>full-range images</a> to <a>narrow-range images</a>.  It also describes protected code values used for
             Serial Digital Interface (baseband video) carriage.
           </aside>
           <aside class="note">
-            Whilst common practice has seen the storage of full range images using [[ITU-R-BT.709]] transfer function and primaries in 
+            Whilst common practice has seen the storage of full range images using [[ITU-R-BT.709]] transfer function and primaries in
               PNG format, it should be noted that this format is not part of the [[ITU-R-BT.709]] standard.
           </aside>
 
@@ -3805,19 +3805,19 @@ with these exceptions:
           on a comparison of its inherent capabilities versus the original mastering display's capabilites.</p>
 
           <p>mDCv is typically used with the <a>PQ</a>[ITU-R-BT.2100] transfer function
-          and additional <a href="#cLLi-chunk">cLLI</a> metadata and is commonly then called <a>HDR10</a> (PQ with ST 2086 static metadata). 
-          The mDCv chunk may also be included with <a>HLG</a> [[ITU-R-BT.2100]] and <a>SDR image formats</a> (for example 
+          and additional <a href="#cLLi-chunk">cLLI</a> metadata and is commonly then called <a>HDR10</a> (PQ with ST 2086 static metadata).
+          The mDCv chunk may also be included with <a>HLG</a> [[ITU-R-BT.2100]] and <a>SDR image formats</a> (for example
           [[ITU-R-BT.709]]). </p>
 
-          <p>Since mDCv was originally created as supplemental static metadata meant to 
-          optimize the tone-mapping of images on a video display target, a cICp chunk 
-          must accompany the use of mDCv in order to establish the basic characteristics 
-          of the image content. Color Primaries and White Point characteristics 
-          can be derived from cICP chunk formats. 
-          Specific examples of its most common use-cases for images using 
-          both HDR [[ITU-R-BT.2100]] and SDR [[ITU-R-BT.709]] are available in 
-          [[ITU-T-Series-H-Supplement-19]]. The basic (cICp) characteristics plus the supplemental 
-          (mDCv) static metadata may provide valuable information to optimise 
+          <p>Since mDCv was originally created as supplemental static metadata meant to
+          optimize the tone-mapping of images on a video display target, a cICp chunk
+          must accompany the use of mDCv in order to establish the basic characteristics
+          of the image content. Color Primaries and White Point characteristics
+          can be derived from cICP chunk formats.
+          Specific examples of its most common use-cases for images using
+          both HDR [[ITU-R-BT.2100]] and SDR [[ITU-R-BT.709]] are available in
+          [[ITU-T-Series-H-Supplement-19]]. The basic (cICp) characteristics plus the supplemental
+          (mDCv) static metadata may provide valuable information to optimize
           tone-mapping decisions.</p>
 
 
@@ -3825,12 +3825,12 @@ with these exceptions:
           the <span class="chunk">mDCv</span> chunk is present.</p>
 
           <p>For <a>SDR</a> images, if mDCv display min/max luminance are unknown, the default
-          characteristics can be derived from the values in [[ITU-T-Series-H-Supplement-19]] Table 11 or from the relevant <a>SDR</a> specification.  
-          At present, there is no published, standardised method for translating an SDR image signal from its default viewing 
+          characteristics can be derived from the values in [[ITU-T-Series-H-Supplement-19]] Table 11 or from the relevant <a>SDR</a> specification.
+          At present, there is no published, standardized method for translating an SDR image signal from its default viewing
           condition (display luminance and ambient illumination) to that signalled in the mDCV chunk.</p>
-            
+
           <aside class="note">
-            The <a>HLG</a> [[ITU-R-BT.2100]] image format does have published methods for translating the image for both changes in display luminance (within [[ITU-R-BT.2100]]) and 
+            The <a>HLG</a> [[ITU-R-BT.2100]] image format does have published methods for translating the image for both changes in display luminance (within [[ITU-R-BT.2100]]) and
               ambient illumination (within the accompanying report [[ITU-R-BT.2390]]). This may be used with SDR images.
           </aside>
 
@@ -4073,7 +4073,7 @@ with these exceptions:
           <p>The <span class="chunk">cLLi</span> chunk adds static metadata which provides an opportunity
           to optimize tone mapping of the associated content for a target display. This is
           accomplished by tailoring the tone mapping of the content itself to the specific peak brightness
-          capabilities of the target display to prevent clipping. This is most important for HDR image formats that use absolute 
+          capabilities of the target display to prevent clipping. This is most important for HDR image formats that use absolute
           brightness values, such as <a>PQ</a>[ITU-R-BT.2100].  It may also be used with other image formats. </p>
 
           <p>MaxFALL (Maximum Frame Average Light Level) uses a static metadata value to indicate the
@@ -5177,7 +5177,7 @@ with these exceptions:
     <section class="introductory" id="12Introduction">
       <h3>Introduction</h3>
 
-      <p>This clause gives requirements and recommendations for encoder behaviour. A PNG encoder shall produce a PNG datastream
+      <p>This clause gives requirements and recommendations for encoder behavior. A PNG encoder shall produce a PNG datastream
       from a PNG image that conforms to the format specified in the preceding clauses. Best results will usually be achieved by
       following the additional recommendations given here.</p>
     </section>
@@ -5544,7 +5544,7 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
 
       <p>When an <a class="chunk" href="#11sPLT">sPLT</a> chunk is used to provide a suggested palette, it is recommended that the
       encoder use the frequency fields to indicate the relative importance of the palette entries, rather than leave them all zero
-      (meaning undefined). The frequency values are most easily computed as "nearest neighbour" counts, that is, the approximate
+      (meaning undefined). The frequency values are most easily computed as "nearest neighbor" counts, that is, the approximate
       usage of each RGBA palette entry if no dithering is applied. (These counts will often be available "for free" as a
       consequence of developing the suggested palette.) Because the suggested palette includes transparency information, it should
       be computed for the un-<a>composited</a> image.</p>
@@ -5725,8 +5725,8 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
     <section class="introductory" id="13Introduction">
       <h2>Introduction</h2>
 
-      <p>This clause gives some requirements and recommendations for PNG decoder behaviour and viewer behaviour. A viewer presents
-      the decoded PNG image to the user. Since viewer and decoder behaviour are closely connected, decoders and viewers are treated
+      <p>This clause gives some requirements and recommendations for PNG decoder behavior and viewer behavior. A viewer presents
+      the decoded PNG image to the user. Since viewer and decoder behavior are closely connected, decoders and viewers are treated
       together here. The only absolute requirement on a PNG decoder is that it successfully reads any datastream conforming to the
       format specified in the preceding chapters. However, best results will usually be achieved by following these additional
       recommendations.</p>
@@ -5976,7 +5976,7 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
       <p>Where the pixel aspect ratio of the display differs from the aspect ratio of the physical pixel dimensions defined in the
       PNG datastream, viewers are strongly encouraged to rescale images for proper display.</p>
 
-      <p>When the <a class="chunk" href="#11pHYs">pHYs</a> chunk has a unit specifier of 0 (unit is unknown), the behaviour of a
+      <p>When the <a class="chunk" href="#11pHYs">pHYs</a> chunk has a unit specifier of 0 (unit is unknown), the behavior of a
       decoder may depend on the ratio of the two pixels-per-unit values, but should not depend on their magnitudes. For example, a
       <a class="chunk" href="#11pHYs">pHYs</a> chunk containing <code>(ppuX, ppuY, unit) = (2, 1, 0)</code> is equivalent to one
       containing <code>(1000, 500, 0)</code>; both are equally valid indications that the image pixels are twice as tall as they
@@ -6614,7 +6614,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
     <!-- Maintain a fragment named "14Ordering" to preserve incoming links to it -->
 
     <section id="14Ordering">
-      <h2>Behaviour of PNG editors</h2>
+      <h2>Behavior of PNG editors</h2>
 
       <p>Two examples of <a>PNG editors</a> are a program that adds or modifies text chunks, and a program that adds a suggested
       palette to a <a>truecolor</a> PNG datastream. Ordinary image editors are not <a>PNG editors</a> because they usually discard
@@ -6630,7 +6630,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
       editors</a> to discard all unknown chunks, but that is a very unattractive solution. Instead, PNG requires ancillary chunks
       not to have ordering restrictions like this.</p>
 
-      <p>To prevent this type of problem while allowing for future extension, constraints are placed on both the behaviour of
+      <p>To prevent this type of problem while allowing for future extension, constraints are placed on both the behavior of
       <a>PNG editors</a> and the allowed ordering requirements for chunks. The safe-to-copy bit defines the proper handling of
       unrecognized chunks in a datastream that is being modified.</p>
       <!-- <ol start="1"> -->

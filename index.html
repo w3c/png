@@ -841,7 +841,7 @@ with these exceptions:
     <!-- Maintain a fragment named "4Concepts.ColourSpaces" to preserve incoming links to it -->
 
     <section id="4Concepts.ColourSpaces">
-      <h2>Colour spaces</h2>
+      <h2>Color spaces</h2>
 
       <p>The RGB color space in which color samples are situated may be specified in one of four ways:</p>
       <!-- <ol start="1"> -->
@@ -1340,7 +1340,7 @@ with these exceptions:
           <li>Transparency information: <a class="chunk" href="#11tRNS">tRNS</a> (see <a href="#11transinfo"></a>).
           </li>
 
-          <li>Colour space information: <a class="chunk" href="#11cHRM">cHRM</a>, <a class="chunk" href="#11gAMA">gAMA</a>,
+          <li>Color space information: <a class="chunk" href="#11cHRM">cHRM</a>, <a class="chunk" href="#11gAMA">gAMA</a>,
           <a class="chunk" href="#11iCCP">iCCP</a>, <a class="chunk" href="#11sBIT">sBIT</a>, <a class="chunk" href=
           "#11sRGB">sRGB</a>, <a class="chunk" href="#cICP-chunk">cICP</a>, <a class="chunk" href="#mDCv-chunk">mDCv</a> (see
           <a href="#11addnlcolinfo"></a>).
@@ -2298,7 +2298,7 @@ with these exceptions:
     <!-- Maintain a fragment named "6Colour-values" to preserve incoming links to it -->
 
     <section id="6Colour-values">
-      <h2>Colour types and values</h2>
+      <h2>Color types and values</h2>
 
       <p>As explained in <a href="#4Concepts.PNGImage"></a> there are five types of PNG
       <!-- Maintain "3colourType" to preserve incoming links to it -->
@@ -2314,7 +2314,7 @@ with these exceptions:
 
         <tr>
           <th>PNG image type</th>
-          <th>Colour type</th>
+          <th>Color type</th>
         </tr>
 
         <tr>
@@ -2916,7 +2916,7 @@ with these exceptions:
           </tr>
 
           <tr>
-            <td>Colour type</td>
+            <td>Color type</td>
             <td>1 byte</td>
           </tr>
 
@@ -2944,7 +2944,7 @@ with these exceptions:
         values are 1, 2, 4, 8, and 16, although not all values are allowed for all <a>color types</a>. See <a href=
         "#6Colour-values"></a>.</p>
 
-        <p><a>Colour type</a> is a single-byte integer.</p>
+        <p><a>Color type</a> is a single-byte integer.</p>
 
         <p>Bit depth restrictions for each <a>color type</a> are imposed to simplify implementations and to prohibit combinations
         that do not compress well. The allowed combinations are defined in <a href="#table111"></a>.</p>
@@ -2957,7 +2957,7 @@ with these exceptions:
 
           <tr>
             <th>PNG image type</th>
-            <th>Colour type</th>
+            <th>Color type</th>
             <th>Allowed bit depths</th>
             <th>Interpretation</th>
           </tr>
@@ -3136,7 +3136,7 @@ with these exceptions:
           <table id="tRNS-structure" class="simple numbered">
             <tr>
               <th colspan="2">
-                <a>Colour type</a> 0
+                <a>Color type</a> 0
               </th>
             </tr>
 
@@ -3147,7 +3147,7 @@ with these exceptions:
 
             <tr>
               <th colspan="2">
-                <a>Colour type</a> 2
+                <a>Color type</a> 2
               </th>
             </tr>
 
@@ -3168,7 +3168,7 @@ with these exceptions:
 
             <tr>
               <th colspan="2">
-                <a>Colour type</a> 3
+                <a>Color type</a> 3
               </th>
             </tr>
 
@@ -3218,7 +3218,7 @@ with these exceptions:
       <!-- Maintain a fragment named "11addnlcolinfo" to preserve incoming links to it -->
 
       <section id="11addnlcolinfo">
-        <h2>Colour space information</h2>
+        <h2>Color space information</h2>
         <!-- Maintain a fragment named "11cHRM" to preserve incoming links to it -->
 
         <section id="11cHRM">
@@ -3317,7 +3317,7 @@ with these exceptions:
           <p>In fact specifying the desired display output intensity is insufficient. It is also necessary to specify the viewing
           conditions under which the output is desired. For <span class="chunk">gAMA</span> these are the reference viewing
           conditions of the sRGB specification [[SRGB]]. Adjustment for different viewing conditions is normally handled by a
-          Colour Management System. If the adjustment is not performed, the error is usually small. Applications desiring high
+          Color Management System. If the adjustment is not performed, the error is usually small. Applications desiring high
           color fidelity may wish to use an <a class="chunk" href="#11sRGB">sRGB</a>, <a class="chunk" href="#11iCCP">iCCP</a>
           chunk.</p>
 
@@ -3424,7 +3424,7 @@ with these exceptions:
             </caption>
 
             <tr>
-              <th colspan="2">Colour type 0</th>
+              <th colspan="2">Color type 0</th>
             </tr>
 
             <tr>
@@ -3433,7 +3433,7 @@ with these exceptions:
             </tr>
 
             <tr>
-              <th colspan="2">Colour types 2 and 3</th>
+              <th colspan="2">Color types 2 and 3</th>
             </tr>
 
             <tr>
@@ -3452,7 +3452,7 @@ with these exceptions:
             </tr>
 
             <tr>
-              <th colspan="2">Colour type 4</th>
+              <th colspan="2">Color type 4</th>
             </tr>
 
             <tr>
@@ -3466,7 +3466,7 @@ with these exceptions:
             </tr>
 
             <tr>
-              <th colspan="2">Colour type 6</th>
+              <th colspan="2">Color type 6</th>
             </tr>
 
             <tr>
@@ -3676,7 +3676,7 @@ with these exceptions:
             </tr>
 
             <tr>
-              <td>Colour Primaries</td>
+              <td>Color Primaries</td>
               <td>1 byte</td>
             </tr>
 
@@ -3913,7 +3913,7 @@ with these exceptions:
               </tr>
 
               <tr>
-                <td rowspan="3">Colour primaries specified in [[ITU-R-BT.2020]]</td>
+                <td rowspan="3">Color primaries specified in [[ITU-R-BT.2020]]</td>
                 <td>(0.708, 0.292)</td>
                 <td>{ 35400, 14600 }</td>
               </tr>
@@ -3993,7 +3993,7 @@ with these exceptions:
               </tr>
 
               <tr>
-                <td rowspan="3">Colour primaries specified in [[Display-P3]]</td>
+                <td rowspan="3">Color primaries specified in [[Display-P3]]</td>
                 <td>(0.68, 0.32)</td>
                 <td>{ 34000, 16000 }</td>
               </tr>
@@ -4486,7 +4486,7 @@ with these exceptions:
             </caption>
 
             <tr>
-              <th colspan="2">Colour types 0 and 4</th>
+              <th colspan="2">Color types 0 and 4</th>
             </tr>
 
             <tr>
@@ -4495,7 +4495,7 @@ with these exceptions:
             </tr>
 
             <tr>
-              <th colspan="2">Colour types 2 and 6</th>
+              <th colspan="2">Color types 2 and 6</th>
             </tr>
 
             <tr>
@@ -4514,7 +4514,7 @@ with these exceptions:
             </tr>
 
             <tr>
-              <th colspan="2">Colour type 3</th>
+              <th colspan="2">Color type 3</th>
             </tr>
 
             <tr>
@@ -5429,7 +5429,7 @@ cHRM</a> chunk.</p>-->
 
       <p>It is <strong>not</strong> recommended that datastream format converters attempt to convert supplied images to a different
       RGB color space. The data should be stored in the PNG datastream without conversion, and the source primary chromaticities
-      should be recorded if they are known. Colour space transformation at datastream conversion time is a bad idea because of
+      should be recorded if they are known. Color space transformation at datastream conversion time is a bad idea because of
       gamut mismatches and rounding errors. As with <a>gamma</a> conversions, it is better to store the data losslessly and incur
       at most one conversion when the image is finally displayed.</p>
 
@@ -5618,7 +5618,7 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
     <section id="12Filter-selection">
       <h2>Filter selection</h2>
 
-      <p>For images of <a>color type</a> 3 (indexed-color), filter type 0 (None) is usually the most effective. Colour images
+      <p>For images of <a>color type</a> 3 (indexed-color), filter type 0 (None) is usually the most effective. Color images
       with 256 or fewer colors should almost always be stored in <a>indexed-color</a> format; <a>truecolor</a> format is likely to be
       much larger.</p>
 
@@ -6314,7 +6314,7 @@ decoding_exponent = 1.0 / (gamma * display_exponent)
       from XYZ to display RGB, then combining them to produce the overall transformation. The PNG decoder is responsible for
       implementing gamut mapping.</p>
 
-      <p>Decoders running on platforms that have a Colour Management System (CMS) can pass the <a>image data</a>, <a class="chunk"
+      <p>Decoders running on platforms that have a Color Management System (CMS) can pass the <a>image data</a>, <a class="chunk"
       href="#11gAMA">gAMA</a>, and <a class="chunk" href="#11cHRM">cHRM</a> values to the CMS for display or further
       processing.</p>
 
@@ -7611,7 +7611,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
 
       <li>Added the <a class="chunk" href="#cICP-chunk">cICP</a> chunk, Coding-independent code points for video signal type
       identification, to contain image format metadata defined in [[ITU-T-H.273]] which enables PNG to contain [[ITU-R-BT.2100]] High Dynamic Range
-      (<a>HDR</a>) and Wide Colour Gamut (WCG) images.
+      (<a>HDR</a>) and Wide Color Gamut (WCG) images.
 
       </li>
 

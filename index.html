@@ -119,6 +119,10 @@
           href: "https://poynton.ca/GammaFAQ.html",
           date: "1998-08-04"
         },
+        "HDR 10": {
+          title: "HDR10 Media Profile",
+          href: "https://en.wikipedia.org/wiki/HDR10"
+        },
         "HDR-Static-Meta": {
           title: "On the Calculation and Usage of HDR Static Content Metadata",
           authors: ["Smith, Michael D.", "Zink, Michael"],
@@ -3805,9 +3809,10 @@ with these exceptions:
           on a comparison of its inherent capabilities versus the original mastering display's capabilites.</p>
 
           <p>mDCv is typically used with the <a>PQ</a> [[ITU-R-BT.2100]] transfer function
-          and additional <a href="#cLLi-chunk">cLLI</a> metadata and is commonly then called <a>HDR10</a> (PQ with ST 2086 static metadata).
-          The mDCv chunk may also be included with <a>HLG</a> [[ITU-R-BT.2100]] and <a>SDR</a> image formats (for example
-          [[ITU-R-BT.709]]). </p>
+          and additional <a href="#cLLi-chunk">cLLI</a> metadata and is commonly then called 
+          [[?HDR10]] (PQ with ST 2086 static metadata, MaxFALL and MaxCLL).
+          The mDCv chunk may also be included with <a>HLG</a> [[ITU-R-BT.2100]] and 
+          <a>SDR</a> image formats (for example [[ITU-R-BT.709]]). </p>
 
           <p>Since mDCv was originally created as supplemental static metadata meant to
           optimize the tone-mapping of images on a video display target, a cICp chunk

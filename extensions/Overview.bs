@@ -53,7 +53,7 @@ Introduction
     <span class="chunk">pCAL</span>,
     <span class="chunk">sCAL</span>,
     <span class="chunk">gIFg</span>,
-    <span class="chunk">gIFs</span>,
+    <span class="chunk">gIFx</span>,
     <span class="chunk">sTER</span>, and
     <span class="chunk">fRAc</span> chunks,
     plus the deprecated <span class="chunk">gIFt</span> chunk.

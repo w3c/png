@@ -7529,10 +7529,47 @@ will need to be replaced by copies of lines 17-23, but processing background ins
   <section id="F-ChangeList" class="appendix informative">
     <h2 class="Annex">Changes</h2>
 
+    <h3 id="changes-20230921">Changes since the <a href="https://www.w3.org/TR/2023/CR-png-3-20230921/">Candidate Recommendation Snapshot of 21 September 2023 (Third Edition)</a></h3>
+
+    <ul>
+      <!-- to 20 Feb 2024 -->
+      <li>Clarified which metadata forms part of HDR10</li>
+      <li>Updated link to latest version of ITU-R BT.2390</li>
+      <li>Noted that currently there is no published standard to adapt an SDR image from default viewing conditions (display luminance and ambient illumination) to those given in <span class="chunk">mDCV</span></li>
+      <li>Noted that the adaptation of BT.2100 HLG images to differing viewing conditions, given in BT.2390, may also be used with SDR images.</li>
+      <li>Noted that tone mapping, to adjust the luminance levels given in <span class="chunk">cLLi</span> to those of a target display to prevent clipping, is particularly important for formats such as BT.2100 PQ which use absolute luminance.</li>
+      <li>Noted that use of full-range BT.709 values, while common, is not part of the BT.709 standard</li>
+      <li>Added mention of protected code values for Serial Digital Interface (baseband video) in description of narrow-range and full-range video</li>
+      <li>Added reference to ITU-R-BT.2390</li>
+      <li>Changed description of <span class="chunk">mDCv</span> to focus on BT.2100 PQ, as use with other formats is currently rare</li>
+      <li>Clarified matching requirements for 16-bit <span class="chunk">tRNS</span> matching</li>
+      <li>Used more precise "primary chromaticities" rather than just "primaries"</li>
+      <li>Added requirement that <span class="chunk">mDCv</span> requires an accompanying <span class="chunk">cICP</span> to fit with expectations of existing HDR10 workflows</li>
+      <li>Better explanation of <code>Video Full Range Flag</code></li>
+      <li>Clarified ordering and encoding of sequence numbers, clarified <span class="chunk">fdAT</span> concatenation is in order of sequence number</li>
+      <li>Added missing mentions of <span class="chunk">cICP</span> in descriptions of related chunks</li>
+      <li>Fully specified the ordering and byte-order of fields in <span class="chunk">mDCv</span></li>
+      <li>Added missing definition of PNG two-byte unsigned integer</li>
+      <li>Used Display P3, rather than sRGB, in SDR <span class="chunk">mDCv</span> examples</li>
+      <li>Added Chris Needham as co-author</li>
+      <li>Updated examples for <span class="chunk">mDCv</span>, added reference to SMPTE-ST-2086.</li>
+      <li>Added reference to Display P3</li>
+      <li>Explicitly mentioned that the concatenated data from <span class="chunk">IDAT</span> and <span class="chunk">fdAT</span> may include chunks with zero-length data</li>
+      <li>Assorted non-substantive improvements to markup, styling, internal cross-linking, correction of typos, punctuation, grammar, consistent use of US English, etc</li>
+    </ul>
+
     <h3 id="changes-20230720">Changes since the <a href="https://www.w3.org/TR/2023/WD-png-3-20230720/">
       Working Draft of 20 July 2023 (Third Edition)</a></h3>
 
     <ul>
+      <!-- to 21 Sept 2023 -->
+      <li>Clarified descriptions of <span class="chunk">mDCv</span> and <span class="chunk">cLLi</span></li>
+      <li>Added note to Security Considerations about potentially malicious data after <span class="chunk">IEND</span>.</li>
+      <li>Clarified that <a href="#cLLi-chunk" class="chunk">cLLi</a> is for HDR content</li>
+      <li>Added an informative reference to Smith &amp; Zink "On the Calculation and Usage of HDR Static Content Metadata"</li>
+      <li>Added an informative reference to CTA-861.3-A for static HDR metadata</li>
+      <li>Fixed broken reference to ITU-R BT.2100 </li>
+      <li>Updated reference to SMPTE-ST-2067-21</li>
       <!-- to 26 Aug 2023 -->
       <li>Added guidance on calculating MaxCLL and MaxFALL values</li>
       <li>Added example (live streaming) where <a href="#cLLi-chunk" class="chunk">cLLi</a> could not be pre-calculated</li>

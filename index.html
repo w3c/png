@@ -3749,7 +3749,7 @@ with these exceptions:
           </ul>
 
 
-          <aside class="example">
+          <aside class="example" id="ex-cICP-BT.2100-PQ-full">
             <span class="chunk">cICP</span> chunk field values for a <a>full-range image</a> that uses the color primaries and the
             <a>PQ</a> <a>transfer function</a> specified at [[ITU-R-BT.2100]]:
 
@@ -3759,7 +3759,7 @@ with these exceptions:
             <p>(Four 1-byte unsigned integers, in hexadecimal)</p>
           </aside>
 
-          <aside class="example">
+          <aside class="example" id="ex-cICP-BT.2100-HLG-full">
             <span class="chunk">cICP</span> chunk field values for a <a>full-range image</a> that uses the color primaries and the
             <a>HLG</a> <a>transfer function</a> specified at [[ITU-R-BT.2100]]:
 
@@ -3769,7 +3769,7 @@ with these exceptions:
             <p>(Four 1-byte unsigned integers, in hexadecimal)</p>
           </aside>
 
-          <aside class="example">
+          <aside class="example" id="ex-cICP-BT.709-narrow">
             <span class="chunk">cICP</span> chunk field values for a <a>narrow-range image</a>
             that uses the color primaries and the <a>transfer function</a> defined at [[ITU-R-BT.709]]:
 
@@ -3778,6 +3778,23 @@ with these exceptions:
 </pre>
             <p>(Four 1-byte unsigned integers, in hexadecimal)</p>
           </aside>
+
+          <p id="display-p3">In a similar way to the use of the 
+          <a href="#srgb-standard-colour-space"><span class="chunk">sRGB</span></a> chunk
+          to compactly signal an sRGB image, <span class="chunk">cICP</span> can be used
+          to compactly signal a Display P3 image [[Display-P3]].
+          </p>
+
+          <aside class="example" id="ex-cICP-Display-P3-full">
+            <span class="chunk">cICP</span> chunk field values for a <a>full-range image</a>
+            that uses the color primaries and the <a>transfer function</a> defined by [[Display-P3]]:
+
+            <pre>
+<!--12 13 0 1 -->0C 0D 00 01
+</pre>
+            <p>(Four 1-byte unsigned integers, in hexadecimal)</p>
+          </aside>
+
         </section>
         <!-- Maintain a fragment named "mDCv-chunk" to preserve incoming links to it -->
 
@@ -3804,13 +3821,13 @@ with these exceptions:
           <a>SDR</a> image formats (for example [[ITU-R-BT.709]]). </p>
 
           <p>Since mDCv was originally created as supplemental static metadata meant to
-          optimize the tone-mapping of images on a video display target, a cICp chunk
+          optimize the tone-mapping of images on a video display target, a cICP chunk
           must accompany the use of mDCv in order to establish the basic characteristics
           of the image content. Color Primaries and White Point characteristics
           can be derived from cICP chunk formats.
           Specific examples of its most common use-cases for images using
           both HDR [[ITU-R-BT.2100]] and SDR [[ITU-R-BT.709]] are available in
-          [[ITU-T-Series-H-Supplement-19]]. The basic (cICp) characteristics plus the supplemental
+          [[ITU-T-Series-H-Supplement-19]]. The basic (cICP) characteristics plus the supplemental
           (mDCv) static metadata may provide valuable information to optimize
           tone-mapping decisions.</p>
 

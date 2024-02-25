@@ -789,8 +789,8 @@ with these exceptions:
 
         <!-- Maintain a fragment named "3PNGimage" to preserve incoming links to it -->
         <dt><dfn id="3PNGimage">PNG image</dfn></dt>
-        <dd>The <i>PNG image</i> is obtained from the reference image by a series of transformations: alpha separation,
-        <a>indexing</a>, <a>RGB merging</a>, alpha compaction, and <a>sample depth scaling</a>. Five types of PNG image are defined
+        <dd>The <i>PNG image</i> is obtained from the reference image by a series of transformations: <a>alpha separation</a>,
+        <a>indexing</a>, <a>RGB merging</a>, <a>alpha compaction</a>, and <a>sample depth scaling</a>. Five types of PNG image are defined
         (see <a href="#6Colour-values"></a>). (If the PNG encoder actually transforms the source image directly into the PNG image,
         and the source image format is already similar to the PNG image format, the encoder may be able to avoid doing some of
         these transformations.) Although not all sample depths in the range 1 to 16 bits are explicitly supported in the PNG image,
@@ -881,7 +881,7 @@ with these exceptions:
         indexing or ( [RGB merging] [alpha compaction] )
         sample depth scaling
 </pre>
-        <p>When every pixel is either fully transparent or fully opaque, the alpha separation, alpha compaction, and
+        <p>When every pixel is either fully transparent or fully opaque, the <a>alpha separation</a>, <a>alpha compaction</a>, and
         <a>indexing</a> transformations can cause the recovered reference image to have an alpha sample depth different from the
         original reference image, or to have no alpha channel. This has no effect on the degree of opacity of any pixel. The two
         reference images are considered equivalent, and the transformations are considered lossless. Encoders that nevertheless
@@ -900,8 +900,8 @@ with these exceptions:
         </figure>
       </section>
       <!-- Maintain a fragment named "4Concepts.Implied-alpha" to preserve incoming links to it -->
-      <!-- Maintain a fragment named "3alphaSeparation" to preserve incoming links to it -->
       <section id="4Concepts.Implied-alpha">
+        <!-- Maintain a fragment named "3alphaSeparation" to preserve incoming links to it -->
         <h2><dfn id="3alphaSeparation">Alpha separation</dfn></h2>
 
         <p>If all alpha samples in a reference image have the maximum value, then the alpha channel may be omitted, resulting in an
@@ -955,9 +955,10 @@ with these exceptions:
         blue samples are equal, then these three channels may be merged into a single greyscale channel.</p>
       </section>
 
-      <section>
-        <!-- Maintain a fragment named "4Concepts.Alpha-indexing" to preserve incoming links to it -->
-        <h2 id="4Concepts.Alpha-indexing"><dfn id="3alphaCompaction">Alpha compaction</dfn></h2>
+      <!-- Maintain a fragment named "4Concepts.Alpha-indexing" to preserve incoming links to it -->
+      <section id="4Concepts.Alpha-indexing">
+        <!-- Maintain a fragment named "3alphaCompaction" to preserve incoming links to it -->
+        <h2><dfn id="3alphaCompaction">Alpha compaction</dfn></h2>
 
         <p>For non-indexed images, if there exists an RGB (or greyscale) value such that all pixels with that value are fully
         transparent while all other pixels are fully opaque, then the alpha channel can be represented more compactly by merely
@@ -2355,9 +2356,9 @@ with these exceptions:
     <section id="6AlphaRepresentation">
       <h2>Alpha representation</h2>
 
-      <p>In a PNG datastream transparency may be represented in one of four ways, depending on the PNG image type (see <a href="#3alphaSeparation"></a> and <a href="#3alphaCompaction"></a>).</p>
-      <!-- <ol start="1"> -->
+      <p>In a PNG datastream transparency may be represented in one of four ways, depending on the PNG image type (see <a href="#4Concepts.Implied-alpha"></a> and <a href="#4Concepts.Alpha-indexing"></a>).</p>
 
+      <!-- <ol start="1"> -->
       <ol>
         <li>
           <a>Truecolor with alpha</a>, <a>greyscale with alpha</a>: an alpha channel is part of the image array.

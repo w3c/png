@@ -3702,7 +3702,9 @@ with these exceptions:
 
           <p>The <code>Video Full Range Flag</code> value MUST be either <code>0</code> or <code>1</code>. A value of 1 specifies
             that the content has a full range scaling. This is the usual value for RGB images. A value of 0 specifies that the
-            content has a limited-range scaling factor.</p>
+            content has a limited-range scaling factor.  The term "Video" is used because H.273 was originally created for moving images.
+            Although H.273 was created for moving images it has been common to use the CICP values from H.273 in still images 
+            (such as HEIF and AVIF)</p>
 
           <aside class="note">
             If <code>Video Full Range Flag</code> value is <code>1</code>, then the image is a <a>full-range image</a>. Typically,

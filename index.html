@@ -3727,6 +3727,17 @@ with these exceptions:
               PNG format, it should be noted that this format is not part of the [[ITU-R-BT.709]] standard.
           </aside>
 
+          <p>If <code>Video Full Range Flag</code> is <code>0</code>
+            (a <a>narrow-range image</a>), recommended practice 
+            is to define transfer functions 
+            such as EOTF or inverse OETF 
+            over the extended range, 
+            so as to include negative values.
+            This is done as follows:
+          </p>
+
+          <pre>out = sign(in) * TransferFunction(abs(in))</pre>
+
           <p>The <span class="chunk">cICP</span> chunk MUST come before the <a class="chunk" href="#11PLTE">PLTE</a> and <a class=
           "chunk" href="#11IDAT">IDAT</a> chunks.</p>
 

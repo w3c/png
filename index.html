@@ -870,6 +870,49 @@ with these exceptions:
       to be applied (see <a href="#C-GammaAppendix"></a>). However, color-aware applications will prefer one of the first three
       methods, while color-unaware applications will typically ignore all four methods.</p>
 
+      <p>Below is a list of color flags. If a single image is populated with multiple color flags, the uppermost chunk(s) in the 
+      heirarchy should take precedence and the lower most chunk(s) should be ignored:        
+
+        <table id="color-chunk-precendence" class="numbered simple">
+          <caption>
+            Color Chunk Priority
+          </caption>
+
+          <tr>
+            <th>Name</th>
+            <th>Priority</th>
+          </tr>
+
+          <tr>
+            <td><a href="#cICP-chunk" class="chunk">cICP</a></td>
+            <td>1</td>
+          </tr>
+
+          <tr>
+            <td><a class="chunk" href="#11iCCP">iCCP</a></td>
+            <td>2</td>
+          </tr>
+
+          <tr>
+            <td><span class="chunk">sRGB</span></td>
+            <td>3</td>
+
+            <tr>
+              <td><a class="chunk" href= "#11cHRM">cHRM and  <a class="chunk" href="#11gAMA">gAMA</a></a></td>
+              <td>4</td>
+            </tr>
+
+          </tr>
+
+        
+        </table>
+
+
+
+
+
+
+
       <p><a>Gamma</a> correction is not applied to the alpha channel, if present. Alpha samples are always full-range and represent 
       a linear fraction of full opacity.</p>
 

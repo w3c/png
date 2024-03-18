@@ -25,6 +25,12 @@ Used to recompress PNG, including optionally reducing bit depth, changing color 
 
 Depends on libpng. Originally a fork of pngcrush by Cosmin Truta, now has a different feature set and has added GIF and BMP support.
 
+### OxiPNG
+
+[Homepage](https://github.com/shssoichiro/oxipng/blob/master/README.md) and maintained on [GitHub](https://github.com/shssoichiro/oxipng)
+
+PNG compression optimizer, written in Rust. [Recognizes `cICP` chunks and does not discard them](https://github.com/shssoichiro/oxipng/issues/538#issuecomment-1644266228).
+
 ### Minimum viable PNG encoder, in Python
 
 [Homepage](https://www.da.vidbuchanan.co.uk/blog/hello-png.html) and maintained [on GitHub](https://github.com/DavidBuchanan314/hello_png).

@@ -870,8 +870,9 @@ with these exceptions:
       to be applied (see <a href="#C-GammaAppendix"></a>). However, color-aware applications will prefer one of the first three
       methods, while color-unaware applications will typically ignore all four methods.</p>
 
-      <p>Below is a list of color flags. If a single image is populated with multiple color flags, the uppermost chunk(s) in the 
-      heirarchy should take precedence and the lower most chunk(s) should be ignored:</p>
+      <p><a href="#color-chunk-precendence"></a> is a list of chunk types that provide color space information,
+      each with an associated Priority number. If a single image contains more than one of these chunk types,
+      the chunk with the lowest Priority number should take precedence and any higher-numbered chunk types should be ignored.</p>
 
       <table id="color-chunk-precendence" class="numbered simple">
         <caption>
@@ -879,7 +880,7 @@ with these exceptions:
         </caption>
 
         <tr>
-          <th>Name</th>
+          <th>Chunk Type</th>
           <th>Priority</th>
         </tr>
 
@@ -894,7 +895,7 @@ with these exceptions:
         </tr>
 
         <tr>
-          <td><span class="chunk" href="#11sRGB">sRGB</span></td>
+          <td><a class="chunk" href="#11sRGB">sRGB</a></td>
           <td>3</td>
         </tr>
 

@@ -7713,36 +7713,67 @@ will need to be replaced by copies of lines 17-23, but processing background ins
     Second Edition)</h3>
 
     <ul>
-      <!-- to 5 Apr 2022 -->
+      <!-- to 22 March 2024 -->
 
-      <li>The three previously defined, but unofficial, chunks for APNG have been added. This brings the PNG specification
-      into alignment with widely deployed industry practice.
+      <li>
+        <p>The three previously defined, but unofficial, chunks for Animated PNG (APNG) have been added:</p>
+
+        <ul>
+          <li><a href="#acTL-chunk" class="chunk">acTL</a> Animation Control Chunk</li>
+          <li><a href="#fcTL-chunk" class="chunk">fcTL</a> Frame Control Chunk</li>
+          <li><a href="#fdAT-chunk" class="chunk">fdAT</a> Frame Data Chunk</li>
+        </ul>
+        
+        <p>This brings the PNG specification into alignment with widely deployed industry practice.</p>
       </li>
 
-      <li>Added the <a class="chunk" href="#cICP-chunk">cICP</a> chunk, Coding-independent code points for video signal type
-      identification, to contain image format metadata defined in [[ITU-T-H.273]] which enables PNG to contain [[ITU-R-BT.2100]] High Dynamic Range
-      (<a>HDR</a>) and Wide Color Gamut (WCG) images.
-
+      <li>
+        <p>Added the <a class="chunk" href="#cICP-chunk">cICP</a> chunk, Coding-independent code points for video signal type
+          identification, to contain image format metadata defined in [[ITU-T-H.273]] which enables PNG to contain [[ITU-R-BT.2100]] High Dynamic Range
+          (<a>HDR</a>) and Wide Color Gamut (WCG) images.</p>
       </li>
 
-      <li>The previously defined <a class="chunk" href="#eXIf">eXIf</a> chunk has been moved from the PNG-Extensions document
-      [[PNG-EXTENSIONS]] into the main body of this specification, to reflect it's widespread use.
+      <li>
+        <p>The previously defined <a class="chunk" href="#eXIf">eXIf</a> chunk has been moved from the PNG-Extensions document
+        [[PNG-EXTENSIONS]] into the main body of this specification, to reflect it's increasing use.</p>
       </li>
 
-      <li>Added the <a class="chunk" href="#mDCv-chunk">mDCv</a> chunk, which contains metadata about the display used in
-      mastering. This enabled more accurate color matching on heterogeneous platforms
+      <li>
+        <p>To help with tonemapping HDR content, added the <a class="chunk" href="#mDCv-chunk">mDCv</a> chunk, which contains metadata about the display used in
+          mastering, and <a href="#cLLi-chunk" class="chunk">cLLi</a>, which contains metadata about peak and average light levels. This enabled more accurate color matching on heterogeneous platforms</p>
       </li>
 
-      <li>Incorporation of all <a href="https://www.w3.org/2003/11/REC-PNG-20031110-errata">PNG Second Edition Errata</a>
+      <li>
+        <p>Clarified that the <a href="#11iCCP" class="chunk">iCCP</a> chunk, which contains an ICC profile, can contain profiles conforming to any version of the ICC.1 specification. PNG Second Edition only referenced the then-current v2 of ICC.1, although it has since become industry practice to also used higher versions.</p>
       </li>
 
-      <li>Various editorial clarifications in response to community feedback</li>
+      <li>
+        <p>Clarified handling of out-of-range indexes, for indexed-color PNG</p>
+      </li>
 
-      <li>References updated to latest versions</li>
+      <li>
+        <p>Clarified error recovery for unknown and invalid ancillary chunks</p>
+      </li>
 
-      <li>Markup corrections and link fixes</li>
+      <li>
+        <p>Incorporation of all <a href="https://www.w3.org/2003/11/REC-PNG-20031110-errata">PNG Second Edition Errata</a>. Notably, clarified that PNG images with unknown gamma value, when embedded in formats such as HTML or SVG, must be treated as <a href="https://drafts.csswg.org/css-color-4/#untagged">untagged images</a></p>
+      </li>
 
-      <li>Document source reformatted to use ReSpec</li>
+      <li>
+        <p>Various editorial clarifications in response to community feedback</p>
+      </li>
+
+      <li>
+        <p>References updated to latest versions</p>
+      </li>
+
+      <li>
+        <p>Markup corrections and link fixes</p>
+      </li>
+
+      <li>
+        <p>Document source reformatted to use ReSpec</p>
+      </li>
     </ul>
 
     <h3>Changes between First and Second Editions</h3>

@@ -3339,8 +3339,9 @@ with these exceptions:
           <p>The <span class="chunk">cHRM</span> chunk is allowed in all PNG datastreams, although it is of little value for
           <a>greyscale</a> images.</p>
 
-          <p>An <a class="chunk" href="#11sRGB">sRGB</a>, <a class="chunk" href="#11iCCP">iCCP</a> or <a href="#cICP-chunk" class="chunk">cICP</a> chunk, when present and
-          recognized, overrides the <span class="chunk">cHRM</span> chunk.</p>
+          <p>This chunk is ignored 
+            unless it is the <a href="#color-chunk-precendence">highest-precedence color chunk</a>
+            understood by the decoder.</p>
         </section>
         <!-- Maintain a fragment named "11gAMA" to preserve incoming links to it -->
 
@@ -3377,8 +3378,9 @@ with these exceptions:
 
           <p>See <a href="#12Encoder-gamma-handling"></a> and <a href="#13Decoder-gamma-handling"></a> for more information.</p>
 
-          <p>An <a class="chunk" href="#srgb-standard-colour-space">sRGB</a>, <a class="chunk" href="#11iCCP">iCCP</a> or <a href="#cICP-chunk" class="chunk">cICP</a> chunk,
-          when present and recognized, overrides the <span class="chunk">gAMA</span> chunk.</p>
+          <p>This chunk is ignored 
+            unless it is the <a href="#color-chunk-precendence">highest-precedence color chunk</a>
+            understood by the decoder.</p>
         </section>
         <!-- Maintain a fragment named "11iCCP" to preserve incoming links to it -->
 
@@ -3428,11 +3430,13 @@ with these exceptions:
           for <a>greyscale</a> images (<a>color types</a> 0 and 4). A PNG encoder that writes the <span class="chunk">iCCP</span> chunk
           is encouraged to also write <a class="chunk" href="#11gAMA">gAMA</a> and <a class="chunk" href="#11cHRM">cHRM</a> chunks
           that approximate the ICC profile, to provide compatibility with applications that do not use the <span class=
-          "chunk">iCCP</span> chunk. When the <span class="chunk">iCCP</span> chunk is present, PNG decoders that recognize it and
-          are capable of color management shall ignore the <a class="chunk" href="#11gAMA">gAMA</a> and <a class="chunk" href=
-          "#11cHRM">cHRM</a> chunks and use the <span class="chunk">iCCP</span> chunk instead and interpret it according to
-          [[ICC]]. PNG decoders that are used in an environment that is incapable of full-fledged color management should use the
-          <a class="chunk" href="#11gAMA">gAMA</a> and <a class="chunk" href="#11cHRM">cHRM</a> chunks if present.</p>
+          "chunk">iCCP</span> chunk.</p> 
+          
+          <p>
+            This chunk is ignored 
+            unless it is the <a href="#color-chunk-precendence">highest-precedence color chunk</a>
+            understood by the decoder.
+          </p>
 
           <p>Unless a <a class="chunk" href="#cICP-chunk">cICP</a> chunk exists, a PNG datastream should contain at most one
           embedded profile, whether specified explicitly with an <span class="chunk">iCCP</span> or implicitly with an <a class=
@@ -3677,12 +3681,11 @@ with these exceptions:
             </tr>
           </table>
 
-          <p>When the <span class="chunk">sRGB</span> chunk is present, it is recommended that decoders that recognize it and are
-          capable of color management ignore the <a class="chunk" href="#11gAMA">gAMA</a> and <a class="chunk" href=
-          "#11cHRM">cHRM</a> chunks and use the <span class="chunk">sRGB</span> chunk instead. Decoders that recognize the
-          <span class="chunk">sRGB</span> chunk but are not capable of color management are recommended to ignore the <a class=
-          "chunk" href="#11gAMA">gAMA</a> and <a class="chunk" href="#11cHRM">cHRM</a> chunks, and use the values given above as if
-          they had appeared in <a class="chunk" href="#11gAMA">gAMA</a> and <a class="chunk" href="#11cHRM">cHRM</a> chunks.</p>
+          <p>
+            This chunk is ignored 
+            unless it is the <a href="#color-chunk-precendence">highest-precedence color chunk</a>
+            understood by the decoder.
+          </p>
 
           <p>It is recommended that the <a class="chunk" href="#11sRGB">sRGB</a> and <a class="chunk" href="#11iCCP">iCCP</a>
           chunks do not appear simultaneously in a PNG datastream.</p>
@@ -3788,26 +3791,10 @@ with these exceptions:
           <p>The <span class="chunk">cICP</span> chunk MUST come before the <a class="chunk" href="#11PLTE">PLTE</a> and <a class=
           "chunk" href="#11IDAT">IDAT</a> chunks.</p>
 
-          <p>When the <span class="chunk">cICP</span> chunk is present, decoders that recognize it SHALL ignore the following
-          chunks:</p>
-
-          <ul>
-            <li>
-              <a class="chunk" href="#11iCCP">iCCP</a>
-            </li>
-
-            <li>
-              <a class="chunk" href="#11gAMA">gAMA</a>
-            </li>
-
-            <li>
-              <a class="chunk" href="#11cHRM">cHRM</a>
-            </li>
-
-            <li>
-              <a class="chunk" href="#11sRGB">sRGB</a>
-            </li>
-          </ul>
+          <p>
+            This chunk, if understood by the decoder, is the 
+            <a href="#color-chunk-precendence">highest-precedence color chunk</a>.
+          </p>
 
 
           <aside class="example" id="ex-cICP-BT.2100-PQ-full">

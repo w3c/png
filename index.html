@@ -870,7 +870,7 @@ with these exceptions:
       to be applied (see <a href="#C-GammaAppendix"></a>). However, color-aware applications will prefer one of the first three
       methods, while color-unaware applications will typically ignore all four methods.</p>
 
-      <p><a href="#color-chunk-precendence"></a> is a list of chunk types that provide color space information,
+      <p><a href="11.3.2"></a> is a list of chunk types that provide color space information,
       each with an associated Priority number. If a single image contains more than one of these chunk types,
       the chunk with the lowest Priority number should take precedence and any higher-numbered chunk types should be ignored.</p>
 
@@ -3262,6 +3262,9 @@ with these exceptions:
         <h2>Color space information</h2>
         <!-- Maintain a fragment named "11cHRM" to preserve incoming links to it -->
 
+        <p>Please refer to Section <a href="#4Concepts.ColourSpaces"></a> and <a href="#color-chunk-precendence"></a>
+          to determine which color space takes precedence.</p>
+
         <section id="11cHRM">
           <h2><span class="chunk">cHRM</span> Primary chromaticities and white point</h2>
           <!-- <p>The four decimal values below correspond to the four-byte cHRM chunk type field:</p> -->
@@ -3339,8 +3342,8 @@ with these exceptions:
           <p>The <span class="chunk">cHRM</span> chunk is allowed in all PNG datastreams, although it is of little value for
           <a>greyscale</a> images.</p>
 
-          <p>An <a class="chunk" href="#11sRGB">sRGB</a>, <a class="chunk" href="#11iCCP">iCCP</a> or <a href="#cICP-chunk" class="chunk">cICP</a> chunk, when present and
-          recognized, overrides the <span class="chunk">cHRM</span> chunk.</p>
+          <p>Please refer to Section <a href="#4Concepts.ColourSpaces"></a> and <a href="#color-chunk-precendence"></a>
+            to determine which color space takes precedence.</p>
         </section>
         <!-- Maintain a fragment named "11gAMA" to preserve incoming links to it -->
 
@@ -3377,8 +3380,8 @@ with these exceptions:
 
           <p>See <a href="#12Encoder-gamma-handling"></a> and <a href="#13Decoder-gamma-handling"></a> for more information.</p>
 
-          <p>An <a class="chunk" href="#srgb-standard-colour-space">sRGB</a>, <a class="chunk" href="#11iCCP">iCCP</a> or <a href="#cICP-chunk" class="chunk">cICP</a> chunk,
-          when present and recognized, overrides the <span class="chunk">gAMA</span> chunk.</p>
+          <p>Please refer to Section <a href="#4Concepts.ColourSpaces"></a> and <a href="#color-chunk-precendence"></a>
+            to determine which color space takes precedence.</p>
         </section>
         <!-- Maintain a fragment named "11iCCP" to preserve incoming links to it -->
 
@@ -3437,6 +3440,10 @@ with these exceptions:
           <p>Unless a <a class="chunk" href="#cICP-chunk">cICP</a> chunk exists, a PNG datastream should contain at most one
           embedded profile, whether specified explicitly with an <span class="chunk">iCCP</span> or implicitly with an <a class=
           "chunk" href="#srgb-standard-colour-space">sRGB</a> chunk.</p>
+
+          <p>Please refer to Section <a href="#4Concepts.ColourSpaces"></a> and <a href="#color-chunk-precendence"></a>
+            to determine which color space takes precedence.</p>
+
         </section>
         <!-- Maintain a fragment named "11sBIT" to preserve incoming links to it -->
 

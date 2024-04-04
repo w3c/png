@@ -514,7 +514,7 @@
                 </section>
 
                 <section id="cicp">
-                    <h2>2. Coding Independent Code Points (CICP)</h2>
+                    <h2>2. Coding Independent Code Points (CICP) from ITU-R H.273</h2>
                     <p>
                         Originally developed for color space signalling in video workflows,
                         CICP is also used in image formats such as HEIF, AVIF and JPEG-XL.
@@ -551,16 +551,20 @@
                         <img src="./img/Affinity-23bit-HDR-PNG.png" alt="what's new in Affinity apps">
                         <figcaption>Affinity apps respect 'cICP' when importing and exporting HDR PNG</figcaption>
                     </figure>
+                    <p>Implemented in <a href="https://mediaarea.net/en/MediaInfo"><strong>MediaInfo from MediaArea</strong></a></p>
+                    <ul>
+                        <li><a href="https://mediaarea.net/MediaInfo/ChangeLog">MediaInfo is used throughout the broadcast industry and via the CLI version within softaware. MediaInfo Parses PNG 3rd Edition cICP, mDCv, cLLi metadata into logical values</a></li>
+                    </ul>
                     <figure>
                         <img src="./img/MediaInfo.png" alt="what's new in MediaInfo">
-                        <figcaption>MediaInfo parses 'cICP' from PNGs</figcaption>
+                        <figcaption>MediaInfo parsing 'cICP', 'mDCv', and 'cLLi' from PNGs</figcaption>
                     </figure>
                     <p>Implemented in <a href="https://www.pixelmator.com/pro/">Pixelmator Pro 3.5 <strong></strong></a> and <a href="https://www.pixelmator.com/photomator/"><strong></strong>Photomator 3.3</a> image editors.</p>
                     <p>Implemented in <strong>Adobe Photoshop, Lightroom and Camera Raw, MacOS ProApps, Compressor, Final Cut Pro</strong></p>
                     <!-- need version details and, preferably, link -->
                     <p>Implemented in <strong>libavif</strong> for export of AVIF to PNG and import from PNG into AVIF:</p>
                     <ul>
-                        <li><a href="https://github.com/AOMediaCodec/libavif/pull/1422">Write primaries and transfer characteritics info in decoded png</a></li>
+                        <li><a href="https://github.com/AOMediaCodec/libavif/pull/1422">Writes primaries and transfer characteritics info in decoded png</a></li>
                     </ul>
     
                     <section class="tests" id="cicp-chunk">
@@ -703,6 +707,9 @@
                         and thus the results of tone-mapping
                         <em>cannot be verified in an automatic test</em>.
                     </p>
+                    <p>
+                        MediaInfo (see cICP section) also parses the mDCv chunk</em>.
+                    </p>
                 </section>
 
                 <section id="light">
@@ -750,6 +757,9 @@
                         Currently there is no mandated tone mapping operator
                         and thus the results of tone-mapping
                         <em>cannot be verified in an automatic test</em>.
+                    </p>
+                    <p>
+                        MediaInfo (see cICP section) also parses the cLLi chunk</em>.
                     </p>
                 </section>
 

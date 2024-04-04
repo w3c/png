@@ -517,8 +517,10 @@
                     <h2>2. Coding Independent Code Points (CICP)</h2>
                     <p>
                         Originally developed for color space signalling in video workflows,
-                        CICP is also used in image formats such as AVIF and JPEG-XL.
-                        CICP is more compact, but less flexible, than ICC profiles.
+                        CICP is also used in image formats such as HEIF, AVIF and JPEG-XL.
+                        CICP is more compact, and designed to signal use of specific mathematically represented
+                        color primaries, transfer functions, and matrix coefficients, and signal quantizations vs 
+                        ICC profiles were originally created to matching color between different mediums (display, print, scan).
                         PNG Third Edition adds support for CICP metadata.
                     </p>
                     <p>
@@ -546,8 +548,12 @@
                         <img src="./img/Affinity-23bit-HDR-PNG.png" alt="what's new in Affinity apps">
                         <figcaption>Affinity apps respect 'cICP' when importing and exporting HDR PNG</figcaption>
                     </figure>
+                    <figure>
+                        <img src="./img/MediaInfo.png" alt="what's new in MediaInfo">
+                        <figcaption>MediaInfo parses 'cICP' from PNGs</figcaption>
+                    </figure>
                     <p>Implemented in <a href="https://www.pixelmator.com/pro/">Pixelmator Pro 3.5 <strong></strong></a> and <a href="https://www.pixelmator.com/photomator/"><strong></strong>Photomator 3.3</a> image editors.</p>
-                    <p>Implemented in <strong>Adobe Photoshop, Lightroom and Camera Raw</strong></p>
+                    <p>Implemented in <strong>Adobe Photoshop, Lightroom and Camera Raw, MacOS ProApps, Compressor, Final Cut Pro</strong></p>
                     <!-- need version details and, preferably, link -->
                     <p>Implemented in <strong>libavif</strong> for export of AVIF to PNG and import from PNG into AVIF:</p>
                     <ul>

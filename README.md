@@ -15,6 +15,7 @@ and [updated](https://www.w3.org/TR/2023/WD-png-3-20230720/) on 20 July 2023
 
 PNG Third Edition became a [Candidate Recommendation](https://www.w3.org/TR/2023/CR-png-3-20230921/) on 21 September 2023 ([Changes since previous publication](https://www.w3.org/TR/2023/CR-png-3-20230921/#changes-20230720))
 
-There is an [Explainer](https://github.com/w3c/PNG-spec/blob/main/Third_Edition_Explainer.md) for features new in the Third Edition.
+There is an [Explainer](https://github.com/w3c/PNG-spec/blob/main/Third_Edition_Explainer.md) for features new in the Third Edition,
+and an [Implementation Report](https://w3c.github.io/PNG-spec/Implementation_Report_3e/).
 
 The [PNG Extensions specification](https://w3c.github.io/PNG-spec/extensions/Overview.html) is also here.

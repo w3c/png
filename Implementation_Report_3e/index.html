@@ -527,13 +527,15 @@
                     </p>
                     <p>Implemented in <strong>FFMPEG-dev</strong> for reading and writing PNG:</p>
                     <ul>
-                        <li><a href="https://ffmpeg.org/pipermail/ffmpeg-devel/2023-January/305765.html">The cICP chunk allows the PNG color space to be tagged with any of the
-                            enum values in H.273, not just sRGB, and it is defined in the working
-                            draft of the PNG specification (3rd edition). libavutil/pixfmt.h uses
-                            exact the same values as H.273 so these are translated as-is. This
-                            commit also adds support for writing the cICP chunk for video frames
-                            tagged as anything that isn't sRGB. It still writes cHRM and gAMA as a
-                            fallback.</a></li>
+                        <li><blockquote>
+                            <a href="https://ffmpeg.org/pipermail/ffmpeg-devel/2023-January/305765.html">The cICP chunk allows the PNG color space to be tagged with any of the
+                                enum values in H.273, not just sRGB, and it is defined in the working
+                                draft of the PNG specification (3rd edition). libavutil/pixfmt.h uses
+                                exact the same values as H.273 so these are translated as-is. This
+                                commit also adds support for writing the cICP chunk for video frames
+                                tagged as anything that isn't sRGB. It still writes cHRM and gAMA as a
+                                fallback.</a>
+                        </blockquote></li>
                     </ul>
                     <p>Implemented in <a href="https://affinity.serif.com/en-us/photo/"><strong>Affinity Photo 2</strong></a></p>
                     <ul>

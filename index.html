@@ -45,7 +45,6 @@
       authors: [
         { name: "Mark Adler", url: "https://en.wikipedia.org/wiki/Mark_Adler" },
         { name: "Thomas Boutell", url: "https://boutell.dev/" },
-        { name: "John Bowler" },
         { name: "Christian Brunschen", url: "https://www.brunschen.com/christian/" },
         { name: "Adam M. Costello", url: "http://www.nicemice.net/amc/" },
         { name: "Lee Daniel Crocker" },
@@ -120,6 +119,10 @@
           href: "https://poynton.ca/GammaFAQ.html",
           date: "1998-08-04"
         },
+        "HDR10": {
+          title: "HDR10 Media Profile",
+          href: "https://en.wikipedia.org/wiki/HDR10"
+        },
         "HDR-Static-Meta": {
           title: "On the Calculation and Usage of HDR Static Content Metadata",
           authors: ["Smith, Michael D.", "Zink, Michael"],
@@ -178,6 +181,11 @@
           publisher: "ITU",
           date: "2018-07",
           href: "https://www.itu.int/rec/R-REC-BT.2100"
+        },
+          "ITU-R-BT.2390": {
+          title: "High dynamic range television for production and international programme exchange",
+          publisher: "ITU",
+          href: "https://www.itu.int/dms_pub/itu-r/opb/rep/R-REP-BT.2390-11-2023-PDF-E.pdf"
         },
         "ITU-T-H.273": {
           title: "ITU-T H.273, SERIES H: AUDIOVISUAL AND MULTIMEDIA SYSTEMS Infrastructure of audiovisual services – Coding of moving video. Coding-independent code points for video signal type identification",
@@ -295,12 +303,12 @@
   <section id="abstract">
     <p>This document describes PNG (Portable Network Graphics), an extensible file format for the <a>lossless</a>, portable,
     well-compressed storage of static and animated raster images. PNG provides a patent-free replacement for GIF and can also
-    replace many common uses of TIFF. <a>Indexed-colour</a>, <a>greyscale</a>, and <a>truecolour</a> images are supported, plus an optional alpha
+    replace many common uses of TIFF. <a>Indexed-color</a>, <a>greyscale</a>, and <a>truecolor</a> images are supported, plus an optional alpha
     channel. Sample depths range from 1 to 16 bits.</p>
 
     <p>PNG is designed to work well in online viewing applications, such as the World Wide Web, so it is fully streamable with a
     progressive display option. PNG is robust, providing both full file integrity checking and simple detection of common
-    transmission errors. Also, PNG can store colour space data for improved colour matching on heterogeneous platforms.</p>
+    transmission errors. Also, PNG can store color space data for improved color matching on heterogeneous platforms.</p>
 
     <p>This specification defines two Internet Media Types, image/png and image/apng.</p>
     <!--
@@ -312,6 +320,7 @@ needs update, comment out for now
   <section id="sotd">
     <p>This specification is intended to become an International Standard, but is not yet one. It is inappropriate to refer to this
     specification as an International Standard.</p>
+
   </section>
   <!-- *********************************************************************
 
@@ -330,8 +339,8 @@ with these exceptions:
   <ol>
     <li>Portability: encoding, decoding, and transmission should be software and hardware platform independent.</li>
 
-    <li>Completeness: it should be possible to represent <a>truecolour</a>, <a>indexed-colour</a>, and <a>greyscale</a> images, in each case with
-    the option of transparency, colour space information, and ancillary information such as textual comments.
+    <li>Completeness: it should be possible to represent <a>truecolor</a>, <a>indexed-color</a>, and <a>greyscale</a> images, in each case with
+    the option of transparency, color space information, and ancillary information such as textual comments.
     </li>
 
     <li>Serial encode and decode: it should be possible for datastreams to be generated serially and read serially, allowing the
@@ -528,10 +537,11 @@ with these exceptions:
       </dt>
 
       <dd>
-        perceived brightness of a colour.
+        an objective measurement of the visible light intensity, taking into account the sensitivity of the human eye to different wavelengths.
 
-        <p class="note">Luminance and <a>chromaticity</a> together fully define a perceived colour. A formal definition of
-        luminance is found at [[COLORIMETRY]].</p>
+        <p class="note">Luminance and <a>chromaticity</a> together fully define a measured colour.  See <a href="https://colorusage.arc.nasa.gov/lum_and_chrom.php">Luminance and Chromaticity</a>
+        or, for a formal definition [[COLORIMETRY]].</p>
+
       </dd>
       <!-- Maintain a fragment named "3LZ77" to preserve incoming links to it -->
 
@@ -555,7 +565,7 @@ with these exceptions:
         significance (MSB LSB for two-byte integers, MSB B2 B1 LSB for four-byte integers).
       </dd>
 
-      <dt>perceptual quantiser (<dfn>PQ</dfn>)
+      <dt>perceptual quantizer (<dfn>PQ</dfn>)
       </dt>
 
       <dd>
@@ -701,6 +711,12 @@ with these exceptions:
       <dd>vacuum tube containing one or more electron guns, which emit electron beams that are manipulated to display images on a
       phosphorescent screen.</dd>
 
+      <dt>Electro-Optical Transfer Function</dt>
+      <dt>
+        <abbr title="Electro-Optical Transfer Function"><dfn>EOTF</dfn></abbr>
+      </dt>
+      <dd>The <a>transfer function</a> between the electrical or digital domain and light energy. It defines the amount of light emitted by a display for a given input signal.</dd>
+
       <!-- Maintain a fragment named "3LSB" to preserve incoming links to it -->
       <dt id="3LSB">Least Significant Byte</dt>
       <dt><abbr title="Least Significant Byte">LSB</abbr></dt>
@@ -714,6 +730,12 @@ with these exceptions:
       <dd>
         Most significant byte of a multi-<a>byte</a> value.
       </dd>
+
+      <dt>Opto-Electrical Transfer Function</dt>
+      <dt>
+        <abbr title="Opto-Electrical Transfer Function"><dfn>OETF</dfn></abbr>
+      </dt>
+      <dd>The <a>transfer function</a> between light energy and the electrical or digital domain. It defines the amount of light in a scene required to produce a given output signal.</dd>
     </dl>
   </section>
   <!-- ************Page Break******************* -->
@@ -764,7 +786,7 @@ with these exceptions:
         <!-- Maintain a fragment named "3channel" to preserve incoming links to it -->
         <dfn id="3channel">channel</dfn>. Each channel has a sample depth in the range 1 to 16, which is the number of bits used by every sample in the
         channel. Different channels may have different sample depths. The red, green, and blue samples determine the intensities of
-        the red, green, and blue components of the pixel's colour; if they are all zero, the pixel is black, and if they all have
+        the red, green, and blue components of the pixel's color; if they are all zero, the pixel is black, and if they all have
         <!-- Maintain a fragment named "3alpha" to preserve incoming links to it -->
         their maximum values (2<sup>sampledepth</sup>-1), the pixel is white. The <dfn id="3alpha">alpha</dfn> sample determines a pixel's degree of
         opacity, where zero means fully transparent and the maximum value means fully opaque. In a three-channel reference image
@@ -779,8 +801,8 @@ with these exceptions:
 
         <!-- Maintain a fragment named "3PNGimage" to preserve incoming links to it -->
         <dt><dfn id="3PNGimage">PNG image</dfn></dt>
-        <dd>The <i>PNG image</i> is obtained from the reference image by a series of transformations: alpha separation,
-        <a>indexing</a>, <a>RGB merging</a>, alpha compaction, and <a>sample depth scaling</a>. Five types of PNG image are defined
+        <dd>The <i>PNG image</i> is obtained from the reference image by a series of transformations: <a>alpha separation</a>,
+        <a>indexing</a>, <a>RGB merging</a>, <a>alpha compaction</a>, and <a>sample depth scaling</a>. Five types of PNG image are defined
         (see <a href="#6Colour-values"></a>). (If the PNG encoder actually transforms the source image directly into the PNG image,
         and the source image format is already similar to the PNG image format, the encoder may be able to avoid doing some of
         these transformations.) Although not all sample depths in the range 1 to 16 bits are explicitly supported in the PNG image,
@@ -825,9 +847,9 @@ with these exceptions:
     <!-- Maintain a fragment named "4Concepts.ColourSpaces" to preserve incoming links to it -->
 
     <section id="4Concepts.ColourSpaces">
-      <h2>Colour spaces</h2>
+      <h2>Color spaces</h2>
 
-      <p>The RGB colour space in which colour samples are situated may be specified in one of four ways:</p>
+      <p>The RGB color space in which color samples are situated may be specified in one of four ways:</p>
       <!-- <ol start="1"> -->
 
       <ol>
@@ -835,7 +857,7 @@ with these exceptions:
 
         <li>by an ICC profile;</li>
 
-        <li>by specifying explicitly that the colour space is sRGB when the samples conform to this colour space;</li>
+        <li>by specifying explicitly that the color space is sRGB when the samples conform to this color space;</li>
 
         <li>by specifying a <a>gamma value</a> and the 1931 CIE <i>x,y</i> chromaticities of the red, green, and blue primaries
         used in the image and the reference <a>white point</a>.
@@ -843,15 +865,50 @@ with these exceptions:
       </ol>
 
       <p>For high-end applications the first two methods provides the most flexibility and control. The third method enables one
-      particular, but extremely common, colour space to be indicated. The fourth method, which was standardized before ICC profiles
+      particular, but extremely common, color space to be indicated. The fourth method, which was standardized before ICC profiles
       were widely adopted, enables the exact chromaticities of the RGB data to be specified, along with the <a>gamma</a> correction
-      to be applied (see <a href="#C-GammaAppendix"></a>). However, colour-aware applications will prefer one of the first three
-      methods, while colour-unaware applications will typically ignore all four methods.</p>
+      to be applied (see <a href="#C-GammaAppendix"></a>). However, color-aware applications will prefer one of the first three
+      methods, while color-unaware applications will typically ignore all four methods.</p>
 
-      <p><a>Gamma</a> correction is not applied to the alpha channel, if present. Alpha samples always represent a linear fraction
-      of full opacity.</p>
+      <p><a href="#color-chunk-precendence"></a> is a list of chunk types that provide color space information,
+      each with an associated Priority number. If a single image contains more than one of these chunk types,
+      the chunk with the lowest Priority number should take precedence and any higher-numbered chunk types should be ignored.</p>
 
-      <p>Mastering metadata may also be provided</p>
+      <table id="color-chunk-precendence" class="numbered simple">
+        <caption>
+          Color Chunk Priority
+        </caption>
+
+        <tr>
+          <th>Chunk Type</th>
+          <th>Priority</th>
+        </tr>
+
+        <tr>
+          <td><a href="#cICP-chunk" class="chunk">cICP</a></td>
+          <td>1</td>
+        </tr>
+
+        <tr>
+          <td><a class="chunk" href="#11iCCP">iCCP</a></td>
+          <td>2</td>
+        </tr>
+
+        <tr>
+          <td><a class="chunk" href="#11sRGB">sRGB</a></td>
+          <td>3</td>
+        </tr>
+
+        <tr>
+          <td><a class="chunk" href="#11cHRM">cHRM</a> and <a class="chunk" href="#11gAMA">gAMA</a></td>
+          <td>4</td>
+        </tr>
+      </table>
+
+      <p><a>Gamma</a> correction is not applied to the alpha channel, if present. Alpha samples are always full-range and represent 
+      a linear fraction of full opacity.</p>
+
+      <p>Mastering metadata may also be provided.</p>
     </section>
     <!-- Maintain a fragment named "4Concepts.PNGImageTransformation" to preserve incoming links to it -->
 
@@ -871,7 +928,7 @@ with these exceptions:
         indexing or ( [RGB merging] [alpha compaction] )
         sample depth scaling
 </pre>
-        <p>When every pixel is either fully transparent or fully opaque, the alpha separation, alpha compaction, and
+        <p>When every pixel is either fully transparent or fully opaque, the <a>alpha separation</a>, <a>alpha compaction</a>, and
         <a>indexing</a> transformations can cause the recovered reference image to have an alpha sample depth different from the
         original reference image, or to have no alpha channel. This has no effect on the degree of opacity of any pixel. The two
         reference images are considered equivalent, and the transformations are considered lossless. Encoders that nevertheless
@@ -890,8 +947,8 @@ with these exceptions:
         </figure>
       </section>
       <!-- Maintain a fragment named "4Concepts.Implied-alpha" to preserve incoming links to it -->
-      <!-- Maintain a fragment named "3alphaSeparation" to preserve incoming links to it -->
       <section id="4Concepts.Implied-alpha">
+        <!-- Maintain a fragment named "3alphaSeparation" to preserve incoming links to it -->
         <h2><dfn id="3alphaSeparation">Alpha separation</dfn></h2>
 
         <p>If all alpha samples in a reference image have the maximum value, then the alpha channel may be omitted, resulting in an
@@ -904,12 +961,12 @@ with these exceptions:
 
         <p>If the number of distinct pixel values is 256 or less, and the RGB sample depths are not greater than 8, and the alpha
         channel is absent or exactly 8 bits deep or every pixel is either fully transparent or fully opaque, then the alternative
-        <a>indexed-colour</a> representation, achieved through an <dfn id="3indexing">indexing</dfn> transformation, may be more efficient for encoding.
+        <a>indexed-color</a> representation, achieved through an <dfn id="3indexing">indexing</dfn> transformation, may be more efficient for encoding.
         <!-- Maintain a fragment named "3indexing" to preserve incoming links to it -->
         <!-- Maintain a fragment named "3palette" to preserve incoming links to it -->
         <!-- Maintain a fragment named "3alphaTable" to preserve incoming links to it -->
         <!-- Maintain a fragment named "3indexedColour" to preserve incoming links to it -->
-        In the <dfn id="3indexedColour">indexed-colour</dfn> representation, each pixel is replaced by an index into a palette. The <dfn id="3palette">palette</dfn>
+        In the <dfn id="3indexedColour">indexed-color</dfn> representation, each pixel is replaced by an index into a palette. The <dfn id="3palette">palette</dfn>
         is a list of entries each containing three 8-bit samples (red, green, blue). If an alpha channel is present, there is also
         a parallel table of 8-bit alpha samples, called the <dfn id="3alphaTable">alpha table</dfn>.</p>
         <!-- ************Page Break******************* -->
@@ -920,14 +977,14 @@ with these exceptions:
            <object id="figure44" height="450" width="660" data="figures/indexed-colour-image.svg" type="image/svg+xml">
           </object>
           <figcaption>
-            Indexed-colour image
+            Indexed-color image
           </figcaption>
         </figure>
 
-        <p>A suggested palette or palettes may be constructed even when the PNG image is not <a>indexed-colour</a> in order to assist
-        viewers that are capable of displaying only a limited number of colours.</p>
+        <p>A suggested palette or palettes may be constructed even when the PNG image is not <a>indexed-color</a> in order to assist
+        viewers that are capable of displaying only a limited number of colors.</p>
 
-        <p>For <a>indexed-colour</a> images, encoders can rearrange the palette so that the table entries with the maximum alpha value are
+        <p>For <a>indexed-color</a> images, encoders can rearrange the palette so that the table entries with the maximum alpha value are
         grouped at the end. In this case the table can be encoded in a shortened form that does not include these entries.</p>
 
         <p>Encoders creating indexed-color PNG must not insert index values greater than the actual length of the palette table; to
@@ -945,9 +1002,10 @@ with these exceptions:
         blue samples are equal, then these three channels may be merged into a single greyscale channel.</p>
       </section>
 
-      <section>
-        <!-- Maintain a fragment named "4Concepts.Alpha-indexing" to preserve incoming links to it -->
-        <h2 id="4Concepts.Alpha-indexing"><dfn id="3alphaCompaction">Alpha compaction</dfn></h2>
+      <!-- Maintain a fragment named "4Concepts.Alpha-indexing" to preserve incoming links to it -->
+      <section id="4Concepts.Alpha-indexing">
+        <!-- Maintain a fragment named "3alphaCompaction" to preserve incoming links to it -->
+        <h2><dfn id="3alphaCompaction">Alpha compaction</dfn></h2>
 
         <p>For non-indexed images, if there exists an RGB (or greyscale) value such that all pixels with that value are fully
         transparent while all other pixels are fully opaque, then the alpha channel can be represented more compactly by merely
@@ -1005,14 +1063,14 @@ with these exceptions:
       <!-- <ol start="1"> -->
 
       <dl>
-        <dt><dfn>Truecolour with alpha</dfn></dt>
+        <dt><dfn>Truecolor with alpha</dfn></dt>
         <dd>Each <a>pixel</a> consists of four <a>samples</a>: red, green, blue and <a>alpha</a>.</dd>
 
         <dt><dfn>Greyscale with alpha</dfn></dt>
         <dd>Each <a>pixel</a> consists of two <a>samples</a>: a <a>grey sample</a> and an <a>alpha</a> sample.</dd>
 
         <!-- Maintain a fragment named "3truecolour" to preserve incoming links to it -->
-        <dt><dfn id="3truecolour">Truecolour</dfn></dt>
+        <dt id="truecolor"><dfn id="3truecolour">Truecolor</dfn></dt>
         <dd>Each <a>pixel</a> consists of a triplet of <a>samples</a>: red, green, blue. An optional alpha channel can be specified
         as a single triplet of red, green, blue <a>samples</a>: <a>pixels</a> of the image whose red, green, blue <a>samples</a>
         are identical to the red, green, blue <a>samples</a> of the alpha channel are fully transparent; others are fully opaque. If
@@ -1026,26 +1084,26 @@ with these exceptions:
         are fully transparent; others are fully opaque. If the alpha channel is not present, all <a>pixels</a> are fully
         opaque.</dd>
 
-        <dt><a>Indexed-colour</a></dt>
+        <dt><a>Indexed-color</a></dt>
         <dd>Each pixel consists of an index into a palette (and into an associated table of alpha values, if present).</dd>
       </dl>
 
-      <p>The format of each pixel depends on the PNG image type and the bit depth. For PNG image types other than indexed-colour,
-      the bit depth specifies the number of bits per sample, not the total number of bits per pixel. For <a>indexed-colour</a> images, the
-      bit depth specifies the number of bits in each palette index, not the sample depth of the colours in the palette or alpha
+      <p>The format of each pixel depends on the PNG image type and the bit depth. For PNG image types other than indexed-color,
+      the bit depth specifies the number of bits per sample, not the total number of bits per pixel. For <a>indexed-color</a> images, the
+      bit depth specifies the number of bits in each palette index, not the sample depth of the colors in the palette or alpha
       table. Within the pixel the samples appear in the following order, depending on the PNG image type.</p>
       <!-- <ol start="6"> -->
 
       <ol>
-        <li><a>Truecolour with alpha</a>: red, green, blue, alpha.</li>
+        <li><a>Truecolor with alpha</a>: red, green, blue, alpha.</li>
 
         <li><a>Greyscale with alpha</a>: grey, alpha.</li>
 
-        <li><a>Truecolour</a>: red, green, blue.</li>
+        <li><a>Truecolor</a>: red, green, blue.</li>
 
         <li><a>Greyscale</a>: grey.</li>
 
-        <li><a>Indexed-colour</a>: palette index.</li>
+        <li><a>Indexed-color</a>: palette index.</li>
       </ol>
     </section>
     <!-- Maintain a fragment named "4Concepts.Encoding" to preserve incoming links to it -->
@@ -1190,14 +1248,14 @@ with these exceptions:
         </tr>
 
         <tr>
-          <td>Background colour</td>
-          <td>Solid background colour to be used when presenting the image if no better option is available.</td>
+          <td>Background color</td>
+          <td>Solid background color to be used when presenting the image if no better option is available.</td>
         </tr>
 
         <tr>
           <td>Coding-independent code points</td>
           <td>
-            Identifies the colour space by enumerating metadata such as the <a>transfer function</a> and colour primaries.
+            Identifies the color space by enumerating metadata such as the <a>transfer function</a> and color primaries.
 
             Originally for <a>SDR</a> and <a>HDR</a> video, also used for still and animated images.
           </td>
@@ -1223,7 +1281,7 @@ with these exceptions:
 
         <tr>
           <td>ICC profile</td>
-          <td>Description of the colour space (in the form of an International Color Consortium (ICC) profile) to which the samples
+          <td>Description of the color space (in the form of an International Color Consortium (ICC) profile) to which the samples
           in the image conform.</td>
         </tr>
 
@@ -1234,7 +1292,7 @@ with these exceptions:
 
         <tr>
           <td>Mastering Display Color Volume</td>
-          <td>Describes the absolute three-dimensional color gamut volume of the display used to prepare the content, including the lightest and darkest colors the mastering display can reproduce. This helps to present the image on the eventual display.</td>
+          <td>Describes the absolute three-dimensional color gamut volume of the display used to prepare the content, including the lightest and darkest colors the mastering display can reproduce. This helps to present the image on the display device.</td>
         </tr>
 
         <tr>
@@ -1248,14 +1306,14 @@ with these exceptions:
         </tr>
 
         <tr>
-          <td>sRGB colour space</td>
+          <td>sRGB color space</td>
           <td>A rendering intent (as defined by the International Color Consortium) and an indication that the image samples
-          conform to this colour space.</td>
+          conform to this color space.</td>
         </tr>
 
         <tr>
           <td>Suggested palette</td>
-          <td>A reduced palette that may be used when the display device is not capable of displaying the full range of colours in
+          <td>A reduced palette that may be used when the display device is not capable of displaying the full range of colors in
           the image.</td>
         </tr>
 
@@ -1324,7 +1382,7 @@ with these exceptions:
           <li>Transparency information: <a class="chunk" href="#11tRNS">tRNS</a> (see <a href="#11transinfo"></a>).
           </li>
 
-          <li>Colour space information: <a class="chunk" href="#11cHRM">cHRM</a>, <a class="chunk" href="#11gAMA">gAMA</a>,
+          <li>Color space information: <a class="chunk" href="#11cHRM">cHRM</a>, <a class="chunk" href="#11gAMA">gAMA</a>,
           <a class="chunk" href="#11iCCP">iCCP</a>, <a class="chunk" href="#11sBIT">sBIT</a>, <a class="chunk" href=
           "#11sRGB">sRGB</a>, <a class="chunk" href="#cICP-chunk">cICP</a>, <a class="chunk" href="#mDCv-chunk">mDCv</a> (see
           <a href="#11addnlcolinfo"></a>).
@@ -2282,23 +2340,23 @@ with these exceptions:
     <!-- Maintain a fragment named "6Colour-values" to preserve incoming links to it -->
 
     <section id="6Colour-values">
-      <h2>Colour types and values</h2>
+      <h2>Color types and values</h2>
 
       <p>As explained in <a href="#4Concepts.PNGImage"></a> there are five types of PNG
       <!-- Maintain "3colourType" to preserve incoming links to it -->
-       image. Corresponding to each type is a <dfn id="3colourType">colour type</dfn>, which is the sum of the following values: 1
-      (palette used), 2 (<a>truecolour</a> used) and 4 (alpha used). <a>greyscale</a> and <a>truecolour</a> images may have an explicit
-      alpha channel. The PNG image types and corresponding <a>colour types</a> are listed in <a href="#table6.1"></a>.</p>
+       image. Corresponding to each type is a <a id="colorType"><dfn id="3colourType">color type</dfn></a>, which is the sum of the following values: 1
+      (palette used), 2 (<a>truecolor</a> used) and 4 (alpha used). <a>greyscale</a> and <a>truecolor</a> images may have an explicit
+      alpha channel. The PNG image types and corresponding <a>color types</a> are listed in <a href="#table6.1"></a>.</p>
       <!-- Maintain a fragment named "table6.1" to preserve incoming links to it -->
 
       <table id="table6.1" class="numbered simple">
         <caption>
-          PNG image types and colour types
+          PNG image types and color types
         </caption>
 
         <tr>
           <th>PNG image type</th>
-          <th>Colour type</th>
+          <th>Color type</th>
         </tr>
 
         <tr>
@@ -2307,12 +2365,12 @@ with these exceptions:
         </tr>
 
         <tr>
-          <td>Truecolour</td>
+          <td>Truecolor</td>
           <td>2</td>
         </tr>
 
         <tr>
-          <td>Indexed-colour</td>
+          <td>Indexed-color</td>
           <td>3</td>
         </tr>
 
@@ -2322,7 +2380,7 @@ with these exceptions:
         </tr>
 
         <tr>
-          <td>Truecolour with alpha</td>
+          <td>Truecolor with alpha</td>
           <td>6</td>
         </tr>
       </table>
@@ -2331,9 +2389,9 @@ with these exceptions:
 
       <p>Greyscale samples represent luminance if the transfer curve is indicated (by <a class="chunk" href="#11gAMA">gAMA</a>,
       <a class="chunk" href="#11sRGB">sRGB</a>, <a class="chunk" href="#11iCCP">iCCP</a>) or <a href="#cICP-chunk" class="chunk">cICP</a>; or device-dependent greyscale if not.
-      RGB samples represent calibrated colour information if the colour space is indicated (by <a class="chunk" href=
+      RGB samples represent calibrated color information if the color space is indicated (by <a class="chunk" href=
       "#11gAMA">gAMA</a> and <a class="chunk" href="#11cHRM">cHRM</a>, <a class="chunk" href="#11sRGB">sRGB</a>,  <a class=
-      "chunk" href="#11iCCP">iCCP</a>,  or <a href="#cICP-chunk" class="chunk">cICP</a>; or uncalibrated device-dependent colour if not.</p>
+      "chunk" href="#11iCCP">iCCP</a>,  or <a href="#cICP-chunk" class="chunk">cICP</a>; or uncalibrated device-dependent color if not.</p>
 
       <p>Sample values are not necessarily proportional to light intensity; the <a class="chunk" href="#11gAMA">gAMA</a> chunk
       specifies the relationship between sample values and display output intensity. Viewers are strongly encouraged to compensate
@@ -2345,26 +2403,25 @@ with these exceptions:
     <section id="6AlphaRepresentation">
       <h2>Alpha representation</h2>
 
-      <p>In a PNG datastream transparency may be represented in one of four ways, depending on the PNG image type (see <a>alpha
-      separation</a> and <a>alpha compaction</a>).</p>
-      <!-- <ol start="1"> -->
+      <p>In a PNG datastream transparency may be represented in one of four ways, depending on the PNG image type (see <a href="#4Concepts.Implied-alpha"></a> and <a href="#4Concepts.Alpha-indexing"></a>).</p>
 
+      <!-- <ol start="1"> -->
       <ol>
         <li>
-          <a>Truecolour with alpha</a>, <a>greyscale with alpha</a>: an alpha channel is part of the image array.
+          <a>Truecolor with alpha</a>, <a>greyscale with alpha</a>: an alpha channel is part of the image array.
         </li>
 
         <li>
-          <a>truecolour</a>, <a>greyscale</a>: A <a class="chunk" href="#11tRNS">tRNS</a> chunk contains a single pixel value
+          <a>truecolor</a>, <a>greyscale</a>: A <a class="chunk" href="#11tRNS">tRNS</a> chunk contains a single pixel value
           distinguishing the fully transparent pixels from the fully opaque pixels.
         </li>
 
-        <li><a>Indexed-colour</a>: A <a class="chunk" href="#11tRNS">tRNS</a> chunk contains the alpha table that associates an alpha
+        <li><a>Indexed-color</a>: A <a class="chunk" href="#11tRNS">tRNS</a> chunk contains the alpha table that associates an alpha
         sample with each palette entry.
         </li>
 
         <li>
-          <a>truecolour</a>, <a>greyscale</a>, <a>indexed-colour</a>: there is no <a class="chunk" href="#11tRNS">tRNS</a> chunk present and all
+          <a>truecolor</a>, <a>greyscale</a>, <a>indexed-color</a>: there is no <a class="chunk" href="#11tRNS">tRNS</a> chunk present and all
           pixels are fully opaque.
         </li>
       </ol>
@@ -2375,7 +2432,7 @@ with these exceptions:
       indicate partially transparent pixels that can be <a>composited</a> against a background image to yield the delivered
       image.</p>
 
-      <p>The colour values in a pixel are not premultiplied by the alpha value assigned to the pixel. This rule is sometimes called
+      <p>The color values in a pixel are not premultiplied by the alpha value assigned to the pixel. This rule is sometimes called
       "unassociated" or "non-premultiplied" alpha. (Another common technique is to store sample values premultiplied by the alpha
       value; in effect, such an image is already <a>composited</a> against a black background. PNG does <strong>not</strong> use
       premultiplied alpha. In consequence an image editor can take a PNG image and easily change its transparency.) See <a href=
@@ -2421,20 +2478,20 @@ with these exceptions:
       pixel.</p>
 
       <p>Pixels within a scanline are always packed into a sequence of bytes with no wasted bits between pixels. Scanlines always
-      begin on byte boundaries. Permitted bit depths and <a>colour types</a> are restricted so that in all cases the packing is
+      begin on byte boundaries. Permitted bit depths and <a>color types</a> are restricted so that in all cases the packing is
       simple and efficient.</p>
 
-      <p>In PNG images of <a>colour type</a> 0 (greyscale) each pixel is a single sample, which may have precision less than a byte
+      <p>In PNG images of <a>color type</a> 0 (greyscale) each pixel is a single sample, which may have precision less than a byte
       (1, 2, or 4 bits). These samples are packed into bytes with the leftmost sample in the high-order bits of a byte followed by
       the other samples for the scanline.</p>
 
-      <p>In PNG images of <a>colour type</a> 3 (indexed-colour) each pixel is a single palette index. These indices are packed into
-      bytes in the same way as the samples for <a>colour type</a> 0.</p>
+      <p>In PNG images of <a>color type</a> 3 (indexed-color) each pixel is a single palette index. These indices are packed into
+      bytes in the same way as the samples for <a>color type</a> 0.</p>
 
       <p>When there are multiple pixels per byte, some low-order bits of the last byte of a scanline may go unused. The contents of
       these unused bits are not specified.</p>
 
-      <p>PNG images that are not <a>indexed-colour</a> images may have sample values with a bit depth of 16. Such sample values are in
+      <p>PNG images that are not <a>indexed-color</a> images may have sample values with a bit depth of 16. Such sample values are in
       <a>network byte order</a> (MSB first, LSB second). PNG permits multi-sample pixels only with 8 and 16-bit samples, so multiple
       samples of a single pixel are never packed into one byte.</p>
     </section>
@@ -2481,7 +2538,7 @@ with these exceptions:
     <section class="introductory" id="8InterlaceIntro">
       <h3>Introduction</h3>
 
-      <p>Pass extraction (see <a href="#figure48">figure 4.8</a>) splits a PNG image into a sequence of reduced images (the
+      <p>Pass extraction (see <a href="#figure48">Figure 4.8</a>) splits a PNG image into a sequence of reduced images (the
       interlaced PNG image) where the first image defines a coarse view and subsequent images enhance this coarse view until the
       last image completes the PNG image. This allows progressive display of the interlaced PNG image by the decoder and allows
       images to "fade in" when they are being displayed on-the-fly. On average, interlacing slightly expands the datastream size,
@@ -2518,7 +2575,7 @@ with these exceptions:
       pass contains all of scanlines 1, 3, 5, etc. The transmission order is defined so that all the scanlines transmitted in a
       pass will have the same number of pixels; this is necessary for proper application of some of the filters. The interlaced PNG
       image consists of a sequence of seven reduced images. For example, if the PNG image is 16 by 16 pixels, then the third pass
-      will be a reduced image of two scanlines, each containing four pixels (see <a href="#figure48">figure 4.8</a>).</p>
+      will be a reduced image of two scanlines, each containing four pixels (see <a href="#figure48">Figure 4.8</a>).</p>
 
       <p>Scanlines that do not completely fill an integral number of bytes are padded as defined in <a href="#7Scanline"></a>.</p>
 
@@ -2558,7 +2615,7 @@ with these exceptions:
     <section id="9Filter-types">
       <h2>Filter types for filter method 0</h2>
 
-      <p>Filters are applied to <strong>bytes</strong>, not to pixels, regardless of the bit depth or <a>colour type</a> of the
+      <p>Filters are applied to <strong>bytes</strong>, not to pixels, regardless of the bit depth or <a>color type</a> of the
       image. The filters operate on the byte sequence formed by a scanline that has been represented as described in <a href=
       "#7Scanline"></a>. If the image includes an alpha channel, the alpha data is filtered in the same way as the <a>image
       data</a>.</p>
@@ -2707,8 +2764,8 @@ with these exceptions:
     <section id="9Filter-type-4-Paeth">
       <h2>Filter type 4: Paeth</h2>
 
-      <p>The Paeth filter type computes a simple linear function of the three neighbouring pixels (left, above, upper left), then
-      chooses as predictor the neighbouring pixel closest to the computed value. The algorithm used in this specification is an
+      <p>The Paeth filter type computes a simple linear function of the three neighboring pixels (left, above, upper left), then
+      chooses as predictor the neighboring pixel closest to the computed value. The algorithm used in this specification is an
       adaptation of the technique due to Alan W. Paeth [[Paeth]].</p>
 
       <p>The PaethPredictor function is defined in the code below. The logic of the function and the locations of the bytes
@@ -2900,7 +2957,7 @@ with these exceptions:
           </tr>
 
           <tr>
-            <td>Colour type</td>
+            <td>Color type</td>
             <td>1 byte</td>
           </tr>
 
@@ -2925,23 +2982,23 @@ with these exceptions:
 
         <!-- Maintain a fragment named "3bitDepth" to preserve incoming links to it -->
         <p id="3bitDepth">Bit depth is a single-byte integer giving the number of bits per sample or per palette index (not per pixel). Valid
-        values are 1, 2, 4, 8, and 16, although not all values are allowed for all <a>colour types</a>. See <a href=
+        values are 1, 2, 4, 8, and 16, although not all values are allowed for all <a>color types</a>. See <a href=
         "#6Colour-values"></a>.</p>
 
-        <p><a>Colour type</a> is a single-byte integer.</p>
+        <p><a>Color type</a> is a single-byte integer.</p>
 
-        <p>Bit depth restrictions for each <a>colour type</a> are imposed to simplify implementations and to prohibit combinations
+        <p>Bit depth restrictions for each <a>color type</a> are imposed to simplify implementations and to prohibit combinations
         that do not compress well. The allowed combinations are defined in <a href="#table111"></a>.</p>
         <!-- Maintain a fragment named "table111" to preserve incoming links to it -->
 
         <table id="table111" class="numbered simple">
           <caption>
-            Allowed combinations of <a>colour type</a> and bit depth
+            Allowed combinations of <a>color type</a> and bit depth
           </caption>
 
           <tr>
             <th>PNG image type</th>
-            <th>Colour type</th>
+            <th>Color type</th>
             <th>Allowed bit depths</th>
             <th>Interpretation</th>
           </tr>
@@ -2954,14 +3011,14 @@ with these exceptions:
           </tr>
 
           <tr>
-            <td>Truecolour</td>
+            <td>Truecolor</td>
             <td>2</td>
             <td>8, 16</td>
             <td>Each pixel is an R,G,B triple</td>
           </tr>
 
           <tr>
-            <td>Indexed-colour</td>
+            <td>Indexed-color</td>
             <td>3</td>
             <td>1, 2, 4, 8</td>
             <td>
@@ -2977,14 +3034,14 @@ with these exceptions:
           </tr>
 
           <tr>
-            <td>Truecolour with alpha</td>
+            <td>Truecolor with alpha</td>
             <td>6</td>
             <td>8, 16</td>
             <td>Each pixel is an R,G,B triple followed by an alpha sample.</td>
           </tr>
         </table>
 
-        <p>The sample depth is the same as the bit depth except in the case of <a>indexed-colour</a> PNG images (<a>colour type</a> 3), in
+        <p>The sample depth is the same as the bit depth except in the case of <a>indexed-color</a> PNG images (<a>color type</a> 3), in
         which the sample depth is always 8 bits (see <a href="#4Concepts.PNGImage"></a>).</p>
 
         <p>Compression method is a single-byte integer that indicates the method used to compress the <a>image data</a>. Only
@@ -3030,25 +3087,25 @@ with these exceptions:
 
         <p>The number of entries is determined from the chunk length. A chunk length not divisible by 3 is an error.</p>
 
-        <p>This chunk shall appear for <a>colour type</a> 3, and may appear for <a>colour types</a> 2 and 6; it shall not appear
-        for <a>colour types</a> 0 and 4. There shall not be more than one <span class="chunk">PLTE</span> chunk.</p>
+        <p>This chunk shall appear for <a>color type</a> 3, and may appear for <a>color types</a> 2 and 6; it shall not appear
+        for <a>color types</a> 0 and 4. There shall not be more than one <span class="chunk">PLTE</span> chunk.</p>
 
-        <p>For <a>colour type</a> 3 (indexed-colour), the <span class="chunk">PLTE</span> chunk is required. The first entry in
+        <p>For <a>color type</a> 3 (indexed-color), the <span class="chunk">PLTE</span> chunk is required. The first entry in
         <span class="chunk">PLTE</span> is referenced by pixel value 0, the second by pixel value 1, etc. The number of palette
         entries shall not exceed the range that can be represented in the image bit depth (for example, 2<sup>4</sup> = 16 for a
         bit depth of 4). It is permissible to have fewer entries than the bit depth would allow. In that case, any out-of-range
         pixel value found in the <a>image data</a> is an error.</p>
 
-        <p>For <a>colour types</a> 2 and 6 (<a>truecolour</a> and <a>truecolour with alpha</a>), the <span class="chunk">PLTE</span> chunk
-        is optional. If present, it provides a suggested set of colours (from 1 to 256) to which the <a>truecolour</a> image can be
+        <p>For <a>color types</a> 2 and 6 (<a>truecolor</a> and <a>truecolor with alpha</a>), the <span class="chunk">PLTE</span> chunk
+        is optional. If present, it provides a suggested set of colors (from 1 to 256) to which the <a>truecolor</a> image can be
         quantized if it cannot be displayed directly. It is, however, recommended that the <a class="chunk" href="#11sPLT">sPLT</a>
         chunk be used for this purpose, rather than the <span class="chunk">PLTE</span> chunk. If neither <span class=
         "chunk">PLTE</span> nor <a class="chunk" href="#11sPLT">sPLT</a> chunks are present and the image cannot be displayed
-        directly, quantization has to be done by the viewing system. However, it is often preferable for the selection of colours
+        directly, quantization has to be done by the viewing system. However, it is often preferable for the selection of colors
         to be done once by the PNG encoder. (See <a href="#12Suggested-palettes"></a>.)</p>
 
         <p>Note that the palette uses 8 bits (1 byte) per sample regardless of the image bit depth. In particular, the palette is 8
-        bits deep even when it is a suggested quantization of a 16-bit <a>truecolour</a> image.</p>
+        bits deep even when it is a suggested quantization of a 16-bit <a>truecolor</a> image.</p>
 
         <p>There is no requirement that the palette entries all be used by the image, nor that they all be different.</p>
       </section>
@@ -3113,14 +3170,14 @@ with these exceptions:
 <!-- 116 82 78 83 -->74 52 4E 53
 </pre>
           <p>The <span class="chunk">tRNS</span> chunk specifies either alpha values that are associated with palette entries (for
-          <a>indexed-colour</a> images) or a single transparent colour (for <a>greyscale</a> and <a>truecolour</a> images). The <span class=
+          <a>indexed-color</a> images) or a single transparent color (for <a>greyscale</a> and <a>truecolor</a> images). The <span class=
           "chunk">tRNS</span> chunk contains: <!-- ************Page Break******************* --></p>
           <!-- ************Page Break******************* -->
 
           <table id="tRNS-structure" class="simple numbered">
             <tr>
               <th colspan="2">
-                <a>Colour type</a> 0
+                <a>Color type</a> 0
               </th>
             </tr>
 
@@ -3131,7 +3188,7 @@ with these exceptions:
 
             <tr>
               <th colspan="2">
-                <a>Colour type</a> 2
+                <a>Color type</a> 2
               </th>
             </tr>
 
@@ -3152,7 +3209,7 @@ with these exceptions:
 
             <tr>
               <th colspan="2">
-                <a>Colour type</a> 3
+                <a>Color type</a> 3
               </th>
             </tr>
 
@@ -3172,7 +3229,7 @@ with these exceptions:
             </tr>
           </table>
 
-          <p>For <a>colour type</a> 3 (indexed-colour), the <span class="chunk">tRNS</span> chunk contains a series of one-byte
+          <p>For <a>color type</a> 3 (indexed-color), the <span class="chunk">tRNS</span> chunk contains a series of one-byte
           alpha values, corresponding to entries in the <a class="chunk" href="#11PLTE">PLTE</a> chunk. Each entry indicates that
           pixels of the corresponding palette index shall be treated as having the specified alpha value. Alpha values have the
           same interpretation as in an 8-bit full alpha channel: 0 is fully transparent, 255 is fully opaque, regardless of image
@@ -3182,17 +3239,19 @@ with these exceptions:
           be made transparent, only a one-byte <span class="chunk">tRNS</span> chunk is needed, and when all palette indices are
           opaque, the <span class="chunk">tRNS</span> chunk may be omitted.</p>
 
-          <p>For <a>colour types</a> 0 or 2, two bytes per sample are used regardless of the image bit depth (see <a href=
+          <p>For <a>color types</a> 0 or 2, two bytes per sample are used regardless of the image bit depth (see <a href=
           "#7Integers-and-byte-order"></a>). Pixels of the specified grey sample value or RGB sample values are treated as
           transparent (equivalent to alpha value 0); all other pixels are to be treated as fully opaque (alpha value
           2<sup>bitdepth</sup>-1).
           If the image bit depth is less than 16, the least significant bits are used.
           Encoders should set the other bits to 0, and decoders must mask the other bits to 0 before the value is used.</p>
 
-          <p>A <span class="chunk">tRNS</span> chunk shall not appear for <a>colour types</a> 4 and 6, since a full alpha channel
+          <p>A <span class="chunk">tRNS</span> chunk shall not appear for <a>color types</a> 4 and 6, since a full alpha channel
           is already present in those cases.</p>
 
-          <p class="note">NOTE For 16-bit <a>greyscale</a> or <a>truecolour</a> data, only pixels matching the entire 16-bit values in
+          <p class="note">NOTE For 16-bit <a>greyscale</a> or <a>truecolor</a> data,
+          as described in <a href="#13Sample-depth-rescaling"></a>,
+          only <a href="#tRNS-compare-exactly">pixels matching the entire 16-bit values</a> in
           <span class="chunk">tRNS</span> chunks are transparent. Decoders have to postpone any sample depth rescaling until after
           the pixels have been tested for transparency.</p>
         </section>
@@ -3200,7 +3259,7 @@ with these exceptions:
       <!-- Maintain a fragment named "11addnlcolinfo" to preserve incoming links to it -->
 
       <section id="11addnlcolinfo">
-        <h2>Colour space information</h2>
+        <h2>Color space information</h2>
         <!-- Maintain a fragment named "11cHRM" to preserve incoming links to it -->
 
         <section id="11cHRM">
@@ -3213,9 +3272,9 @@ with these exceptions:
 <!-- 99 72 82 77 -->63 48 52 4D
 </pre>
           <p>The <span class="chunk">cHRM</span> chunk may be used to specify the 1931 CIE <i>x,y</i> chromaticities of the red,
-          green, and blue display primaries used in the image, and the referenced <a>white point</a>. See <a href=
+          green, and blue display primaries used in the <a>PNG image</a>, and the referenced <a>white point</a>. See <a href=
           "#C-GammaAppendix"></a> for more information. The <a class="chunk" href="#11iCCP">iCCP</a>, and <a class="chunk" href=
-          "#11sRGB">sRGB</a> chunks provide more sophisticated support for colour management and control.</p>
+          "#11sRGB">sRGB</a> chunks provide more sophisticated support for color management and control.</p>
 
           <p>The <span class="chunk">cHRM</span> chunk contains:</p>
           <!-- ************Page Break******************* -->
@@ -3280,8 +3339,9 @@ with these exceptions:
           <p>The <span class="chunk">cHRM</span> chunk is allowed in all PNG datastreams, although it is of little value for
           <a>greyscale</a> images.</p>
 
-          <p>An <a class="chunk" href="#11sRGB">sRGB</a>, <a class="chunk" href="#11iCCP">iCCP</a> or <a href="#cICP-chunk" class="chunk">cICP</a> chunk, when present and
-          recognized, overrides the <span class="chunk">cHRM</span> chunk.</p>
+          <p>This chunk is ignored 
+            unless it is the <a href="#color-chunk-precendence">highest-precedence color chunk</a>
+            understood by the decoder.</p>
         </section>
         <!-- Maintain a fragment named "11gAMA" to preserve incoming links to it -->
 
@@ -3299,8 +3359,8 @@ with these exceptions:
           <p>In fact specifying the desired display output intensity is insufficient. It is also necessary to specify the viewing
           conditions under which the output is desired. For <span class="chunk">gAMA</span> these are the reference viewing
           conditions of the sRGB specification [[SRGB]]. Adjustment for different viewing conditions is normally handled by a
-          Colour Management System. If the adjustment is not performed, the error is usually small. Applications desiring high
-          colour fidelity may wish to use an <a class="chunk" href="#11sRGB">sRGB</a>, <a class="chunk" href="#11iCCP">iCCP</a>
+          Color Management System. If the adjustment is not performed, the error is usually small. Applications desiring high
+          color fidelity may wish to use an <a class="chunk" href="#11sRGB">sRGB</a>, <a class="chunk" href="#11iCCP">iCCP</a>
           chunk.</p>
 
           <p>The <span class="chunk">gAMA</span> chunk contains:</p>
@@ -3318,8 +3378,9 @@ with these exceptions:
 
           <p>See <a href="#12Encoder-gamma-handling"></a> and <a href="#13Decoder-gamma-handling"></a> for more information.</p>
 
-          <p>An <a class="chunk" href="#srgb-standard-colour-space">sRGB</a>, <a class="chunk" href="#11iCCP">iCCP</a> or <a href="#cICP-chunk" class="chunk">cICP</a> chunk,
-          when present and recognized, overrides the <span class="chunk">gAMA</span> chunk.</p>
+          <p>This chunk is ignored 
+            unless it is the <a href="#color-chunk-precendence">highest-precedence color chunk</a>
+            understood by the decoder.</p>
         </section>
         <!-- Maintain a fragment named "11iCCP" to preserve incoming links to it -->
 
@@ -3363,17 +3424,19 @@ with these exceptions:
           method entry is followed by a compressed profile that makes up the remainder of the chunk. Decompression of this
           datastream yields the embedded ICC profile.</p>
 
-          <p>If the <span class="chunk">iCCP</span> chunk is present, the image samples conform to the colour space represented by
-          the embedded ICC profile as defined by the International Color Consortium [[ICC]][[ISO_15076-1]]. The colour space of the
-          ICC profile shall be an RGB colour space for colour images (<a>colour types</a> 2, 3, and 6), or a greyscale colour space
-          for <a>greyscale</a> images (<a>colour types</a> 0 and 4). A PNG encoder that writes the <span class="chunk">iCCP</span> chunk
+          <p>If the <span class="chunk">iCCP</span> chunk is present, the image samples conform to the color space represented by
+          the embedded ICC profile as defined by the International Color Consortium [[ICC]][[ISO_15076-1]]. The color space of the
+          ICC profile shall be an RGB color space for color images (<a>color types</a> 2, 3, and 6), or a greyscale color space
+          for <a>greyscale</a> images (<a>color types</a> 0 and 4). A PNG encoder that writes the <span class="chunk">iCCP</span> chunk
           is encouraged to also write <a class="chunk" href="#11gAMA">gAMA</a> and <a class="chunk" href="#11cHRM">cHRM</a> chunks
           that approximate the ICC profile, to provide compatibility with applications that do not use the <span class=
-          "chunk">iCCP</span> chunk. When the <span class="chunk">iCCP</span> chunk is present, PNG decoders that recognize it and
-          are capable of colour management shall ignore the <a class="chunk" href="#11gAMA">gAMA</a> and <a class="chunk" href=
-          "#11cHRM">cHRM</a> chunks and use the <span class="chunk">iCCP</span> chunk instead and interpret it according to
-          [[ICC]]. PNG decoders that are used in an environment that is incapable of full-fledged colour management should use the
-          <a class="chunk" href="#11gAMA">gAMA</a> and <a class="chunk" href="#11cHRM">cHRM</a> chunks if present.</p>
+          "chunk">iCCP</span> chunk.</p> 
+          
+          <p>
+            This chunk is ignored 
+            unless it is the <a href="#color-chunk-precendence">highest-precedence color chunk</a>
+            understood by the decoder.
+          </p>
 
           <p>Unless a <a class="chunk" href="#cICP-chunk">cICP</a> chunk exists, a PNG datastream should contain at most one
           embedded profile, whether specified explicitly with an <span class="chunk">iCCP</span> or implicitly with an <a class=
@@ -3406,7 +3469,7 @@ with these exceptions:
             </caption>
 
             <tr>
-              <th colspan="2">Colour type 0</th>
+              <th colspan="2">Color type 0</th>
             </tr>
 
             <tr>
@@ -3415,7 +3478,7 @@ with these exceptions:
             </tr>
 
             <tr>
-              <th colspan="2">Colour types 2 and 3</th>
+              <th colspan="2">Color types 2 and 3</th>
             </tr>
 
             <tr>
@@ -3434,7 +3497,7 @@ with these exceptions:
             </tr>
 
             <tr>
-              <th colspan="2">Colour type 4</th>
+              <th colspan="2">Color type 4</th>
             </tr>
 
             <tr>
@@ -3448,7 +3511,7 @@ with these exceptions:
             </tr>
 
             <tr>
-              <th colspan="2">Colour type 6</th>
+              <th colspan="2">Color type 6</th>
             </tr>
 
             <tr>
@@ -3473,8 +3536,8 @@ with these exceptions:
           </table>
 
           <p>Each depth specified in <span class="chunk">sBIT</span> shall be greater than zero and less than or equal to the
-          sample depth (which is 8 for <a>indexed-colour</a> images, and the bit depth given in <a class="chunk" href="#11IHDR">IHDR</a>
-          for other <a>colour types</a>). Note that <span class="chunk">sBIT</span> does not provide a sample depth for the alpha
+          sample depth (which is 8 for <a>indexed-color</a> images, and the bit depth given in <a class="chunk" href="#11IHDR">IHDR</a>
+          for other <a>color types</a>). Note that <span class="chunk">sBIT</span> does not provide a sample depth for the alpha
           channel that is implied by a <a class="chunk" href="#11tRNS">tRNS</a> chunk; in that case, all of the sample bits of the
           alpha channel are to be treated as significant. If the <span class="chunk">sBIT</span> chunk is not present, then all of
           the sample bits of all channels are to be treated as significant.</p>
@@ -3482,7 +3545,7 @@ with these exceptions:
         <!-- Maintain a fragment named "11sRGB" to preserve incoming links to it -->
 
         <section id="11sRGB">
-          <h2 id="srgb-standard-colour-space"><span class="chunk">sRGB</span> Standard RGB colour space</h2>
+          <h2 id="srgb-standard-colour-space"><span class="chunk">sRGB</span> Standard RGB color space</h2>
           <!-- <p>The four decimal values below correspond to the four-byte sRGB chunk type field:</p> -->
 
           <p>The four-byte chunk type field contains the hexadecimal values</p>
@@ -3490,7 +3553,7 @@ with these exceptions:
           <pre>
 <!-- 115 82 71 66 -->73 52 47 42
 </pre>
-          <p>If the <span class="chunk">sRGB</span> chunk is present, the image samples conform to the sRGB colour space [[SRGB]]
+          <p>If the <span class="chunk">sRGB</span> chunk is present, the image samples conform to the sRGB color space [[SRGB]]
           and should be displayed using the specified rendering intent defined by the International Color Consortium [[ICC]] or
           [[ICC-2]].</p>
 
@@ -3536,7 +3599,7 @@ with these exceptions:
               <td>1</td>
               <td>Relative colorimetric</td>
               <td>
-                for images requiring colour appearance matching (relative to the output device <a>white point</a>), such as logos.
+                for images requiring color appearance matching (relative to the output device <a>white point</a>), such as logos.
               </td>
             </tr>
 
@@ -3618,12 +3681,11 @@ with these exceptions:
             </tr>
           </table>
 
-          <p>When the <span class="chunk">sRGB</span> chunk is present, it is recommended that decoders that recognize it and are
-          capable of colour management ignore the <a class="chunk" href="#11gAMA">gAMA</a> and <a class="chunk" href=
-          "#11cHRM">cHRM</a> chunks and use the <span class="chunk">sRGB</span> chunk instead. Decoders that recognize the
-          <span class="chunk">sRGB</span> chunk but are not capable of colour management are recommended to ignore the <a class=
-          "chunk" href="#11gAMA">gAMA</a> and <a class="chunk" href="#11cHRM">cHRM</a> chunks, and use the values given above as if
-          they had appeared in <a class="chunk" href="#11gAMA">gAMA</a> and <a class="chunk" href="#11cHRM">cHRM</a> chunks.</p>
+          <p>
+            This chunk is ignored 
+            unless it is the <a href="#color-chunk-precendence">highest-precedence color chunk</a>
+            understood by the decoder.
+          </p>
 
           <p>It is recommended that the <a class="chunk" href="#11sRGB">sRGB</a> and <a class="chunk" href="#11iCCP">iCCP</a>
           chunks do not appear simultaneously in a PNG datastream.</p>
@@ -3639,7 +3701,7 @@ with these exceptions:
           <pre>
 <!-- 99 73 67 80 -->63 49 43 50
 </pre>
-          <p>If present, the <span class="chunk">cICP</span> chunk specifies the colour space(primaries), transfer function, matrix
+          <p>If present, the <span class="chunk">cICP</span> chunk specifies the color space (primaries), transfer function, matrix
           coefficients and scaling factor of the image using the code points specified in [[ITU-T-H.273]]. The video format signaling SHOULD be used
           when processing the image, including by a decoder or when rendering the image.</p>
 
@@ -3658,7 +3720,7 @@ with these exceptions:
             </tr>
 
             <tr>
-              <td>Colour Primaries</td>
+              <td>Color Primaries</td>
               <td>1 byte</td>
             </tr>
 
@@ -3684,21 +3746,11 @@ with these exceptions:
           <p>RGB is currently the only supported color model in PNG, and as such <code>Matrix Coefficients</code> shall be set to <code>0</code>.</p>
 
           <aside class="note">
-            A <code>Matrix Coefficients</code> value other than <code>0</code> signals a transformation between colour difference
-            and RGB representations, which is not used in this International Standard since PNG images are RGB images. These are decimal
-            values.  Examples below show the 1-byte unsigned equivalents.
-          </aside>
-
-          <p>The <code>Video Full Range Flag</code> value MUST be either <code>0</code> or <code>1</code>. A value of 1 specifies
-            that the content has a full range scaling. This is the usual value for RGB images. A value of 0 specifies that the 
-            content has a limited-range scaling factor. Examples below show the 1-byte unsigned equivalents.</p>
-
-          <aside class="note">
             If <code>Video Full Range Flag</code> value is <code>1</code>, then the image is a <a>full-range image</a>. Typically,
             images in the RGB color representation are stored in the full-range signal quantization, therefore the vast
             majority of computer graphics and web images, including those used in traditional PNG workflows, are <a>full-range
             images</a>. If <code>Video Full Range Flag</code> value is <code>0</code>, then the image is a <a>narrow-range
-            image</a>. Narrow range images are found in video workflows where the interpretation of sample values below reference
+            image</a>. Narrow range images are found in video workflows where there are sample values below reference
             black (0% signal level) or above nominal peak (100% signal level). For example, [[ITU-R-BT.709]] specifies that, for
             10-bit coding, reference black (called black level) corresponds to a code value of 64 and nominal peak to a 
             code value of 940. In narrow range, momentary excursions defined as overshoots and undershoots exist below 
@@ -3710,60 +3762,72 @@ with these exceptions:
             carriage.
           </aside>
 
+          <p>If <code>Video Full Range Flag</code> is <code>0</code>
+            (a <a>narrow-range image</a>), recommended practice 
+            is to define transfer functions 
+            such as <a>EOTF</a> or inverse <a>OETF</a> 
+            over the extended range, 
+            so as to include negative values.
+            This is done as follows:
+          </p>
+
+          <pre>out = sign(in) * TransferFunction(abs(in))</pre>
+
           <p>The <span class="chunk">cICP</span> chunk MUST come before the <a class="chunk" href="#11PLTE">PLTE</a> and <a class=
           "chunk" href="#11IDAT">IDAT</a> chunks.</p>
 
-          <p>When the <span class="chunk">cICP</span> chunk is present, decoders that recognize it SHALL ignore the following
-          chunks:</p>
-
-          <ul>
-            <li>
-              <a class="chunk" href="#11iCCP">iCCP</a>
-            </li>
-
-            <li>
-              <a class="chunk" href="#11gAMA">gAMA</a>
-            </li>
-
-            <li>
-              <a class="chunk" href="#11cHRM">cHRM</a>
-            </li>
-
-            <li>
-              <a class="chunk" href="#11sRGB">sRGB</a>
-            </li>
-          </ul>
+          <p>
+            This chunk, if understood by the decoder, is the 
+            <a href="#color-chunk-precendence">highest-precedence color chunk</a>.
+          </p>
 
 
-          <aside class="example">
-            <span class="chunk">cICP</span> chunk field values for a <a>full-range image</a> that uses the colour primaries and the
+          <aside class="example" id="ex-cICP-BT.2100-PQ-full">
+            <span class="chunk">cICP</span> chunk field values for a <a>full-range image</a> that uses the color primaries and the
             <a>PQ</a> <a>transfer function</a> specified at [[ITU-R-BT.2100]]:
 
             <pre>
-9 16 0 1 (Decimal)
-09 10 00 01 (Four 1-byte unsigned integers)
+<!-- 9 16 0 1  -->09 10 00 01
 </pre>
+            <p>(Four 1-byte unsigned integers, in hexadecimal)</p>
           </aside>
 
-          <aside class="example">
-            <span class="chunk">cICP</span> chunk field values for a <a>full-range image</a> that uses the colour primaries and the
+          <aside class="example" id="ex-cICP-BT.2100-HLG-full">
+            <span class="chunk">cICP</span> chunk field values for a <a>full-range image</a> that uses the color primaries and the
             <a>HLG</a> <a>transfer function</a> specified at [[ITU-R-BT.2100]]:
 
             <pre>
-9 18 0 1 (Decimal values)
-09 12 00 01 (Four 1-byte unsigned integers)
+<!-- 9 18 0 1 -->09 12 00 01
 </pre>
+            <p>(Four 1-byte unsigned integers, in hexadecimal)</p>
           </aside>
 
-          <aside class="example">
-            <span class="chunk">cICP</span> chunk field values for a <a>narrow-range image</a> 
-            that uses the colour primaries and the <a>transfer function</a> defined at [[ITU-R-BT.709]]:
+          <aside class="example" id="ex-cICP-BT.709-narrow">
+            <span class="chunk">cICP</span> chunk field values for a <a>narrow-range image</a>
+            that uses the color primaries and the <a>transfer function</a> defined at [[ITU-R-BT.709]]:
 
             <pre>
-1 1 0 0 (Decimal values)
-01 01 00 00 (Four 1-byte unsigned integers)
+<!-- 1 1 0 0 -->01 01 00 00
 </pre>
+            <p>(Four 1-byte unsigned integers, in hexadecimal)</p>
           </aside>
+
+          <p id="display-p3">In a similar way to the use of the 
+          <a href="#srgb-standard-colour-space"><span class="chunk">sRGB</span></a> chunk
+          to compactly signal an sRGB image, <span class="chunk">cICP</span> can be used
+          to compactly signal a Display P3 image [[Display-P3]].
+          </p>
+
+          <aside class="example" id="ex-cICP-Display-P3-full">
+            <span class="chunk">cICP</span> chunk field values for a <a>full-range image</a>
+            that uses the color primaries and the <a>transfer function</a> defined by [[Display-P3]]:
+
+            <pre>
+<!--12 13 0 1 -->0C 0D 00 01
+</pre>
+            <p>(Four 1-byte unsigned integers, in hexadecimal)</p>
+          </aside>
+
         </section>
         <!-- Maintain a fragment named "mDCv-chunk" to preserve incoming links to it -->
 
@@ -3784,17 +3848,35 @@ with these exceptions:
           on a comparison of its inherent capabilities versus the original mastering display's capabilites.</p>
 
           <p>mDCv is typically used with the <a>PQ</a> [[ITU-R-BT.2100]] transfer function
-          and is commonly then called HDR10 (PQ with [[SMPTE-ST-2086]]), and may be included with other image formats.
-          Color primaries and white point characteristics can be derived from cICP chunk formats.
-          Specific examples of its most common use cases for images using both <a>HDR</a>
-          and [[ITU-R-BT.709]] SDR are available in [[ITU-T-Series-H-Supplement-19]].</p>
+          and additional <a href="#cLLi-chunk">cLLI</a> metadata and is commonly then called 
+          [[?HDR10]] (PQ with ST 2086 static metadata, MaxFALL and MaxCLL).
+          The mDCv chunk may also be included with <a>HLG</a> [[ITU-R-BT.2100]] and 
+          <a>SDR</a> image formats (for example [[ITU-R-BT.709]]). </p>
+
+          <p>Since mDCv was originally created as supplemental static metadata meant to
+          optimize the tone-mapping of images on a video display target, a cICP chunk
+          must accompany the use of mDCv in order to establish the basic characteristics
+          of the image content. Color Primaries and White Point characteristics
+          can be derived from cICP chunk formats.
+          Specific examples of its most common use-cases for images using
+          both HDR [[ITU-R-BT.2100]] and SDR [[ITU-R-BT.709]] are available in
+          [[ITU-T-Series-H-Supplement-19]]. The basic (cICP) characteristics plus the supplemental
+          (mDCv) static metadata may provide valuable information to optimize
+          tone-mapping decisions.</p>
 
 
           <p class="note"><a href="https://github.com/w3c/PNG-spec/issues/319">Issue #319</a> discusses tone-mapping behavior when
           the <span class="chunk">mDCv</span> chunk is present.</p>
 
           <p>For <a>SDR</a> images, if mDCv display min/max luminance are unknown, the default
-          characteristics can be derived from the values in [[ITU-T-Series-H-Supplement-19]] Table 11 or from the relevant <a>SDR</a> specification.</p>
+          characteristics can be derived from the values in [[ITU-T-Series-H-Supplement-19]] Table 11 or from the relevant <a>SDR</a> specification.
+          At present, there is no published, standardized method for translating an SDR image signal from its default viewing
+          condition (display luminance and ambient illumination) to that signalled in the mDCV chunk.</p>
+
+          <aside class="note">
+            The <a>HLG</a> [[ITU-R-BT.2100]] image format does have published methods for translating the image for both changes in display luminance (within [[ITU-R-BT.2100]]) and
+              ambient illumination (within the accompanying report [[ITU-R-BT.2390]]). This may be used with SDR images.
+          </aside>
 
           <p>The following specifies the syntax of the <span class="chunk">mDCv</span> chunk:</p>
 
@@ -3810,13 +3892,13 @@ with these exceptions:
             </tr>
 
             <tr>
-              <td>Mastering display colour primaries</td>
+              <td>Mastering display color primary chromaticities (CIE 1931 <i>x,y</i> of R,G,B )</td>
               <td>12 bytes</td>
               <td>0.00002</td>
             </tr>
 
             <tr>
-              <td>Mastering display white point chromaticity</td>
+              <td>Mastering display white point chromaticity (CIE 1931 <i>x,y</i>)</td>
               <td>4 bytes</td>
               <td>0.00002</td>
             </tr>
@@ -3834,17 +3916,17 @@ with these exceptions:
             </tr>
           </table>
 
-          <p>The color primaries are encoded as 
+          <p>The color primaries are encoded as
             three pairs of <a>PNG two-byte unsigned integer</a>s,
             in the order <em>x</em> and then <em>y</em>,
             each representing the x or y primary chromaticity value divided by the divisor value.
-            They are ordered starting with the primary with the largest x chromaticity, 
-            followed by the primary with the largest y chromaticity, 
-            followed by the remaining primary. 
+            They are ordered starting with the primary with the largest x chromaticity,
+            followed by the primary with the largest y chromaticity,
+            followed by the remaining primary.
             For RGB color spaces, this corresponds to the order R, G, B.
 
           <p>
-            The white point is encoded as 
+            The white point is encoded as
             a pair of <a>PNG two-byte unsigned integer</a>s,
             in the order <em>x</em> and then <em>y</em>,
             each representing the x or y whie chromaticity value divided by the divisor value.
@@ -3866,7 +3948,7 @@ with these exceptions:
           <p>Below are mDCv examples for [[ITU-R-BT.2100]] <a>HDR</a>.</p>
 
           <aside class="example">
-            Example <span class="chunk">mDCv</span> chunk mastering display colour primaries for <a>HDR</a> [[ITU-R-BT.2100]]:
+            Example <span class="chunk">mDCv</span> chunk mastering display color primaries for <a>HDR</a> [[ITU-R-BT.2100]]:
             <table id="mDCv-chunk-hdr-primaries-example" class="numbered simple">
               <tr>
                 <th>Name</th>
@@ -3876,7 +3958,7 @@ with these exceptions:
               </tr>
 
               <tr>
-                <td rowspan="3">Colour primaries specified in [[ITU-R-BT.2020]]</td>
+                <td rowspan="3">Color primaries specified in [[ITU-R-BT.2020]]</td>
                 <td>(0.708, 0.292)</td>
                 <td>{ 35400, 14600 }</td>
                 <td>{ 8A 48, 39 08 }</td>
@@ -3955,7 +4037,7 @@ with these exceptions:
           <p>Below are mDCv examples for [[Display-P3]] <a>SDR</a>.</p>
 
           <aside class="example">
-            Example <span class="chunk">mDCv</span> chunk mastering display colour primaries for [[SRGB]]:
+            Example <span class="chunk">mDCv</span> chunk mastering display color primaries for [[SRGB]]:
 
             <table id="mDCv-chunk-sdr-primaries-example" class="numbered simple">
               <tr>
@@ -3966,7 +4048,7 @@ with these exceptions:
               </tr>
 
               <tr>
-                <td rowspan="3">Colour primaries specified in [[Display-P3]]</td>
+                <td rowspan="3">Color primaries specified in [[Display-P3]]</td>
                 <td>(0.68, 0.32)</td>
                 <td>{ 34000, 16000 }</td>
                 <td>{ 84 D0, 3E 80 }</td>
@@ -4049,7 +4131,6 @@ with these exceptions:
           <pre>
 <!-- 99 76 76 105 -->63 4C 4C 69
 </pre>
-
           <p>If present, the <span class="chunk">cLLi</span> chunk identifies two characteristics of <a>HDR</a> content:</p>
 
           <p>The <span class="chunk">cLLi</span> chunk adds static metadata which provides an opportunity
@@ -4073,13 +4154,13 @@ with these exceptions:
           <p class="note">[[CTA-861.3-A]] describes the method of calculation for generating the
             <span class="chunk">cLLi</span> values,
             but does not specify any filtering.
-            [[HDR-Static-Meta]] describes an improved method which rejects extreme values from 
-            statistical outliers, noise or ringing from resampling filters, 
+            [[HDR-Static-Meta]] describes an improved method which rejects extreme values from
+            statistical outliers, noise or ringing from resampling filters,
             and is recommended for practical implementations.
           </p>
 
           <p class="note">[[SMPTE-ST-2067-21]] Section 7.5 adds additional
-            information in Section 7.5 in the case where the <span class="chunk">cLLi</span> values are unknown and have not been calculated.</p> 
+            information in Section 7.5 in the case where the <span class="chunk">cLLi</span> values are unknown and have not been calculated.</p>
 
           <p class="note"><a href="https://github.com/w3c/PNG-spec/issues/319">Issue #319</a> discusses tone-mapping behavior when
           the <span class="chunk">cLLi</span> chunk is present.</p>
@@ -4355,8 +4436,7 @@ with these exceptions:
             </tr>
           </table>
 
-          <p>The keyword and null character are the same as in the <a class="chunk" href="#11tEXt">tEXt</a> chunk (see <a href=
-          "#11tEXt"></a>). The keyword is not compressed. The compression method entry defines the compression method used. The
+          <p>The keyword and null character are the same as in the <a class="chunk" href="#11tEXt">tEXt</a> chunk. The keyword is not compressed. The compression method entry defines the compression method used. The
           only value defined in this International Standard is 0 (<a>deflate</a> compression). Other values are reserved for future
           standardization. The compression method entry is followed by the compressed text datastream that makes up the remainder
           of the chunk. For compression method 0, this datastream is a <a>zlib</a> datastream with deflate compression (see
@@ -4430,7 +4510,9 @@ with these exceptions:
           uncompressed text, encoders shall set the compression method to 0, and decoders shall ignore it.</p>
 
           <p>The language tag is a well-formed language tag defined by [[BCP47]]. Unlike the keyword, the language tag is
-          case-insensitive. Subtags must appear in the IANA language subtag registry. If the language tag is empty, the language is
+          case-insensitive. Subtags must appear in the 
+          <a href="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry">IANA language subtag registry</a>. 
+          If the language tag is empty, the language is
           unspecified. Examples of language tags include: <code>en</code>, <code>en-GB</code>, <code>es-419</code>,
           <code>zh-Hans</code>, <code>zh-Hans-CN</code>, <code>tlh-Cyrl-AQ</code>, <code>ar-AE-u-nu-latn</code>, and
           <code>x-private</code>.</p>
@@ -4457,14 +4539,14 @@ with these exceptions:
         <!-- Maintain a fragment named "11bKGD" to preserve incoming links to it -->
 
         <section id="11bKGD">
-          <h2><span class="chunk">bKGD</span> Background colour</h2>
+          <h2><span class="chunk">bKGD</span> Background color</h2>
 
           <p>The four-byte chunk type field contains the hexadecimal values</p>
 
           <pre>
 <!-- 98 75 71 68 -->62 4B 47 44
 </pre>
-          <p>The <span class="chunk">bKGD</span> chunk specifies a default background colour to present the image against. If there
+          <p>The <span class="chunk">bKGD</span> chunk specifies a default background color to present the image against. If there
           is any other preferred background, either user-specified or part of a larger page (as in a browser), the <span class=
           "chunk">bKGD</span> chunk should be ignored. The <span class="chunk">bKGD</span> chunk contains:</p>
 
@@ -4474,7 +4556,7 @@ with these exceptions:
             </caption>
 
             <tr>
-              <th colspan="2">Colour types 0 and 4</th>
+              <th colspan="2">Color types 0 and 4</th>
             </tr>
 
             <tr>
@@ -4483,7 +4565,7 @@ with these exceptions:
             </tr>
 
             <tr>
-              <th colspan="2">Colour types 2 and 6</th>
+              <th colspan="2">Color types 2 and 6</th>
             </tr>
 
             <tr>
@@ -4502,7 +4584,7 @@ with these exceptions:
             </tr>
 
             <tr>
-              <th colspan="2">Colour type 3</th>
+              <th colspan="2">Color type 3</th>
             </tr>
 
             <tr>
@@ -4511,11 +4593,11 @@ with these exceptions:
             </tr>
           </table>
 
-          <p>For <a>colour type</a> 3 (<a>indexed-colour</a>), the value is the palette index of the colour to be used as background.</p>
+          <p>For <a>color type</a> 3 (<a>indexed-color</a>), the value is the palette index of the color to be used as background.</p>
 
-          <p>For <a>colour types</a> 0 and 4 (<a>greyscale</a>, <a>greyscale with alpha</a>), the value is the grey level to be used as
-          background in the range 0 to (2<sup>bitdepth</sup>)-1. For <a>colour types</a> 2 and 6 (<a>truecolour</a>, <a>truecolour
-          with alpha</a>), the values are the colour to be used as background, given as RGB samples in the range 0 to
+          <p>For <a>color types</a> 0 and 4 (<a>greyscale</a>, <a>greyscale with alpha</a>), the value is the grey level to be used as
+          background in the range 0 to (2<sup>bitdepth</sup>)-1. For <a>color types</a> 2 and 6 (<a>truecolor</a>, <a>truecolor
+          with alpha</a>), the values are the color to be used as background, given as RGB samples in the range 0 to
           (2<sup>bitdepth</sup>)-1. In each case, for consistency, two bytes per sample are used regardless of the image bit depth.
           If the image bit depth is less than 16, the least significant bits are used.
           Encoders should set the other bits to 0, and decoders must mask the other bits to 0 before the value is used.</p>
@@ -4544,9 +4626,9 @@ with these exceptions:
             </tr>
           </table>
 
-          <p>The <span class="chunk">hIST</span> chunk gives the approximate usage frequency of each colour in the palette. A
+          <p>The <span class="chunk">hIST</span> chunk gives the approximate usage frequency of each color in the palette. A
           histogram chunk can appear only when a <a class="chunk" href="#11PLTE">PLTE</a> chunk appears. If a viewer is unable to
-          provide all the colours listed in the palette, the histogram may help it decide how to choose a subset of the colours for
+          provide all the colors listed in the palette, the histogram may help it decide how to choose a subset of the colors for
           display.</p>
 
           <p>There shall be exactly one entry for each entry in the <a class="chunk" href="#11PLTE">PLTE</a> chunk. Each entry is
@@ -4554,9 +4636,9 @@ with these exceptions:
           encoder.</p>
 
           <p>Histogram entries are approximate, with the exception that a zero entry specifies that the corresponding palette entry
-          is not used at all in the image. A histogram entry shall be nonzero if there are any pixels of that colour.</p>
+          is not used at all in the image. A histogram entry shall be nonzero if there are any pixels of that color.</p>
 
-          <p class="note">NOTE When the palette is a suggested quantization of a <a>truecolour</a> image, the histogram is
+          <p class="note">NOTE When the palette is a suggested quantization of a <a>truecolor</a> image, the histogram is
           necessarily approximate, since a decoder may map pixels to palette entries differently than the encoder did. In this
           situation, zero entries should not normally appear, because any entry might be used.</p>
         </section>
@@ -4708,8 +4790,8 @@ with these exceptions:
           is 8, or by 10 if the <span class="chunk">sPLT</span> sample depth is 16. Entries shall appear in decreasing order of
           frequency. There is no requirement that the entries all be used by the image, nor that they all be different.</p>
 
-          <p>The palette name can be any convenient name for referring to the palette (for example "256 colour including Macintosh
-          default", "256 colour including Windows-3.1 default", "Optimal 512"). The palette name may aid the choice of the
+          <p>The palette name can be any convenient name for referring to the palette (for example "256 color including Macintosh
+          default", "256 color including Windows-3.1 default", "Optimal 512"). The palette name may aid the choice of the
           appropriate suggested palette when more than one appears in a PNG datastream.</p>
 
           <p>The palette name is case-sensitive, and subject to the same restrictions as the keyword parameter for the <a class=
@@ -4719,12 +4801,12 @@ with these exceptions:
           <p>The <span class="chunk">sPLT</span> sample depth shall be 8 or 16.</p>
 
           <p>The red, green, blue, and alpha samples are either one or two bytes each, depending on the <span class=
-          "chunk">sPLT</span> sample depth, regardless of the image bit depth. The colour samples are not premultiplied by alpha,
+          "chunk">sPLT</span> sample depth, regardless of the image bit depth. The color samples are not premultiplied by alpha,
           nor are they precomposited against any background. An alpha value of 0 means fully transparent. An alpha value of 255
           (when the <span class="chunk">sPLT</span> sample depth is 8) or 65535 (when the <span class="chunk">sPLT</span> sample
-          depth is 16) means fully opaque. The <span class="chunk">sPLT</span> chunk may appear for any <a>colour type</a>. Entries
+          depth is 16) means fully opaque. The <span class="chunk">sPLT</span> chunk may appear for any <a>color type</a>. Entries
           in <span class="chunk">sPLT</span> use the same <a>gamma value</a> and <a>chromaticity</a> values as the PNG image, but
-          may fall outside the range of values used in the colour space of the PNG image; for example, in a <a>greyscale</a> PNG image,
+          may fall outside the range of values used in the color space of the PNG image; for example, in a <a>greyscale</a> PNG image,
           each <span class="chunk">sPLT</span> entry would typically have equal red, green, and blue values, but this is not
           required. Similarly, <span class="chunk">sPLT</span> entries can have non-opaque alpha values even when the PNG image
           does not use transparency.</p>
@@ -4732,10 +4814,10 @@ with these exceptions:
           <p>Each frequency value is proportional to the fraction of the pixels in the image for which that palette entry is the
           closest match in RGBA space, before the image has been <a>composited</a> against any background. The exact scale factor
           is chosen by the PNG encoder; it is recommended that the resulting range of individual values reasonably fills the range
-          0 to 65535. A PNG encoder may artificially inflate the frequencies for colours considered to be "important", for example
-          the colours used in a logo or the facial features of a portrait. Zero is a valid frequency meaning that the colour is
+          0 to 65535. A PNG encoder may artificially inflate the frequencies for colors considered to be "important", for example
+          the colors used in a logo or the facial features of a portrait. Zero is a valid frequency meaning that the color is
           "least important" or that it is rarely, if ever, used. When all the frequencies are zero, they are meaningless, that is
-          to say, nothing may be inferred about the actual frequencies with which the colours appear in the PNG image.</p>
+          to say, nothing may be inferred about the actual frequencies with which the colors appear in the PNG image.</p>
 
           <p>Multiple <span class="chunk">sPLT</span> chunks are permitted, but each shall have a different palette name.</p>
         </section>
@@ -5098,7 +5180,7 @@ with these exceptions:
     </pre>
           <p>The <span class="chunk">fdAT</span> chunk serves the same purpose for animations as the <a class="chunk" href=
           "#11IDAT">IDAT</a> chunks do for static images;
-          the set of <span class="chunk">fdAT</span> chunks 
+          the set of <span class="chunk">fdAT</span> chunks
           contains the <a>image data</a> for all frames (or, for animations
           which include the <a>static image</a> as first frame, for all frames after the first one). It contains:</p>
 
@@ -5137,7 +5219,7 @@ with these exceptions:
 
           When decompressed, the datastream is the complete pixel data of a PNG image,
           including the filter byte at the beginning of each scanline, similar to the uncompressed data of all the <a class="chunk"
-          href="#11IDAT">IDAT</a> chunks. It utilizes the same bit depth, <a>colour type</a>, compression method, <a>filter
+          href="#11IDAT">IDAT</a> chunks. It utilizes the same bit depth, <a>color type</a>, compression method, <a>filter
           method</a>, interlace method, and palette (if any) as the <a>static image</a>.</p>
 
           <p>Each frame inherits every property specified by any critical or ancillary chunks <em>before</em> the first <a class=
@@ -5165,7 +5247,7 @@ with these exceptions:
     <section class="introductory" id="12Introduction">
       <h3>Introduction</h3>
 
-      <p>This clause gives requirements and recommendations for encoder behaviour. A PNG encoder shall produce a PNG datastream
+      <p>This clause gives requirements and recommendations for encoder behavior. A PNG encoder shall produce a PNG datastream
       from a PNG image that conforms to the format specified in the preceding clauses. Best results will usually be achieved by
       following the additional recommendations given here.</p>
     </section>
@@ -5176,7 +5258,7 @@ with these exceptions:
 
       <p>See <a href="#C-GammaAppendix"></a> for a brief introduction to <a>gamma</a> issues.</p>
 
-      <p>PNG encoders capable of full colour management will perform more sophisticated calculations than those described here and
+      <p>PNG encoders capable of full color management will perform more sophisticated calculations than those described here and
       may choose to use the <a class="chunk" href="#11iCCP">iCCP</a> chunk. If it is known that the image samples conform to the
       sRGB specification [[SRGB]], encoders are strongly encouraged to write the <a class="chunk" href=
       "#srgb-standard-colour-space">sRGB</a> chunk without performing additional <a>gamma</a> handling. In both cases it is
@@ -5254,7 +5336,7 @@ gamma = encoding_exponent
 
       <p>When the sample values come directly from a piece of hardware, the correct <a class="chunk" href="#11gAMA">gAMA</a> value
       can, in principle, be inferred from the <a>transfer function</a> of the hardware and lighting conditions of the scene. In the
-      case of video digitizers ("frame grabbers"), the samples are probably in the sRGB colour space, because the sRGB
+      case of video digitizers ("frame grabbers"), the samples are probably in the sRGB color space, because the sRGB
       specification was designed to be compatible with modern video standards. Image scanners are less predictable. Their output
       samples may be proportional to the input light intensity since CCD sensors themselves are linear, or the scanner hardware may
       have already applied a power function designed to compensate for dot gain in subsequent printing (an exponent of about 0.57),
@@ -5296,11 +5378,11 @@ gamma = 1/display_exponent
     <!-- Maintain a fragment named "12Encoder-colour-handling" to preserve incoming links to it -->
 
     <section id="12Encoder-colour-handling">
-      <h2>Encoder colour handling</h2>
+      <h2>Encoder color handling</h2>
 
-      <p>See <a href="#C-GammaAppendix"></a> for references to colour issues.</p>
+      <p>See <a href="#C-GammaAppendix"></a> for references to color issues.</p>
 
-      <p>PNG encoders capable of full colour management will perform more sophisticated calculations than those described here and
+      <p>PNG encoders capable of full color management will perform more sophisticated calculations than those described here and
       may choose to use the <a class="chunk" href="#11iCCP">iCCP</a> chunk. If it is known that the image samples conform to the
       sRGB specification [[SRGB]], PNG encoders are strongly encouraged to use the <a class="chunk" href=
       "#srgb-standard-colour-space">sRGB</a> chunk.</p>
@@ -5334,9 +5416,9 @@ cHRM</a> chunk.</p>-->
       automatically.</p>
 
       <p>If the encoder is compiled as a portion of a computer image renderer that performs full-spectral rendering, the monitor
-      values that were used to convert from the internal device-independent colour space to RGB should be written into the
-      <a class="chunk" href="#11cHRM">cHRM</a> chunk. Any colours that are outside the gamut of the chosen RGB device should be
-      mapped to be within the gamut; PNG does not store out-of-gamut colours.</p>
+      values that were used to convert from the internal device-independent color space to RGB should be written into the
+      <a class="chunk" href="#11cHRM">cHRM</a> chunk. Any colors that are outside the gamut of the chosen RGB device should be
+      mapped to be within the gamut; PNG does not store out-of-gamut colors.</p>
 
       <p>If the computer image renderer performs calculations directly in device-dependent RGB space, a <a class="chunk" href=
       "#11cHRM">cHRM</a> chunk should not be written unless the scene description and rendering parameters have been adjusted for a
@@ -5416,8 +5498,8 @@ cHRM</a> chunk.</p>-->
       </table>
 
       <p>It is <strong>not</strong> recommended that datastream format converters attempt to convert supplied images to a different
-      RGB colour space. The data should be stored in the PNG datastream without conversion, and the source primary chromaticities
-      should be recorded if they are known. Colour space transformation at datastream conversion time is a bad idea because of
+      RGB color space. The data should be stored in the PNG datastream without conversion, and the source primary chromaticities
+      should be recorded if they are known. Color space transformation at datastream conversion time is a bad idea because of
       gamut mismatches and rounding errors. As with <a>gamma</a> conversions, it is better to store the data losslessly and incur
       at most one conversion when the image is finally displayed.</p>
 
@@ -5429,20 +5511,20 @@ cHRM</a> chunk.</p>-->
       <h2>Alpha channel creation</h2>
 
       <p>The alpha channel can be regarded either as a mask that temporarily hides transparent parts of the image, or as a means
-      for constructing a non-rectangular image. In the first case, the colour values of fully transparent pixels should be
+      for constructing a non-rectangular image. In the first case, the color values of fully transparent pixels should be
       preserved for future use. In the second case, the transparent pixels carry no useful data and are simply there to fill out
-      the rectangular image area required by PNG. In this case, fully transparent pixels should all be assigned the same colour
+      the rectangular image area required by PNG. In this case, fully transparent pixels should all be assigned the same color
       value for best compression.</p>
 
       <p>Image authors should keep in mind the possibility that a decoder will not support transparency control in full (see
-      <a href="#13Alpha-channel-processing"></a>). Hence, the colours assigned to transparent pixels should be reasonable
-      background colours whenever feasible.</p>
+      <a href="#13Alpha-channel-processing"></a>). Hence, the colors assigned to transparent pixels should be reasonable
+      background colors whenever feasible.</p>
 
       <p>For applications that do not require a full alpha channel, or cannot afford the price in compression efficiency, the
       <a class="chunk" href="#11tRNS">tRNS</a> transparency chunk is also available.</p>
 
-      <p>If the image has a known background colour, this colour should be written in the <a class="chunk" href="#11bKGD">bKGD</a>
-      chunk. Even decoders that ignore transparency may use the <a class="chunk" href="#11bKGD">bKGD</a> colour to fill unused
+      <p>If the image has a known background color, this color should be written in the <a class="chunk" href="#11bKGD">bKGD</a>
+      chunk. Even decoders that ignore transparency may use the <a class="chunk" href="#11bKGD">bKGD</a> color to fill unused
       screen area.</p>
 
       <p>If the original image has premultiplied (also called "associated") alpha data, it can be converted to PNG's
@@ -5526,36 +5608,36 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
       <h2>Suggested palettes</h2>
 
       <p>Suggested palettes may appear as <a class="chunk" href="#11sPLT">sPLT</a> chunks in any PNG datastream, or as a <a class=
-      "chunk" href="#11PLTE">PLTE</a> chunk in <a>truecolour</a> PNG datastreams. In either case, the suggested palette is not an
-      essential part of the <a>image data</a>, but it may be used to present the image on indexed-colour display hardware.
-      Suggested palettes are of no interest to viewers running on <a>truecolour</a> hardware.</p>
+      "chunk" href="#11PLTE">PLTE</a> chunk in <a>truecolor</a> PNG datastreams. In either case, the suggested palette is not an
+      essential part of the <a>image data</a>, but it may be used to present the image on indexed-color display hardware.
+      Suggested palettes are of no interest to viewers running on <a>truecolor</a> hardware.</p>
 
       <p>When an <a class="chunk" href="#11sPLT">sPLT</a> chunk is used to provide a suggested palette, it is recommended that the
       encoder use the frequency fields to indicate the relative importance of the palette entries, rather than leave them all zero
-      (meaning undefined). The frequency values are most easily computed as "nearest neighbour" counts, that is, the approximate
+      (meaning undefined). The frequency values are most easily computed as "nearest neighbor" counts, that is, the approximate
       usage of each RGBA palette entry if no dithering is applied. (These counts will often be available "for free" as a
       consequence of developing the suggested palette.) Because the suggested palette includes transparency information, it should
       be computed for the un-<a>composited</a> image.</p>
 
-      <p>Even for indexed-colour images, <a class="chunk" href="#11sPLT">sPLT</a> can be used to define alternative reduced
-      palettes for viewers that are unable to display all the colours present in the <a class="chunk" href="#11PLTE">PLTE</a>
+      <p>Even for indexed-color images, <a class="chunk" href="#11sPLT">sPLT</a> can be used to define alternative reduced
+      palettes for viewers that are unable to display all the colors present in the <a class="chunk" href="#11PLTE">PLTE</a>
       chunk. If the <a class="chunk" href="#11PLTE">PLTE</a> chunk appears without the <a class="chunk" href="#11bKGD">bKGD</a>
-      chunk in an image of <a>colour type</a> 6, the circumstances under which the palette was computed are unspecified.</p>
+      chunk in an image of <a>color type</a> 6, the circumstances under which the palette was computed are unspecified.</p>
 
-      <p>An older method for including a suggested palette in a <a>truecolour</a> PNG datastream uses the <a class="chunk" href=
+      <p>An older method for including a suggested palette in a <a>truecolor</a> PNG datastream uses the <a class="chunk" href=
       "#11PLTE">PLTE</a> chunk. If this method is used, the histogram (frequencies) should appear in a separate <a class="chunk"
       href="#11hIST">hIST</a> chunk. The <a class="chunk" href="#11PLTE">PLTE</a> chunk does not include transparency information.
-      Hence for images of <a>colour type</a> 6 (<a>truecolour with alpha</a>), it is recommended that a <a class="chunk" href=
+      Hence for images of <a>color type</a> 6 (<a>truecolor with alpha</a>), it is recommended that a <a class="chunk" href=
       "#11bKGD">bKGD</a> chunk appear and that the palette and histogram be computed with reference to the image as it would appear
-      after compositing against the specified background colour. This definition is necessary to ensure that useful palette entries
+      after compositing against the specified background color. This definition is necessary to ensure that useful palette entries
       are generated for pixels having fractional alpha values. The resulting palette will probably be useful only to viewers that
-      present the image against the same background colour. It is recommended that <a>PNG editors</a> delete or recompute the
-      palette if they alter or remove the <a class="chunk" href="#11bKGD">bKGD</a> chunk in an image of <a>colour type</a> 6.</p>
+      present the image against the same background color. It is recommended that <a>PNG editors</a> delete or recompute the
+      palette if they alter or remove the <a class="chunk" href="#11bKGD">bKGD</a> chunk in an image of <a>color type</a> 6.</p>
 
-      <p>For images of <a>colour type</a> 2 (<a>truecolour</a>), it is recommended that the <a class="chunk" href=
+      <p>For images of <a>color type</a> 2 (<a>truecolor</a>), it is recommended that the <a class="chunk" href=
       "#11PLTE">PLTE</a> and <a class="chunk" href="#11hIST">hIST</a> chunks be computed with reference to the RGB data only,
-      ignoring any transparent-colour specification. If the datastream uses transparency (has a <a class="chunk" href=
-      "#11tRNS">tRNS</a> chunk), viewers can easily adapt the resulting palette for use with their intended background colour (see
+      ignoring any transparent-color specification. If the datastream uses transparency (has a <a class="chunk" href=
+      "#11tRNS">tRNS</a> chunk), viewers can easily adapt the resulting palette for use with their intended background color (see
       <a href="#13Histogram-and-suggested-palette-usage"></a>).</p>
 
       <p>For providing suggested palettes, the <a class="chunk" href="#11sPLT">sPLT</a> chunk is more flexible than the <a class=
@@ -5567,9 +5649,9 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
         appropriate palette based on name or number of entries.
         </li>
 
-        <li>In a PNG datastream of <a>colour type</a> 6 (<a>truecolour with alpha</a> channel), the <a class="chunk" href=
+        <li>In a PNG datastream of <a>color type</a> 6 (<a>truecolor with alpha</a> channel), the <a class="chunk" href=
         "#11PLTE">PLTE</a> chunk represents a palette already <a>composited</a> against the <a class="chunk" href=
-        "#11bKGD">bKGD</a> colour, so it is useful only for display against that background colour. The <a class="chunk" href=
+        "#11bKGD">bKGD</a> color, so it is useful only for display against that background color. The <a class="chunk" href=
         "#11sPLT">sPLT</a> chunk provides an un-<a>composited</a> palette, which is useful for display against backgrounds chosen
         by the PNG decoder.
         </li>
@@ -5578,8 +5660,8 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
         suggested palettes without being forced to discard unknown unsafe-to-copy chunks.
         </li>
 
-        <li>Whereas the <a class="chunk" href="#11sPLT">sPLT</a> chunk is allowed in PNG datastreams for <a>colour types</a> 0, 3,
-        and 4 (<a>greyscale</a> and <a>indexed-colour</a>), the <a class="chunk" href="#11PLTE">PLTE</a> chunk cannot be used to provide reduced
+        <li>Whereas the <a class="chunk" href="#11sPLT">sPLT</a> chunk is allowed in PNG datastreams for <a>color types</a> 0, 3,
+        and 4 (<a>greyscale</a> and <a>indexed-color</a>), the <a class="chunk" href="#11PLTE">PLTE</a> chunk cannot be used to provide reduced
         palettes in these cases.
         </li>
 
@@ -5606,17 +5688,17 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
     <section id="12Filter-selection">
       <h2>Filter selection</h2>
 
-      <p>For images of <a>colour type</a> 3 (indexed-colour), filter type 0 (None) is usually the most effective. Colour images
-      with 256 or fewer colours should almost always be stored in <a>indexed-colour</a> format; <a>truecolour</a> format is likely to be
+      <p>For images of <a>color type</a> 3 (indexed-color), filter type 0 (None) is usually the most effective. Color images
+      with 256 or fewer colors should almost always be stored in <a>indexed-color</a> format; <a>truecolor</a> format is likely to be
       much larger.</p>
 
       <p>Filter type 0 is also recommended for images of bit depths less than 8. For low-bit-depth greyscale images, in rare cases,
       better compression may be obtained by first expanding the image to 8-bit representation and then applying filtering.</p>
 
-      <p>For <a>truecolour</a> and <a>greyscale</a> images, any of the five filters may prove the most effective. If an encoder uses a
+      <p>For <a>truecolor</a> and <a>greyscale</a> images, any of the five filters may prove the most effective. If an encoder uses a
       fixed filter, the Paeth filter type is most likely to be the best.</p>
 
-      <p>For best compression of <a>truecolour</a> and <a>greyscale</a> images,
+      <p>For best compression of <a>truecolor</a> and <a>greyscale</a> images,
       and if compression efficiency is valued over speed of compression,
       the recommended approach is adaptive filtering in which a
       filter type is chosen for each scanline.
@@ -5713,13 +5795,13 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
     <section class="introductory" id="13Introduction">
       <h2>Introduction</h2>
 
-      <p>This clause gives some requirements and recommendations for PNG decoder behaviour and viewer behaviour. A viewer presents
-      the decoded PNG image to the user. Since viewer and decoder behaviour are closely connected, decoders and viewers are treated
+      <p>This clause gives some requirements and recommendations for PNG decoder behavior and viewer behavior. A viewer presents
+      the decoded PNG image to the user. Since viewer and decoder behavior are closely connected, decoders and viewers are treated
       together here. The only absolute requirement on a PNG decoder is that it successfully reads any datastream conforming to the
       format specified in the preceding chapters. However, best results will usually be achieved by following these additional
       recommendations.</p>
 
-      <p>PNG decoders shall support all valid combinations of bit depth, <a>colour type</a>, compression method, <a>filter
+      <p>PNG decoders shall support all valid combinations of bit depth, <a>color type</a>, compression method, <a>filter
       method</a>, and interlace method that are explicitly defined in this International Standard.</p>
     </section>
 
@@ -5792,7 +5874,7 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
       example, most decoders can ignore an invalid <a class="chunk" href="#11IEND">IEND</a> chunk; a text-extraction program can
       ignore the absence of <a class="chunk" href="#11IDAT">IDAT</a>; an image viewer cannot recover from an empty <a class="chunk"
       href="#11PLTE">PLTE</a> chunk in an indexed image but it can ignore an invalid <a class="chunk" href="#11PLTE">PLTE</a> chunk
-      in a <a>truecolour</a> image; and a program that extracts the alpha channel can ignore an invalid <a class="chunk" href=
+      in a <a>truecolor</a> image; and a program that extracts the alpha channel can ignore an invalid <a class="chunk" href=
       "#11gAMA">gAMA</a> chunk, but may consider the presence of two <a class="chunk" href="#11tRNS">tRNS</a> chunks to be a fatal
       error. Anomalous situations other than syntax errors shall be treated as follows:</p>
       <!-- <ol start="7"> -->
@@ -5874,9 +5956,9 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
     <section id="13Security-considerations">
       <h2>Security considerations</h2>
 
-      <p>A PNG datastream is composed of a collection of explicitly typed chunks. 
+      <p>A PNG datastream is composed of a collection of explicitly typed chunks.
       Chunks whose contents are defined by the
-      specification could actually contain anything, including malicious code. 
+      specification could actually contain anything, including malicious code.
       Similarly there could be data after the <a class="chunk" href="#11IEND">IEND</a> chunk
       which could contain anything, including malicious code.
       There is no known risk that such malicious code
@@ -5964,7 +6046,7 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
       <p>Where the pixel aspect ratio of the display differs from the aspect ratio of the physical pixel dimensions defined in the
       PNG datastream, viewers are strongly encouraged to rescale images for proper display.</p>
 
-      <p>When the <a class="chunk" href="#11pHYs">pHYs</a> chunk has a unit specifier of 0 (unit is unknown), the behaviour of a
+      <p>When the <a class="chunk" href="#11pHYs">pHYs</a> chunk has a unit specifier of 0 (unit is unknown), the behavior of a
       decoder may depend on the ratio of the two pixels-per-unit values, but should not depend on their magnitudes. For example, a
       <a class="chunk" href="#11pHYs">pHYs</a> chunk containing <code>(ppuX, ppuY, unit) = (2, 1, 0)</code> is equivalent to one
       containing <code>(1000, 500, 0)</code>; both are equally valid indications that the image pixels are twice as tall as they
@@ -6106,7 +6188,7 @@ while (pass &lt; 7)
 }
 </pre>
       <p>The function <code>visit(row,column,height,width)</code> obtains the next transmitted pixel and paints a rectangle of the
-      specified height and width, whose upper-left corner is at the specified row and column, using the colour indicated by the
+      specified height and width, whose upper-left corner is at the specified row and column, using the color indicated by the
       pixel. Note that row and column are measured from 0,0 at the upper left corner.</p>
 
       <p>If the viewer is merging the received image with a background image, it may be more convenient just to paint the received
@@ -6120,26 +6202,26 @@ while (pass &lt; 7)
     <!-- Maintain a fragment named "13Truecolour-image-handling" to preserve incoming links to it -->
 
     <section id="13Truecolour-image-handling">
-      <h2>Truecolour image handling</h2>
+      <h2>Truecolor image handling</h2>
 
-      <p>To achieve PNG's goal of universal interchangeability, decoders shall accept all types of PNG image: <a>indexed-colour</a>,
-      <a>truecolour</a>, and <a>greyscale</a>. Viewers running on indexed-colour display hardware need to be able to reduce
-      <a>truecolour</a> images to indexed-colour for viewing. This process is called "colour quantization".</p>
+      <p>To achieve PNG's goal of universal interchangeability, decoders shall accept all types of PNG image: <a>indexed-color</a>,
+      <a>truecolor</a>, and <a>greyscale</a>. Viewers running on indexed-color display hardware need to be able to reduce
+      <a>truecolor</a> images to indexed-color for viewing. This process is called "color quantization".</p>
 
-      <p>A simple, fast method for colour quantization is to reduce the image to a fixed palette. Palettes with uniform colour
-      spacing ("colour cubes") are usually used to minimize the per-pixel computation. For photograph-like images, dithering is
+      <p>A simple, fast method for color quantization is to reduce the image to a fixed palette. Palettes with uniform color
+      spacing ("color cubes") are usually used to minimize the per-pixel computation. For photograph-like images, dithering is
       recommended to avoid ugly contours in what should be smooth gradients; however, dithering introduces graininess that can be
       objectionable.</p>
 
       <p>The quality of rendering can be improved substantially by using a palette chosen specifically for the image, since a
-      colour cube usually has numerous entries that are unused in any particular image. This approach requires more work, first in
-      choosing the palette, and second in mapping individual pixels to the closest available colour. PNG allows the encoder to
+      color cube usually has numerous entries that are unused in any particular image. This approach requires more work, first in
+      choosing the palette, and second in mapping individual pixels to the closest available color. PNG allows the encoder to
       supply suggested palettes, but not all encoders will do so, and the suggested palettes may be unsuitable in any case (they
-      may have too many or too few colours). Therefore, high-quality viewers will need to have a palette selection routine at hand.
+      may have too many or too few colors). Therefore, high-quality viewers will need to have a palette selection routine at hand.
       A large lookup table is usually the most feasible way of mapping individual pixels to palette entries with adequate
       speed.</p>
 
-      <p>Numerous implementations of colour quantization are available. The PNG sample implementation, libpng (<a href=
+      <p>Numerous implementations of color quantization are available. The PNG sample implementation, libpng (<a href=
       "http://www.libpng.org/pub/png/libpng.html"><code>http://www.libpng.org/pub/png/libpng.html</code></a>), includes code for
       the purpose.</p>
     </section>
@@ -6182,7 +6264,7 @@ while (pass &lt; 7)
       original samples before scaling them to suit the display often yields a more accurate display than ignoring <a class="chunk"
       href="#11sBIT">sBIT</a>.</p>
 
-      <p>When comparing pixel values to <a class="chunk" href="#11tRNS">tRNS</a> chunk values to detect transparent pixels, the
+      <p id="tRNS-compare-exactly">When comparing pixel values to <a class="chunk" href="#11tRNS">tRNS</a> chunk values to detect transparent pixels, the
       comparison shall be done exactly. Therefore, transparent pixel detection shall be done before reducing sample precision.</p>
     </section>
     <!-- Maintain a fragment named "13Decoder-gamma-handling" to preserve incoming links to it -->
@@ -6192,7 +6274,7 @@ while (pass &lt; 7)
 
       <p>See <a href="#C-GammaAppendix"></a> for a brief introduction to <a>gamma</a> issues.</p>
 
-      <p>Viewers capable of full colour management will perform more sophisticated calculations than those described here.</p>
+      <p>Viewers capable of full color management will perform more sophisticated calculations than those described here.</p>
 
       <p>For an image display program to produce correct tone reproduction, it is necessary to take into account the relationship
       between samples and display output, and the <a>transfer function</a> of the display system. This can be done by
@@ -6213,7 +6295,7 @@ while (pass &lt; 7)
 
       <p>A step could be inserted between the second and third to adjust <var>display_output</var> to account for the difference
       between the actual viewing conditions and the reference viewing conditions. However, this adjustment requires accounting for
-      veiling glare, black mapping, and colour appearance models, none of which can be well approximated by power functions. Such
+      veiling glare, black mapping, and color appearance models, none of which can be well approximated by power functions. Such
       calculations are not described here. If viewing conditions are ignored, the error will usually be small.</p>
 
       <p>The display <a>transfer function</a> can typically be approximated by a power function with exponent
@@ -6222,7 +6304,7 @@ while (pass &lt; 7)
       <p><code>display_input = sample<sup>1.0/(gamma * display_exponent)</sup> = sample<sup>decoding_exponent</sup></code>
       </p>
 
-      <p>so as to perform only one power calculation. For colour images, the entire calculation is performed separately for R, G,
+      <p>so as to perform only one power calculation. For color images, the entire calculation is performed separately for R, G,
       and B values.</p>
 
       <p>The <a>gamma value</a> can be taken directly from the <a class="chunk" href="#11gAMA">gAMA</a> chunk. Alternatively, an
@@ -6243,7 +6325,7 @@ decoding_exponent = 1.0 / (gamma * display_exponent)
 
       <p>It is <strong>not</strong> necessary to perform a transcendental mathematical computation for every pixel. Instead, a
       lookup table can be computed that gives the correct output value for every possible sample value. This requires only 256
-      calculations per image (for 8-bit accuracy), not one or three calculations per pixel. For an indexed-colour image, a one-time
+      calculations per image (for 8-bit accuracy), not one or three calculations per pixel. For an indexed-color image, a one-time
       correction of the palette is sufficient, unless the image uses transparency and is being displayed against a nonuniform
       background.</p>
 
@@ -6276,75 +6358,75 @@ decoding_exponent = 1.0 / (gamma * display_exponent)
     <!-- Maintain a fragment named "13Decoder-colour-handling" to preserve incoming links to it -->
 
     <section id="13Decoder-colour-handling">
-      <h2>Decoder colour handling</h2>
+      <h2>Decoder color handling</h2>
 
-      <p>See <a href="#C-GammaAppendix"></a> for references to colour issues.</p>
+      <p>See <a href="#C-GammaAppendix"></a> for references to color issues.</p>
 
       <p>In many cases, the <a>image data</a> in PNG datastreams will be treated as device-dependent RGB values and displayed
       without modification (except for appropriate <a>gamma</a> correction). This provides the fastest display of PNG images. But
-      unless the viewer uses exactly the same display hardware as that used by the author of the original image, the colours will
-      not be exactly the same as those seen by the original author, particularly for darker or near-neutral colours. The <a class=
-      "chunk" href="#11cHRM">cHRM</a> chunk provides information that allows closer colour matching than that provided by
+      unless the viewer uses exactly the same display hardware as that used by the author of the original image, the colors will
+      not be exactly the same as those seen by the original author, particularly for darker or near-neutral colors. The <a class=
+      "chunk" href="#11cHRM">cHRM</a> chunk provides information that allows closer color matching than that provided by
       <a>gamma</a> correction alone.</p>
 
       <p>The <a class="chunk" href="#11cHRM">cHRM</a> data can be used to transform the <a>image data</a> from RGB to XYZ and
-      thence into a perceptually linear colour space such as CIE LAB. The colours can be partitioned to generate an optimal
-      palette, because the geometric distance between two colours in CIE LAB is strongly related to how different those colours
-      appear (unlike, for example, RGB or XYZ spaces). The resulting palette of colours, once transformed back into RGB colour
+      thence into a perceptually linear color space such as CIE LAB. The colors can be partitioned to generate an optimal
+      palette, because the geometric distance between two colors in CIE LAB is strongly related to how different those colors
+      appear (unlike, for example, RGB or XYZ spaces). The resulting palette of colors, once transformed back into RGB color
       space, could be used for display or written into a <a class="chunk" href="#11PLTE">PLTE</a> chunk.</p>
 
       <p>Decoders that are part of image processing applications might also transform <a>image data</a> into CIE LAB space for
       analysis.</p>
 
-      <p>In applications where colour fidelity is critical, such as product design, scientific visualization, medicine,
+      <p>In applications where color fidelity is critical, such as product design, scientific visualization, medicine,
       architecture, or advertising, PNG decoders can transform the <a>image data</a> from source RGB to the display RGB space of
       the monitor used to view the image. This involves calculating the matrix to go from source RGB to XYZ and the matrix to go
       from XYZ to display RGB, then combining them to produce the overall transformation. The PNG decoder is responsible for
       implementing gamut mapping.</p>
 
-      <p>Decoders running on platforms that have a Colour Management System (CMS) can pass the <a>image data</a>, <a class="chunk"
+      <p>Decoders running on platforms that have a Color Management System (CMS) can pass the <a>image data</a>, <a class="chunk"
       href="#11gAMA">gAMA</a>, and <a class="chunk" href="#11cHRM">cHRM</a> values to the CMS for display or further
       processing.</p>
 
-      <p>PNG decoders that provide colour printing facilities can use the facilities in Level 2 PostScript to specify <a>image
-      data</a> in calibrated RGB space or in a device-independent colour space such as XYZ. This will provide better colour
+      <p>PNG decoders that provide color printing facilities can use the facilities in Level 2 PostScript to specify <a>image
+      data</a> in calibrated RGB space or in a device-independent color space such as XYZ. This will provide better color
       fidelity than a simple RGB to CMYK conversion. The PostScript Language Reference manual [[?PostScript]] gives examples. Such
       decoders are responsible for implementing gamut mapping between source RGB (specified in the <a class="chunk" href=
       "#11cHRM">cHRM</a> chunk) and the target printer. The PostScript interpreter is then responsible for producing the required
-      colours.</p>
+      colors.</p>
 
       <p>PNG decoders can use the <a class="chunk" href="#11cHRM">cHRM</a> data to calculate an accurate greyscale representation
-      of a colour image. Conversion from RGB to grey is simply a case of calculating the Y (luminance) component of XYZ, which is a
+      of a color image. Conversion from RGB to grey is simply a case of calculating the Y (luminance) component of XYZ, which is a
       weighted sum of R, G, and B values. The weights depend upon the monitor type, i.e. the values in the <a class="chunk" href=
       "#11cHRM">cHRM</a> chunk. PNG decoders may wish to do this for PNG datastreams with no <a class="chunk" href=
       "#11cHRM">cHRM</a> chunk. In this case, a reasonable default would be the CCIR 709 primaries [[ITU-R-BT.709]]. The original
-      NTSC primaries should <strong>not</strong> be used unless the PNG image really was colour-balanced for such a monitor.</p>
+      NTSC primaries should <strong>not</strong> be used unless the PNG image really was color-balanced for such a monitor.</p>
     </section>
     <!-- Maintain a fragment named "13Background-colour" to preserve incoming links to it -->
 
     <section id="13Background-colour">
-      <h2>Background colour</h2>
+      <h2>Background color</h2>
 
-      <p>The background colour given by the <a class="chunk" href="#11bKGD">bKGD</a> chunk will typically be used to fill unused
+      <p>The background color given by the <a class="chunk" href="#11bKGD">bKGD</a> chunk will typically be used to fill unused
       screen space around the image, as well as any transparent pixels within the image. (Thus, <a class="chunk" href=
       "#11bKGD">bKGD</a> is valid and useful even when the image does not use transparency.) If no <a class="chunk" href=
-      "#11bKGD">bKGD</a> chunk is present, the viewer will need to decide upon a suitable background colour. When no other
-      information is available, a medium grey such as 153 in the 8-bit sRGB colour space would be a reasonable choice. Transparent
+      "#11bKGD">bKGD</a> chunk is present, the viewer will need to decide upon a suitable background color. When no other
+      information is available, a medium grey such as 153 in the 8-bit sRGB color space would be a reasonable choice. Transparent
       black or white text and dark drop shadows, which are common, would all be legible against this background.</p>
 
       <p>Viewers that have a specific background against which to present the image (such as web browsers) should ignore the
       <a class="chunk" href="#11bKGD">bKGD</a> chunk, in effect overriding <a class="chunk" href="#11bKGD">bKGD</a> with their
-      preferred background colour or background image.</p>
+      preferred background color or background image.</p>
 
-      <p>The background colour given by the <a class="chunk" href="#11bKGD">bKGD</a> chunk is not to be considered transparent,
-      even if it happens to match the colour given by the <a class="chunk" href="#11tRNS">tRNS</a> chunk (or, in the case of an
-      <a>indexed-colour</a> image, refers to a palette index that is marked as transparent by the <a class="chunk" href="#11tRNS">tRNS</a>
+      <p>The background color given by the <a class="chunk" href="#11bKGD">bKGD</a> chunk is not to be considered transparent,
+      even if it happens to match the color given by the <a class="chunk" href="#11tRNS">tRNS</a> chunk (or, in the case of an
+      <a>indexed-color</a> image, refers to a palette index that is marked as transparent by the <a class="chunk" href="#11tRNS">tRNS</a>
       chunk). Otherwise one would have to imagine something "behind the background" to <a>composite</a> against. The background
-      colour is either used as background or ignored; it is not an intermediate layer between the PNG image and some other
+      color is either used as background or ignored; it is not an intermediate layer between the PNG image and some other
       background.</p>
 
       <p>Indeed, it will be common that the <a class="chunk" href="#11bKGD">bKGD</a> and <a class="chunk" href="#11tRNS">tRNS</a>
-      chunks specify the same colour, since then a decoder that does not implement transparency processing will give the intended
+      chunks specify the same color, since then a decoder that does not implement transparency processing will give the intended
       display, at least when no partially-transparent pixels are present.</p>
     </section>
     <!-- Maintain a fragment named "13Alpha-channel-processing" to preserve incoming links to it -->
@@ -6355,7 +6437,7 @@ decoding_exponent = 1.0 / (gamma * display_exponent)
       <p>The alpha channel can be used to <a>composite</a> a foreground image against a background image. The PNG datastream
       defines the foreground image and the transparency mask, but not the background image. PNG decoders are <strong>not</strong>
       required to support this most general case. It is expected that most will be able to support compositing against a single
-      background colour.</p>
+      background color.</p>
 
       <p>The equation for computing a <a>composited</a> sample value is:</p>
 
@@ -6363,7 +6445,7 @@ decoding_exponent = 1.0 / (gamma * display_exponent)
 output = alpha * foreground + (1-alpha) * background
 </pre>
       <p>where alpha and the input and output sample values are expressed as fractions in the range 0 to 1. This computation should
-      be performed with intensity samples (not <a>gamma</a>-encoded samples). For colour images, the computation is done separately
+      be performed with intensity samples (not <a>gamma</a>-encoded samples). For color images, the computation is done separately
       for R, G, and B samples.</p>
 
       <p>The following code illustrates the general case of compositing a foreground image against a background image. It assumes
@@ -6521,10 +6603,10 @@ will need to be replaced by copies of lines 17-23, but processing background ins
       ignoring alpha is a useful option: it allows the hidden parts of the image to be recovered.)</p>
 
       <p>Even if the decoder does not implement true compositing logic, it is simple to deal with images that contain only zero and
-      one alpha values. (This is implicitly true for <a>greyscale</a> and <a>truecolour</a> PNG datastreams that use a <a class="chunk"
-      href="#11tRNS">tRNS</a> chunk; for <a>indexed-colour</a> PNG datastreams it is easy to check whether the <a class="chunk" href=
+      one alpha values. (This is implicitly true for <a>greyscale</a> and <a>truecolor</a> PNG datastreams that use a <a class="chunk"
+      href="#11tRNS">tRNS</a> chunk; for <a>indexed-color</a> PNG datastreams it is easy to check whether the <a class="chunk" href=
       "#11tRNS">tRNS</a> chunk contains any values other than 0 and 255.) In this simple case, transparent pixels are replaced by
-      the background colour, while others are unchanged.</p>
+      the background color, while others are unchanged.</p>
 
       <p>If a decoder contains only this much transparency capability, it should deal with a full alpha channel by treating all
       nonzero alpha values as fully opaque or by dithering. Neither approach will yield very good results for images converted from
@@ -6537,48 +6619,48 @@ will need to be replaced by copies of lines 17-23, but processing background ins
     <section id="13Histogram-and-suggested-palette-usage">
       <h2>Histogram and suggested palette usage</h2>
 
-      <p>For viewers running on indexed-colour hardware attempting to display a <a>truecolour</a> image, or an indexed-colour image
+      <p>For viewers running on indexed-color hardware attempting to display a <a>truecolor</a> image, or an indexed-color image
       whose palette is too large for the <a>frame buffer</a>, the encoder may have provided one or more suggested palettes in
       <a class="chunk" href="#11sPLT">sPLT</a> chunks. If one of these is found to be suitable, based on size and perhaps name, the
       PNG decoder can use that palette. Suggested palettes with a sample depth different from what the decoder needs can be
       converted using sample depth rescaling (see <a href="#13Sample-depth-rescaling"></a>).</p>
 
-      <p>When the background is a solid colour, the viewer should <a>composite</a> the image and the suggested palette against that
-      colour, then quantize the resulting image to the resulting RGB palette. When the image uses transparency and the background
-      is not a solid colour, no suggested palette is likely to be useful.</p>
+      <p>When the background is a solid color, the viewer should <a>composite</a> the image and the suggested palette against that
+      color, then quantize the resulting image to the resulting RGB palette. When the image uses transparency and the background
+      is not a solid color, no suggested palette is likely to be useful.</p>
 
-      <p>For <a>truecolour</a> images, a suggested palette might also be provided in a <a class="chunk" href="#11PLTE">PLTE</a>
-      chunk. If the image has a <a class="chunk" href="#11tRNS">tRNS</a> chunk and the background is a solid colour, the viewer
-      will need to adapt the suggested palette for use with its desired background colour. To do this, the palette entry closest to
-      the <a class="chunk" href="#11tRNS">tRNS</a> colour should be replaced with the desired background colour; or alternatively a
-      palette entry for the background colour can be added, if the viewer can handle more colours than there are <a class="chunk"
+      <p>For <a>truecolor</a> images, a suggested palette might also be provided in a <a class="chunk" href="#11PLTE">PLTE</a>
+      chunk. If the image has a <a class="chunk" href="#11tRNS">tRNS</a> chunk and the background is a solid color, the viewer
+      will need to adapt the suggested palette for use with its desired background color. To do this, the palette entry closest to
+      the <a class="chunk" href="#11tRNS">tRNS</a> color should be replaced with the desired background color; or alternatively a
+      palette entry for the background color can be added, if the viewer can handle more colors than there are <a class="chunk"
       href="#11PLTE">PLTE</a> entries.</p>
 
-      <p>For images of <a>colour type</a> 6 (<a>truecolour with alpha</a>), any <a class="chunk" href="#11PLTE">PLTE</a> chunk
-      should have been designed for display of the image against a uniform background of the colour specified by the <a class=
+      <p>For images of <a>color type</a> 6 (<a>truecolor with alpha</a>), any <a class="chunk" href="#11PLTE">PLTE</a> chunk
+      should have been designed for display of the image against a uniform background of the color specified by the <a class=
       "chunk" href="#11bKGD">bKGD</a> chunk. Viewers should probably ignore the palette if they intend to use a different
       background, or if the <a class="chunk" href="#11bKGD">bKGD</a> chunk is missing. Viewers can use a suggested palette for
       display against a different background than it was intended for, but the results may not be very good.</p>
 
-      <p>If the viewer presents a transparent <a>truecolour</a> image against a background that is more complex than a uniform
-      colour, it is unlikely that the suggested palette will be optimal for the <a>composite</a> image. In this case it is best to
-      perform a <a>truecolour</a> compositing step on the <a>truecolour</a> PNG image and background image, then colour-quantize
+      <p>If the viewer presents a transparent <a>truecolor</a> image against a background that is more complex than a uniform
+      color, it is unlikely that the suggested palette will be optimal for the <a>composite</a> image. In this case it is best to
+      perform a <a>truecolor</a> compositing step on the <a>truecolor</a> PNG image and background image, then color-quantize
       the resulting image.</p>
 
-      <p>In <a>truecolour</a> PNG datastreams, if both <a class="chunk" href="#11PLTE">PLTE</a> and <a class="chunk" href=
+      <p>In <a>truecolor</a> PNG datastreams, if both <a class="chunk" href="#11PLTE">PLTE</a> and <a class="chunk" href=
       "#11sPLT">sPLT</a> chunks appear, the PNG decoder may choose from among the palettes suggested by both, bearing in mind the
       different transparency semantics described above.</p>
 
       <p>The frequencies in the <a class="chunk" href="#11sPLT">sPLT</a> and <a class="chunk" href="#11hIST">hIST</a> chunks are
-      useful when the viewer cannot provide as many colours as are used in the palette in the PNG datastream. If the viewer has a
-      shortfall of only a few colours, it is usually adequate to drop the least-used colours from the palette. To reduce the number
-      of colours substantially, it is best to choose entirely new representative colours, rather than trying to use a subset of the
-      existing palette. This amounts to performing a new colour quantization step; however, the existing palette and histogram can
+      useful when the viewer cannot provide as many colors as are used in the palette in the PNG datastream. If the viewer has a
+      shortfall of only a few colors, it is usually adequate to drop the least-used colors from the palette. To reduce the number
+      of colors substantially, it is best to choose entirely new representative colors, rather than trying to use a subset of the
+      existing palette. This amounts to performing a new color quantization step; however, the existing palette and histogram can
       be used as the input data, thus avoiding a scan of the <a>image data</a> in the <a class="chunk" href="#11IDAT">IDAT</a>
       chunks.</p>
 
       <p>If no suggested palette is provided, a decoder can develop its own, at the cost of an extra pass over the <a>image
-      data</a> in the <a class="chunk" href="#11IDAT">IDAT</a> chunks. Alternatively, a default palette (probably a colour cube)
+      data</a> in the <a class="chunk" href="#11IDAT">IDAT</a> chunks. Alternatively, a default palette (probably a color cube)
       can be used.</p>
 
       <p>See also <a href="#12Suggested-palettes"></a>.</p>
@@ -6602,10 +6684,10 @@ will need to be replaced by copies of lines 17-23, but processing background ins
     <!-- Maintain a fragment named "14Ordering" to preserve incoming links to it -->
 
     <section id="14Ordering">
-      <h2>Behaviour of PNG editors</h2>
+      <h2>Behavior of PNG editors</h2>
 
       <p>Two examples of <a>PNG editors</a> are a program that adds or modifies text chunks, and a program that adds a suggested
-      palette to a <a>truecolour</a> PNG datastream. Ordinary image editors are not <a>PNG editors</a> because they usually discard
+      palette to a <a>truecolor</a> PNG datastream. Ordinary image editors are not <a>PNG editors</a> because they usually discard
       all unrecognized information while reading in an image.</p>
 
       <p>To allow new chunk types to be added to PNG, it is necessary to establish rules about the ordering requirements for all
@@ -6618,7 +6700,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
       editors</a> to discard all unknown chunks, but that is a very unattractive solution. Instead, PNG requires ancillary chunks
       not to have ordering restrictions like this.</p>
 
-      <p>To prevent this type of problem while allowing for future extension, constraints are placed on both the behaviour of
+      <p>To prevent this type of problem while allowing for future extension, constraints are placed on both the behavior of
       <a>PNG editors</a> and the allowed ordering requirements for chunks. The safe-to-copy bit defines the proper handling of
       unrecognized chunks in a datastream that is being modified.</p>
       <!-- <ol start="1"> -->
@@ -6857,9 +6939,9 @@ will need to be replaced by copies of lines 17-23, but processing background ins
           href="#11IHDR">IHDR</a> chunk) are treated as errors.
           </li>
 
-          <li>All types of PNG images (indexed-colour, <a>truecolour</a>, <a>greyscale</a>, <a>truecolour with alpha</a>, and <a>greyscale
-          with alpha</a>) are processed. For example, decoders which are part of viewers running on indexed-colour display hardware
-          shall reduce <a>truecolour</a> images to indexed format for viewing.
+          <li>All types of PNG images (indexed-color, <a>truecolor</a>, <a>greyscale</a>, <a>truecolor with alpha</a>, and <a>greyscale
+          with alpha</a>) are processed. For example, decoders which are part of viewers running on indexed-color display hardware
+          shall reduce <a>truecolor</a> images to indexed format for viewing.
           </li>
 
           <li>Encountering an unknown chunk in which the ancillary bit is 0 generates an error if the decoder is attempting to
@@ -6867,15 +6949,15 @@ will need to be replaced by copies of lines 17-23, but processing background ins
 
           <li>A chunk type in which the reserved bit is set is treated as an unknown chunk type.</li>
 
-          <li>All valid combinations of bit depth and <a>colour type</a> as defined in <a class="chunk" href="#11IHDR"></a> are
+          <li>All valid combinations of bit depth and <a>color type</a> as defined in <a class="chunk" href="#11IHDR"></a> are
           supported.
           </li>
 
-          <li>An error is reported if an unrecognized value is encountered in the bit depth, <a>colour type</a>, compression
+          <li>An error is reported if an unrecognized value is encountered in the bit depth, <a>color type</a>, compression
           method, <a>filter method</a>, or interlace method bytes of the <a class="chunk" href="#11IHDR">IHDR</a> chunk.
           </li>
 
-          <li>When processing 16-bit <a>greyscale</a> or <a>truecolour</a> data in the <a class="chunk" href="#11tRNS">tRNS</a> chunk,
+          <li>When processing 16-bit <a>greyscale</a> or <a>truecolor</a> data in the <a class="chunk" href="#11tRNS">tRNS</a> chunk,
           both bytes of the sample values are evaluated to determine whether a pixel is transparent.
           </li>
 
@@ -6910,8 +6992,8 @@ will need to be replaced by copies of lines 17-23, but processing background ins
 
           <li>Unless the user specifically permits lossy operations or the editor issues a warning, it preserves all information
           required to reconstruct the reference image exactly, except that the sample depth of the alpha channel need not be
-          preserved if it contains only zero and maximum values. Operations such as changing the <a>colour type</a> or rearranging
-          the palette in an <a>indexed-colour</a> datastream are permitted provided that the new datastream losslessly represents the same
+          preserved if it contains only zero and maximum values. Operations such as changing the <a>color type</a> or rearranging
+          the palette in an <a>indexed-color</a> datastream are permitted provided that the new datastream losslessly represents the same
           reference image.
           </li>
         </ol>
@@ -7343,7 +7425,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
 
     <p>Additional information on the impact of color space on image encoding may be found in [[?Kasson]] and [[?Hill]].</p>
 
-    <p>Background information about <a>chromaticity</a> and colour spaces may be found in [[?Luminance-Chromaticity]] and [[?COLOR-FAQ]].</p>
+    <p>Background information about <a>chromaticity</a> and color spaces may be found in [[?Luminance-Chromaticity]] and [[?COLOR-FAQ]].</p>
   </section>
   <!-- ************Page Break******************* -->
   <!-- ************Page Break******************* -->
@@ -7524,10 +7606,47 @@ will need to be replaced by copies of lines 17-23, but processing background ins
   <section id="F-ChangeList" class="appendix informative">
     <h2 class="Annex">Changes</h2>
 
+    <h3 id="changes-20230921">Changes since the <a href="https://www.w3.org/TR/2023/CR-png-3-20230921/">Candidate Recommendation Snapshot of 21 September 2023 (Third Edition)</a></h3>
+
+    <ul>
+      <!-- to 20 Feb 2024 -->
+      <li>Clarified which metadata forms part of HDR10</li>
+      <li>Updated link to latest version of ITU-R BT.2390</li>
+      <li>Noted that currently there is no published standard to adapt an SDR image from default viewing conditions (display luminance and ambient illumination) to those given in <span class="chunk">mDCV</span></li>
+      <li>Noted that the adaptation of BT.2100 HLG images to differing viewing conditions, given in BT.2390, may also be used with SDR images.</li>
+      <li>Noted that tone mapping, to adjust the luminance levels given in <span class="chunk">cLLi</span> to those of a target display to prevent clipping, is particularly important for formats such as BT.2100 PQ which use absolute luminance.</li>
+      <li>Noted that use of full-range BT.709 values, while common, is not part of the BT.709 standard</li>
+      <li>Added mention of protected code values for Serial Digital Interface (baseband video) in description of narrow-range and full-range video</li>
+      <li>Added reference to ITU-R-BT.2390</li>
+      <li>Changed description of <span class="chunk">mDCv</span> to focus on BT.2100 PQ, as use with other formats is currently rare</li>
+      <li>Clarified matching requirements for 16-bit <span class="chunk">tRNS</span> matching</li>
+      <li>Used more precise "primary chromaticities" rather than just "primaries"</li>
+      <li>Added requirement that <span class="chunk">mDCv</span> requires an accompanying <span class="chunk">cICP</span> to fit with expectations of existing HDR10 workflows</li>
+      <li>Better explanation of <code>Video Full Range Flag</code></li>
+      <li>Clarified ordering and encoding of sequence numbers, clarified <span class="chunk">fdAT</span> concatenation is in order of sequence number</li>
+      <li>Added missing mentions of <span class="chunk">cICP</span> in descriptions of related chunks</li>
+      <li>Fully specified the ordering and byte-order of fields in <span class="chunk">mDCv</span></li>
+      <li>Added missing definition of PNG two-byte unsigned integer</li>
+      <li>Used Display P3, rather than sRGB, in SDR <span class="chunk">mDCv</span> examples</li>
+      <li>Added Chris Needham as co-author</li>
+      <li>Updated examples for <span class="chunk">mDCv</span>, added reference to SMPTE-ST-2086.</li>
+      <li>Added reference to Display P3</li>
+      <li>Explicitly mentioned that the concatenated data from <span class="chunk">IDAT</span> and <span class="chunk">fdAT</span> may include chunks with zero-length data</li>
+      <li>Assorted non-substantive improvements to markup, styling, internal cross-linking, correction of typos, punctuation, grammar, consistent use of US English, etc</li>
+    </ul>
+
     <h3 id="changes-20230720">Changes since the <a href="https://www.w3.org/TR/2023/WD-png-3-20230720/">
       Working Draft of 20 July 2023 (Third Edition)</a></h3>
 
     <ul>
+      <!-- to 21 Sept 2023 -->
+      <li>Clarified descriptions of <span class="chunk">mDCv</span> and <span class="chunk">cLLi</span></li>
+      <li>Added note to Security Considerations about potentially malicious data after <span class="chunk">IEND</span>.</li>
+      <li>Clarified that <a href="#cLLi-chunk" class="chunk">cLLi</a> is for HDR content</li>
+      <li>Added an informative reference to Smith &amp; Zink "On the Calculation and Usage of HDR Static Content Metadata"</li>
+      <li>Added an informative reference to CTA-861.3-A for static HDR metadata</li>
+      <li>Fixed broken reference to ITU-R BT.2100 </li>
+      <li>Updated reference to SMPTE-ST-2067-21</li>
       <!-- to 26 Aug 2023 -->
       <li>Added guidance on calculating MaxCLL and MaxFALL values</li>
       <li>Added example (live streaming) where <a href="#cLLi-chunk" class="chunk">cLLi</a> could not be pre-calculated</li>
@@ -7552,7 +7671,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
       <li>Required the Matrix Coefficients in <a href="#cICP-chunk" class="chunk">cICP</a> to be zero (RGB data).</li>
       <li>Added known Privacy issue with recoverable data that only appears to have been redacted.</li>
       <li>Improved advice on choosing filters.</li>
-      <li>Added links to colour image type definitions.</li>
+      <li>Added links to color image type definitions.</li>
       <li>Clarified that MaxFALL uses the values of the frame with highest mean luminance.</li>
       <li>Clarified luminance units.</li>
       <li>Prefer RFC 3339 format for Creation Time.</li>
@@ -7574,7 +7693,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
       <li>Specified interoperable handling of extra sample bits, beyond the specified bit depth,
         in <a href="#11tRNS" class="chunk">tRNS</a> and <a href="#11bKGD" class="chunk">bKGD</a> chunks.
       </li>
-      <li>Added a new chunk, <a href="#mDCv-chunk" class="chunk">mDCv</a> 
+      <li>Added a new chunk, <a href="#mDCv-chunk" class="chunk">mDCv</a>
         to describe the color volume of the mastering display used to grade <a>HDR</a> [[ITU-R-BT.2100]] content.</li>
 
       <li>Used correct Unicode character names.</li>
@@ -7591,36 +7710,73 @@ will need to be replaced by copies of lines 17-23, but processing background ins
     Second Edition)</h3>
 
     <ul>
-      <!-- to 5 Apr 2022 -->
+      <!-- to 22 March 2024 -->
 
-      <li>The three previously defined, but unofficial, chunks for APNG have been added. This brings the PNG specification
-      into alignment with widely deployed industry practice.
+      <li>
+        <p>The three previously defined, but unofficial, chunks for Animated PNG (APNG) have been added:</p>
+
+        <ul>
+          <li><a href="#acTL-chunk" class="chunk">acTL</a> Animation Control Chunk</li>
+          <li><a href="#fcTL-chunk" class="chunk">fcTL</a> Frame Control Chunk</li>
+          <li><a href="#fdAT-chunk" class="chunk">fdAT</a> Frame Data Chunk</li>
+        </ul>
+        
+        <p>This brings the PNG specification into alignment with widely deployed industry practice.</p>
       </li>
 
-      <li>Added the <a class="chunk" href="#cICP-chunk">cICP</a> chunk, Coding-independent code points for video signal type
-      identification, to contain image format metadata defined in [[ITU-T-H.273]] which enables PNG to contain [[ITU-R-BT.2100]] High Dynamic Range
-      (<a>HDR</a>) and Wide Colour Gamut (WCG) images.
-
+      <li>
+        <p>Added the <a class="chunk" href="#cICP-chunk">cICP</a> chunk, Coding-independent code points for video signal type
+          identification, to contain image format metadata defined in [[ITU-T-H.273]] which enables PNG to contain [[ITU-R-BT.2100]] High Dynamic Range
+          (<a>HDR</a>) and Wide Color Gamut (WCG) images.</p>
       </li>
 
-      <li>The previously defined <a class="chunk" href="#eXIf">eXIf</a> chunk has been moved from the PNG-Extensions document
-      [[PNG-EXTENSIONS]] into the main body of this specification, to reflect it's widespread use.
+      <li>
+        <p>For chunks which define the image color space,
+          the order of precedence is clearly defined,
+          if more than one is present.</p>
       </li>
 
-      <li>Added the <a class="chunk" href="#mDCv-chunk">mDCv</a> chunk, which contains metadata about the display used in
-      mastering. This enabled more accurate colour matching on heterogeneous platforms
+      <li>
+        <p>The previously defined <a class="chunk" href="#eXIf">eXIf</a> chunk has been moved from the PNG-Extensions document
+        [[PNG-EXTENSIONS]] into the main body of this specification, to reflect its increasing use.</p>
       </li>
 
-      <li>Incorporation of all <a href="https://www.w3.org/2003/11/REC-PNG-20031110-errata">PNG Second Edition Errata</a>
+      <li>
+        <p>To help with tonemapping HDR content, added the <a class="chunk" href="#mDCv-chunk">mDCv</a> chunk, which contains metadata about the display used in
+          mastering, and <a href="#cLLi-chunk" class="chunk">cLLi</a>, which contains metadata about peak and average light levels. This enabled more accurate color matching on heterogeneous platforms</p>
       </li>
 
-      <li>Various editorial clarifications in response to community feedback</li>
+      <li>
+        <p>Clarified that the <a href="#11iCCP" class="chunk">iCCP</a> chunk, which contains an ICC profile, can contain profiles conforming to any version of the ICC.1 specification. PNG Second Edition only referenced the then-current v2 of ICC.1, although it has since become industry practice to also used higher versions.</p>
+      </li>
 
-      <li>References updated to latest versions</li>
+      <li>
+        <p>Clarified handling of out-of-range indexes, for indexed-color PNG</p>
+      </li>
 
-      <li>Markup corrections and link fixes</li>
+      <li>
+        <p>Clarified error recovery for unknown and invalid ancillary chunks</p>
+      </li>
 
-      <li>Document source reformatted to use ReSpec</li>
+      <li>
+        <p>Incorporation of all <a href="https://www.w3.org/2003/11/REC-PNG-20031110-errata">PNG Second Edition Errata</a>. Notably, clarified that PNG images with unknown gamma value, when embedded in formats such as HTML or SVG, must be treated as <a href="https://drafts.csswg.org/css-color-4/#untagged">untagged images</a></p>
+      </li>
+
+      <li>
+        <p>Various editorial clarifications in response to community feedback</p>
+      </li>
+
+      <li>
+        <p>References updated to latest versions</p>
+      </li>
+
+      <li>
+        <p>Markup corrections and link fixes</p>
+      </li>
+
+      <li>
+        <p>Document source reformatted to use ReSpec</p>
+      </li>
     </ul>
 
     <h3>Changes between First and Second Editions</h3>

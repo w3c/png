@@ -5,6 +5,10 @@ This may be helpful for creating test images, or for analyzing files.
 
 ## PNG manipulation tools (read/write)
 
+### Photomator
+
+[Homepage](https://apps.apple.com/us/app/photomator-photo-editor/id1444636541) Mac application which can read and generate HDR PNG.
+
 ### pngcrush
 
 [Homepage](https://pmt.sourceforge.io/pngcrush/) and maintained [on sourceforge](https://sourceforge.net/projects/pmt/files/pngcrush/).
@@ -20,6 +24,20 @@ Depends on libpng. Author, Glenn Randers-Pehrson, is deceased, last update was 2
 Used to recompress PNG, including optionally reducing bit depth, changing color type, and reducing the palette.
 
 Depends on libpng. Originally a fork of pngcrush by Cosmin Truta, now has a different feature set and has added GIF and BMP support.
+
+### OxiPNG
+
+[Homepage](https://github.com/shssoichiro/oxipng/blob/master/README.md) and maintained on [GitHub](https://github.com/shssoichiro/oxipng)
+
+PNG compression optimizer, written in Rust. [Recognizes `cICP` chunks and does not discard them](https://github.com/shssoichiro/oxipng/issues/538#issuecomment-1644266228).
+
+### Minimum viable PNG encoder, in Python
+
+[Homepage](https://www.da.vidbuchanan.co.uk/blog/hello-png.html) and maintained [on GitHub](https://github.com/DavidBuchanan314/hello_png).
+
+By @DavidBuchanan314  Easily extensible to spit out new chunks, so great for prototyping and creating test files.
+
+Depnds on zlib, only.
 
 ### node pngdefry
 
@@ -62,6 +80,12 @@ Chris Lilley had experimentally extended it to add cICP, APNG support (easy sinc
 [Homepage](https://fotoforensics.com/)
 
 Browser-based tool which displays hidden (by alpha channel, or by incorrect `IHDR` height) data in PNG (and other) images.
+
+###MediaInfo
+
+[Homepage](https://mediaarea.net/en/MediaInfo)
+
+Multi-platform GUI which displays metadata on many image and video formats including PNG. [Recent builds](https://mediaarea.net/download/snapshots/binary/mediainfo-gui/20240106-2/) support `cICP`, `mDCv` and `cLLI`.
 
 ## Libraries
 

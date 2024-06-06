@@ -3746,35 +3746,20 @@ with these exceptions:
           <p>RGB is currently the only supported color model in PNG, and as such <code>Matrix Coefficients</code> shall be set to <code>0</code>.</p>
 
           <aside class="note">
-            A <code>Matrix Coefficients</code> value other than <code>0</code> signals a transformation between color difference
-            and RGB representations, which is not used in this International Standard since PNG images are RGB images.
-          </aside>
-
-          <p>The <code>Video Full Range Flag</code> value MUST be either <code>0</code> or <code>1</code>. A value of 1 specifies
-            that the content has a full range scaling. This is the usual value for RGB images. A value of 0 specifies that the
-            content has a limited-range scaling factor.  The term "Video" is used because H.273 was originally created for moving images.
-            Although H.273 was created for moving images it has been common to use the CICP values from H.273 in still images 
-            (such as HEIF and AVIF)</p>
-
-          <aside class="note">
             If <code>Video Full Range Flag</code> value is <code>1</code>, then the image is a <a>full-range image</a>. Typically,
             images in the RGB color representation are stored in the full-range signal quantization, therefore the vast
             majority of computer graphics and web images, including those used in traditional PNG workflows, are <a>full-range
             images</a>. If <code>Video Full Range Flag</code> value is <code>0</code>, then the image is a <a>narrow-range
-            image</a>. Narrow range images are found in video workflows where the interpretation of sample values below reference
-            black (0% signal level) or above nominal peak (100% signal level) is used. For example, [[ITU-R-BT.709]] specifies that, for
-            10-bit coding, reference black (called black level) corresponds to code value 64 and nominal peak to code value 940.
-            In narrow range, momentary excursions defined as overshoots and undershoots exist below reference black and above nominal
-            peak in order to preserve processing artifacts caused by filtering/compression or by uncontrolled lighting without
-            clipping.  This can improve image quality during additional stages of processing and compression. The use of
-            undershoot/overshoot has also been used to preserve additional color volume (both light and color) as described in
-            [[EBU-R-103]]. [[?SMPTE-RP-2077]] describes full range in more detail and includes the mapping
-            from <a>full-range images</a> to <a>narrow-range images</a>.  It also describes protected code values used for
-            Serial Digital Interface (baseband video) carriage.
-          </aside>
-          <aside class="note">
-            Whilst common practice has seen the storage of full range images using [[ITU-R-BT.709]] transfer function and primaries in
-              PNG format, it should be noted that this format is not part of the [[ITU-R-BT.709]] standard.
+            image</a>. Narrow range images are found in video workflows where there are sample values below reference
+            black (0% signal level) or above nominal peak (100% signal level). For example, [[ITU-R-BT.709]] specifies that, for
+            10-bit coding, reference black (called black level) corresponds to a code value of 64 and nominal peak to a 
+            code value of 940. In narrow range, momentary excursions defined as overshoots and undershoots exist below 
+            reference black and above nominal peak in order to preserve processing artifacts caused by filtering/compression 
+            or by uncontrolled lighting without clipping. This can improve image quality during additional stages of processing 
+            and compression. The use of undershoot/overshoot has also been used to preserve additional color volume (both light 
+            and color) as described in [[EBU-R-103]]. [[SMPTE-RP-2077]] describes full range in more detail and includes the mapping
+            from <a>full-range images</a> to <a>narrow-range images</a> and describes protected code values for SDI (baseband)
+            carriage.
           </aside>
 
           <p>If <code>Video Full Range Flag</code> is <code>0</code>
@@ -3968,23 +3953,27 @@ with these exceptions:
               <tr>
                 <th>Name</th>
                 <th>Actual values</th>
-                <th>Stored values</th>
+                <th>Stored Decimal values</th>
+                <th>Stored Hexadecimal values</th>
               </tr>
 
               <tr>
                 <td rowspan="3">Color primaries specified in [[ITU-R-BT.2020]]</td>
                 <td>(0.708, 0.292)</td>
                 <td>{ 35400, 14600 }</td>
+                <td>{ 8A 48, 39 08 }</td>
               </tr>
 
               <tr>
                 <td>(0.170, 0.797)</td>
                 <td>{ 8500, 39850 }</td>
+                <td>{ 21 34, 9B AA }</td>
               </tr>
 
               <tr>
                 <td>(0.131, 0.046)</td>
                 <td>{ 6550, 2300 }</td>
+                <td>{ 19 96, 08 FC }</td>
               </tr>
             </table>
           </aside>
@@ -3996,13 +3985,15 @@ with these exceptions:
               <tr>
                 <th>Name</th>
                 <th>Actual values</th>
-                <th>Stored values</th>
+                <th>Stored Decimal values</th>
+                <th>Stored Hexadecimal values</th>
               </tr>
 
               <tr>
                 <td>Illuminant D65 specified in [[SMPTE-RP-177]]</td>
                 <td>(0.3127, 0.3290)</td>
                 <td>{ 15635, 16450 }</td>
+                <td>{ 3C 05, 40 42 }</td>
               </tr>
             </table>
           </aside>
@@ -4014,12 +4005,14 @@ with these exceptions:
             <table id="mDCv-chunk-hdr-max-luminance-example" class="numbered simple">
               <tr>
                 <th>Actual value</th>
-                <th>Stored value</th>
+                <th>Stored Decimal value</th>
+                <th>Stored Hexadecimal value</th>
               </tr>
 
               <tr>
                 <td>4000 cd/m<sup>2</sup></td>
                 <td>40000000</td>
+                <td>02 62 5A 00</td>
               </tr>
             </table>
           </aside>
@@ -4029,12 +4022,14 @@ with these exceptions:
             <table id="mDCv-chunk-hdr-min-luminance-example" class="numbered simple">
               <tr>
                 <th>Actual value</th>
-                <th>Stored value</th>
+                <th>Stored Decimal value</th>
+                <th>Stored Hexadecimal value</th>
               </tr>
 
               <tr>
                 <td>0.0005 cd/m<sup>2</sup></td>
                 <td>5</td>
+                <td>00 00 00 05</td>
               </tr>
             </table>
           </aside>
@@ -4048,23 +4043,27 @@ with these exceptions:
               <tr>
                 <th>Name</th>
                 <th>Actual values</th>
-                <th>Stored values</th>
+                <th>Stored Decimal values</th>
+                <th>Stored Hexadecimal values</th>
               </tr>
 
               <tr>
                 <td rowspan="3">Color primaries specified in [[Display-P3]]</td>
                 <td>(0.68, 0.32)</td>
                 <td>{ 34000, 16000 }</td>
+                <td>{ 84 D0, 3E 80 }</td>
               </tr>
 
               <tr>
                 <td>(0.265, 0.69)</td>
                 <td>{ 13520, 34500 }</td>
+                <td>{ 34 D0, 86 C4 }</td>
               </tr>
 
               <tr>
                 <td>(0.15, 0.06)</td>
                 <td>{ 7500, 3000 }</td>
+                <td>{ 1D 4C, 0B B8 }</td>
               </tr>
             </table>
           </aside>
@@ -4076,13 +4075,15 @@ with these exceptions:
               <tr>
                 <th>Name</th>
                 <th>Actual values</th>
-                <th>Stored values</th>
+                <th>Stored Decimal values</th>
+                <th>Stored Hexadecimal values</th>
               </tr>
 
               <tr>
                 <td>Illuminant D65 specified in [[SMPTE-RP-177]]</td>
                 <td>(0.3127, 0.3290)</td>
                 <td>{ 15635, 16450 }</td>
+                <td>{ 3D 13, 40 42 }</td>
               </tr>
             </table>
           </aside>
@@ -4093,12 +4094,14 @@ with these exceptions:
             <table id="mDCv-chunk-sdr-max-luminance-example" class="numbered simple">
               <tr>
                 <th>Actual value</th>
-                <th>Stored value</th>
+                <th>Stored Decimal values</th>
+                <th>Stored Hexadecimal values</th>
               </tr>
 
               <tr>
                 <td>80 cd/m<sup>2</sup></td>
                 <td>800000</td>
+                <td>00 0C 35 00</td>
               </tr>
             </table>
           </aside>
@@ -4108,12 +4111,14 @@ with these exceptions:
             <table id="mDCv-chunk-sdr-min-luminance-example" class="numbered simple">
               <tr>
                 <th>Actual value</th>
-                <th>Stored value</th>
+                <th>Stored Decimal values</th>
+                <th>Stored Hexadecimal values</th>
               </tr>
 
               <tr>
                 <td>0.05 cd/m<sup>2</sup></td>
                 <td>500</td>
+                <td>00 00 01 F4</td>
               </tr>
             </table>
           </aside>
@@ -4126,24 +4131,25 @@ with these exceptions:
           <pre>
 <!-- 99 76 76 105 -->63 4C 4C 69
 </pre>
+          <p>If present, the <span class="chunk">cLLi</span> chunk identifies two characteristics of <a>HDR</a> content:</p>
 
-          <p>If present, the <span class="chunk">cLLi</span> chunk adds static metadata for <a>HDR</a> content, which provides an opportunity
-          to optimize tone mapping of the associated content for a target display. This is
-          accomplished by tailoring the tone mapping of the content itself to the specific peak brightness
-          capabilities of the target display to prevent clipping. This is most important for HDR image formats that use absolute
-          brightness values, such as <a>PQ</a> [ITU-R-BT.2100]. It may also be used with other image formats.</p>
-
-          <p>The <span class="chunk">cLLi</span> chunk describes two characteristics of <a>HDR</a> content:</p>
-
-          <p>MaxFALL (Maximum Frame Average Light Level) uses a static metadata value to indicate the
-            maximum value of the <a>frame</a> average light level (in cd/m<sup>2</sup>, also known as nits)
-            of the entire playback sequence. MaxFALL is calculated by first averaging the decoded luminance
-            values of all the pixels in each frame, and then using the value for the frame with the highest value.</p>
-
-          <p>MaxCLL (Maximum Content Light Level) uses a static metadata value to indicate the maximum light
-            level of any single pixel (in cd/m<sup>2</sup>, also known as nits) of the entire playback sequence.
-            There is often an algorithmic filter to eliminate false values occurring from processing or noise
+          <p>The <span class="chunk">cLLi</span> chunk adds static metadata which provides an opportunity
+          to optimize tone mapping of the associated content to a specific target display. This is 
+          accomplished by tailoring the tone mapping of the content itself to the specific peak brightness 
+          capabilities of the target display to prevent clipping. The method of tone-mapping optimization 
+          is currently subjective.</p>
+             
+          <p>MaxCLL (Maximum Content Light Level) uses a static metadata value to indicate the maximum light 
+            level of any single pixel (in cd/m<sup>2</sup>, also known as nits) of the entire playback sequence. 
+            There is often an algorithmic filter to eliminate false values occurring from processing or noise 
             that could adversely affect intended downstream tone mapping.</p>
+          
+          <p>MaxFALL (Maximum Frame Average Light Level) uses a static metadata value to indicate the 
+            maximum value of the <a>frame</a> average light level (in cd/m<sup>2</sup>, also known as nits) 
+            of the entire playback sequence. MaxFALL is calculated by first averaging the decoded luminance 
+            values of all the pixels in each frame, and then using the value for the frame with the highest value.</p>
+             
+	  <p>The MaxCLL and MaxFALL values are encoded as <a>PNG four-byte unsigned integers</a>.</p>
 
           <p class="note">[[CTA-861.3-A]] describes the method of calculation for generating the
             <span class="chunk">cLLi</span> values,
@@ -4195,12 +4201,14 @@ with these exceptions:
              <table id="cLLi-chunk-max-content-light-level-example" class="numbered simple">
                <tr>
                  <th>Actual value</th>
-                 <th>Stored value</th>
+                 <th>Stored Decimal values</th>
+                 <th>Stored Hexadecimal values</th>
                </tr>
 
                <tr>
                  <td>1000 cd/m<sup>2</sup></td>
                  <td>10000000</td>
+                 <td>00 98 96 80</td>
                </tr>
              </table>
            </aside>
@@ -4211,12 +4219,14 @@ with these exceptions:
              <table id="cLLi-chunk-max-frame-avg-luminance-example" class="numbered simple">
                <tr>
                  <th>Actual value</th>
-                 <th>Stored value</th>
+                 <th>Stored Decimal values</th>
+                 <th>Stored Hexadecimal values</th>
                </tr>
 
                <tr>
                  <td>250 cd/m<sup>2</sup></td>
                  <td>2500000</td>
+                 <td>00 26 25 A0</td>
               </tr>
             </table>
           </aside>

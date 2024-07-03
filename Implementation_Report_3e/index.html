@@ -11,7 +11,7 @@
     .passes-most {
         background: #aed581;
     }
-    .passes-lots {
+    .passes-lots, .passes-unclear {
         background: #dce775;
     }
     .passes-none {
@@ -961,13 +961,17 @@
                                 <td class="result passes-all"></td>
                             </tr>
                             <tr class="test">
-                                <td class="testname">image-orientation-exif-png-3.html </td>
-                                <td class="result passes-none"></td>
-                                <td class="result passes-none"></td>
-                                <td class="result passes-none"></td>
-                                <td class="result passes-none"></td>
+                                <td class="testname">image-orientation-exif-png-3.html [<a href="#wooly">1</a>]</td>
+                                <td class="result passes-unclear"></td>
+                                <td class="result passes-unclear"></td>
+                                <td class="result passes-unclear"></td>
+                                <td class="result passes-unclear"></td>
                             </tr>
                         </table>
+
+                        <p id="wooly">Note that CSS Images 3 
+                            <a href="https://drafts.csswg.org/css-images-3/#url-metadata">makes 
+                                this hard to test</a> for the CSS `image-orientation` property.</p>
                 </section>
 
                 <section id="palette">

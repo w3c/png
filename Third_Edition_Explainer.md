@@ -164,7 +164,7 @@ As a bonus, it can also be used to compactly label
 some common Wide Gamut SDR color spaces,
 such as **Display P3** and **BT.2020**.
 
-_Note:_ The third byte of 'cICP' always has the value '1',
+_Note:_ The third byte of 'cICP' always has the value '0',
 because PNG stores only RGB format images, not YCbCr or ICtCp.
 Explicit storage of this value was retained 
 for compatibility with other video and image formats,

@@ -173,7 +173,7 @@ text {
 
 
 <g style="stroke:none; font-size:18px; text-anchor:middle">
-	<text x="80" y="20">Indexed colour</text>
+	<text x="80" y="20">Indexed color</text>
 	<text x="80" y="40">image data</text>
 	<text x="480" y="20">Palette</text>
 	<text x="580" y="20">Alpha</text>

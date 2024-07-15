@@ -25,7 +25,7 @@ text {
 
 <!-- image types -->
 
-<!-- truecolour with alpha -->
+<!-- truecolor with alpha -->
 
 <rect x="20" y="60" width="20" height="20"  style="stroke:black;stroke-width:1;;fill:#B88" />
 <text x="25" y="75">R</text>
@@ -42,7 +42,7 @@ text {
 <rect x="40" y="120" width="20" height="20"  style="stroke:black;stroke-width:1;;fill:white" />
 <text x="45" y="135">A</text>
 
-<!-- truecolour -->
+<!-- truecolor -->
 <rect x="20" y="180" width="20" height="20"  style="stroke:black;stroke-width:1;;fill:#B88" />
 <text x="25" y="195">R</text>
 <rect x="40" y="180" width="20" height="20"  style="stroke:black;stroke-width:1;;fill:#8B8" />
@@ -54,7 +54,7 @@ text {
 <rect x="20" y="240" width="20" height="20"  style="stroke:black;stroke-width:1;fill:#AAA" />
 <text x="25" y="255">Y</text>
 
-<!-- indexed colour -->
+<!-- indexed color -->
 <rect x="20" y="300" width="20" height="20"  style="stroke:black;stroke-width:1;fill:#ACA" />
 <text x="25" y="315">3</text>
 
@@ -169,11 +169,11 @@ text {
 </g>
 
 <g style="font-size:16px; text-anchor:start">
-	<text x="20" y="54">Truecolour with alpha</text>
+	<text x="20" y="54">Truecolor with alpha</text>
   	<text x="20" y="114">Greyscale with alpha</text>
-	<text x="20" y="174">Truecolour</text>
+	<text x="20" y="174">Truecolor</text>
 	<text x="20" y="234">Greyscale</text>
-	<text x="20" y="294">Indexed colour</text>
+	<text x="20" y="294">Indexed color</text>
 
 </g>
 

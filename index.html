@@ -3,28 +3,25 @@
 <head>
   <title>Portable Network Graphics (PNG) Specification (Third Edition)</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <!-- <link rel="stylesheet" href="./isostyle.css" type="text/css"> -->
 
   <style type="text/css">
-    /* remove annoying green colour from definition terms */
-    dt {color: black}
     span.chunk { color: #622;}
   </style>
   <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
   <script class="remove">
     var respecConfig = {
       group: "png",
-      specStatus: "CR",
-      crEnd: "2023-12-21",
-      implementationReportURI: "https://wpt.fyi/results/png?label=experimental&label=master&aligned",
+      specStatus: "CRD",
+      crEnd: "2024-09-18",
+      implementationReportURI: "https://w3c.github.io/png/Implementation_Report_3e/",
       shortName: "png-3",
-      publishDate: "2023-09-21",
+      publishDate: "2024-07-18",
       copyrightStart: "1996",
       previousPublishDate: "2023-07-20",
-      previousMaturity: "WD",
-      edDraftURI: "https://w3c.github.io/PNG-spec/",
+      previousMaturity: "CR",
+      edDraftURI: "https://w3c.github.io/png/",
       github: {
-        repoURL : "https://github.com/w3c/PNG-spec",
+        repoURL : "https://github.com/w3c/png",
         branch : "main"
       },
       extraCSS: ["https://dev.w3.org/2009/dap/ReSpec.js/css/respec.css"],
@@ -442,8 +439,8 @@ with these exceptions:
 
         <p>SOURCE: [[RFC1951]]</p>
       </dd>
-      <!-- ************Page Break******************* -->
-      <!-- ************Page Break******************* -->
+      
+      
 
       <dt><dfn>frame</dfn></dt>
 
@@ -576,8 +573,8 @@ with these exceptions:
         Only RGB may be used in PNG, ICtCp is NOT supported.
       </p>
 
-      <!-- ************Page Break******************* -->
-      <!-- ************Page Break******************* -->
+      
+      
       <!-- Maintain a fragment named "3PNGdecoder" to preserve incoming links to it -->
 
       <dt id="3PNGdecoder">PNG decoder</dt>
@@ -738,8 +735,8 @@ with these exceptions:
       <dd>The <a>transfer function</a> between light energy and the electrical or digital domain. It defines the amount of light in a scene required to produce a given output signal.</dd>
     </dl>
   </section>
-  <!-- ************Page Break******************* -->
-  <!-- ************Page Break******************* -->
+  
+  
 
   <section>
     <!-- Maintain a fragment named "4Concepts" to preserve incoming links to it -->
@@ -829,8 +826,8 @@ with these exceptions:
           Relationships between source, reference, PNG, and display images
         </figcaption>
       </figure>
-      <!-- ************Page Break******************* -->
-      <!-- ************Page Break******************* -->
+      
+      
 
       <p>The relationships between samples, channels, pixels, and sample depth are illustrated in <a href=
       "#sample-pixel-channel-relationship"></a>.</p>
@@ -934,8 +931,8 @@ with these exceptions:
         reference images are considered equivalent, and the transformations are considered lossless. Encoders that nevertheless
         wish to preserve the alpha sample depth may elect not to perform transformations that would alter the alpha sample
         depth.</p>
-        <!-- ************Page Break******************* -->
-        <!-- ************Page Break******************* -->
+        
+        
 
         <figure id="reference-to-png-transformation">
           <!-- Maintain a fragment named "figure43" to preserve incoming links to it -->
@@ -969,8 +966,8 @@ with these exceptions:
         In the <dfn id="3indexedColour">indexed-color</dfn> representation, each pixel is replaced by an index into a palette. The <dfn id="3palette">palette</dfn>
         is a list of entries each containing three 8-bit samples (red, green, blue). If an alpha channel is present, there is also
         a parallel table of 8-bit alpha samples, called the <dfn id="3alphaTable">alpha table</dfn>.</p>
-        <!-- ************Page Break******************* -->
-        <!-- ************Page Break******************* -->
+        
+        
 
         <figure id="indexed-colour-image">
           <!-- Maintain a fragment named "figure44" to preserve incoming links to it -->
@@ -1024,8 +1021,8 @@ with these exceptions:
         sample depth in the reference image, and the possible sample values in the reference image are linearly mapped into the
         next allowable range for the PNG image. <a href="#scaling-sample-values"></a> shows how samples of depth 3 might be mapped
         into samples of depth 4.</p>
-        <!-- ************Page Break******************* -->
-        <!-- ************Page Break******************* -->
+        
+        
 
         <figure id="scaling-sample-values">
           <!-- Maintain a fragment named "figure45" to preserve incoming links to it -->
@@ -1051,8 +1048,8 @@ with these exceptions:
         </figure>
       </section>
     </section>
-    <!-- ************Page Break******************* -->
-    <!-- ************Page Break******************* -->
+    
+    
     <!-- Maintain a fragment named "4Concepts.PNGImage" to preserve incoming links to it -->
 
     <section id="4Concepts.PNGImage">
@@ -1150,8 +1147,8 @@ with these exceptions:
         specification. The first method is a null method; pixels are stored sequentially from left to right and scanlines from top
         to bottom. The second method makes multiple scans over the image to produce a sequence of seven reduced images. The seven
         passes for a sample image are illustrated in <a href="#encoding-png-image"></a>. See <a href="#8Interlace"></a>.</p>
-        <!-- ************Page Break******************* -->
-        <!-- ************Page Break******************* -->
+        
+        
 
         <figure id="encoding-png-image">
           <!-- Maintain a fragment named "figure47" to preserve incoming links to it -->
@@ -1171,8 +1168,8 @@ with these exceptions:
           </figcaption>
         </figure>
       </section>
-      <!-- ************Page Break******************* -->
-      <!-- ************Page Break******************* -->
+      
+      
       <!-- Maintain a fragment named "4Concepts.EncodingScanlineAbs" to preserve incoming links to it -->
 
       <section id="4Concepts.EncodingScanlineAbs">
@@ -1206,8 +1203,8 @@ with these exceptions:
 
         <p>Chunking provides a convenient breakdown of the compressed datastream into manageable chunks (see <a href=
         "#compression"></a>). Each chunk has its own redundancy check. See <a href="#11Chunks"></a>.</p>
-        <!-- ************Page Break******************* -->
-        <!-- ************Page Break******************* -->
+        
+        
 
         <figure id="compression">
           <!-- Maintain a fragment named "figure410" to preserve incoming links to it -->
@@ -1758,8 +1755,8 @@ with these exceptions:
       <p>The chunk data length may be any number of bytes up to the maximum; therefore, implementors cannot assume that chunks are
       aligned on any boundaries larger than bytes.</p>
     </section>
-    <!-- ************Page Break******************* -->
-    <!-- ************Page Break******************* -->
+    
+    
     <!-- Maintain a fragment named "5Chunk-naming-conventions" to preserve incoming links to it -->
 
     <section id="5Chunk-naming-conventions">
@@ -1890,8 +1887,8 @@ with these exceptions:
       connected. The superscript associated with the chunk type is defined in <a href="#table54"></a>. It indicates whether the
       chunk is mandatory, optional, or may appear more than once. A vertical bar between two chunk types indicates
       alternatives.</p>
-      <!-- ************Page Break******************* -->
-      <!-- ************Page Break******************* -->
+      
+      
       <!-- Maintain a fragment named "table53" to preserve incoming links to it -->
 
       <table id="table53" class="numbered simple">
@@ -2200,8 +2197,8 @@ with these exceptions:
         </tr>
       </table>
       <!-- these lattice diagrams need the new chunks added -->
-      <!-- ************Page Break******************* -->
-      <!-- ************Page Break******************* -->
+      
+      
 
       <figure id="lattice-diagram-with-plte">
         <!-- Maintain a fragment named "figure52" to preserve incoming links to it -->
@@ -2337,8 +2334,8 @@ with these exceptions:
       datastreams that are unreadable by PNG decoders as detailed at <a href="#13Decoders"></a>.</p>
     </section>
   </section>
-  <!-- ************Page Break******************* -->
-  <!-- ************Page Break******************* -->
+  
+  
   <!-- Maintain a fragment named "6Transformation" to preserve incoming links to it -->
 
   <section id="6Transformation">
@@ -2445,8 +2442,8 @@ with these exceptions:
       "#12Alpha-channel-creation"></a> and <a href="#13Alpha-channel-processing"></a>.</p>
     </section>
   </section>
-  <!-- ************Page Break******************* -->
-  <!-- ************Page Break******************* -->
+  
+  
   <!-- Maintain a fragment named "7Transformation" to preserve incoming links to it -->
 
   <section id="7Transformation">
@@ -2501,8 +2498,8 @@ with these exceptions:
       <a>network byte order</a> (MSB first, LSB second). PNG permits multi-sample pixels only with 8 and 16-bit samples, so multiple
       samples of a single pixel are never packed into one byte.</p>
     </section>
-    <!-- ************Page Break******************* -->
-    <!-- ************Page Break******************* -->
+    
+    
     <!-- Maintain a fragment named "7Filtering" to preserve incoming links to it -->
 
     <section id="7Filtering">
@@ -2533,8 +2530,8 @@ with these exceptions:
       </figure>
     </section>
   </section>
-  <!-- ************Page Break******************* -->
-  <!-- ************Page Break******************* -->
+  
+  
   <!-- Maintain a fragment named "8Interlace" to preserve incoming links to it -->
 
   <section id="8Interlace">
@@ -2589,8 +2586,8 @@ with these exceptions:
       empty.</p>
     </section>
   </section>
-  <!-- ************Page Break******************* -->
-  <!-- ************Page Break******************* -->
+  
+  
   <!-- Maintain a fragment named "9Filters" to preserve incoming links to it -->
 
   <section id="9Filters">
@@ -2684,8 +2681,8 @@ with these exceptions:
       <p><a>Filter method</a> 0 specifies exactly this set of five filter types and this shall not be extended. This ensures that
       decoders need not decompress the data to determine whether it contains unsupported filter types: it is sufficient to check
       the <a>filter method</a> in <a href="#11IHDR"></a>.</p>
-      <!-- ************Page Break******************* -->
-      <!-- ************Page Break******************* -->
+      
+      
       <!-- Maintain a fragment named "9-table91" to preserve incoming links to it -->
 
       <table id="9-table91" class="numbered simple">
@@ -2787,8 +2784,8 @@ with these exceptions:
     else if pb &lt;= pc then Pr = b
     else Pr = c
     return Pr
-</pre><!-- ************Page Break******************* -->
-      <!-- ************Page Break******************* -->
+</pre>
+      
 
       <figure id="paethpredictor-function">
         <!-- Maintain a fragment named "9-figure91" to preserve incoming links to it -->
@@ -2807,8 +2804,8 @@ with these exceptions:
       <p>Exactly the same PaethPredictor function is used by both encoder and decoder.</p>
     </section>
   </section>
-  <!-- ************Page Break******************* -->
-  <!-- ************Page Break******************* -->
+  
+  
   <!-- Maintain a fragment named "10Compression" to preserve incoming links to it -->
 
   <section id="10Compression">
@@ -2890,8 +2887,8 @@ with these exceptions:
       is represented by a single <a>zlib</a> datastream that is stored in a number of <a class="chunk" href="#11IDAT">IDAT</a>
       chunks.</p>
     </section>
-    <!-- ************Page Break******************* -->
-    <!-- ************Page Break******************* -->
+    
+    
     <!-- Maintain a fragment named "9Filters" to preserve incoming links to it -->
 
     <section id="10CompressionOtherUses">
@@ -2902,8 +2899,8 @@ with these exceptions:
       chunks; each such chunk contains an independent <a>zlib</a> datastream (see <a href="#10CompressionCM0"></a>).</p>
     </section>
   </section>
-  <!-- ************Page Break******************* -->
-  <!-- ************Page Break******************* -->
+  
+  
   <!-- Maintain a fragment named "11Chunks" to preserve incoming links to it -->
 
   <section id="11Chunks">
@@ -3177,8 +3174,8 @@ with these exceptions:
 </pre>
           <p>The <span class="chunk">tRNS</span> chunk specifies either alpha values that are associated with palette entries (for
           <a>indexed-color</a> images) or a single transparent color (for <a>greyscale</a> and <a>truecolor</a> images). The <span class=
-          "chunk">tRNS</span> chunk contains: <!-- ************Page Break******************* --></p>
-          <!-- ************Page Break******************* -->
+          "chunk">tRNS</span> chunk contains: </p>
+          
 
           <table id="tRNS-structure" class="simple numbered">
             <tr>
@@ -3283,8 +3280,8 @@ with these exceptions:
           "#11sRGB">sRGB</a> chunks provide more sophisticated support for color management and control.</p>
 
           <p>The <span class="chunk">cHRM</span> chunk contains:</p>
-          <!-- ************Page Break******************* -->
-          <!-- ************Page Break******************* -->
+          
+          
 
           <table id="cHRM-structure" class="numbered simple">
             <caption>
@@ -3466,8 +3463,8 @@ with these exceptions:
           PNG.</p>
 
           <p>The <span class="chunk">sBIT</span> chunk contains:</p>
-          <!-- ************Page Break******************* -->
-          <!-- ************Page Break******************* -->
+          
+          
 
           <table id="sBIT-structure" class="numbered simple">
             <caption>
@@ -4536,8 +4533,8 @@ with these exceptions:
           language tag, and applications displaying the keyword should display the translated keyword in addition.</p>
         </section>
       </section>
-      <!-- ************Page Break******************* -->
-      <!-- ************Page Break******************* -->
+      
+      
       <!-- Maintain a fragment named "11addnlsiinfo" to preserve incoming links to it -->
 
       <section id="11addnlsiinfo">
@@ -5242,8 +5239,8 @@ with these exceptions:
       </section>
     </section>
   </section>
-  <!-- ************Page Break******************* -->
-  <!-- ************Page Break******************* -->
+  
+  
   <!-- Maintain a fragment named "12Encoders" to preserve incoming links to it -->
 
   <section id="12Encoders">
@@ -5312,8 +5309,8 @@ gamma = encoding_exponent/end_to_end_exponent
 
       <pre>
 gamma = encoding_exponent
-</pre><!-- ************Page Break******************* -->
-      <!-- ************Page Break******************* -->
+</pre>
+      
 
       <p>If the image is being written to a datastream only, the encoder is free to choose the encoding exponent. Choosing a value
       that causes the <a>gamma value</a> in the <a class="chunk" href="#11gAMA">gAMA</a> chunk to be 1/2.2 is often a reasonable
@@ -5369,8 +5366,8 @@ gamma = encoding_exponent
 
       <pre>
 gamma = 1/display_exponent
-</pre><!-- ************Page Break******************* -->
-      <!-- ************Page Break******************* -->
+</pre>
+      
 
       <p>It is better to write a <a class="chunk" href="#11gAMA">gAMA</a> chunk with a value that is approximately correct than to
       omit the chunk and force PNG decoders to guess an approximate <a>gamma value</a>. If a PNG encoder is unable to infer the
@@ -5436,8 +5433,8 @@ cHRM</a> chunk.</p>-->
       present should be used to construct the <a class="chunk" href="#11cHRM">cHRM</a> chunk.</p>
 
       <p>Video created with recent video equipment probably uses the CCIR 709 primaries and D65 <a>white point</a> [[ITU-R-BT.709]], which are given in <a href="#12-table121"></a>.</p>
-      <!-- ************Page Break******************* -->
-      <!-- ************Page Break******************* -->
+      
+      
       <!-- Maintain a fragment named "12-table121" to preserve incoming links to it -->
 
       <table id="12-table121" class="numbered simple">
@@ -5539,8 +5536,8 @@ cHRM</a> chunk.</p>-->
       exceed their corresponding alpha values, so the result of the division should always be in the range 0 to 1. If the alpha
       value is zero, output black (zeroes).</p>
     </section>
-    <!-- ************Page Break******************* -->
-    <!-- ************Page Break******************* -->
+    
+    
     <!-- Maintain a fragment named "12Sample-depth-scaling" to preserve incoming links to it -->
 
     <section id="12Sample-depth-scaling">
@@ -5606,8 +5603,8 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
       chunk not be written for such images, since <a class="chunk" href="#11sBIT">sBIT</a> suggests that the original data range
       was exactly 0..2<sup>S</sup>-1.</p>
     </section>
-    <!-- ************Page Break******************* -->
-    <!-- ************Page Break******************* -->
+    
+    
     <!-- Maintain a fragment named "12Suggested-palettes" to preserve incoming links to it -->
 
     <section id="12Suggested-palettes">
@@ -5679,8 +5676,8 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
       represented by <a class="chunk" href="#11PLTE">PLTE</a> and <a class="chunk" href="#11hIST">hIST</a> chunks as well, for
       compatibility with decoders that do not recognize the <a class="chunk" href="#11sPLT">sPLT</a> chunk.</p>
     </section>
-    <!-- ************Page Break******************* -->
-    <!-- ************Page Break******************* -->
+    
+    
     <!-- Maintain a fragment named "12Interlacing" to preserve incoming links to it -->
 
     <section id="12Interlacing">
@@ -5760,8 +5757,8 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
       as the decoder will decode the <a>image data</a> first. It is recommended that small text chunks, such as the image title,
       appear before the <a class="chunk" href="#11IDAT">IDAT</a> chunks.</p>
     </section>
-    <!-- ************Page Break******************* -->
-    <!-- ************Page Break******************* -->
+    
+    
     <!-- Maintain a fragment named "12Chunk-processing" to preserve incoming links to it -->
 
     <section id="12Chunk-processing">
@@ -5790,8 +5787,8 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
       </section>
     </section>
   </section>
-  <!-- ************Page Break******************* -->
-  <!-- ************Page Break******************* -->
+  
+  
   <!-- Maintain a fragment named "13Decoders" to preserve incoming links to it -->
 
   <section id="13Decoders">
@@ -5862,8 +5859,8 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
       </ol>
 
       <p>See <a href="#5Chunk-naming-conventions"></a> for a description of chunk naming conventions.</p>
-      <!-- ************Page Break******************* -->
-      <!-- ************Page Break******************* -->
+      
+      
 
       <p>PNG chunk types are marked "critical" or "ancillary" according to whether the chunks are critical for the purpose of
       extracting a viewable image (as with <a class="chunk" href="#11IHDR">IHDR</a>, <a class="chunk" href="#11PLTE">PLTE</a>, and
@@ -6459,8 +6456,8 @@ output = alpha * foreground + (1-alpha) * background
       Other variants are possible; see the comments below the code. The code allows the sample depths and <a>gamma values</a> of
       foreground image and background image all to be different and not necessarily suited to the display system. In practice no
       assumptions about equality should be made without first checking.</p>
-      <!-- ************Page Break******************* -->
-      <!-- ************Page Break******************* -->
+      
+      
 
       <p>This code is ISO C [[ISO_9899]], with line numbers added for reference in the comments below.</p>
 
@@ -6526,8 +6523,8 @@ output = alpha * foreground + (1-alpha) * background
    28          gamfg = (float) foreground[i] / fg_maxsample;
    29          linfg = pow(gamfg, 1.0 / fg_gamma);
    30          gambg = (float) background[i] / bg_maxsample;
-</pre><!-- ************Page Break******************* -->
-      <!-- ************Page Break******************* -->
+</pre>
+      
 
       <pre>
    31          linbg = pow(gambg, 1.0 / bg_gamma);
@@ -6600,8 +6597,8 @@ will need to be replaced by copies of lines 17-23, but processing background ins
       <p class="note">NOTE In floating point, no overflow or underflow checks are needed, because the input sample values are
       guaranteed to be between 0 and 1, and compositing always yields a result that is in between the input values (inclusive).
       With integer arithmetic, some roundoff-error analysis might be needed to guarantee no overflow or underflow.</p>
-      <!-- ************Page Break******************* -->
-      <!-- ************Page Break******************* -->
+      
+      
 
       <p>When displaying a PNG image with full alpha channel, it is important to be able to <a>composite</a> the image against some
       background, even if it is only black. Ignoring the alpha channel will cause PNG images that have been converted from an
@@ -6672,8 +6669,8 @@ will need to be replaced by copies of lines 17-23, but processing background ins
       <p>See also <a href="#12Suggested-palettes"></a>.</p>
     </section>
   </section>
-  <!-- ************Page Break******************* -->
-  <!-- ************Page Break******************* -->
+  
+  
   <!-- Maintain a fragment named "14EditorsExt" to preserve incoming links to it -->
 
   <section id="14EditorsExt">
@@ -6808,8 +6805,8 @@ will need to be replaced by copies of lines 17-23, but processing background ins
       </section>
     </section>
   </section>
-  <!-- ************Page Break******************* -->
-  <!-- ************Page Break******************* -->
+  
+  
   <!-- Maintain a fragment named "15Conformance" to preserve incoming links to it -->
 
   <div id="15Conformance">
@@ -6899,8 +6896,8 @@ will need to be replaced by copies of lines 17-23, but processing background ins
           <li>The PNG datastream is encoded according to the rules of this International Standard.</li>
         </ol>
       </section>
-      <!-- ************Page Break******************* -->
-      <!-- ************Page Break******************* -->
+      
+      
       <!-- Maintain a fragment named "15ConformanceEncoder" to preserve incoming links to it -->
 
       <section id="15ConformanceEncoder">
@@ -7006,8 +7003,8 @@ will need to be replaced by copies of lines 17-23, but processing background ins
       </section>
     </section>
   </section>
-  <!-- ************Page Break******************* -->
-  <!-- ************Page Break******************* -->
+  
+  
   <!-- Maintain a fragment named "A-Conventions" to preserve incoming links to it -->
 
   <section class="appendix" id="A-Conventions">
@@ -7297,8 +7294,8 @@ will need to be replaced by copies of lines 17-23, but processing background ins
       </dl>
     </section>
   </section>
-  <!-- ************Page Break******************* -->
-  <!-- ************Page Break******************* -->
+  
+  
   <!-- Maintain a fragment named "B-NewChunksAppendix" to preserve incoming links to it -->
 
   <section class="appendix informative" id="B-NewChunksAppendix">
@@ -7330,8 +7327,8 @@ will need to be replaced by copies of lines 17-23, but processing background ins
       <li>Avoid defining private critical chunks.</li>
     </ol>
   </section>
-  <!-- ************Page Break******************* -->
-  <!-- ************Page Break******************* -->
+  
+  
   <!-- Maintain a fragment named "C-GammaAppendix" to preserve incoming links to it -->
 
   <section class="appendix informative" id="C-GammaAppendix">
@@ -7433,8 +7430,8 @@ will need to be replaced by copies of lines 17-23, but processing background ins
 
     <p>Background information about <a>chromaticity</a> and color spaces may be found in [[?Luminance-Chromaticity]] and [[?COLOR-FAQ]].</p>
   </section>
-  <!-- ************Page Break******************* -->
-  <!-- ************Page Break******************* -->
+  
+  
   <!-- Maintain a fragment named "D-CRCAppendix" to preserve incoming links to it -->
 
   <section class="appendix" id="D-CRCAppendix">
@@ -7528,8 +7525,8 @@ will need to be replaced by copies of lines 17-23, but processing background ins
      crc_table_computed = 1;
    }
 
-</pre><!-- ************Page Break******************* -->
-    <!-- ************Page Break******************* -->
+</pre>
+    
 
     <pre>
    /* Update a running CRC with the bytes buf[0..len-1]--the CRC
@@ -7558,8 +7555,8 @@ will need to be replaced by copies of lines 17-23, but processing background ins
    }
 </pre>
   </section>
-  <!-- ************Page Break******************* -->
-  <!-- ************Page Break******************* -->
+  
+  
   <!-- Maintain a fragment named "E-Resources" to preserve incoming links to it -->
 
   <section class="appendix informative" id="E-Resources">
@@ -7617,7 +7614,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
     <ul>
       <!-- to 10 Jun 2024 -->
       <li>Clarified that bit depth and color type fields can take private values</li>
-      <li>Listed both decimal and hexadecimal values in MaxCLL and MaxFALL examples<li>
+      <li>Listed both decimal and hexadecimal values in MaxCLL and MaxFALL examples</li>
       <li>Corrected terminology in mDCv section</li>
       <li>Corrected "PNG image" in cHRM section</li>
       <li>Consolidated color chunk precedence information</li>

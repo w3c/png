@@ -1388,7 +1388,7 @@ with these exceptions:
 
           <li>Miscellaneous information: <a class="chunk" href="#11bKGD">bKGD</a>, <a class="chunk" href="#11hIST">hIST</a>,
           <a class="chunk" href="#11pHYs">pHYs</a>, <a class="chunk" href="#11sPLT">sPLT</a>, <a class="chunk" href=
-          "#eXIf">eXIf</a> (see <a href="#11addnlsiinfo"></a>).
+          "#eXIF">eXIF</a> (see <a href="#11addnlsiinfo"></a>).
           </li>
 
           <li>Time information: <a class="chunk" href="#11tIME">tIME</a> (see <a href="#11timestampinfo"></a>).
@@ -2075,7 +2075,7 @@ with these exceptions:
 
         <tr>
           <td>
-            <a class="chunk" href="#eXIf">eXIf</a>
+            <a class="chunk" href="#eXIF">eXIF</a>
           </td>
           <td>No</td>
           <td>
@@ -4821,41 +4821,41 @@ with these exceptions:
 
           <p>Multiple <span class="chunk">sPLT</span> chunks are permitted, but each shall have a different palette name.</p>
         </section>
-        <!-- Maintain a fragment named "eXIf" to preserve incoming links to it -->
+        <!-- Maintain a fragment named "eXIF" to preserve incoming links to it -->
 
-        <section id="eXIf">
-          <h2><span class="chunk">eXIf</span> Exchangeable Image File (Exif) Profile</h2>
+        <section id="eXIF">
+          <h2><span class="chunk">eXIF</span> Exchangeable Image File (Exif) Profile</h2>
 
           <p>The four-byte chunk type field contains the hexadecimal values</p>
 
           <pre>
-  <!-- 101 88 73 102 -->65 58 49 66
+  <!-- 101 88 73 70 -->65 58 49 46
   </pre>
-          <p>The data segment of the <span class="chunk">eXIf</span> chunk contains an Exif profile in the format specified in
+          <p>The data segment of the <span class="chunk">eXIF</span> chunk contains an Exif profile in the format specified in
           "4.7.2 Interoperability Structure of APP1 in Compressed Data" of [[CIPA-DC-008]] except that the JPEG APP1 marker,
           length, and the "Exif ID code" described in 4.7.2(C), i.e., "Exif", NULL, and padding byte, are not included.</p>
 
           <p>The
-          <span class="chunk">eXIf</span> chunk size is constrained only by the maximum of 2<sup>31</sup>-1 bytes imposed by the
-          PNG specification. Only one <span class="chunk">eXIf</span> chunk is allowed in a PNG datastream.</p>
+          <span class="chunk">eXIF</span> chunk size is constrained only by the maximum of 2<sup>31</sup>-1 bytes imposed by the
+          PNG specification. Only one <span class="chunk">eXIF</span> chunk is allowed in a PNG datastream.</p>
 
-          <p>The <span class="chunk">eXIf</span> chunk contains metadata concerning the original <a>image data</a>. If the image
+          <p>The <span class="chunk">eXIF</span> chunk contains metadata concerning the original <a>image data</a>. If the image
           has been edited subsequent to creation of the Exif profile, this data might no longer apply to the PNG <a>image data</a>.
           It is recommended that unless a decoder has independent knowledge of the validity of the Exif data, the data should be
           considered to be of historical value only. It is beyond the scope of this specification to resolve potential conflicts
-          between data in the eXIf chunk and in other PNG chunks.</p>
+          between data in the eXIF chunk and in other PNG chunks.</p>
 
           <section>
-            <h3><span class="chunk">eXIf</span> General Recommendations</h3>
+            <h3><span class="chunk">eXIF</span> General Recommendations</h3>
 
             <p>While the PNG specification allows the chunk size to be as large as 2<sup>31</sup>-1 bytes, application authors
             should be aware that, if the Exif profile is going to be written to a JPEG [[JPEG]] datastream, the total length of the
-            <span class="chunk">eXIf</span> chunk data may need to be adjusted to not exceed 2<sup>16</sup>-9 bytes, so it can fit
+            <span class="chunk">eXIF</span> chunk data may need to be adjusted to not exceed 2<sup>16</sup>-9 bytes, so it can fit
             into a JPEG APP1 marker (Exif) segment.</p>
           </section>
 
           <section>
-            <h3><span class="chunk">eXIf</span> Recommendations for Decoders</h3>
+            <h3><span class="chunk">eXIF</span> Recommendations for Decoders</h3>
 
             <p>The first two bytes of data are either "II" for little-endian (Intel) or "MM" for big-endian (Motorola) byte order.
             Decoders should check the first four bytes to ensure that they have the following hexadecimal values:</p>
@@ -4868,7 +4868,7 @@ with these exceptions:
           </section>
 
           <section>
-            <h3><span class="chunk">eXIf</span> Recommendations for Encoders</h3>
+            <h3><span class="chunk">eXIF</span> Recommendations for Encoders</h3>
 
             <p>Image editing applications should consider Paragraph E.3 of the Exif Specification [[CIPA-DC-008]], which discusses
             requirements for updating Exif data when the image is changed. Encoders should follow those requirements, but decoders
@@ -6005,7 +6005,7 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
         without re-encoding the image data,
         which thus extends beyond the new width and height and may be recovered.</p>
 
-      <p>Images with <span class="chunk">eXIf</span> chunks
+      <p>Images with <span class="chunk">eXIF</span> chunks
         may contain automatically-included data,
         such as photographic GPS coordinates,
         which could be a privacy risk if the user is unaware that the PNG image contains this data.
@@ -7609,7 +7609,8 @@ will need to be replaced by copies of lines 17-23, but processing background ins
     <h3 id="changes-20230921">Changes since the <a href="https://www.w3.org/TR/2023/CR-png-3-20230921/">Candidate Recommendation Snapshot of 21 September 2023 (Third Edition)</a></h3>
 
     <ul>
-      <!-- to 10 Jun 2024 -->
+      <!-- to 30 Oct 2024 -->
+      <li>Renamed <span class="chunk">eXIf</span> to <span class="chunk">eXIF</span></li>
       <li>Clarified that bit depth and color type fields can take private values</li>
       <li>Listed both decimal and hexadecimal values in MaxCLL and MaxFALL examples</li>
       <li>Corrected terminology in mDCv section</li>
@@ -7698,7 +7699,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
       <li>Improved definitions of source, reference, and PNG images.</li>
       <li>Moved concepts from the terms and definitions section to the main prose.</li>
       <!-- to 6 March 2023 -->
-      <li>Corrected error in <a href="#eXIf" class="chunk">eXIf</a> chunk,
+      <li>Corrected error in <a href="#eXIF" class="chunk">eXIF</a> chunk,
         which conflicted with the <a href="#5ChunkOrdering">chunk ordering</a> section.</li>
       <li>Simplified <a href="#1Scope">Scope</a> section to remove redundant detail described elsewhere.</li>
       <li>Redrew chunk-ordering lattice diagrams to be clearer and more consistent.</li>
@@ -7755,7 +7756,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
       </li>
 
       <li>
-        <p>The previously defined <a class="chunk" href="#eXIf">eXIf</a> chunk has been moved from the PNG-Extensions document
+        <p>The previously defined <a class="chunk" href="#eXIF">eXIF</a> chunk has been moved from the PNG-Extensions document
         [[PNG-EXTENSIONS]] into the main body of this specification, to reflect its increasing use.</p>
       </li>
 

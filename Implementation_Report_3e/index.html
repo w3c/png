@@ -545,11 +545,11 @@
                     </figure>
                     <p>Implemented in <a href="https://mediaarea.net/en/MediaInfo"><strong>MediaInfo from MediaArea</strong></a></p>
                     <ul>
-                        <li><a href="https://mediaarea.net/MediaInfo/ChangeLog">MediaInfo is used throughout the broadcast industry and via the CLI version within softaware. MediaInfo Parses PNG 3rd Edition cICP, mDCv, cLLi metadata into logical values</a></li>
+                        <li><a href="https://mediaarea.net/MediaInfo/ChangeLog">MediaInfo is used throughout the broadcast industry and via the CLI version within softaware. MediaInfo Parses PNG 3rd Edition cICP, mDCV, cLLI metadata into logical values</a></li>
                     </ul>
                     <figure>
                         <img src="./img/MediaInfo.png" alt="what's new in MediaInfo">
-                        <figcaption>MediaInfo parsing 'cICP', 'mDCv', and 'cLLi' from PNGs</figcaption>
+                        <figcaption>MediaInfo parsing 'cICP', 'mDCV', and 'cLLI' from PNGs</figcaption>
                     </figure>
                     <p>Implemented in <a href="https://www.pixelmator.com/pro/">Pixelmator Pro 3.5 <strong></strong></a> and <a href="https://www.pixelmator.com/photomator/"><strong></strong>Photomator 3.3</a> image editors.</p>
                     <p>Implemented in <strong>Adobe Photoshop, Lightroom and Camera Raw, MacOS ProApps, Compressor, Final Cut Pro</strong></p>
@@ -663,27 +663,27 @@
                     </p>
                     <p>
                         PNG Third Edition adds the 
-                        <a href="https://w3c.github.io/PNG-spec/#mDCv-chunk">mDCv</a>
+                        <a href="https://w3c.github.io/PNG-spec/#mDCV-chunk">mDCV</a>
                         chunk for this purpose.
                     </p>
                     <p>
                         Implemented in <strong>Blink-based browsers</strong> (Google Chrome, Microsoft Edge, Samsung Internet, etc):
                     </p>
                     <ul>
-                        <li><a href="https://chromium-review.googlesource.com/c/chromium/src/+/4748191">The PNG specification now includes “mDCv” and “cLLi” chunks that can
+                        <li><a href="https://chromium-review.googlesource.com/c/chromium/src/+/4748191">The PNG specification now includes “mDCV” and “cLLI” chunks that can
                         encode mastering and content light level metadata. This change exposes
                         such metadata so that it may be used for tone mapping.</a></li>
                     </ul>
                     <p>Implemented in <strong>FFMPEG v2</strong> for reading and writing PNG:</p>
                     <ul>
-                        <li><a href="https://ffmpeg.org/pipermail/ffmpeg-devel/2024-February/321178.html">This adds support for cLLi and mDVc chunks in the PNG specification</a></li>
+                        <li><a href="https://ffmpeg.org/pipermail/ffmpeg-devel/2024-February/321178.html">This adds support for cLLI and mDVc chunks in the PNG specification</a></li>
                     </ul>
                     <p>
                         Implemented in a JavaScript PNG file chunk inspector:
                     </p>
                     <figure>
-                        <img src="./img/inspector-mDCv.png" alt="screenshot showing an mDCv chunk">
-                        <figcaption>PNG file chunk inspector: decoding 'cICP' and 'mDCv' chunks</figcaption>
+                        <img src="./img/inspector-mDCV.png" alt="screenshot showing an mDCV chunk">
+                        <figcaption>PNG file chunk inspector: decoding 'cICP' and 'mDCV' chunks</figcaption>
                     </figure>
                     <p>
                         Tone-mapping to the consumer display can benefit
@@ -694,7 +694,7 @@
                         <em>cannot be verified in an automatic test</em>.
                     </p>
                     <p>
-                        MediaInfo (see cICP section) also parses the mDCv chunk</em>.
+                        MediaInfo (see cICP section) also parses the mDCV chunk</em>.
                     </p>
                 </section>
 
@@ -716,25 +716,25 @@
                     </p>
                     <p>
                         PNG Third Edition adds the 
-                        <a href="https://w3c.github.io/PNG-spec/#cLLi-chunk">cLLI</a>
+                        <a href="https://w3c.github.io/PNG-spec/#cLLI-chunk">cLLI</a>
                         chunk for this purpose.
                     </p>
                     <p>
                         Implemented in <strong>Blink-based browsers</strong> (Google Chrome, Microsoft Edge, Samsung Internet, etc):
                     </p>
-                    <ul><li><a href="https://chromium-review.googlesource.com/c/chromium/src/+/4748191">The PNG specification now includes “mDCv” and “cLLi” chunks that can
+                    <ul><li><a href="https://chromium-review.googlesource.com/c/chromium/src/+/4748191">The PNG specification now includes “mDCV” and “cLLI” chunks that can
                         encode mastering and content light level metadata. This change exposes
                         such metadata so that it may be used for tone mapping.</a></li></ul>
                     <p>Implemented in <strong>FFMPEG v2</strong> for reading and writing PNG:</p>
                     <ul>
-                        <li><a href="https://ffmpeg.org/pipermail/ffmpeg-devel/2024-February/321178.html">This adds support for cLLi and mDVc chunks in the PNG specification</a></li>
+                        <li><a href="https://ffmpeg.org/pipermail/ffmpeg-devel/2024-February/321178.html">This adds support for cLLI and mDCV chunks in the PNG specification</a></li>
                     </ul>
                     <p>
                         Implemented in a JavaScript PNG file chunk inspector:
                     </p>
                     <figure>
-                        <img src="./img/inspector-cLLi.png" alt="screenshot showing a cLLi chunk">
-                        <figcaption>PNG file chunk inspector: decoding 'cLLi' chunk</figcaption>
+                        <img src="./img/inspector-cLLi.png" alt="screenshot showing a cLLI chunk">
+                        <figcaption>PNG file chunk inspector: decoding 'cLLI' chunk</figcaption>
                     </figure>
                     <p>
                         Tone-mapping to the consumer display can benefit
@@ -745,7 +745,7 @@
                         <em>cannot be verified in an automatic test</em>.
                     </p>
                     <p>
-                        MediaInfo (see cICP section) also parses the cLLi chunk</em>.
+                        MediaInfo (see cICP section) also parses the cLLI chunk</em>.
                     </p>
                 </section>
 

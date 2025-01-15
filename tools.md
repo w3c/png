@@ -81,7 +81,7 @@ Chris Lilley had experimentally extended it to add cICP, APNG support (easy sinc
 
 Browser-based tool which displays hidden (by alpha channel, or by incorrect `IHDR` height) data in PNG (and other) images.
 
-###MediaInfo
+### MediaInfo
 
 [Homepage](https://mediaarea.net/en/MediaInfo)
 
@@ -97,7 +97,7 @@ although most of the issues are at [the older GlennRP repo](https://github.com/g
 
 This is the original, C, reference library. Depends on zlib. It supports reading and writing PNG files. It has been criticized for being hard to use, and difficult to extend.
 
-Does not support APNG, or any of the Third Edition chunks
+Does not support APNG. Version 1.6.45 added `cICP` support, and other Third Edition chunks are being added.
 
 ### libspng
 

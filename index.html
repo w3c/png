@@ -5978,6 +5978,11 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
       ESC (escape) character, certain systems or terminals could behave in undesirable and insecure ways. It is recommended that
       decoders filter out control characters to avoid this risk; see <a href="#13Text-chunk-processing"></a>.</p>
 
+      <p>For the <a class="chunk" href="#eXIf">eXIf</a> chunk, the Exif Specification [[CIPA-DC-008]] does not contain an express
+      requirement that tag "value offset" pointers must actually point to a valid address within the file.
+      This requirement is merely implied. (See Paragraph 4.6.2, which describes the Exif IFD structure.)
+      Regardless, decoders should be prepared to encounter invalid pointers and to handle them appropriately.</p>
+
       <p>Every chunk begins with a length field, which makes it easier to write decoders that are invulnerable to fraudulent chunks
       that attempt to overflow buffers. The CRC at the end of every chunk provides a robust defence against accidentally
       corrupted data. The PNG signature bytes provide early detection of common file transmission errors.</p>

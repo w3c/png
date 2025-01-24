@@ -66,6 +66,8 @@ This is a Python script by Pierre-Anthony Lemieux to add a specific `iCCP` chunk
 
 Depends on libpng so currently no APNG support. Older versions bundled with some Linux distros have no eXIf support.
 
+An unofficial fork by Chris Lilley, maintained at [svgeesus/pngcheck](https://github.com/svgeesus/pngcheck) also checks `cICP`, `mDCV` and `cLLI`. Reports if `eXIf` is found after `IDAT`.
+
 ### PNG file chunk inspector
 
 [Homepage](https://www.nayuki.io/page/png-file-chunk-inspector) and source at [nayuki/
@@ -85,7 +87,7 @@ Browser-based tool which displays hidden (by alpha channel, or by incorrect `IHD
 
 [Homepage](https://mediaarea.net/en/MediaInfo)
 
-Multi-platform GUI which displays metadata on many image and video formats including PNG. [Recent builds](https://mediaarea.net/download/snapshots/binary/mediainfo-gui/20240106-2/) support `cICP`, `mDCv` and `cLLI`.
+Multi-platform GUI which displays metadata on many image and video formats including PNG. [Recent builds](https://mediaarea.net/download/snapshots/binary/mediainfo-gui/20240106-2/) support `cICP`, `mDCV` and `cLLI`.
 
 ## Libraries
 
@@ -107,6 +109,12 @@ A faster C library for reading and writing PNG. Does not depend on zlib (or libp
 
 Does not support APNG (although that is [planned](https://github.com/randy408/libspng/issues/4)) and there is an [open PR](https://github.com/randy408/libspng/pull/252) which adds APNG support, or any of the Third Edition chunks,
 although there is an open issue on [cICP support](https://github.com/randy408/libspng/issues/218).
+
+### image-png
+
+Maintained at [image-rs/image-png](https://github.com/image-rs/image-png). There is [documentation](https://docs.rs/png/latest/png/).
+
+Pure Rust library with a PNG encoder and decoder. Supports APNG. Supports Third Edition chunks `cICP`, `mDCV` and `cLLI`.
 
 ### lodepng
 

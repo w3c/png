@@ -779,14 +779,7 @@ The <span class="chunk">pCAL</span> chunk contains:
     Additional Registered Keywords
 </h3>
 
-<h4 id="K.Collection">
-    Collection
-</h4>
-
-    Name of a collection
-    to which the image belongs.
-    An image may belong to one or more collections,
-    each named by a separate text chunk.
+<p>(none)</p>
 
 
 <h3 id="K.Syntax">

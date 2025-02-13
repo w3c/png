@@ -21,14 +21,14 @@
         margin-left: 2em;
     }
     .tests  table {
-        margin-left: 2em;
+        margin-left: 1em;
         /* width: 96%; */
     }
     .tests table td.result {
         width:8em;
     }
     .tests table td.testname {
-        width:28em
+        width:30em
     }
     footer {
         margin-top: 1.5em;
@@ -38,6 +38,11 @@
     }
     </style>
     <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/base.css">
+    <style>
+        body {
+            max-width:55em;
+        }
+    </style>
 
     <body>
         <div class="head">
@@ -88,7 +93,9 @@
                     APNG is directly supported at the OS level in <strong>iOS 9.0+</strong>, <strong>macOS 10.11+</strong> and <strong>tvOS 9.0+</strong>. APNG is used for animated stickers in <a href="https://en.wikipedia.org/wiki/IMessage"><strong>iMessage</strong></a>.
                 </p>
                 <p>
-                    Implemented in <strong>Blink-based browsers</strong> (Google Chrome, Microsoft Edge, Samsung Internet, etc), in <strong>Mozilla Firefox</strong>, and in <strong>WebKit-based browsers</strong>
+                    Implemented in <strong>Blink-based browsers</strong> (Google Chrome, Microsoft Edge, Samsung Internet, etc), in <strong>Mozilla Firefox</strong>, 
+                    in <strong>Ladybird</strong>,
+                    and in <strong>WebKit-based browsers</strong>
                     (where it relies on the macOS or iOS platform support for APNG).</p>
 
                 <p>
@@ -141,14 +148,16 @@
                     <h3>Animation control tests</h3>
                     <table>
                         <tr class="header">
-                            <th><a href="https://wpt.fyi/results/png/apng?label=experimental&label=master&aligned">Live Results</a></th>
-                            <th>Chrome 133</th>
-                            <th>Edge 133</th>
-                            <th>Firefox 136</th>
-                            <th>Safari TP 210</th>
+                            <th><a href="https://wpt.fyi/results/png/apng?label=master&product=chrome%5Bexperimental%5D&product=edge%5Bexperimental%5D&product=firefox%5Bexperimental%5D&product=safari%5Bexperimental%5D&product=ladybird&q=actl">Live Results</a></th>
+                            <th>Chrome 135</th>
+                            <th>Edge 134</th>
+                            <th>Firefox 137</th>
+                            <th>Safari TP 213</th>
+                            <th>Ladybird 1</th>
                         </tr>
                         <tr class="test">
                             <td class="testname">acTL-plays-one.html </td>
+                            <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
@@ -160,16 +169,17 @@
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
+                            <td class="result passes-all"></td>
                         </tr>
                     </table>
 
                     <table>
                         <tr class="header">
                             <th>Manual tests</th>
-                            <th>Chrome 133</th>
-                            <th>Edge 133</th>
-                            <th>Firefox 136</th>
-                            <th>Safari TP 210</th>
+                            <th>Chrome 135</th>
+                            <th>Edge 134</th>
+                            <th>Firefox 137</th>
+                            <th>Safari TP 213</th>
                         </tr>
                         <tr class="test">
                             <td class="testname">acTL-plays-one-manual.html </td>
@@ -200,11 +210,12 @@
                         <h3>Frame control tests</h3>
                     <table>
                         <tr class="header">
-                            <th><a href="https://wpt.fyi/results/png/apng?label=experimental&label=master&aligned">Live Results</a></th>
-                            <th>Chrome 133</th>
-                            <th>Edge 133</th>
-                            <th>Firefox 136</th>
-                            <th>Safari TP 210</th>
+                            <th><a href="https://wpt.fyi/results/png/apng?label=master&product=chrome%5Bexperimental%5D&product=edge%5Bexperimental%5D&product=firefox%5Bexperimental%5D&product=safari%5Bexperimental%5D&product=ladybird&q=fctl">Live Results</a></th>
+                            <th>Chrome 135</th>
+                            <th>Edge 134</th>
+                            <th>Firefox 137</th>
+                            <th>Safari TP 213</th>
+                            <th>Ladybird 1</th>
                         </tr>
                         <tr class="test">
                             <td class="testname">fcTL-acTL-ordering.html </td>
@@ -212,9 +223,11 @@
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-none"></td>
+                            <td class="result passes-all"></td>
                         </tr>
                         <tr class="test">
                             <td class="testname">fcTL-blend-over-repeatedly.html </td>
+                            <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
@@ -226,9 +239,11 @@
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
+                            <td class="result passes-all"></td>
                         </tr>
                         <tr class="test">
                             <td class="testname">fcTL-blend-source-nearly-transparent.html </td>
+                            <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
@@ -240,9 +255,11 @@
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
+                            <td class="result passes-all"></td>
                         </tr>
                         <tr class="test">
                             <td class="testname">fcTL-blend-source-transparent.html </td>
+                            <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
@@ -254,9 +271,11 @@
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
+                            <td class="result passes-all"></td>
                         </tr>
                         <tr class="test">
                             <td class="testname">fcTL-dispose-background.html </td>
+                            <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
@@ -268,9 +287,11 @@
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
+                            <td class="result passes-all"></td>
                         </tr>
                         <tr class="test">
                             <td class="testname">fcTL-dispose-in-region-background.html </td>
+                            <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
@@ -282,6 +303,7 @@
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
+                            <td class="result passes-all"></td>
                         </tr>
                         <tr class="test">
                             <td class="testname">fcTL-dispose-in-region-previous.html </td>
@@ -289,9 +311,11 @@
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-none"></td>
+                            <td class="result passes-all"></td>
                         </tr>
                         <tr class="test">
                             <td class="testname">fcTL-dispose-none.html </td>
+                            <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
@@ -303,9 +327,11 @@
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
+                            <td class="result passes-all"></td>
                         </tr>
                         <tr class="test">
                             <td class="testname">fcTL-dispose-previous-first.html </td>
+                            <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
@@ -317,16 +343,17 @@
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-none"></td>
+                            <td class="result passes-all"></td>
                         </tr>
                     </table>
 
                     <table>
                         <tr class="header">
                             <th>Manual tests</th>
-                            <th>Chrome 133</th>
-                            <th>Edge 133</th>
-                            <th>Firefox 136</th>
-                            <th>Safari TP 210</th>
+                            <th>Chrome 135</th>
+                            <th>Edge 134</th>
+                            <th>Firefox 137</th>
+                            <th>Safari TP 213</th>
                         </tr>
                         <tr class="test">
                             <td class="testname">fcTL-delay-16bit-manual.html </td>
@@ -370,11 +397,12 @@
                     <h3>Frame data tests</h3>
                     <table>
                         <tr class="header">
-                            <th><a href="https://wpt.fyi/results/png/apng?label=master&label=experimental&aligned&q=fdat">Live Results</a></th>
-                            <th>Chrome 133</th>
-                            <th>Edge 133</th>
-                            <th>Firefox 136</th>
-                            <th>Safari TP 210</th>
+                            <th><a href="https://wpt.fyi/results/png/apng?label=master&product=chrome%5Bexperimental%5D&product=edge%5Bexperimental%5D&product=firefox%5Bexperimental%5D&product=safari%5Bexperimental%5D&product=ladybird&q=fdat">Live Results</a></th>
+                            <th>Chrome 135</th>
+                            <th>Edge 134</th>
+                            <th>Firefox 137</th>
+                            <th>Safari TP 213</th>
+                            <th>Ladybird 1</th>
                         </tr>
                         <tr class="test">
                             <td class="testname">fdAT-16bit.html </td>
@@ -382,6 +410,7 @@
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-none"></td>
+                            <td class="result passes-all"></td>
                         </tr>
                         <tr class="test">
                             <td class="testname">fdAT-1bit-PLTE-tRNS.html </td>
@@ -389,9 +418,11 @@
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-none"></td>
+                            <td class="result passes-all"></td>
                         </tr>
                         <tr class="test">
                             <td class="testname">fdAT-1bit-PLTE.html </td>
+                            <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
@@ -403,6 +434,7 @@
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
+                            <td class="result passes-all"></td>
                         </tr>
                         <tr class="test">
                             <td class="testname">fdAT-8bit-gray-alpha.html </td>
@@ -410,9 +442,11 @@
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-none"></td>
+                            <td class="result passes-all"></td>
                         </tr>
                         <tr class="test">
                             <td class="testname">fdAT-8bit-gray.html </td>
+                            <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
@@ -424,6 +458,7 @@
                             <td class="result passes-all"></td>
                             <td class="result passes-none"></td>
                             <td class="result passes-all"></td>
+                            <td class="result passes-all"></td>
                         </tr>
                         <tr class="test">
                             <td class="testname">fdAT-split-basic.html </td>
@@ -431,9 +466,11 @@
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
+                            <td class="result passes-all"></td>
                         </tr>
                         <tr class="test">
                             <td class="testname">fdAT-split-zero-length.html </td>
+                            <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
@@ -446,14 +483,16 @@
                     <h3>General APNG tests</h3>
                     <table>
                         <tr class="header">
-                            <th><a href="https://wpt.fyi/results/png/apng?label=experimental&label=master&aligned">Live Results</a></th>
-                            <th>Chrome 133</th>
-                            <th>Edge 133</th>
-                            <th>Firefox 136</th>
-                            <th>Safari TP 210</th>
+                            <th><a href="https://wpt.fyi/results/png/apng?label=master&product=chrome%5Bexperimental%5D&product=edge%5Bexperimental%5D&product=firefox%5Bexperimental%5D&product=safari%5Bexperimental%5D&product=ladybird&q=first">Live Results</a></th>
+                            <th>Chrome 135</th>
+                            <th>Edge 134</th>
+                            <th>Firefox 137</th>
+                            <th>Safari TP 213</th>
+                            <th>Ladybird 1</th>
                         </tr>
                         <tr class="test">
                             <td class="testname">first-frame-IDAT.html </td>
+                            <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
@@ -465,19 +504,22 @@
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
+                            <td class="result passes-all"></td>
                         </tr>
                     </table>
                     <h3>APNG timeout test</h3>
                     <table>
                         <tr class="header">
-                            <th><a href="https://wpt.fyi/results/apng?label=experimental&label=master&aligned">Live Results</a></th>
-                            <th>Chrome 133</th>
-                            <th>Edge 133</th>
-                            <th>Firefox 136</th>
-                            <th>Safari TP 210</th>
+                            <th><a href="https://wpt.fyi/results/apng?label=master&product=chrome%5Bexperimental%5D&product=edge%5Bexperimental%5D&product=firefox%5Bexperimental%5D&product=safari%5Bexperimental%5D&product=ladybird&q=timeout">Live Results</a></th>
+                            <th>Chrome 135</th>
+                            <th>Edge 134</th>
+                            <th>Firefox 137</th>
+                            <th>Safari TP 213</th>
+                            <th>Ladybird 1</th>
                         </tr>
                         <tr class="test">
                             <td class="testname">animated-png-timeout.html  </td>
+                            <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
@@ -487,14 +529,16 @@
                     <h3>APNG Media Type test</h3>
                     <table>
                         <tr class="header">
-                            <th><a href="https://wpt.fyi/results/apng?label=experimental&label=master&aligned">Live Results</a></th>
-                            <th>Chrome 133</th>
-                            <th>Edge 133</th>
-                            <th>Firefox 136</th>
-                            <th>Safari TP 210</th>
+                            <th><a href="https://wpt.fyi/results/apng?label=master&product=chrome%5Bexperimental%5D&product=edge%5Bexperimental%5D&product=firefox%5Bexperimental%5D&product=safari%5Bexperimental%5D&product=ladybird&q=source">Live Results</a></th>
+                            <th>Chrome 135</th>
+                            <th>Edge 134</th>
+                            <th>Firefox 137</th>
+                            <th>Safari TP 213</th>
+                            <th>Ladybird 1</th>
                         </tr>
                         <tr class="test">
                             <td class="testname">supported-in-source-type.html  </td>
+                            <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
                             <td class="result passes-all"></td>
@@ -526,6 +570,7 @@
                     <p>
                         Implemented in <strong>Blink-based browsers</strong> (Google Chrome, Microsoft Edge, Samsung Internet, etc), 
                         in <strong>Mozilla Firefox</strong>,
+                        in <strong>Ladybird</strong>,
                         and in <strong>WebKit-based browsers</strong>
                         where it uses the macOS or iOS platform to implement CICP.
                     </p>
@@ -571,14 +616,16 @@
                         <h3>CICP tests</h3>
                         <table>
                             <tr class="header">
-                                <th><a href="https://wpt.fyi/results/png/?label=experimental&label=master&aligned">Live Results</a></th>
-                                <th>Chrome 133</th>
-                                <th>Edge 133</th>
-                                <th>Firefox 136</th>
-                                <th>Safari TP 210</th>
+                                <th><a href="https://wpt.fyi/results/png?label=master&product=chrome%5Bexperimental%5D&product=edge%5Bexperimental%5D&product=firefox%5Bexperimental%5D&product=safari%5Bexperimental%5D&product=ladybird&q=cicp">Live Results</a></th>
+                                <th>Chrome 135</th>
+                                <th>Edge 134</th>
+                                <th>Firefox 137</th>
+                                <th>Safari TP 213</th>
+                                <th>Ladybird 1</th>
                             </tr>
                             <tr class="test">
                                 <td class="testname">cicp-chunk.html </td>
+                                <td class="result passes-all"></td>
                                 <td class="result passes-all"></td>
                                 <td class="result passes-all"></td>
                                 <td class="result passes-all"></td>
@@ -590,19 +637,22 @@
                                 <td class="result passes-all"></td>
                                 <td class="result passes-all"></td>
                                 <td class="result passes-all"></td>
+                                <td class="result passes-all"></td>
                             </tr>
                         </table>
                         <h3>CICP in APNG tests</h3>
                         <table>
                             <tr class="header">
-                                <th><a href="https://wpt.fyi/results/png/apng/fDAT-inherits-cICP.html?label=experimental&label=master&aligned">Live Results</a></th>
-                                <th>Chrome 133</th>
-                                <th>Edge 133</th>
-                                <th>Firefox 136</th>
-                                <th>Safari TP 210</th>
+                                <th><a href="https://wpt.fyi/results/png/apng?label=master&product=chrome%5Bexperimental%5D&product=edge%5Bexperimental%5D&product=firefox%5Bexperimental%5D&product=safari%5Bexperimental%5D&product=ladybird&q=cicp">Live Results</a></th>
+                                <th>Chrome 135</th>
+                                <th>Edge 134</th>
+                                <th>Firefox 137</th>
+                                <th>Safari TP 213</th>
+                                <th>Ladybird 1</th>
                             </tr>
                             <tr class="test">
                                 <td class="testname">fDAT-inherits-cICP.html</td>
+                                <td class="result passes-all"></td>
                                 <td class="result passes-all"></td>
                                 <td class="result passes-all"></td>
                                 <td class="result passes-all"></td>
@@ -627,10 +677,10 @@
                         <table>
                             <tr class="header">
                                 <th><a href="https://wpt.fyi/results/png/cICP-wins.html?label=experimental&label=master&aligned">Live Results</a></th>
-                                <th>Chrome 133</th>
-                                <th>Edge 133</th>
-                                <th>Firefox 136</th>
-                                <th>Safari TP 210</th>
+                                <th>Chrome 135</th>
+                                <th>Edge 134</th>
+                                <th>Firefox 137</th>
+                                <th>Safari TP 213</th>
                             </tr>
                             <tr class="test">
                                 <td class="testname">cICP-wins.html </td>
@@ -644,10 +694,10 @@
                         <table>
                             <tr class="header">
                                 <th><a href="https://wpt.fyi/results/css/css-color/tagged-images-004.html?label=experimental&label=master&aligned">Live Results</a></th>
-                                <th>Chrome 133</th>
-                                <th>Edge 133</th>
-                                <th>Firefox 136</th>
-                                <th>Safari TP 210</th>
+                                <th>Chrome 135</th>
+                                <th>Edge 134</th>
+                                <th>Firefox 137</th>
+                                <th>Safari TP 213</th>
                             </tr>
                             <tr class="test">
                                 <td class="testname">tagged-images-004.html </td>
@@ -777,10 +827,10 @@
                             <tr class="header">
                                 <th><a href="https://svgees.us/PNG/iCCP/tests.html">Manual tests</a> 
                                 (<a href="https://svgees.us/PNG/iCCP/results.html">Archived results</a>)  </th>
-                                <th>Chrome 133</th>
-                                <th>Edge 133</th>
-                                <th>Firefox 136</th>
-                                <th>Safari TP 210</th>
+                                <th>Chrome 135</th>
+                                <th>Edge 134</th>
+                                <th>Firefox 137</th>
+                                <th>Safari TP 213</th>
                             </tr>
                             <tr class="test">
                                 <td class="testname">'sRGB' chunk, relative colorimetric intent</td>
@@ -802,10 +852,10 @@
                             <tr class="header">
                                 <th><a href="https://svgees.us/PNG/iCCP/tests.html">Manual tests</a> 
                                 (<a href="https://svgees.us/PNG/iCCP/results.html">Archived results</a>)  </th>
-                                <th>Chrome 133</th>
-                                <th>Edge 133</th>
-                                <th>Firefox 136</th>
-                                <th>Safari TP 210</th>
+                                <th>Chrome 135</th>
+                                <th>Edge 134</th>
+                                <th>Firefox 137</th>
+                                <th>Safari TP 213</th>
                             </tr>
                             <tr class="test">
                                 <td class="testname">sRGB with red and green colorants swapped</td>
@@ -834,10 +884,10 @@
                             <tr class="header">
                                 <th><a href="https://svgees.us/PNG/iCCP/tests.html">Manual tests</a> 
                                 (<a href="https://svgees.us/PNG/iCCP/results.html">Archived results</a>)  </th>
-                                <th>Chrome 133</th>
-                                <th>Edge 133</th>
-                                <th>Firefox 136</th>
-                                <th>Safari TP 210</th>
+                                <th>Chrome 135</th>
+                                <th>Edge 134</th>
+                                <th>Firefox 137</th>
+                                <th>Safari TP 213</th>
                             </tr>
                             <tr class="test">
                                 <td class="testname">CIE RGB, L* TRC</td>
@@ -899,11 +949,12 @@
                         <h3>Exif in Canvas 2D tests (PNG)</h3>
                         <table>
                             <tr class="header">
-                                <th><a href="https://wpt.fyi/results/png?label=master&label=experimental&aligned&q=exif">Live Results</a></th>
-                                <th>Chrome 133</th>
-                                <th>Edge 133</th>
-                                <th>Firefox 136</th>
-                                <th>Safari TP 210</th>
+                                <th><a href="https://wpt.fyi/results/png?label=master&product=chrome%5Bexperimental%5D&product=edge%5Bexperimental%5D&product=firefox%5Bexperimental%5D&product=safari%5Bexperimental%5D&product=ladybird&q=exif">Live Results</a></th>
+                                <th>Chrome 135</th>
+                                <th>Edge 134</th>
+                                <th>Firefox 137</th>
+                                <th>Safari TP 213</th>
+                                <th>Ladybird 1</th>
                             </tr>
                             <tr class="test">
                                 <td class="testname">exif-chunk.html  </td>
@@ -911,16 +962,17 @@
                                 <td class="result passes-all"></td>
                                 <td class="result passes-none"></td>
                                 <td class="result passes-all"></td>
+                                <td class="result passes-all"></td>
                             </tr>
                         </table>
                         <h3>Exif in CSS tests (JPEG)</h3>
                         <table>
                             <tr class="header">
                                 <th><a href="https://wpt.fyi/results/css/css-images/image-orientation/image-orientation-from-image.html?label=experimental&label=master&aligned">Live Results</a></th>
-                                <th>Chrome 133</th>
-                                <th>Edge 133</th>
-                                <th>Firefox 136</th>
-                                <th>Safari TP 210</th>
+                                <th>Chrome 135</th>
+                                <th>Edge 134</th>
+                                <th>Firefox 137</th>
+                                <th>Safari TP 213</th>
                             </tr>
                             <tr class="test">
                                 <td class="testname">image-orientation-from-image.html </td>
@@ -933,10 +985,10 @@
                         <table>
                             <tr class="header">
                                 <th><a href="https://wpt.fyi/results/css/css-images/image-orientation/image-orientation-from-image-embedded-content.html?label=experimental&label=master&aligned">Live Results</a></th>
-                                <th>Chrome 133</th>
-                                <th>Edge 133</th>
-                                <th>Firefox 136</th>
-                                <th>Safari TP 210</th>
+                                <th>Chrome 135</th>
+                                <th>Edge 134</th>
+                                <th>Firefox 137</th>
+                                <th>Safari TP 213</th>
                             </tr>
                             <tr class="test">
                                 <td class="testname">image-orientation-from-image-embedded-content.html </td>
@@ -949,11 +1001,12 @@
                         <h3>Exif in CSS tests (PNG)</h3>
                         <table>
                             <tr class="header">
-                                <th><a href="https://wpt.fyi/results/css/css-images/image-orientation/image-orientation-exif-png.html?label=experimental&label=master&aligned">Live Results</a></th>
-                                <th>Chrome 133</th>
-                                <th>Edge 133</th>
-                                <th>Firefox 136</th>
-                                <th>Safari TP 210</th>
+                                <th><a href="https://wpt.fyi/results/css/css-images/image-orientation?label=master&product=chrome%5Bexperimental%5D&product=edge%5Bexperimental%5D&product=firefox%5Bexperimental%5D&product=safari%5Bexperimental%5D&product=ladybird&q=exif">Live Results</a></th>
+                                <th>Chrome 135</th>
+                                <th>Edge 134</th>
+                                <th>Firefox 137</th>
+                                <th>Safari TP 213</th>
+                                <th>Ladybird 1</th>
                             </tr>
                             <tr class="test">
                                 <td class="testname">image-orientation-exif-png.html </td>
@@ -961,12 +1014,14 @@
                                 <td class="result passes-none"></td>
                                 <td class="result passes-none"></td>
                                 <td class="result passes-all"></td>
+                                <td class="result passes-none"></td>
                             </tr>
                             <tr class="test">
                                 <td class="testname">image-orientation-exif-png-2.html </td>
                                 <td class="result passes-all"></td>
                                 <td class="result passes-all"></td>
                                 <td class="result passes-none"></td>
+                                <td class="result passes-all"></td>
                                 <td class="result passes-all"></td>
                             </tr>
                             <tr class="test">
@@ -975,6 +1030,7 @@
                                 <td class="result passes-unclear"></td>
                                 <td class="result passes-unclear"></td>
                                 <td class="result passes-unclear"></td>
+                                <td class="result passes-all"></td>
                             </tr>
                         </table>
 
@@ -1006,18 +1062,20 @@
                         <h3>Invalid tRNS handling</h3>
                             <table>
                                 <tr class="header">
-                                    <th><a href="https://wpt.fyi/results/png/trns-chunk.html?label=master&product=chrome%5Bexperimental%5D&product=edge%5Bexperimental%5D&product=firefox%5Bexperimental%5D&product=safari%5Bexperimental%5D&product=servo&aligned">Live Results</a></th>
-                                    <th>Chrome 133</th>
-                                    <th>Edge 133</th>
-                                    <th>Firefox 136</th>
-                                    <th>Safari TP 210</th>
+                                    <th><a href="https://wpt.fyi/results/png?label=master&product=chrome%5Bexperimental%5D&product=edge%5Bexperimental%5D&product=firefox%5Bexperimental%5D&product=safari%5Bexperimental%5D&product=ladybird&product=servo&q=trns-chunk">Live Results</a></th>
+                                    <th>Chrome 135</th>
+                                    <th>Edge 134</th>
+                                    <th>Firefox 137</th>
+                                    <th>Safari TP 213</th>
                                     <th>Servo 0</th>
+                                    <th>Ladybird 1</th>
                                 </tr>
                                 <tr class="test">
                                     <td class="testname">trns-chunk.html</td>
                                     <td class="result passes-all"></td>
                                     <td class="result passes-all"></td>
                                     <td class="result passes-none"></td>
+                                    <td class="result passes-all"></td>
                                     <td class="result passes-all"></td>
                                     <td class="result passes-all"></td>
                                 </tr>
@@ -1040,12 +1098,13 @@
                         <h3>Invalid Ancillary</h3>
                             <table>
                                 <tr class="header">
-                                    <th><a href="https://wpt.fyi/results/png/errors?label=master&product=chrome%5Bexperimental%5D&product=edge%5Bexperimental%5D&product=firefox%5Bexperimental%5D&product=safari%5Bexperimental%5D&product=servo&aligned">Live Results</a></th>
-                                    <th>Chrome 133</th>
-                                    <th>Edge 133</th>
-                                    <th>Firefox 136</th>
-                                    <th>Safari TP 210</th>
+                                    <th><a href="https://wpt.fyi/results/png/errors?label=master&product=chrome%5Bexperimental%5D&product=edge%5Bexperimental%5D&product=firefox%5Bexperimental%5D&product=safari%5Bexperimental%5D&product=ladybird&product=servo">Live Results</a></th>
+                                    <th>Chrome 135</th>
+                                    <th>Edge 134</th>
+                                    <th>Firefox 137</th>
+                                    <th>Safari TP 213</th>
                                     <th>Servo 0</th>
+                                    <th>Ladybird 1</th>
                                 </tr>
                                 <tr class="test">
                                     <td class="testname">unknown-ancillary-error-recovery.html </td>
@@ -1054,9 +1113,11 @@
                                     <td class="result passes-none"></td>
                                     <td class="result passes-none"></td>
                                     <td class="result passes-all"></td>
+                                    <td class="result passes-none"></td>
                                 </tr>
                                 <tr class="test">
                                     <td class="testname">unknown-ancillary-error-recovery-2.html </td>
+                                    <td class="result passes-all"></td>
                                     <td class="result passes-all"></td>
                                     <td class="result passes-all"></td>
                                     <td class="result passes-all"></td>

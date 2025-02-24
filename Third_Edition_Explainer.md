@@ -210,11 +210,11 @@ in the streaming, broadcast and TV industries.
 This is expected to ease deployment
 by fitting smoothly into existing industry workflows.
 
-The content of the 'mDCv' chunk is only 24 bytes.
+The content of the 'mDCV' chunk is only 24 bytes.
 
 Specification link:
 
-- ['mDCv' Mastering Display Color Volume](https://w3c.github.io/PNG-spec/#mDCv-chunk)
+- ['mDCV' Mastering Display Color Volume](https://w3c.github.io/PNG-spec/#mDCV-chunk)
 
 ### Content Luminance Levels
 
@@ -235,7 +235,7 @@ and
 and these are _required metatada_
 for HDR10 content.
 
-As with 'mDCv',
+As with 'mDCV',
 it is more efficient to provide this information
 than to expect the final display system to compute it on the fly.
 Especially for an image sequence,
@@ -246,13 +246,14 @@ The content of the 'cLLI' chunk is only 8 bytes.
 
 Specification link:
 
-- ['cLLi' Content Light Level Information](https://w3c.github.io/PNG-spec/#cLLi-chunk)
+- ['cLLI' Content Light Level Information](https://w3c.github.io/PNG-spec/#cLLI-chunk)
 
 ## Stakeholder Feedback / Opposition
 
-- [Mozilla] : Positive, implements APNG
+- [Mozilla] : Positive, implements APNG and CICP
 - [Chromium] : Positive, implements APNG and CICP
-- [WebKit] : Positive, implements APNG
+- [WebKit] : Positive, implements APNG and CICP
+- [Ladybird] : Positive, implements APNG and CICP
 - [HDR content creators] : Positive, re-use of existing workflows
 
 ## References

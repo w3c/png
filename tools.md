@@ -31,6 +31,18 @@ Depends on libpng. Originally a fork of pngcrush by Cosmin Truta, now has a diff
 
 PNG compression optimizer, written in Rust. [Recognizes `cICP` chunks and does not discard them](https://github.com/shssoichiro/oxipng/issues/538#issuecomment-1644266228).
 
+### cicp_inserter
+
+[Homepage](https://github.com/ProgramMax/cicp_inserter/blob/tip-of-tree/Docs/README.md) and [maintained on GitHub](https://github.com/ProgramMax/cicp_inserter)
+
+Command-line tool in C++ to insert (and optionally, overwrite) a `cICP` chunk in an existing PNG file. Maintained by Chris Blume.
+
+### png-itxt
+
+[Homepage](https://github.com/finnp/png-itxt/blob/master/readme.md) and [maintained on GitHub](https://github.com/finnp/png-itxt).
+
+Tool to read textual information in `tEXT`, `zTXT` and `iTXT` chunks, and to write `iTXT` chunks. Use in Node programs, or on command line.
+
 ### Minimum viable PNG encoder, in Python
 
 [Homepage](https://www.da.vidbuchanan.co.uk/blog/hello-png.html) and maintained [on GitHub](https://github.com/DavidBuchanan314/hello_png).
@@ -56,26 +68,26 @@ Ancient code, depends on libpng so no support for APNG; and eXIf also is not sup
 
 [Readme](https://github.com/sandflow/hdr4png/blob/master/README.md) and maintained at [sandflow/hdr4png](https://github.com/sandflow/hdr4png)
 
-This is a Python script by Pierre-Anthony Lemieux to add a specific `iCCP` chunk to PNG to signal BT.2100 PQ usage.
+This is a Python script by Pierre-Anthony Lemieux to add a specific `iCCP` chunk to PNG to signal BT.2100 PQ usage. Now historical, use `cICP` instead.
 
-## Checkers (read)
+## Checkers and inspectors (read)
 
 ### pngcheck
 
-[Homepage](http://www.libpng.org/pub/png/apps/pngcheck.html), no repo, [source tarball](http://www.libpng.org/pub/png/src/pngcheck-3.0.3.tar.gz).
+[Homepage](https://github.com/pnggroup/pngcheck/blob/main/README.md), and maintained [on GitHub](https://github.com/pnggroup/pngcheck).
 
-Depends on libpng so currently no APNG support. Older versions bundled with some Linux distros have no eXIf support.
+Depends on libpng. Has APNG support. Checks `cICP`, `mDCV` and `cLLI`. Reports if `eXIf` is found after `IDAT`.
 
-An unofficial fork by Chris Lilley, maintained at [svgeesus/pngcheck](https://github.com/svgeesus/pngcheck) also checks `cICP`, `mDCV` and `cLLI`. Reports if `eXIf` is found after `IDAT`.
+Older versions bundled with some Linux distros have no `eXIf`, APNG, `cICP`, `mDCV` or `cLLI` support.
 
 ### PNG file chunk inspector
 
 [Homepage](https://www.nayuki.io/page/png-file-chunk-inspector) and source at [nayuki/
 Nayuki-web-published-code/png-file-chunk-inspector/](https://github.com/nayuki/Nayuki-web-published-code/tree/master/png-file-chunk-inspector)
 
-Browser-based checker written in Javascript. No libpng dependency. Now supports APNG. Does not support other Third Edition chunks.
+Browser-based checker written in Javascript. No libpng dependency. Now supports APNG. Does not yet support other Third Edition chunks.
 
-Chris Lilley had experimentally extended it to add cICP, APNG support (easy since it is all JavaScript).
+Chris Lilley had experimentally extended it to add `cICP`, APNG support (easy since it is all JavaScript).
 
 ### fotoforensics
 
@@ -89,6 +101,12 @@ Browser-based tool which displays hidden (by alpha channel, or by incorrect `IHD
 
 Multi-platform GUI which displays metadata on many image and video formats including PNG. [Recent builds](https://mediaarea.net/download/snapshots/binary/mediainfo-gui/20240106-2/) support `cICP`, `mDCV` and `cLLI`.
 
+### PNG Chunk Extraction
+
+[Homepage](https://www.dcode.fr/png-chunks).
+
+Online tool to extract contents of `tEXT`, `zTXT` and `iTXT` chunks.
+
 ## Libraries
 
 ### libpng
@@ -99,7 +117,7 @@ although most of the issues are at [the older GlennRP repo](https://github.com/g
 
 This is the original, C, reference library. Depends on zlib. It supports reading and writing PNG files. It has been criticized for being hard to use, and difficult to extend.
 
-Does not support APNG. Version 1.6.45 added `cICP` support, and other Third Edition chunks are being added.
+Does not support APNG. Version 1.6.45 added `cICP` support, and `mDCV` and `cLLI` from Third Edition were added in 1.6.47.
 
 ### libspng
 

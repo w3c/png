@@ -13,7 +13,7 @@ was published in October 2022. ([Changes from Second Edition](https://www.w3.org
 and [updated](https://www.w3.org/TR/2023/WD-png-3-20230720/) on 20 July 2023
 ([changes since FPWD](https://www.w3.org/TR/2023/WD-png-3-20230720/#changes-20221025). 
 
-PNG Third Edition became a [Candidate Recommendation](https://www.w3.org/TR/2023/CR-png-3-20230921/) on 21 September 2023 ([Changes since previous publication](https://www.w3.org/TR/2023/CR-png-3-20230921/#changes-20230720))
+PNG Third Edition became a [Candidate Recommendation](https://www.w3.org/TR/2023/CR-png-3-20230921/) on 21 September 2023 ([Changes since previous publication](https://www.w3.org/TR/2023/CR-png-3-20230921/#changes-20230720)). The latest Candidate Recommendation is from [13 March 2025](https://www.w3.org/TR/2025/CR-png-3-20250313/). See [Changes since previous publication](https://www.w3.org/TR/2025/CR-png-3-20250313/#changes-20250121/).
 
 There is an [Explainer](https://github.com/w3c/png/blob/main/Third_Edition_Explainer.md) for features new in the Third Edition,
 and an [Implementation Report](https://w3c.github.io/png/Implementation_Report_3e/).

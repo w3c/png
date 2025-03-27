@@ -31,9 +31,9 @@ Depends on libpng. Originally a fork of pngcrush by Cosmin Truta, now has a diff
 
 PNG compression optimizer, written in Rust. [Recognizes `cICP` chunks and does not discard them](https://github.com/shssoichiro/oxipng/issues/538#issuecomment-1644266228).
 
-### cicp_inserter
+### png_cicp_editor
 
-[Homepage](https://github.com/ProgramMax/cicp_inserter/blob/tip-of-tree/Docs/README.md) and [maintained on GitHub](https://github.com/ProgramMax/cicp_inserter)
+[Homepage](https://github.com/ProgramMax/png_cicp_editor/blob/tip-of-tree/Docs/README.md) and [maintained on GitHub](https://github.com/ProgramMax/png_cicp_editor)
 
 Command-line tool in C++ to insert (and optionally, overwrite) a `cICP` chunk in an existing PNG file. Maintained by Chris Blume.
 

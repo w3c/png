@@ -105,7 +105,7 @@ was a feature.
 
 Firefox 3 added APNG support in 2007.
 
-The PNG development group, after much discussion, rejected the APNG proposal in 2007
+The PNG development group, after <a href="https://sourceforge.net/p/png-mng/mailman/png-mng-misc/thread/3.0.6.32.20070307210904.01283690%40mail.comcast.net/#msg2437764">much discussion</a>, rejected the APNG proposal in 2007
 on the grounds that PNG should remain a static format and that APNG, unlike MNG, did
 not clearly identify itself as a separate format.
 

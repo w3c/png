@@ -43,6 +43,12 @@ Command-line tool in C++ to insert (and optionally, overwrite) a `cICP` chunk in
 
 Tool to read textual information in `tEXT`, `zTXT` and `iTXT` chunks, and to write `iTXT` chunks. Use in Node programs, or on command line.
 
+### Animated PNG Maker
+
+[Homepage](https://ezgif.com/apng-maker/sort).
+
+Online tool to convert one or more GIF, JPG, PNG, APNG, HEIC, HEIF, MNG, JP2, AVIF, JXL, BMP, PDF, WebP to APNG. Based on [APNG Assembler](https://apngasm.sourceforge.net/)
+
 ### Minimum viable PNG encoder, in Python
 
 [Homepage](https://www.da.vidbuchanan.co.uk/blog/hello-png.html) and maintained [on GitHub](https://github.com/DavidBuchanan314/hello_png).

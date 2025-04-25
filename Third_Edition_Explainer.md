@@ -105,15 +105,20 @@ was a feature.
 
 Firefox 3 added APNG support in 2007.
 
-The PNG development group, after much discussion, **rejected APNG in 2007**,
-mostly on the grounds that it was not MNG and that PNG should remain a static format.
-Two attempts to restart the discussion in the following years failed.
+The PNG development group, after <a href="https://sourceforge.net/p/png-mng/mailman/png-mng-misc/thread/3.0.6.32.20070307210904.01283690%40mail.comcast.net/#msg2437764">much discussion</a>, rejected the APNG proposal in 2007
+on the grounds that PNG should remain a static format and that APNG, unlike MNG, did
+not clearly identify itself as a separate format.
 
-APNG was documented [on the Mozilla wiki](https://wiki.mozilla.org/APNG_Specification)
-and browsers and other tools added a variety of patches to their own versions of libpng,
+Two attempts to revisit the decision in the following years failed.
+
+APNG is documented on the [Mozilla wiki](https://wiki.mozilla.org/APNG_Specification)
+and some browsers and other tools added a variety of patches to their own versions of libpng
 to support APNG.
 
-APNG started to be [**added to other platforms**](https://caniuse.com/apng):
+The adoption of APNG is documented by [Alexis Deveria](http://a.deveria.com/) on the "can I use"
+web page [Animated PNG (APNG)](https://caniuse.com/apng).
+
+Some specific examples of the addition of support for APNG include:
 
 - Opera 9 in 2009
 - Safari 8 in 2014
@@ -125,19 +130,19 @@ Authoring support for APNG also improved over time.
 
 ## APNG
 
-The PNG working group was chartered in 2021
-to maintain and extend the PNG specification;
-in particular, to add the widely adopted APNG extensions to the **core PNG specification**.
-This has now been done; specification links:
+The PNG working group was chartered in 2021 to maintain and extend the PNG specification specifically
+to add the widely adopted APNG extensions to the core PNG specification.
+
+This has now been achieved;
 
  - General introduction [APNG: frame-based animation](https://www.w3.org/TR/png-3/#apng-frame-based-animation)
     - ['acTL' Animation Control Chunk](https://www.w3.org/TR/png-3/#acTL-chunk)
     - ['fcTL' Frame Control Chunk](https://www.w3.org/TR/png-3/#fcTL-chunk)
     - ['fdAT' Frame Data Chunk](https://www.w3.org/TR/png-3/#fdAT-chunk)
 
-These are precisely the same as the Mozilla documentation,
+These are identical to the existing the (Mozilla)[https://www.mozilla.org/] (documentation)[https://wiki.mozilla.org/APNG_Specification],
 bringing the PNG specification into line with a
-decade of deployed content and implementations.
+decade of deployed APNG content and implementations.
 
 ## HDR support
 

@@ -957,27 +957,101 @@
                     <p>
                         Widely used in other image formats such as JPEG/JFIF,
                         EXIF metadata is also available in PNG.
-                        PNG Third Edition moves the <code>eXIf</code> chunk,
+                        PNG Third Edition moves the definition of the <code>eXIf</code> chunk,
                         which was already in the <a href="https://w3c.github.io/PNG-spec/extensions/Overview.html">PNG Extensions document</a>,
                         into the <a href="https://w3c.github.io/PNG-spec/#eXIf">main specification</a>.
                     </p>
+                    <h3>Passive metadata</h3>
                     <p>
-                        Exif mostly contains metadata (copyright, lens focal length)
-                        which does not affect the display of the image.
+                        Exif mostly contains passive metadata 
+                        (such as copyright, lens focal length, image creation time)
+                        which does not affect the display of the image. 
+                        It is useful to be able to store this in PNG,
+                        in the same way that it is stored in other image formats such as JPEG or TIFF.
+                        This enables a common workflow for image metadata handling, 
+                        regardless of image format.
+                    </p>
+                    <figure>
+                        <img src="./img/Gimp-Exif-viewer.png" alt="">
+                        <figcaption>GNU Image Manipulation Program (GIMP), displaying Exif metadata</figcaption>
+                    </figure>
+                    <p>
+                        <a href="https://exiftool.org/"><strong>ExifTool</strong>, by Phil Harvey</a> 
+                        supports <a href="https://exiftool.org/TagNames/PNG.html">reading 
+                        and writing PNG metadata</a>, including 
+                        <a href="https://exiftool.org/TagNames/Exif.html">Exif</a>.
                     </p>
                     <p>
-                        The Web Platform places a constraint on Exif image metadata that affects layout, such as image orientation:
-                        it is required to be placed <em>before the image data</em>.
-                        PNG Third Edition enforces that constraint, for Exif in PNG.
+                        The <a href="https://pillow.readthedocs.io/en/stable/"><strong>Python Imaging Library</strong>, 
+                        Pillow</a> supports reading and writing 
+                        <a href="https://pillow.readthedocs.io/en/latest/handbook/image-file-formats.html#png">Exif in PNG</a>
                     </p>
                     <p>
-                        Respecting Exif image orientation for PNG images in CSS is implemented in  <strong>WebKit-based browsers</strong>.
+                        <a href="https://exiv2.org/"><strong>Exiv2</strong></a>,
+                        a C++ imaging library, supports both 
+                        <a href="https://dev.exiv2.org/projects/exiv2/wiki/Supported_image_formats">reading and writing Exif in PNG</a>
+                    </p>
+
+                    <h3>Display-affecting metadata</h3>
+
+                    <p>
+                        A couple of items in Exif can affect image display, 
+                        and the <em>image orientation</em> is one example. 
+                        Notably, direct printing from a camera uses Exif orientation. 
+                        However, the detected orientation can easily be incorrect 
+                        if the camera is tilted away from the horizontal.
+                    </p>
+
+                    <p>
+                        Removing metadata is a common technique when images are prepared for the web. 
+                        Usually the aim is to reduce filesize, 
+                        but in the case of Exif which can contain thumbnails, 
+                        which are often not updated by image editors, 
+                        it can also be a privacy-protecting feature.
+                    </p>
+
+                    <p>
+                        An online image 0ptimization tool, 
+                        <a href="https://www.freeconvert.com/png-converter"><strong>PNG Converter</strong></a>,
+                        optionally strips metadata to reduce filesize.
+                        To avoid changing the orientation,
+                        it can also rotate the image data
+                        based on Exif orientation.
+                    </p>
+
+                    <figure>
+                        <img src="./img/auto-orient.png" alt="">
+                        <figcaption>Auto Orient and Strip Metadata options in PNG Converter</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="./img/Gimp-PNG-import-rotate-Exif.png" alt="">
+                        <figcaption>GNU Image Manipulation Program (GIMP), showing optional image rotate when opening a PNG image</figcaption>
+                    </figure>
+
+                    <p>
+                        The Web Platform places a constraint on Exif image metadata that affects layout, 
+                        such as image orientation:
+                        it is <a href="https://drafts.csswg.org/css-images-3/#url-metadata">required</a> 
+                        to be placed <em>before the image data</em>.
+                        PNG Third Edition <em>enforces</em> that constraint, for Exif in PNG.
                     </p>
                     <p>
-                        Respecting Exif image orientation for PNG images in Canvas 2D is implemented in  <strong>WebKit-based browsers</strong> and <strong>Blink-based browsers</strong>.
+                        Respecting Exif image-orientation for PNG images
+                        in CSS (with <code>image-orientation</code>)
+                        is implemented in  <strong>WebKit-based browsers</strong>.
                     </p>
                     <p>
-                        <strong>Blink-based browsers</strong> (Google Chrome, Microsoft Edge, Samsung Internet, etc), and <strong>Mozilla Firefox</strong> implement Exif orientation in CSS for JPEG/JFIF images, and are expected to implement it for PNG as well.
+                        Respecting Exif image orientation for PNG images 
+                        in Canvas 2D is implemented in  <strong>WebKit-based browsers</strong> 
+                        and <strong>Blink-based browsers</strong>.
+                    </p>
+                    <p>
+                        <strong>Blink-based browsers</strong> (Google Chrome, 
+                        Microsoft Edge, Samsung Internet, etc), 
+                        and <strong>Mozilla Firefox</strong> implement Exif orientation 
+                        in CSS for JPEG/JFIF images, 
+                        and are expected to implement it for PNG as well.
                         (<a href="https://issues.chromium.org/issues/40125224">Chrome bug</a> and <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1682759">Firefox bug</a>).
                     </p>
 
@@ -1001,6 +1075,19 @@
                                 <td class="result passes-all"></td>
                             </tr>
                         </table>
+                        </section>
+
+                        <p>
+                        <a href="https://www.w3.org/TR/css-images-3/">CSS Images 3</a> defines
+                        a property, 
+                        <a href="https://www.w3.org/TR/css-images-3/#the-image-orientation"><code>image-orientation</code></a>
+                        solely to override incorrect orientation information 
+                        which was automatically added by a camera or scanner.
+                        This property is <strong>optional to implement</strong>,
+                        making it hard to test.
+                    </p>
+
+                    <section class="tests" id="image-orientation"></section>
                         <h3>Exif in CSS tests (JPEG)</h3>
                         <table>
                             <tr class="header">
@@ -1017,8 +1104,8 @@
                                 <td class="result passes-all"></td>
                                 <td class="result passes-all"></td>
                             </tr>
-                        </table>
-                        <table>
+                        <!-- </table>
+                        <table> -->
                             <tr class="header">
                                 <th><a href="https://wpt.fyi/results/css/css-images/image-orientation/image-orientation-from-image-embedded-content.html?label=experimental&label=master&aligned">Live Results</a></th>
                                 <th>Chrome 137</th>
@@ -1066,13 +1153,31 @@
                                 <td class="result passes-unclear"></td>
                                 <td class="result passes-unclear"></td>
                                 <td class="result passes-unclear"></td>
-                                <td class="result passes-all"></td>
+                                <td class="result passes-unclear"></td>
                             </tr>
                         </table>
 
-                        <p id="wooly">Note that CSS Images 3 
+                        <p id="wooly">1. Note that CSS Images 3 
                             <a href="https://drafts.csswg.org/css-images-3/#url-metadata">makes 
-                                this hard to test</a> for the CSS `image-orientation` property.</p>
+                                this hard to test</a> for the CSS <code>image-orientation</code> property,
+                                if the metadata occurs after the image data.
+                        </p>
+                        <p>The correct rendering for the <code>image-orientation</code> CSS tests
+                        depends on the resolution of several CSS Images 3 issues:</p>
+                        <ul>
+                            <li><a href="https://github.com/w3c/csswg-drafts/issues/5173">Images on the web</a></li>
+                            <li><a href="https://github.com/w3c/csswg-drafts/issues/4165">Should CSS decorative images respect EXIF-orientation by default</a></li>
+                            <li><a href="https://github.com/w3c/csswg-drafts/issues/4666">image-orientation and canvas drawImage</a></li>
+                            <li><a href="https://github.com/w3c/csswg-drafts/issues/11114">Should EXIF 
+                                image orientation data be ignored if it comes after the image data in the encoded image?</a></li>
+                            <li><a href="https://github.com/web-platform-tests/wpt/issues/18549">Write Tests for Image-Orientation Initial Value</a></li>
+                        </ul>
+                        <p>
+                            Results for those tests are, nevertheless, 
+                            reported here as an indication of the current
+                            implementation status.
+                        </p>
+
                 </section>
 
                 <section id="palette">

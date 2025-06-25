@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Portable Network Graphics (PNG) Specification (Third Edition)</title>
+  <title>Portable Network Graphics (PNG) Specification (Fourth Edition)</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
   <style type="text/css">
@@ -11,15 +11,9 @@
   <script class="remove">
     var respecConfig = {
       group: "png",
-      specStatus: "REC",
-      publishDate: "2025-06-24",
-      errata: "https://www.w3.org/2025/06/REC-PNG-20250624-errata",
-      crEnd: "2025-05-13",
-      implementationReportURI: "https://w3c.github.io/png/Implementation_Report_3e/",
-      shortName: "png-3",
+      specStatus: "ED",
+      shortName: "png-4",
       copyrightStart: "1996",
-      previousPublishDate: "2025-05-15",
-      previousMaturity: "PR",
       edDraftURI: "https://w3c.github.io/png/",
       github: {
         repoURL : "https://github.com/w3c/png",
@@ -7623,234 +7617,12 @@ will need to be replaced by copies of lines 17-23, but processing background ins
   <section id="F-ChangeList" class="appendix informative">
     <h2 class="Annex">Changes</h2>
 
-    <h3 id="changes-20250515">Changes since the <a href="https://www.w3.org/TR/2025/PR-png-3-20250515/">Proposed Recommendation of 15 May 2025</a></h3>
+    <h3 id="changes-20250624">Changes since the <a href="https://www.w3.org/TR/2025/REC-png-3-20250624/">W3C Recommendation of 24 June 2025</a></h3>
 
     <ul>
       <li><em>none</em></li>
     </ul>
     
-      
-    <h3 id="changes-20250313">Changes since the <a href="https://www.w3.org/TR/2025/CR-png-3-20250313/">Candidate Recommendation Snapshot of 13 March 2025</a></h3>
-      
-    <ul>
-      <li><em>none</em></li>
-    </ul>
-
-
-    <h3 id="changes-20250121/">Changes since the <a href="https://www.w3.org/TR/2025/CRD-png-3-20250121/">Candidate Recommendation Draft of 21 January 2025 (Third Edition)</a></h3>
-
-    <ul>
-      <li>Credited original authors of the <span class="chunk">eXIf</span> chunk</li>
-      <li>Removed pointless constraint that unsigned integers cannot be negative (!)</li>
-      <li>Moved "Collection" keyword from extensions document to main specification</li>
-      <li>Copied original security note regarding EXIF, from Extensions document</li>
-      <li>Updated reference to latest version of ITU H.273</li>
-    </ul>
-
-    <h3 id="changes-20240718">Changes since the <a href="https://www.w3.org/TR/2024/CRD-png-3-20240718/">Candidate Recommendation Draft of 18 July 2024 (Third Edition)</a></h3>
-
-    <ul>
-      <!-- to 8 Jan 2025 -->
-      <li>Renamed <span class="chunk">mDCv</span> to <span class="chunk">mDCV</span></li>
-      <li>Renamed <span class="chunk">cLLi</span> to <span class="chunk">cLLI</span></li>
-      <li>Consistently require that <span class="chunk">acTL</span> only comes before <span class="chunk">IDAT</span>, not <span class="chunk">PLTE</span></li>
-    </ul>
-
-    <h3 id="changes-20230921">Changes since the <a href="https://www.w3.org/TR/2023/CR-png-3-20230921/">Candidate Recommendation Snapshot of 21 September 2023 (Third Edition)</a></h3>
-
-    <ul>
-      <li>Clarified that bit depth and color type fields can take private values</li>
-      <li>Listed both decimal and hexadecimal values in MaxCLL and MaxFALL examples</li>
-      <li>Corrected terminology in mDCV section</li>
-      <li>Corrected "PNG image" in cHRM section</li>
-      <li>Consolidated color chunk precedence information</li>
-      <li>Added order of precedence for color space chunks</li>
-      <li>Clarified color chunk priorities description</li>
-      <li>Mark SMPTE RP 2077 as informative, since it is not freely available</li>
-      <li>Added color chunk priority table</li>
-      <li>Clarified alpha channels are always full-range</li>
-      <li>Added EOTF and OETF definitions</li>
-      <li>Added recommendation for handling negative values resulting from narrow-range images using an extended range transfer function</li>
-      <li>Clarified "video" from "video full range flag) is used to match H.273 wording but still applies to still images</li>
-      <li>Added link to IANA subtag registry</li>
-      <li>Fixed links to alhpa compaction and alpha separation sections</li>
-      <li>Fixed broken tRNS link</li>
-      <li>Added Display P3 cICP example</li>
-      <li>Changed "perceived" wording to "measured", as luminance and chromaticity don't define a perceived color</li>
-      <li>Clarified which metadata forms part of HDR10</li>
-      <li>Updated link to latest version of ITU-R BT.2390</li>
-      <li>Noted that currently there is no published standard to adapt an SDR image from default viewing conditions (display luminance and ambient illumination) to those given in <span class="chunk">mDCV</span></li>
-      <li>Noted that the adaptation of BT.2100 HLG images to differing viewing conditions, given in BT.2390, may also be used with SDR images.</li>
-      <li>Noted that tone mapping, to adjust the luminance levels given in <span class="chunk">cLLI</span> to those of a target display to prevent clipping, is particularly important for formats such as BT.2100 PQ which use absolute luminance.</li>
-      <li>Noted that use of full-range BT.709 values, while common, is not part of the BT.709 standard</li>
-      <li>Added mention of protected code values for Serial Digital Interface (baseband video) in description of narrow-range and full-range video</li>
-      <li>Added reference to ITU-R-BT.2390</li>
-      <li>Changed description of <span class="chunk">mDCV</span> to focus on BT.2100 PQ, as use with other formats is currently rare</li>
-      <li>Clarified matching requirements for 16-bit <span class="chunk">tRNS</span> matching</li>
-      <li>Used more precise "primary chromaticities" rather than just "primaries"</li>
-      <li>Added requirement that <span class="chunk">mDCV</span> requires an accompanying <span class="chunk">cICP</span> to fit with expectations of existing HDR10 workflows</li>
-      <li>Better explanation of <code>Video Full Range Flag</code></li>
-      <li>Clarified ordering and encoding of sequence numbers, clarified <span class="chunk">fdAT</span> concatenation is in order of sequence number</li>
-      <li>Added missing mentions of <span class="chunk">cICP</span> in descriptions of related chunks</li>
-      <li>Fully specified the ordering and byte-order of fields in <span class="chunk">mDCV</span></li>
-      <li>Added missing definition of PNG two-byte unsigned integer</li>
-      <li>Used Display P3, rather than sRGB, in SDR <span class="chunk">mDCV</span> examples</li>
-      <li>Added Chris Needham as co-author</li>
-      <li>Updated examples for <span class="chunk">mDCV</span>, added reference to SMPTE-ST-2086.</li>
-      <li>Added reference to Display P3</li>
-      <li>Explicitly mentioned that the concatenated data from <span class="chunk">IDAT</span> and <span class="chunk">fdAT</span> may include chunks with zero-length data</li>
-      <li>Assorted non-substantive improvements to markup, styling, internal cross-linking, correction of typos, punctuation, grammar, consistent use of US English, etc</li>
-    </ul>
-
-    <h3 id="changes-20230720">Changes since the <a href="https://www.w3.org/TR/2023/WD-png-3-20230720/">
-      Working Draft of 20 July 2023 (Third Edition)</a></h3>
-
-    <ul>
-      <!-- to 21 Sept 2023 -->
-      <li>Clarified descriptions of <span class="chunk">mDCV</span> and <span class="chunk">cLLi</span></li>
-      <li>Added note to Security Considerations about potentially malicious data after <span class="chunk">IEND</span>.</li>
-      <li>Clarified that <a href="#cLLI-chunk" class="chunk">cLLI</a> is for HDR content</li>
-      <li>Added an informative reference to Smith &amp; Zink "On the Calculation and Usage of HDR Static Content Metadata"</li>
-      <li>Added an informative reference to CTA-861.3-A for static HDR metadata</li>
-      <li>Fixed broken reference to ITU-R BT.2100 </li>
-      <li>Updated reference to SMPTE-ST-2067-21</li>
-      <!-- to 26 Aug 2023 -->
-      <li>Added guidance on calculating MaxCLL and MaxFALL values</li>
-      <li>Added example (live streaming) where <a href="#cLLI-chunk" class="chunk">cLLI</a> could not be pre-calculated</li>
-      <li>Added definitions for stop, SDR, HDR, HLG and PQ</li>
-      <li>Clarified definition of narrow-range</li>
-      <li>Updated ITU-T H Suppl. 19 reference to latest version</li>
-      <li>Added Simon Thompson as an author</li>
-      <li>Mandated current browser handling of out-of-range palette indices</li>
-      <li>Updated "Additional Information" table to add <a href="#mDCV-chunk" class="chunk">mDCV</a> and <a href="#cLLI-chunk" class="chunk">cLLI</a>.</li>
-    </ul>
-
-    <h3 id="changes-20221025">Changes since the <a href="https://www.w3.org/TR/2022/WD-png-3-20221025/">
-      First Public Working Draft of 25 October 2022 (Third Edition)</a></h3>
-
-    <ul>
-      <!-- to 18 July 2023 -->
-      <li>Explained preferable handling of trailing bytes in the final <a href="#11IDAT" class="chunk">IDAT</a> chunk for encoders and decoders.</li>
-      <li>Linked to open issue on tone-mapping <a>HDR</a> [[ITU-R-BT.2100]] images in the presence of <a href="#mDCV-chunk" class="chunk">mDCV</a>.</li>
-
-      <li>Follow the Encoding Standard on UTF-8 encode and decode.</li>
-      <li>Added definition of a frame.</li>
-      <li>Required the Matrix Coefficients in <a href="#cICP-chunk" class="chunk">cICP</a> to be zero (RGB data).</li>
-      <li>Added known Privacy issue with recoverable data that only appears to have been redacted.</li>
-      <li>Improved advice on choosing filters.</li>
-      <li>Added links to color image type definitions.</li>
-      <li>Clarified that MaxFALL uses the values of the frame with highest mean luminance.</li>
-      <li>Clarified luminance units.</li>
-      <li>Prefer RFC 3339 format for Creation Time.</li>
-      <li>Improved the definition of <a href="#mDCV-chunk" class="chunk">mDCV</a>, with better descriptions, default values, and reference to SMPTE standards.</li>
-      <li>Refactored the terms and definitions, for clarity.</li>
-      <li>Improved definitions of source, reference, and PNG images.</li>
-      <li>Moved concepts from the terms and definitions section to the main prose.</li>
-      <!-- to 6 March 2023 -->
-      <li>Corrected error in <a href="#eXIf" class="chunk">eXIf</a> chunk,
-        which conflicted with the <a href="#5ChunkOrdering">chunk ordering</a> section.</li>
-      <li>Simplified <a href="#1Scope">Scope</a> section to remove redundant detail described elsewhere.</li>
-      <li>Redrew chunk-ordering lattice diagrams to be clearer and more consistent.</li>
-      <li>Added a new chunk, <a href="#cLLI-chunk" class="chunk">cLLI</a>,
-      to describe the Maximum Single-Pixel and Frame-Average Luminance Levels
-      for both static and animated <a>HDR</a> [[ITU-R-BT.2100]] PNG images.
-
-      </li>
-      <li>Updated external links to latest versions, preferring https over http.</li>
-      <li>Specified interoperable handling of extra sample bits, beyond the specified bit depth,
-        in <a href="#11tRNS" class="chunk">tRNS</a> and <a href="#11bKGD" class="chunk">bKGD</a> chunks.
-      </li>
-      <li>Added a new chunk, <a href="#mDCV-chunk" class="chunk">mDCV</a>
-        to describe the color volume of the mastering display used to grade <a>HDR</a> [[ITU-R-BT.2100]] content.</li>
-
-      <li>Used correct Unicode character names.</li>
-      <li>Changed chunk type codes to use hexadecimal, rather than decimal.</li>
-      <li>Described textual chunk processing more clearly.</li>
-      <li>Recommended <a href="#11iTXt" class="chunk">iTXt</a> for new content.</li>
-      <li>Clarifications on the language tag field of the <a href="#11iTXt" class="chunk">iTXt</a> chunk,
-        corrected examples to conform to BCP47.</li>
-      <li>Updated image/apng registration appendix. APNG MIME type registered with IANA.</li>
-      <li>Converted ACII-art figures to more accessible diagrams.</li>
-    </ul>
-
-    <h3 id="changes-20031110">Changes since the <a href="https://www.w3.org/TR/2003/REC-PNG-20031110/">W3C Recommendation of 10 November 2003</a> (PNG
-    Second Edition)</h3>
-
-    <ul>
-      <!-- to 22 March 2024 -->
-
-      <li>
-        <p>The three previously defined, but unofficial, chunks for Animated PNG (APNG) have been added:</p>
-
-        <ul>
-          <li><a href="#acTL-chunk" class="chunk">acTL</a> Animation Control Chunk</li>
-          <li><a href="#fcTL-chunk" class="chunk">fcTL</a> Frame Control Chunk</li>
-          <li><a href="#fdAT-chunk" class="chunk">fdAT</a> Frame Data Chunk</li>
-        </ul>
-        
-        <p>This brings the PNG specification into alignment with widely deployed industry practice.</p>
-      </li>
-
-      <li>
-        <p>Added the <a class="chunk" href="#cICP-chunk">cICP</a> chunk, Coding-independent code points for video signal type
-          identification, to contain image format metadata defined in [[ITU-T-H.273]] which enables PNG to contain [[ITU-R-BT.2100]] High Dynamic Range
-          (<a>HDR</a>) and Wide Color Gamut (WCG) images.</p>
-      </li>
-
-      <li>
-        <p>For chunks which define the image color space,
-          the order of precedence is clearly defined,
-          if more than one is present.</p>
-      </li>
-
-      <li>
-        <p>The previously defined <a class="chunk" href="#eXIf">eXIf</a> chunk has been moved from the PNG-Extensions document
-        [[PNG-EXTENSIONS]] into the main body of this specification, to reflect its increasing use.</p>
-      </li>
-
-      <li>
-        <p>To help with tonemapping HDR content, added the <a class="chunk" href="#mDCV-chunk">mDCV</a> chunk, which contains metadata about the display used in
-          mastering, and <a href="#cLLI-chunk" class="chunk">cLLI</a>, which contains metadata about peak and average light levels. This enabled more accurate color matching on heterogeneous platforms</p>
-      </li>
-
-      <li>
-        <p>Clarified that the <a href="#11iCCP" class="chunk">iCCP</a> chunk, which contains an ICC profile, can contain profiles conforming to any version of the ICC.1 specification. PNG Second Edition only referenced the then-current v2 of ICC.1, although it has since become industry practice to also used higher versions.</p>
-      </li>
-
-      <li>
-        <p>Clarified handling of out-of-range indexes, for indexed-color PNG</p>
-      </li>
-
-      <li>
-        <p>Clarified error recovery for unknown and invalid ancillary chunks</p>
-      </li>
-
-      <li>
-        <p>Incorporation of all <a href="https://www.w3.org/2003/11/REC-PNG-20031110-errata">PNG Second Edition Errata</a>. Notably, clarified that PNG images with unknown gamma value, when embedded in formats such as HTML or SVG, must be treated as <a href="https://drafts.csswg.org/css-color-4/#untagged">untagged images</a></p>
-      </li>
-
-      <li>
-        <p>Various editorial clarifications in response to community feedback</p>
-      </li>
-
-      <li>
-        <p>References updated to latest versions</p>
-      </li>
-
-      <li>
-        <p>Markup corrections and link fixes</p>
-      </li>
-
-      <li>
-        <p>Document source reformatted to use ReSpec</p>
-      </li>
-    </ul>
-
-    <h3>Changes between First and Second Editions</h3>
-
-    <p>For the list of changes between W3C Recommendation <a href="https://www.w3.org/TR/REC-png-961001">PNG Specification Version
-    1.0</a> and <a href="https://www.w3.org/TR/2003/REC-PNG-20031110/">PNG Second Edition</a>, see <a href=
-    "https://www.w3.org/TR/2003/REC-PNG-20031110/#F-ChangeList">PNG Second Edition changelist</a></p>
   </section>
   <script type="application/javascript" src="https://www.w3.org/scripts/TR/fixup.js"></script>
 </body>

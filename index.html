@@ -247,6 +247,12 @@
           date: "1 November 1993",
           href: "https://standards.globalspec.com/std/1284890/smpte-rp-177"
         },
+        "SMPTE-ST 2065-1": {
+          title: "Academy Color Encoding Specification (ACES)",
+          publisher: "Society of Motion Picture and Television Engineers",
+          date: "9 September 2020",
+          href: "https://pub.smpte.org/latest/st2065-1/"
+        },
         "SMPTE-ST-2067-21": {
           title: "Interoperable Master Format — Application #2E",
           publisher: "Society of Motion Picture and Television Engineers",
@@ -3338,10 +3344,19 @@ with these exceptions:
             </tr>
           </table>
 
-          <p>Each value is encoded as a <a>PNG four-byte unsigned integer</a>, representing the <i>x</i> or <i>y</i> value times
+          <p>Each value is encoded as a <a>PNG four-byte signed integer</a>, representing the <i>x</i> or <i>y</i> value times
           100000.</p>
 
           <p class="example">A value of 0.3127 would be stored as the integer 31270.</p>
+
+          <p>This specification extends chromaticity values 
+          to encompass negative values, which are found in some 
+          ultra-wide gamut color spaces.</p>
+
+          <p class="example">The ACES AP0 [[SMPTE-ST 2065-1]] 
+            blue primary has a y value of -0.077,
+            which would be stored as the integer -7700.
+          </p>
 
           <p>The <span class="chunk">cHRM</span> chunk is allowed in all PNG datastreams, although it is of little value for
           <a>greyscale</a> images.</p>

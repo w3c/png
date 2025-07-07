@@ -7645,7 +7645,9 @@ will need to be replaced by copies of lines 17-23, but processing background ins
     <h3 id="changes-20250624">Changes since the <a href="https://www.w3.org/TR/2025/REC-png-3-20250624/">W3C Recommendation of 24 June 2025</a></h3>
 
     <ul>
-      <li><em>none</em></li>
+      <li>Updated 'cHRM' chromaticities to use PNG four-byte signed integers, to enble ultra-wide gamut color spaces. Previously, negative values were not representable.
+      (<a href="https://github.com/w3c/png/issues/527">Issue 527</a>)
+      </li>
     </ul>
     
   </section>

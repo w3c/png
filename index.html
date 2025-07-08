@@ -3353,6 +3353,19 @@ with these exceptions:
           to encompass negative values, which are found in some 
           ultra-wide gamut color spaces.</p>
 
+
+          <p class="note">Previous versions of this specification 
+            used <a>PNG four-byte unsigned integer</a> for these values,
+            thus disallowing negative values.
+            The change is backwards compatible, because 
+            <a>PNG four-byte unsigned integer</a> is limited
+            to the range 0 to 2<sup>31</sup>-1.
+            Thus, no valid PNG file conforming to an earlier edition
+            of this specification
+            can conflict with this extended range.
+            </p>
+
+
           <p class="example">The ACES AP0 [[SMPTE-ST 2065-1]] 
             blue primary has a y value of -0.077,
             which would be stored as the integer -7700.

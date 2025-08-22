@@ -793,9 +793,43 @@ with these exceptions:
         <!-- Maintain a fragment named "3channel" to preserve incoming links to it -->
         <dfn id="3channel">channel</dfn>. Each channel has a sample depth in the range 1 to 16, which is the number of bits used by every sample in the
         channel. Different channels may have different sample depths. The red, green, and blue samples determine the intensities of
-        the red, green, and blue components of the pixel's color; if they are all zero, the pixel is black, and if they all have
+        the red, green, and blue components of the pixel's color. 
+        
+        <p>The following table describes the quantization of image black to image peak white (signal range). By default the signal range is full-range 
+          but it can also be represented as narrrow range, which conforms to quantization in broadcast video which typically uses the YCbCr Color 
+          Representation.  cICP can specify this specific range:</p>
+
+          <br>
+        <table id="signal-range-syntax" class="numbered simple">
+          <caption>
+            Full and Narrow Range Signal Range (Quantization Method)
+          </caption>
+
+         
+          <tr>
+            <th>16bit Signal Range (Quantization for Full and Narrow Ranges)</th>
+            <th>Black</th>
+            <th>White</th>
+          </tr>
+
+          <table border="1">
+          <tr>
+            <td align="center" valign="center">Full Range</td>
+            <td align="center" valign="center">65535</td>
+            <td align="center" valign="center">0</td>
+          </tr>
+
+          <tr>
+            <td align="center" valign="center">Narrow Range</td>
+            <td align="center" valign="center">60160</td>
+            <td align="center" valign="center">4096</td>
+          </tr>
+
+        </table>
+        <br>
+
         <!-- Maintain a fragment named "3alpha" to preserve incoming links to it -->
-        their maximum values (2<sup>sampledepth</sup>-1), the pixel is white. The <dfn id="3alpha">alpha</dfn> sample determines a pixel's degree of
+        The <dfn id="3alpha">alpha</dfn> sample determines a pixel's degree of
         opacity, where zero means fully transparent and the maximum value means fully opaque. In a three-channel reference image
         all pixels are fully opaque. (It is also possible for a four-channel reference image to have all pixels fully opaque; the
         difference is that the latter has a specific alpha sample depth, whereas the former does not.) Each horizontal row of

@@ -43,7 +43,33 @@ https://www.w3.org/TR/2025/REC-png-3-20250624/</a>
     Please raise them as <a href="https://github.com/w3c/png/issues?q=is%3Aissue%20state%3Aopen%20milestone%3A%223rd%20edition%22">issues on GitHub</a> .</p>
 <hr />
 
-<p><em>None</em></p>
+<div class="erratum" id="err-mDCV-values">
+    <h2>Incorrect values in mDCV example</h2>
+    <dl>
+        <dt>Category:</dt>
+        <dd><a href="https://www.w3.org/2020/Process-20200915/#correction-classes">
+        2. Corrections that do not affect conformance</a></dd>
+        <dt>Date:</dt>
+        <dd>10 September 2025</dd>
+        <dt>Reported by:</dt>
+        <dd><a href="https://github.com/w3c/png/issues/539">Christopher Cameron</a></dd>
+        <dt>Status:</dt>
+        <dd>Proposed</dd>
+    </dl>
+    <h3>Description</h3>
+    <p>The hexadecimal values for the decimal value of the x chromaticity white point are incorrect.
+    </p>
+    <h3>Change</h3>
+    <p> in <a href="https://www.w3.org/TR/png-3/#example-6">Example 6</a>, change the text: </p>
+    <div class="old">
+    Stored Hexadecimal values: {3C 05, 40 42}
+    </div>
+    <p>to</p>
+    <div class="new">
+    Stored Hexadecimal values: {3D 13, 40 42}
+    </div>
+</div>
+
 <!--
 <div class="erratum" id="err-">
     <h2></h2>

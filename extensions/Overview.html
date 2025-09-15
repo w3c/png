@@ -2,12 +2,15 @@
  <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Extensions to the PNG Third Edition Specification, Version 1.6.0</title>
-  <meta content="DNOTE" name="w3c-status">
+  <title>Extensions to the PNG Third Edition Specification, Version 1.6.1</title>
+  <meta content="NOTE-WD" name="w3c-status">
   <link href="https://www.w3.org/StyleSheets/TR/2021/W3C-DNOTE" rel="stylesheet">
-  <meta content="Bikeshed version d5d58a306, updated Fri Jan 26 16:12:28 2024 -0800" name="generator">
+  <meta content="Bikeshed version b25686b9f, updated Fri Mar 14 14:15:20 2025 -0700" name="generator">
   <link href="https://w3.org/TR/png-extensions/" rel="canonical">
-  <meta content="8cfa8a9f1ea4441f47b96cec8bd99b9e011d3bfe" name="revision">
+  <link href="https://www.w3.org/2008/site/images/favicon.ico" rel="icon">
+  <meta content="32113571711ea45fc4af71a810cd12bf5a17a60b" name="revision">
+  <meta content="dark light" name="color-scheme">
+  <link href="https://www.w3.org/StyleSheets/TR/2021/dark.css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css">
 <style>
     span.chunk {
         font-family: Courier, monospace;
@@ -537,14 +540,14 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72"> </a> </p>
-   <h1 class="p-name no-ref" id="title">Extensions to the PNG Third Edition Specification, Version 1.6.0</h1>
-   <p id="w3c-state"><a href="https://www.w3.org/standards/types#DNOTE">W3C Group Draft Note</a>, <time class="dt-updated" datetime="2024-02-19">19 February 2024</time></p>
+   <h1 class="p-name no-ref" id="title">Extensions to the PNG Third Edition Specification, Version 1.6.1</h1>
+   <p id="w3c-state"><a href="https://www.w3.org/standards/types/#DNOTE">W3C Group Draft Note</a>, <time class="dt-updated" datetime="2025-09-15">15 September 2025</time></p>
    <details open>
     <summary>More details about this document</summary>
     <div data-fill-with="spec-metadata">
      <dl>
       <dt>This version:
-      <dd><a class="u-url" href="https://www.w3.org/TR/2024/DNOTE-pngext-20240219/">https://www.w3.org/TR/2024/DNOTE-pngext-20240219/</a>
+      <dd><a class="u-url" href="https://www.w3.org/TR/2025/DNOTE-pngext-20250915/">https://www.w3.org/TR/2025/DNOTE-pngext-20250915/</a>
       <dt>Latest published version:
       <dd><a href="https://w3.org/TR/png-extensions/">https://w3.org/TR/png-extensions/</a>
       <dt>Editor's Draft:
@@ -561,7 +564,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     </div>
    </details>
    <div data-fill-with="warning"></div>
-   <p class="copyright" data-fill-with="copyright"><a href="https://www.w3.org/policies/#copyright">Copyright</a> © 2024 <a href="https://www.w3.org/">World Wide Web Consortium</a>. <abbr title="World Wide Web Consortium">W3C</abbr><sup>®</sup> <a href="https://www.w3.org/policies/#Legal_Disclaimer">liability</a>, <a href="https://www.w3.org/policies/#W3C_Trademarks">trademark</a> and <a href="https://www.w3.org/copyright/software-license/" rel="license" title="W3C Software and Document License">permissive document license</a> rules apply. </p>
+   <p class="copyright" data-fill-with="copyright"><a href="https://www.w3.org/policies/#copyright">Copyright</a> © 2025 <a href="https://www.w3.org/">World Wide Web Consortium</a>. <abbr title="World Wide Web Consortium">W3C</abbr><sup>®</sup> <a href="https://www.w3.org/policies/#Legal_Disclaimer">liability</a>, <a href="https://www.w3.org/policies/#W3C_Trademarks">trademark</a> and <a href="https://www.w3.org/copyright/software-license/" rel="license" title="W3C Software and Document License">permissive document license</a> rules apply. </p>
    <hr title="Separator for header">
   </div>
   <div class="p-summary" data-fill-with="abstract">
@@ -599,15 +602,12 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
      <ol class="toc">
       <li><a href="#R.dSIG"><span class="secno">5.1</span> <span class="content"> <span class="chunk">dSIG</span> Digital signature </span></a>
       <li><a href="#R.fRAc"><span class="secno">5.2</span> <span class="content"> <span class="chunk">fRAc</span> Fractal image parameters </span></a>
+      <li><a href="#R.iDOT"><span class="secno">5.3</span> <span class="content"> <span class="chunk">iDOT</span> Apple Multithreaded Decoding </span></a>
      </ol>
     <li>
      <a href="#Keywords"><span class="secno">6</span> <span class="content"> Text Chunk Keywords </span></a>
      <ol class="toc">
-      <li>
-       <a href="#K.Keywords"><span class="secno">6.1</span> <span class="content"> Additional Registered Keywords </span></a>
-       <ol class="toc">
-        <li><a href="#K.Collection"><span class="secno">6.1.1</span> <span class="content"> Collection </span></a>
-       </ol>
+      <li><a href="#K.Keywords"><span class="secno">6.1</span> <span class="content"> Additional Registered Keywords </span></a>
       <li><a href="#K.Syntax"><span class="secno">6.2</span> <span class="content"> Keyword Syntax </span></a>
      </ol>
     <li>
@@ -1322,13 +1322,16 @@ p3 = 32767
     was being developed by Tim Wegner, twegner @ phoenix.net.</p>
    <p>In the future, chunks will be fully specified
     before they are registered.</p>
+   <h3 class="heading settled" data-level="5.3" id="R.iDOT"><span class="secno">5.3. </span><span class="content"> <span class="chunk">iDOT</span> Apple Multithreaded Decoding </span><a class="self-link" href="#R.iDOT"></a></h3>
+   <p>The <span class="chunk">iDOT</span> chunk enables multi-core machines
+    to use (at least) two cores to decode the PNG datastream.</p>
+   <p>It was developed by Apple, around 2011, but never registered.
+    It is commonly found in PNG images generated on Apple hardware.</p>
+   <p>This chunk has been reverse-engineered, and is described in detail
+    in a separate document, <a data-link-type="biblio" href="#biblio-idot-description" title="Connecting the iDOTs">[iDOT-description]</a>.</p>
    <h2 class="heading settled" data-level="6" id="Keywords"><span class="secno">6. </span><span class="content"> Text Chunk Keywords </span><a class="self-link" href="#Keywords"></a></h2>
    <h3 class="heading settled" data-level="6.1" id="K.Keywords"><span class="secno">6.1. </span><span class="content"> Additional Registered Keywords </span><a class="self-link" href="#K.Keywords"></a></h3>
-   <h4 class="heading settled" data-level="6.1.1" id="K.Collection"><span class="secno">6.1.1. </span><span class="content"> Collection </span><a class="self-link" href="#K.Collection"></a></h4>
-   <p>Name of a collection
-    to which the image belongs.
-    An image may belong to one or more collections,
-    each named by a separate text chunk.</p>
+   <p>(none)</p>
    <h3 class="heading settled" data-level="6.2" id="K.Syntax"><span class="secno">6.2. </span><span class="content"> Keyword Syntax </span><a class="self-link" href="#K.Syntax"></a></h3>
    <p>All registered textual keywords
     in text chunks
@@ -1341,7 +1344,7 @@ p3 = 32767
 <pre># $ @ [ \ ] ^ ` { | } ~
 </pre>
    <p>This restricted set
-    is the ISO-646 "invariant" character set [[!ISO 646]].
+    is the ISO-646 "invariant" character set <a data-link-type="biblio" href="#biblio-iso646" title="Information technology — ISO 7-bit coded character set for information interchange">[ISO646]</a>.
     These characters have the same numeric codes
     in all ISO character sets,
     including all national variants of ASCII.</p>
@@ -2278,7 +2281,6 @@ Therefore, transparency information can be lost.</p>
    <p>Names of contributors
     not already listed in the PNG specification
     are presented in alphabetical order:</p>
-   <p></p>
    <ul>
     <li>Adeluc, <a href="http://www.adeluc.com">www.adeluc.com</a>,
     png @ adeluc.com 
@@ -2323,21 +2325,25 @@ Therefore, transparency information can be lost.</p>
     like this: </p>
    <p class="note" role="note">Note, this is an informative note.</p>
   </div>
-<script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script>
+  <script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script>
   <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
   <h3 class="no-num no-ref heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
   <dl>
    <dt id="biblio-dsig-spec">[dSIG-spec]
-   <dd>T; et al. <a href="http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.spec.pdf"><cite>PNG Digital Signatures: Extension Specification</cite></a>. 17 Nov 2008. URL: <a href="http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.spec.pdf">http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.spec.pdf</a>
+   <dd>Thomas Kopp. <a href="http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.spec.pdf"><cite>PNG Digital Signatures: Extension Specification</cite></a>. 17 Nov 2008. URL: <a href="http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.spec.pdf">http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.spec.pdf</a>
+   <dt id="biblio-idot-description">[iDOT-description]
+   <dd>Dr. Neal Krawetz. <a href="https://www.hackerfactor.com/blog/index.php?/archives/895-Connecting-the-iDOTs.html"><cite>Connecting the iDOTs</cite></a>. 8 September 2020. URL: <a href="https://www.hackerfactor.com/blog/index.php?/archives/895-Connecting-the-iDOTs.html">https://www.hackerfactor.com/blog/index.php?/archives/895-Connecting-the-iDOTs.html</a>
+   <dt id="biblio-iso646">[ISO646]
+   <dd><a href="https://www.iso.org/standard/4777.html"><cite>Information technology — ISO 7-bit coded character set for information interchange</cite></a>. December 1991. Published. URL: <a href="https://www.iso.org/standard/4777.html">https://www.iso.org/standard/4777.html</a>
    <dt id="biblio-png">[PNG]
-   <dd>Chris Lilley; et al. <a href="https://www.w3.org/TR/png-3/"><cite>Portable Network Graphics (PNG) Specification (Third Edition)</cite></a>. 21 September 2023. CR. URL: <a href="https://www.w3.org/TR/png-3/">https://www.w3.org/TR/png-3/</a>
+   <dd>Chris Lilley; et al. <a href="https://www.w3.org/TR/png-3/"><cite>Portable Network Graphics (PNG) Specification (Third Edition)</cite></a>. 24 June 2025. REC. URL: <a href="https://www.w3.org/TR/png-3/">https://www.w3.org/TR/png-3/</a>
    <dt id="biblio-rfc2119">[RFC2119]
    <dd>S. Bradner. <a href="https://datatracker.ietf.org/doc/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. March 1997. Best Current Practice. URL: <a href="https://datatracker.ietf.org/doc/html/rfc2119">https://datatracker.ietf.org/doc/html/rfc2119</a>
   </dl>
   <h3 class="no-num no-ref heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
   <dl>
    <dt id="biblio-dsig-example">[dSIG-example]
-   <dd>M; et al. <a href="http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.sample.html"><cite>PNG Digital Signatures: Commented Example</cite></a>. 18 May 2008. URL: <a href="http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.sample.html">http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.sample.html</a>
+   <dd>Martin Boßlet; Thomas Kopp. <a href="http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.sample.html"><cite>PNG Digital Signatures: Commented Example</cite></a>. 18 May 2008. URL: <a href="http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.sample.html">http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.sample.html</a>
    <dt id="biblio-gif">[GIF]
    <dd><a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt"><cite>Graphics Interchange Format</cite></a>. 31 July 1990. URL: <a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt">https://www.w3.org/Graphics/GIF/spec-gif89a.txt</a>
   </dl>

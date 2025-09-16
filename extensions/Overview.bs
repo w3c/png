@@ -4,7 +4,7 @@ Shortname: pngext
 Level: none
 Status: NOTE-WD
 Group: PNGWG
-URL: https://w3c.github.io/PNG-spec/extensions/Overview.html
+URL: https://w3c.github.io/png/extensions/Overview.html
 TR: https://w3.org/TR/png-extensions/
 Editor: Chris Lilley, W3C, https://svgees.us/, w3cid 1438
 Former Editor: Glenn Randers-Pehrson

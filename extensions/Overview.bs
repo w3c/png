@@ -1,10 +1,10 @@
 <pre class='metadata'>
-Title: Extensions to the PNG Third Edition Specification, Version 1.6.0
+Title: Extensions to the PNG Third Edition Specification, Version 1.6.1
 Shortname: pngext
 Level: none
-Status: NOTE-FPWD
+Status: NOTE-WD
 Group: PNGWG
-URL: https://w3c.github.io/PNG-spec/extensions/Overview.html
+URL: https://w3c.github.io/png/extensions/Overview.html
 TR: https://w3.org/TR/png-extensions/
 Editor: Chris Lilley, W3C, https://svgees.us/, w3cid 1438
 Former Editor: Glenn Randers-Pehrson
@@ -29,15 +29,21 @@ Local Boilerplate: copyright yes
 		"dSIG-spec": {
 			"href": "http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.spec.pdf",
 			"title": "PNG Digital Signatures: Extension Specification",
-            "authors": "Thomas Kopp",
+            "authors": ["Thomas Kopp"],
 			"date": "17 Nov 2008"
 		},
 		"dSIG-example": {
 			"href": "http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.sample.html",
 			"title": "PNG Digital Signatures: Commented Example",
-			"authors": "Martin Boßlet, Thomas Kopp",
+			"authors": ["Martin Boßlet", "Thomas Kopp"],
 			"date": "18 May 2008"
-		}
+		},
+        "iDOT-description": {
+            "href": "https://www.hackerfactor.com/blog/index.php?/archives/895-Connecting-the-iDOTs.html",
+            "title": "Connecting the iDOTs",
+            "authors": ["Dr. Neal Krawetz"],
+            "date": "8 September 2020"
+        }
 	}
 </pre>
 
@@ -771,6 +777,20 @@ The <span class="chunk">pCAL</span> chunk contains:
     In the future, chunks will be fully specified
     before they are registered.
 
+    <h3 id="R.iDOT">
+        <span class="chunk">iDOT</span> Apple Multithreaded Decoding
+    </h3>
+
+    The <span class="chunk">iDOT</span> chunk enables multi-core machines
+    to use (at least) two cores to decode the PNG datastream.
+
+    It was developed by Apple, around 2011, but never registered.
+    It is commonly found in PNG images generated on Apple hardware.
+
+    This chunk has been reverse-engineered, and is described in detail
+    in a separate document, [[!iDOT-description]].
+
+
 <h2 id="Keywords">
     Text Chunk Keywords
 </h2>
@@ -803,7 +823,7 @@ The <span class="chunk">pCAL</span> chunk contains:
     </pre>
 
     This restricted set
-    is the ISO-646 "invariant" character set [[!ISO 646]].
+    is the ISO-646 "invariant" character set [[!ISO646]].
     These characters have the same numeric codes
     in all ISO character sets,
     including all national variants of ASCII.
@@ -1167,7 +1187,7 @@ What are <code>x0</code> and <code>x1</code> for?
     not already listed in the PNG specification
     are presented in alphabetical order:
 
-    </p><ul>
+    <ul>
     <li>Adeluc, <a href="http://www.adeluc.com">www.adeluc.com</a>,
     png&nbsp;@&nbsp;adeluc.com
     </li><li>Brendan Bolles

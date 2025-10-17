@@ -88,6 +88,12 @@
           href: "https://poynton.ca/ColorFAQ.html",
           date: "2009-10-19"
         },
+        "Content-Credentials": {
+          publisher: "Coalition for Content Provenance and Authenticity (C2PA)",
+          title: "Content Credentials",
+          date: "2025-05",
+          href: "https://spec.c2pa.org/specifications/specifications/2.2/specs/C2PA_Specification.html"
+        },
         "CTA-861.3-A": {
           title: "HDR Static Metadata Extensions (CTA-861.3-A)",
           publisher: "Consumer Technology Association",
@@ -2168,6 +2174,17 @@ with these exceptions:
           <td>Yes</td>
           <td>None</td>
         </tr>
+
+      <tr>
+          <td>
+            <a class="chunk" href="#caBX">caBX</a>
+          </td>
+          <td>No</td>
+          <td>
+            Before <a class="chunk" href="#11IDAT">IDAT</a>
+          </td>
+        </tr>
+
       </table>
       <!-- Maintain a fragment named "table54" to preserve incoming links to it -->
 
@@ -4646,6 +4663,41 @@ with these exceptions:
           If the image bit depth is less than 16, the least significant bits are used.
           Encoders should set the other bits to 0, and decoders must mask the other bits to 0 before the value is used.</p>
         </section>
+
+        <section id="caBX">
+          <h2><span class="chunk">caBX</span> Content Credentials</h2>
+
+          <p>The four-byte chunk type field contains the hexadecimal values</p>
+
+          <pre>
+          63 61 42 58
+          </pre>
+
+          <p>The <span class="chunk">caBX</span> chunk contains content credentials
+            (provenance, and edit history) metadata 
+            in a secure, tamper-evident (cryptographically verifiable) 
+            and standardized way 
+            to enable publishers and consumers 
+            to determine the authenticity of media.
+          </p>
+
+          <p>The contents of the <span class="chunk">caBX</span> chunk
+            are defined by the 
+            Coalition for Content Provenance and Authenticity (C2PA)
+            Content Credentials [[Content-Credentials]] specification
+            and are defined identically for a wide variety of media formats.
+            This enables a consistent, automated media-independent workflow.
+          </p>
+
+          <p>For embedding into PNG, 
+            <a href="https://spec.c2pa.org/specifications/specifications/2.2/specs/C2PA_Specification.html#_embedding_manifests_into_png">section A.3.2. of Content Credentials</a>
+            defined <span class="chunk">caBX</span> which is a private, ancilliary, not safe to copy chunk.
+            As this is now in widespread use, the identical chunk name
+            is standardized in this specification.
+          </p>
+
+        </section>
+
         <!-- Maintain a fragment named "11hIST" to preserve incoming links to it -->
 
         <section id="11hIST">
@@ -7658,6 +7710,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
     <h3 id="changes-20250624">Changes since the <a href="https://www.w3.org/TR/2025/REC-png-3-20250624/">W3C Recommendation of 24 June 2025</a></h3>
 
     <ul>
+      <li>Added the 'caBX' chunk for Content Credentials (<a href="https://github.com/w3c/png/issues/542">Issue 542</a>)</li>
       <li>Corrected a typo in an 'mDCV' example</li>
       <li>Updated 'cHRM' chromaticities to use PNG four-byte signed integers, to enble ultra-wide gamut color spaces. Previously, negative values were not representable.
       (<a href="https://github.com/w3c/png/issues/527">Issue 527</a>)

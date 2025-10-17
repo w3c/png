@@ -6089,6 +6089,11 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
 
       <p>A poorly written decoder might be subject to buffer overflow, because chunks can be extremely large, up to
       2<sup>31</sup>-1 bytes long. But properly written decoders will handle large chunks without difficulty.</p>
+
+      <p>The C2PA have their own 
+        <a href="https://spec.c2pa.org/specifications/specifications/2.0/security/Security_Considerations.html">Security Considerations</a>, which pertain to the <span class="chunk">caBX</span> chunk.
+
+      </p>
     </section>
 
     <section id="Privacy-considerations">

@@ -5094,7 +5094,7 @@ with these exceptions:
     <!-- 102 99 84 76 -->66 63 54 4C
     </pre>
           <p>The <span class="chunk">fcTL</span> chunk defines the dimensions, position, delay and disposal of an individual frame.
-          Exactly one <span class="chunk">fcTL</span> chunk chunk is required for each frame. It contains:</p>
+          Exactly one <span class="chunk">fcTL</span> chunk is required for each frame. It contains:</p>
 
           <table id="fcTL-structure" class="numbered simple">
             <caption>
@@ -5168,7 +5168,7 @@ with these exceptions:
 
           <p>`delay_num` and `delay_den` define the numerator and denominator of the delay fraction; indicating the time to display
           the current frame, in seconds. If the denominator is 0, it is to be treated as if it were 100 (that is, `delay_num` then
-          specifies 1/100ths of a second). If the the value of the numerator is 0 the decoder should render the next frame as
+          specifies 1/100ths of a second). If the value of the numerator is 0 the decoder should render the next frame as
           quickly as possible, though viewers may impose a reasonable lower bound. They are encoded as two-byte unsigned
           integers.</p>
 

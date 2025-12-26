@@ -2552,7 +2552,16 @@ with these exceptions:
          <object id="figure49" data="figures/serializing-and-filtering-scanline.svg" type="image/svg+xml">
         </object>
         <figcaption>
-          Serializing and filtering a scanline
+          Serializing and filtering a scanline, 8 bits per component
+        </figcaption>
+      </figure>
+
+      <figure id="serializing-and-filtering-scanline-16">
+        <!-- Maintain a fragment named "figure49" to preserve incoming links to it -->
+         <object id="figure49b" data="figures/serializing-and-filtering-16bit-scanline.svg" type="image/svg+xml">
+        </object>
+        <figcaption>
+          Serializing and filtering a scanline, 16 bits per component
         </figcaption>
       </figure>
     </section>
@@ -2626,7 +2635,8 @@ with these exceptions:
 
       <p>Filtering transforms the PNG image with the goal of improving compression. The overall process is depicted in <a href=
       "#encoding-png-image"></a> while the specifics of serializing and filtering a scanline are shown in <a href=
-      "#serializing-and-filtering-scanline"></a>.</p>
+      "#serializing-and-filtering-scanline"></a> and <a href=
+      "#serializing-and-filtering-scanline-16"></a>.</p>
 
       <p>PNG allows for a number of <a>filter methods</a>. All the reduced images in an interlaced image shall use a single
       <a>filter method</a>. Only <a>filter method</a> 0 is defined by this specification. Other <a>filter methods</a> are reserved
@@ -2650,7 +2660,7 @@ with these exceptions:
       "#7Scanline"></a>. If the image includes an alpha channel, the alpha data is filtered in the same way as the <a>image
       data</a>.</p>
 
-      <p>Filters may use the original values of the following bytes to generate the new byte value:</p>
+      <p>Filters must use the original values of the following bytes to generate the new byte value:</p>
 
       <table class="numbered simple">
         <caption>
@@ -2690,10 +2700,18 @@ with these exceptions:
       </table>
 
       <figure id="filter-byte-positions">
-        <object id="figure72" data="figures/filter-bytes.svg" type="image/svg+xml" style="width: 12vw">
+        <object id="figure72" data="figures/filter-bytes.svg" type="image/svg+xml" style="width: 12.5vw">
         </object>
         <figcaption>
-          Positions of filter bytes a, b and c relative to x
+          Positions of filter bytes a, b and c relative to x, for 1 to 8 bits per component
+        </figcaption>
+      </figure>
+
+      <figure id="filter-byte-positions-16">
+        <object id="figure72" data="figures/filter-bytes-16bit.svg" type="image/svg+xml" style="width: 22.5vw">
+        </object>
+        <figcaption>
+          Positions of filter bytes a, b and c relative to x, for 16 bits per component
         </figcaption>
       </figure>
 
@@ -2770,12 +2788,12 @@ with these exceptions:
         </tr>
       </table>
 
-      <p>For all filters, the bytes "to the left of" the first pixel in a scanline shall be treated as being zero. For filters that
-      refer to the prior scanline, the entire prior scanline and bytes "to the left of" the first pixel in the prior scanline shall
+      <p>For all filters, the bytes "to the left of" the first byte in a scanline shall be treated as being zero. For filters that
+      refer to the prior scanline, the entire prior scanline and bytes "to the left of" the first byte in the prior scanline shall
       be treated as being zeroes for the first scanline of a reduced image.</p>
 
-      <p>To reverse the effect of a filter requires the decoded values of the prior pixel on the same scanline, the pixel
-      immediately above the current pixel on the prior scanline, and the pixel just to the left of the pixel above.</p>
+      <p>To reverse the effect of a filter requires the decoded values of the corresponding prior byte on the same scanline, the byte
+      immediately above the current byte on the prior scanline, and the corresponding byte just to the left of the byte above.</p>
 
       <p>Unsigned arithmetic modulo 256 is used, so that both the inputs and outputs fit into bytes. Filters are applied to each
       byte regardless of bit depth. The sequence of <code>Filt</code> values is transmitted as the filtered scanline.</p>
@@ -2794,8 +2812,8 @@ with these exceptions:
     <section id="9Filter-type-4-Paeth">
       <h2>Filter type 4: Paeth</h2>
 
-      <p>The Paeth filter type computes a simple linear function of the three neighboring pixels (left, above, upper left), then
-      chooses as predictor the neighboring pixel closest to the computed value. The algorithm used in this specification is an
+      <p>The Paeth filter type computes a simple linear function of the corresponding bytes of three neighboring pixels (left, above, upper left), then
+      chooses as predictor the neighboring byte closest to the computed value. The algorithm used in this specification is an
       adaptation of the technique due to Alan W. Paeth [[Paeth]].</p>
 
       <p>The PaethPredictor function is defined in the code below. The logic of the function and the locations of the bytes
@@ -7718,6 +7736,7 @@ will need to be replaced by copies of lines 17-23, but processing background ins
     <h3 id="changes-20250624">Changes since the <a href="https://www.w3.org/TR/2025/REC-png-3-20250624/">W3C Recommendation of 24 June 2025</a></h3>
 
     <ul>
+      <li>Clarified which bytes are filtered, especially for 16-bits per component images. Added diagrams. (<a href="https://github.com/w3c/png/issues/543">Issue 543</a>)</li>
       <li>Added the 'caBX' chunk for Content Credentials (<a href="https://github.com/w3c/png/issues/542">Issue 542</a>)</li>
       <li>Corrected a typo in an 'mDCV' example</li>
       <li>Updated 'cHRM' chromaticities to use PNG four-byte signed integers, to enble ultra-wide gamut color spaces. Previously, negative values were not representable.

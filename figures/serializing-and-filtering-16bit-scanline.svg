@@ -1,0 +1,252 @@
+<?xml version="1.0" ?>
+<svg viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style >
+    @font-face {
+      font-family: OS_Cond_Med;
+      src: url(./fonts/OS_Cond_Med.woff2);
+    }
+  rect {
+    stroke:none;
+    fill:white;
+    }
+  text {
+    font-family: OS_Cond_Med;
+    font-size:16px;
+    text-anchor:start
+    }
+  text.small {
+    font-size: 12px;
+  }
+  .description > text {
+    font-size: 18px;
+  }
+  line {
+    stroke:black;
+    stroke-width:2
+    }
+</style>
+<defs>
+
+<symbol id="filter1" >
+<rect width="8" height="8" style="fill:#EECCAA" />
+</symbol>
+
+
+
+
+
+<symbol id="pixelfr" >
+<rect width="8" height="8" style="fill:#EEAAAA" />
+</symbol>
+
+<symbol id="pixelfg" >
+<rect width="8" height="8" style="fill:#AAEEAA" />
+</symbol>
+
+<symbol id="pixelfb" >
+<rect width="8" height="8" style="fill:#AAAAEE" />
+</symbol>
+
+<symbol id="pixelfa" >
+<rect width="8" height="8" style="fill:#DDDDDD" />
+</symbol>
+
+
+
+<symbol id="pixelr" >
+<rect width="6" height="8" style="fill:#D00" />
+</symbol>
+
+<symbol id="pixelg" >
+<rect width="6" height="8" style="fill:green" />
+</symbol>
+
+<symbol id="pixelb" >
+<rect width="6" height="8" style="fill:#33F" />
+</symbol>
+
+<symbol id="pixela" >
+<rect width="6" height="8" style="fill:grey" />
+</symbol>
+
+</defs>
+
+<!-- solid arrow heads right and left -->
+<marker id="arrend" refX="8" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+  <path d="M 1 4 L 1 1 8 4 1 7z"/>
+</marker>
+
+<marker id="larrend" refX="0" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+  <path d="M 8 4 L 8 1 0 4 8 7z"/>
+</marker>
+
+<g transform="translate(10,10)">
+<g transform="scale(4)">
+<use transform="translate(18,6)" xlink:href="#pixela" />
+<use transform="translate(12,12)" xlink:href="#pixelb" />
+<use transform="translate(6,18)" xlink:href="#pixelg" />
+<use transform="translate(0,24)" xlink:href="#pixelr" />
+</g>
+<text x="8" y="110" style="fill:white">1</text>
+<text class="small" x="4" y="124" style="fill:white">msb</text>
+</g>
+<g transform="translate(36,10)">
+<g transform="scale(4)">
+<use transform="translate(18,6)" xlink:href="#pixela" />
+<use transform="translate(12,12)" xlink:href="#pixelb" />
+<use transform="translate(6,18)" xlink:href="#pixelg" />
+<use transform="translate(0,24)" xlink:href="#pixelr" />
+</g>
+<text x="8" y="110" style="fill:white">1</text>
+<text class="small" x="5" y="124" style="fill:white">lsb</text>
+</g>
+
+<g transform="translate(90,10)">
+<g transform="scale(4)">
+<use transform="translate(18,6)" xlink:href="#pixela" />
+<use transform="translate(12,12)" xlink:href="#pixelb" />
+<use transform="translate(6,18)" xlink:href="#pixelg" />
+<use transform="translate(0,24)" xlink:href="#pixelr" />
+</g>
+<text x="8" y="110" style="fill:white">2</text>
+<text class="small" x="4" y="124" style="fill:white">msb</text>
+</g>
+<g transform="translate(116,10)">
+<g transform="scale(4)">
+<use transform="translate(18,6)" xlink:href="#pixela" />
+<use transform="translate(12,12)" xlink:href="#pixelb" />
+<use transform="translate(6,18)" xlink:href="#pixelg" />
+<use transform="translate(0,24)" xlink:href="#pixelr" />
+</g>
+<text x="8" y="110" style="fill:white">2</text>
+<text class="small" x="5" y="124" style="fill:white">lsb</text>
+</g>
+
+<g transform="translate(170,10)">
+<g transform="scale(4)">
+<use transform="translate(18,6)" xlink:href="#pixela" />
+<use transform="translate(12,12)" xlink:href="#pixelb" />
+<use transform="translate(6,18)" xlink:href="#pixelg" />
+<use transform="translate(0,24)" xlink:href="#pixelr" />
+</g>
+<text x="8" y="110" style="fill:white">3</text>
+<text class="small" x="4" y="124" style="fill:white">msb</text>
+</g>
+<g transform="translate(196,10)">
+<g transform="scale(4)">
+<use transform="translate(18,6)" xlink:href="#pixela" />
+<use transform="translate(12,12)" xlink:href="#pixelb" />
+<use transform="translate(6,18)" xlink:href="#pixelg" />
+<use transform="translate(0,24)" xlink:href="#pixelr" />
+</g>
+<text x="8" y="110" style="fill:white">3</text>
+<text class="small" x="5" y="124" style="fill:white">lsb</text>
+</g>
+
+
+<g class="description">
+<text x="370" y="70">A scanline is serialized from 16-bit pixels, then transformed</text>
+<text x="370" y="95">by filter type t. Each entry in the filtered scanline depends</text>
+<text x="370" y="120">on the filter type and the bytes from the corresponding</text>
+<text x="370" y="145">byte (MSB or LSB) of the same channel on the current</text>
+<text x="370" y="170">or previous scanline.</text>
+<text x="370" y="185"> </text>
+</g>
+
+<line marker-end="url(#arrend)" x1="50" y1="160" x2="50" y2="240"/>
+
+
+<g transform="translate(20,250)">
+<text x="0" y="45">Filter</text>
+<text x="0" y="57">type t</text>
+<text x="200" y="45">Filtered scanline</text>
+<g transform="scale(3)">
+<use transform="translate(0,0)" xlink:href="#filter1" />
+</g>
+<text x="6" y="18">t</text>
+</g>
+
+<g transform="translate(27,220)">
+<g transform="scale(3)">
+<use transform="translate(10,10)" xlink:href="#pixelfr" />
+<use transform="translate(20,10)" xlink:href="#pixelfr" />
+<use transform="translate(30,10)" xlink:href="#pixelfg" />
+<use transform="translate(40,10)" xlink:href="#pixelfg" />
+<use transform="translate(50,10)" xlink:href="#pixelfb" />
+<use transform="translate(60,10)" xlink:href="#pixelfb" />
+<use transform="translate(70,10)" xlink:href="#pixelfa" />
+<use transform="translate(80,10)" xlink:href="#pixelfa" />
+</g>
+<text x="140" y="15">1</text>
+</g>
+
+<g transform="translate(270,220)">
+<g transform="scale(3)">
+<use transform="translate(10,10)" xlink:href="#pixelfr" />
+<use transform="translate(20,10)" xlink:href="#pixelfr" />
+<use transform="translate(30,10)" xlink:href="#pixelfg" />
+<use transform="translate(40,10)" xlink:href="#pixelfg" />
+<use transform="translate(50,10)" xlink:href="#pixelfb" />
+<use transform="translate(60,10)" xlink:href="#pixelfb" />
+<use transform="translate(70,10)" xlink:href="#pixelfa" />
+<use transform="translate(80,10)" xlink:href="#pixelfa" />
+</g>
+<text x="140" y="15">2</text>
+</g>
+
+<g transform="translate(513,220)">
+<g transform="scale(3)">
+<use transform="translate(10,10)" xlink:href="#pixelfr" />
+<use transform="translate(20,10)" xlink:href="#pixelfr" />
+<use transform="translate(30,10)" xlink:href="#pixelfg" />
+<use transform="translate(40,10)" xlink:href="#pixelfg" />
+<use transform="translate(50,10)" xlink:href="#pixelfb" />
+<use transform="translate(60,10)" xlink:href="#pixelfb" />
+<use transform="translate(70,10)" xlink:href="#pixelfa" />
+<use transform="translate(80,10)" xlink:href="#pixelfa" />
+</g>
+<text x="140" y="15">3</text>
+</g>
+
+<!-- <g transform="translate(150,220)">
+<g transform="scale(3)">
+<use transform="translate(10,10)" xlink:href="#pixelfr" />
+<use transform="translate(20,10)" xlink:href="#pixelfg" />
+<use transform="translate(30,10)" xlink:href="#pixelfb" />
+<use transform="translate(40,10)" xlink:href="#pixelfa" />
+</g>
+<text x="84" y="15">2</text>
+</g>
+
+<g transform="translate(273,220)">
+<g transform="scale(3)">
+<use transform="translate(10,10)" xlink:href="#pixelfr" />
+<use transform="translate(20,10)" xlink:href="#pixelfg" />
+<use transform="translate(30,10)" xlink:href="#pixelfb" />
+<use transform="translate(40,10)" xlink:href="#pixelfa" />
+</g>
+<text x="84" y="15">3</text>
+</g> -->
+
+<!-- <g transform="translate(396,220)">
+<g transform="scale(3)">
+<use transform="translate(10,10)" xlink:href="#pixelfr" />
+<use transform="translate(20,10)" xlink:href="#pixelfg" />
+<use transform="translate(30,10)" xlink:href="#pixelfb" />
+<use transform="translate(40,10)" xlink:href="#pixelfa" />
+</g>
+<text x="84" y="15">4</text>
+</g>
+
+<g transform="translate(519,220)">
+<g transform="scale(3)">
+<use transform="translate(10,10)" xlink:href="#pixelfr" />
+<use transform="translate(20,10)" xlink:href="#pixelfg" />
+<use transform="translate(30,10)" xlink:href="#pixelfb" />
+<use transform="translate(40,10)" xlink:href="#pixelfa" />
+</g>
+<text x="84" y="15">5</text>
+</g> -->
+
+</svg>
+

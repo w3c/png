@@ -88,7 +88,7 @@
 <use transform="translate(0,24)" xlink:href="#pixelr" />
 </g>
 <text x="8" y="110" style="fill:white">1</text>
-<text class="small" x="4" y="124" style="fill:white">msb</text>
+<text class="small" x="3.5" y="124" style="fill:white">msb</text>
 </g>
 <g transform="translate(36,10)">
 <g transform="scale(4)">
@@ -109,7 +109,7 @@
 <use transform="translate(0,24)" xlink:href="#pixelr" />
 </g>
 <text x="8" y="110" style="fill:white">2</text>
-<text class="small" x="4" y="124" style="fill:white">msb</text>
+<text class="small" x="3.5" y="124" style="fill:white">msb</text>
 </g>
 <g transform="translate(116,10)">
 <g transform="scale(4)">
@@ -130,7 +130,7 @@
 <use transform="translate(0,24)" xlink:href="#pixelr" />
 </g>
 <text x="8" y="110" style="fill:white">3</text>
-<text class="small" x="4" y="124" style="fill:white">msb</text>
+<text class="small" x="3.5" y="124" style="fill:white">msb</text>
 </g>
 <g transform="translate(196,10)">
 <g transform="scale(4)">

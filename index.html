@@ -3496,9 +3496,11 @@ with these exceptions:
           <p>If the <span class="chunk">iCCP</span> chunk is present, the image samples conform to the color space represented by
           the embedded ICC profile as defined by the International Color Consortium [[ICC]][[ISO_15076-1]]. The color space of the
           ICC profile shall be an RGB color space for color images (<a>color types</a> 2, 3, and 6), or a greyscale color space
-          for <a>greyscale</a> images (<a>color types</a> 0 and 4). A PNG encoder that writes the <span class="chunk">iCCP</span> chunk
-          is encouraged to also write <a class="chunk" href="#11gAMA">gAMA</a> and <a class="chunk" href="#11cHRM">cHRM</a> chunks
-          that approximate the ICC profile, to provide compatibility with applications that do not use the <span class=
+          for <a>greyscale</a> images (<a>color types</a> 0 and 4). 
+          
+          When supporting legacy systems that are unaware of sRGB or iCCP chunks (rare today), a PNG encoder that writes the <span class="chunk">iCCP</span> chunk
+          ismay choose towrite <a class="chunk" href="#11gAMA">gAMA</a> and <a class="chunk" href="#11cHRM">cHRM</a> chunks
+          that approximate the ICC profile, to provide compatibility with legacy applications that do not use the <span class=
           "chunk">iCCP</span> chunk.</p> 
           
           <p>
@@ -3687,9 +3689,9 @@ with these exceptions:
             </tr>
           </table>
 
-          <p>It is recommended that a PNG encoder that writes the <span class="chunk">sRGB</span> chunk also write a <a class=
+          <p>When supporting legacy systems that are unaware of sRGB or iCCP chunks (rare today), a PNG encoder that writes the <span class="chunk">sRGB</span> chunk may choose to also write a <a class=
           "chunk" href="#11gAMA">gAMA</a> chunk (and optionally a <a class="chunk" href="#11cHRM">cHRM</a> chunk) for compatibility
-          with decoders that do not use the <span class="chunk">sRGB</span> chunk. Only the following values shall be used.</p>
+          with legacy decoders that do not use the <span class="chunk">sRGB</span> chunk. Only the following values shall be used.</p>
 
           <table id="sRGB-gAMA-cHRM" class="numbered simple">
             <caption>

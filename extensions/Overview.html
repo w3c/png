@@ -548,14 +548,14 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
      <dl>
       <dt>This version:
       <dd><a class="u-url" href="https://www.w3.org/TR/2025/DNOTE-pngext-20250915/">https://www.w3.org/TR/2025/DNOTE-pngext-20250915/</a>
+      <!-- 
       <dt>Latest published version:
-      <dd><a href="https://w3.org/TR/png-extensions/">https://w3.org/TR/png-extensions/</a>
+      <dd><a href="https://w3.org/TR/png-extensions/">https://w3.org/TR/png-extensions/</a> 
+      -->
       <dt>Editor's Draft:
-      <dd><a href="https://w3c.github.io/PNG-spec/extensions/Overview.html">https://w3c.github.io/PNG-spec/extensions/Overview.html</a>
-      <dt>History:
-      <dd><a class="u-url" href="https://www.w3.org/standards/history/pngext/">https://www.w3.org/standards/history/pngext/</a>
+      <dd><a href="https://w3c.github.io/png/extensions/Overview.html">https://w3c.github.io/png/extensions/Overview.html</a>
       <dt>Feedback:
-      <dd><a href="https://github.com/w3c/PNG-spec/issues/">GitHub</a>
+      <dd><a href="https://github.com/w3c/png/issues/">GitHub</a>
       <dt class="editor">Editor:
       <dd class="editor p-author h-card vcard" data-editor-id="1438"><a class="p-name fn u-url url" href="https://svgees.us/">Chris Lilley</a> (<span class="p-org org">W3C</span>)
       <dt class="editor">Former Editor:
@@ -665,7 +665,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     for inclusion in this list
     by contacting the PNG specification maintainers at
     public-png@w3.org
-    or by raising an issue on their <a href="https://github.com/w3c/PNG-spec/issues/">GitHub repository</a> (preferred).
+    or by raising an issue on their <a href="https://github.com/w3c/png/issues/">GitHub repository</a> (preferred).
     Attention is drawn to the <a href="https://www.w3.org/TR/PNG/#B-NewChunksAppendix">Guidelines for new chunk types</a>.</p>
    <p>Chunks described here
     are expected to be less widely supported
@@ -685,7 +685,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     and simplify decoders.</p>
    <h2 class="heading settled" data-level="2" id="DataRep"><span class="secno">2. </span><span class="content"> Data Representation </span><a class="self-link" href="#DataRep"></a></h2>
    <h3 class="heading settled" data-level="2.1" id="DR.Integer-values"><span class="secno">2.1. </span><span class="content"> Integer values </span><a class="self-link" href="#DR.Integer-values"></a></h3>
-   <p>Refer to <a href="https://w3c.github.io/PNG-spec/#7Integers-and-byte-order">Section 7.1
+   <p>Refer to <a href="https://w3c.github.io/png/#7Integers-and-byte-order">Section 7.1
     of the PNG specification</a> <a data-link-type="biblio" href="#biblio-png" title="Portable Network Graphics (PNG) Specification (Third Edition)">[PNG]</a> for the format and
     range of integer values</p>
    <h3 class="heading settled" data-level="2.2" id="DR.Floating-point-values"><span class="secno">2.2. </span><span class="content"> Floating-point values </span><a class="self-link" href="#DR.Floating-point-values"></a></h3>
@@ -1447,7 +1447,7 @@ Therefore, transparency information can be lost.</p>
     but is a continuous datastream.</p>
    <h2 class="heading settled" data-level="8" id="Security"><span class="secno">8. </span><span class="content"> Security Considerations </span><a class="self-link" href="#Security"></a></h2>
    <p>The normal precautions
-    (see the <a href="https://w3c.github.io/PNG-spec/#13Security-considerations">Security
+    (see the <a href="https://w3c.github.io/png/#13Security-considerations">Security
     considerations section</a> of the PNG specification)
     should be taken when displaying text
     contained in the <span class="chunk">sCAL</span> calibration name, <span class="chunk">pCAL</span> unit name,
@@ -2214,6 +2214,11 @@ Therefore, transparency information can be lost.</p>
     would be difficult.</p>
    <h2 class="heading settled" data-level="11" id="History"><span class="secno">11. </span><span class="content"> Appendix: Revision History </span><a class="self-link" href="#History"></a></h2>
    <ul>
+    <li>15 September 2025 (version 1.6.1)</li>
+    <ul>
+        <li>Removed "Collection" keyword, which is now in the main PNG specification</li>
+        <li>Added <code>iDOT</code> to "Chunks Not Described Here" (<a href="https://github.com/w3c/png/issues/530">Issue 530</a>)</li>
+    </ul>
     <li>24 Jan Dec 2022 (version 1.6.0)
     <ul>
      <li>Moved <span class="chunk">eXIF</span> to main PNG document

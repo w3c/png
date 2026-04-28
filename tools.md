@@ -140,6 +140,12 @@ Maintained at [image-rs/image-png](https://github.com/image-rs/image-png). There
 
 Pure Rust library with a PNG encoder and decoder. Supports APNG. Supports Third Edition chunks `cICP`, `mDCV` and `cLLI`.
 
+### fdeflate
+
+Maintained at [image-rs/fdeflate](https://github.com/image-rs/fdeflate).
+
+Pure Rust library for **deflate**, tuned specificlly for PNG images. Used by `image-png` but usable stand-alone, too.
+
 ### lodepng
 
 [Homepage](https://lodev.org/lodepng/) and [maintained on GitHub](https://github.com/lvandeve/lodepng)

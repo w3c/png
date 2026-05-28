@@ -5,10 +5,10 @@
   <title>Extensions to the PNG Third Edition Specification, Version 1.6.1</title>
   <meta content="NOTE-WD" name="w3c-status">
   <link href="https://www.w3.org/StyleSheets/TR/2021/W3C-DNOTE" rel="stylesheet">
-  <meta content="Bikeshed version b25686b9f, updated Fri Mar 14 14:15:20 2025 -0700" name="generator">
+  <meta content="Bikeshed version 5d4d5b9a8, updated Fri Apr 17 13:49:40 2026 -0700" name="generator">
   <link href="https://w3.org/TR/png-extensions/" rel="canonical">
   <link href="https://www.w3.org/2008/site/images/favicon.ico" rel="icon">
-  <meta content="32113571711ea45fc4af71a810cd12bf5a17a60b" name="revision">
+  <meta content="99eb3294a9d4da7279f07dd9e9bce68e4985116a" name="revision">
   <meta content="dark light" name="color-scheme">
   <link href="https://www.w3.org/StyleSheets/TR/2021/dark.css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css">
 <style>
@@ -311,7 +311,7 @@ pre .property::before, pre .property::after {
 </style>
 <style>/* Boilerplate: style-counters */
 body {
-    counter-reset: example figure issue;
+    counter-reset: example figure issue table;
 }
 .issue {
     counter-increment: issue;
@@ -328,7 +328,7 @@ body {
 }
 .invalid.example:not(.no-marker)::before,
 .illegal.example:not(.no-marker)::before {
-    content: "Invalid Example" counter(example);
+    content: "Invalid Example " counter(example);
 }
 
 figcaption {
@@ -336,6 +336,13 @@ figcaption {
 }
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
+}
+
+figure.table figcaption {
+    counter-increment: table;
+}
+figure.table figcaption:not(.no-marker)::before {
+    content: "Table " counter(table) " ";
 }
 </style>
 <style>/* Boilerplate: style-issues */
@@ -536,110 +543,209 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     c-[vm] { color: #cb4b16 } /* Name.Variable.Magic */
     c-[il] { color: #657b83 } /* Literal.Number.Integer.Long */
 }
+
+@media print {
+    /* Darken colors for print that would otherwise print too faintly */
+    c-[c]  { color: #555555 } /* Comment */
+    c-[d]  { color: #555555 } /* Comment.Multiline */
+    c-[cp] { color: #555555 } /* Comment.Preproc */
+    c-[c1] { color: #555555 } /* Comment.Single */
+    c-[cs] { color: #555555 } /* Comment.Special */
+    c-[o]  { color: #222222 } /* Operator */
+    c-[p]  { color: #222222 } /* Punctuation */
+    c-[ow] { color: #222222 } /* Operator.Word */
+    c-[s]  { color: #664400 } /* Literal.String */
+    c-[t]  { color: #664400 } /* Literal.String.Single */
+    c-[u]  { color: #664400 } /* Literal.String.Double */
+    c-[sb] { color: #664400 } /* Literal.String.Backtick */
+    c-[sc] { color: #664400 } /* Literal.String.Char */
+    c-[sd] { color: #664400 } /* Literal.String.Doc */
+    c-[se] { color: #664400 } /* Literal.String.Escape */
+    c-[sh] { color: #664400 } /* Literal.String.Heredoc */
+    c-[si] { color: #664400 } /* Literal.String.Interpol */
+    c-[sx] { color: #664400 } /* Literal.String.Other */
+    c-[sr] { color: #664400 } /* Literal.String.Regex */
+    c-[ss] { color: #664400 } /* Literal.String.Symbol */
+}
 </style>
  <body class="h-entry">
   <div class="head">
-   <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72"> </a> </p>
-   <h1 class="p-name no-ref" id="title">Extensions to the PNG Third Edition Specification, Version 1.6.1</h1>
-   <p id="w3c-state"><a href="https://www.w3.org/standards/types/#DNOTE">W3C Group Draft Note</a>, <time class="dt-updated" datetime="2025-09-15">15 September 2025</time></p>
+   <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/">
+    <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
+</a>
+</p>
+   <h1 class="no-ref p-name" id="title">Extensions to the PNG Third Edition Specification, Version 1.6.1</h1>
+   <p id="w3c-state"><a href="https://www.w3.org/standards/types/#DNOTE">W3C Group Note Draft</a>,
+    <time class="dt-updated" datetime="2026-05-28">28 May 2026</time></p>
    <details open>
     <summary>More details about this document</summary>
     <div data-fill-with="spec-metadata">
      <dl>
       <dt>This version:
-      <dd><a class="u-url" href="https://www.w3.org/TR/2025/DNOTE-pngext-20250915/">https://www.w3.org/TR/2025/DNOTE-pngext-20250915/</a>
-      <!-- 
+      <dd><a class="u-url" href="https://www.w3.org/TR/2026/DNOTE-pngext-20260528/">https://www.w3.org/TR/2026/DNOTE-pngext-20260528/</a>
       <dt>Latest published version:
-      <dd><a href="https://w3.org/TR/png-extensions/">https://w3.org/TR/png-extensions/</a> 
-      -->
+      <dd><a href="https://w3.org/TR/png-extensions/">https://w3.org/TR/png-extensions/</a>
       <dt>Editor's Draft:
       <dd><a href="https://w3c.github.io/png/extensions/Overview.html">https://w3c.github.io/png/extensions/Overview.html</a>
+      <dt>History:
+      <dd><a class="u-url" href="https://www.w3.org/standards/history/pngext/">https://www.w3.org/standards/history/pngext/</a>
       <dt>Feedback:
       <dd><a href="https://github.com/w3c/png/issues/">GitHub</a>
       <dt class="editor">Editor:
-      <dd class="editor p-author h-card vcard" data-editor-id="1438"><a class="p-name fn u-url url" href="https://svgees.us/">Chris Lilley</a> (<span class="p-org org">W3C</span>)
+      <dd class="editor h-card p-author vcard" data-editor-id="1438"><a class="fn p-name u-url url" href="https://svgees.us/">Chris Lilley</a> (<span class="org p-org">W3C</span>)
       <dt class="editor">Former Editor:
-      <dd class="editor p-author h-card vcard"><span class="p-name fn">Glenn Randers-Pehrson</span>
+      <dd class="editor h-card p-author vcard"><span class="fn p-name">Glenn Randers-Pehrson</span>
      </dl>
     </div>
    </details>
    <div data-fill-with="warning"></div>
-   <p class="copyright" data-fill-with="copyright"><a href="https://www.w3.org/policies/#copyright">Copyright</a> © 2025 <a href="https://www.w3.org/">World Wide Web Consortium</a>. <abbr title="World Wide Web Consortium">W3C</abbr><sup>®</sup> <a href="https://www.w3.org/policies/#Legal_Disclaimer">liability</a>, <a href="https://www.w3.org/policies/#W3C_Trademarks">trademark</a> and <a href="https://www.w3.org/copyright/software-license/" rel="license" title="W3C Software and Document License">permissive document license</a> rules apply. </p>
+   <p class="copyright" data-fill-with="copyright"><a href="https://www.w3.org/policies/#copyright">Copyright</a> © 2026 <a href="https://www.w3.org/">World Wide Web Consortium</a>. <abbr title="World Wide Web Consortium">W3C</abbr><sup>®</sup> <a href="https://www.w3.org/policies/#Legal_Disclaimer">liability</a>, <a href="https://www.w3.org/policies/#W3C_Trademarks">trademark</a> and <a href="https://www.w3.org/copyright/software-license/" rel="license" title="W3C Software and Document License">permissive document license</a> rules apply.
+</p>
    <hr title="Separator for header">
   </div>
   <div class="p-summary" data-fill-with="abstract">
-   <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
+   <h2 class="heading no-num no-ref no-toc settled" id="abstract"><span class="content">Abstract</span></h2>
    <p>This document is an extension to the Portable Network Graphics (PNG) specification, third edition <a data-link-type="biblio" href="#biblio-png" title="Portable Network Graphics (PNG) Specification (Third Edition)">[PNG]</a>. It describes additional public chunk types and contains additional information for use in PNG images.</p>
   </div>
-  <h2 class="no-num no-toc no-ref heading settled" id="sotd"><span class="content">Status of this document</span></h2>
+  <h2 class="heading no-num no-ref no-toc settled" id="sotd"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
    <p></p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
-   <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
-   <ol class="toc" role="directory">
-    <li><a href="#intro"><span class="secno">1</span> <span class="content"> Introduction </span></a>
+   <h2 class="no-num no-ref no-toc" id="contents">Table of Contents</h2>
+   <ol class="toc">
+    <li><a href="#intro"><span class="secno">1</span> <span class="content">
+Introduction
+</span></a>
     <li>
-     <a href="#DataRep"><span class="secno">2</span> <span class="content"> Data Representation </span></a>
+     <a href="#DataRep"><span class="secno">2</span> <span class="content">
+    Data Representation
+</span></a>
      <ol class="toc">
-      <li><a href="#DR.Integer-values"><span class="secno">2.1</span> <span class="content"> Integer values </span></a>
-      <li><a href="#DR.Floating-point-values"><span class="secno">2.2</span> <span class="content"> Floating-point values </span></a>
+      <li><a href="#DR.Integer-values"><span class="secno">2.1</span> <span class="content">
+    Integer values
+</span></a>
+      <li><a href="#DR.Floating-point-values"><span class="secno">2.2</span> <span class="content">
+    Floating-point values
+</span></a>
      </ol>
-    <li><a href="#Summary"><span class="secno">3</span> <span class="content"> Summary of Special-Purpose Chunks </span></a>
+    <li><a href="#Summary"><span class="secno">3</span> <span class="content">
+    Summary of Special-Purpose Chunks
+</span></a>
     <li>
-     <a href="#Chunks"><span class="secno">4</span> <span class="content"> Chunk Descriptions </span></a>
+     <a href="#Chunks"><span class="secno">4</span> <span class="content">
+        Chunk Descriptions
+    </span></a>
      <ol class="toc">
-      <li><a href="#C.oFFs"><span class="secno">4.1</span> <span class="content"> <span class="chunk">oFFs</span> Image offset </span></a>
-      <li><a href="#C.pCAL"><span class="secno">4.2</span> <span class="content"> <span class="chunk">pCAL</span> Calibration of pixel values </span></a>
-      <li><a href="#C.sCAL"><span class="secno">4.3</span> <span class="content"> <span class="chunk">sCAL</span> Physical scale of image subject </span></a>
-      <li><a href="#C.gIFg"><span class="secno">4.4</span> <span class="content"> <span class="chunk">gIFg</span> GIF Graphic Control Extension </span></a>
-      <li><a href="#C.gIFx"><span class="secno">4.5</span> <span class="content"> <span class="chunk">gIFx</span> GIF Application Extension </span></a>
-      <li><a href="#C.sTER"><span class="secno">4.6</span> <span class="content"> <span class="chunk">sTER</span> Indicator of Stereo Image </span></a>
+      <li><a href="#C.oFFs"><span class="secno">4.1</span> <span class="content">
+        <span class="chunk">oFFs</span> Image offset
+    </span></a>
+      <li><a href="#C.pCAL"><span class="secno">4.2</span> <span class="content">
+    <span class="chunk">pCAL</span> Calibration of pixel values
+</span></a>
+      <li><a href="#C.sCAL"><span class="secno">4.3</span> <span class="content">
+        <span class="chunk">sCAL</span> Physical scale of image subject
+    </span></a>
+      <li><a href="#C.gIFg"><span class="secno">4.4</span> <span class="content">
+        <span class="chunk">gIFg</span> GIF Graphic Control Extension
+    </span></a>
+      <li><a href="#C.gIFx"><span class="secno">4.5</span> <span class="content">
+    <span class="chunk">gIFx</span> GIF Application Extension
+</span></a>
+      <li><a href="#C.sTER"><span class="secno">4.6</span> <span class="content">
+    <span class="chunk">sTER</span> Indicator of Stereo Image
+</span></a>
      </ol>
     <li>
-     <a href="#RemoteChunks"><span class="secno">5</span> <span class="content"> Chunks Not Described Here </span></a>
+     <a href="#RemoteChunks"><span class="secno">5</span> <span class="content">
+        Chunks Not Described Here
+    </span></a>
      <ol class="toc">
-      <li><a href="#R.dSIG"><span class="secno">5.1</span> <span class="content"> <span class="chunk">dSIG</span> Digital signature </span></a>
-      <li><a href="#R.fRAc"><span class="secno">5.2</span> <span class="content"> <span class="chunk">fRAc</span> Fractal image parameters </span></a>
-      <li><a href="#R.iDOT"><span class="secno">5.3</span> <span class="content"> <span class="chunk">iDOT</span> Apple Multithreaded Decoding </span></a>
+      <li><a href="#R.dSIG"><span class="secno">5.1</span> <span class="content">
+        <span class="chunk">dSIG</span> Digital signature
+    </span></a>
+      <li><a href="#R.fRAc"><span class="secno">5.2</span> <span class="content">
+        <span class="chunk">fRAc</span> Fractal image parameters
+    </span></a>
+      <li><a href="#R.iDOT"><span class="secno">5.3</span> <span class="content">
+        <span class="chunk">iDOT</span> Apple Multithreaded Decoding
+    </span></a>
      </ol>
     <li>
-     <a href="#Keywords"><span class="secno">6</span> <span class="content"> Text Chunk Keywords </span></a>
+     <a href="#Keywords"><span class="secno">6</span> <span class="content">
+    Text Chunk Keywords
+</span></a>
      <ol class="toc">
-      <li><a href="#K.Keywords"><span class="secno">6.1</span> <span class="content"> Additional Registered Keywords </span></a>
-      <li><a href="#K.Syntax"><span class="secno">6.2</span> <span class="content"> Keyword Syntax </span></a>
+      <li><a href="#K.Keywords"><span class="secno">6.1</span> <span class="content">
+    Additional Registered Keywords
+</span></a>
+      <li><a href="#K.Syntax"><span class="secno">6.2</span> <span class="content">
+    Keyword Syntax
+</span></a>
      </ol>
     <li>
-     <a href="#DepChunks"><span class="secno">7</span> <span class="content"> Deprecated Chunks </span></a>
+     <a href="#DepChunks"><span class="secno">7</span> <span class="content">
+    Deprecated Chunks
+</span></a>
      <ol class="toc">
-      <li><a href="#DC.gIFt"><span class="secno">7.1</span> <span class="content"> gIFt GIF Plain Text Extension </span></a>
+      <li><a href="#DC.gIFt"><span class="secno">7.1</span> <span class="content">
+    gIFt GIF Plain Text Extension
+</span></a>
      </ol>
-    <li><a href="#Security"><span class="secno">8</span> <span class="content"> Security Considerations </span></a>
+    <li><a href="#Security"><span class="secno">8</span> <span class="content">
+        Security Considerations
+    </span></a>
     <li>
-     <a href="#SampleCode"><span class="secno">9</span> <span class="content"> Appendix: Sample code </span></a>
+     <a href="#SampleCode"><span class="secno">9</span> <span class="content">
+    Appendix: Sample code
+</span></a>
      <ol class="toc">
-      <li><a href="#SC.pCAL"><span class="secno">9.1</span> <span class="content"> <span class="chunk">pCAL</span> Sample code </span></a>
-      <li><a href="#SC.Fixed-point-gamma-corr"><span class="secno">9.2</span> <span class="content"> Fixed-point gamma correction </span></a>
+      <li><a href="#SC.pCAL"><span class="secno">9.1</span> <span class="content">
+    <span class="chunk">pCAL</span> Sample code
+</span></a>
+      <li><a href="#SC.Fixed-point-gamma-corr"><span class="secno">9.2</span> <span class="content">
+    Fixed-point gamma correction
+</span></a>
      </ol>
     <li>
-     <a href="#Rationale"><span class="secno">10</span> <span class="content"> Rationale </span></a>
+     <a href="#Rationale"><span class="secno">10</span> <span class="content">
+    Rationale
+</span></a>
      <ol class="toc">
       <li>
-       <a href="#R.pCAL"><span class="secno">10.1</span> <span class="content"> pCAL Rationale </span></a>
+       <a href="#R.pCAL"><span class="secno">10.1</span> <span class="content">
+    pCAL Rationale
+</span></a>
        <ol class="toc">
-        <li><a href="#pCAL.red"><span class="secno">10.1.1</span> <span class="content"> Redundant equation types </span></a>
-        <li><a href="#pCAL.x0x1"><span class="secno">10.1.2</span> <span class="content"> What are <code>x0</code> and <code>x1</code> for? </span></a>
-        <li><a href="#pCAL.division"><span class="secno">10.1.3</span> <span class="content"> Integer division </span></a>
+        <li><a href="#pCAL.red"><span class="secno">10.1.1</span> <span class="content">
+    Redundant equation types
+</span></a>
+        <li><a href="#pCAL.x0x1"><span class="secno">10.1.2</span> <span class="content">
+What are <code>x0</code> and <code>x1</code> for?
+</span></a>
+        <li><a href="#pCAL.division"><span class="secno">10.1.3</span> <span class="content">
+    Integer division
+</span></a>
        </ol>
      </ol>
-    <li><a href="#History"><span class="secno">11</span> <span class="content"> Appendix: Revision History </span></a>
+    <li><a href="#History"><span class="secno">11</span> <span class="content">
+    Appendix: Revision History
+</span></a>
     <li>
-     <a href="#Credits"><span class="secno">12</span> <span class="content"> Credits </span></a>
+     <a href="#Credits"><span class="secno">12</span> <span class="content">
+    Credits
+</span></a>
      <ol class="toc">
-      <li><a href="#Credits.editors"><span class="secno">12.1</span> <span class="content"> Editors </span></a>
-      <li><a href="#Credits.contrib"><span class="secno">12.2</span> <span class="content"> Contributors </span></a>
-      <li><a href="#Credits.marks"><span class="secno">12.3</span> <span class="content"> Trademarks </span></a>
+      <li><a href="#Credits.editors"><span class="secno">12.1</span> <span class="content">
+    Editors
+</span></a>
+      <li><a href="#Credits.contrib"><span class="secno">12.2</span> <span class="content">
+    Contributors
+</span></a>
+      <li><a href="#Credits.marks"><span class="secno">12.3</span> <span class="content">
+    Trademarks
+</span></a>
      </ol>
     <li>
      <a href="#w3c-conformance"><span class="secno"></span> <span class="content">Conformance</span></a>
@@ -650,23 +756,35 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
      <a href="#references"><span class="secno"></span> <span class="content">References</span></a>
      <ol class="toc">
       <li><a href="#normative"><span class="secno"></span> <span class="content">Normative References</span></a>
-      <li><a href="#informative"><span class="secno"></span> <span class="content">Informative References</span></a>
+      <li><a href="#informative"><span class="secno"></span> <span class="content">Non-Normative References</span></a>
      </ol>
    </ol>
   </nav>
   <main>
-   <h2 class="heading settled" data-level="1" id="intro"><span class="secno">1. </span><span class="content"> Introduction </span><a class="self-link" href="#intro"></a></h2>
+   <h2 class="heading settled" data-level="1" id="intro"><span class="secno">1. </span><span class="content">
+Introduction
+</span><a class="self-link" href="#intro"></a></h2>
    <p>This document,
     together with the PNG specification <a data-link-type="biblio" href="#biblio-png" title="Portable Network Graphics (PNG) Specification (Third Edition)">[PNG]</a>,
     contains the entire list of registered "public" PNG chunks.
-    The additional registered chunks appearing in this document are the <span class="chunk">oFFs</span>, <span class="chunk">pCAL</span>, <span class="chunk">sCAL</span>, <span class="chunk">gIFg</span>, <span class="chunk">gIFx</span>, <span class="chunk">sTER</span>, and <span class="chunk">fRAc</span> chunks,
+    The additional registered chunks appearing in this document are the
+    <span class="chunk">oFFs</span>,
+    <span class="chunk">pCAL</span>,
+    <span class="chunk">sCAL</span>,
+    <span class="chunk">gIFg</span>,
+    <span class="chunk">gIFx</span>,
+    <span class="chunk">sTER</span>, and
+    <span class="chunk">fRAc</span> chunks,
     plus the deprecated <span class="chunk">gIFt</span> chunk.</p>
    <p>Additional chunk types may be proposed
     for inclusion in this list
     by contacting the PNG specification maintainers at
     public-png@w3.org
-    or by raising an issue on their <a href="https://github.com/w3c/png/issues/">GitHub repository</a> (preferred).
-    Attention is drawn to the <a href="https://www.w3.org/TR/PNG/#B-NewChunksAppendix">Guidelines for new chunk types</a>.</p>
+    or by raising an issue on their
+    <a href="https://github.com/w3c/PNG-spec/issues/">GitHub repository</a>
+    (preferred).
+    Attention is drawn to the
+    <a href="https://www.w3.org/TR/PNG/#B-NewChunksAppendix">Guidelines for new chunk types</a>.</p>
    <p>Chunks described here
     are expected to be less widely supported
     than those defined in the basic specification.
@@ -683,12 +801,18 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     whenever applicable,
     in order to maximize portability
     and simplify decoders.</p>
-   <h2 class="heading settled" data-level="2" id="DataRep"><span class="secno">2. </span><span class="content"> Data Representation </span><a class="self-link" href="#DataRep"></a></h2>
-   <h3 class="heading settled" data-level="2.1" id="DR.Integer-values"><span class="secno">2.1. </span><span class="content"> Integer values </span><a class="self-link" href="#DR.Integer-values"></a></h3>
-   <p>Refer to <a href="https://w3c.github.io/png/#7Integers-and-byte-order">Section 7.1
+   <h2 class="heading settled" data-level="2" id="DataRep"><span class="secno">2. </span><span class="content">
+    Data Representation
+</span><a class="self-link" href="#DataRep"></a></h2>
+   <h3 class="heading settled" data-level="2.1" id="DR.Integer-values"><span class="secno">2.1. </span><span class="content">
+    Integer values
+</span><a class="self-link" href="#DR.Integer-values"></a></h3>
+   <p>Refer to <a href="https://w3c.github.io/PNG-spec/#7Integers-and-byte-order">Section 7.1
     of the PNG specification</a> <a data-link-type="biblio" href="#biblio-png" title="Portable Network Graphics (PNG) Specification (Third Edition)">[PNG]</a> for the format and
     range of integer values</p>
-   <h3 class="heading settled" data-level="2.2" id="DR.Floating-point-values"><span class="secno">2.2. </span><span class="content"> Floating-point values </span><a class="self-link" href="#DR.Floating-point-values"></a></h3>
+   <h3 class="heading settled" data-level="2.2" id="DR.Floating-point-values"><span class="secno">2.2. </span><span class="content">
+    Floating-point values
+</span><a class="self-link" href="#DR.Floating-point-values"></a></h3>
    <p>The core of PNG
     does not use floating-point numbers anywhere;
     it uses integers
@@ -735,7 +859,9 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     and no commas or underscores are allowed.
     This format ought to be easily readable
     in all programming environments.</p>
-   <h2 class="heading settled" data-level="3" id="Summary"><span class="secno">3. </span><span class="content"> Summary of Special-Purpose Chunks </span><a class="self-link" href="#Summary"></a></h2>
+   <h2 class="heading settled" data-level="3" id="Summary"><span class="secno">3. </span><span class="content">
+    Summary of Special-Purpose Chunks
+</span><a class="self-link" href="#Summary"></a></h2>
    <p>This table summarizes some properties of the chunks described in this document.
     For standard chunks, see the PNG specification <a data-link-type="biblio" href="#biblio-png" title="Portable Network Graphics (PNG) Specification (Third Edition)">[PNG]</a>.</p>
    <table>
@@ -781,8 +907,12 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>Yes
       <td>None
    </table>
-   <h2 class="heading settled" data-level="4" id="Chunks"><span class="secno">4. </span><span class="content"> Chunk Descriptions </span><a class="self-link" href="#Chunks"></a></h2>
-   <h3 class="heading settled" data-level="4.1" id="C.oFFs"><span class="secno">4.1. </span><span class="content"> <span class="chunk">oFFs</span> Image offset </span><a class="self-link" href="#C.oFFs"></a></h3>
+   <h2 class="heading settled" data-level="4" id="Chunks"><span class="secno">4. </span><span class="content">
+        Chunk Descriptions
+    </span><a class="self-link" href="#Chunks"></a></h2>
+   <h3 class="heading settled" data-level="4.1" id="C.oFFs"><span class="secno">4.1. </span><span class="content">
+        <span class="chunk">oFFs</span> Image offset
+    </span><a class="self-link" href="#C.oFFs"></a></h3>
    <p>The <span class="chunk">oFFs</span> chunk
     gives the position on a printed page
     at which the image should be output
@@ -828,7 +958,9 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     an image placement that is partially or wholly outside the page boundaries,
     the result of such placement is application-dependent.</p>
    <p>If present, this chunk must precede the first <span class="chunk">IDAT</span> chunk.</p>
-   <h3 class="heading settled" data-level="4.2" id="C.pCAL"><span class="secno">4.2. </span><span class="content"> <span class="chunk">pCAL</span> Calibration of pixel values </span><a class="self-link" href="#C.pCAL"></a></h3>
+   <h3 class="heading settled" data-level="4.2" id="C.pCAL"><span class="secno">4.2. </span><span class="content">
+    <span class="chunk">pCAL</span> Calibration of pixel values
+</span><a class="self-link" href="#C.pCAL"></a></h3>
    <p>When a PNG file is being used
 to store physical data other than color values,
 such as a two-dimensional temperature field,
@@ -847,10 +979,10 @@ if the encoder wants the decoder to modify the sample values for display purpose
    <table>
     <tbody>
      <tr>
-      <th>Calibration name: 
+      <th>Calibration name:  
       <td>1-79 bytes (character string) 
      <tr>
-      <th>Null separator: 
+      <th>Null separator:  
       <td>1 byte 
      <tr>
       <th>Original zero (x0): 
@@ -865,17 +997,17 @@ if the encoder wants the decoder to modify the sample values for display purpose
       <th>Number of parameters: 
       <td>1 byte 
      <tr>
-      <th>Unit name: 
+      <th>Unit name:  
       <td>0 or more bytes (character string) 
      <tr>
-      <th>Null separator: 
-      <td>1 byte 
+      <th>Null separator:  
+      <td>1 byte  
      <tr>
-      <th>Parameter 0 (p0): 
+      <th>Parameter 0 (p0):  
       <td>1 or more bytes (<a href="#DR.Floating-point-values">ASCII floating-point</a>) 
      <tr>
-      <th>Null separator: 
-      <td>1 byte 
+      <th>Null separator:  
+      <td>1 byte  
      <tr>
       <th>Parameter 1 (p1): 
       <td>1 or more bytes (<a href="#DR.Floating-point-values">ASCII floating-point</a>) 
@@ -929,7 +1061,7 @@ the equation type, parameters, and unit name.</p>
    <p>The mapping between the stored samples
     and the original samples
     is given by the following equations:</p>
-<pre class="lang-C highlight"><c- n>original_sample</c-> <c- o>=</c->
+<pre class="highlight lang-C"><c- n>original_sample</c-> <c- o>=</c->
     <c- p>(</c-><c- n>stored_sample</c-> <c- o>*</c-> <c- p>(</c-><c- n>x1</c-><c- o>-</c-><c- n>x0</c-><c- p>)</c-> <c- o>+</c-> <c- n>max</c-><c- o>/</c-><c- mi>2</c-><c- p>)</c-> <c- o>/</c-> <c- n>max</c-> <c- o>+</c-> <c- n>x0</c->
 
 <c- n>stored_sample</c-> <c- o>=</c->
@@ -951,8 +1083,11 @@ the equation type, parameters, and unit name.</p>
     and neither is constrained to be positive,
     but they must be different from each other.</p>
    <p>This mapping is lossless and reversible
-    when <code>abs(x1-x0) &lt;= max</code> and the original sample is in the range <code>x0..x1</code>.
-    If <code>abs(x1-x0) > max</code> then there can be no lossless reversible mapping,
+    when <code>abs(x1-x0) &lt;= max</code>
+    and the original sample is in the range
+    <code>x0..x1</code>.
+    If <code>abs(x1-x0) > max</code>
+    then there can be no lossless reversible mapping,
     but the functions provide the best integer approximations
     to floating-point affine transformations.</p>
    <p>The mapping between the original samples and the physical values
@@ -975,39 +1110,45 @@ the equation type, parameters, and unit name.</p>
       <td>Hyperbolic mapping
    </table>
    <p>For equation type 0:</p>
-<pre class="lang-C highlight"><c- n>physical_value</c-> <c- o>=</c-> <c- n>p0</c-> <c- o>+</c-> <c- n>p1</c-> <c- o>*</c-> <c- n>original_sample</c-> <c- o>/</c-> <c- p>(</c-><c- n>x1</c-><c- o>-</c-><c- n>x0</c-><c- p>)</c->
+<pre class="highlight lang-C"><c- n>physical_value</c-> <c- o>=</c-> <c- n>p0</c-> <c- o>+</c-> <c- n>p1</c-> <c- o>*</c-> <c- n>original_sample</c-> <c- o>/</c-> <c- p>(</c-><c- n>x1</c-><c- o>-</c-><c- n>x0</c-><c- p>)</c->
 </pre>
    <p>For equation type 1:</p>
-<pre class="lang-C highlight"><c- n>physical_value</c-> <c- o>=</c->
+<pre class="highlight lang-C"><c- n>physical_value</c-> <c- o>=</c->
    <c- n>p0</c-> <c- o>+</c-> <c- n>p1</c-> <c- o>*</c-> <c- n>exp</c-><c- p>(</c-><c- n>p2</c-> <c- o>*</c-> <c- n>original_sample</c-> <c- o>/</c-> <c- p>(</c-><c- n>x1</c-><c- o>-</c-><c- n>x0</c-><c- p>))</c->
 </pre>
    <p>For equation type 2:</p>
-<pre class="lang-C highlight"><c- n>physical_value</c-> <c- o>=</c->
+<pre class="highlight lang-C"><c- n>physical_value</c-> <c- o>=</c->
    <c- n>p0</c-> <c- o>+</c-> <c- n>p1</c-> <c- o>*</c-> <c- n>pow</c-><c- p>(</c-><c- n>p2</c-><c- p>,</c-> <c- p>(</c-><c- n>original_sample</c-> <c- o>/</c-> <c- p>(</c-><c- n>x1</c-><c- o>-</c-><c- n>x0</c-><c- p>)))</c->
 </pre>
    <p>For equation type 3:</p>
-<pre class="lang-C highlight"><c- n>physical_value</c-> <c- o>=</c->
+<pre class="highlight lang-C"><c- n>physical_value</c-> <c- o>=</c->
    <c- n>p0</c-> <c- o>+</c-> <c- n>p1</c-> <c- o>*</c-> <c- n>sinh</c-><c- p>(</c-><c- n>p2</c-> <c- o>*</c-> <c- p>(</c-><c- n>original_sample</c-> <c- o>-</c-> <c- n>p3</c-><c- p>)</c-> <c- o>/</c-> <c- p>(</c-><c- n>x1</c-><c- o>-</c-><c- n>x0</c-><c- p>))</c->
 </pre>
    <p>For these physical value equations, "/" means floating-point division.</p>
-   <p>The function <code>exp(x)</code> is <code>e</code> raised to the power of <code>x</code>,
+   <p>The function <code>exp(x)</code>
+    is <code>e</code> raised to the power of <code>x</code>,
     where <code>e</code> is the base of the natural logarithms,
     approximately 2.71828182846.
-    The exponential function <code>exp()</code> is the inverse the natural logarithm function <code>ln()</code>.</p>
-   <p>The function <code>pow(x,y)</code> is <code>x</code> raised to the power of <code>y</code>.</p>
-<pre class="lang-C highlight"><c- n>physical_value</c-> <c- o>=</c-><c- n>pow</c-><c- p>(</c-><c- n>x</c-><c- p>,</c-><c- n>y</c-><c- p>)</c-> <c- o>=</c-> <c- n>exp</c-><c- p>(</c-><c- n>y</c-> <c- o>*</c-> <c- n>ln</c-><c- p>(</c-><c- n>x</c-><c- p>))</c->
+    The exponential function <code>exp()</code>
+    is the inverse the natural logarithm function <code>ln()</code>.</p>
+   <p>The function <code>pow(x,y)</code>
+    is <code>x</code>
+    raised to the power of <code>y</code>.</p>
+<pre class="highlight lang-C"><c- n>physical_value</c-> <c- o>=</c-><c- n>pow</c-><c- p>(</c-><c- n>x</c-><c- p>,</c-><c- n>y</c-><c- p>)</c-> <c- o>=</c-> <c- n>exp</c-><c- p>(</c-><c- n>y</c-> <c- o>*</c-> <c- n>ln</c-><c- p>(</c-><c- n>x</c-><c- p>))</c->
 </pre>
    <p>The function <code>sinh(x)</code> is
     the hyperbolic sine of <code>x</code>.</p>
-<pre class="lang-C highlight"><c- n>physical_value</c-> <c- o>=</c->
+<pre class="highlight lang-C"><c- n>physical_value</c-> <c- o>=</c->
     <c- n>sinh</c-><c- p>(</c-><c- n>x</c-><c- p>)</c-> <c- o>=</c-> <c- mf>0.5</c-> <c- o>*</c-> <c- p>(</c-><c- n>exp</c-><c- p>(</c-><c- n>x</c-><c- p>)</c-> <c- o>-</c-> <c- n>exp</c-><c- p>(</c-><c- o>-</c-><c- n>x</c-><c- p>))</c->
 </pre>
    <p>The units for the physical values
     are given by the unit name,
     which may contain any number of printable Latin-1 characters,
     with no limitation on the number and position of blanks.</p>
-   <div class="example" id="example-a49cc7eb"><a class="self-link" href="#example-a49cc7eb"></a> For example, "K", "population density", "MPa".
-        A zero-length string can be used for dimensionless data. </div>
+   <div class="example" id="example-a49cc7eb"><a class="self-link" href="#example-a49cc7eb"></a>
+        For example, "K", "population density", "MPa".
+        A zero-length string can be used for dimensionless data.
+    </div>
    <p>For color types 0 (gray) and 4 (gray-alpha),
     the mappings apply to the gray sample values
     (but not to the alpha sample).
@@ -1051,10 +1192,14 @@ the equation type, parameters, and unit name.</p>
     such that the resolution of the stored data
     is roughly proportional to its magnitude.</p>
    <div class="example" id="example-e3c29ac5">
-    <a class="self-link" href="#example-e3c29ac5"></a> For example,
+    <a class="self-link" href="#example-e3c29ac5"></a>
+        For example,
         floating-point data ranging from
-        -10<sup>31</sup> to 10<sup>31</sup> (the usual range of 32-bit floating-point numbers)
-        can be represented with: 
+        -10<sup>31</sup> to 10<sup>31</sup>
+        (the usual range of 32-bit floating-point numbers)
+        can be represented with:
+
+        
 <pre>Equation type 3
 x0 = 0
 x1 = 65535
@@ -1065,12 +1210,16 @@ p3 = 32767.0
 </pre>
    </div>
    <p>The resolution near zero is about 10<sup>-33</sup>,
-    while the resolution near 10<sup>31</sup> or -10<sup>31</sup> is about 10<sup>28</sup>.
+    while the resolution near 10<sup>31</sup> or -10<sup>31</sup>
+    is about 10<sup>28</sup>.
     Everywhere, the resolution is about 0.4 percent of the magnitude.</p>
    <div class="note" role="note">
-     Note: those floating-point parameters
+    
+        Note: those floating-point parameters
         could be stored in the chunk more compactly
-        as follows: 
+        as follows:
+
+        
 <pre>p0 = 0
 p1 = 1e-30
 p2 = 280
@@ -1082,13 +1231,18 @@ p3 = 32767
     while performing the mappings for equation types 1, 2, and 3,
     to prevent overflow of intermediate results
     when <code>p1</code> is small
-    and the <code>exp()</code>, <code>pow()</code>, or <code>sinh()</code> function is large.</p>
+    and the <code>exp()</code>,
+    <code>pow()</code>, or
+    <code>sinh()</code>
+    function is large.</p>
    <p>If present,
     the <span class="chunk">pCAL</span> chunk must appear
     before the first <span class="chunk">IDAT</span> chunk.
     Only one instance of the <span class="chunk">pCAL</span> chunk
     is permitted in a PNG datastream.</p>
-   <h3 class="heading settled" data-level="4.3" id="C.sCAL"><span class="secno">4.3. </span><span class="content"> <span class="chunk">sCAL</span> Physical scale of image subject </span><a class="self-link" href="#C.sCAL"></a></h3>
+   <h3 class="heading settled" data-level="4.3" id="C.sCAL"><span class="secno">4.3. </span><span class="content">
+        <span class="chunk">sCAL</span> Physical scale of image subject
+    </span><a class="self-link" href="#C.sCAL"></a></h3>
    <p>While the <span class="chunk">pHYs</span> chunk
     is used to record the physical size of the image itself
     as it was scanned
@@ -1134,7 +1288,9 @@ p3 = 32767
     Both values are required to be greater than zero.</p>
    <p>If present, this chunk must precede
     the first <span class="chunk">IDAT</span> chunk.</p>
-   <h3 class="heading settled" data-level="4.4" id="C.gIFg"><span class="secno">4.4. </span><span class="content"> <span class="chunk">gIFg</span> GIF Graphic Control Extension </span><a class="self-link" href="#C.gIFg"></a></h3>
+   <h3 class="heading settled" data-level="4.4" id="C.gIFg"><span class="secno">4.4. </span><span class="content">
+        <span class="chunk">gIFg</span> GIF Graphic Control Extension
+    </span><a class="self-link" href="#C.gIFg"></a></h3>
    <p>The <span class="chunk">gIFg</span> chunk is provided
     for backward compatibility with the GIF89a Graphic Control Extension <a data-link-type="biblio" href="#biblio-gif" title="Graphics Interchange Format">[GIF]</a>.
     It contains:</p>
@@ -1167,13 +1323,16 @@ p3 = 32767
     at most one Graphic Control Extension
     to preceed each graphic rendering block.
     Because a static PNG file holds only one image,
-    it is expected that <span class="chunk">gIFg</span> will appear at most once, before <span class="chunk">IDAT</span>,
+    it is expected that <span class="chunk">gIFg</span>
+    will appear at most once, before <span class="chunk">IDAT</span>,
     but there is no strict requirement.</p>
    <p class="note" role="note"><span class="marker">Note:</span> this chunk is provided solely to improve round-tripping
     when converting from animated GIF to static PNG.
     It has no effect on rendering of the PNG image.
     Including this chunk does not make the PNG animated.</p>
-   <h3 class="heading settled" data-level="4.5" id="C.gIFx"><span class="secno">4.5. </span><span class="content"> <span class="chunk">gIFx</span> GIF Application Extension </span><a class="self-link" href="#C.gIFx"></a></h3>
+   <h3 class="heading settled" data-level="4.5" id="C.gIFx"><span class="secno">4.5. </span><span class="content">
+    <span class="chunk">gIFx</span> GIF Application Extension
+</span><a class="self-link" href="#C.gIFx"></a></h3>
    <p>The <span class="chunk">gIFx</span> chunk is provided
     for backward compatibility with the GIF89a Application Extension <a data-link-type="biblio" href="#biblio-gif" title="Graphics Interchange Format">[GIF]</a>.
     The Application Extension contains application-specific information.
@@ -1208,7 +1367,9 @@ p3 = 32767
     and is aware of a corresponding PNG chunk,
     it may choose to convert the Application Extension into that PNG chunk type
     rather than using <span class="chunk">gIFx</span>.</p>
-   <h3 class="heading settled" data-level="4.6" id="C.sTER"><span class="secno">4.6. </span><span class="content"> <span class="chunk">sTER</span> Indicator of Stereo Image </span><a class="self-link" href="#C.sTER"></a></h3>
+   <h3 class="heading settled" data-level="4.6" id="C.sTER"><span class="secno">4.6. </span><span class="content">
+    <span class="chunk">sTER</span> Indicator of Stereo Image
+</span><a class="self-link" href="#C.sTER"></a></h3>
    <p>When present, the <span class="chunk">sTER</span> chunk
     indicates that the datastream contains a stereo pair of subimages
     within a single PNG image.</p>
@@ -1230,7 +1391,8 @@ p3 = 32767
       <td>diverging-fuse layout
    </table>
    <p>The <span class="chunk">sTER</span> chunk
-    with <code>mode==0</code> or <code>mode==1</code> indicates that the datastream contains two subimages,
+    with <code>mode==0</code> or <code>mode==1</code>
+    indicates that the datastream contains two subimages,
     encoded within a single PNG image.
     They are arranged side-by-side,
     with one subimage intended for presentation to the right eye
@@ -1268,13 +1430,16 @@ p3 = 32767
    <p>If present, the <span class="chunk">sTER</span> chunk
     must appear before the first <span class="chunk">IDAT</span> chunk.</p>
    <p>Given two subimages with width <code>subimage_width</code>,
-    encoders can calculate the inter-subimage <code>padding</code> and total width <code>W</code> using the following pseudocode:</p>
-<pre class="lang-pascal highlight"><c- n>padding</c->  <c- o>:=</c-> <c- mi>7</c-> <c- o>-</c-> <c- p>((</c-><c- n>subimage_width</c-> <c- o>-</c-> <c- mi>1</c-><c- p>)</c-> <c- k>mod</c-> <c- mi>8</c-><c- p>)</c->
+    encoders can calculate the inter-subimage <code>padding</code>
+    and total width <code>W</code> using the following pseudocode:</p>
+<pre class="highlight lang-pascal"><c- n>padding</c->  <c- o>:=</c-> <c- mi>7</c-> <c- o>-</c-> <c- p>((</c-><c- n>subimage_width</c-> <c- o>-</c-> <c- mi>1</c-><c- p>)</c-> <c- k>mod</c-> <c- mi>8</c-><c- p>)</c->
 <c- n>W</c->        <c- o>:=</c-> <c- mi>2</c-> <c- o>*</c-> <c- n>subimage_width</c-> <c- o>+</c-> <c- n>padding</c->
 </pre>
    <p>Given an image with width <code>W</code>,
-    decoders can calculate the <code>subimage_width</code> and inter-subimage <code>padding</code> using the following pseudocode:</p>
-<pre class="lang-pascal highlight"><c- n>padding</c-> <c- o>:=</c-> <c- mi>15</c-> <c- o>-</c-> <c- p>((</c-><c- n>W</c-> <c- o>-</c-> <c- mi>1</c-><c- p>)</c-> <c- k>mod</c-> <c- mi>16</c-><c- p>)</c->
+    decoders can calculate the <code>subimage_width</code>
+    and inter-subimage <code>padding</code>
+    using the following pseudocode:</p>
+<pre class="highlight lang-pascal"><c- n>padding</c-> <c- o>:=</c-> <c- mi>15</c-> <c- o>-</c-> <c- p>((</c-><c- n>W</c-> <c- o>-</c-> <c- mi>1</c-><c- p>)</c-> <c- k>mod</c-> <c- mi>16</c-><c- p>)</c->
 <c- k>if</c-> <c- p>(</c-><c- n>padding</c-> <c- o>></c-> <c- mi>7</c-><c- p>)</c-> <c- k>then</c-> <c- n>error</c->
 <c- n>subimage_width</c-> <c- o>:=</c-> <c- p>(</c-><c- n>W</c-> <c- o>-</c-> <c- n>padding</c-><c- p>)</c-> <c- o>/</c-> <c- mi>2</c->
 </pre>
@@ -1300,8 +1465,12 @@ p3 = 32767
     especially when the image centers are separated
     by more than 65 millimeters
     when displayed on a typical monitor.</p>
-   <h2 class="heading settled" data-level="5" id="RemoteChunks"><span class="secno">5. </span><span class="content"> Chunks Not Described Here </span><a class="self-link" href="#RemoteChunks"></a></h2>
-   <h3 class="heading settled" data-level="5.1" id="R.dSIG"><span class="secno">5.1. </span><span class="content"> <span class="chunk">dSIG</span> Digital signature </span><a class="self-link" href="#R.dSIG"></a></h3>
+   <h2 class="heading settled" data-level="5" id="RemoteChunks"><span class="secno">5. </span><span class="content">
+        Chunks Not Described Here
+    </span><a class="self-link" href="#RemoteChunks"></a></h2>
+   <h3 class="heading settled" data-level="5.1" id="R.dSIG"><span class="secno">5.1. </span><span class="content">
+        <span class="chunk">dSIG</span> Digital signature
+    </span><a class="self-link" href="#R.dSIG"></a></h3>
    <p>The <span class="chunk">dSIG</span> chunk
     provides a digital signature
     that guarantees that the contents
@@ -1313,7 +1482,9 @@ p3 = 32767
     in a separate document, <a data-link-type="biblio" href="#biblio-dsig-spec" title="PNG Digital Signatures: Extension Specification">[dSIG-spec]</a>,
     which is accompanied by an example
     provided in <a data-link-type="biblio" href="#biblio-dsig-example" title="PNG Digital Signatures: Commented Example">[dSIG-example]</a>.</p>
-   <h3 class="heading settled" data-level="5.2" id="R.fRAc"><span class="secno">5.2. </span><span class="content"> <span class="chunk">fRAc</span> Fractal image parameters </span><a class="self-link" href="#R.fRAc"></a></h3>
+   <h3 class="heading settled" data-level="5.2" id="R.fRAc"><span class="secno">5.2. </span><span class="content">
+        <span class="chunk">fRAc</span> Fractal image parameters
+    </span><a class="self-link" href="#R.fRAc"></a></h3>
    <p>The <span class="chunk">fRAc</span> chunk
     was intended to describe
     the parameters used to generate a fractal image.
@@ -1322,17 +1493,25 @@ p3 = 32767
     was being developed by Tim Wegner, twegner @ phoenix.net.</p>
    <p>In the future, chunks will be fully specified
     before they are registered.</p>
-   <h3 class="heading settled" data-level="5.3" id="R.iDOT"><span class="secno">5.3. </span><span class="content"> <span class="chunk">iDOT</span> Apple Multithreaded Decoding </span><a class="self-link" href="#R.iDOT"></a></h3>
+   <h3 class="heading settled" data-level="5.3" id="R.iDOT"><span class="secno">5.3. </span><span class="content">
+        <span class="chunk">iDOT</span> Apple Multithreaded Decoding
+    </span><a class="self-link" href="#R.iDOT"></a></h3>
    <p>The <span class="chunk">iDOT</span> chunk enables multi-core machines
     to use (at least) two cores to decode the PNG datastream.</p>
    <p>It was developed by Apple, around 2011, but never registered.
     It is commonly found in PNG images generated on Apple hardware.</p>
    <p>This chunk has been reverse-engineered, and is described in detail
     in a separate document, <a data-link-type="biblio" href="#biblio-idot-description" title="Connecting the iDOTs">[iDOT-description]</a>.</p>
-   <h2 class="heading settled" data-level="6" id="Keywords"><span class="secno">6. </span><span class="content"> Text Chunk Keywords </span><a class="self-link" href="#Keywords"></a></h2>
-   <h3 class="heading settled" data-level="6.1" id="K.Keywords"><span class="secno">6.1. </span><span class="content"> Additional Registered Keywords </span><a class="self-link" href="#K.Keywords"></a></h3>
+   <h2 class="heading settled" data-level="6" id="Keywords"><span class="secno">6. </span><span class="content">
+    Text Chunk Keywords
+</span><a class="self-link" href="#Keywords"></a></h2>
+   <h3 class="heading settled" data-level="6.1" id="K.Keywords"><span class="secno">6.1. </span><span class="content">
+    Additional Registered Keywords
+</span><a class="self-link" href="#K.Keywords"></a></h3>
    <p>(none)</p>
-   <h3 class="heading settled" data-level="6.2" id="K.Syntax"><span class="secno">6.2. </span><span class="content"> Keyword Syntax </span><a class="self-link" href="#K.Syntax"></a></h3>
+   <h3 class="heading settled" data-level="6.2" id="K.Syntax"><span class="secno">6.2. </span><span class="content">
+    Keyword Syntax
+</span><a class="self-link" href="#K.Syntax"></a></h3>
    <p>All registered textual keywords
     in text chunks
     and all other chunk types
@@ -1348,9 +1527,13 @@ p3 = 32767
     These characters have the same numeric codes
     in all ISO character sets,
     including all national variants of ASCII.</p>
-   <h2 class="heading settled" data-level="7" id="DepChunks"><span class="secno">7. </span><span class="content"> Deprecated Chunks </span><a class="self-link" href="#DepChunks"></a></h2>
+   <h2 class="heading settled" data-level="7" id="DepChunks"><span class="secno">7. </span><span class="content">
+    Deprecated Chunks
+</span><a class="self-link" href="#DepChunks"></a></h2>
    <p>The chunks listed in this section are registered, but deprecated. Encoders are <em>discouraged</em> from using them, and decoders are not encouraged to support them.</p>
-   <h3 class="heading settled" data-level="7.1" id="DC.gIFt"><span class="secno">7.1. </span><span class="content"> gIFt GIF Plain Text Extension </span><a class="self-link" href="#DC.gIFt"></a></h3>
+   <h3 class="heading settled" data-level="7.1" id="DC.gIFt"><span class="secno">7.1. </span><span class="content">
+    gIFt GIF Plain Text Extension
+</span><a class="self-link" href="#DC.gIFt"></a></h3>
    <p>The <span class="chunk">gIFt</span> chunk
     was originally provided for backward compatibility
     with the GIF89a Plain Text Extension <a data-link-type="biblio" href="#biblio-gif" title="Graphics Interchange Format">[GIF]</a>,
@@ -1370,8 +1553,10 @@ with ordering issues
 with the proper Graphic Rendering Block).
 PNG, being a single-image format
 with no provisions for handling these ordering issues,
-is not equipped to contain both <span class="chunk">IDAT</span> and <span class="chunk">gIFt</span> simultaneously.
-Since <span class="chunk">IDAT</span> is required, <span class="chunk">gIFt</span> must be discouraged.</p>
+is not equipped to contain both <span class="chunk">IDAT</span>
+and <span class="chunk">gIFt</span> simultaneously.
+Since <span class="chunk">IDAT</span> is required,
+<span class="chunk">gIFt</span> must be discouraged.</p>
     <li data-md>
      <p>The Text Foreground Color and Text Background Color fields
 of the Plain Text Extension
@@ -1445,19 +1630,25 @@ Therefore, transparency information can be lost.</p>
    <p>The remainder of the chunk is the text to be displayed.</p>
    <p class="note" role="note"><span class="marker">Note:</span> this data is not in GIF sub-block format,
     but is a continuous datastream.</p>
-   <h2 class="heading settled" data-level="8" id="Security"><span class="secno">8. </span><span class="content"> Security Considerations </span><a class="self-link" href="#Security"></a></h2>
+   <h2 class="heading settled" data-level="8" id="Security"><span class="secno">8. </span><span class="content">
+        Security Considerations
+    </span><a class="self-link" href="#Security"></a></h2>
    <p>The normal precautions
-    (see the <a href="https://w3c.github.io/png/#13Security-considerations">Security
-    considerations section</a> of the PNG specification)
+    (see the <a href="https://w3c.github.io/PNG-spec/#13Security-considerations">Security
+    considerations section</a>
+    of the PNG specification)
     should be taken when displaying text
-    contained in the <span class="chunk">sCAL</span> calibration name, <span class="chunk">pCAL</span> unit name,
+    contained in the <span class="chunk">sCAL</span> calibration name,
+    <span class="chunk">pCAL</span> unit name,
     or any <a href="DR.Floating-point-values">ASCII floating-point fields</a>.</p>
    <p>Applications must take care
     to avoid underflow and overflow
     of intermediate results
     when converting data from one form to another
     according to the <span class="chunk">pCAL</span> mappings.</p>
-   <h2 class="heading settled" data-level="9" id="SampleCode"><span class="secno">9. </span><span class="content"> Appendix: Sample code </span><a class="self-link" href="#SampleCode"></a></h2>
+   <h2 class="heading settled" data-level="9" id="SampleCode"><span class="secno">9. </span><span class="content">
+    Appendix: Sample code
+</span><a class="self-link" href="#SampleCode"></a></h2>
    <p>This appendix provides some sample code
     that can be used in encoding and decoding PNG chunks.
     It does not form a part of the specification.
@@ -1465,8 +1656,10 @@ Therefore, transparency information can be lost.</p>
     between the sample code in this appendix
     and the chunk definition,
     the chunk definition prevails.</p>
-   <h3 class="heading settled" data-level="9.1" id="SC.pCAL"><span class="secno">9.1. </span><span class="content"> <span class="chunk">pCAL</span> Sample code </span><a class="self-link" href="#SC.pCAL"></a></h3>
-<pre class="include-code highlight">   <c- cp>#if 0</c->
+   <h3 class="heading settled" data-level="9.1" id="SC.pCAL"><span class="secno">9.1. </span><span class="content">
+    <span class="chunk">pCAL</span> Sample code
+</span><a class="self-link" href="#SC.pCAL"></a></h3>
+<pre class="highlight include-code">   <c- cp>#if 0</c->
 <c- c>   pcal.c 0.2.2 (Sat 19 Dec 1998)</c->
 <c- c>   Adam M. Costello &lt;amc @ cs.berkeley.edu></c->
 
@@ -1805,13 +1998,15 @@ Therefore, transparency information can be lost.</p>
 
      <c- k>return</c-> <c- n>p</c-><c- p>[</c-><c- mi>0</c-><c- p>]</c-> <c- o>+</c-> <c- n>p</c-><c- p>[</c-><c- mi>1</c-><c- p>]</c-> <c- o>*</c-> <c- n>f</c-><c- p>;</c->
    <c- p>}</c-></pre>
-   <h3 class="heading settled" data-level="9.2" id="SC.Fixed-point-gamma-corr"><span class="secno">9.2. </span><span class="content"> Fixed-point gamma correction </span><a class="self-link" href="#SC.Fixed-point-gamma-corr"></a></h3>
-<pre class="include-code highlight">   <c- cp>#if 0</c->
-<c- c>   pcal.c 0.2.2 (Sat 19 Dec 1998)</c->
-<c- c>   Adam M. Costello &lt;amc @ cs.berkeley.edu></c->
+   <h3 class="heading settled" data-level="9.2" id="SC.Fixed-point-gamma-corr"><span class="secno">9.2. </span><span class="content">
+    Fixed-point gamma correction
+</span><a class="self-link" href="#SC.Fixed-point-gamma-corr"></a></h3>
+<pre class="highlight include-code">   <c- cp>#if 0</c->
+<c- c>   gamma-lookup.c 0.1.4 (Sat 19 Dec 1998)</c->
+<c- c>   by Adam M. Costello &lt;amc @ cs.berkeley.edu></c->
 
-<c- c>   This is public domain example code for computing</c->
-<c- c>   the mappings defined for the PNG pCAL chunk.</c->
+<c- c>   This is public domain example code for computing gamma</c->
+<c- c>   correction lookup tables using integer arithmetic.</c->
 
 <c- cp>   #endif</c->
    <c- cp>#if __STDC__ != 1</c->
@@ -1821,365 +2016,204 @@ Therefore, transparency information can be lost.</p>
 
    <c- cp>#include</c-> &lt;limits.h>
    <c- cp>#include</c-> &lt;math.h>
-   <c- cp>#include</c-> &lt;stdio.h>
-   <c- cp>#include</c-> &lt;stdlib.h>
 
 
-   <c- d>/* In this program a type named uintN denotes an unsigned    */</c->
-   <c- d>/* type that handles at least all values 0 through (2^N)-1.  */</c->
-   <c- d>/* A type named intN denotes a signed type that handles at   */</c->
-   <c- d>/* least all values 1-2^(N-1) through 2^(N-1)-1.  It is not  */</c->
-   <c- d>/* necessarily the smallest such type; we are more concerned */</c->
-   <c- d>/* with speed.                                               */</c->
+   <c- d>/* In this program a type named uintN denotes the  */</c->
+   <c- d>/* smallest unsigned type we can find that handles */</c->
+   <c- d>/* at least all values 0 through (2^N)-1.          */</c->
 
-   <c- k>typedef</c-> <c- b>unsigned</c-> <c- b>int</c-> <c- n>uint16</c-><c- p>;</c->
+   <c- k>typedef</c-> <c- b>unsigned</c-> <c- b>char</c-> <c- n>uint8</c-><c- p>;</c->
 
-   <c- cp>#if UINT_MAX >= 0xffffffff</c->
+   <c- cp>#if UCHAR_MAX >= 0xffff</c->
+     <c- k>typedef</c-> <c- b>unsigned</c-> <c- b>char</c-> <c- n>uint16</c-><c- p>;</c->
+   <c- cp>#else</c->
+     <c- k>typedef</c-> <c- b>unsigned</c-> <c- b>short</c-> <c- n>uint16</c-><c- p>;</c->
+   <c- cp>#endif</c->
+
+   <c- cp>#if UCHAR_MAX >= 0xffffffff</c->
+     <c- k>typedef</c-> <c- b>unsigned</c-> <c- b>char</c-> <c- n>uint32</c-><c- p>;</c->
+   <c- cp>#elif USHRT_MAX >= 0xffffffff</c->
+     <c- k>typedef</c-> <c- b>unsigned</c-> <c- b>short</c-> <c- n>uint32</c-><c- p>;</c->
+   <c- cp>#elif UINT_MAX >= 0xffffffff</c->
      <c- k>typedef</c-> <c- b>unsigned</c-> <c- b>int</c-> <c- n>uint32</c-><c- p>;</c->
    <c- cp>#else</c->
      <c- k>typedef</c-> <c- b>unsigned</c-> <c- b>long</c-> <c- n>uint32</c-><c- p>;</c->
    <c- cp>#endif</c->
 
-   <c- cp>#if INT_MAX >= 0x7fffffff &amp;&amp; INT_MIN + 0x7fffffff &lt;= 0</c->
-     <c- k>typedef</c-> <c- b>int</c-> <c- n>int32</c-><c- p>;</c->
-   <c- cp>#else</c->
-     <c- k>typedef</c-> <c- b>long</c-> <c- n>int32</c-><c- p>;</c->
-   <c- cp>#endif</c->
 
-   <c- d>/* Testing for 48-bit integers is tricky because we cannot */</c->
-   <c- d>/* safely use constants greater than 0xffffffff.  Also,    */</c->
-   <c- d>/* shifting by the entire width of a type is undefined, so */</c->
-   <c- d>/* for unsigned int, which might be only 16 bits wide, we  */</c->
-   <c- d>/* must shift in two steps.                                */</c->
-
-   <c- cp>#if (UINT_MAX - 0xffff) >> 8 >> 8 >= 0xffffffff</c->
-     <c- k>typedef</c-> <c- b>unsigned</c-> <c- b>int</c-> <c- n>uint48</c-><c- p>;</c->
-     <c- cp>#define HAVE_UINT48 1</c->
-   <c- cp>#elif (ULONG_MAX - 0xffff) >> 16 >= 0xffffffff</c->
-     <c- k>typedef</c-> <c- b>unsigned</c-> <c- b>long</c-> <c- n>uint48</c-><c- p>;</c->
-     <c- cp>#define HAVE_UINT48 1</c->
-   <c- cp>#elif defined(ULLONG_MAX)</c->
-     <c- cp>#if (ULLONG_MAX - 0xffff) >> 16 >= 0xffffffff</c->
-       <c- k>typedef</c-> <c- b>unsigned</c-> <c- b>long</c-> <c- b>long</c-> <c- n>uint48</c-><c- p>;</c->
-       <c- cp>#define HAVE_UINT48 1</c->
-     <c- cp>#endif</c->
-   <c- cp>#else</c->
-     <c- cp>#define HAVE_UINT48 0</c->
-   <c- cp>#endif</c->
-
-
-   <c- d>/*******************/</c->
-   <c- d>/* Program failure */</c->
+   <c- d>/*********************/</c->
+   <c- d>/* 16-bit arithmetic */</c->
 
    <c- b>void</c->
-   <c- nf>fail</c-><c- p>(</c-><c- k>const</c-> <c- b>char</c-> <c- o>*</c-><c- n>msg</c-><c- p>)</c->
+   <c- nf>precompute16</c-><c- p>(</c-><c- n>uint16</c-> <c- n>L</c-><c- p>[</c-><c- mi>511</c-><c- p>])</c->
+
+   <c- d>/* Precomputes the log table (this requires floating point). */</c->
+
    <c- p>{</c->
-     <c- n>fputs</c-><c- p>(</c-><c- n>msg</c-><c- p>,</c-><c- n>stderr</c-><c- p>);</c->
-     <c- n>fputc</c-><c- p>(</c-><c- sc>'\n'</c-><c- p>,</c-> <c- n>stderr</c-><c- p>);</c->
-     <c- n>exit</c-><c- p>(</c-><c- n>EXIT_FAILURE</c-><c- p>);</c->
+     <c- b>int</c-> <c- n>j</c-><c- p>;</c->
+     <c- b>double</c-> <c- n>f</c-><c- p>;</c->
+
+     <c- d>/* L[j] will hold an integer representation of          */</c->
+     <c- d>/* -log(j / 510.0).  Knowing that L[1] (the largest) is */</c->
+     <c- d>/* 0xfe00 will help avoid overflow later, so we set the */</c->
+     <c- d>/* scale factor accordingly.                            */</c->
+
+     <c- n>f</c-> <c- o>=</c-> <c- mh>0xfe00</c-> <c- o>/</c-> <c- n>log</c-><c- p>(</c-><c- mi>1</c-> <c- o>/</c-> <c- mf>510.0</c-><c- p>);</c->
+
+     <c- k>for</c-> <c- p>(</c-><c- n>j</c-> <c- o>=</c-> <c- mi>1</c-><c- p>;</c->  <c- n>j</c-> <c- o>&lt;=</c-> <c- mi>510</c-><c- p>;</c->  <c- o>++</c-><c- n>j</c-><c- p>)</c->
+       <c- n>L</c-><c- p>[</c-><c- n>j</c-><c- p>]</c-> <c- o>=</c-> <c- n>log</c-><c- p>(</c-><c- n>j</c-> <c- o>/</c-> <c- mf>510.0</c-><c- p>)</c-> <c- o>*</c-> <c- n>f</c-> <c- o>+</c-> <c- mf>0.5</c-><c- p>;</c->
    <c- p>}</c->
 
 
-   <c- d>/*************************/</c->
-   <c- d>/* Check max, x0, and x1 */</c->
+   <c- b>void</c->
+   <c- nf>gamma16</c-><c- p>(</c-><c- n>uint16</c-> <c- n>L</c-><c- p>[</c-><c- mi>511</c-><c- p>],</c-> <c- n>uint8</c-> <c- n>G</c-><c- p>[</c-><c- mi>256</c-><c- p>],</c-> <c- n>uint16</c-> <c- n>g</c-><c- p>)</c->
 
-   <c- b>int</c->
-   <c- nf>samp_params_ok</c-><c- p>(</c-><c- n>uint16</c-> <c- n>max</c-><c- p>,</c-> <c- n>int32</c-> <c- n>x0</c-><c- p>,</c-> <c- n>int32</c-> <c- n>x1</c-><c- p>)</c->
-
-   <c- d>/* Returns 1 if max, x0, and x1 have */</c->
-   <c- d>/* allowed values, 0 otherwise.      */</c->
+   <c- d>/* Makes a 256-entry gamma correction lookup table G[] with */</c->
+   <c- d>/* exponent g/pow(2,14), where g must not exceed 0xffff.    */</c->
 
    <c- p>{</c->
-     <c- k>const</c-> <c- n>int32</c-> <c- n>xlimit</c-> <c- o>=</c-> <c- mh>0x7fffffff</c-><c- p>;</c->
+     <c- b>int</c-> <c- n>i</c-><c- p>,</c-> <c- n>j</c-><c- p>;</c->
+     <c- n>uint16</c-> <c- n>x</c-><c- p>,</c-> <c- n>y</c-><c- p>,</c-> <c- n>xhi</c-><c- p>,</c-> <c- n>ghi</c-><c- p>,</c-> <c- n>xlo</c-><c- p>,</c-> <c- n>glo</c-><c- p>;</c->
 
-     <c- k>return</c->    <c- n>max</c-> <c- o>></c->  <c- mi>0</c->      <c- o>&amp;&amp;</c-> <c- n>max</c-> <c- o>&lt;=</c->  <c- mh>0xffff</c->
-            <c- o>&amp;&amp;</c->  <c- n>x0</c-> <c- o>&lt;=</c-> <c- n>xlimit</c-> <c- o>&amp;&amp;</c->  <c- n>x0</c-> <c- o>>=</c-> <c- o>-</c-><c- n>xlimit</c->
-            <c- o>&amp;&amp;</c->  <c- n>x1</c-> <c- o>&lt;=</c-> <c- n>xlimit</c-> <c- o>&amp;&amp;</c->  <c- n>x1</c-> <c- o>>=</c-> <c- o>-</c-><c- n>xlimit</c->
-            <c- o>&amp;&amp;</c->  <c- n>x0</c-> <c- o>!=</c-> <c- n>x1</c-><c- p>;</c->
+     <c- n>j</c-> <c- o>=</c-> <c- mi>1</c-><c- p>;</c->
+     <c- n>G</c-><c- p>[</c-><c- mi>0</c-><c- p>]</c-> <c- o>=</c-> <c- mi>0</c-><c- p>;</c->
+
+     <c- k>for</c-> <c- p>(</c-><c- n>i</c-> <c- o>=</c-> <c- mi>1</c-><c- p>;</c->  <c- n>i</c-> <c- o>&lt;=</c-> <c- mi>255</c-><c- p>;</c->  <c- o>++</c-><c- n>i</c-><c- p>)</c-> <c- p>{</c->
+       <c- n>x</c-> <c- o>=</c-> <c- n>L</c-><c- p>[</c-><c- n>i</c-> <c- o>&lt;&lt;</c-> <c- mi>1</c-><c- p>];</c->
+       <c- n>xhi</c-> <c- o>=</c-> <c- n>x</c-> <c- o>>></c-> <c- mi>8</c-><c- p>;</c->
+       <c- n>ghi</c-> <c- o>=</c-> <c- n>g</c-> <c- o>>></c-> <c- mi>8</c-><c- p>;</c->
+       <c- n>y</c-> <c- o>=</c-> <c- n>xhi</c-> <c- o>*</c-> <c- n>ghi</c-><c- p>;</c->
+
+       <c- k>if</c-> <c- p>(</c-><c- n>y</c-> <c- o>></c-> <c- mh>0x3f80</c-><c- p>)</c-> <c- p>{</c->
+         <c- d>/* We could have overflowed later. */</c->
+         <c- d>/* But now we know y &lt;&lt; 2 > L[1].  */</c->
+         <c- n>G</c-><c- p>[</c-><c- n>i</c-><c- p>]</c-> <c- o>=</c-> <c- mi>0</c-><c- p>;</c->
+         <c- k>continue</c-><c- p>;</c->
+       <c- p>}</c->
+
+       <c- n>xlo</c-> <c- o>=</c-> <c- n>x</c-> <c- o>&amp;</c-> <c- mh>0xff</c-><c- p>;</c->
+       <c- n>glo</c-> <c- o>=</c-> <c- n>g</c-> <c- o>&amp;</c-> <c- mh>0xff</c-><c- p>;</c->
+       <c- n>y</c-> <c- o>=</c-> <c- p>(</c-><c- n>y</c-> <c- o>&lt;&lt;</c-> <c- mi>2</c-><c- p>)</c-> <c- o>+</c-> <c- p>((</c-><c- n>xhi</c-> <c- o>*</c-> <c- n>glo</c-><c- p>)</c-> <c- o>>></c-> <c- mi>6</c-><c- p>)</c-> <c- o>+</c-> <c- p>((</c-><c- n>xlo</c-> <c- o>*</c-> <c- n>ghi</c-><c- p>)</c-> <c- o>>></c-> <c- mi>6</c-><c- p>);</c->
+       <c- k>while</c-> <c- p>(</c-><c- n>L</c-><c- p>[</c-><c- n>j</c-><c- p>]</c-> <c- o>></c-> <c- n>y</c-><c- p>)</c-> <c- o>++</c-><c- n>j</c-><c- p>;</c->
+       <c- n>G</c-><c- p>[</c-><c- n>i</c-><c- p>]</c-> <c- o>=</c-> <c- n>j</c-> <c- o>>></c-> <c- mi>1</c-><c- p>;</c->
+     <c- p>}</c->
    <c- p>}</c->
 
 
-   <c- d>/***********************************************/</c->
-   <c- d>/* Map from stored samples to original samples */</c->
+   <c- d>/*********************/</c->
+   <c- d>/* 32-bit arithmetic */</c->
 
-   <c- n>int32</c->
-   <c- n>stored_to_orig</c-><c- p>(</c-><c- n>uint16</c-> <c- n>stored</c-><c- p>,</c-> <c- n>uint16</c-> <c- n>max</c-><c- p>,</c-> <c- n>int32</c-> <c- n>x0</c-><c- p>,</c-> <c- n>int32</c-> <c- n>x1</c-><c- p>)</c->
+   <c- b>void</c->
+   <c- nf>precompute32</c-><c- p>(</c-><c- n>uint32</c-> <c- n>L</c-><c- p>[</c-><c- mi>511</c-><c- p>])</c->
 
-   <c- cp>#if 0</c->
-
-<c- c>     Returns the original sample corresponding to the given stored</c->
-<c- c>     sample, which must be &lt;= max.  The parameters max, x0, and x1</c->
-<c- c>     must have been approved by samp_params_ok().</c->
-
-<c- c>     The pCAL spec says:</c->
-
-<c- c>         orig = (stored * (x1-x0) + max/2) / max + x0           [1]</c->
-
-<c- c>     Equivalently:</c->
-
-<c- c>         orig = (stored * (x1-x0) + max/2) / max</c->
-<c- c>                + (x0-x1) - (x0-x1) + x0</c->
-<c- c>         orig = (stored * (x1-x0) + max * (x0-x1) + max/2) / max</c->
-<c- c>                - (x0-x1) + x0</c->
-<c- c>         orig = ((max - stored) * (x0-x1) + max/2) / max + x1</c->
-
-<c- c>     So we can check whether x0 &lt; x1 and coerce the formula so that</c->
-<c- c>     the numerators and denominators are always nonnegative:</c->
-
-<c- c>         orig = (offset * xspan + max/2) / max + xbottom        [2]</c->
-
-<c- c>     This will come in handy later.</c->
-
-<c- c>     But the multiplication and the subtraction can overflow, so we</c->
-<c- c>     have to be trickier.  For the subtraction, we can convert to</c->
-<c- c>     unsigned integers.  For the multiplication, we can use 48-bit</c->
-<c- c>     integers if we have them, otherwise observe that:</c->
-
-<c- c>            b    =   (b/c)*c +     b%c</c->
-<c- c>          a*b    = a*(b/c)*c +  a*(b%c)  ; let d = a*(b%c)</c->
-<c- c>         (a*b)/c = a*(b/c)   +     d/c   remainder d%c          [3]</c->
-
-<c- c>     These are true no matter which way the division rounds.  If</c->
-<c- c>     (a*b)/c is in-range, a*(b/c) is guaranteed to be in-range if</c->
-<c- c>     b/c rounds toward zero.  Here is another observation:</c->
-
-<c- c>         sum{x_i} / c = sum{x_i / c} + sum{x_i % c} / c         [4]</c->
-
-<c- c>     This one also avoids overflow if the division rounds toward</c->
-<c- c>     zero.  The pCAL spec requires rounding toward -infinity.  ANSI</c->
-<c- c>     C leaves the rounding direction implementation-defined except</c->
-<c- c>     when both the numerator and denominator are nonnegative, in</c->
-<c- c>     which case it rounds downward.  So if we arrange for all</c->
-<c- c>     numerators and denominators to be nonnegative, everything</c->
-<c- c>     works.  Starting with equation 2 and applying identity 4, then</c->
-<c- c>     3, we obtain the final formula:</c->
-
-<c- c>               d = offset * (xspan % max)</c->
-<c- c>         xoffset = offset * (xspan / max) + d/max</c->
-<c- c>                   + (d%max + max/2) / max</c->
-<c- c>            orig = xoffset + xbottom</c->
-
-<c- cp>   #endif</c->
+   <c- d>/* Precomputes the log table (this requires floating point). */</c->
 
    <c- p>{</c->
-     <c- n>uint16</c-> <c- n>offset</c-><c- p>;</c->
-     <c- n>uint32</c-> <c- n>xspan</c-><c- p>,</c-> <c- n>q</c-><c- p>,</c-> <c- n>r</c-><c- p>,</c-> <c- n>d</c-><c- p>,</c-> <c- n>xoffset</c-><c- p>;</c->
-     <c- n>int32</c-> <c- n>xbottom</c-><c- p>;</c->
+     <c- b>int</c-> <c- n>j</c-><c- p>;</c->
+     <c- b>double</c-> <c- n>f</c-><c- p>;</c->
 
-     <c- k>if</c-> <c- p>(</c-><c- n>stored</c-> <c- o>></c-> <c- n>max</c-><c- p>)</c-> <c- n>fail</c-><c- p>(</c-><c- s>"stored_to_orig: stored > max"</c-><c- p>);</c->
+     <c- d>/* L[j] will hold an integer representation of         */</c->
+     <c- d>/* -log(j / 510.0).  Knowing that L[1] (the largest)   */</c->
+     <c- d>/* is 0x3ffffff will help avoid overflow later, so we  */</c->
+     <c- d>/* set the scale factor accordingly.                   */</c->
 
-     <c- k>if</c-> <c- p>(</c-><c- n>x1</c-> <c- o>>=</c-> <c- n>x0</c-><c- p>)</c-> <c- p>{</c->
-       <c- n>xbottom</c-> <c- o>=</c-> <c- n>x0</c-><c- p>;</c->
-       <c- n>xspan</c-> <c- o>=</c-> <c- p>(</c-><c- n>uint32</c-><c- p>)</c-><c- n>x1</c-> <c- o>-</c-> <c- p>(</c-><c- n>uint32</c-><c- p>)</c-><c- n>x0</c-><c- p>;</c->
-       <c- n>offset</c-> <c- o>=</c-> <c- n>stored</c-><c- p>;</c->
-     <c- p>}</c->
-     <c- k>else</c-> <c- p>{</c->
-       <c- n>xbottom</c-> <c- o>=</c-> <c- n>x1</c-><c- p>;</c->
-       <c- n>xspan</c-> <c- o>=</c-> <c- p>(</c-><c- n>uint32</c-><c- p>)</c-><c- n>x0</c-> <c- o>-</c-> <c- p>(</c-><c- n>uint32</c-><c- p>)</c-><c- n>x1</c-><c- p>;</c->
-       <c- n>offset</c-> <c- o>=</c-> <c- n>max</c-> <c- o>-</c-> <c- n>stored</c-><c- p>;</c->
-     <c- p>}</c->
+     <c- n>f</c-> <c- o>=</c-> <c- mh>0x3fffffff</c-> <c- o>/</c-> <c- n>log</c-><c- p>(</c-><c- mi>1</c-> <c- o>/</c-> <c- mf>510.0</c-><c- p>);</c->
 
-     <c- d>/* We knew xspan would fit in a uint32, but we needed to   */</c->
-     <c- d>/* cast x0 and x1 before subtracting because otherwise the */</c->
-     <c- d>/* subtraction could overflow, and ANSI doesn't say what   */</c->
-     <c- d>/* the result will be in that case.                        */</c->
-
-     <c- d>/* Let's optimize two common simple cases */</c->
-     <c- d>/* before handling the general case:      */</c->
-
-     <c- k>if</c-> <c- p>(</c-><c- n>xspan</c-> <c- o>==</c-> <c- n>max</c-><c- p>)</c-> <c- p>{</c->
-       <c- n>xoffset</c-> <c- o>=</c-> <c- n>offset</c-><c- p>;</c->
-     <c- p>}</c->
-     <c- k>else</c-> <c- k>if</c-> <c- p>(</c-><c- n>xspan</c-> <c- o>&lt;=</c-> <c- mh>0xffff</c-><c- p>)</c-> <c- p>{</c->
-       <c- d>/* Equation 2 won't overflow and does only one division. */</c->
-       <c- n>xoffset</c-> <c- o>=</c-> <c- p>(</c-><c- n>offset</c-> <c- o>*</c-> <c- n>xspan</c-> <c- o>+</c-> <c- p>(</c-><c- n>max</c-><c- o>>></c-><c- mi>1</c-><c- p>))</c-> <c- o>/</c-> <c- n>max</c-><c- p>;</c->
-     <c- p>}</c->
-     <c- k>else</c-> <c- p>{</c->
-       <c- cp>#if HAVE_UINT48</c->
-         <c- d>/* We can use equation 2 and do one uint48     */</c->
-         <c- d>/* division instead of three uint32 divisions. */</c->
-         <c- n>xoffset</c-> <c- o>=</c-> <c- p>(</c-><c- n>offset</c-> <c- o>*</c-> <c- p>(</c-><c- n>uint48</c-><c- p>)</c-><c- n>xspan</c-> <c- o>+</c-> <c- p>(</c-><c- n>max</c-><c- o>>></c-><c- mi>1</c-><c- p>))</c-> <c- o>/</c-> <c- n>max</c-><c- p>;</c->
-       <c- cp>#else</c->
-         <c- n>q</c-> <c- o>=</c-> <c- n>xspan</c-> <c- o>/</c-> <c- n>max</c-><c- p>;</c->
-         <c- n>r</c-> <c- o>=</c-> <c- n>xspan</c-> <c- o>%</c-> <c- n>max</c-><c- p>;</c->
-         <c- d>/* Hopefully those were compiled into one instruction. */</c->
-         <c- n>d</c-> <c- o>=</c-> <c- n>offset</c-> <c- o>*</c-> <c- n>r</c-><c- p>;</c->
-         <c- n>xoffset</c-> <c- o>=</c-> <c- n>offset</c-> <c- o>*</c-> <c- n>q</c-> <c- o>+</c-> <c- n>d</c-><c- o>/</c-><c- n>max</c-> <c- o>+</c-> <c- p>(</c-><c- n>d</c-><c- o>%</c-><c- n>max</c-> <c- o>+</c-> <c- p>(</c-><c- n>max</c-><c- o>>></c-><c- mi>1</c-><c- p>))</c-> <c- o>/</c-> <c- n>max</c-><c- p>;</c->
-       <c- cp>#endif</c->
-     <c- p>}</c->
-
-     <c- d>/* xoffset might not fit in an int32, but we know the sum */</c->
-     <c- d>/* xbottom + xoffset will, so we can do the addition on   */</c->
-     <c- d>/* unsigned integers and then cast.                       */</c->
-
-     <c- k>return</c-> <c- p>(</c-><c- n>int32</c-><c- p>)((</c-><c- n>uint32</c-><c- p>)</c-><c- n>xbottom</c-> <c- o>+</c-> <c- n>xoffset</c-><c- p>);</c->
+     <c- k>for</c-> <c- p>(</c-><c- n>j</c-> <c- o>=</c-> <c- mi>1</c-><c- p>;</c->  <c- n>j</c-> <c- o>&lt;=</c-> <c- mi>510</c-><c- p>;</c->  <c- o>++</c-><c- n>j</c-><c- p>)</c->
+       <c- n>L</c-><c- p>[</c-><c- n>j</c-><c- p>]</c-> <c- o>=</c-> <c- n>log</c-><c- p>(</c-><c- n>j</c-> <c- o>/</c-> <c- mf>510.0</c-><c- p>)</c-> <c- o>*</c-> <c- n>f</c-> <c- o>+</c-> <c- mf>0.5</c-><c- p>;</c->
    <c- p>}</c->
 
 
-   <c- d>/***********************************************/</c->
-   <c- d>/* Map from original samples to stored samples */</c->
+   <c- b>void</c->
+   <c- nf>gamma32</c-><c- p>(</c-><c- n>uint32</c-> <c- n>L</c-><c- p>[</c-><c- mi>511</c-><c- p>],</c-> <c- n>uint8</c-> <c- n>G</c-><c- p>[</c-><c- mi>256</c-><c- p>],</c-> <c- n>uint16</c-> <c- n>g</c-><c- p>)</c->
 
-   <c- n>uint16</c->
-   <c- n>orig_to_stored</c-><c- p>(</c-><c- n>int32</c-> <c- n>orig</c-><c- p>,</c-> <c- n>uint16</c-> <c- n>max</c-><c- p>,</c-> <c- n>int32</c-> <c- n>x0</c-><c- p>,</c-> <c- n>int32</c-> <c- n>x1</c-><c- p>)</c->
-
-   <c- cp>#if 0</c->
-
-<c- c>     Returns the stored sample corresponding to the given original</c->
-<c- c>     sample.  The parameters max, x0, and x1 must have been</c->
-<c- c>     approved by samp_params_ok().</c->
-
-<c- c>     The pCAL spec says:</c->
-
-<c- c>     stored = ((orig - x0) * max + (x1-x0)/2) / (x1-x0)</c->
-<c- c>              clipped to the range 0..max</c->
-
-<c- c>     Notice that all three terms are nonnegative, or else all</c->
-<c- c>     are nonpositive.  Just as in stored_to_orig(), we can avoid</c->
-<c- c>     overflow and rounding problems by transforming the equation to</c->
-<c- c>     use unsigned quantities:</c->
-
-<c- c>     stored = (xoffset * max + xspan/2) / xspan</c->
-
-<c- cp>   #endif</c->
+   <c- d>/* Makes a 256-entry gamma correction lookup table G[] with */</c->
+   <c- d>/* exponent g/pow(2,14), where g must not exceed 0xffff.    */</c->
 
    <c- p>{</c->
-     <c- n>uint32</c-> <c- n>xoffset</c-><c- p>,</c-> <c- n>xspan</c-><c- p>;</c->
+     <c- b>int</c-> <c- n>i</c-><c- p>,</c-> <c- n>j</c-><c- p>;</c->
+     <c- n>uint32</c-> <c- n>x</c-><c- p>,</c-> <c- n>y</c-><c- p>;</c->
 
-     <c- k>if</c-> <c- p>(</c-><c- n>x0</c-> <c- o>&lt;</c-> <c- n>x1</c-><c- p>)</c-> <c- p>{</c->
-       <c- k>if</c-> <c- p>(</c-><c- n>orig</c-> <c- o>&lt;</c-> <c- n>x0</c-><c- p>)</c-> <c- k>return</c-> <c- mi>0</c-><c- p>;</c->
-       <c- k>if</c-> <c- p>(</c-><c- n>orig</c-> <c- o>></c-> <c- n>x1</c-><c- p>)</c-> <c- k>return</c-> <c- n>max</c-><c- p>;</c->
-       <c- n>xspan</c-> <c- o>=</c-> <c- p>(</c-><c- n>uint32</c-><c- p>)</c-><c- n>x1</c-> <c- o>-</c-> <c- p>(</c-><c- n>uint32</c-><c- p>)</c-><c- n>x0</c-><c- p>;</c->
-       <c- n>xoffset</c-> <c- o>=</c-> <c- p>(</c-><c- n>uint32</c-><c- p>)</c-><c- n>orig</c-> <c- o>-</c-> <c- p>(</c-><c- n>uint32</c-><c- p>)</c-><c- n>x0</c-><c- p>;</c->
+     <c- n>j</c-> <c- o>=</c-> <c- mi>1</c-><c- p>;</c->
+     <c- n>G</c-><c- p>[</c-><c- mi>0</c-><c- p>]</c-> <c- o>=</c-> <c- mi>0</c-><c- p>;</c->
+
+     <c- k>for</c-> <c- p>(</c-><c- n>i</c-> <c- o>=</c-> <c- mi>1</c-><c- p>;</c->  <c- n>i</c-> <c- o>&lt;=</c-> <c- mi>255</c-><c- p>;</c->  <c- o>++</c-><c- n>i</c-><c- p>)</c-> <c- p>{</c->
+       <c- n>x</c-> <c- o>=</c-> <c- n>L</c-><c- p>[</c-><c- n>i</c-> <c- o>&lt;&lt;</c-> <c- mi>1</c-><c- p>];</c->
+       <c- n>y</c-> <c- o>=</c-> <c- p>(</c-><c- n>x</c-> <c- o>>></c-> <c- mi>14</c-><c- p>)</c-> <c- o>*</c-> <c- n>g</c-><c- p>;</c->
+       <c- k>while</c-> <c- p>(</c-><c- n>L</c-><c- p>[</c-><c- n>j</c-><c- p>]</c-> <c- o>></c-> <c- n>y</c-><c- p>)</c-> <c- o>++</c-><c- n>j</c-><c- p>;</c->
+       <c- n>G</c-><c- p>[</c-><c- n>i</c-><c- p>]</c-> <c- o>=</c-> <c- n>j</c-> <c- o>>></c-> <c- mi>1</c-><c- p>;</c->
      <c- p>}</c->
-     <c- k>else</c-> <c- p>{</c->
-       <c- k>if</c-> <c- p>(</c-><c- n>orig</c-> <c- o>&lt;</c-> <c- n>x1</c-><c- p>)</c-> <c- k>return</c-> <c- mi>0</c-><c- p>;</c->
-       <c- k>if</c-> <c- p>(</c-><c- n>orig</c-> <c- o>></c-> <c- n>x0</c-><c- p>)</c-> <c- k>return</c-> <c- n>max</c-><c- p>;</c->
-       <c- n>xspan</c-> <c- o>=</c-> <c- p>(</c-><c- n>uint32</c-><c- p>)</c-><c- n>x0</c-> <c- o>-</c-> <c- p>(</c-><c- n>uint32</c-><c- p>)</c-><c- n>x1</c-><c- p>;</c->
-       <c- n>xoffset</c-> <c- o>=</c-> <c- p>(</c-><c- n>uint32</c-><c- p>)</c-><c- n>x0</c-> <c- o>-</c-> <c- p>(</c-><c- n>uint32</c-><c- p>)</c-><c- n>orig</c-><c- p>;</c->
-     <c- p>}</c->
-
-     <c- d>/* For 16-bit xspan the calculation is straightforward: */</c->
-
-     <c- k>if</c-> <c- p>(</c-><c- n>xspan</c-> <c- o>&lt;=</c-> <c- mh>0xffff</c-><c- p>)</c->
-       <c- k>return</c-> <c- p>(</c-><c- n>xoffset</c-> <c- o>*</c-> <c- n>max</c-> <c- o>+</c-> <c- p>(</c-><c- n>xspan</c-><c- o>>></c-><c- mi>1</c-><c- p>))</c-> <c- o>/</c-> <c- n>xspan</c-><c- p>;</c->
-
-     <c- d>/* Otherwise, the numerator is more than 32 bits and the   */</c->
-     <c- d>/* denominator is more than 16 bits.  The tricks we played */</c->
-     <c- d>/* in stored_to_orig() depended on the denominator being   */</c->
-     <c- d>/* 16-bit, so they won't help us here.                     */</c->
-
-     <c- cp>#if HAVE_UINT48</c->
-       <c- k>return</c-> <c- p>((</c-><c- n>uint48</c-><c- p>)</c-><c- n>xoffset</c-> <c- o>*</c-> <c- n>max</c-> <c- o>+</c-> <c- p>(</c-><c- n>xspan</c-><c- o>>></c-><c- mi>1</c-><c- p>))</c-> <c- o>/</c-> <c- n>xspan</c-><c- p>;</c->
-     <c- cp>#else</c->
-
-       <c- d>/* Doing the exact integer calculation with 32-bit         */</c->
-       <c- d>/* arithmetic would be very difficult.  But xspan > 0xffff */</c->
-       <c- d>/* implies xspan > max, in which case the pCAL spec says   */</c->
-       <c- d>/* "there can be no lossless reversible mapping, but the   */</c->
-       <c- d>/* functions provide the best integer approximations to    */</c->
-       <c- d>/* floating-point affine transformations."  So why insist  */</c->
-       <c- d>/* on using the integer calculation?  Let's just use       */</c->
-       <c- d>/* floating-point.                                         */</c->
-
-       <c- k>return</c-> <c- p>((</c-><c- b>double</c-><c- p>)</c-><c- n>xoffset</c-> <c- o>*</c-> <c- n>max</c-> <c- o>+</c-> <c- p>(</c-><c- n>xspan</c-><c- o>>></c-><c- mi>1</c-><c- p>))</c-> <c- o>/</c-> <c- n>xspan</c-><c- p>;</c->
-
-     <c- cp>#endif</c->
    <c- p>}</c->
 
 
-   <c- d>/*********************************************/</c->
-   <c- d>/* Check x0, x1, eqtype, n, and p[0]..p[n-1] */</c->
+   <c- d>/**********************************************/</c->
+   <c- d>/* Floating-point arithmetic (for comparison) */</c->
 
-   <c- b>int</c->
-   <c- n>phys_params_ok</c-><c- p>(</c-><c- n>int32</c-> <c- n>x0</c-><c- p>,</c-> <c- n>int32</c-> <c- n>x1</c-><c- p>,</c-> <c- b>int</c-> <c- n>eqtype</c-><c- p>,</c-> <c- b>int</c-> <c- n>n</c-><c- p>,</c-> <c- b>double</c-> <c- o>*</c-><c- n>p</c-><c- p>)</c->
+   <c- b>void</c->
+   <c- nf>gamma_fp</c-><c- p>(</c-><c- n>uint8</c-> <c- n>G</c-><c- p>[</c-><c- mi>256</c-><c- p>],</c-> <c- b>double</c-> <c- n>g</c-><c- p>)</c->
 
-   <c- d>/* Returns 1 if x0, x1, eqtype, n, and p[0]..p[n-1] */</c->
-   <c- d>/* have allowed values, 0 otherwise.                */</c->
-
-   <c- p>{</c->
-     <c- k>if</c-> <c- p>(</c-><c- o>!</c-><c- n>samp_params_ok</c-><c- p>(</c-><c- mi>1</c-><c- p>,</c-><c- n>x0</c-><c- p>,</c-><c- n>x1</c-><c- p>))</c-> <c- k>return</c-> <c- mi>0</c-><c- p>;</c->
-
-     <c- k>switch</c-> <c- p>(</c-><c- n>eqtype</c-><c- p>)</c-> <c- p>{</c->
-       <c- k>case</c-> <c- mi>0</c-><c- p>:</c-> <c- k>return</c-> <c- n>n</c-> <c- o>==</c-> <c- mi>2</c-><c- p>;</c->
-       <c- k>case</c-> <c- mi>1</c-><c- p>:</c-> <c- k>return</c-> <c- n>n</c-> <c- o>==</c-> <c- mi>3</c-><c- p>;</c->
-       <c- k>case</c-> <c- mi>2</c-><c- p>:</c-> <c- k>break</c-><c- p>;</c->
-       <c- k>case</c-> <c- mi>3</c-><c- p>:</c-> <c- k>return</c-> <c- n>n</c-> <c- o>==</c-> <c- mi>4</c-><c- p>;</c->
-     <c- p>}</c->
-
-     <c- d>/* eqtype is 2, check for pow() domain error: */</c->
-
-     <c- k>if</c-> <c- p>(</c-><c- n>p</c-><c- p>[</c-><c- mi>2</c-><c- p>]</c-> <c- o>></c-> <c- mi>0</c-><c- p>)</c-> <c- k>return</c-> <c- mi>1</c-><c- p>;</c->
-     <c- k>if</c-> <c- p>(</c-><c- n>p</c-><c- p>[</c-><c- mi>2</c-><c- p>]</c-> <c- o>&lt;</c-> <c- mi>0</c-><c- p>)</c-> <c- k>return</c-> <c- mi>0</c-><c- p>;</c->
-     <c- k>return</c-> <c- p>(</c-><c- n>x0</c-> <c- o>&lt;=</c-> <c- n>x1</c-><c- p>)</c-> <c- o>?</c-> <c- p>(</c-><c- n>x0</c-> <c- o>></c-> <c- mi>0</c-> <c- o>&amp;&amp;</c-> <c- n>x1</c-> <c- o>></c-> <c- mi>0</c-><c- p>)</c-> <c- o>:</c-> <c- p>(</c-><c- n>x0</c-> <c- o>&lt;</c-> <c- mi>0</c-> <c- o>&amp;&amp;</c-> <c- n>x1</c-> <c- o>&lt;</c-> <c- mi>0</c-><c- p>);</c->
-   <c- p>}</c->
-
-
-   <c- d>/************************************************/</c->
-   <c- d>/* Map from original samples to physical values */</c->
-
-   <c- b>double</c->
-   <c- n>orig_to_phys</c-><c- p>(</c-><c- n>int32</c-> <c- n>orig</c-><c- p>,</c-> <c- n>int32</c-> <c- n>x0</c-><c- p>,</c-> <c- n>int32</c-> <c- n>x1</c-><c- p>,</c->
-                <c- b>int</c-> <c- n>eqtype</c-><c- p>,</c-> <c- b>double</c-> <c- o>*</c-><c- n>p</c-><c- p>)</c->
-
-   <c- d>/* Returns the physical value corresponding to the given    */</c->
-   <c- d>/* original sample.  The parameters x0, x1, eqtype, and p[] */</c->
-   <c- d>/* must have been approved by phys_params_ok().  The array  */</c->
-   <c- d>/* p[] must hold enough parameters for the equation type.   */</c->
+   <c- d>/* Makes a 256-entry gamma correction */</c->
+   <c- d>/* lookup table G[i] with exponent g. */</c->
 
    <c- p>{</c->
-     <c- b>double</c-> <c- n>xdiff</c-><c- p>,</c-> <c- n>f</c-><c- p>;</c->
+     <c- b>int</c-> <c- n>i</c-><c- p>;</c->
 
-     <c- n>xdiff</c-> <c- o>=</c-> <c- p>(</c-><c- b>double</c-><c- p>)</c-><c- n>x1</c-> <c- o>-</c-> <c- n>x0</c-><c- p>;</c->
+     <c- n>G</c-><c- p>[</c-><c- mi>0</c-><c- p>]</c-> <c- o>=</c-> <c- mi>0</c-><c- p>;</c->
 
-     <c- k>switch</c-> <c- p>(</c-><c- n>eqtype</c-><c- p>)</c-> <c- p>{</c->
-       <c- k>case</c-> <c- mi>0</c-><c- p>:</c->  <c- n>f</c-> <c- o>=</c-> <c- n>orig</c-> <c- o>/</c-> <c- n>xdiff</c-><c- p>;</c->
-                <c- k>break</c-><c- p>;</c->
-       <c- k>case</c-> <c- mi>1</c-><c- p>:</c->  <c- n>f</c-> <c- o>=</c-> <c- n>exp</c-><c- p>(</c-><c- n>p</c-><c- p>[</c-><c- mi>2</c-><c- p>]</c-> <c- o>*</c-> <c- n>orig</c-> <c- o>/</c-> <c- n>xdiff</c-><c- p>);</c->
-                <c- k>break</c-><c- p>;</c->
-       <c- k>case</c-> <c- mi>2</c-><c- p>:</c->  <c- n>f</c-> <c- o>=</c-> <c- n>pow</c-><c- p>(</c-><c- n>p</c-><c- p>[</c-><c- mi>2</c-><c- p>],</c-> <c- n>orig</c-> <c- o>/</c-> <c- n>xdiff</c-><c- p>);</c->
-                <c- k>break</c-><c- p>;</c->
-       <c- k>case</c-> <c- mi>3</c-><c- p>:</c->  <c- n>f</c-> <c- o>=</c-> <c- n>sinh</c-><c- p>(</c-><c- n>p</c-><c- p>[</c-><c- mi>2</c-><c- p>]</c-> <c- o>*</c-> <c- p>(</c-><c- n>orig</c-> <c- o>-</c-> <c- n>p</c-><c- p>[</c-><c- mi>3</c-><c- p>])</c-> <c- o>/</c-> <c- n>xdiff</c-><c- p>);</c->
-                <c- k>break</c-><c- p>;</c->
-       <c- k>default</c-><c- o>:</c-> <c- n>fail</c-><c- p>(</c-><c- s>"orig_to_phys: unknown equation type"</c-><c- p>);</c->
-     <c- p>}</c->
-
-     <c- k>return</c-> <c- n>p</c-><c- p>[</c-><c- mi>0</c-><c- p>]</c-> <c- o>+</c-> <c- n>p</c-><c- p>[</c-><c- mi>1</c-><c- p>]</c-> <c- o>*</c-> <c- n>f</c-><c- p>;</c->
+     <c- k>for</c-> <c- p>(</c-><c- n>i</c-> <c- o>=</c-> <c- mi>1</c-><c- p>;</c->  <c- n>i</c-> <c- o>&lt;=</c-> <c- mi>255</c-><c- p>;</c->  <c- o>++</c-><c- n>i</c-><c- p>)</c->
+       <c- n>G</c-><c- p>[</c-><c- n>i</c-><c- p>]</c-> <c- o>=</c-> <c- n>pow</c-><c- p>(</c-><c- n>i</c-><c- o>/</c-><c- mf>255.0</c-><c- p>,</c-> <c- n>g</c-><c- p>)</c-> <c- o>*</c-> <c- mi>255</c-> <c- o>+</c-> <c- mf>0.5</c-><c- p>;</c->
    <c- p>}</c-></pre>
-   <h2 class="heading settled" data-level="10" id="Rationale"><span class="secno">10. </span><span class="content"> Rationale </span><a class="self-link" href="#Rationale"></a></h2>
-   <h3 class="heading settled" data-level="10.1" id="R.pCAL"><span class="secno">10.1. </span><span class="content"> pCAL Rationale </span><a class="self-link" href="#R.pCAL"></a></h3>
+   <h2 class="heading settled" data-level="10" id="Rationale"><span class="secno">10. </span><span class="content">
+    Rationale
+</span><a class="self-link" href="#Rationale"></a></h2>
+   <h3 class="heading settled" data-level="10.1" id="R.pCAL"><span class="secno">10.1. </span><span class="content">
+    pCAL Rationale
+</span><a class="self-link" href="#R.pCAL"></a></h3>
    <p>This section gives the reasoning behind
     some of the design decisions
     in the pCAL chunk.
     It does not form a part of the specification.</p>
-   <h4 class="heading settled" data-level="10.1.1" id="pCAL.red"><span class="secno">10.1.1. </span><span class="content"> Redundant equation types </span><a class="self-link" href="#pCAL.red"></a></h4>
+   <h4 class="heading settled" data-level="10.1.1" id="pCAL.red"><span class="secno">10.1.1. </span><span class="content">
+    Redundant equation types
+</span><a class="self-link" href="#pCAL.red"></a></h4>
    <p>Equation types 1 and 2 seem to be equivalent.
     Why have both?</p>
    <p>We don’t want to force people
-    to do the exponentiation using <code>ln()</code> and <code>exp()</code>, since <code>pow()</code> may provide better accuracy
+    to do the exponentiation using
+    <code>ln()</code> and <code>exp()</code>, since
+    <code>pow()</code> may provide better accuracy
     in some floating-point math libraries.
     We also don’t want to force people
     using base-10 logs
     to store a sufficiently accurate value
-    of <code>ln(10)</code> in the <span class="chunk">pCAL</span> chunk.</p>
+    of <code>ln(10)</code> in the
+    <span class="chunk">pCAL</span> chunk.</p>
    <p>When the base is <code>e</code>,
     we don’t want to force people
     to encode a sufficiently accurate value
-    of <code>e</code> in the <span class="chunk">pCAL</span> chunk,
-    or to use <code>pow()</code> when <code>exp()</code> is sufficient.</p>
-   <h4 class="heading settled" data-level="10.1.2" id="pCAL.x0x1"><span class="secno">10.1.2. </span><span class="content"> What are <code>x0</code> and <code>x1</code> for? </span><a class="self-link" href="#pCAL.x0x1"></a></h4>
+    of <code>e</code> in the
+    <span class="chunk">pCAL</span> chunk,
+    or to use <code>pow()</code>
+    when <code>exp()</code> is sufficient.</p>
+   <h4 class="heading settled" data-level="10.1.2" id="pCAL.x0x1"><span class="secno">10.1.2. </span><span class="content">
+What are <code>x0</code> and <code>x1</code> for?
+</span><a class="self-link" href="#pCAL.x0x1"></a></h4>
    <p>First, <code>x0</code> and <code>x1</code> provide a way
     to recover the original data,
     losslessly,
     when the original range is not a power of two.
     Sometimes the digitized values
     do not have a range that fills the full depth of a PNG.</p>
-   <div class="example" id="example-38170b86"><a class="self-link" href="#example-38170b86"></a> For example, if the original samples
+   <div class="example" id="example-38170b86"><a class="self-link" href="#example-38170b86"></a>
+    For example, if the original samples
     range from 0 (corresponding to black)
     to 800 (corresponding to white),
     PNG requires that these samples be scaled
     to the range 0 to 65535.
-    By recording <code>x0=0</code> and <code>x1=800 </code> we can recover the original samples,
-    and we indicate the precision of the data. </div>
+    By recording <code>x0=0</code> and <code>x1=800 </code>
+    we can recover the original samples,
+    and we indicate the precision of the data.
+    </div>
    <p>Even if the original data had a range
     identical to a valid PNG image sample,
     like 0 (black) to 65535 (white),
@@ -2187,15 +2221,19 @@ Therefore, transparency information can be lost.</p>
     by stretching the contrast
     in a limited intensity range
     containing the important details.</p>
-   <div class="example" id="example-cdc4fa32"><a class="self-link" href="#example-cdc4fa32"></a> For example,
+   <div class="example" id="example-cdc4fa32"><a class="self-link" href="#example-cdc4fa32"></a>
+    For example,
     we might want to scale the samples
     so that 46000 becomes 0 (black) and
     47000 becomes 65535 (white).
     As in the previous case,
     by recording <code>x0=46000</code> and <code>x1.4.200</code>,
     we can recover the original data samples
-    that fell between 46000 and 47000. </div>
-   <h4 class="heading settled" data-level="10.1.3" id="pCAL.division"><span class="secno">10.1.3. </span><span class="content"> Integer division </span><a class="self-link" href="#pCAL.division"></a></h4>
+    that fell between 46000 and 47000.
+    </div>
+   <h4 class="heading settled" data-level="10.1.3" id="pCAL.division"><span class="secno">10.1.3. </span><span class="content">
+    Integer division
+</span><a class="self-link" href="#pCAL.division"></a></h4>
    <p>Why define integer divison
     to round toward negative infinity?
     This is different from many C implementations
@@ -2205,19 +2243,24 @@ Therefore, transparency information can be lost.</p>
     If we were to specify rounding toward zero,
     we’d have to account for a discontinuity
     at zero.
-    A division by positive <code>d</code> would map the <code>2d-1</code> values from <code>-(d-1)</code> through <code>d-1</code> to zero,
+    A division by positive <code>d</code>
+    would map the <code>2d-1</code> values from
+    <code>-(d-1)</code> through <code>d-1</code> to zero,
     but would map only <code>d</code> values
     to any other value;
-    for example, <code>3d</code> through <code>4d-1</code> would be mapped to 3.
+    for example, <code>3d</code> through <code>4d-1</code>
+    would be mapped to 3.
     Achieving lossless mappings
     in spite of this anomaly
     would be difficult.</p>
-   <h2 class="heading settled" data-level="11" id="History"><span class="secno">11. </span><span class="content"> Appendix: Revision History </span><a class="self-link" href="#History"></a></h2>
+   <h2 class="heading settled" data-level="11" id="History"><span class="secno">11. </span><span class="content">
+    Appendix: Revision History
+</span><a class="self-link" href="#History"></a></h2>
    <ul>
-    <li>15 September 2025 (version 1.6.1)</li>
+    <li>15 September 2025 (version 1.6.1)
     <ul>
-        <li>Removed "Collection" keyword, which is now in the main PNG specification</li>
-        <li>Added <code>iDOT</code> to "Chunks Not Described Here" (<a href="https://github.com/w3c/png/issues/530">Issue 530</a>)</li>
+     <li>Removed "Collection" keyword, which is now in the main PNG specification
+     <li>Added <code>iDOT</code> to "Chunks Not Described Here" (<a href="https://github.com/w3c/png/issues/530">Issue 530</a>)
     </ul>
     <li>24 Jan Dec 2022 (version 1.6.0)
     <ul>
@@ -2225,55 +2268,99 @@ Therefore, transparency information can be lost.</p>
      <li>Converted source document to Bikeshed
     </ul>
     <li>
-     15 July 2017 (version 1.5.0) 
+     15 July 2017 (version 1.5.0)
+    
      <ul>
-      <li> Added the <code>eXIf</code> chunk 
-      <li> Replaced ftp://www.simplesystems.org/pub/png/documents/ URL
-    with http://libpng.download/documents/ 
+      <li>
+    Added the <code>eXIf</code> chunk
+    
+      <li>
+    Replaced ftp://www.simplesystems.org/pub/png/documents/ URL
+    with http://libpng.download/documents/
+    
      </ul>
     <li>
-     12 June 2017 (version 1.4.1): 
+     12 June 2017 (version 1.4.1):
+
+    
      <ul>
-      <li>Changed "name=" markup to "id=" in order to pass w3c validation 
-      <li>Removed incorrect nroff-style page numbers from Table of Contents 
-      <li>Added internal links in the Table of Contents 
-      <li>Added reference to RFC-2119 for interpretation of "should", etc. 
-      <li>Removed trailing blanks 
-      <li>Added "Collection" keyword which was approved in 2004. 
-      <li>Added Cosmin Truta (who suggested the Collection keyword) to Credits 
+      <li>Changed "name=" markup to "id=" in order to pass w3c validation
+    
+      <li>Removed incorrect nroff-style page numbers from Table of Contents
+    
+      <li>Added internal links in the Table of Contents
+    
+      <li>Added reference to RFC-2119 for interpretation of "should", etc.
+    
+      <li>Removed trailing blanks
+    
+      <li>Added "Collection" keyword which was approved in 2004.
+    
+      <li>Added Cosmin Truta (who suggested the Collection keyword) to Credits
+
+    
      </ul>
     <li>
-     1 May 2008 (version 1.4.0): 
+     1 May 2008 (version 1.4.0):
+
+    
      <ul>
-      <li>Added the <code>dSIG</code> chunk. 
+      <li>Added the <code>dSIG</code> chunk.
+
+    
      </ul>
     <li>
-     31 August 2006 (version 1.3.0): 
+     31 August 2006 (version 1.3.0):
+
+    
      <ul>
-      <li>Added the <code>sTER</code> chunk. 
+      <li>Added the <code>sTER</code> chunk.
+
+    
      </ul>
     <li>
-     14 July 1999 (version 1.2.0): 
+     14 July 1999 (version 1.2.0):
+
+    
      <ul>
-      <li>Deleted the <code>iTXt</code> chunk, which has been moved to the core spec. 
+      <li>Deleted the <code>iTXt</code> chunk, which has been moved to the core spec.
+
+    
      </ul>
     <li>
-     9 February 1999 (version 1.1.1): 
+     9 February 1999 (version 1.1.1):
+
+    
      <ul>
-      <li>Added the <code>iTXt</code> chunk 
-      <li>Limited the character set for future registered keywords 
+      <li>Added the <code>iTXt</code> chunk
+    
+      <li>Limited the character set for future registered keywords
+
+    
      </ul>
     <li>
-     30 December 1998 (version 1.1.0): 
+     30 December 1998 (version 1.1.0):
+
+    
      <ul>
-      <li>Added <code>pCAL</code> chunk and related sample code 
-      <li>Deprecated the <code>gIFT</code> chunk 
-      <li>Added sample gamma-correction code that uses integer arithmetic 
+      <li>Added <code>pCAL</code> chunk and related sample code
+    
+      <li>Deprecated the <code>gIFT</code> chunk
+    
+      <li>Added sample gamma-correction code that uses integer arithmetic
+
+    
      </ul>
-    <li>11 March 1996 (version 0.96): First public release 
+    <li>11 March 1996 (version 0.96): First public release
+
+    
    </ul>
-   <h2 class="heading settled" data-level="12" id="Credits"><span class="secno">12. </span><span class="content"> Credits </span><a class="self-link" href="#Credits"></a></h2>
-   <h3 class="heading settled" data-level="12.1" id="Credits.editors"><span class="secno">12.1. </span><span class="content"> Editors </span><a class="self-link" href="#Credits.editors"></a></h3>
+   <h2 class="heading settled" data-level="12" id="Credits"><span class="secno">12. </span><span class="content">
+    Credits
+</span><a class="self-link" href="#Credits"></a></h2>
+   <h3 class="heading settled" data-level="12.1" id="Credits.editors"><span class="secno">12.1. </span><span class="content">
+    Editors
+</span><a class="self-link" href="#Credits.editors"></a></h3>
    <ul>
     <li data-md>
      <p>Chris Lilley, chris @ w3.org</p>
@@ -2282,30 +2369,45 @@ Therefore, transparency information can be lost.</p>
     <li data-md>
      <p>Tom Lane, tgl @ sss.pgh.pa.us (edited the first release of this document)</p>
    </ul>
-   <h3 class="heading settled" data-level="12.2" id="Credits.contrib"><span class="secno">12.2. </span><span class="content"> Contributors </span><a class="self-link" href="#Credits.contrib"></a></h3>
+   <h3 class="heading settled" data-level="12.2" id="Credits.contrib"><span class="secno">12.2. </span><span class="content">
+    Contributors
+</span><a class="self-link" href="#Credits.contrib"></a></h3>
    <p>Names of contributors
     not already listed in the PNG specification
     are presented in alphabetical order:</p>
    <ul>
     <li>Adeluc, <a href="http://www.adeluc.com">www.adeluc.com</a>,
-    png @ adeluc.com 
-    <li>Brendan Bolles 
-    <li>Todd French, <code>tfrench @ sandia.gov</code> 
-    <li>Phil Harvey 
-    <li>Nancy M. Randers-Pehrson 
-    <li>Alaric B. Snell, <code>alaric @ alaric-snell.com</code> 
-    <li>Michael Stokes 
-    <li>Jason Summers 
-    <li>Cosmin Truta, <code>cosmin @ cs.toronto.edu</code> 
-    <li>Pavel Zlatovratskii 
+    png @ adeluc.com
+    
+    <li>Brendan Bolles
+    
+    <li>Todd French, <code>tfrench @ sandia.gov</code>
+    
+    <li>Phil Harvey
+    
+    <li>Nancy M. Randers-Pehrson
+    
+    <li>Alaric B. Snell, <code>alaric @ alaric-snell.com</code>
+    
+    <li>Michael Stokes
+    
+    <li>Jason Summers
+    
+    <li>Cosmin Truta, <code>cosmin @ cs.toronto.edu</code>
+    
+    <li>Pavel Zlatovratskii
+    
    </ul>
-   <h3 class="heading settled" data-level="12.3" id="Credits.marks"><span class="secno">12.3. </span><span class="content"> Trademarks </span><a class="self-link" href="#Credits.marks"></a></h3>
+   <h3 class="heading settled" data-level="12.3" id="Credits.marks"><span class="secno">12.3. </span><span class="content">
+    Trademarks
+</span><a class="self-link" href="#Credits.marks"></a></h3>
    <p>GIF is a service mark of CompuServe Incorporated.
-    PostScript is a trademark of Adobe Systems. </p>
+    PostScript is a trademark of Adobe Systems.
+</p>
   </main>
   <div data-fill-with="conformance">
-   <h2 class="no-ref no-num heading settled" id="w3c-conformance"><span class="content">Conformance</span><a class="self-link" href="#w3c-conformance"></a></h2>
-   <h3 class="no-ref no-num heading settled" id="w3c-conventions"><span class="content">Document conventions</span><a class="self-link" href="#w3c-conventions"></a></h3>
+   <h2 class="heading no-num no-ref settled" id="w3c-conformance"><span class="content">Conformance</span><a class="self-link" href="#w3c-conformance"></a></h2>
+   <h3 class="heading no-num no-ref settled" id="w3c-conventions"><span class="content">Document conventions</span><a class="self-link" href="#w3c-conventions"></a></h3>
    <p>Conformance requirements are expressed
     with a combination of descriptive assertions
     and RFC 2119 terminology.
@@ -2313,26 +2415,36 @@ Therefore, transparency information can be lost.</p>
     in the normative parts of this document
     are to be interpreted as described in RFC 2119.
     However, for readability,
-    these words do not appear in all uppercase letters in this specification. </p>
+    these words do not appear in all uppercase letters in this specification.
+
+    </p>
    <p>All of the text of this specification is normative
-    except sections explicitly marked as non-normative, examples, and notes. <a data-link-type="biblio" href="#biblio-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">[RFC2119]</a> </p>
+    except sections explicitly marked as non-normative, examples, and notes. <a data-link-type="biblio" href="#biblio-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">[RFC2119]</a>
+
+    </p>
    <p>Examples in this specification are introduced with the words “for example”
     or are set apart from the normative text
     with <code>class="example"</code>,
-    like this: </p>
+    like this:
+
+    </p>
    <div class="example" id="w3c-example">
-    <a class="self-link" href="#w3c-example"></a> 
-    <p>This is an example of an informative example. </p>
+    <a class="self-link" href="#w3c-example"></a>
+        
+    <p>This is an example of an informative example.
+    </p>
    </div>
    <p>Informative notes begin with the word “Note”
     and are set apart from the normative text
     with <code>class="note"</code>,
-    like this: </p>
+    like this:
+
+    </p>
    <p class="note" role="note">Note, this is an informative note.</p>
   </div>
   <script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script>
-  <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
-  <h3 class="no-num no-ref heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
+  <h2 class="heading no-num no-ref settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
+  <h3 class="heading no-num no-ref settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
   <dl>
    <dt id="biblio-dsig-spec">[dSIG-spec]
    <dd>Thomas Kopp. <a href="http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.spec.pdf"><cite>PNG Digital Signatures: Extension Specification</cite></a>. 17 Nov 2008. URL: <a href="http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.spec.pdf">http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.spec.pdf</a>
@@ -2345,7 +2457,7 @@ Therefore, transparency information can be lost.</p>
    <dt id="biblio-rfc2119">[RFC2119]
    <dd>S. Bradner. <a href="https://datatracker.ietf.org/doc/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. March 1997. Best Current Practice. URL: <a href="https://datatracker.ietf.org/doc/html/rfc2119">https://datatracker.ietf.org/doc/html/rfc2119</a>
   </dl>
-  <h3 class="no-num no-ref heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
+  <h3 class="heading no-num no-ref settled" id="informative"><span class="content">Non-Normative References</span><a class="self-link" href="#informative"></a></h3>
   <dl>
    <dt id="biblio-dsig-example">[dSIG-example]
    <dd>Martin Boßlet; Thomas Kopp. <a href="http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.sample.html"><cite>PNG Digital Signatures: Commented Example</cite></a>. 18 May 2008. URL: <a href="http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.sample.html">http://ftp-osl.osuosl.org/pub/libpng/documents/signatures/PNG_Digital_Signatures.sample.html</a>

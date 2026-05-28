@@ -1458,8 +1458,8 @@ with these exceptions:
         "#fcTL-chunk">fcTL</a> chunks. The full layout of <a class="chunk" href="#fdAT-chunk">fdAT</a> and <a class="chunk" href=
         "#fcTL-chunk">fcTL</a> chunks is <a href="#animation-information">described below</a>.</p>
 
-        <p>The boundaries of the entire animation are specified by the width and height parameters of the <a class="chunk" href=
-        "#11IHDR">IHDR</a> chunk, regardless of whether the default image is part of the animation. The default image should be
+        <p>The boundaries of the entire animation are specified by the width and height fields of the <a class="chunk" href=
+        "#11IHDR">IHDR</a> chunk, regardless of whether the static image is part of the animation. The static image should be
         appropriately padded with <a>fully transparent black</a> pixels if extra space will be needed for later frames.</p>
 
         <p>Each frame is identical for each play, therefore it is safe for applications to cache the frames.</p>
@@ -1605,7 +1605,7 @@ with these exceptions:
       <section id="apng-output-buffer">
         <h3>Output buffer</h3>
 
-        <p>The <dfn>output buffer</dfn> is a pixel array with dimensions specified by the width and height parameters of the PNG <a
+        <p>The <dfn>output buffer</dfn> is a pixel array with dimensions specified by the width and height fields of the PNG <a
         class="chunk" href="#11IHDR">IHDR</a> chunk. Conceptually, each frame is constructed in the output buffer before being
         <a>composited</a> onto the <a>canvas</a>. The contents of the output buffer are available to the decoder. The corners of
         the output buffer are mapped to the corners of the <a>canvas</a>.</p>
@@ -5181,7 +5181,7 @@ with these exceptions:
           unsigned integers</a>. Zero is a valid value.</p>
 
           <p>The frame must be rendered within the region defined by `x_offset`, `y_offset`, `width`, and `height`. This region may
-          not fall outside of the default image; thus `x_offset` plus `width` must not be greater than the <a class="chunk" href=
+          not fall outside of the static image; thus `x_offset` plus `width` must not be greater than the <a class="chunk" href=
           "#11IHDR">IHDR</a> width; similarly `y_offset` plus `height` must not be greater than the <a class="chunk" href=
           "#11IHDR">IHDR</a> height.</p>
 
@@ -5262,7 +5262,7 @@ with these exceptions:
           <p>Note that for the first frame, the two blend modes are functionally equivalent due to the clearing of the output
           buffer at the beginning of each play.</p>
 
-          <p>The <span class="chunk">fcTL</span> chunk corresponding to the default image, if it exists, has these
+          <p>The <span class="chunk">fcTL</span> chunk corresponding to the static image, if it exists, has these
           restrictions:</p>
 
           <ul>
@@ -5275,7 +5275,7 @@ with these exceptions:
 
           <p>As noted earlier, the output buffer must be completely initialized to fully transparent black at the beginning of each
           play. This is to ensure that each play of the animation will be identical. Decoders are free to avoid an explicit clear
-          step as long as the result is guaranteed to be identical. For example, if the default image is included in the animation,
+          step as long as the result is guaranteed to be identical. For example, if the static image is included in the animation,
           and uses a `blend_op` of `APNG_BLEND_OP_SOURCE`, clearing is not necessary because the entire output buffer will be
           overwritten.</p>
 

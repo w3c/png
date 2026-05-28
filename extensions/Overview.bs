@@ -972,7 +972,7 @@ highlight: c
 </h3>
 
 <pre class=include-code>
-path: pcal.c
+path: gamma-lookup.c
 highlight: c
 </pre>
 

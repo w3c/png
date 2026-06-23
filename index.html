@@ -2054,6 +2054,16 @@ with these exceptions:
 
         <tr>
           <td>
+            <a class="chunk" href="#hRWl-chunk">hRWl</a>
+          </td>
+          <td>No</td>
+          <td>
+            Before <a class="chunk" href="#11PLTE">PLTE</a> and <a class="chunk" href="#11IDAT">IDAT</a>.
+          </td>
+        </tr>
+
+        <tr>
+          <td>
             <a class="chunk" href="#11sBIT">sBIT</a>
           </td>
           <td>No</td>
@@ -4315,45 +4325,44 @@ with these exceptions:
             </table>
           </aside>
         </section>
-      </section>
 
-      <section id="hRWl-chunk">
-          <h2><span class="chunk">hRWl</span> HDR Reference White Level</h2>
-          <p>The four-byte chunk type field contains the hexadecimal values</p>
+        <section id="hRWl-chunk">
+            <h2><span class="chunk">hRWl</span> HDR Reference White Level</h2>
+            <p>The four-byte chunk type field contains the hexadecimal values</p>
 
           <pre>
 68 52 57 6C
 </pre>
 
-      <p>If present, the <span class="chunk">hRWl</span> chunk identifies a characteristic of <a>HDR</a> content.It adds static metadata which is helpful when compositing a mix of HDR and SDR content.</p>
+        <p>If present, the <span class="chunk">hRWl</span> chunk identifies a characteristic of <a>HDR</a> content.It adds static metadata which is helpful when compositing a mix of HDR and SDR content.</p>
 
-      <p>It is standard practice,
-        defined in [[ITU-R-BT.2408-9]] section 2.1,
-        to author HDR content
-        such that HDR Reference White has a luminance level of 
-        203 cd/m<sup>2</sup> (also known as nits).
-        This corresponds to a code value of 58% in PQ
-        and 75% in HLG on a 1000 cd/m<sup>2</sup> display.
-        This value is assumed in various workflows
-        such as compositing or HDR to SDR content conversion.
-      </p>
+        <p>It is standard practice,
+          defined in [[ITU-R-BT.2408-9]] section 2.1,
+          to author HDR content
+          such that HDR Reference White has a luminance level of 
+          203 cd/m<sup>2</sup> (also known as nits).
+          This corresponds to a code value of 58% in PQ
+          and 75% in HLG on a 1000 cd/m<sup>2</sup> display.
+          This value is assumed in various workflows
+          such as compositing, or HDR to SDR content conversion.
+        </p>
 
-      <p class="note">This is the same definition,
-        and the same standard value,
-        as is used in [[ISO_22028-5]].
-      </p>
+        <p class="note">This is the same definition,
+          and the same standard value,
+          as is used in [[ISO_22028-5]].
+        </p>
 
-      <p>Previously, it was not possible to indicate
-        that the content was mastered to some other reference level,
-        such as 100 cd/m<sup>2</sup>.
-      </p>
+        <p>Previously, it was not possible to indicate
+          that the content was mastered to some other reference level,
+          such as 100 cd/m<sup>2</sup>.
+        </p>
 
-      <p>The <span class="chunk">hRWl</span> chunk
+        <p>The <span class="chunk">hRWl</span> chunk
       indicates that HDR Reference White uses non-standard luminance level.</p>
 
-      <p>The value is encoded as a <a>PNG four-byte unsigned integer</a>.</p>
+        <p>The value is encoded as a <a>PNG four-byte unsigned integer</a>.</p>
 
-      <p>The following specifies the syntax of the <span class="chunk">hRWl</span> chunk:</p>
+        <p>The following specifies the syntax of the <span class="chunk">hRWl</span> chunk:</p>
 
            <table id="hRWl-chunk-syntax" class="numbered simple">
              <caption>hRWl chunk components</caption>
@@ -4397,6 +4406,7 @@ with these exceptions:
           if the chunk is absent.
         </p>
 
+      </section>
     </section>
 
 

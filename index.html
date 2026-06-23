@@ -164,6 +164,12 @@
           date: "2019-02",
           publisher: "ISO"
         },
+        "ISO_22028-5": {
+          title: "Photography and graphic technology — Extended colour encodings for digital image storage, manipulation and interchange. Part 5: High dynamic range and wide colour gamut encoding for still images (HDR/WCG)",
+          publisher: "ISO",
+          date: "2026-05",
+          href: "https://www.iso.org/standard/87778.html"
+        },
         "ITU-R-BT.709": {
           title: "ITU-R BT.709, SERIES BT: BROADCASTING SERVICE (TELEVISION). Parameter values for the HDTV standards for production and international programme exchange",
           publisher: "ITU",
@@ -181,10 +187,16 @@
           date: "2018-07",
           href: "https://www.itu.int/rec/R-REC-BT.2100"
         },
-          "ITU-R-BT.2390": {
+        "ITU-R-BT.2390": {
           title: "High dynamic range television for production and international programme exchange",
           publisher: "ITU",
           href: "https://www.itu.int/dms_pub/itu-r/opb/rep/R-REP-BT.2390-11-2023-PDF-E.pdf"
+        },
+        "ITU-R-BT.2408-9": {
+            title: "Guidelines for operational practices in high dynamic range television production",
+            publisher: "ITU",
+            date: "2026-03",
+            href: "https://www.itu.int/pub/R-REP-BT.2408-9-2026"
         },
         "ITU-T-H.273": {
           title: "ITU-T H.273, SERIES H: AUDIOVISUAL AND MULTIMEDIA SYSTEMS Infrastructure of audiovisual services – Coding of moving video. Coding-independent code points for video signal type identification",
@@ -4304,6 +4316,88 @@ with these exceptions:
           </aside>
         </section>
       </section>
+
+      <section id="hRWl-chunk">
+          <h2><span class="chunk">hRWl</span> HDR Reference White Level</h2>
+          <p>The four-byte chunk type field contains the hexadecimal values</p>
+
+          <pre>
+68 52 57 6C
+</pre>
+
+      <p>If present, the <span class="chunk">hRWl</span> chunk identifies a characteristic of <a>HDR</a> content.It adds static metadata which is helpful when compositing a mix of HDR and SDR content.</p>
+
+      <p>It is standard practice,
+        defined in [[ITU-R-BT.2408-9]] section 2.1,
+        to author HDR content
+        such that HDR Reference White has a luminance level of 
+        203 cd/m<sup>2</sup> (also known as nits).
+        This corresponds to a code value of 58% in PQ
+        and 75% in HLG on a 1000 cd/m<sup>2</sup> display.
+        This value is assumed in various workflows
+        such as compositing or HDR to SDR content conversion.
+      </p>
+
+      <p class="note">This is the same definition,
+        and the same standard value,
+        as is used in [[ISO_22028-5]].
+      </p>
+
+      <p>Previously, it was not possible to indicate
+        that the content was mastered to some other reference level,
+        such as 100 cd/m<sup>2</sup>.
+      </p>
+
+      <p>The <span class="chunk">hRWl</span> chunk
+      indicates that HDR Reference White uses non-standard luminance level.</p>
+
+      <p>The value is encoded as a <a>PNG four-byte unsigned integer</a>.</p>
+
+      <p>The following specifies the syntax of the <span class="chunk">hRWl</span> chunk:</p>
+
+           <table id="hRWl-chunk-syntax" class="numbered simple">
+             <caption>hRWl chunk components</caption>
+
+             <tr>
+               <th>Name</th>
+               <th>Size</th>
+               <th>Divisor value</th>
+             </tr>
+
+             <tr>
+               <td>HDR Reference White level</td>
+               <td>4 bytes</td>
+               <td>0.0001 cd/m<sup>2</sup></td>
+             </tr>
+           </table>
+
+           <aside class="example">
+             Example <span class="chunk">hRWl</span> chunk HDR Reference White Level:
+
+             <table id="hRWl-chunk-white-level-example" class="numbered simple">
+               <tr>
+                 <th>Actual value</th>
+                 <th>Stored Decimal value</th>
+                 <th>Stored Hexadecimal value</th>
+               </tr>
+
+               <tr>
+                 <td>160 cd/m<sup>2</sup></td>
+                 <td>1600000</td>
+                 <td>00 18 6A 00</td>
+              </tr>
+            </table>
+          </aside>
+
+          <p>If the standard value of 203 cd/m<sup>2</sup>
+          has been used,
+          the <span class="chunk">hRWl</span> chunk
+          should <strong>not</strong> be added. 
+          The default, standard value will be assumed
+          if the chunk is absent.
+        </p>
+
+    </section>
 
 
 <!-- Maintain a fragment named "11textinfo" to preserve incoming links to it -->

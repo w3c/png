@@ -2056,7 +2056,7 @@ with these exceptions:
 
         <tr>
           <td>
-            <a class="chunk" href="#hRWl-chunk">hRWl</a>
+            <a class="chunk" href="#hRWL-chunk">hRWL</a>
           </td>
           <td>No</td>
           <td>
@@ -4328,15 +4328,15 @@ with these exceptions:
           </aside>
         </section>
 
-        <section id="hRWl-chunk">
-            <h2><span class="chunk">hRWl</span> HDR Reference White Level</h2>
+        <section id="hRWL-chunk">
+            <h2><span class="chunk">hRWL</span> HDR Reference White Level</h2>
             <p>The four-byte chunk type field contains the hexadecimal values</p>
 
           <pre>
-68 52 57 6C
+68 52 57 4C
 </pre>
 
-        <p>If present, the <span class="chunk">hRWl</span> chunk identifies a characteristic of <a>HDR</a> content. It adds static metadata which is helpful when compositing a mix of HDR and SDR content.</p>
+        <p>If present, the <span class="chunk">hRWL</span> chunk identifies a characteristic of <a>HDR</a> content. It adds static metadata which is helpful when compositing a mix of HDR and SDR content.</p>
 
         <p>It is standard practice,
           defined in [[ITU-R-BT.2408-9]] section 2.1,
@@ -4365,15 +4365,15 @@ with these exceptions:
           such as 100 cd/m<sup>2</sup>.
         </p>
 
-        <p>The <span class="chunk">hRWl</span> chunk
+        <p>The <span class="chunk">hRWL</span> chunk
       indicates that HDR Reference White uses non-standard luminance level.</p>
 
         <p>The value is encoded as a <a>PNG four-byte unsigned integer</a>.</p>
 
-        <p>The following specifies the syntax of the <span class="chunk">hRWl</span> chunk:</p>
+        <p>The following specifies the syntax of the <span class="chunk">hRWL</span> chunk:</p>
 
-           <table id="hRWl-chunk-syntax" class="numbered simple">
-             <caption>hRWl chunk components</caption>
+           <table id="hRWL-chunk-syntax" class="numbered simple">
+             <caption>hRWL chunk components</caption>
 
              <tr>
                <th>Name</th>
@@ -4382,16 +4382,16 @@ with these exceptions:
              </tr>
 
              <tr>
-               <td>HDR Reference White level</td>
+               <td>HDR Reference White Level</td>
                <td>4 bytes</td>
                <td>0.0001 cd/m<sup>2</sup></td>
              </tr>
            </table>
 
            <aside class="example">
-             Example <span class="chunk">hRWl</span> chunk HDR Reference White Level:
+             Example <span class="chunk">hRWL</span> chunk HDR Reference White Level:
 
-             <table id="hRWl-chunk-white-level-example" class="numbered simple">
+             <table id="hRWL-chunk-white-level-example" class="numbered simple">
                <tr>
                  <th>Actual value</th>
                  <th>Stored Decimal value</th>
@@ -4408,7 +4408,7 @@ with these exceptions:
 
           <p>If the standard value of 203 cd/m<sup>2</sup>
           has been used,
-          the <span class="chunk">hRWl</span> chunk
+          the <span class="chunk">hRWL</span> chunk
           should <strong>not</strong> be added. 
           The default, standard value will be assumed
           if the chunk is absent.

@@ -3511,7 +3511,9 @@ with these exceptions:
           </table>
 
           <p>The profile name may be any convenient name for referring to the profile. It is case-sensitive. Profile names shall
-          contain only printable Latin-1 characters and spaces (only code points 0x20-7E and 0xA1-FF are allowed). Leading,
+          contain only printable Latin-1 characters and spaces (only
+          <a href="https://infra.spec.whatwg.org/#code-point">code points</a>
+          0x20-7E and 0xA1-FF are allowed). Leading,
           trailing, and consecutive spaces are not permitted. The only compression method defined in this specification is method 0
           (<a>zlib</a> datastream with <a>deflate</a> compression, see <a href='#10CompressionOtherUses'></a>). The compression
           method entry is followed by a compressed profile that makes up the remainder of the chunk. Decompression of this
@@ -4529,7 +4531,9 @@ with these exceptions:
 
           <p>Keywords of general interest SHOULD be listed in [[PNG-EXTENSIONS]].</p>
 
-          <p>Keywords shall contain only printable Latin-1 [[ISO_8859-1]] characters and spaces; that is, only code points 0x20-7E
+          <p>Keywords shall contain only printable Latin-1 [[ISO_8859-1]] characters and spaces; that is, only
+          <a href="https://infra.spec.whatwg.org/#code-point">code points</a>
+          0x20-7E
           and 0xA1-FF are allowed. To reduce the chances for human misreading of a keyword, leading spaces, trailing spaces, and
           consecutive spaces are not permitted in keywords, nor is U+00A0 NON-BREAKING SPACE since it is visually indistinguishable
           from an ordinary space.</p>
@@ -5026,7 +5030,8 @@ with these exceptions:
 
           <p>The palette name is case-sensitive, and subject to the same restrictions as the keyword parameter for the <a class=
           "chunk" href="#11tEXt">tEXt</a> chunk. Palette names shall contain only printable Latin-1 characters and spaces (only
-          code points 0x20-7E and 0xA1-FF are allowed). Leading, trailing, and consecutive spaces are not permitted.</p>
+          <a href="https://infra.spec.whatwg.org/#code-point">code points</a>
+          0x20-7E and 0xA1-FF are allowed). Leading, trailing, and consecutive spaces are not permitted.</p>
 
           <p>The <span class="chunk">sPLT</span> sample depth shall be 8 or 16.</p>
 
@@ -5977,7 +5982,9 @@ output = floor((input * MAXOUTSAMPLE / MAXINSAMPLE) + 0.5)
       </p>
 
       <p>Encoders should discourage
-      the creation of single lines of text longer than 79 Unicode <a>code points</a>, in order to facilitate easy reading. It is
+      the creation of single lines of text longer than 79 Unicode
+      <a href="https://infra.spec.whatwg.org/#code-point">code points</a>
+      in order to facilitate easy reading. It is
       recommended that text items less than 1024 bytes in size should be output using uncompressed text chunks. It is recommended
       that the basic title and author keywords be output using uncompressed text chunks. Placing large text chunks after the
       <a>image data</a> (after the <a class="chunk" href="#11IDAT">IDAT</a> chunks) can speed up image display in some situations,

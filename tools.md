@@ -41,7 +41,7 @@ Command-line tool in C++ to insert (and optionally, overwrite) a `cICP` chunk in
 
 [Homepage](https://github.com/finnp/png-itxt/blob/master/readme.md) and [maintained on GitHub](https://github.com/finnp/png-itxt).
 
-Tool to read textual information in `tEXt`, `zTXT` and `iTXt` chunks, and to write `iTXt` chunks. Use in Node programs, or on command line.
+Tool to read textual information in `tEXt`, `zTXt` and `iTXt` chunks, and to write `iTXt` chunks. Use in Node programs, or on command line.
 
 ### Animated PNG Maker
 
@@ -111,7 +111,7 @@ Multi-platform GUI which displays metadata on many image and video formats inclu
 
 [Homepage](https://www.dcode.fr/png-chunks).
 
-Online tool to extract contents of `tEXt`, `zTXT` and `iTXt` chunks.
+Online tool to extract contents of `tEXt`, `zTXt` and `iTXt` chunks.
 
 ## Libraries
 

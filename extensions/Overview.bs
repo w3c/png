@@ -1163,7 +1163,7 @@ What are <code>x0</code> and <code>x1</code> for?
     <ul>
 
     <li>Added <code>pCAL</code> chunk and related sample code
-    </li><li>Deprecated the <code>gIFT</code> chunk
+    </li><li>Deprecated the <code>gIFt</code> chunk
     </li><li>Added sample gamma-correction code that uses integer arithmetic
 
     </li></ul>

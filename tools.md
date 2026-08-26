@@ -55,7 +55,7 @@ Online tool to convert one or more GIF, JPG, PNG, APNG, HEIC, HEIF, MNG, JP2, AV
 
 By @DavidBuchanan314  Easily extensible to spit out new chunks, so great for prototyping and creating test files.
 
-Depnds on zlib, only.
+Depends on zlib, only.
 
 ### node pngdefry
 
@@ -144,7 +144,7 @@ Pure Rust library with a PNG encoder and decoder. Supports APNG. Supports Third 
 
 Maintained at [image-rs/fdeflate](https://github.com/image-rs/fdeflate).
 
-Pure Rust library for **deflate**, tuned specificlly for PNG images. Used by `image-png` but usable stand-alone, too.
+Pure Rust library for **deflate**, tuned specifically for PNG images. Used by `image-png` but usable stand-alone, too.
 
 ### lodepng
 

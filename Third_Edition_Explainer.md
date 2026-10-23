@@ -144,8 +144,8 @@ decade of deployed content and implementations.
 ### Labelling HDR content
 
 For SDR content, the color space is typically labelled
-using an **ICC profile** in the ['iCCP' chunk](https://w3c.github.io/PNG-spec/#11iCCP)
-or, for sRGB content, with the ['sRGB' chunk](https://w3c.github.io/PNG-spec/#srgb-standard-colour-space).
+using an **ICC profile** in the ['iCCP' chunk](https://www.w3.org/TR/png-3/#11iCCP)
+or, for sRGB content, with the ['sRGB' chunk](https://www.w3.org/TR/png-3/#srgb-standard-colour-space).
 An ICC profile for an RGB color space typically adds 1k to 10k to the filesize,
 while the content of the sRGB chunk is 1 byte.
 
@@ -156,7 +156,7 @@ is used in HDR video workflows
 and also for static image formats such as AVIF or JPEG-XL.
 
 PNG has aligned with this growing industry usage,
-adding the ['cICP' chunk](https://w3c.github.io/PNG-spec/#cICP-chunk)
+adding the ['cICP' chunk](https://www.w3.org/TR/png-3/#cICP-chunk)
 which enables CICP labelling of the two most common HDR color spaces
 (**BT.2100 HLG** and **BT.2100 PQ**) with only four bytes.
 
@@ -214,7 +214,7 @@ The content of the 'mDCV' chunk is only 24 bytes.
 
 Specification link:
 
-- ['mDCV' Mastering Display Color Volume](https://w3c.github.io/PNG-spec/#mDCV-chunk)
+- ['mDCV' Mastering Display Color Volume](https://www.w3.org/TR/png-3/#mDCV-chunk)
 
 ### Content Luminance Levels
 
@@ -246,7 +246,7 @@ The content of the 'cLLI' chunk is only 8 bytes.
 
 Specification link:
 
-- ['cLLI' Content Light Level Information](https://w3c.github.io/PNG-spec/#cLLI-chunk)
+- ['cLLI' Content Light Level Information](https://www.w3.org/TR/png-3/#cLLI-chunk)
 
 ## Stakeholder Feedback / Opposition
 
